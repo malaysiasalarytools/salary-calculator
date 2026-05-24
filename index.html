@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Malaysia Salary Calculator (2026)</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      max-width: 520px;
+      margin: 50px auto;
+      background: #fafafa;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f5f5f5;
+      border-radius: 10px;
+      line-height: 1.6;
+    }
+
+    .section {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h2>Malaysia Salary Calculator</h2>
+
+  <input type="number" id="salary" placeholder="Enter monthly salary (RM)">
+
+  <button onclick="calculate()">Calculate</button>
+
+  <div class="result" id="result"></div>
+
+</div>
+
+<script>
+function formatRM(value) {
+  return value.toLocaleString('en-MY', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+}
+
+function calculate() {
+
+  let salary = parseFloat(document.getElementById("salary").value);
+
+  if (!salary) {
+    document.getElementById("result").innerHTML = "Please enter salary";
+    return;
+  }
+
+  let epf = salary * 0.11;
+  let socso = salary * 0.0175;
+
+  let tax = 0;
+
+  if (salary <= 5000) {
+    tax = salary * 0.02;
+  } 
+  else if (salary <= 10000) {
+    tax = salary * 0.05;
+  } 
+  else if (salary <= 20000) {
+    tax = salary * 0.10;
+  } 
+  else {
+    tax = salary * 0.15;
+  }
+
+  let net = salary - epf - socso - tax;
+
+  let annualGross = salary * 12;
+  let annualEPF = epf * 12;
+  let annualSOCSO = socso * 12;
+  let annualTax = tax * 12;
+  let annualNet = net * 12;
+
+  document.getElementById("result").innerHTML =
+    "<b>Monthly Breakdown</b><br><br>" +
+    "Gross Salary: RM " + formatRM(salary) + "<br>" +
+    "EPF (11%): RM " + formatRM(epf) + "<br>" +
+    "SOCSO (~1.75%): RM " + formatRM(socso) + "<br>" +
+    "PCB Tax (est.): RM " + formatRM(tax) + "<br><br>" +
+    "<b>Net Monthly: RM " + formatRM(net) + "</b>" +
+
+    "<div class='section'></div>" +
+
+    "<b>Annual Breakdown</b><br><br>" +
+    "Annual Gross Income: RM " + formatRM(annualGross) + "<br>" +
+    "Annual EPF: RM " + formatRM(annualEPF) + "<br>" +
+    "Annual SOCSO: RM " + formatRM(annualSOCSO) + "<br>" +
+    "Annual Tax: RM " + formatRM(annualTax) + "<br><br>" +
+    "<b>Annual Net Income: RM " + formatRM(annualNet) + "</b>";
+}
+</script>
+
+</body>
+</html>
