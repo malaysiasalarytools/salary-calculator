@@ -6,7 +6,7 @@
 
   <title>Malaysia Salary Calculator 2026 | Net Take Home Pay After EPF, SOCSO & Tax</title>
 
-  <meta name="description" content="Free Malaysia salary calculator 2026. Calculate net salary after EPF, SOCSO, EIS and tax deductions.">
+  <meta name="description" content="Free Malaysia salary calculator 2026. Calculate your net take-home pay after EPF, SOCSO, EIS and PCB tax deductions.">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -32,7 +32,6 @@
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
-      margin-top: 15px;
     }
 
     .box {
@@ -57,6 +56,11 @@
       cursor: pointer;
     }
 
+    .result {
+      margin-top: 15px;
+      line-height: 1.6;
+    }
+
     .seo {
       margin-top: 40px;
       background: white;
@@ -70,7 +74,9 @@
     h3 { font-size: 16px; margin-top: 18px; }
 
     @media (max-width: 700px){
-      .layout { flex-direction: column; }
+      .layout {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -81,26 +87,29 @@
 
   <h1>Malaysia Salary Calculator 2026</h1>
 
-  <p>Calculate your net take-home salary after EPF, SOCSO, EIS and tax deductions.</p>
+  <p>Calculate your net take-home salary after EPF, SOCSO, EIS and PCB tax deductions.</p>
 
   <input type="number" id="salary" placeholder="Enter monthly salary (RM)">
   <button onclick="calculate()">Calculate Net Salary</button>
 
+  <!-- 🔥 MONTHLY + ANNUAL SIDE BY SIDE -->
   <div class="layout">
+
     <div class="box">
       <h3>Monthly Breakdown</h3>
-      <div id="monthly"></div>
+      <div class="result" id="monthly"></div>
     </div>
 
     <div class="box">
       <h3>Annual Breakdown</h3>
-      <div id="annual"></div>
+      <div class="result" id="annual"></div>
     </div>
+
   </div>
 
 </div>
 
-  
+<!-- SEO CONTENT -->
 <div class="seo">
 
   <h2>Popular Salary Guides</h2>
@@ -110,20 +119,24 @@
     <li><a href="rm5000-salary-malaysia.html">RM5000 Salary Breakdown</a></li>
     <li><a href="rm10000-salary-breakdown.html">RM10000 Salary Breakdown</a></li>
   </ul>
-
+  
   <h2>How Salary Is Calculated in Malaysia</h2>
 
-  <h3>EPF</h3>
-  <p>Mandatory retirement contribution (~11%).</p>
+  <p>
+    Gross salary is reduced by EPF, SOCSO, EIS and PCB tax in Malaysia.
+  </p>
 
-  <h3>SOCSO</h3>
-  <p>Workplace protection insurance.</p>
+  <h3>What is EPF?</h3>
+  <p>EPF is a mandatory retirement savings scheme. Employees contribute around 11%.</p>
 
-  <h3>EIS</h3>
-  <p>Unemployment financial support.</p>
+  <h3>What is SOCSO?</h3>
+  <p>SOCSO provides protection for workplace injury and disability.</p>
 
-  <h3>PCB Tax</h3>
-  <p>Monthly income tax deduction.</p>
+  <h3>What is EIS?</h3>
+  <p>EIS gives financial support if you lose your job.</p>
+
+  <h3>What is PCB?</h3>
+  <p>PCB is monthly income tax deduction based on Malaysian tax system.</p>
 
 </div>
 
@@ -138,7 +151,12 @@ function formatRM(v){
 function calculate(){
 
   let salary = parseFloat(document.getElementById("salary").value);
-  if(!salary) return;
+
+  if(!salary){
+    document.getElementById("monthly").innerHTML = "Please enter salary";
+    document.getElementById("annual").innerHTML = "";
+    return;
+  }
 
   let epf = salary * 0.11;
   let socso = Math.min(salary * 0.02, 50);
@@ -155,21 +173,23 @@ function calculate(){
 
   let net = salary - epf - socso - eis - tax;
 
+  // MONTHLY
   document.getElementById("monthly").innerHTML =
-    `Gross RM ${formatRM(salary)}<br>
-     EPF RM ${formatRM(epf)}<br>
-     SOCSO RM ${formatRM(socso)}<br>
-     EIS RM ${formatRM(eis)}<br>
-     Tax RM ${formatRM(tax)}<br><br>
-     <b>Net RM ${formatRM(net)}</b>`;
+    "Gross: RM " + formatRM(salary) + "<br>" +
+    "EPF: RM " + formatRM(epf) + "<br>" +
+    "SOCSO: RM " + formatRM(socso) + "<br>" +
+    "EIS: RM " + formatRM(eis) + "<br>" +
+    "Tax: RM " + formatRM(tax) + "<br><br>" +
+    "<b>Net: RM " + formatRM(net) + "</b>";
 
+  // ANNUAL
   document.getElementById("annual").innerHTML =
-    `Gross RM ${formatRM(annual)}<br>
-     EPF RM ${formatRM(epf*12)}<br>
-     SOCSO RM ${formatRM(socso*12)}<br>
-     EIS RM ${formatRM(eis*12)}<br>
-     Tax RM ${formatRM(tax*12)}<br><br>
-     <b>Net RM ${formatRM(net*12)}</b>`;
+    "Gross: RM " + formatRM(annual) + "<br>" +
+    "EPF: RM " + formatRM(epf * 12) + "<br>" +
+    "SOCSO: RM " + formatRM(socso * 12) + "<br>" +
+    "EIS: RM " + formatRM(eis * 12) + "<br>" +
+    "Tax: RM " + formatRM(tax * 12) + "<br><br>" +
+    "<b>Net: RM " + formatRM(net * 12) + "</b>";
 }
 </script>
 
