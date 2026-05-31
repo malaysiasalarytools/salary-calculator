@@ -4,39 +4,31 @@
 <head>
   <meta charset="UTF-8">
 
-  <title>Malaysia Salary Calculator 2026 (EPF, SOCSO, PCB Tax & Net Take Home Pay)</title>
+  <title>Malaysia Salary Calculator 2026 | Net Take Home Pay After EPF, SOCSO & Tax</title>
 
-  <meta name="description" content="Calculate your Malaysia net salary after EPF, SOCSO, EIS and PCB tax. Free 2026 salary calculator with accurate take-home pay breakdown.">
-
-  <meta name="keywords" content="salary calculator malaysia, epf calculator malaysia, pcb tax calculator malaysia, net salary malaysia, take home pay malaysia 2026">
+  <meta name="description" content="Free Malaysia salary calculator 2026. Estimate your net take-home pay after EPF, SOCSO, EIS and PCB tax deductions.">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Malaysia Salary Calculator 2026">
-  <meta property="og:description" content="Calculate your net salary after EPF, SOCSO & tax in Malaysia">
-  <meta property="og:type" content="website">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://yourdomain.com/salary-calculator">
+  <meta name="robots" content="index, follow">
 
   <style>
     body {
       font-family: Arial;
       max-width: 720px;
       margin: 40px auto;
-      background: #f7f7f7;
       padding: 20px;
+      background: #f6f6f6;
     }
 
     .card {
       background: white;
-      padding: 25px;
+      padding: 24px;
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
 
-    input {
+    input, button {
       width: 100%;
       padding: 12px;
       margin-top: 10px;
@@ -44,42 +36,27 @@
     }
 
     button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 12px;
       background: black;
       color: white;
       border: none;
       cursor: pointer;
-      font-size: 16px;
     }
 
     .result {
       margin-top: 20px;
-      padding: 15px;
       background: #f3f3f3;
+      padding: 15px;
       border-radius: 10px;
-      line-height: 1.6;
-    }
-
-    .section {
-      margin-top: 30px;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
     }
 
     .seo {
       margin-top: 40px;
-      padding: 25px;
-      background: #fff;
+      background: white;
+      padding: 20px;
       border-radius: 12px;
-      font-size: 15px;
+      font-size: 14px;
       line-height: 1.7;
     }
-
-    h1 { font-size: 26px; }
-    h2 { font-size: 20px; margin-top: 25px; }
-    h3 { font-size: 16px; margin-top: 20px; }
   </style>
 </head>
 
@@ -89,55 +66,42 @@
 
   <h1>Malaysia Salary Calculator 2026</h1>
 
-  <p>
-    Estimate your net take-home salary in Malaysia after EPF, SOCSO, EIS and income tax (PCB).
-  </p>
+  <p>Calculate your net salary after EPF, SOCSO, EIS and income tax (PCB).</p>
 
   <input type="number" id="salary" placeholder="Enter monthly salary (RM)">
 
   <button onclick="calculate()">Calculate Net Salary</button>
 
   <div class="result" id="result"></div>
+
 </div>
 
 <!-- SEO CONTENT -->
 <div class="seo">
 
-  <h2>Malaysia Salary Calculator Explained (2026 Update)</h2>
+  <h2>How Salary Is Calculated in Malaysia</h2>
 
   <p>
-    This tool helps you estimate your monthly and annual net salary in Malaysia after statutory deductions including EPF, SOCSO, EIS and PCB tax.
-    It is designed for employees who want to understand their real take-home pay.
+    In Malaysia, your take-home salary is lower than gross salary because of mandatory deductions:
+    EPF, SOCSO, EIS and PCB tax.
   </p>
 
-  <h2>Salary Example Breakdown in Malaysia</h2>
+  <h2>Salary Examples</h2>
+  <ul>
+    <li>RM3,000 → ~RM2,600 take home</li>
+    <li>RM5,000 → ~RM4,200 take home</li>
+    <li>RM10,000 → ~RM7,800 take home</li>
+  </ul>
 
-  <p><b>RM3,000 salary:</b> ~RM2,600 take home</p>
-  <p><b>RM5,000 salary:</b> ~RM4,250 take home</p>
-  <p><b>RM10,000 salary:</b> ~RM7,800 take home</p>
-
-  <h2>What Deductions Affect Your Salary?</h2>
-
-  <h3>EPF (Employees Provident Fund)</h3>
-  <p>Mandatory retirement savings. Employee contributes ~11% of monthly salary.</p>
-
-  <h3>SOCSO</h3>
-  <p>Social security protection for workplace injury and disability coverage.</p>
-
-  <h3>EIS</h3>
-  <p>Employment insurance for job loss financial support.</p>
-
-  <h3>PCB Tax (Income Tax)</h3>
-  <p>Monthly tax deduction based on progressive income tax system in Malaysia.</p>
-
-  <h2>Why Your Net Salary Is Lower Than Your Offer Letter</h2>
-  <p>
-    Offer letters show gross salary. Actual bank-in salary is reduced by EPF, SOCSO, EIS and PCB tax deductions.
-  </p>
+  <h2>Useful Tools</h2>
+  <ul>
+    <li><a href="#">EPF Calculator (coming soon)</a></li>
+    <li><a href="#">PCB Tax Calculator (coming soon)</a></li>
+  </ul>
 
 </div>
 
-<!-- FAQ SCHEMA -->
+<!-- FAQ Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -145,10 +109,10 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How is net salary calculated in Malaysia?",
+      "name": "Why is my net salary lower than gross salary?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Net salary is calculated by deducting EPF, SOCSO, EIS and PCB tax from gross salary."
+        "text": "Because EPF, SOCSO, EIS and tax deductions are applied."
       }
     },
     {
@@ -156,15 +120,7 @@
       "name": "Is EPF mandatory in Malaysia?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, EPF is mandatory for most employees in Malaysia."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why is my take home pay lower than salary?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Because statutory deductions such as EPF, SOCSO and tax are applied to gross salary."
+        "text": "Yes, EPF is mandatory for most employees."
       }
     }
   ]
@@ -172,29 +128,25 @@
 </script>
 
 <script>
-function formatRM(value) {
-  return value.toLocaleString('en-MY', {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  });
+function formatRM(v){
+  return v.toLocaleString('en-MY', {minimumFractionDigits:2, maximumFractionDigits:2});
 }
 
-function calculate() {
+function calculate(){
 
   let salary = parseFloat(document.getElementById("salary").value);
 
-  if (!salary) {
+  if(!salary){
     document.getElementById("result").innerHTML = "Please enter salary";
     return;
   }
 
-  // improved simplified model (still SEO-safe)
   let epf = salary * 0.11;
-  let socso = Math.min(salary * 0.02, 50); // capped assumption
+  let socso = Math.min(salary * 0.02, 50);
   let eis = salary * 0.002;
 
-  // simplified progressive tax estimate (still NOT real LHDN table but better logic)
   let annual = salary * 12;
+
   let taxRate =
     annual <= 50000 ? 0.02 :
     annual <= 100000 ? 0.06 :
@@ -206,11 +158,11 @@ function calculate() {
 
   document.getElementById("result").innerHTML =
     "<b>Monthly Breakdown</b><br><br>" +
-    "Gross Salary: RM " + formatRM(salary) + "<br>" +
-    "EPF (11%): RM " + formatRM(epf) + "<br>" +
-    "SOCSO (est.): RM " + formatRM(socso) + "<br>" +
+    "Gross: RM " + formatRM(salary) + "<br>" +
+    "EPF: RM " + formatRM(epf) + "<br>" +
+    "SOCSO: RM " + formatRM(socso) + "<br>" +
     "EIS: RM " + formatRM(eis) + "<br>" +
-    "PCB Tax (est.): RM " + formatRM(tax) + "<br><br>" +
+    "Tax (est.): RM " + formatRM(tax) + "<br><br>" +
     "<b>Net Salary: RM " + formatRM(net) + "</b>";
 }
 </script>
