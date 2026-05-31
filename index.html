@@ -6,7 +6,7 @@
 
   <title>Malaysia Salary Calculator 2026 | Net Take Home Pay After EPF, SOCSO & Tax</title>
 
-  <meta name="description" content="Free Malaysia salary calculator 2026. Calculate your net take-home pay after EPF, SOCSO, EIS and PCB tax deductions. Accurate salary breakdown.">
+  <meta name="description" content="Free Malaysia salary calculator 2026. Calculate your net take-home pay after EPF, SOCSO, EIS and PCB tax deductions.">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,7 +15,7 @@
   <style>
     body {
       font-family: Arial;
-      max-width: 760px;
+      max-width: 900px;
       margin: 40px auto;
       padding: 20px;
       background: #f6f6f6;
@@ -26,6 +26,20 @@
       padding: 25px;
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .layout {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      flex: 1;
+      min-width: 280px;
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 10px;
     }
 
     input, button {
@@ -43,10 +57,7 @@
     }
 
     .result {
-      margin-top: 20px;
-      background: #f3f3f3;
-      padding: 15px;
-      border-radius: 10px;
+      margin-top: 15px;
       line-height: 1.6;
     }
 
@@ -61,6 +72,12 @@
     h1 { font-size: 26px; }
     h2 { font-size: 20px; margin-top: 25px; }
     h3 { font-size: 16px; margin-top: 18px; }
+
+    @media (max-width: 700px){
+      .layout {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 
@@ -70,13 +87,25 @@
 
   <h1>Malaysia Salary Calculator 2026</h1>
 
-  <p>Calculate your net take-home salary after EPF, SOCSO, EIS and PCB tax deductions in Malaysia.</p>
+  <p>Calculate your net take-home salary after EPF, SOCSO, EIS and PCB tax deductions.</p>
 
   <input type="number" id="salary" placeholder="Enter monthly salary (RM)">
-
   <button onclick="calculate()">Calculate Net Salary</button>
 
-  <div class="result" id="result"></div>
+  <!-- 🔥 MONTHLY + ANNUAL SIDE BY SIDE -->
+  <div class="layout">
+
+    <div class="box">
+      <h3>Monthly Breakdown</h3>
+      <div class="result" id="monthly"></div>
+    </div>
+
+    <div class="box">
+      <h3>Annual Breakdown</h3>
+      <div class="result" id="annual"></div>
+    </div>
+
+  </div>
 
 </div>
 
@@ -86,56 +115,20 @@
   <h2>How Salary Is Calculated in Malaysia</h2>
 
   <p>
-    Your gross salary is reduced by mandatory statutory deductions in Malaysia. These include EPF, SOCSO, EIS and PCB (income tax).
+    Gross salary is reduced by EPF, SOCSO, EIS and PCB tax in Malaysia.
   </p>
 
   <h3>What is EPF?</h3>
-  <p>
-    EPF (Employees Provident Fund) is a mandatory retirement savings scheme in Malaysia. Employees typically contribute 11% of monthly salary, while employers contribute separately.
-  </p>
+  <p>EPF is a mandatory retirement savings scheme. Employees contribute around 11%.</p>
 
   <h3>What is SOCSO?</h3>
-  <p>
-    SOCSO provides protection for workplace injury, disability, and employment insurance coverage for employees in Malaysia.
-  </p>
+  <p>SOCSO provides protection for workplace injury and disability.</p>
 
   <h3>What is EIS?</h3>
-  <p>
-    EIS (Employment Insurance System) provides temporary financial assistance and job support if you lose your job.
-  </p>
+  <p>EIS gives financial support if you lose your job.</p>
 
-  <h3>What is PCB Tax?</h3>
-  <p>
-    PCB (Potongan Cukai Bulanan) is the monthly income tax deduction based on Malaysia’s progressive tax system.
-  </p>
-
-  <h2>Annual Salary Breakdown (Malaysia 2026)</h2>
-
-  <p>
-    Your annual salary is calculated as monthly salary × 12 months, then adjusted for EPF, SOCSO, EIS and income tax.
-  </p>
-
-  <ul>
-    <li>RM3,000/month → RM36,000/year → ~RM30,600 – RM31,200 net annually</li>
-    <li>RM5,000/month → RM60,000/year → ~RM49,800 – RM51,600 net annually</li>
-    <li>RM10,000/month → RM120,000/year → ~RM78,000 – RM93,600 net annually</li>
-  </ul>
-
-  <h2>Monthly Salary Examples</h2>
-
-  <ul>
-    <li>RM3,000 → ~RM2,550 – RM2,600 take home</li>
-    <li>RM5,000 → ~RM4,150 – RM4,300 take home</li>
-    <li>RM10,000 → ~RM6,500 – RM7,800 take home</li>
-  </ul>
-
-  <h2>Popular Salary Guides</h2>
-
-  <ul>
-    <li><a href="rm3000-salary-take-home.html">RM3000 Salary Breakdown</a></li>
-    <li><a href="rm5000-salary-malaysia.html">RM5000 Salary Breakdown</a></li>
-    <li><a href="rm10000-salary-breakdown.html">RM10000 Salary Breakdown</a></li>
-  </ul>
+  <h3>What is PCB?</h3>
+  <p>PCB is monthly income tax deduction based on Malaysian tax system.</p>
 
 </div>
 
@@ -152,7 +145,8 @@ function calculate(){
   let salary = parseFloat(document.getElementById("salary").value);
 
   if(!salary){
-    document.getElementById("result").innerHTML = "Please enter salary";
+    document.getElementById("monthly").innerHTML = "Please enter salary";
+    document.getElementById("annual").innerHTML = "";
     return;
   }
 
@@ -171,14 +165,23 @@ function calculate(){
 
   let net = salary - epf - socso - eis - tax;
 
-  document.getElementById("result").innerHTML =
-    "<b>Monthly Breakdown</b><br><br>" +
+  // MONTHLY
+  document.getElementById("monthly").innerHTML =
     "Gross: RM " + formatRM(salary) + "<br>" +
     "EPF: RM " + formatRM(epf) + "<br>" +
     "SOCSO: RM " + formatRM(socso) + "<br>" +
     "EIS: RM " + formatRM(eis) + "<br>" +
-    "Tax (est.): RM " + formatRM(tax) + "<br><br>" +
-    "<b>Net Salary: RM " + formatRM(net) + "</b>";
+    "Tax: RM " + formatRM(tax) + "<br><br>" +
+    "<b>Net: RM " + formatRM(net) + "</b>";
+
+  // ANNUAL
+  document.getElementById("annual").innerHTML =
+    "Gross: RM " + formatRM(annual) + "<br>" +
+    "EPF: RM " + formatRM(epf * 12) + "<br>" +
+    "SOCSO: RM " + formatRM(socso * 12) + "<br>" +
+    "EIS: RM " + formatRM(eis * 12) + "<br>" +
+    "Tax: RM " + formatRM(tax * 12) + "<br><br>" +
+    "<b>Net: RM " + formatRM(net * 12) + "</b>";
 }
 </script>
 
