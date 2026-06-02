@@ -238,38 +238,26 @@ function calculate(){
     return;
   }
 
-  let epf = salary * 0.11;
-  let socso = Math.min(salary * 0.02, 50);
-  let eis = salary * 0.002;
+  // EPF ONLY
+  let employeeEPF = salary * 0.11;
+  let employerEPF = salary * 0.12;
+  let totalEPF = employeeEPF + employerEPF;
 
-  let annual = salary * 12;
+  let annualEmployee = employeeEPF * 12;
+  let annualEmployer = employerEPF * 12;
+  let annualTotal = totalEPF * 12;
 
-  let taxRate =
-    annual <= 50000 ? 0.02 :
-    annual <= 100000 ? 0.06 :
-    annual <= 250000 ? 0.12 : 0.18;
-
-  let tax = salary * taxRate;
-
-  let net = salary - epf - socso - eis - tax;
-
-  // MONTHLY
   document.getElementById("monthly").innerHTML =
-    "Gross: RM " + formatRM(salary) + "<br>" +
-    "EPF: RM " + formatRM(epf) + "<br>" +
-    "SOCSO: RM " + formatRM(socso) + "<br>" +
-    "EIS: RM " + formatRM(eis) + "<br>" +
-    "Tax: RM " + formatRM(tax) + "<br><br>" +
-    "<b>Net: RM " + formatRM(net) + "</b>";
+    "Monthly Salary: RM " + formatRM(salary) + "<br><br>" +
+    "Employee EPF (11%): RM " + formatRM(employeeEPF) + "<br>" +
+    "Employer EPF (12%): RM " + formatRM(employerEPF) + "<br>" +
+    "<b>Total EPF: RM " + formatRM(totalEPF) + "</b>";
 
-  // ANNUAL
   document.getElementById("annual").innerHTML =
-    "Gross: RM " + formatRM(annual) + "<br>" +
-    "EPF: RM " + formatRM(epf * 12) + "<br>" +
-    "SOCSO: RM " + formatRM(socso * 12) + "<br>" +
-    "EIS: RM " + formatRM(eis * 12) + "<br>" +
-    "Tax: RM " + formatRM(tax * 12) + "<br><br>" +
-    "<b>Net: RM " + formatRM(net * 12) + "</b>";
+    "Annual Employee EPF: RM " + formatRM(annualEmployee) + "<br>" +
+    "Annual Employer EPF: RM " + formatRM(annualEmployer) + "<br><br>" +
+    "<b>Total Annual EPF: RM " + formatRM(annualTotal) + "</b>";
+
 }
 </script>
 
