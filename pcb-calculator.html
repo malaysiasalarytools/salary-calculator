@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Malaysia PCB Tax Calculator 2026 | Monthly Tax Deduction Calculator</title>
+
+  <meta name="description" content="Free Malaysia PCB calculator 2026. Estimate monthly income tax (PCB) deductions instantly.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+
+  <style>
+    body {
+      font-family: Arial;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f6f6f6;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .layout {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      flex: 1;
+      min-width: 280px;
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 15px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h1>Malaysia PCB Calculator 2026</h1>
+
+  <p>Estimate monthly income tax (PCB) deduction based on annual salary.</p>
+
+  <input type="number" id="salary" placeholder="Enter monthly salary (RM)">
+  <button onclick="calculate()">Calculate PCB</button>
+
+  <div class="layout">
+
+    <div class="box">
+      <h3>Monthly</h3>
+      <div class="result" id="monthly"></div>
+    </div>
+
+    <div class="box">
+      <h3>Annual</h3>
+      <div class="result" id="annual"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<div style="background:white;padding:20px;margin-top:30px;border-radius:12px;">
+
+  <h2>What is PCB in Malaysia?</h2>
+  <p>
+    PCB (Potongan Cukai Bulanan) is a monthly tax deduction system for income tax in Malaysia.
+  </p>
+
+</div>
+
+<script>
+function formatRM(v){
+  return v.toLocaleString('en-MY',{minimumFractionDigits:2,maximumFractionDigits:2});
+}
+
+function calculate(){
+
+  let salary = parseFloat(document.getElementById("salary").value);
+
+  if(!salary){
+    document.getElementById("monthly").innerHTML = "Please enter salary";
+    return;
+  }
+
+  let annual = salary * 12;
+
+  let taxRate =
+    annual <= 50000 ? 0.02 :
+    annual <= 100000 ? 0.06 :
+    annual <= 250000 ? 0.12 : 0.18;
+
+  let tax = salary * taxRate;
+
+  document.getElementById("monthly").innerHTML =
+    "Estimated PCB: RM " + formatRM(tax);
+
+  document.getElementById("annual").innerHTML =
+    "Annual Tax: RM " + formatRM(tax * 12);
+}
+</script>
+
+</body>
+</html>
