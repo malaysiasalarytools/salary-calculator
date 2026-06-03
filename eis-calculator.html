@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Malaysia EIS Calculator 2026 | Employment Insurance Scheme Calculator</title>
+
+  <meta name="description" content="Free Malaysia EIS calculator 2026. Calculate employee and employer EIS contributions instantly based on monthly salary.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+
+  <style>
+    body {
+      font-family: Arial;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f6f6f6;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .layout {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      flex: 1;
+      min-width: 280px;
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 15px;
+      line-height: 1.6;
+    }
+
+    h1 { font-size: 26px; }
+    h2 { font-size: 20px; margin-top: 25px; }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h1>Malaysia EIS Calculator 2026</h1>
+
+  <p>Calculate Employee and Employer EIS (Employment Insurance Scheme) contributions based on salary.</p>
+
+  <input type="number" id="salary" placeholder="Enter monthly salary (RM)">
+  <button onclick="calculate()">Calculate EIS</button>
+
+  <div class="layout">
+
+    <div class="box">
+      <h3>Monthly</h3>
+      <div class="result" id="monthly"></div>
+    </div>
+
+    <div class="box">
+      <h3>Annual</h3>
+      <div class="result" id="annual"></div>
+    </div>
+
+  </div>
+</div>
+
+<div style="background:white;padding:20px;margin-top:30px;border-radius:12px;">
+
+  <h2>What is EIS in Malaysia?</h2>
+  <p>
+    EIS (Employment Insurance Scheme) provides temporary financial assistance to workers who lose their jobs.
+  </p>
+
+</div>
+
+<script>
+function formatRM(v){
+  return v.toLocaleString('en-MY',{minimumFractionDigits:2,maximumFractionDigits:2});
+}
+
+function calculate(){
+
+  let salary = parseFloat(document.getElementById("salary").value);
+
+  if(!salary){
+    document.getElementById("monthly").innerHTML = "Please enter salary";
+    return;
+  }
+
+  let employee = salary * 0.002;
+  let employer = salary * 0.002;
+
+  let total = employee + employer;
+
+  document.getElementById("monthly").innerHTML =
+    "Employee EIS (0.2%): RM " + formatRM(employee) + "<br>" +
+    "Employer EIS (0.2%): RM " + formatRM(employer) + "<br><br>" +
+    "<b>Total: RM " + formatRM(total) + "</b>";
+
+  document.getElementById("annual").innerHTML =
+    "Annual Employee: RM " + formatRM(employee*12) + "<br>" +
+    "Annual Employer: RM " + formatRM(employer*12) + "<br><br>" +
+    "<b>Total Annual: RM " + formatRM(total*12) + "</b>";
+}
+</script>
+
+</body>
+</html>
