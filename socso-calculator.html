@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Malaysia SOCSO Calculator 2026 | Employee & Employer SOCSO Calculation</title>
+
+  <meta name="description" content="Free Malaysia salary calculator 2026. Calculate your net take-home pay after EPF, SOCSO, EIS and PCB tax deductions.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+    body {
+      font-family: Arial;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f6f6f6;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .layout {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      flex: 1;
+      min-width: 280px;
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 15px;
+      line-height: 1.6;
+    }
+
+    .seo {
+      margin-top: 40px;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      line-height: 1.7;
+    }
+
+    h1 { font-size: 26px; }
+    h2 { font-size: 20px; margin-top: 25px; }
+    h3 { font-size: 16px; margin-top: 18px; }
+
+    @media (max-width: 700px){
+      .layout {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h1>Malaysia SOCSO Calculator 2026</h1>
+
+  <p><b>Malaysia SOCSO Calculator:</b> Instantly estimate employee and employer SOCSO contributions based on monthly salary.</p>
+
+  <p>This tool helps employees and employers understand SOCSO deductions and annual contribution amounts in Malaysia.</p>
+
+  <input type="number" id="salary" placeholder="Enter monthly salary (RM)">
+  <button onclick="calculate()">Calculate SOCSO Contribution </button>
+
+  <!-- 🔥 MONTHLY + ANNUAL SIDE BY SIDE -->
+  <div class="layout">
+
+    <div class="box">
+      <h3>Monthly Breakdown</h3>
+      <div class="result" id="monthly"></div>
+    </div>
+
+    <div class="box">
+      <h3>Annual Breakdown</h3>
+      <div class="result" id="annual"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- SEO CONTENT -->
+<div class="seo">
+
+  <h2>Popular Salary Guides</h2>
+
+  <ul>
+    <li>EPF Calculator Malaysia</li>
+    <li>SOCSO Calculator Malaysia</li>
+    <li>PCB Tax Calculator Malaysia</li>
+    <li>Bonus Tax Calculator Malaysia</li>
+  </ul>
+  
+  <h2>How Salary Is Calculated in Malaysia</h2>
+
+  <p>
+    Gross salary is reduced by EPF contributions in Malaysia.
+  </p>
+
+  <h3>What is SOCSO in Malaysia?</h3>
+
+  <p>
+  SOCSO, also known as PERKESO, is Malaysia's social security organisation.
+  It provides protection for employees against workplace injuries,
+  occupational diseases, disability and other employment-related risks.
+  </p>
+
+  <p>
+  SOCSO contributions are shared between employers and employees.
+  The contribution amount depends on monthly wages and follows the official
+  SOCSO contribution schedule.
+  </p>
+
+  <p>
+  SOCSO benefits may include medical support, disability benefits,
+  dependant benefits and rehabilitation assistance for eligible workers.
+  </p>
+ 
+  <h2>Malaysia SOCSO Contribution Rates 2026</h2>
+
+  <p>
+  SOCSO contributions are shared between employers and employees.
+  The contribution amount depends on the employee's monthly wages and follows
+  the contribution schedule issued by PERKESO.
+  </p>
+
+  <p>
+  SOCSO provides protection against workplace injuries,
+  occupational diseases, invalidity and other employment-related risks.
+  Both employers and employees are generally required to contribute.
+  </p>
+
+  <h2>Example Salary Calculation (RM5,000 Monthly Salary)</h2>
+
+  <p>
+  For an employee earning RM5,000 per month, SOCSO contributions are shared between the employee and employer according to the official PERKESO contribution schedule.
+  After these deductions, the take-home salary will be lower than the gross salary.
+  </p>
+
+  <p>
+  For example, a RM5,000 monthly salary may result in deductions for retirement savings,
+  social security protection and income tax. The final net salary depends on the applicable
+  contribution and tax rates.
+  </p>
+
+  <p>
+  Use our Malaysia Salary Calculator above to estimate your monthly and annual take-home pay instantly.
+  </p>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>How is SOCSO calculated?</h3>
+  <p>
+  SOCSO contributions are based on monthly wages and the official PERKESO contribution table.
+  </p>
+
+  <h3>Is SOCSO mandatory in Malaysia?</h3>
+  <p>
+  SOCSO is generally mandatory for eligible employees and employers in Malaysia.
+  </p>
+
+  <h3>Who pays SOCSO?</h3>
+  <p>
+  Both employees and employers contribute to SOCSO according to the applicable contribution rates.
+  </p>
+
+  <h2>Related Calculators</h2>
+
+  <ul>
+    <li><a href="index.html">Salary Calculator</a></li>
+    <li><a href="epf-calculator.html">EPF Calculator</a></li>
+    <li><a href="pcb-tax-calculator.html">PCB Tax Calculator</a></li>
+  </ul>
+
+  </div>
+
+<script>
+function formatRM(v){
+  return v.toLocaleString('en-MY', {
+    minimumFractionDigits:2,
+    maximumFractionDigits:2
+  });
+}
+
+function calculate(){
+
+  let salary = parseFloat(document.getElementById("salary").value);
+
+  if(!salary){
+    document.getElementById("monthly").innerHTML = "Please enter salary";
+    document.getElementById("annual").innerHTML = "";
+    return;
+  }
+
+  // Estimated SOCSO
+  let employeeSOCSO = Math.min(salary * 0.005, 25);
+  let employerSOCSO = Math.min(salary * 0.0175, 90);
+
+  let totalSOCSO = employeeSOCSO + employerSOCSO;
+
+  let annualEmployee = employeeSOCSO * 12;
+  let annualEmployer = employerSOCSO * 12;
+  let annualTotal = totalSOCSO * 12;
+
+  document.getElementById("monthly").innerHTML =
+    "Monthly Salary: RM " + formatRM(salary) + "<br><br>" +
+    "Employee SOCSO: RM " + formatRM(employeeSOCSO) + "<br>" +
+    "Employer SOCSO: RM " + formatRM(employerSOCSO) + "<br>" +
+    "<b>Total SOCSO: RM " + formatRM(totalSOCSO) + "</b>";
+
+  document.getElementById("annual").innerHTML =
+    "Annual Employee SOCSO: RM " + formatRM(annualEmployee) + "<br>" +
+    "Annual Employer SOCSO: RM " + formatRM(annualEmployer) + "<br><br>" +
+    "<b>Total Annual SOCSO: RM " + formatRM(annualTotal) + "</b>";
+}
+</script>
+
+</body>
+</html>
