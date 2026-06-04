@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Malaysia PCB Tax Calculator 2026 | Monthly Tax Deduction Calculator</title>
 
-  <meta name="description" content="Free Malaysia PCB calculator 2026. Estimate monthly income tax (PCB) deductions instantly.">
+  <meta name="description" content="Free Malaysia PCB Tax Calculator 2026. Estimate monthly PCB tax deductions, annual income tax and take-home salary based on monthly salary.">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
@@ -19,11 +19,16 @@
       background: #f6f6f6;
     }
 
-    .card {
+    .card, .seo {
       background: white;
       padding: 25px;
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .seo {
+      margin-top: 30px;
+      line-height: 1.7;
     }
 
     .layout {
@@ -58,6 +63,33 @@
       margin-top: 15px;
       line-height: 1.6;
     }
+
+    .seo-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .card-link {
+      display: block;
+      padding: 15px;
+      background: white;
+      border-radius: 12px;
+      text-decoration: none;
+      color: black;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    h1 { font-size: 26px; }
+    h2 { font-size: 20px; margin-top: 25px; }
+    h3 { font-size: 16px; margin-top: 18px; }
+
+    @media (max-width: 700px){
+      .layout {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 
@@ -67,7 +99,9 @@
 
   <h1>Malaysia PCB Calculator 2026</h1>
 
-  <p>Estimate monthly income tax (PCB) deduction based on annual salary.</p>
+  <p><b>Malaysia PCB Calculator:</b> Estimate your monthly income tax deduction based on salary.</p>
+
+  <p>This tool helps you estimate monthly PCB tax and annual tax deduction in Malaysia.</p>
 
   <input type="number" id="salary" placeholder="Enter monthly salary (RM)">
   <button onclick="calculate()">Calculate PCB</button>
@@ -75,12 +109,12 @@
   <div class="layout">
 
     <div class="box">
-      <h3>Monthly</h3>
+      <h3>Monthly Breakdown</h3>
       <div class="result" id="monthly"></div>
     </div>
 
     <div class="box">
-      <h3>Annual</h3>
+      <h3>Annual Breakdown</h3>
       <div class="result" id="annual"></div>
     </div>
 
@@ -88,18 +122,142 @@
 
 </div>
 
-<div style="background:white;padding:20px;margin-top:30px;border-radius:12px;">
+<div class="seo">
 
-  <h2>What is PCB in Malaysia?</h2>
+  <h2>Related Salary Guides</h2>
+
+  <div class="seo-cards">
+
+    <a class="card-link" href="epf-guide.html">
+      <h3>EPF Guide Malaysia</h3>
+      <p>EPF contribution rates and retirement savings</p>
+    </a>
+
+    <a class="card-link" href="socso-guide.html">
+      <h3>SOCSO Guide Malaysia</h3>
+      <p>Work injury protection and employee benefits</p>
+    </a>
+
+    <a class="card-link" href="eis-guide.html">
+      <h3>EIS Guide Malaysia</h3>
+      <p>Employment insurance and unemployment support</p>
+    </a>
+
+    <a class="card-link" href="pcb-guide.html">
+      <h3>PCB Tax Guide Malaysia</h3>
+      <p>Monthly tax deduction explained simply</p>
+    </a>
+
+  </div>
+
+  <h2>What is PCB Tax in Malaysia?</h2>
+
   <p>
-    PCB (Potongan Cukai Bulanan) is a monthly tax deduction system for income tax in Malaysia.
+    PCB stands for Potongan Cukai Bulanan, also known as Monthly Tax Deduction.
+    It is Malaysia's monthly income tax deduction system.
   </p>
+
+  <p>
+    Instead of paying income tax in one large amount at the end of the year,
+    PCB allows tax to be deducted gradually from monthly salary.
+  </p>
+
+  <h2>How Does PCB Work?</h2>
+
+  <p>
+    Employers calculate PCB based on employee income and deduct the amount from salary every month.
+    The deducted PCB amount is then submitted to LHDN.
+  </p>
+
+  <p>
+    PCB helps employees spread their income tax payments across the year instead of paying everything at once.
+  </p>
+
+  <h2>Who Needs To Pay PCB?</h2>
+
+  <p>
+    Employees whose income exceeds the taxable threshold may be subject to PCB deductions.
+  </p>
+
+  <p>
+    Actual PCB depends on income level, tax reliefs, personal circumstances and current tax rules.
+  </p>
+
+  <h2>How Is PCB Calculated?</h2>
+
+  <p>
+    PCB is generally calculated based on estimated annual income.
+    Higher income usually results in higher monthly PCB deductions.
+  </p>
+
+  <p>
+    Our PCB calculator provides a quick estimate of monthly and annual PCB deductions based on salary.
+  </p>
+
+  <h2>Example PCB Calculation</h2>
+
+  <p>
+    For an employee earning RM5,000 per month, the annual salary is RM60,000.
+    PCB may apply depending on taxable income and available tax reliefs.
+  </p>
+
+  <p>
+    The calculator above estimates the monthly PCB amount and annual tax deduction for quick reference.
+  </p>
+
+  <h2>Why PCB Is Important</h2>
+
+  <ul>
+    <li>Spreads income tax payment across the year</li>
+    <li>Reduces year-end tax burden</li>
+    <li>Helps employees manage cash flow</li>
+    <li>Assists employers with payroll tax compliance</li>
+  </ul>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Is PCB mandatory in Malaysia?</h3>
+  <p>
+    Employers are generally required to deduct PCB from eligible employees according to applicable tax rules.
+  </p>
+
+  <h3>Is PCB the same as final income tax?</h3>
+  <p>
+    No. Final income tax is determined when the annual tax return is submitted.
+  </p>
+
+  <h3>Can PCB be refunded?</h3>
+  <p>
+    Yes. If excess tax has been deducted, the taxpayer may receive a refund after tax filing.
+  </p>
+
+  <h3>Does PCB reduce take-home pay?</h3>
+  <p>
+    Yes. PCB is deducted from monthly salary, so it reduces monthly take-home pay.
+  </p>
+
+  <h3>Can I calculate annual PCB?</h3>
+  <p>
+    Yes. This calculator estimates both monthly PCB and annual PCB deductions.
+  </p>
+
+  <h2>Related Calculators</h2>
+
+  <ul>
+    <li><a href="index.html">Salary Calculator</a></li>
+    <li><a href="epf-calculator.html">EPF Calculator</a></li>
+    <li><a href="socso-calculator.html">SOCSO Calculator</a></li>
+    <li><a href="eis-calculator.html">EIS Calculator</a></li>
+  </ul>
 
 </div>
 
 <script>
 function formatRM(v){
-  return v.toLocaleString('en-MY',{minimumFractionDigits:2,maximumFractionDigits:2});
+  return v.toLocaleString('en-MY',{
+    minimumFractionDigits:2,
+    maximumFractionDigits:2
+  });
 }
 
 function calculate(){
@@ -108,6 +266,7 @@ function calculate(){
 
   if(!salary){
     document.getElementById("monthly").innerHTML = "Please enter salary";
+    document.getElementById("annual").innerHTML = "";
     return;
   }
 
@@ -121,10 +280,12 @@ function calculate(){
   let tax = salary * taxRate;
 
   document.getElementById("monthly").innerHTML =
+    "Monthly Salary: RM " + formatRM(salary) + "<br>" +
     "Estimated PCB: RM " + formatRM(tax);
 
   document.getElementById("annual").innerHTML =
-    "Annual Tax: RM " + formatRM(tax * 12);
+    "Annual Salary: RM " + formatRM(annual) + "<br>" +
+    "Estimated Annual PCB: RM " + formatRM(tax * 12);
 }
 </script>
 
