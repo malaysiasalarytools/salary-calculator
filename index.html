@@ -69,6 +69,28 @@
       line-height: 1.7;
     }
 
+  .seo-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+    margin-top:20px;
+  }
+
+  .card-link{
+    display:block;
+    padding:15px;
+    background:white;
+    border-radius:12px;
+    text-decoration:none;
+    color:black;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+    transition:0.2s;
+  }
+
+  .card-link:hover{
+    transform:translateY(-3px);
+  }
+    
     h1 { font-size: 26px; }
     h2 { font-size: 20px; margin-top: 25px; }
     h3 { font-size: 16px; margin-top: 18px; }
@@ -114,12 +136,29 @@
 
   <h2>Popular Salary Guides</h2>
 
-  <ul>
-    <li><a href="epf-guide.html">What is EPF in Malaysia?</a></li>
-    <li><a href="socso-guide.html">What is SOCSO?</a></li>
-    <li><a href="pcb-guide.html">What is PCB Tax?</a></li>
-    <li><a href="eis-guide.html">What is EIS?</a></li>
-  </ul>
+  <div class="seo-cards">
+
+    <a class="card-link" href="epf-guide.html">
+      <h3>EPF Guide Malaysia</h3>
+      <p>What is EPF, contribution rates, withdrawal rules</p>
+    </a>
+
+    <a class="card-link" href="socso-guide.html">
+      <h3>SOCSO Guide Malaysia</h3>
+      <p>Work injury protection, benefits & coverage</p>
+    </a>
+
+    <a class="card-link" href="eis-guide.html">
+      <h3>EIS Guide Malaysia</h3>
+      <p>Unemployment benefits & eligibility</p>
+    </a>
+
+    <a class="card-link" href="pcb-guide.html">
+      <h3>PCB Tax Guide Malaysia</h3>
+      <p>Monthly tax deduction explained simply</p>
+    </a>
+
+  </div>
   
   <h2>How Salary Is Calculated in Malaysia</h2>
 
