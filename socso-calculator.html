@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
 
-  <title>Malaysia SOCSO Calculator 2026 | Employee & Employer SOCSO Calculation</title>
+  <title>Malaysia SOCSO Calculator 2026 | Employee & Employer SOCSO Contribution</title>
 
-  <meta name="description" content="Free Malaysia salary calculator 2026. Calculate your net take-home pay after EPF, SOCSO, EIS and PCB tax deductions.">
+  <meta name="description" content="Free Malaysia SOCSO Calculator 2026. Calculate employee and employer SOCSO contributions instantly. Estimate monthly and annual PERKESO contributions based on salary.">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -21,11 +21,17 @@
       background: #f6f6f6;
     }
 
-    .card {
+    .card,
+    .seo {
       background: white;
       padding: 25px;
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .seo {
+      margin-top: 30px;
+      line-height: 1.7;
     }
 
     .layout {
@@ -42,7 +48,8 @@
       border-radius: 10px;
     }
 
-    input, button {
+    input,
+    button {
       width: 100%;
       padding: 12px;
       margin-top: 10px;
@@ -61,12 +68,21 @@
       line-height: 1.6;
     }
 
-    .seo {
-      margin-top: 40px;
+    .seo-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .card-link {
+      display: block;
+      padding: 15px;
       background: white;
-      padding: 25px;
       border-radius: 12px;
-      line-height: 1.7;
+      text-decoration: none;
+      color: black;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
     }
 
     h1 { font-size: 26px; }
@@ -89,12 +105,11 @@
 
   <p><b>Malaysia SOCSO Calculator:</b> Instantly estimate employee and employer SOCSO contributions based on monthly salary.</p>
 
-  <p>This tool helps employees and employers understand SOCSO deductions and annual contribution amounts in Malaysia.</p>
+  <p>This tool helps employees and employers estimate monthly and annual PERKESO / SOCSO contribution amounts in Malaysia.</p>
 
   <input type="number" id="salary" placeholder="Enter monthly salary (RM)">
-  <button onclick="calculate()">Calculate SOCSO Contribution </button>
+  <button onclick="calculate()">Calculate SOCSO Contribution</button>
 
-  <!-- 🔥 MONTHLY + ANNUAL SIDE BY SIDE -->
   <div class="layout">
 
     <div class="box">
@@ -111,179 +126,151 @@
 
 </div>
 
-<!-- SEO CONTENT -->
 <div class="seo">
 
-<h2>Related Salary Guides</h2>
+  <h2>Related Salary Guides</h2>
 
-<ul>
-  <li><a href="epf-guide.html">EPF Guide Malaysia</a></li>
-  <li><a href="socso-guide.html">SOCSO Guide Malaysia</a></li>
-  <li><a href="eis-guide.html">EIS Guide Malaysia</a></li>
-  <li><a href="pcb-guide.html">PCB Tax Guide Malaysia</a></li>
-</ul>
+  <div class="seo-cards">
 
-<h2>What is SOCSO in Malaysia?</h2>
+    <a class="card-link" href="epf-guide.html">
+      <h3>EPF Guide Malaysia</h3>
+      <p>EPF contribution rates and retirement savings</p>
+    </a>
 
-<p>
-SOCSO, also known as PERKESO (Pertubuhan Keselamatan Sosial), is Malaysia's social security organisation that provides protection and financial assistance to employees who suffer from workplace accidents, occupational diseases, disability or other employment-related risks.
-</p>
+    <a class="card-link" href="socso-guide.html">
+      <h3>SOCSO Guide Malaysia</h3>
+      <p>Work injury protection and employee benefits</p>
+    </a>
 
-<p>
-SOCSO was established to ensure that employees and their dependants receive financial support and medical assistance when unexpected employment-related incidents occur.
-</p>
+    <a class="card-link" href="eis-guide.html">
+      <h3>EIS Guide Malaysia</h3>
+      <p>Employment insurance and unemployment support</p>
+    </a>
 
-<p>
-Most employers in Malaysia are required to register eligible employees under SOCSO and make monthly contributions according to the contribution rates prescribed by PERKESO.
-</p>
+    <a class="card-link" href="pcb-guide.html">
+      <h3>PCB Tax Guide Malaysia</h3>
+      <p>Monthly tax deduction explained simply</p>
+    </a>
 
-<h2>Who Needs To Contribute To SOCSO?</h2>
+  </div>
 
-<p>
-SOCSO contributions are generally mandatory for Malaysian employees and permanent residents working under a contract of service.
-</p>
+  <h2>What is SOCSO in Malaysia?</h2>
 
-<p>
-Both employers and employees contribute to SOCSO. The contribution amount depends on the employee's monthly salary and follows the official contribution schedule issued by PERKESO.
-</p>
+  <p>
+    SOCSO, also known as PERKESO, is Malaysia's social security organisation.
+    It provides protection and financial assistance to employees who suffer workplace injuries,
+    occupational diseases, disability or employment-related risks.
+  </p>
 
-<p>
-Employers are responsible for deducting the employee portion and remitting both employer and employee contributions to PERKESO every month.
-</p>
+  <p>
+    SOCSO is an important part of Malaysia's payroll system together with EPF, EIS and PCB.
+    While EPF focuses on retirement savings, SOCSO focuses on employee protection.
+  </p>
 
-<h2>What Benefits Does SOCSO Provide?</h2>
+  <h2>How Does SOCSO Work?</h2>
 
-<p>
-SOCSO provides several forms of protection and financial assistance for employees.
-</p>
+  <p>
+    Employers and employees contribute to SOCSO every month through payroll.
+    The contribution amount depends on the employee's monthly salary and the contribution schedule issued by PERKESO.
+  </p>
 
-<ul>
-  <li>Medical Benefits</li>
-  <li>Temporary Disablement Benefits</li>
-  <li>Permanent Disablement Benefits</li>
-  <li>Dependants' Benefits</li>
-  <li>Funeral Benefits</li>
-  <li>Rehabilitation Benefits</li>
-  <li>Education Benefits</li>
-</ul>
+  <p>
+    Employers are responsible for registering eligible employees, calculating the required contribution and remitting the payment to PERKESO.
+  </p>
 
-<p>
-These benefits help employees and their families cope with financial difficulties arising from workplace accidents, disabilities or death.
-</p>
+  <h2>Who Needs To Contribute To SOCSO?</h2>
 
-<h2>How Is SOCSO Calculated?</h2>
+  <p>
+    Most employees working under a contract of service in Malaysia are generally covered by SOCSO.
+    Both employers and employees may be required to contribute according to the applicable contribution category.
+  </p>
 
-<p>
-SOCSO contributions are calculated based on the employee's monthly wages and the official contribution table published by PERKESO.
-</p>
+  <p>
+    The employee contribution is usually deducted from monthly salary, while the employer contribution is paid separately by the employer.
+  </p>
 
-<p>
-The contribution amount is shared between employers and employees. Higher salaries generally result in higher contribution amounts, subject to contribution limits established by PERKESO.
-</p>
+  <h2>Benefits Provided Under SOCSO</h2>
 
-<p>
-Our SOCSO Calculator above provides an estimated contribution amount for both employees and employers based on monthly salary.
-</p>
+  <p>
+    SOCSO provides several forms of protection for eligible employees and their dependants.
+  </p>
 
-<h2>Example SOCSO Calculation</h2>
+  <ul>
+    <li>Employment injury benefits</li>
+    <li>Medical benefits</li>
+    <li>Temporary disability benefits</li>
+    <li>Permanent disability benefits</li>
+    <li>Dependants' benefits</li>
+    <li>Funeral benefits</li>
+    <li>Rehabilitation support</li>
+  </ul>
 
-<p>
-Assume an employee earns RM5,000 per month.
-</p>
+  <h2>How Is SOCSO Calculated?</h2>
 
-<p>
-The employee and employer will each contribute a portion towards SOCSO according to the applicable contribution category.
-</p>
+  <p>
+    SOCSO contributions are calculated based on monthly wages and the official PERKESO contribution table.
+    The contribution is shared between employer and employee.
+  </p>
 
-<p>
-Using the calculator above, you can estimate:
-</p>
+  <p>
+    Our SOCSO Calculator above gives a quick estimate of monthly and annual SOCSO contributions based on salary.
+  </p>
 
-<ul>
-  <li>Employee SOCSO Contribution</li>
-  <li>Employer SOCSO Contribution</li>
-  <li>Total Monthly SOCSO</li>
-  <li>Total Annual SOCSO</li>
-</ul>
+  <h2>Example SOCSO Calculation</h2>
 
-<p>
-The actual contribution may vary depending on the latest PERKESO contribution schedule.
-</p>
+  <p>
+    For an employee earning RM5,000 per month, both the employer and employee contribute to SOCSO according to the applicable contribution category.
+  </p>
 
-<h2>Why Is SOCSO Important?</h2>
+  <p>
+    The calculator above estimates the employee contribution, employer contribution, total monthly SOCSO and total annual SOCSO.
+  </p>
 
-<p>
-Many employees focus only on their monthly salary and EPF savings, but SOCSO provides an additional layer of protection that can become extremely valuable when accidents or disabilities occur.
-</p>
+  <h2>Why SOCSO Is Important</h2>
 
-<p>
-Without SOCSO protection, employees may need to bear significant medical costs and income losses themselves.
-</p>
+  <p>
+    SOCSO helps protect employees from financial hardship caused by workplace accidents, disability or employment-related risks.
+  </p>
 
-<p>
-SOCSO helps reduce financial hardship by providing benefits and compensation to eligible workers and their dependants.
-</p>
+  <p>
+    Without SOCSO, employees may need to bear medical costs, income loss and rehabilitation expenses themselves.
+  </p>
 
-<h2>SOCSO Contribution Rates 2026</h2>
+  <h2>Frequently Asked Questions</h2>
 
-<p>
-Contribution rates are determined by PERKESO and may be revised from time to time.
-</p>
+  <h3>Is SOCSO mandatory in Malaysia?</h3>
+  <p>
+    Yes. SOCSO is generally mandatory for eligible employees and employers in Malaysia.
+  </p>
 
-<p>
-Employers should always refer to the latest official contribution schedules when preparing payroll calculations.
-</p>
+  <h3>Who manages SOCSO?</h3>
+  <p>
+    SOCSO is managed by PERKESO, Malaysia's Social Security Organisation.
+  </p>
 
-<p>
-Employees can use our calculator above for quick estimates before payroll processing.
-</p>
+  <h3>Does SOCSO reduce take-home pay?</h3>
+  <p>
+    Yes. The employee portion of SOCSO is deducted from monthly salary.
+  </p>
 
-<h2>Frequently Asked Questions</h2>
+  <h3>Who pays SOCSO contributions?</h3>
+  <p>
+    Both employers and employees contribute according to the applicable PERKESO contribution schedule.
+  </p>
 
-<h3>Is SOCSO mandatory in Malaysia?</h3>
+  <h3>Can I calculate annual SOCSO contributions?</h3>
+  <p>
+    Yes. This calculator estimates both monthly and annual SOCSO contributions.
+  </p>
 
-<p>
-Yes. SOCSO is generally mandatory for eligible employees and employers in Malaysia.
-</p>
+  <h2>Related Calculators</h2>
 
-<h3>Who pays SOCSO contributions?</h3>
-
-<p>
-Both employees and employers contribute to SOCSO according to the applicable contribution rates.
-</p>
-
-<h3>What is PERKESO?</h3>
-
-<p>
-PERKESO is the Malaysian Social Security Organisation responsible for administering SOCSO benefits and contributions.
-</p>
-
-<h3>Can foreign workers contribute to SOCSO?</h3>
-
-<p>
-Certain categories of foreign workers may also be covered under SOCSO regulations. Employers should refer to current PERKESO guidelines.
-</p>
-
-<h3>Does SOCSO affect take-home salary?</h3>
-
-<p>
-Yes. The employee portion of SOCSO contributions is deducted from monthly salary and therefore reduces take-home pay.
-</p>
-
-<h3>Can I calculate annual SOCSO contributions?</h3>
-
-<p>
-Yes. Our calculator provides both monthly and annual contribution estimates for employees and employers.
-</p>
-
-<h2>Related Calculators</h2>
-
-<ul>
-  <li><a href="index.html">Salary Calculator</a></li>
-  <li><a href="epf-calculator.html">EPF Calculator</a></li>
-  <li><a href="eis-calculator.html">EIS Calculator</a></li>
-  <li><a href="pcb-calculator.html">PCB Tax Calculator</a></li>
-</ul>
+  <ul>
+    <li><a href="index.html">Salary Calculator</a></li>
+    <li><a href="epf-calculator.html">EPF Calculator</a></li>
+    <li><a href="eis-calculator.html">EIS Calculator</a></li>
+    <li><a href="pcb-calculator.html">PCB Tax Calculator</a></li>
+  </ul>
 
 </div>
 
@@ -305,26 +292,21 @@ function calculate(){
     return;
   }
 
-  // Estimated SOCSO
   let employeeSOCSO = Math.min(salary * 0.005, 25);
   let employerSOCSO = Math.min(salary * 0.0175, 90);
 
   let totalSOCSO = employeeSOCSO + employerSOCSO;
 
-  let annualEmployee = employeeSOCSO * 12;
-  let annualEmployer = employerSOCSO * 12;
-  let annualTotal = totalSOCSO * 12;
-
   document.getElementById("monthly").innerHTML =
     "Monthly Salary: RM " + formatRM(salary) + "<br><br>" +
     "Employee SOCSO: RM " + formatRM(employeeSOCSO) + "<br>" +
-    "Employer SOCSO: RM " + formatRM(employerSOCSO) + "<br>" +
+    "Employer SOCSO: RM " + formatRM(employerSOCSO) + "<br><br>" +
     "<b>Total SOCSO: RM " + formatRM(totalSOCSO) + "</b>";
 
   document.getElementById("annual").innerHTML =
-    "Annual Employee SOCSO: RM " + formatRM(annualEmployee) + "<br>" +
-    "Annual Employer SOCSO: RM " + formatRM(annualEmployer) + "<br><br>" +
-    "<b>Total Annual SOCSO: RM " + formatRM(annualTotal) + "</b>";
+    "Annual Employee SOCSO: RM " + formatRM(employeeSOCSO * 12) + "<br>" +
+    "Annual Employer SOCSO: RM " + formatRM(employerSOCSO * 12) + "<br><br>" +
+    "<b>Total Annual SOCSO: RM " + formatRM(totalSOCSO * 12) + "</b>";
 }
 </script>
 
