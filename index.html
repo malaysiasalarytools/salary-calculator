@@ -4,126 +4,96 @@
 <head>
   <meta charset="UTF-8">
 
-  <title>Malaysia Salary Calculator 2026 | Net Take Home Pay After EPF, SOCSO & Tax</title>
+  <title>Malaysia Salary Calculator 2026 | Net Take Home Pay After EPF, SOCSO, EIS & PCB</title>
 
-  <meta name="description" content="Free Malaysia salary calculator 2026. Calculate your net take-home pay after EPF, SOCSO, EIS and PCB tax deductions.">
+  <meta name="description" content="Free Malaysia Salary Calculator 2026. Calculate net take-home pay after EPF, SOCSO, EIS and PCB tax deductions. Estimate monthly and annual salary breakdown instantly.">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="robots" content="index, follow">
 
   <style>
-   body {
-  font-family: Arial;
-  background: linear-gradient(135deg, #f6f7fb, #eef1f7);
-  margin: 0;
-  padding: 20px;
-}
+    body {
+      font-family: Arial;
+      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+      margin: 0;
+      padding: 20px;
+    }
 
-.card {
-  background: white;
-  max-width: 720px;
-  margin: 30px auto;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
+    .card,
+    .seo {
+      background: white;
+      max-width: 720px;
+      margin: 30px auto;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
 
-/* calculator layout */
-.layout {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
+    .seo {
+      line-height: 1.7;
+    }
 
-/* result boxes */
-.box {
-  flex: 1;
-  min-width: 260px;
-  background: #f8f9fc;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  padding: 15px;
-}
+    .layout {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
 
-/* input */
-input {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  font-size: 16px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-}
+    .box {
+      flex: 1;
+      min-width: 260px;
+      background: #f8f9fc;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 15px;
+    }
 
-/* button */
-button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  font-size: 16px;
-  background: #111;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
-  transition: 0.2s;
-}
+    input,
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
 
-button:hover {
-  background: #333;
-  transform: translateY(-2px);
-}
+    input {
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
 
-/* result text */
-.result {
-  margin-top: 10px;
-  line-height: 1.6;
-}
+    button {
+      background: #111;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-/* SEO section stays wide but controlled */
-.seo {
-  margin: 40px auto;
-  max-width: 720px;
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  line-height: 1.7;
-}
+    .result {
+      margin-top: 10px;
+      line-height: 1.6;
+    }
 
-/* SEO cards */
-.seo-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
-}
+    .seo-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
 
-.card-link {
-  display: block;
-  padding: 15px;
-  background: white;
-  border-radius: 12px;
-  text-decoration: none;
-  color: black;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-  transition: 0.2s;
-}
+    .card-link {
+      display: block;
+      padding: 15px;
+      background: white;
+      border-radius: 12px;
+      text-decoration: none;
+      color: black;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
 
-.card-link:hover {
-  transform: translateY(-3px);
-}
-
-/* mobile */
-@media (max-width: 700px) {
-  .layout {
-    flex-direction: column;
-  }
-
-  .card {
-    margin: 10px;
-  }
-    
     h1 { font-size: 26px; }
     h2 { font-size: 20px; margin-top: 25px; }
     h3 { font-size: 16px; margin-top: 18px; }
@@ -131,6 +101,16 @@ button:hover {
     @media (max-width: 700px){
       .layout {
         flex-direction: column;
+      }
+
+      body {
+        padding: 10px;
+      }
+
+      .card,
+      .seo {
+        margin: 15px auto;
+        padding: 18px;
       }
     }
   </style>
@@ -142,12 +122,13 @@ button:hover {
 
   <h1>Malaysia Salary Calculator 2026</h1>
 
-  <p>Calculate your net take-home salary after EPF, SOCSO, EIS and PCB tax deductions.</p>
+  <p><b>Malaysia Salary Calculator:</b> Calculate your estimated net take-home pay after EPF, SOCSO, EIS and PCB deductions.</p>
+
+  <p>This tool gives you a monthly and annual salary breakdown based on your gross monthly salary.</p>
 
   <input type="number" id="salary" placeholder="Enter monthly salary (RM)">
   <button onclick="calculate()">Calculate Net Salary</button>
 
-  <!-- 🔥 MONTHLY + ANNUAL SIDE BY SIDE -->
   <div class="layout">
 
     <div class="box">
@@ -164,7 +145,6 @@ button:hover {
 
 </div>
 
-<!-- SEO CONTENT -->
 <div class="seo">
 
   <h2>Related Salary Guides</h2>
@@ -192,102 +172,78 @@ button:hover {
     </a>
 
   </div>
-  
+
   <h2>How Salary Is Calculated in Malaysia</h2>
 
   <p>
-    Gross salary is reduced by EPF, SOCSO, EIS and PCB tax in Malaysia.
-  </p>
-
-  <h3>What is EPF in Malaysia?</h3>
-
-  <p>
-  The Employees Provident Fund (EPF), also known as KWSP,
-  is Malaysia's mandatory retirement savings scheme for employees.
-  Both employees and employers contribute a percentage of monthly salary
-  into the EPF account.
+    In Malaysia, gross salary is usually reduced by statutory deductions such as EPF, SOCSO, EIS and PCB before the employee receives net take-home pay.
   </p>
 
   <p>
-  EPF contributions help employees build long-term retirement savings.
-  The contribution rate varies depending on age and government policy.
-  For most employees below 60 years old, employee contribution is generally 11% of monthly salary.
+    Gross salary is the amount before deductions. Net salary is the amount received after deductions.
+  </p>
+
+  <h2>Main Salary Deductions in Malaysia</h2>
+
+  <h3>EPF</h3>
+  <p>
+    EPF, also known as KWSP, is Malaysia's retirement savings scheme. Employees and employers contribute monthly based on salary.
+  </p>
+
+  <h3>SOCSO</h3>
+  <p>
+    SOCSO provides protection for workplace injuries, occupational diseases and employment-related risks.
+  </p>
+
+  <h3>EIS</h3>
+  <p>
+    EIS provides employment insurance support for eligible employees who lose their jobs.
+  </p>
+
+  <h3>PCB</h3>
+  <p>
+    PCB is Malaysia's monthly income tax deduction system. It spreads income tax payments throughout the year.
+  </p>
+
+  <h2>Example Salary Calculation</h2>
+
+  <p>
+    For example, an employee earning RM5,000 per month may have deductions for EPF, SOCSO, EIS and PCB.
   </p>
 
   <p>
-  Funds accumulated in EPF can be withdrawn under specific conditions,
-  including retirement, housing purchases, education and approved medical expenses.
+    After these deductions, the employee's take-home salary will be lower than the gross salary.
   </p>
 
-  <h2>Malaysia EPF Contribution Rates 2026</h2>
+  <h2>Why Use This Salary Calculator?</h2>
 
-  <p>
-  For most Malaysian employees below the age of 60,
-  the employee EPF contribution rate is generally 11% of monthly wages.
-  Employers are also required to contribute to EPF on behalf of employees,
-  subject to prevailing EPF contribution schedules.
-  </p>
-
-  <p>
-  EPF contribution rates may be revised by the government from time to time.
-  Employees should refer to official EPF guidelines for the latest contribution rates.
-  </p>
-  
-  <h3>What is SOCSO?</h3>
-  <p>SOCSO provides protection for workplace injury and disability.</p>
-
-  <h2>Malaysia SOCSO Contribution Rates 2026</h2>
-
-  <p>
-  SOCSO contributions are shared between employers and employees.
-  The contribution amount depends on the employee's monthly wages and follows
-  the contribution schedule issued by PERKESO.
-  </p>
-
-  <p>
-  SOCSO provides protection against workplace injuries,
-  occupational diseases, invalidity and other employment-related risks.
-  Both employers and employees are generally required to contribute.
-  </p>
-  
-  <h3>What is EIS?</h3>
-  <p>EIS gives financial support if you lose your job.</p>
-
-  <h3>What is PCB?</h3>
-  <p>PCB is monthly income tax deduction based on Malaysian tax system.</p>
-
-  <h2>Example Salary Calculation (RM5,000 Monthly Salary)</h2>
-
-  <p>
-  For an employee earning RM5,000 per month, deductions may include EPF, SOCSO, EIS and PCB tax.
-  After these deductions, the take-home salary will be lower than the gross salary.
-  </p>
-
-  <p>
-  For example, a RM5,000 monthly salary may result in deductions for retirement savings,
-  social security protection and income tax. The final net salary depends on the applicable
-  contribution and tax rates.
-  </p>
-
-  <p>
-  Use our Malaysia Salary Calculator above to estimate your monthly and annual take-home pay instantly.
-  </p>
+  <ul>
+    <li>Estimate monthly net salary</li>
+    <li>View annual salary breakdown</li>
+    <li>Understand EPF, SOCSO, EIS and PCB deductions</li>
+    <li>Compare gross salary and take-home pay</li>
+  </ul>
 
   <h2>Frequently Asked Questions</h2>
 
-  <h3>How much EPF do employees contribute?</h3>
+  <h3>What is net salary?</h3>
   <p>
-  Most Malaysian employees contribute 11% of their monthly salary to EPF, subject to current EPF regulations.
+    Net salary is the amount received after deductions such as EPF, SOCSO, EIS and PCB.
   </p>
 
-  <h3>Is SOCSO mandatory in Malaysia?</h3>
+  <h3>Is this salary calculator exact?</h3>
   <p>
-  SOCSO contributions are generally mandatory for eligible employees and employers in Malaysia.
+    This calculator provides an estimate. Actual payroll deductions may vary depending on official rates, tax reliefs and personal circumstances.
+  </p>
+
+  <h3>Does EPF reduce take-home pay?</h3>
+  <p>
+    Yes. The employee portion of EPF is deducted from monthly salary.
   </p>
 
   <h3>What is PCB tax?</h3>
   <p>
-  PCB (Potongan Cukai Bulanan) is a monthly tax deduction system used to collect income tax throughout the year.
+    PCB is Malaysia's monthly income tax deduction system administered through payroll.
   </p>
 
   <h2>Related Calculators</h2>
@@ -299,7 +255,7 @@ button:hover {
     <li><a href="pcb-calculator.html">PCB Tax Calculator</a></li>
   </ul>
 
-  </div>
+</div>
 
 <script>
 function formatRM(v){
@@ -334,25 +290,26 @@ function calculate(){
 
   let net = salary - epf - socso - eis - tax;
 
-  // MONTHLY
   document.getElementById("monthly").innerHTML =
-    "Gross: RM " + formatRM(salary) + "<br>" +
+    "Gross Salary: RM " + formatRM(salary) + "<br>" +
     "EPF: RM " + formatRM(epf) + "<br>" +
     "SOCSO: RM " + formatRM(socso) + "<br>" +
     "EIS: RM " + formatRM(eis) + "<br>" +
-    "Tax: RM " + formatRM(tax) + "<br><br>" +
-    "<b>Net: RM " + formatRM(net) + "</b>";
+    "Estimated PCB: RM " + formatRM(tax) + "<br><br>" +
+    "<b>Net Salary: RM " + formatRM(net) + "</b>";
 
-  // ANNUAL
   document.getElementById("annual").innerHTML =
-    "Gross: RM " + formatRM(annual) + "<br>" +
-    "EPF: RM " + formatRM(epf * 12) + "<br>" +
-    "SOCSO: RM " + formatRM(socso * 12) + "<br>" +
-    "EIS: RM " + formatRM(eis * 12) + "<br>" +
-    "Tax: RM " + formatRM(tax * 12) + "<br><br>" +
-    "<b>Net: RM " + formatRM(net * 12) + "</b>";
+    "Annual Gross Salary: RM " + formatRM(annual) + "<br>" +
+    "Annual EPF: RM " + formatRM(epf * 12) + "<br>" +
+    "Annual SOCSO: RM " + formatRM(socso * 12) + "<br>" +
+    "Annual EIS: RM " + formatRM(eis * 12) + "<br>" +
+    "Annual PCB: RM " + formatRM(tax * 12) + "<br><br>" +
+    "<b>Annual Net Salary: RM " + formatRM(net * 12) + "</b>";
 }
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
