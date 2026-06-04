@@ -13,88 +13,115 @@
   <meta name="robots" content="index, follow">
 
   <style>
-    body {
-    font-family: Arial;
-    background: linear-gradient(135deg, #f6f7fb, #eef1f7);
-    margin: 0;
-    padding: 30px;
+body {
+  font-family: Arial;
+  background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+  margin: 0;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  max-width: 720px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* calculator layout */
+.layout {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* result boxes */
+.box {
+  flex: 1;
+  min-width: 260px;
+  background: #f8f9fc;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 15px;
+}
+
+/* input */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* button */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 16px;
+  background: #111;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+/* result text */
+.result {
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* SEO section stays wide but controlled */
+.seo {
+  margin: 40px auto;
+  max-width: 720px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  line-height: 1.7;
+}
+
+/* SEO cards */
+.seo-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.card-link {
+  display: block;
+  padding: 15px;
+  background: white;
+  border-radius: 12px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  transition: 0.2s;
+}
+
+.card-link:hover {
+  transform: translateY(-3px);
+}
+
+/* mobile */
+@media (max-width: 700px) {
+  .layout {
+    flex-direction: column;
   }
 
   .card {
-    background: white;
-    max-width: 900px;
-    margin: auto;
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  }
-
-    .layout {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-  .box {
-    background: #f8f9fc;
-    border: 1px solid #eee;
-  }
-
-    input, button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      font-size: 16px;
-    }
-
-  button {
-    background: #111;
-    color: white;
-    border: none;
-    padding: 14px;
-    border-radius: 10px;
-    font-weight: bold;
-    transition: 0.2s;
-  }
-
-  button:hover {
-    background: #333;
-    transform: translateY(-2px);
-  }
-
-    .result {
-      margin-top: 15px;
-      line-height: 1.6;
-    }
-
-    .seo {
-      margin-top: 40px;
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      line-height: 1.7;
-    }
-
-  .seo-cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:15px;
-    margin-top:20px;
-  }
-
-  .card-link{
-    display:block;
-    padding:15px;
-    background:white;
-    border-radius:12px;
-    text-decoration:none;
-    color:black;
-    box-shadow:0 2px 10px rgba(0,0,0,0.06);
-    transition:0.2s;
-  }
-
-  .card-link:hover{
-    transform:translateY(-3px);
+    margin: 10px;
   }
     
     h1 { font-size: 26px; }
