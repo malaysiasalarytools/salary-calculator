@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Malaysia Annual Leave Calculator 2026 | Leave Entitlement Calculator</title>
+
+  <meta name="description" content="Free Malaysia Annual Leave Calculator 2026. Estimate annual leave entitlement based on years of service and employment period.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+      margin: 0;
+      padding: 20px;
+    }
+
+    .card,
+    .seo {
+      background: white;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .seo { line-height: 1.7; }
+
+    .layout {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      flex: 1;
+      min-width: 320px;
+      background: #f8f9fc;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 15px;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    input, select {
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+
+    button {
+      background: #111;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .seo-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .card-link {
+      display: block;
+      padding: 15px;
+      background: white;
+      border-radius: 12px;
+      text-decoration: none;
+      color: black;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    h1 { font-size: 26px; }
+    h2 { font-size: 20px; margin-top: 25px; }
+    h3 { font-size: 16px; margin-top: 18px; }
+
+    @media (max-width: 700px){
+      .layout { flex-direction: column; }
+      body { padding: 10px; }
+      .card, .seo {
+        margin: 15px auto;
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h1>Malaysia Annual Leave Calculator 2026</h1>
+
+  <p><b>Malaysia Annual Leave Calculator:</b> Estimate annual leave entitlement based on years of service and months worked.</p>
+
+  <p>This calculator helps employees estimate annual leave entitlement under a simple Malaysia employment leave calculation.</p>
+
+  <select id="service">
+    <option value="">Select Years of Service</option>
+    <option value="8">Less than 2 years</option>
+    <option value="12">2 to 5 years</option>
+    <option value="16">More than 5 years</option>
+  </select>
+
+  <input type="number" id="months" placeholder="Months worked in the year (1 - 12)">
+
+  <button onclick="calculate()">Calculate Annual Leave</button>
+
+  <div class="layout">
+
+    <div class="box">
+      <h3>Leave Entitlement</h3>
+      <div class="result" id="monthly"></div>
+    </div>
+
+    <div class="box">
+      <h3>Pro-Rated Leave</h3>
+      <div class="result" id="annual"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="seo">
+
+  <h2>Related Salary Guides</h2>
+
+  <div class="seo-cards">
+
+    <a class="card-link" href="epf-guide.html">
+      <h3>EPF Guide Malaysia</h3>
+      <p>EPF contribution rates and retirement savings</p>
+    </a>
+
+    <a class="card-link" href="socso-guide.html">
+      <h3>SOCSO Guide Malaysia</h3>
+      <p>Work injury protection and employee benefits</p>
+    </a>
+
+    <a class="card-link" href="eis-guide.html">
+      <h3>EIS Guide Malaysia</h3>
+      <p>Employment insurance and unemployment support</p>
+    </a>
+
+    <a class="card-link" href="pcb-guide.html">
+      <h3>PCB Tax Guide Malaysia</h3>
+      <p>Monthly tax deduction explained simply</p>
+    </a>
+
+  </div>
+
+  <h2>What Is Annual Leave In Malaysia?</h2>
+
+  <p>
+    Annual leave is paid leave that employees may take during the year while still receiving salary.
+    In Malaysia, minimum annual leave entitlement generally depends on the employee's length of service.
+  </p>
+
+  <h2>How Is Annual Leave Calculated?</h2>
+
+  <p>
+    A common simple approach is to determine the employee's annual leave entitlement based on years of service,
+    then pro-rate the entitlement based on the number of months worked during the year.
+  </p>
+
+  <p>
+    This calculator uses a simple pro-rated formula:
+  </p>
+
+  <p>
+    Annual Leave Entitlement × Months Worked ÷ 12
+  </p>
+
+  <h2>Malaysia Annual Leave Entitlement</h2>
+
+  <ul>
+    <li>Less than 2 years of service: 8 days</li>
+    <li>2 to 5 years of service: 12 days</li>
+    <li>More than 5 years of service: 16 days</li>
+  </ul>
+
+  <h2>Example Annual Leave Calculation</h2>
+
+  <p>
+    If an employee is entitled to 12 days of annual leave and worked 6 months in the year,
+    the pro-rated leave entitlement is 12 × 6 ÷ 12 = 6 days.
+  </p>
+
+  <h2>Why Use This Annual Leave Calculator?</h2>
+
+  <ul>
+    <li>Estimate annual leave entitlement</li>
+    <li>Calculate pro-rated leave</li>
+    <li>Understand leave entitlement by years of service</li>
+    <li>Useful for employees and small businesses</li>
+  </ul>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Is this annual leave calculator exact?</h3>
+  <p>
+    This calculator provides an estimate only. Actual entitlement may depend on employment contract, company policy and applicable law.
+  </p>
+
+  <h3>How many annual leave days do employees get in Malaysia?</h3>
+  <p>
+    Minimum annual leave entitlement commonly depends on length of service: 8, 12 or 16 days.
+  </p>
+
+  <h3>Can annual leave be pro-rated?</h3>
+  <p>
+    Yes. Annual leave is often pro-rated when an employee joins or leaves during the year.
+  </p>
+
+  <h2>Related Calculators</h2>
+
+  <ul>
+    <li><a href="index.html">Salary Calculator</a></li>
+    <li><a href="epf-calculator.html">EPF Calculator</a></li>
+    <li><a href="socso-calculator.html">SOCSO Calculator</a></li>
+    <li><a href="eis-calculator.html">EIS Calculator</a></li>
+    <li><a href="pcb-calculator.html">PCB Tax Calculator</a></li>
+    <li><a href="bonus-calculator.html">Bonus Calculator</a></li>
+    <li><a href="overtime-calculator.html">Overtime Calculator</a></li>
+  </ul>
+
+</div>
+
+<script>
+function calculate(){
+
+  let entitlement = parseFloat(document.getElementById("service").value);
+  let months = parseFloat(document.getElementById("months").value);
+
+  if(!entitlement || !months || months < 1 || months > 12){
+    document.getElementById("monthly").innerHTML =
+      "Please select years of service and enter months worked between 1 and 12.";
+    document.getElementById("annual").innerHTML = "";
+    return;
+  }
+
+  let prorated = entitlement * months / 12;
+
+  document.getElementById("monthly").innerHTML =
+    "Full-Year Entitlement: " + entitlement + " days<br>" +
+    "Months Worked: " + months + " months";
+
+  document.getElementById("annual").innerHTML =
+    "Pro-Rated Leave: " + prorated.toFixed(2) + " days<br><br>" +
+    "<b>Estimated Leave Entitlement: " + prorated.toFixed(2) + " days</b>";
+}
+</script>
+
+</body>
+</html>
