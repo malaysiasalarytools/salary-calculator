@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Malaysia Public Holiday Calculator 2026 | Paid Leave Calculator</title>
+
+  <meta name="description" content="Free Malaysia Public Holiday Calculator 2026. Calculate total paid days off by combining annual leave, public holidays and other paid leave days.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+      margin: 0;
+      padding: 20px;
+    }
+
+    .card,
+    .seo {
+      background: white;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .seo { line-height: 1.7; }
+
+    .layout {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      flex: 1;
+      min-width: 320px;
+      background: #f8f9fc;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 15px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    input {
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+
+    button {
+      background: #111;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .seo-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .card-link {
+      display: block;
+      padding: 15px;
+      background: white;
+      border-radius: 12px;
+      text-decoration: none;
+      color: black;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    h1 { font-size: 26px; }
+    h2 { font-size: 20px; margin-top: 25px; }
+    h3 { font-size: 16px; margin-top: 18px; }
+
+    @media (max-width: 700px){
+      .layout { flex-direction: column; }
+      body { padding: 10px; }
+      .card, .seo {
+        margin: 15px auto;
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h1>Malaysia Public Holiday Calculator 2026</h1>
+
+  <p><b>Malaysia Public Holiday Calculator:</b> Estimate total paid days off by combining annual leave, public holidays and other paid leave.</p>
+
+  <p>Enter your annual leave, public holidays and other paid leave days to estimate your total paid days off.</p>
+
+  <input type="number" id="annualLeave" placeholder="Annual Leave Days">
+
+  <input type="number" id="publicHoliday" placeholder="Public Holiday Days">
+
+  <input type="number" id="otherLeave" placeholder="Other Paid Leave Days">
+
+  <button onclick="calculate()">Calculate Paid Days Off</button>
+
+  <div class="layout">
+
+    <div class="box">
+      <h3>Total Paid Days Off</h3>
+      <div class="result" id="monthly"></div>
+    </div>
+
+    <div class="box">
+      <h3>Working Days Estimate</h3>
+      <div class="result" id="annual"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="seo">
+
+  <h2>Related Salary Guides</h2>
+
+  <div class="seo-cards">
+
+    <a class="card-link" href="epf-guide.html">
+      <h3>EPF Guide Malaysia</h3>
+      <p>EPF contribution rates and retirement savings</p>
+    </a>
+
+    <a class="card-link" href="socso-guide.html">
+      <h3>SOCSO Guide Malaysia</h3>
+      <p>Work injury protection and employee benefits</p>
+    </a>
+
+    <a class="card-link" href="eis-guide.html">
+      <h3>EIS Guide Malaysia</h3>
+      <p>Employment insurance and unemployment support</p>
+    </a>
+
+    <a class="card-link" href="pcb-guide.html">
+      <h3>PCB Tax Guide Malaysia</h3>
+      <p>Monthly tax deduction explained simply</p>
+    </a>
+
+  </div>
+
+  <h2>What Is A Public Holiday Calculator?</h2>
+
+  <p>
+    A public holiday calculator helps estimate total paid days off by combining annual leave, public holidays and other paid leave days.
+  </p>
+
+  <p>
+    In Malaysia, employees may receive paid annual leave and paid public holidays depending on employment terms, company policy and applicable regulations.
+  </p>
+
+  <h2>How Is Total Paid Leave Calculated?</h2>
+
+  <p>
+    This calculator adds annual leave days, public holiday days and other paid leave days together.
+  </p>
+
+  <p>
+    The formula used is:
+  </p>
+
+  <p>
+    Total Paid Days Off = Annual Leave + Public Holidays + Other Paid Leave
+  </p>
+
+  <h2>Example Public Holiday Calculation</h2>
+
+  <p>
+    If an employee has 12 annual leave days, 18 public holidays and 2 other paid leave days, the total paid days off is 32 days.
+  </p>
+
+  <h2>Why Use This Public Holiday Calculator?</h2>
+
+  <ul>
+    <li>Estimate total paid days off</li>
+    <li>Combine annual leave and public holidays</li>
+    <li>Plan yearly leave more easily</li>
+    <li>Useful for employees and small businesses</li>
+  </ul>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Are public holidays paid in Malaysia?</h3>
+  <p>
+    Many employees are entitled to paid public holidays, subject to employment terms and applicable law.
+  </p>
+
+  <h3>Is this calculator exact?</h3>
+  <p>
+    This calculator provides a simple estimate. Actual entitlement may depend on company policy and employment terms.
+  </p>
+
+  <h3>Can I include annual leave?</h3>
+  <p>
+    Yes. You can enter annual leave days, public holidays and other paid leave days.
+  </p>
+
+  <h2>Related Calculators</h2>
+
+  <ul>
+    <li><a href="index.html">Salary Calculator</a></li>
+    <li><a href="annual-leave-calculator.html">Annual Leave Calculator</a></li>
+    <li><a href="overtime-calculator.html">Overtime Calculator</a></li>
+    <li><a href="bonus-calculator.html">Bonus Calculator</a></li>
+    <li><a href="salary-increment-calculator.html">Salary Increment Calculator</a></li>
+    <li><a href="loan-calculator.html">Loan Calculator</a></li>
+    <li><a href="payslip-generator.html">Payslip Generator</a></li>
+  </ul>
+
+</div>
+
+<script>
+function calculate(){
+
+  let annualLeave = parseFloat(document.getElementById("annualLeave").value) || 0;
+  let publicHoliday = parseFloat(document.getElementById("publicHoliday").value) || 0;
+  let otherLeave = parseFloat(document.getElementById("otherLeave").value) || 0;
+
+  if(annualLeave < 0 || publicHoliday < 0 || otherLeave < 0){
+    document.getElementById("monthly").innerHTML = "Please enter valid leave days.";
+    document.getElementById("annual").innerHTML = "";
+    return;
+  }
+
+  let totalPaidDays = annualLeave + publicHoliday + otherLeave;
+  let estimatedWorkingDays = 365 - 104 - totalPaidDays;
+
+  document.getElementById("monthly").innerHTML =
+    "Annual Leave: " + annualLeave + " days<br>" +
+    "Public Holidays: " + publicHoliday + " days<br>" +
+    "Other Paid Leave: " + otherLeave + " days<br><br>" +
+    "<b>Total Paid Days Off: " + totalPaidDays + " days</b>";
+
+  document.getElementById("annual").innerHTML =
+    "Estimated Weekends: 104 days<br>" +
+    "Total Paid Days Off: " + totalPaidDays + " days<br><br>" +
+    "<b>Estimated Working Days: " + estimatedWorkingDays + " days</b>";
+}
+</script>
+
+</body>
+</html>
