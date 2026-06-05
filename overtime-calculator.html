@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Malaysia Overtime Calculator 2026 | OT Pay Calculator</title>
+
+  <meta name="description" content="Free Malaysia Overtime Calculator 2026. Calculate overtime pay based on monthly salary, hourly rate and overtime hours. Estimate OT pay instantly.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+      margin: 0;
+      padding: 20px;
+    }
+
+    .card,
+    .seo {
+      background: white;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .seo { line-height: 1.7; }
+
+    .layout {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      flex: 1;
+      min-width: 320px;
+      background: #f8f9fc;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 15px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    input {
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+
+    button {
+      background: #111;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .seo-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .card-link {
+      display: block;
+      padding: 15px;
+      background: white;
+      border-radius: 12px;
+      text-decoration: none;
+      color: black;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    h1 { font-size: 26px; }
+    h2 { font-size: 20px; margin-top: 25px; }
+    h3 { font-size: 16px; margin-top: 18px; }
+
+    @media (max-width: 700px){
+      .layout { flex-direction: column; }
+      body { padding: 10px; }
+      .card, .seo {
+        margin: 15px auto;
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h1>Malaysia Overtime Calculator 2026</h1>
+
+  <p><b>Malaysia Overtime Calculator:</b> Estimate your overtime pay based on monthly salary and overtime hours.</p>
+
+  <p>This calculator estimates hourly rate, overtime rate and total OT pay using a simple Malaysia payroll formula.</p>
+
+  <input type="number" id="salary" placeholder="Monthly Salary (RM)">
+  <input type="number" id="hours" placeholder="Overtime Hours">
+
+  <button onclick="calculate()">Calculate Overtime Pay</button>
+
+  <div class="layout">
+
+    <div class="box">
+      <h3>Overtime Breakdown</h3>
+      <div class="result" id="monthly"></div>
+    </div>
+
+    <div class="box">
+      <h3>Annual Estimate</h3>
+      <div class="result" id="annual"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="seo">
+
+  <h2>Related Salary Guides</h2>
+
+  <div class="seo-cards">
+
+    <a class="card-link" href="epf-guide.html">
+      <h3>EPF Guide Malaysia</h3>
+      <p>EPF contribution rates and retirement savings</p>
+    </a>
+
+    <a class="card-link" href="socso-guide.html">
+      <h3>SOCSO Guide Malaysia</h3>
+      <p>Work injury protection and employee benefits</p>
+    </a>
+
+    <a class="card-link" href="eis-guide.html">
+      <h3>EIS Guide Malaysia</h3>
+      <p>Employment insurance and unemployment support</p>
+    </a>
+
+    <a class="card-link" href="pcb-guide.html">
+      <h3>PCB Tax Guide Malaysia</h3>
+      <p>Monthly tax deduction explained simply</p>
+    </a>
+
+  </div>
+
+  <h2>What Is Overtime Pay In Malaysia?</h2>
+
+  <p>
+    Overtime pay is additional pay given to employees who work beyond normal working hours.
+    In Malaysia, overtime calculation may depend on salary, working hours, employment category and applicable labour law.
+  </p>
+
+  <h2>How Is Overtime Pay Calculated?</h2>
+
+  <p>
+    A common simple estimate is to calculate hourly rate from monthly salary, then multiply it by the overtime rate and overtime hours.
+  </p>
+
+  <p>
+    This calculator uses the formula: monthly salary divided by 26 working days, divided by 8 hours, then multiplied by 1.5 times.
+  </p>
+
+  <h2>Example Overtime Calculation</h2>
+
+  <p>
+    If an employee earns RM3,000 per month, the estimated hourly rate is RM3,000 ÷ 26 ÷ 8.
+  </p>
+
+  <p>
+    If the employee works 10 overtime hours, the estimated OT pay is hourly rate × 1.5 × 10 hours.
+  </p>
+
+  <h2>Why Use This Overtime Calculator?</h2>
+
+  <ul>
+    <li>Estimate overtime pay quickly</li>
+    <li>Calculate hourly rate from monthly salary</li>
+    <li>View estimated annual overtime amount</li>
+    <li>Understand how OT pay is calculated</li>
+  </ul>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Is this overtime calculator exact?</h3>
+  <p>
+    This calculator provides an estimate only. Actual overtime pay may vary depending on employment terms and applicable regulations.
+  </p>
+
+  <h3>What overtime rate is used?</h3>
+  <p>
+    This calculator uses a simple 1.5x overtime rate for estimation.
+  </p>
+
+  <h3>Can overtime affect take-home pay?</h3>
+  <p>
+    Yes. Overtime increases gross income and may affect tax or payroll deductions.
+  </p>
+
+  <h3>Can I calculate monthly overtime?</h3>
+  <p>
+    Yes. Enter your monthly salary and overtime hours to estimate total OT pay.
+  </p>
+
+  <h2>Related Calculators</h2>
+
+  <ul>
+    <li><a href="index.html">Salary Calculator</a></li>
+    <li><a href="epf-calculator.html">EPF Calculator</a></li>
+    <li><a href="socso-calculator.html">SOCSO Calculator</a></li>
+    <li><a href="eis-calculator.html">EIS Calculator</a></li>
+    <li><a href="pcb-calculator.html">PCB Tax Calculator</a></li>
+    <li><a href="bonus-calculator.html">Bonus Calculator</a></li>
+  </ul>
+
+</div>
+
+<script>
+function formatRM(v){
+  return v.toLocaleString('en-MY',{
+    minimumFractionDigits:2,
+    maximumFractionDigits:2
+  });
+}
+
+function calculate(){
+
+  let salary = parseFloat(document.getElementById("salary").value);
+  let hours = parseFloat(document.getElementById("hours").value);
+
+  if(!salary || !hours){
+    document.getElementById("monthly").innerHTML = "Please enter salary and overtime hours";
+    document.getElementById("annual").innerHTML = "";
+    return;
+  }
+
+  let hourlyRate = salary / 26 / 8;
+  let otRate = hourlyRate * 1.5;
+  let otPay = otRate * hours;
+
+  document.getElementById("monthly").innerHTML =
+    "Monthly Salary: RM " + formatRM(salary) + "<br>" +
+    "Hourly Rate: RM " + formatRM(hourlyRate) + "<br>" +
+    "OT Rate (1.5x): RM " + formatRM(otRate) + "<br>" +
+    "OT Hours: " + hours + "<br><br>" +
+    "<b>Total OT Pay: RM " + formatRM(otPay) + "</b>";
+
+  document.getElementById("annual").innerHTML =
+    "Estimated Monthly OT: RM " + formatRM(otPay) + "<br>" +
+    "Estimated Annual OT: RM " + formatRM(otPay * 12);
+}
+</script>
+
+</body>
+</html>
