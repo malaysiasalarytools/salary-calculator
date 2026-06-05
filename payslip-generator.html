@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Malaysia Payslip Generator 2026 | Free Salary Slip Generator</title>
+
+  <meta name="description" content="Free Malaysia Payslip Generator 2026. Generate a simple salary slip with basic salary, EPF, SOCSO, EIS, PCB and net salary calculation.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+      margin: 0;
+      padding: 20px;
+    }
+
+    .card,
+    .seo {
+      background: white;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .seo { line-height: 1.7; }
+
+    input,
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    input {
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+
+    button {
+      background: #111;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .payslip {
+      margin-top: 25px;
+      background: #f8f9fc;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 20px;
+      line-height: 1.8;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      padding: 8px 0;
+    }
+
+    .total {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .seo-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .card-link {
+      display: block;
+      padding: 15px;
+      background: white;
+      border-radius: 12px;
+      text-decoration: none;
+      color: black;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    h1 { font-size: 26px; }
+    h2 { font-size: 20px; margin-top: 25px; }
+    h3 { font-size: 16px; margin-top: 18px; }
+
+    @media (max-width: 700px){
+      body { padding: 10px; }
+
+      .card,
+      .seo {
+        margin: 15px auto;
+        padding: 18px;
+      }
+
+      .row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h1>Malaysia Payslip Generator 2026</h1>
+
+  <p><b>Free Payslip Generator:</b> Generate a simple salary slip with EPF, SOCSO, EIS, PCB and net salary calculation.</p>
+
+  <p>Enter employee details and salary deductions to generate a simple monthly payslip preview.</p>
+
+  <input type="text" id="employeeName" placeholder="Employee Name">
+
+  <input type="text" id="companyName" placeholder="Company Name">
+
+  <input type="text" id="month" placeholder="Payslip Month e.g. January 2026">
+
+  <input type="number" id="salary" placeholder="Basic Salary (RM)">
+
+  <input type="number" id="epf" placeholder="EPF Deduction (RM)">
+
+  <input type="number" id="socso" placeholder="SOCSO Deduction (RM)">
+
+  <input type="number" id="eis" placeholder="EIS Deduction (RM)">
+
+  <input type="number" id="pcb" placeholder="PCB Tax Deduction (RM)">
+
+  <button onclick="generatePayslip()">Generate Payslip</button>
+
+  <div class="payslip" id="payslip">
+    Payslip preview will appear here.
+  </div>
+
+</div>
+
+<div class="seo">
+
+  <h2>Related Salary Guides</h2>
+
+  <div class="seo-cards">
+
+    <a class="card-link" href="epf-guide.html">
+      <h3>EPF Guide Malaysia</h3>
+      <p>EPF contribution rates and retirement savings</p>
+    </a>
+
+    <a class="card-link" href="socso-guide.html">
+      <h3>SOCSO Guide Malaysia</h3>
+      <p>Work injury protection and employee benefits</p>
+    </a>
+
+    <a class="card-link" href="eis-guide.html">
+      <h3>EIS Guide Malaysia</h3>
+      <p>Employment insurance and unemployment support</p>
+    </a>
+
+    <a class="card-link" href="pcb-guide.html">
+      <h3>PCB Tax Guide Malaysia</h3>
+      <p>Monthly tax deduction explained simply</p>
+    </a>
+
+  </div>
+
+  <h2>What Is A Payslip?</h2>
+
+  <p>
+    A payslip is a salary document that shows an employee's earnings, deductions and net salary for a specific pay period.
+  </p>
+
+  <p>
+    In Malaysia, a payslip usually includes basic salary, EPF, SOCSO, EIS, PCB tax deductions and net salary.
+  </p>
+
+  <h2>Why Use A Payslip Generator?</h2>
+
+  <p>
+    A payslip generator helps employees, freelancers and small businesses create a simple salary slip quickly.
+  </p>
+
+  <ul>
+    <li>Prepare salary slip preview</li>
+    <li>Calculate net salary</li>
+    <li>Show deductions clearly</li>
+    <li>Useful for simple payroll records</li>
+  </ul>
+
+  <h2>What Should Be Included In A Payslip?</h2>
+
+  <ul>
+    <li>Employee name</li>
+    <li>Company name</li>
+    <li>Pay period</li>
+    <li>Basic salary</li>
+    <li>EPF deduction</li>
+    <li>SOCSO deduction</li>
+    <li>EIS deduction</li>
+    <li>PCB tax deduction</li>
+    <li>Net salary</li>
+  </ul>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Is this payslip generator free?</h3>
+  <p>
+    Yes. This simple payslip generator is free to use.
+  </p>
+
+  <h3>Does this generate PDF?</h3>
+  <p>
+    This first version generates an on-screen payslip preview. PDF export can be added later.
+  </p>
+
+  <h3>Is this suitable for official payroll?</h3>
+  <p>
+    This tool provides a simple payslip format. Employers should follow proper payroll and statutory requirements.
+  </p>
+
+  <h2>Related Calculators</h2>
+
+  <ul>
+    <li><a href="index.html">Salary Calculator</a></li>
+    <li><a href="epf-calculator.html">EPF Calculator</a></li>
+    <li><a href="socso-calculator.html">SOCSO Calculator</a></li>
+    <li><a href="eis-calculator.html">EIS Calculator</a></li>
+    <li><a href="pcb-calculator.html">PCB Tax Calculator</a></li>
+    <li><a href="bonus-calculator.html">Bonus Calculator</a></li>
+    <li><a href="overtime-calculator.html">Overtime Calculator</a></li>
+    <li><a href="annual-leave-calculator.html">Annual Leave Calculator</a></li>
+    <li><a href="salary-increment-calculator.html">Salary Increment Calculator</a></li>
+    <li><a href="loan-calculator.html">Loan Calculator</a></li>
+  </ul>
+
+</div>
+
+<script>
+function formatRM(v){
+  return v.toLocaleString('en-MY',{
+    minimumFractionDigits:2,
+    maximumFractionDigits:2
+  });
+}
+
+function generatePayslip(){
+
+  let employeeName = document.getElementById("employeeName").value;
+  let companyName = document.getElementById("companyName").value;
+  let month = document.getElementById("month").value;
+
+  let salary = parseFloat(document.getElementById("salary").value) || 0;
+  let epf = parseFloat(document.getElementById("epf").value) || 0;
+  let socso = parseFloat(document.getElementById("socso").value) || 0;
+  let eis = parseFloat(document.getElementById("eis").value) || 0;
+  let pcb = parseFloat(document.getElementById("pcb").value) || 0;
+
+  if(!employeeName || !companyName || !month || !salary){
+    document.getElementById("payslip").innerHTML =
+      "Please enter employee name, company name, month and salary.";
+    return;
+  }
+
+  let totalDeduction = epf + socso + eis + pcb;
+  let netSalary = salary - totalDeduction;
+
+  document.getElementById("payslip").innerHTML =
+    "<h2>Monthly Payslip</h2>" +
+    "<p><b>Company:</b> " + companyName + "</p>" +
+    "<p><b>Employee:</b> " + employeeName + "</p>" +
+    "<p><b>Month:</b> " + month + "</p>" +
+
+    "<div class='row'><span>Basic Salary</span><span>RM " + formatRM(salary) + "</span></div>" +
+    "<div class='row'><span>EPF Deduction</span><span>RM " + formatRM(epf) + "</span></div>" +
+    "<div class='row'><span>SOCSO Deduction</span><span>RM " + formatRM(socso) + "</span></div>" +
+    "<div class='row'><span>EIS Deduction</span><span>RM " + formatRM(eis) + "</span></div>" +
+    "<div class='row'><span>PCB Deduction</span><span>RM " + formatRM(pcb) + "</span></div>" +
+    "<div class='row total'><span>Net Salary</span><span>RM " + formatRM(netSalary) + "</span></div>";
+}
+</script>
+
+</body>
+</html>
