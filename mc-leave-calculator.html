@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Malaysia MC Leave Calculator 2026 | Medical Leave Calculator</title>
+
+  <meta name="description" content="Free Malaysia MC Leave Calculator 2026. Calculate medical leave entitlement, MC used and remaining sick leave days.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+      margin: 0;
+      padding: 20px;
+    }
+
+    .card,
+    .seo {
+      background: white;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .seo { line-height: 1.7; }
+
+    .layout {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      flex: 1;
+      min-width: 320px;
+      background: #f8f9fc;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 15px;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    input, select {
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+
+    button {
+      background: #111;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .seo-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .card-link {
+      display: block;
+      padding: 15px;
+      background: white;
+      border-radius: 12px;
+      text-decoration: none;
+      color: black;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    h1 { font-size: 26px; }
+    h2 { font-size: 20px; margin-top: 25px; }
+    h3 { font-size: 16px; margin-top: 18px; }
+
+    @media (max-width: 700px){
+      .layout { flex-direction: column; }
+      body { padding: 10px; }
+      .card, .seo {
+        margin: 15px auto;
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h1>Malaysia MC Leave Calculator 2026</h1>
+
+  <p><b>Malaysia MC Leave Calculator:</b> Calculate medical leave entitlement, MC taken and remaining sick leave days.</p>
+
+  <p>Enter your MC entitlement and medical leave used to estimate your remaining MC balance.</p>
+
+  <select id="entitlement">
+    <option value="">Select MC Entitlement</option>
+    <option value="14">14 days</option>
+    <option value="18">18 days</option>
+    <option value="22">22 days</option>
+  </select>
+
+  <input type="number" id="used" placeholder="MC Days Used">
+
+  <button onclick="calculate()">Calculate MC Leave</button>
+
+  <div class="layout">
+
+    <div class="box">
+      <h3>MC Leave Balance</h3>
+      <div class="result" id="monthly"></div>
+    </div>
+
+    <div class="box">
+      <h3>Usage Summary</h3>
+      <div class="result" id="annual"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="seo">
+
+  <h2>Related Salary Guides</h2>
+
+  <div class="seo-cards">
+
+    <a class="card-link" href="epf-guide.html">
+      <h3>EPF Guide Malaysia</h3>
+      <p>EPF contribution rates and retirement savings</p>
+    </a>
+
+    <a class="card-link" href="socso-guide.html">
+      <h3>SOCSO Guide Malaysia</h3>
+      <p>Work injury protection and employee benefits</p>
+    </a>
+
+    <a class="card-link" href="eis-guide.html">
+      <h3>EIS Guide Malaysia</h3>
+      <p>Employment insurance and unemployment support</p>
+    </a>
+
+    <a class="card-link" href="pcb-guide.html">
+      <h3>PCB Tax Guide Malaysia</h3>
+      <p>Monthly tax deduction explained simply</p>
+    </a>
+
+  </div>
+
+  <h2>What Is MC Leave In Malaysia?</h2>
+
+  <p>
+    MC leave, also known as medical leave or sick leave, is paid leave given to employees who are unable to work due to illness and have a valid medical certificate.
+  </p>
+
+  <p>
+    Medical leave entitlement in Malaysia may depend on length of service, employment terms and applicable employment law.
+  </p>
+
+  <h2>How Is MC Leave Calculated?</h2>
+
+  <p>
+    This calculator subtracts MC days used from annual medical leave entitlement.
+  </p>
+
+  <p>
+    Formula:
+  </p>
+
+  <p>
+    Remaining MC Leave = MC Entitlement - MC Days Used
+  </p>
+
+  <h2>Malaysia Medical Leave Entitlement</h2>
+
+  <ul>
+    <li>Less than 2 years of service: 14 days</li>
+    <li>2 to 5 years of service: 18 days</li>
+    <li>More than 5 years of service: 22 days</li>
+  </ul>
+
+  <h2>Example MC Leave Calculation</h2>
+
+  <p>
+    If an employee is entitled to 14 days of MC and has used 5 days, the remaining MC balance is 9 days.
+  </p>
+
+  <h2>Why Use This MC Leave Calculator?</h2>
+
+  <ul>
+    <li>Calculate remaining MC leave</li>
+    <li>Track medical leave used</li>
+    <li>Estimate sick leave balance</li>
+    <li>Useful for employees and small businesses</li>
+  </ul>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Is MC leave paid in Malaysia?</h3>
+  <p>
+    Medical leave is generally paid when supported by a valid medical certificate, subject to employment terms and applicable rules.
+  </p>
+
+  <h3>How many MC days are employees entitled to?</h3>
+  <p>
+    Common entitlement levels are 14, 18 or 22 days depending on length of service.
+  </p>
+
+  <h3>Is this calculator exact?</h3>
+  <p>
+    This calculator provides an estimate only. Actual entitlement may depend on company policy and employment contract.
+  </p>
+
+  <h2>Related Calculators</h2>
+
+  <ul>
+    <li><a href="index.html">Salary Calculator</a></li>
+    <li><a href="annual-leave-calculator.html">Annual Leave Calculator</a></li>
+    <li><a href="public-holiday-calculator.html">Public Holiday Calculator</a></li>
+    <li><a href="overtime-calculator.html">Overtime Calculator</a></li>
+    <li><a href="bonus-calculator.html">Bonus Calculator</a></li>
+    <li><a href="salary-increment-calculator.html">Salary Increment Calculator</a></li>
+    <li><a href="loan-calculator.html">Loan Calculator</a></li>
+    <li><a href="payslip-generator.html">Payslip Generator</a></li>
+  </ul>
+
+</div>
+
+<script>
+function calculate(){
+
+  let entitlement = parseFloat(document.getElementById("entitlement").value);
+  let used = parseFloat(document.getElementById("used").value);
+
+  if(!entitlement || used < 0 || isNaN(used)){
+    document.getElementById("monthly").innerHTML =
+      "Please select MC entitlement and enter MC days used.";
+    document.getElementById("annual").innerHTML = "";
+    return;
+  }
+
+  let remaining = entitlement - used;
+  let usedPercent = (used / entitlement) * 100;
+
+  document.getElementById("monthly").innerHTML =
+    "MC Entitlement: " + entitlement + " days<br>" +
+    "MC Used: " + used + " days<br><br>" +
+    "<b>Remaining MC Leave: " + remaining.toFixed(2) + " days</b>";
+
+  document.getElementById("annual").innerHTML =
+    "Used: " + usedPercent.toFixed(1) + "% of entitlement<br>" +
+    "Remaining: " + (100 - usedPercent).toFixed(1) + "%<br><br>" +
+    "<b>Total Annual MC Entitlement: " + entitlement + " days</b>";
+}
+</script>
+
+</body>
+</html>
