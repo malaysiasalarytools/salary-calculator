@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Malaysia Tax Refund Calculator 2026 | PCB Refund Calculator</title>
+
+  <meta name="description" content="Free Malaysia Tax Refund Calculator 2026. Estimate income tax refund or additional tax payable based on PCB paid and actual income tax.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+      margin: 0;
+      padding: 20px;
+    }
+
+    .card,
+    .seo {
+      background: white;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .seo { line-height: 1.7; }
+
+    .layout {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      flex: 1;
+      min-width: 320px;
+      background: #f8f9fc;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 15px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    input {
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+
+    button {
+      background: #111;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .seo-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .card-link {
+      display: block;
+      padding: 15px;
+      background: white;
+      border-radius: 12px;
+      text-decoration: none;
+      color: black;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    h1 { font-size: 26px; }
+    h2 { font-size: 20px; margin-top: 25px; }
+    h3 { font-size: 16px; margin-top: 18px; }
+
+    @media (max-width: 700px){
+      .layout { flex-direction: column; }
+      body { padding: 10px; }
+      .card, .seo {
+        margin: 15px auto;
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h1>Malaysia Tax Refund Calculator 2026</h1>
+
+  <p><b>Malaysia Tax Refund Calculator:</b> Estimate whether you may receive a tax refund or need to pay additional tax.</p>
+
+  <p>Enter total PCB paid and your actual income tax payable to estimate your refund or additional tax payable.</p>
+
+  <input type="number" id="pcbPaid" placeholder="Total PCB Paid (RM)">
+
+  <input type="number" id="actualTax" placeholder="Actual Income Tax Payable (RM)">
+
+  <button onclick="calculate()">Calculate Tax Refund</button>
+
+  <div class="layout">
+
+    <div class="box">
+      <h3>Tax Refund Estimate</h3>
+      <div class="result" id="monthly"></div>
+    </div>
+
+    <div class="box">
+      <h3>Tax Position</h3>
+      <div class="result" id="annual"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="seo">
+
+  <h2>Related Salary Guides</h2>
+
+  <div class="seo-cards">
+
+    <a class="card-link" href="epf-guide.html">
+      <h3>EPF Guide Malaysia</h3>
+      <p>EPF contribution rates and retirement savings</p>
+    </a>
+
+    <a class="card-link" href="socso-guide.html">
+      <h3>SOCSO Guide Malaysia</h3>
+      <p>Work injury protection and employee benefits</p>
+    </a>
+
+    <a class="card-link" href="eis-guide.html">
+      <h3>EIS Guide Malaysia</h3>
+      <p>Employment insurance and unemployment support</p>
+    </a>
+
+    <a class="card-link" href="pcb-guide.html">
+      <h3>PCB Tax Guide Malaysia</h3>
+      <p>Monthly tax deduction explained simply</p>
+    </a>
+
+  </div>
+
+  <h2>What Is A Tax Refund?</h2>
+
+  <p>
+    A tax refund happens when the total tax already paid is more than the actual income tax payable.
+  </p>
+
+  <p>
+    In Malaysia, many employees pay tax through monthly PCB deductions. When annual tax filing is completed, the final tax payable may be lower or higher than the total PCB already deducted.
+  </p>
+
+  <h2>How Is Tax Refund Calculated?</h2>
+
+  <p>
+    This calculator compares total PCB paid with actual income tax payable.
+  </p>
+
+  <p>
+    Formula:
+  </p>
+
+  <p>
+    Tax Refund = Total PCB Paid - Actual Income Tax Payable
+  </p>
+
+  <h2>When Will You Get A Tax Refund?</h2>
+
+  <p>
+    If your total PCB paid is higher than your actual tax payable, you may receive a refund.
+  </p>
+
+  <p>
+    If your actual tax payable is higher than PCB paid, you may need to pay additional tax.
+  </p>
+
+  <h2>Example Tax Refund Calculation</h2>
+
+  <p>
+    If your total PCB paid is RM5,000 and your actual income tax payable is RM4,200, your estimated tax refund is RM800.
+  </p>
+
+  <h2>Why Use This Tax Refund Calculator?</h2>
+
+  <ul>
+    <li>Estimate possible income tax refund</li>
+    <li>Compare PCB paid with actual tax payable</li>
+    <li>Estimate additional tax payable</li>
+    <li>Useful before annual tax filing</li>
+  </ul>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Is this tax refund calculator exact?</h3>
+  <p>
+    No. This calculator provides an estimate only. Actual refund depends on LHDN assessment, tax reliefs, rebates and filing details.
+  </p>
+
+  <h3>What is PCB?</h3>
+  <p>
+    PCB is Malaysia's monthly tax deduction system where employers deduct tax from salary every month.
+  </p>
+
+  <h3>When do I get a tax refund?</h3>
+  <p>
+    A refund may arise when total tax already paid is higher than final tax payable.
+  </p>
+
+  <h3>What if my result is negative?</h3>
+  <p>
+    A negative result means your actual tax payable is higher than PCB paid, so you may need to pay additional tax.
+  </p>
+
+  <h2>Related Calculators</h2>
+
+  <ul>
+    <li><a href="index.html">Salary Calculator</a></li>
+    <li><a href="pcb-calculator.html">PCB Tax Calculator</a></li>
+    <li><a href="income-tax-calculator.html">Income Tax Calculator</a></li>
+    <li><a href="bonus-calculator.html">Bonus Calculator</a></li>
+    <li><a href="payslip-generator.html">Payslip Generator</a></li>
+  </ul>
+
+</div>
+
+<script>
+function formatRM(v){
+  return v.toLocaleString('en-MY',{
+    minimumFractionDigits:2,
+    maximumFractionDigits:2
+  });
+}
+
+function calculate(){
+
+  let pcbPaid = parseFloat(document.getElementById("pcbPaid").value);
+  let actualTax = parseFloat(document.getElementById("actualTax").value);
+
+  if(isNaN(pcbPaid) || isNaN(actualTax)){
+    document.getElementById("monthly").innerHTML =
+      "Please enter total PCB paid and actual income tax payable.";
+    document.getElementById("annual").innerHTML = "";
+    return;
+  }
+
+  let difference = pcbPaid - actualTax;
+
+  if(difference > 0){
+    document.getElementById("monthly").innerHTML =
+      "Total PCB Paid: RM " + formatRM(pcbPaid) + "<br>" +
+      "Actual Tax Payable: RM " + formatRM(actualTax) + "<br><br>" +
+      "<b>Estimated Tax Refund: RM " + formatRM(difference) + "</b>";
+
+    document.getElementById("annual").innerHTML =
+      "You may have overpaid tax.<br><br>" +
+      "<b>Estimated Refund Position</b>";
+  } else if(difference < 0){
+    document.getElementById("monthly").innerHTML =
+      "Total PCB Paid: RM " + formatRM(pcbPaid) + "<br>" +
+      "Actual Tax Payable: RM " + formatRM(actualTax) + "<br><br>" +
+      "<b>Additional Tax Payable: RM " + formatRM(Math.abs(difference)) + "</b>";
+
+    document.getElementById("annual").innerHTML =
+      "Your actual tax may be higher than PCB paid.<br><br>" +
+      "<b>Estimated Additional Tax Position</b>";
+  } else {
+    document.getElementById("monthly").innerHTML =
+      "Total PCB Paid: RM " + formatRM(pcbPaid) + "<br>" +
+      "Actual Tax Payable: RM " + formatRM(actualTax) + "<br><br>" +
+      "<b>No Estimated Refund Or Additional Tax</b>";
+
+    document.getElementById("annual").innerHTML =
+      "Your PCB paid matches the estimated actual tax payable.";
+  }
+}
+</script>
+
+</body>
+</html>
