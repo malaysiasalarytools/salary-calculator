@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Malaysia Bonus Calculator 2026 | Bonus Tax & Net Bonus Calculator</title>
+
+  <meta name="description" content="Free Malaysia Bonus Calculator 2026. Estimate bonus tax, PCB deduction and net bonus after tax based on monthly salary and bonus amount.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+      margin: 0;
+      padding: 20px;
+    }
+
+    .card,
+    .seo {
+      background: white;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .seo {
+      line-height: 1.7;
+    }
+
+    .layout {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      flex: 1;
+      min-width: 320px;
+      background: #f8f9fc;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 15px;
+    }
+
+    input,
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    input {
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+
+    button {
+      background: #111;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .seo-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .card-link {
+      display: block;
+      padding: 15px;
+      background: white;
+      border-radius: 12px;
+      text-decoration: none;
+      color: black;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    h1 { font-size: 26px; }
+    h2 { font-size: 20px; margin-top: 25px; }
+    h3 { font-size: 16px; margin-top: 18px; }
+
+    @media (max-width: 700px){
+      .layout {
+        flex-direction: column;
+      }
+
+      body {
+        padding: 10px;
+      }
+
+      .card,
+      .seo {
+        margin: 15px auto;
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h1>Malaysia Bonus Calculator 2026</h1>
+
+  <p><b>Malaysia Bonus Calculator:</b> Estimate your bonus tax, PCB deduction and net bonus after tax.</p>
+
+  <p>Enter your monthly salary and bonus amount to estimate how much bonus you may receive after tax deductions.</p>
+
+  <input type="number" id="salary" placeholder="Monthly Salary (RM)">
+
+  <input type="number" id="bonus" placeholder="Bonus Amount (RM)">
+
+  <button onclick="calculate()">Calculate Net Bonus</button>
+
+  <div class="layout">
+
+    <div class="box">
+      <h3>Bonus Breakdown</h3>
+      <div class="result" id="monthly"></div>
+    </div>
+
+    <div class="box">
+      <h3>Annual Impact</h3>
+      <div class="result" id="annual"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="seo">
+
+  <h2>Related Salary Guides</h2>
+
+  <div class="seo-cards">
+
+    <a class="card-link" href="epf-guide.html">
+      <h3>EPF Guide Malaysia</h3>
+      <p>EPF contribution rates and retirement savings</p>
+    </a>
+
+    <a class="card-link" href="socso-guide.html">
+      <h3>SOCSO Guide Malaysia</h3>
+      <p>Work injury protection and employee benefits</p>
+    </a>
+
+    <a class="card-link" href="eis-guide.html">
+      <h3>EIS Guide Malaysia</h3>
+      <p>Employment insurance and unemployment support</p>
+    </a>
+
+    <a class="card-link" href="pcb-guide.html">
+      <h3>PCB Tax Guide Malaysia</h3>
+      <p>Monthly tax deduction explained simply</p>
+    </a>
+
+  </div>
+
+  <h2>What Is Bonus Tax In Malaysia?</h2>
+
+  <p>
+    Bonus payments are generally treated as taxable employment income in Malaysia.
+    This means a bonus may increase your annual taxable income and may result in additional PCB deductions.
+  </p>
+
+  <p>
+    The exact tax on bonus depends on total annual income, available tax reliefs and the applicable tax calculation method.
+  </p>
+
+  <h2>How Is Bonus Tax Calculated?</h2>
+
+  <p>
+    Bonus tax is usually considered together with your employment income for the year.
+    If your bonus increases your annual taxable income, your estimated PCB deduction may also increase.
+  </p>
+
+  <p>
+    This calculator provides a simplified estimate of bonus tax based on your monthly salary and bonus amount.
+  </p>
+
+  <h2>Example Bonus Calculation</h2>
+
+  <p>
+    For example, if you earn RM5,000 per month and receive a RM10,000 bonus, your estimated annual income becomes RM70,000.
+  </p>
+
+  <p>
+    Depending on the estimated tax rate, part of your bonus may be deducted as PCB tax.
+    The remaining amount is your estimated net bonus.
+  </p>
+
+  <h2>Why Use This Bonus Calculator?</h2>
+
+  <ul>
+    <li>Estimate net bonus after tax</li>
+    <li>Understand possible PCB deduction on bonus</li>
+    <li>Compare gross bonus and net bonus</li>
+    <li>Estimate annual income including bonus</li>
+  </ul>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Is bonus taxable in Malaysia?</h3>
+  <p>
+    Yes. Bonus is generally considered taxable employment income in Malaysia.
+  </p>
+
+  <h3>Does bonus affect PCB?</h3>
+  <p>
+    Yes. A bonus may increase annual taxable income and may increase PCB deductions.
+  </p>
+
+  <h3>Is this bonus calculator exact?</h3>
+  <p>
+    This calculator provides an estimate only. Actual PCB may vary depending on official calculation, tax reliefs and personal circumstances.
+  </p>
+
+  <h3>Does EPF apply to bonus?</h3>
+  <p>
+    Bonus treatment may depend on payroll policy and applicable statutory rules. Employers should refer to current payroll guidelines.
+  </p>
+
+  <h2>Related Calculators</h2>
+
+  <ul>
+    <li><a href="index.html">Salary Calculator</a></li>
+    <li><a href="epf-calculator.html">EPF Calculator</a></li>
+    <li><a href="socso-calculator.html">SOCSO Calculator</a></li>
+    <li><a href="eis-calculator.html">EIS Calculator</a></li>
+    <li><a href="pcb-calculator.html">PCB Tax Calculator</a></li>
+  </ul>
+
+</div>
+
+<script>
+function formatRM(v){
+  return v.toLocaleString('en-MY', {
+    minimumFractionDigits:2,
+    maximumFractionDigits:2
+  });
+}
+
+function calculate(){
+
+  let salary = parseFloat(document.getElementById("salary").value);
+  let bonus = parseFloat(document.getElementById("bonus").value);
+
+  if(!salary || !bonus){
+    document.getElementById("monthly").innerHTML = "Please enter salary and bonus amount";
+    document.getElementById("annual").innerHTML = "";
+    return;
+  }
+
+  let annualSalary = salary * 12;
+  let annualIncomeWithBonus = annualSalary + bonus;
+
+  let taxRate =
+    annualIncomeWithBonus <= 50000 ? 0.02 :
+    annualIncomeWithBonus <= 100000 ? 0.06 :
+    annualIncomeWithBonus <= 250000 ? 0.12 : 0.18;
+
+  let estimatedBonusTax = bonus * taxRate;
+  let netBonus = bonus - estimatedBonusTax;
+
+  document.getElementById("monthly").innerHTML =
+    "Monthly Salary: RM " + formatRM(salary) + "<br>" +
+    "Gross Bonus: RM " + formatRM(bonus) + "<br>" +
+    "Estimated Bonus Tax: RM " + formatRM(estimatedBonusTax) + "<br><br>" +
+    "<b>Estimated Net Bonus: RM " + formatRM(netBonus) + "</b>";
+
+  document.getElementById("annual").innerHTML =
+    "Annual Salary Before Bonus: RM " + formatRM(annualSalary) + "<br>" +
+    "Annual Income With Bonus: RM " + formatRM(annualIncomeWithBonus) + "<br>" +
+    "Estimated Tax Rate Used: " + (taxRate * 100).toFixed(0) + "%<br><br>" +
+    "<b>Estimated Bonus After Tax: RM " + formatRM(netBonus) + "</b>";
+}
+</script>
+
+</body>
+</html>
