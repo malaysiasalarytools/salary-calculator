@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Malaysia Loan Calculator 2026 | Monthly Installment Calculator</title>
+
+  <meta name="description" content="Free Malaysia Loan Calculator 2026. Calculate monthly installment, total interest and total repayment based on loan amount, interest rate and loan tenure.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+      margin: 0;
+      padding: 20px;
+    }
+
+    .card,
+    .seo {
+      background: white;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .seo { line-height: 1.7; }
+
+    .layout {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      flex: 1;
+      min-width: 320px;
+      background: #f8f9fc;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 15px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    input {
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+
+    button {
+      background: #111;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .seo-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .card-link {
+      display: block;
+      padding: 15px;
+      background: white;
+      border-radius: 12px;
+      text-decoration: none;
+      color: black;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    h1 { font-size: 26px; }
+    h2 { font-size: 20px; margin-top: 25px; }
+    h3 { font-size: 16px; margin-top: 18px; }
+
+    @media (max-width: 700px){
+      .layout { flex-direction: column; }
+      body { padding: 10px; }
+      .card, .seo {
+        margin: 15px auto;
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h1>Malaysia Loan Calculator 2026</h1>
+
+  <p><b>Malaysia Loan Calculator:</b> Estimate your monthly installment, total interest and total repayment.</p>
+
+  <p>Enter loan amount, annual interest rate and loan tenure to calculate estimated monthly repayment.</p>
+
+  <input type="number" id="amount" placeholder="Loan Amount (RM)">
+
+  <input type="number" id="rate" placeholder="Annual Interest Rate (%)">
+
+  <input type="number" id="years" placeholder="Loan Tenure (Years)">
+
+  <button onclick="calculate()">Calculate Loan Repayment</button>
+
+  <div class="layout">
+
+    <div class="box">
+      <h3>Monthly Repayment</h3>
+      <div class="result" id="monthly"></div>
+    </div>
+
+    <div class="box">
+      <h3>Total Repayment</h3>
+      <div class="result" id="annual"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="seo">
+
+  <h2>Related Salary Guides</h2>
+
+  <div class="seo-cards">
+
+    <a class="card-link" href="epf-guide.html">
+      <h3>EPF Guide Malaysia</h3>
+      <p>EPF contribution rates and retirement savings</p>
+    </a>
+
+    <a class="card-link" href="socso-guide.html">
+      <h3>SOCSO Guide Malaysia</h3>
+      <p>Work injury protection and employee benefits</p>
+    </a>
+
+    <a class="card-link" href="eis-guide.html">
+      <h3>EIS Guide Malaysia</h3>
+      <p>Employment insurance and unemployment support</p>
+    </a>
+
+    <a class="card-link" href="pcb-guide.html">
+      <h3>PCB Tax Guide Malaysia</h3>
+      <p>Monthly tax deduction explained simply</p>
+    </a>
+
+  </div>
+
+  <h2>What Is A Loan Calculator?</h2>
+
+  <p>
+    A loan calculator helps estimate monthly repayment based on loan amount, interest rate and loan tenure.
+  </p>
+
+  <p>
+    It is useful for comparing different loan options before applying for personal loans, car loans or housing loans.
+  </p>
+
+  <h2>How Is Loan Repayment Calculated?</h2>
+
+  <p>
+    This calculator uses a standard reducing balance installment formula to estimate monthly repayment.
+  </p>
+
+  <p>
+    The monthly installment depends on loan amount, annual interest rate and number of repayment months.
+  </p>
+
+  <h2>Formula Used</h2>
+
+  <p>
+    Monthly Payment = P × r × (1 + r)n ÷ [(1 + r)n - 1]
+  </p>
+
+  <p>
+    P is loan amount, r is monthly interest rate and n is total number of months.
+  </p>
+
+  <h2>Example Loan Calculation</h2>
+
+  <p>
+    If you borrow RM100,000 at 4% annual interest for 10 years, your monthly installment is estimated using the loan repayment formula.
+  </p>
+
+  <p>
+    The calculator also shows estimated total repayment and total interest over the loan period.
+  </p>
+
+  <h2>Why Use This Loan Calculator?</h2>
+
+  <ul>
+    <li>Estimate monthly installment</li>
+    <li>Calculate total repayment</li>
+    <li>Estimate total interest paid</li>
+    <li>Compare different loan amounts and tenures</li>
+  </ul>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Is this loan calculator exact?</h3>
+  <p>
+    This calculator provides an estimate only. Actual bank installment may vary depending on bank terms, fees and loan structure.
+  </p>
+
+  <h3>Can I use this for car loans?</h3>
+  <p>
+    Yes, this calculator can provide a general estimate for car loans, but actual car loan calculations may use flat interest methods.
+  </p>
+
+  <h3>Can I use this for housing loans?</h3>
+  <p>
+    Yes, this calculator can estimate housing loan repayments using a reducing balance formula.
+  </p>
+
+  <h3>What affects monthly installment?</h3>
+  <p>
+    Loan amount, interest rate and loan tenure are the main factors affecting monthly installment.
+  </p>
+
+  <h2>Related Calculators</h2>
+
+  <ul>
+    <li><a href="index.html">Salary Calculator</a></li>
+    <li><a href="bonus-calculator.html">Bonus Calculator</a></li>
+    <li><a href="overtime-calculator.html">Overtime Calculator</a></li>
+    <li><a href="annual-leave-calculator.html">Annual Leave Calculator</a></li>
+    <li><a href="salary-increment-calculator.html">Salary Increment Calculator</a></li>
+  </ul>
+
+</div>
+
+<script>
+function formatRM(v){
+  return v.toLocaleString('en-MY',{
+    minimumFractionDigits:2,
+    maximumFractionDigits:2
+  });
+}
+
+function calculate(){
+
+  let amount = parseFloat(document.getElementById("amount").value);
+  let rate = parseFloat(document.getElementById("rate").value);
+  let years = parseFloat(document.getElementById("years").value);
+
+  if(!amount || !rate || !years){
+    document.getElementById("monthly").innerHTML = "Please enter loan amount, interest rate and loan tenure";
+    document.getElementById("annual").innerHTML = "";
+    return;
+  }
+
+  let monthlyRate = rate / 100 / 12;
+  let months = years * 12;
+
+  let monthlyPayment =
+    amount * monthlyRate * Math.pow(1 + monthlyRate, months) /
+    (Math.pow(1 + monthlyRate, months) - 1);
+
+  let totalRepayment = monthlyPayment * months;
+  let totalInterest = totalRepayment - amount;
+
+  document.getElementById("monthly").innerHTML =
+    "Loan Amount: RM " + formatRM(amount) + "<br>" +
+    "Interest Rate: " + rate + "%<br>" +
+    "Loan Tenure: " + years + " years<br><br>" +
+    "<b>Monthly Installment: RM " + formatRM(monthlyPayment) + "</b>";
+
+  document.getElementById("annual").innerHTML =
+    "Total Repayment: RM " + formatRM(totalRepayment) + "<br>" +
+    "Total Interest: RM " + formatRM(totalInterest) + "<br>" +
+    "Total Months: " + months + " months";
+}
+</script>
+
+</body>
+</html>
