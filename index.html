@@ -26,14 +26,19 @@
       padding: 20px;
     }
 
+    .main-container{
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    
     .logo-container{
       text-align:center;
       margin:20px auto 25px;
     }
 
     .logo{
-      max-width:320px;
-      width:90%;
+      max-width:300px;
+      width:100%;
       height:auto;
       display:block;
       margin:0 auto;
@@ -137,32 +142,38 @@
  
 <body>
 
-<div class="logo-container">
+<div class="main-container">
 
-<img src="logo.png" alt="Malaysia Salary Tools" class="logo">
-
-<div class="card">
-  <h1>Malaysia Salary Calculator 2026</h1>
-  <p>Calculate your estimated net take-home pay after EPF, SOCSO, EIS and PCB deductions.</p>
-  <p>This tool gives you a monthly and annual salary breakdown based on your gross monthly salary.</p>
-</div>
-
-  <input type="number" id="salary" placeholder="Enter monthly salary (RM)">
-  <button onclick="calculate()">Calculate Net Salary</button>
-
-  <div class="layout">
-
-    <div class="box">
-      <h3>Monthly Breakdown</h3>
-      <div class="result" id="monthly"></div>
+    <div class="logo-container">
+        <img src="logo.png" alt="Malaysia Salary Tools" class="logo">
     </div>
 
-    <div class="box">
-      <h3>Annual Breakdown</h3>
-      <div class="result" id="annual"></div>
-    </div>
+    <p><b>Malaysia Salary Calculator:</b>
+    Calculate your estimated net take-home pay after EPF, SOCSO, EIS and PCB deductions.</p>
 
-  </div>
+    <p>
+    This tool gives you a monthly and annual salary breakdown based on your gross monthly salary.
+    </p>
+
+    <input type="number" id="salary" placeholder="Enter monthly salary (RM)">
+
+    <button onclick="calculate()">
+        Calculate Net Salary
+    </button>
+
+    <div class="layout">
+
+        <div class="box">
+            <h3>Monthly Breakdown</h3>
+            <div class="result" id="monthly"></div>
+        </div>
+
+        <div class="box">
+            <h3>Annual Breakdown</h3>
+            <div class="result" id="annual"></div>
+        </div>
+
+    </div>
 
 </div>
 
