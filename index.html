@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="favicon.png">
 
   <meta name="description" content="Free Malaysia Salary Calculator 2026. Calculate net take-home pay after EPF, SOCSO, EIS and PCB tax deductions. Estimate monthly and annual salary breakdown instantly.">
- 
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="robots" content="index, follow">
@@ -17,26 +17,75 @@
   <script async
   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6819619632324210"
   crossorigin="anonymous"></script>
-  
+
   <style>
     body {
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #f6f7fb, #eef1f7);
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      color: #111827;
     }
 
-    .logo-container{
-      text-align:center;
-      margin-bottom:20px;
+    .top-nav {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
     }
 
-    .logo{
-      max-width:900px;
-      width:100%;
-      height:auto;
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
     }
-    
+
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      width: 180px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4b5563;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 10px 14px;
+      border-radius: 8px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #2563eb;
+      color: white;
+    }
+
+    .main-wrapper {
+      padding: 30px 20px;
+    }
+
     .card,
     .seo {
       background: white;
@@ -51,10 +100,29 @@
       line-height: 1.7;
     }
 
+    .hero {
+      text-align: center;
+      max-width: 900px;
+      margin: 35px auto 20px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: #64748b;
+      margin-top: 0;
+    }
+
     .layout {
       display: flex;
       gap: 15px;
       flex-wrap: wrap;
+      margin-top: 20px;
     }
 
     .box {
@@ -81,12 +149,16 @@
     }
 
     button {
-      background: #111;
+      background: #2563eb;
       color: white;
       border: none;
       border-radius: 10px;
       font-weight: bold;
       cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
     }
 
     .result {
@@ -111,17 +183,41 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.06);
     }
 
+    .card-link:hover {
+      transform: translateY(-2px);
+      transition: 0.2s;
+    }
+
     h1 { font-size: 26px; }
     h2 { font-size: 20px; margin-top: 25px; }
     h3 { font-size: 16px; margin-top: 18px; }
+
+    @media (max-width: 800px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .brand img {
+        width: 170px;
+      }
+
+      .hero h1 {
+        font-size: 26px;
+      }
+    }
 
     @media (max-width: 700px){
       .layout {
         flex-direction: column;
       }
 
-      body {
-        padding: 10px;
+      .main-wrapper {
+        padding: 15px 10px;
       }
 
       .card,
@@ -129,292 +225,321 @@
         margin: 15px auto;
         padding: 18px;
       }
+
+      .nav-links a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
     }
   </style>
 </head>
- 
+
 <body>
 
-<div class="logo-container">
+  <header class="top-nav">
+    <div class="nav-inner">
 
-<img src="logo.png" alt="Malaysia Salary Tools" class="logo">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Malaysia Salary Tools">
+      </a>
 
-</div>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Salary Calculator</a>
+        <a href="epf-calculator.html">EPF Calculator</a>
+        <a href="socso-calculator.html">SOCSO Calculator</a>
+        <a href="pcb-calculator.html">PCB Calculator</a>
+        <a href="income-tax-calculator.html">Income Tax Calculator</a>
+      </nav>
 
-  <p><b>Malaysia Salary Calculator:</b> Calculate your estimated net take-home pay after EPF, SOCSO, EIS and PCB deductions.</p>
+    </div>
+  </header>
 
-  <p>This tool gives you a monthly and annual salary breakdown based on your gross monthly salary.</p>
+  <div class="main-wrapper">
 
-  <input type="number" id="salary" placeholder="Enter monthly salary (RM)">
-  <button onclick="calculate()">Calculate Net Salary</button>
-
-  <div class="layout">
-
-    <div class="box">
-      <h3>Monthly Breakdown</h3>
-      <div class="result" id="monthly"></div>
+    <div class="hero">
+      <h1>Malaysia Salary Calculator 2026</h1>
+      <p>Calculate your estimated net take-home pay after EPF, SOCSO, EIS and PCB deductions.</p>
     </div>
 
-    <div class="box">
-      <h3>Annual Breakdown</h3>
-      <div class="result" id="annual"></div>
+    <div class="card">
+
+      <h2>Salary Calculator Malaysia</h2>
+
+      <p><b>Malaysia Salary Calculator:</b> Calculate your estimated net take-home pay after EPF, SOCSO, EIS and PCB deductions.</p>
+
+      <p>This tool gives you a monthly and annual salary breakdown based on your gross monthly salary.</p>
+
+      <input type="number" id="salary" placeholder="Enter monthly salary (RM)">
+      <button onclick="calculate()">Calculate Net Salary</button>
+
+      <div class="layout">
+
+        <div class="box">
+          <h3>Monthly Breakdown</h3>
+          <div class="result" id="monthly"></div>
+        </div>
+
+        <div class="box">
+          <h3>Annual Breakdown</h3>
+          <div class="result" id="annual"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="seo">
+
+      <h2>Related Salary Guides</h2>
+
+      <div class="seo-cards">
+
+        <a class="card-link" href="epf-guide.html">
+          <h3>EPF Guide Malaysia</h3>
+          <p>EPF contribution rates and retirement savings</p>
+        </a>
+
+        <a class="card-link" href="socso-guide.html">
+          <h3>SOCSO Guide Malaysia</h3>
+          <p>Work injury protection and employee benefits</p>
+        </a>
+
+        <a class="card-link" href="eis-guide.html">
+          <h3>EIS Guide Malaysia</h3>
+          <p>Employment insurance and unemployment support</p>
+        </a>
+
+        <a class="card-link" href="pcb-guide.html">
+          <h3>PCB Tax Guide Malaysia</h3>
+          <p>Monthly tax deduction explained simply</p>
+        </a>
+
+        <a class="card-link" href="income-tax-guide.html">
+          <h3>Income Tax Guide Malaysia</h3>
+          <p>Learn how income tax, PCB and tax reliefs work.</p>
+        </a>
+
+        <a class="card-link" href="overtime-guide.html">
+          <h3>Overtime Guide Malaysia</h3>
+          <p>Learn how OT pay, hourly rate and overtime calculation work.</p>
+        </a>
+
+        <a class="card-link" href="annual-leave-guide.html">
+          <h3>Annual Leave Guide Malaysia</h3>
+          <p>Learn annual leave entitlement and pro-rated leave calculation.</p>
+        </a>
+
+        <a class="card-link" href="salary-increment-guide.html">
+          <h3>Salary Increment Guide Malaysia</h3>
+          <p>Learn how salary increments and salary raises work.</p>
+        </a>
+
+        <a class="card-link" href="payslip-guide.html">
+          <h3>Payslip Guide Malaysia</h3>
+          <p>Learn how to read payslips and salary deductions.</p>
+        </a>
+
+        <a class="card-link" href="tax-refund-guide.html">
+          <h3>Tax Refund Guide Malaysia</h3>
+          <p>Learn how tax refunds work and why refunds happen.</p>
+        </a>
+
+        <a class="card-link" href="resignation-notice-guide.html">
+          <h3>Resignation Notice Guide Malaysia</h3>
+          <p>Understand notice periods, resignation letters and Employment Act requirements.</p>
+        </a>
+
+        <a class="card-link" href="bonus-guide.html">
+          <h3>Bonus Guide Malaysia</h3>
+          <p>Learn how bonus payments and bonus tax work.</p>
+        </a>
+
+        <a class="card-link" href="loan-guide.html">
+          <h3>Loan Guide Malaysia</h3>
+          <p>Learn loan repayment and monthly instalments.</p>
+        </a>
+
+        <a class="card-link" href="public-holiday-guide.html">
+          <h3>Public Holiday Guide Malaysia</h3>
+          <p>Understand Malaysia public holidays and leave planning.</p>
+        </a>
+
+        <a class="card-link" href="mc-leave-guide.html">
+          <h3>MC Leave Guide Malaysia</h3>
+          <p>Learn medical leave and sick leave entitlement.</p>
+        </a>
+
+        <a class="card-link" href="hourly-rate-guide.html">
+          <h3>Hourly Rate Guide Malaysia</h3>
+          <p>Convert monthly salary into hourly pay.</p>
+        </a>
+
+      </div>
+
+      <h2>How Salary Is Calculated in Malaysia</h2>
+
+      <p>
+        In Malaysia, gross salary is usually reduced by statutory deductions such as EPF, SOCSO, EIS and PCB before the employee receives net take-home pay.
+      </p>
+
+      <p>
+        Gross salary is the amount before deductions. Net salary is the amount received after deductions.
+      </p>
+
+      <h2>Main Salary Deductions in Malaysia</h2>
+
+      <h3>EPF</h3>
+      <p>
+        EPF, also known as KWSP, is Malaysia's retirement savings scheme. Employees and employers contribute monthly based on salary.
+      </p>
+
+      <h3>SOCSO</h3>
+      <p>
+        SOCSO provides protection for workplace injuries, occupational diseases and employment-related risks.
+      </p>
+
+      <h3>EIS</h3>
+      <p>
+        EIS provides employment insurance support for eligible employees who lose their jobs.
+      </p>
+
+      <h3>PCB</h3>
+      <p>
+        PCB is Malaysia's monthly income tax deduction system. It spreads income tax payments throughout the year.
+      </p>
+
+      <h2>Example Salary Calculation</h2>
+
+      <p>
+        For example, an employee earning RM5,000 per month may have deductions for EPF, SOCSO, EIS and PCB.
+      </p>
+
+      <p>
+        After these deductions, the employee's take-home salary will be lower than the gross salary.
+      </p>
+
+      <h2>Why Use This Salary Calculator?</h2>
+
+      <ul>
+        <li>Estimate monthly net salary</li>
+        <li>View annual salary breakdown</li>
+        <li>Understand EPF, SOCSO, EIS and PCB deductions</li>
+        <li>Compare gross salary and take-home pay</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>What is net salary?</h3>
+      <p>
+        Net salary is the amount received after deductions such as EPF, SOCSO, EIS and PCB.
+      </p>
+
+      <h3>Is this salary calculator exact?</h3>
+      <p>
+        This calculator provides an estimate. Actual payroll deductions may vary depending on official rates, tax reliefs and personal circumstances.
+      </p>
+
+      <h3>Does EPF reduce take-home pay?</h3>
+      <p>
+        Yes. The employee portion of EPF is deducted from monthly salary.
+      </p>
+
+      <h3>What is PCB tax?</h3>
+      <p>
+        PCB is Malaysia's monthly income tax deduction system administered through payroll.
+      </p>
+
+      <h2>Related Calculators</h2>
+
+      <ul>
+        <li><a href="epf-calculator.html">EPF Calculator</a></li>
+        <li><a href="socso-calculator.html">SOCSO Calculator</a></li>
+        <li><a href="eis-calculator.html">EIS Calculator</a></li>
+        <li><a href="pcb-calculator.html">PCB Tax Calculator</a></li>
+        <li><a href="bonus-calculator.html">Bonus Calculator</a></li>
+        <li><a href="overtime-calculator.html">Overtime Calculator</a></li>
+        <li><a href="annual-leave-calculator.html">Annual Leave Calculator</a></li>
+        <li><a href="salary-increment-calculator.html">Salary Increment Calculator</a></li>
+        <li><a href="loan-calculator.html">Loan Calculator</a></li>
+        <li><a href="payslip-generator.html">Payslip Generator</a></li>
+        <li><a href="public-holiday-calculator.html">Public Holiday Calculator</a></li>
+        <li><a href="mc-leave-calculator.html">MC Leave Calculator</a></li>
+        <li><a href="resignation-notice-calculator.html">Resignation Notice Calculator</a></li>
+        <li><a href="hourly-rate-calculator.html">Hourly Rate Calculator</a></li>
+        <li><a href="income-tax-calculator.html">Income Tax Calculator</a></li>
+        <li><a href="tax-refund-calculator.html">Tax Refund Calculator</a></li>
+      </ul>
+
     </div>
 
   </div>
 
-</div>
+  <script>
+    function formatRM(v){
+      return v.toLocaleString('en-MY', {
+        minimumFractionDigits:2,
+        maximumFractionDigits:2
+      });
+    }
 
-<div class="seo">
+    function calculate(){
 
-  <h2>Related Salary Guides</h2>
+      let salary = parseFloat(document.getElementById("salary").value);
 
-  <div class="seo-cards">
+      if(!salary){
+        document.getElementById("monthly").innerHTML = "Please enter salary";
+        document.getElementById("annual").innerHTML = "";
+        return;
+      }
 
-    <a class="card-link" href="epf-guide.html">
-      <h3>EPF Guide Malaysia</h3>
-      <p>EPF contribution rates and retirement savings</p>
-    </a>
+      let epf = salary * 0.11;
+      let socso = Math.min(salary * 0.02, 50);
+      let eis = salary * 0.002;
 
-    <a class="card-link" href="socso-guide.html">
-      <h3>SOCSO Guide Malaysia</h3>
-      <p>Work injury protection and employee benefits</p>
-    </a>
+      let annual = salary * 12;
 
-    <a class="card-link" href="eis-guide.html">
-      <h3>EIS Guide Malaysia</h3>
-      <p>Employment insurance and unemployment support</p>
-    </a>
+      let taxRate =
+        annual <= 50000 ? 0.02 :
+        annual <= 100000 ? 0.06 :
+        annual <= 250000 ? 0.12 : 0.18;
 
-    <a class="card-link" href="pcb-guide.html">
-      <h3>PCB Tax Guide Malaysia</h3>
-      <p>Monthly tax deduction explained simply</p>
-    </a>
+      let tax = salary * taxRate;
 
-    <a class="card-link" href="income-tax-guide.html">
-      <h3>Income Tax Guide Malaysia</h3>
-      <p>Learn how income tax, PCB and tax reliefs work.</p>
-    </a>
+      let net = salary - epf - socso - eis - tax;
 
-    <a class="card-link" href="overtime-guide.html">
-      <h3>Overtime Guide Malaysia</h3>
-      <p>Learn how OT pay, hourly rate and overtime calculation work.</p>
-    </a>
+      document.getElementById("monthly").innerHTML =
+        "Gross Salary: RM " + formatRM(salary) + "<br>" +
+        "EPF: RM " + formatRM(epf) + "<br>" +
+        "SOCSO: RM " + formatRM(socso) + "<br>" +
+        "EIS: RM " + formatRM(eis) + "<br>" +
+        "Estimated PCB: RM " + formatRM(tax) + "<br><br>" +
+        "<b>Net Salary: RM " + formatRM(net) + "</b>";
 
-    <a class="card-link" href="annual-leave-guide.html">
-      <h3>Annual Leave Guide Malaysia</h3>
-      <p>Learn annual leave entitlement and pro-rated leave calculation.</p>
-    </a>
+      document.getElementById("annual").innerHTML =
+        "Annual Gross Salary: RM " + formatRM(annual) + "<br>" +
+        "Annual EPF: RM " + formatRM(epf * 12) + "<br>" +
+        "Annual SOCSO: RM " + formatRM(socso * 12) + "<br>" +
+        "Annual EIS: RM " + formatRM(eis * 12) + "<br>" +
+        "Annual PCB: RM " + formatRM(tax * 12) + "<br><br>" +
+        "<b>Annual Net Salary: RM " + formatRM(net * 12) + "</b>";
+    }
+  </script>
 
-    <a class="card-link" href="salary-increment-guide.html">
-      <h3>Salary Increment Guide Malaysia</h3>
-      <p>Learn how salary increments and salary raises work.</p>
-    </a>
+  <hr style="margin-top:40px;">
 
-    <a class="card-link" href="payslip-guide.html">
-      <h3>Payslip Guide Malaysia</h3>
-      <p>Learn how to read payslips and salary deductions.</p>
-    </a>
+  <div style="text-align:center;padding:20px;">
 
-    <a class="card-link" href="tax-refund-guide.html">
-      <h3>Tax Refund Guide Malaysia</h3>
-      <p>Learn how tax refunds work and why refunds happen.</p>
-    </a>
+    <p>
+      © 2026 Malaysia Salary Tools
+    </p>
 
-    <a class="card-link" href="resignation-notice-guide.html">
-      <h3>Resignation Notice Guide Malaysia</h3>
-      <p>Understand notice periods, resignation letters and Employment Act requirements.</p>
-    </a>
+    <p>
+      <a href="about.html">About Us</a> |
+      <a href="contact.html">Contact Us</a> |
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </p>
 
-    <a class="card-link" href="bonus-guide.html">
-      <h3>Bonus Guide Malaysia</h3>
-      <p>Learn how bonus payments and bonus tax work.</p>
-    </a>
-
-    <a class="card-link" href="loan-guide.html">
-      <h3>Loan Guide Malaysia</h3>
-      <p>Learn loan repayment and monthly instalments.</p>
-    </a>
-
-    <a class="card-link" href="public-holiday-guide.html">
-      <h3>Public Holiday Guide Malaysia</h3>
-      <p>Understand Malaysia public holidays and leave planning.</p>
-    </a>
-
-    <a class="card-link" href="mc-leave-guide.html">
-      <h3>MC Leave Guide Malaysia</h3>
-      <p>Learn medical leave and sick leave entitlement.</p>
-    </a>
-
-    <a class="card-link" href="hourly-rate-guide.html">
-      <h3>Hourly Rate Guide Malaysia</h3>
-      <p>Convert monthly salary into hourly pay.</p>
-    </a>
-    
   </div>
-
-  <h2>How Salary Is Calculated in Malaysia</h2>
-
-  <p>
-    In Malaysia, gross salary is usually reduced by statutory deductions such as EPF, SOCSO, EIS and PCB before the employee receives net take-home pay.
-  </p>
-
-  <p>
-    Gross salary is the amount before deductions. Net salary is the amount received after deductions.
-  </p>
-
-  <h2>Main Salary Deductions in Malaysia</h2>
-
-  <h3>EPF</h3>
-  <p>
-    EPF, also known as KWSP, is Malaysia's retirement savings scheme. Employees and employers contribute monthly based on salary.
-  </p>
-
-  <h3>SOCSO</h3>
-  <p>
-    SOCSO provides protection for workplace injuries, occupational diseases and employment-related risks.
-  </p>
-
-  <h3>EIS</h3>
-  <p>
-    EIS provides employment insurance support for eligible employees who lose their jobs.
-  </p>
-
-  <h3>PCB</h3>
-  <p>
-    PCB is Malaysia's monthly income tax deduction system. It spreads income tax payments throughout the year.
-  </p>
-
-  <h2>Example Salary Calculation</h2>
-
-  <p>
-    For example, an employee earning RM5,000 per month may have deductions for EPF, SOCSO, EIS and PCB.
-  </p>
-
-  <p>
-    After these deductions, the employee's take-home salary will be lower than the gross salary.
-  </p>
-
-  <h2>Why Use This Salary Calculator?</h2>
-
-  <ul>
-    <li>Estimate monthly net salary</li>
-    <li>View annual salary breakdown</li>
-    <li>Understand EPF, SOCSO, EIS and PCB deductions</li>
-    <li>Compare gross salary and take-home pay</li>
-  </ul>
-
-  <h2>Frequently Asked Questions</h2>
-
-  <h3>What is net salary?</h3>
-  <p>
-    Net salary is the amount received after deductions such as EPF, SOCSO, EIS and PCB.
-  </p>
-
-  <h3>Is this salary calculator exact?</h3>
-  <p>
-    This calculator provides an estimate. Actual payroll deductions may vary depending on official rates, tax reliefs and personal circumstances.
-  </p>
-
-  <h3>Does EPF reduce take-home pay?</h3>
-  <p>
-    Yes. The employee portion of EPF is deducted from monthly salary.
-  </p>
-
-  <h3>What is PCB tax?</h3>
-  <p>
-    PCB is Malaysia's monthly income tax deduction system administered through payroll.
-  </p>
-
-  <h2>Related Calculators</h2>
-
-  <ul>
-    <li><a href="epf-calculator.html">EPF Calculator</a></li>
-    <li><a href="socso-calculator.html">SOCSO Calculator</a></li>
-    <li><a href="eis-calculator.html">EIS Calculator</a></li>
-    <li><a href="pcb-calculator.html">PCB Tax Calculator</a></li>
-    <li><a href="bonus-calculator.html">Bonus Calculator</a></li>
-    <li><a href="overtime-calculator.html">Overtime Calculator</a></li>
-    <li><a href="annual-leave-calculator.html">Annual Leave Calculator</a></li>
-    <li><a href="salary-increment-calculator.html">Salary Increment Calculator</a></li>
-    <li><a href="loan-calculator.html">Loan Calculator</a></li>
-    <li><a href="payslip-generator.html">Payslip Generator</a></li>
-    <li><a href="public-holiday-calculator.html">Public Holiday Calculator</a></li>
-    <li><a href="mc-leave-calculator.html">MC Leave Calculator</a></li>
-    <li><a href="resignation-notice-calculator.html">Resignation Notice Calculator</a></li>
-    <li><a href="hourly-rate-calculator.html">Hourly Rate Calculator</a></li>
-    <li><a href="income-tax-calculator.html">Income Tax Calculator</a></li>
-    <li><a href="tax-refund-calculator.html">Tax Refund Calculator</a></li>
-    
-  </ul>
-
-</div>
-
-<script>
-function formatRM(v){
-  return v.toLocaleString('en-MY', {
-    minimumFractionDigits:2,
-    maximumFractionDigits:2
-  });
-}
-
-function calculate(){
-
-  let salary = parseFloat(document.getElementById("salary").value);
-
-  if(!salary){
-    document.getElementById("monthly").innerHTML = "Please enter salary";
-    document.getElementById("annual").innerHTML = "";
-    return;
-  }
-
-  let epf = salary * 0.11;
-  let socso = Math.min(salary * 0.02, 50);
-  let eis = salary * 0.002;
-
-  let annual = salary * 12;
-
-  let taxRate =
-    annual <= 50000 ? 0.02 :
-    annual <= 100000 ? 0.06 :
-    annual <= 250000 ? 0.12 : 0.18;
-
-  let tax = salary * taxRate;
-
-  let net = salary - epf - socso - eis - tax;
-
-  document.getElementById("monthly").innerHTML =
-    "Gross Salary: RM " + formatRM(salary) + "<br>" +
-    "EPF: RM " + formatRM(epf) + "<br>" +
-    "SOCSO: RM " + formatRM(socso) + "<br>" +
-    "EIS: RM " + formatRM(eis) + "<br>" +
-    "Estimated PCB: RM " + formatRM(tax) + "<br><br>" +
-    "<b>Net Salary: RM " + formatRM(net) + "</b>";
-
-  document.getElementById("annual").innerHTML =
-    "Annual Gross Salary: RM " + formatRM(annual) + "<br>" +
-    "Annual EPF: RM " + formatRM(epf * 12) + "<br>" +
-    "Annual SOCSO: RM " + formatRM(socso * 12) + "<br>" +
-    "Annual EIS: RM " + formatRM(eis * 12) + "<br>" +
-    "Annual PCB: RM " + formatRM(tax * 12) + "<br><br>" +
-    "<b>Annual Net Salary: RM " + formatRM(net * 12) + "</b>";
-}
-</script>
-
-<hr style="margin-top:40px;">
-
-<div style="text-align:center;padding:20px;">
-
-<p>
-© 2026 Malaysia Salary Tools
-</p>
-
-<p>
-<a href="about.html">About Us</a> |
-<a href="contact.html">Contact Us</a> |
-<a href="privacy-policy.html">Privacy Policy</a>
-</p>
-
-</div>
 
 </body>
 </html>
