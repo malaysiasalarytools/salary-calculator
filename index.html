@@ -27,6 +27,56 @@
       color: #111827;
     }
 
+      .salary-guides-box {
+        margin-top: 35px;
+        padding: 24px;
+        background: #f8fafc;
+        border: 1px solid #e5e7eb;
+        border-radius: 16px;
+      }
+
+      .salary-guides-box h2 {
+        margin-top: 0;
+      }
+
+      .salary-guides-box p {
+        color: #4b5563;
+      }
+
+      .guide-mini-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .guide-mini-grid a {
+        background: white;
+        border: 1px solid #e5e7eb;
+        padding: 12px 14px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: #2563eb;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .guide-mini-grid a:hover {
+        background: #2563eb;
+        color: white;
+      }
+
+      .view-all-guides {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .view-all-guides a {
+        color: #2563eb;
+        font-weight: bold;
+        text-decoration: none;
+      }
+    
     .salary-components {
       margin-top: 30px;
     }
@@ -345,17 +395,7 @@
 
     <div class="seo">
 
-      <h2>Salary Guides</h2>
-
-      <p>
-      Learn more about salary, EPF, SOCSO, PCB tax, annual leave and employee benefits in Malaysia.
-      </p>
-
-      <p>
-      <a href="guides.html" class="card-link">
-      View All Salary Guides →
-      </a>
-      </p>
+     </p>
 
 <section class="salary-components">
 
@@ -401,6 +441,33 @@
 
 </section>
 
+<section class="salary-guides-box">
+
+  <h2>📚 Malaysia Salary Guides</h2>
+
+  <p>
+    Learn more about salary deductions, tax, leave, bonus and payroll rules in Malaysia.
+  </p>
+
+  <div class="guide-mini-grid">
+
+    <a href="epf-guide.html">EPF Guide</a>
+    <a href="socso-guide.html">SOCSO Guide</a>
+    <a href="eis-guide.html">EIS Guide</a>
+    <a href="pcb-guide.html">PCB Guide</a>
+    <a href="annual-leave-guide.html">Annual Leave Guide</a>
+    <a href="bonus-guide.html">Bonus Guide</a>
+    <a href="loan-guide.html">Loan Guide</a>
+    <a href="salary-increment-guide.html">Salary Increment Guide</a>
+
+  </div>
+
+  <p class="view-all-guides">
+    <a href="guides.html">View All Salary Guides →</a>
+  </p>
+
+</section>
+      
       <h2>Example Salary Calculation</h2>
 
       <p>
