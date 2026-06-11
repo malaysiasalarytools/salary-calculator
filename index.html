@@ -493,7 +493,26 @@
       }
 
       let epf = salary * 0.11;
-      let socso = Math.min(salary * 0.02, 50);
+      let socsoSalary = Math.min(salary, 6000);
+
+      let socso = 0;
+
+      if (socsoSalary <= 30) {
+        socso = 0.10;
+      } else if (socsoSalary <= 50) {
+        socso = 0.20;
+      } else if (socsoSalary <= 70) {
+        socso = 0.30;
+      } else if (socsoSalary <= 100) {
+        socso = 0.40;
+      } else {
+        let bracketUpper = Math.ceil(socsoSalary / 100) * 100;
+        let bracketLower = bracketUpper - 100;
+        let bracketMid = (bracketLower + bracketUpper) / 2;
+        socso = bracketMid * 0.005;
+      }
+
+      socso = Math.round(socso * 100) / 100;
       let eis = salary * 0.002;
 
       let annual = salary * 12;
