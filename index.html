@@ -28,13 +28,15 @@
 
     .logo-container{
       text-align:center;
-      margin-bottom:20px;
+      margin:20px auto 25px;
     }
 
     .logo{
-      max-width:500px;
-      width:100%;
+      max-width:320px;
+      width:90%;
       height:auto;
+      display:block;
+      margin:0 auto;
     }
     
     .card,
@@ -139,11 +141,11 @@
 
 <img src="logo.png" alt="Malaysia Salary Tools" class="logo">
 
-</div>
-
-  <p><b>Malaysia Salary Calculator:</b> Calculate your estimated net take-home pay after EPF, SOCSO, EIS and PCB deductions.</p>
-
+<div class="card">
+  <h1>Malaysia Salary Calculator 2026</h1>
+  <p>Calculate your estimated net take-home pay after EPF, SOCSO, EIS and PCB deductions.</p>
   <p>This tool gives you a monthly and annual salary breakdown based on your gross monthly salary.</p>
+</div>
 
   <input type="number" id="salary" placeholder="Enter monthly salary (RM)">
   <button onclick="calculate()">Calculate Net Salary</button>
