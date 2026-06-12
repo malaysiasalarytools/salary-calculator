@@ -161,6 +161,90 @@
       font-size: 15px;
     }
 
+
+    .contribution-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 16px;
+      padding: 24px;
+      margin: 25px 0;
+    }
+
+    .contribution-box h2 {
+      margin-top: 0;
+    }
+
+    .contribution-box p {
+      color: #4b5563;
+    }
+
+    .contribution-tabs {
+      display: inline-flex;
+      background: #eef2f7;
+      border-radius: 10px;
+      padding: 5px;
+      gap: 4px;
+      margin: 12px 0 20px;
+    }
+
+    .contribution-tabs button {
+      width: auto;
+      margin-top: 0;
+      padding: 10px 20px;
+      background: transparent;
+      color: #64748b;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .contribution-tabs button.active {
+      background: white;
+      color: #2563eb;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .contribution-table-wrap {
+      overflow-x: auto;
+    }
+
+    .contribution-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      overflow: hidden;
+      min-width: 520px;
+    }
+
+    .contribution-table th {
+      background: #f8fafc;
+      color: #64748b;
+      font-size: 13px;
+      text-align: left;
+      letter-spacing: 0.4px;
+      padding: 14px;
+      border-bottom: 1px solid #dbe3ef;
+    }
+
+    .contribution-table td {
+      padding: 14px;
+      border-bottom: 1px solid #eef2f7;
+      color: #334155;
+      font-size: 14px;
+    }
+
+    .contribution-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .contribution-note {
+      margin-top: 12px;
+      font-size: 13px;
+      color: #64748b;
+    }
+
     .component-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -519,6 +603,142 @@
     <span>Total Deductions = EPF + SOCSO + EIS + PCB</span>
   </div>
 
+
+  <section class="contribution-box">
+
+    <h2>📊 Contribution Tables 2026</h2>
+
+    <p>
+      Quick reference for common EPF, SOCSO and EIS contribution rates in Malaysia.
+    </p>
+
+    <div class="contribution-tabs">
+      <button type="button" class="active" onclick="showContributionTable('epf', this)">EPF (KWSP)</button>
+      <button type="button" onclick="showContributionTable('socso', this)">SOCSO (PERKESO)</button>
+      <button type="button" onclick="showContributionTable('eis', this)">EIS</button>
+    </div>
+
+    <div class="contribution-table-wrap" id="epf-table">
+      <table class="contribution-table">
+        <thead>
+          <tr>
+            <th>Salary Range</th>
+            <th>Employee (%)</th>
+            <th>Employer (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>≤ RM5,000</td>
+            <td>11%</td>
+            <td>13%</td>
+          </tr>
+          <tr>
+            <td>&gt; RM5,000</td>
+            <td>11%</td>
+            <td>12%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="contribution-table-wrap" id="socso-table" style="display:none;">
+      <table class="contribution-table">
+        <thead>
+          <tr>
+            <th>Monthly Wages (RM)</th>
+            <th>Employee (RM)</th>
+            <th>Employer (RM)</th>
+            <th>Total (RM)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>RM1,000 – RM2,000</td>
+            <td>4.75</td>
+            <td>16.65</td>
+            <td>21.40</td>
+          </tr>
+          <tr>
+            <td>RM3,000 – RM4,000</td>
+            <td>14.75</td>
+            <td>51.65</td>
+            <td>66.40</td>
+          </tr>
+          <tr>
+            <td>RM5,000 – RM6,000</td>
+            <td>24.75</td>
+            <td>86.65</td>
+            <td>111.40</td>
+          </tr>
+          <tr>
+            <td>RM6,000</td>
+            <td>29.75</td>
+            <td>104.15</td>
+            <td>133.90</td>
+          </tr>
+          <tr>
+            <td>&gt; RM6,000</td>
+            <td>30.00</td>
+            <td>105.00</td>
+            <td>135.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="contribution-table-wrap" id="eis-table" style="display:none;">
+      <table class="contribution-table">
+        <thead>
+          <tr>
+            <th>Salary Range (RM)</th>
+            <th>Employee (RM)</th>
+            <th>Employer (RM)</th>
+            <th>Total (RM)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Up to 300</td>
+            <td>0.50</td>
+            <td>0.50</td>
+            <td>1.00</td>
+          </tr>
+          <tr>
+            <td>2,000 – 2,100</td>
+            <td>4.10</td>
+            <td>4.10</td>
+            <td>8.20</td>
+          </tr>
+          <tr>
+            <td>4,000 – 4,100</td>
+            <td>8.10</td>
+            <td>8.10</td>
+            <td>16.20</td>
+          </tr>
+          <tr>
+            <td>4,900 – 5,000</td>
+            <td>9.90</td>
+            <td>9.90</td>
+            <td>19.80</td>
+          </tr>
+          <tr>
+            <td>&gt; 6,000</td>
+            <td>11.90</td>
+            <td>11.90</td>
+            <td>23.80</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="contribution-note">
+      Note: These tables are simplified quick references. For full statutory tables, refer to the detailed EPF, SOCSO and EIS guides.
+    </p>
+
+  </section>
+
+
   <div class="component-grid">
 
     <a class="component-card" href="epf-guide.html">
@@ -716,6 +936,22 @@ RM8,000 per child in tertiary education.
   </div>
       
   <script>
+
+    function showContributionTable(type, button){
+      document.getElementById("epf-table").style.display = "none";
+      document.getElementById("socso-table").style.display = "none";
+      document.getElementById("eis-table").style.display = "none";
+
+      document.getElementById(type + "-table").style.display = "block";
+
+      let buttons = document.querySelectorAll(".contribution-tabs button");
+      buttons.forEach(function(btn){
+        btn.classList.remove("active");
+      });
+
+      button.classList.add("active");
+    }
+
     function formatRM(v){
       return v.toLocaleString('en-MY', {
         minimumFractionDigits:2,
