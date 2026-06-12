@@ -78,6 +78,45 @@
       font-size: 14px;
     }
 
+.faq-box {
+  margin-top: 25px;
+}
+
+.faq-item {
+  background: #f8fafc;
+  border: 1px solid #dbe3ef;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.faq-item summary {
+  font-weight: bold;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "▼";
+  float: right;
+  font-size: 12px;
+}
+
+.faq-item[open] summary::after {
+  content: "▲";
+}
+
+.faq-item p {
+  margin-top: 12px;
+  margin-bottom: 0;
+  color: #4b5563;
+  line-height: 1.5;
+}
+    
     .payroll-note {
       margin-top: 20px;
       background: white;
@@ -780,35 +819,51 @@
 
 <h2>Frequently Asked Questions</h2>
 
-<h3>Does this salary calculator include EPF, SOCSO, EIS and PCB?</h3>
+<div class="faq-box">
+
+<details class="faq-item">
+<summary>Does this salary calculator include EPF, SOCSO, EIS and PCB?</summary>
 <p>
 Yes. This calculator estimates your monthly take-home pay after deducting EPF, SOCSO, EIS and estimated PCB tax based on your gross monthly salary.
 </p>
+</details>
 
-<h3>Why is my actual salary different from the calculator result?</h3>
+<details class="faq-item">
+<summary>Why is my actual salary different from the calculator result?</summary>
 <p>
 Actual payroll calculations may vary depending on tax relief claims, additional allowances, bonuses, overtime payments, unpaid leave and employer payroll settings.
 </p>
+</details>
 
-<h3>How is PCB tax calculated in Malaysia?</h3>
+<details class="faq-item">
+<summary>How is PCB tax calculated in Malaysia?</summary>
 <p>
 PCB (Potongan Cukai Bulanan) is a monthly tax deduction system administered by LHDN. The amount depends on your chargeable income, tax reliefs and personal circumstances.
 </p>
+</details>
 
-<h3>Can I calculate annual salary from monthly salary?</h3>
+<details class="faq-item">
+<summary>Can I calculate annual salary from monthly salary?</summary>
 <p>
 Yes. This calculator automatically provides both monthly and annual salary breakdowns based on the gross monthly salary entered.
 </p>
+</details>
 
-<h3>Do bonuses and allowances affect take-home pay?</h3>
+<details class="faq-item">
+<summary>Do bonuses and allowances affect take-home pay?</summary>
 <p>
 Yes. Additional income such as bonuses, commissions, allowances and overtime payments may increase statutory deductions and PCB tax.
 </p>
+</details>
 
-<h3>What tax reliefs can reduce PCB deductions?</h3>
+<details class="faq-item">
+<summary>What tax reliefs can reduce PCB deductions?</summary>
 <p>
 Common Malaysia tax reliefs include EPF contributions, life insurance, medical insurance, lifestyle expenses, education fees, medical expenses and child reliefs.
 </p>
+</details>
+
+</div>
 
 <section class="tax-relief-box">
 
