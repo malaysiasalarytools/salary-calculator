@@ -46,9 +46,36 @@
       background: white;
       border: 1px solid #dbe3ef;
       border-radius: 10px;
-      padding: 12px;
-      text-align: center;
+      padding: 14px;
+      text-align: left;
+    }
+
+    .tax-item summary {
       font-weight: bold;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .tax-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .tax-item summary::after {
+      content: "▼";
+      float: right;
+      font-size: 12px;
+    }
+
+    .tax-item[open] summary::after {
+      content: "▲";
+    }
+
+    .tax-item p {
+      margin-top: 12px;
+      margin-bottom: 0;
+      color: #4b5563;
+      line-height: 1.5;
+      font-size: 14px;
     }
 
     .payroll-note {
@@ -556,24 +583,60 @@
   <h2>🛡️ Tax Relief & Payroll Notes</h2>
 
   <p>
-    Malaysia taxpayers may reduce their chargeable income through various tax reliefs and deductions.
+    Click each tax relief below to see common claim limits and examples.
   </p>
 
-  <div class="tax-grid">
+<div class="tax-grid">
 
-    <div class="tax-item">Lifestyle Relief</div>
+<details class="tax-item">
+<summary>Lifestyle Relief</summary>
+<p>
+Claim up to RM2,500 for books, smartphone, laptop,
+internet subscription and gym membership.
+</p>
+</details>
 
-    <div class="tax-item">Medical Expenses</div>
+<details class="tax-item">
+<summary>Medical Expenses</summary>
+<p>
+Claim up to RM8,000 for parents' medical treatment,
+serious diseases and related healthcare expenses.
+</p>
+</details>
 
-    <div class="tax-item">Education Fees</div>
+<details class="tax-item">
+<summary>Education Fees</summary>
+<p>
+Claim tax relief for approved self-education fees and
+professional courses.
+</p>
+</details>
 
-    <div class="tax-item">Insurance & Takaful</div>
+<details class="tax-item">
+<summary>Insurance & Takaful</summary>
+<p>
+Life insurance and takaful premiums may qualify for
+tax relief up to applicable limits.
+</p>
+</details>
 
-    <div class="tax-item">EPF Contributions</div>
+<details class="tax-item">
+<summary>EPF Contributions</summary>
+<p>
+EPF contributions can be claimed up to RM4,000
+(combined with certain insurance reliefs).
+</p>
+</details>
 
-    <div class="tax-item">Child Relief</div>
+<details class="tax-item">
+<summary>Child Relief</summary>
+<p>
+RM2,000 per child under 18.
+RM8,000 per child in tertiary education.
+</p>
+</details>
 
-  </div>
+</div>
 
   <div class="payroll-note">
     <strong>Payroll Note:</strong>
