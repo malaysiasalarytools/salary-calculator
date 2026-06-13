@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-
-  <title>Malaysia Salary Increment Guide 2026 | Salary Raise & Increment Tips</title>
-
-  <meta name="description" content="Malaysia Salary Increment Guide 2026. Learn average salary increment rates, salary raise negotiation tips and how to calculate salary increases in Malaysia.">
-
+  <title>Malaysia Salary Increment Guide 2026 | Calculate Raise, New Salary & Net Pay</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Malaysia Salary Increment Guide 2026. Learn how salary increments work, how to calculate percentage increase and how a raise affects take-home pay.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="robots" content="index, follow">
 
   <script async
@@ -18,13 +14,99 @@
 
   <style>
     body {
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #f6f7fb, #eef1f7);
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      color: #111827;
     }
 
-    .card {
+    .top-nav {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+      font-weight: bold;
+      color: #2563eb;
+      font-size: 22px;
+    }
+
+    .brand img {
+      width: 180px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .nav-links::-webkit-scrollbar { display: none; }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4b5563;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #2563eb;
+      color: white;
+    }
+
+    .main-wrapper { padding: 30px 20px; }
+
+    .hero {
+      text-align: center;
+      max-width: 900px;
+      margin: 35px auto 20px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: #64748b;
+      margin-top: 0;
+      line-height: 1.6;
+    }
+
+    .seo {
       background: white;
       max-width: 900px;
       margin: 30px auto;
@@ -34,278 +116,360 @@
       line-height: 1.7;
     }
 
-    .seo-cards {
+    h1 { font-size: 26px; }
+    h2 { font-size: 20px; margin-top: 25px; }
+    h3 { font-size: 16px; margin-top: 18px; }
+
+    .career-cta,
+    .summary-box,
+    .guide-box,
+    .example-box,
+    .salary-guides-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 16px;
+      padding: 24px;
+      margin: 25px 0;
+    }
+
+    .career-cta {
+      text-align: center;
+      background: linear-gradient(135deg, #f8fafc, #eef6ff);
+    }
+
+    .career-cta h2,
+    .summary-box h2,
+    .guide-box h2,
+    .example-box h2,
+    .salary-guides-box h2 { margin-top: 0; }
+
+    .career-cta p {
+      color: #4b5563;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .cta-button:hover { background: #1d4ed8; }
+
+    .summary-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .summary-card {
+      background: white;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .summary-card strong {
+      display: block;
+      color: #2563eb;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .summary-card span {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .contribution-table-wrap { overflow-x: auto; }
+
+    .contribution-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      overflow: hidden;
+      min-width: 520px;
+    }
+
+    .contribution-table th {
+      background: #f8fafc;
+      color: #64748b;
+      font-size: 13px;
+      text-align: left;
+      letter-spacing: 0.4px;
+      padding: 14px;
+      border-bottom: 1px solid #dbe3ef;
+    }
+
+    .contribution-table td {
+      padding: 14px;
+      border-bottom: 1px solid #eef2f7;
+      color: #334155;
+      font-size: 14px;
+    }
+
+    .contribution-table tr:last-child td { border-bottom: none; }
+
+    .note-box {
+      margin-top: 20px;
+      background: white;
+      border-left: 4px solid #2563eb;
+      padding: 12px;
+      border-radius: 8px;
+      color: #4b5563;
+    }
+
+    .formula-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 14px;
+      padding: 25px;
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .formula-box strong {
+      display: block;
+      font-size: 22px;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .formula-box span {
+      color: #64748b;
+      font-size: 15px;
+    }
+
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
       margin-top: 20px;
     }
 
-    .card-link {
-      display: block;
-      padding: 15px;
+    .component-card {
       background: white;
-      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
       text-decoration: none;
-      color: black;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      color: inherit;
     }
 
-    h1 { font-size: 28px; }
-    h2 { font-size: 22px; margin-top: 30px; }
-    h3 { font-size: 18px; margin-top: 20px; }
+    .component-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
 
-    a { color: black; }
+    .component-card h3 { margin: 8px 0; }
 
-    @media (max-width:700px){
-      body { padding:10px; }
+    .component-card p {
+      color: #4b5563;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
 
-      .card{
-        margin:15px auto;
-        padding:18px;
-      }
+    .faq-box { margin-top: 25px; }
+
+    .faq-item {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .faq-item summary {
+      font-weight: bold;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: "▼";
+      float: right;
+      font-size: 12px;
+    }
+
+    .faq-item[open] summary::after { content: "▲"; }
+
+    .faq-item p {
+      margin-top: 12px;
+      margin-bottom: 0;
+      color: #4b5563;
+      line-height: 1.5;
+    }
+
+    .guide-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .guide-mini-grid a {
+      background: white;
+      border: 1px solid #e5e7eb;
+      padding: 12px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .guide-mini-grid a:hover {
+      background: #2563eb;
+      color: white;
+    }
+
+    .view-all-guides {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .view-all-guides a {
+      color: #2563eb;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .footer { text-align:center; padding:20px; }
+
+    @media (max-width: 700px){
+      .main-wrapper { padding: 15px 10px; }
+      .seo { margin: 15px auto; padding: 18px; }
+      .nav-inner { padding: 8px 10px; gap: 8px; }
+      .brand img { width: 120px; }
+      .brand { font-size: 18px; }
+      .nav-links { gap: 6px; }
+      .nav-links a { font-size: 14px; padding: 8px 10px; }
+      .hero h1 { font-size: 26px; }
+      .component-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .component-card { padding: 14px; text-align: center; }
+      .component-icon { font-size: 22px; }
+      .component-card h3 { font-size: 15px; margin: 6px 0; }
+      .component-card p { font-size: 12px; line-height: 1.35; margin: 0; }
     }
   </style>
 </head>
-
 <body>
-
-<div class="card">
-
-<h1>Malaysia Salary Increment Guide 2026</h1>
-
-<p>
-This Malaysia Salary Increment Guide explains how salary increments work, how to calculate a salary increase and how employees can negotiate a salary raise.
-</p>
-
-<p>
-Whether you are a fresh graduate, executive, senior employee or manager, understanding salary increments can help you plan your career and income growth.
-</p>
-
-<h2>Related Calculators</h2>
-
-<div class="seo-cards">
-
-<a class="card-link" href="salary-increment-calculator.html">
-<h3>Salary Increment Calculator</h3>
-<p>Calculate salary increase percentage and new salary.</p>
-</a>
-
-<a class="card-link" href="salary-calculator.html">
-<h3>Salary Calculator</h3>
-<p>Estimate take-home pay after statutory deductions.</p>
-</a>
-
-<a class="card-link" href="bonus-calculator.html">
-<h3>Bonus Calculator</h3>
-<p>Estimate bonus and annual compensation.</p>
-</a>
-
-<a class="card-link" href="income-tax-calculator.html">
-<h3>Income Tax Calculator</h3>
-<p>Estimate income tax after salary increment.</p>
-</a>
-
-</div>
-
-<h2>What Is A Salary Increment?</h2>
-
-<p>
-A salary increment is an increase in an employee's salary. It is commonly awarded based on performance, experience, promotion, market conditions or company profitability.
-</p>
-
-<p>
-Most employees expect salary reviews annually, although some companies conduct reviews more frequently.
-</p>
-
-<h2>How To Calculate Salary Increment</h2>
-
-<p>
-Salary increment is usually expressed as a percentage.
-</p>
-
-<p>
-The formula is:
-</p>
-
-<p>
-<b>Increment % = (Salary Increase ÷ Current Salary) × 100</b>
-</p>
-
-<p>
-For example:
-</p>
-
-<p>
-Current Salary = RM3,000
-<br>
-New Salary = RM3,300
-<br>
-Increase = RM300
-</p>
-
-<p>
-RM300 ÷ RM3,000 × 100 = 10%
-</p>
-
-<p>
-The employee received a 10% salary increment.
-</p>
-
-<h2>Average Salary Increment In Malaysia</h2>
-
-<p>
-Salary increments vary by industry, company size and employee performance.
-</p>
-
-<p>
-In general, many employees may receive annual increments in the low single-digit percentage range, while promotions and job changes may result in significantly larger increases.
-</p>
-
-<p>
-Employees in high-demand industries may experience faster salary growth compared to the overall market.
-</p>
-
-<h2>What Affects Salary Increment?</h2>
-
-<ul>
-<li>Individual performance</li>
-<li>Company profitability</li>
-<li>Economic conditions</li>
-<li>Industry demand</li>
-<li>Skills and certifications</li>
-<li>Promotion and job scope</li>
-<li>Years of experience</li>
-</ul>
-
-<h2>Salary Increment vs Promotion</h2>
-
-<p>
-A salary increment does not always mean a promotion.
-</p>
-
-<p>
-Employees may receive annual salary adjustments while remaining in the same role.
-</p>
-
-<p>
-Promotions often involve additional responsibilities and may result in larger salary increases.
-</p>
-
-<h2>Should You Negotiate Your Salary?</h2>
-
-<p>
-Employees who consistently perform well may consider discussing salary progression during performance reviews.
-</p>
-
-<p>
-Preparation is important when negotiating:
-</p>
-
-<ul>
-<li>Know your market value</li>
-<li>Document achievements</li>
-<li>Show measurable contributions</li>
-<li>Be professional and realistic</li>
-<li>Understand company conditions</li>
-</ul>
-
-<h2>When Is The Best Time To Ask For A Raise?</h2>
-
-<p>
-Common opportunities include:
-</p>
-
-<ul>
-<li>Annual performance review</li>
-<li>After completing major projects</li>
-<li>After receiving new responsibilities</li>
-<li>After obtaining valuable certifications</li>
-<li>During promotion discussions</li>
-</ul>
-
-<h2>How Salary Increment Affects Take-Home Pay</h2>
-
-<p>
-A higher salary may increase EPF, SOCSO, EIS and PCB deductions.
-</p>
-
-<p>
-However, most employees still experience higher net income after a salary increment.
-</p>
-
-<p>
-You can estimate the effect using our Salary Calculator and Income Tax Calculator.
-</p>
-
-<h2>Example Salary Increment Scenarios</h2>
-
-<p>
-RM3,000 → RM3,150 = 5% increase
-</p>
-
-<p>
-RM4,000 → RM4,400 = 10% increase
-</p>
-
-<p>
-RM5,000 → RM6,000 = 20% increase
-</p>
-
-<p>
-Larger increases are commonly associated with promotions or job changes.
-</p>
-
-<h2>Frequently Asked Questions</h2>
-
-<h3>What is a good salary increment?</h3>
-
-<p>
-A good salary increment depends on industry, performance and market conditions. Employees often compare increments against inflation, market salary levels and career progression.
-</p>
-
-<h3>Is changing jobs better than waiting for an increment?</h3>
-
-<p>
-Job changes may sometimes result in larger salary increases, but career goals, stability and work environment should also be considered.
-</p>
-
-<h3>Can salary increment increase tax?</h3>
-
-<p>
-Yes. Higher income may result in higher PCB deductions and income tax.
-</p>
-
-<h3>How often do companies review salaries?</h3>
-
-<p>
-Many companies conduct annual salary reviews, although practices vary by employer.
-</p>
-
-<h2>Useful Tools</h2>
-
-<ul>
-<li><a href="salary-increment-calculator.html">Salary Increment Calculator</a></li>
-<li><a href="salary-calculator.html">Salary Calculator</a></li>
-<li><a href="bonus-calculator.html">Bonus Calculator</a></li>
-<li><a href="income-tax-calculator.html">Income Tax Calculator</a></li>
-<li><a href="tax-refund-calculator.html">Tax Refund Calculator</a></li>
-</ul>
-
-<hr style="margin-top:40px;">
-
-<div style="text-align:center;padding:20px;">
-<p>© 2026 Malaysia Salary Tools</p>
-
-<p>
-<a href="index.html">Home</a> |
-<a href="about.html">About Us</a> |
-<a href="contact.html">Contact Us</a> |
-<a href="privacy-policy.html">Privacy Policy</a>
-</p>
-</div>
-
-</div>
-
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Salary Calculator</a>
+        <a href="epf-calculator.html">EPF Calculator</a>
+        <a href="socso-calculator.html">SOCSO Calculator</a>
+        <a href="pcb-calculator.html">PCB Calculator</a>
+        <a href="income-tax-calculator.html">Income Tax Calculator</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="main-wrapper">
+    <div class="hero">
+      <h1>Malaysia Salary Increment Guide 2026</h1>
+      <p>Learn how salary increments are calculated, how to compare percentage raises and how a salary increase affects monthly take-home pay.</p>
+    </div>
+
+    <div class="seo">
+
+      <section class="career-cta">
+        <h2>📈 Estimate Your Salary Increment</h2>
+        <p>Want to know how much your salary increases after a raise? Use salary tools to compare your current salary, new salary and take-home pay.</p>
+        <a href="salary-increment-calculator.html" class="cta-button">Open Salary Increment Calculator →</a>
+      </section>
+
+      <section class="summary-box">
+        <h2>📌 Salary Increment Quick Summary</h2>
+        <p>A salary increment is an increase in monthly salary, usually given due to performance, promotion, market adjustment or annual review.</p>
+        <div class="summary-grid">
+          <div class="summary-card"><strong>% Increase</strong><span>Common way to measure increment</span></div>
+          <div class="summary-card"><strong>New Salary</strong><span>Old salary plus increment</span></div>
+          <div class="summary-card"><strong>Net Pay</strong><span>Deductions may also increase</span></div>
+          <div class="summary-card"><strong>Career Growth</strong><span>Linked to skills and performance</span></div>
+        </div>
+      </section>
+
+      <h2>What Is a Salary Increment?</h2>
+      <p>A salary increment is an increase in an employee's monthly salary. It may be given after annual appraisal, promotion, role expansion, market adjustment or successful salary negotiation.</p>
+      <p>When reviewing an increment, employees should look at both gross salary increase and net take-home pay after EPF, SOCSO, EIS and PCB deductions.</p>
+
+      <h2>How Salary Increment Is Calculated</h2>
+      <p>Salary increment can be calculated as either a fixed amount or a percentage of current salary.</p>
+      <div class="formula-box"><strong>New Salary = Current Salary × (1 + Increment %)</strong><span>Example: RM3,000 × 1.10 = RM3,300 after a 10% increment</span></div>
+
+      <section class="example-box">
+        <h2>Example Salary Increment Calculation</h2>
+        <p>If your current salary is RM3,000 and your increment is 10%:</p>
+        <ul><li>Current salary: RM3,000</li><li>Increment percentage: 10%</li><li>Increment amount: RM300</li><li>New salary: RM3,300</li></ul>
+      </section>
+
+      <section class="guide-box">
+        <h2>Common Reasons for Salary Increment</h2>
+        <div class="component-grid">
+          <div class="component-card"><div class="component-icon">⭐</div><h3>Performance</h3><p>Strong work results or KPI achievement.</p></div>
+          <div class="component-card"><div class="component-icon">🚀</div><h3>Promotion</h3><p>Higher role, responsibility or job grade.</p></div>
+          <div class="component-card"><div class="component-icon">📊</div><h3>Market Adjustment</h3><p>Salary adjusted to match market rates.</p></div>
+          <div class="component-card"><div class="component-icon">🧠</div><h3>New Skills</h3><p>Additional value from certification or experience.</p></div>
+        </div>
+      </section>
+
+      <section class="guide-box">
+        <h2>Fixed Increment vs Percentage Increment</h2>
+        <div class="contribution-table-wrap"><table class="contribution-table"><thead><tr><th>Increment Type</th><th>Example</th><th>Best Used For</th></tr></thead><tbody><tr><td>Fixed Amount</td><td>RM300 increase</td><td>Simple salary adjustment</td></tr><tr><td>Percentage</td><td>10% increase</td><td>Performance review or promotion comparison</td></tr><tr><td>Market Adjustment</td><td>New salary based on market range</td><td>Retention or salary benchmarking</td></tr></tbody></table></div>
+      </section>
+
+      <h2>Gross Increment vs Net Take-Home Pay</h2>
+      <p>A salary increment increases gross salary, but your take-home pay may not increase by the full amount because statutory deductions and PCB may also increase.</p>
+      <p>For example, a RM500 gross increment does not always mean RM500 extra cash in your bank account after payroll deductions.</p>
+
+      <section class="guide-box">
+        <h2>Who Should Read This Salary Increment Guide?</h2>
+        <ul><li>Employees preparing for appraisal</li><li>Job seekers comparing salary offers</li><li>Employees calculating new take-home pay after increment</li><li>HR staff explaining salary adjustments</li></ul>
+      </section>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-box">
+        <details class="faq-item" open><summary>How do I calculate salary increment percentage?</summary><p>Subtract old salary from new salary, divide by old salary, then multiply by 100. For example, RM300 increase from RM3,000 is 10%.</p></details>
+        <details class="faq-item"><summary>Does salary increment increase EPF and PCB?</summary><p>Yes. Higher salary may increase EPF, SOCSO, EIS and PCB deductions depending on salary level and tax position.</p></details>
+        <details class="faq-item"><summary>Is a 10% salary increment good?</summary><p>It depends on your industry, role, performance, market salary and current pay level. A 10% increment is generally meaningful for many employees.</p></details>
+        <details class="faq-item"><summary>Should I compare increment by gross salary or net salary?</summary><p>Use both. Gross salary shows official pay increase, while net salary shows actual monthly take-home impact.</p></details>
+        <details class="faq-item"><summary>Can salary increment affect income tax?</summary><p>Yes. Higher annual income may increase tax payable and monthly PCB deductions.</p></details>
+      </div>
+
+      <section class="salary-guides-box"><h2>📚 Related Salary & Career Guides</h2><p>Continue reading related guides to understand salary growth and payroll impact.</p><div class="guide-mini-grid"><a href="bonus-guide.html">🎁 Bonus Guide</a><a href="payslip-guide.html">📄 Payslip Guide</a><a href="hourly-rate-guide.html">⏱️ Hourly Rate Guide</a><a href="pcb-guide.html">🏛️ PCB Guide</a></div><p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p></section>
+      <section class="salary-guides-box"><h2>🧮 Related Calculators</h2><p>Use these calculators to estimate increment impact and take-home pay.</p><div class="guide-mini-grid"><a href="salary-increment-calculator.html">Salary Increment Calculator</a><a href="index.html">Salary Calculator</a><a href="pcb-calculator.html">PCB Calculator</a><a href="income-tax-calculator.html">Income Tax Calculator</a></div><p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p></section>
+
+    </div>
+  </div>
+
+  <hr style="margin-top:40px;">
+  <div class="footer">
+    <p>© 2026 Malaysia Salary Tools</p>
+    <p>
+      <a href="about.html">About Us</a> |
+      <a href="contact.html">Contact Us</a> |
+      <a href="guides.html">Guides</a> |
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </p>
+  </div>
 </body>
 </html>
