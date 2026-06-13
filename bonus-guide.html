@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-
-  <title>Malaysia Bonus Guide 2026 | Bonus Payment, Tax & PCB Explained</title>
-
-  <meta name="description" content="Malaysia Bonus Guide 2026. Learn how bonus payments, PCB tax, EPF, payroll and net bonus work in Malaysia.">
-
+  <title>Malaysia Bonus Guide 2026 | Bonus Calculation, Types & Salary Package Guide</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Malaysia Bonus Guide 2026. Learn how bonus works in Malaysia, including contractual bonus, discretionary bonus, bonus calculation examples, payslip treatment and salary package planning.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="robots" content="index, follow">
 
   <script async
@@ -18,13 +14,101 @@
 
   <style>
     body {
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #f6f7fb, #eef1f7);
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      color: #111827;
     }
 
-    .card {
+    .top-nav {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+      font-weight: bold;
+      color: #2563eb;
+      font-size: 22px;
+    }
+
+    .brand img {
+      width: 180px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .nav-links::-webkit-scrollbar { display: none; }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4b5563;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #2563eb;
+      color: white;
+    }
+
+    .main-wrapper {
+      padding: 30px 20px;
+    }
+
+    .hero {
+      text-align: center;
+      max-width: 900px;
+      margin: 35px auto 20px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: #64748b;
+      margin-top: 0;
+      line-height: 1.6;
+    }
+
+    .seo {
       background: white;
       max-width: 900px;
       margin: 30px auto;
@@ -34,221 +118,587 @@
       line-height: 1.7;
     }
 
-    .seo-cards {
+    h1 { font-size: 26px; }
+    h2 { font-size: 20px; margin-top: 25px; }
+    h3 { font-size: 16px; margin-top: 18px; }
+
+    .calculator-cta,
+    .career-summary-box,
+    .guide-box,
+    .example-box,
+    .salary-guides-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 16px;
+      padding: 24px;
+      margin: 25px 0;
+    }
+
+    .calculator-cta {
+      text-align: center;
+      background: linear-gradient(135deg, #f8fafc, #eef6ff);
+    }
+
+    .calculator-cta h2,
+    .career-summary-box h2,
+    .guide-box h2,
+    .example-box h2,
+    .salary-guides-box h2 {
+      margin-top: 0;
+    }
+
+    .calculator-cta p {
+      color: #4b5563;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .cta-button:hover {
+      background: #1d4ed8;
+    }
+
+    .summary-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .summary-card {
+      background: white;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .summary-card strong {
+      display: block;
+      color: #2563eb;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .summary-card span {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .career-note {
+      margin-top: 20px;
+      background: white;
+      border-left: 4px solid #f59e0b;
+      padding: 12px;
+      border-radius: 8px;
+      color: #4b5563;
+    }
+
+    .contribution-table-wrap {
+      overflow-x: auto;
+    }
+
+    .contribution-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      overflow: hidden;
+      min-width: 520px;
+    }
+
+    .contribution-table th {
+      background: #f8fafc;
+      color: #64748b;
+      font-size: 13px;
+      text-align: left;
+      letter-spacing: 0.4px;
+      padding: 14px;
+      border-bottom: 1px solid #dbe3ef;
+    }
+
+    .contribution-table td {
+      padding: 14px;
+      border-bottom: 1px solid #eef2f7;
+      color: #334155;
+      font-size: 14px;
+    }
+
+    .contribution-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .formula-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 14px;
+      padding: 25px;
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .formula-box strong {
+      display: block;
+      font-size: 22px;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .formula-box span {
+      color: #64748b;
+      font-size: 15px;
+    }
+
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
       margin-top: 20px;
     }
 
-    .card-link {
-      display: block;
-      padding: 15px;
+    .component-card {
       background: white;
-      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
       text-decoration: none;
-      color: black;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      color: inherit;
     }
 
-    h1 { font-size: 28px; }
-    h2 { font-size: 22px; margin-top: 30px; }
-    h3 { font-size: 18px; margin-top: 20px; }
+    .component-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
 
-    a { color: black; }
+    .component-card h3 {
+      margin: 8px 0;
+    }
 
-    @media(max-width:700px){
-      body { padding:10px; }
+    .component-card p {
+      color: #4b5563;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
 
-      .card{
-        margin:15px auto;
-        padding:18px;
-      }
+    .faq-box {
+      margin-top: 25px;
+    }
+
+    .faq-item {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .faq-item summary {
+      font-weight: bold;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: "▼";
+      float: right;
+      font-size: 12px;
+    }
+
+    .faq-item[open] summary::after { content: "▲"; }
+
+    .faq-item p {
+      margin-top: 12px;
+      margin-bottom: 0;
+      color: #4b5563;
+      line-height: 1.5;
+    }
+
+    .guide-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .guide-mini-grid a {
+      background: white;
+      border: 1px solid #e5e7eb;
+      padding: 12px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .guide-mini-grid a:hover {
+      background: #2563eb;
+      color: white;
+    }
+
+    .view-all-guides {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .view-all-guides a {
+      color: #2563eb;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .footer {
+      text-align:center;
+      padding:20px;
+    }
+
+    @media (max-width: 700px){
+      .main-wrapper { padding: 15px 10px; }
+      .seo { margin: 15px auto; padding: 18px; }
+      .nav-inner { padding: 8px 10px; gap: 8px; }
+      .brand img { width: 120px; }
+      .brand { font-size: 18px; }
+      .nav-links { gap: 6px; }
+      .nav-links a { font-size: 14px; padding: 8px 10px; }
+      .hero h1 { font-size: 26px; }
+      .component-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .component-card { padding: 14px; text-align: center; }
+      .component-icon { font-size: 22px; }
+      .component-card h3 { font-size: 15px; margin: 6px 0; }
+      .component-card p { font-size: 12px; line-height: 1.35; margin: 0; }
     }
   </style>
 </head>
 
 <body>
 
-<div class="card">
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Salary Calculator</a>
+        <a href="epf-calculator.html">EPF Calculator</a>
+        <a href="socso-calculator.html">SOCSO Calculator</a>
+        <a href="pcb-calculator.html">PCB Calculator</a>
+        <a href="income-tax-calculator.html">Income Tax Calculator</a>
+      </nav>
+    </div>
+  </header>
 
-  <h1>Malaysia Bonus Guide 2026</h1>
+  <div class="main-wrapper">
 
-  <p>
-    This Malaysia Bonus Guide explains how bonus payments work, how bonus may affect PCB tax and how employees can estimate their net bonus.
-  </p>
+    <div class="hero">
+      <h1>Malaysia Bonus Guide 2026</h1>
+      <p>Learn how bonus works in Malaysia, including bonus types, calculation examples, payslip treatment and how to compare bonus as part of a salary package.</p>
+    </div>
 
-  <p>
-    Bonus is an important part of employment income. It may be paid annually, during festive seasons, after strong company performance or as part of employee rewards.
-  </p>
+    <div class="seo">
 
-  <h2>Related Tools</h2>
+      <section class="calculator-cta">
+        <h2>🧮 Calculate Your Bonus Impact</h2>
+        <p>
+          Want to estimate how a bonus affects your annual income and take-home pay?
+          Use our free Bonus Calculator to calculate bonus amount, estimated deductions and yearly salary impact.
+        </p>
+        <a href="bonus-calculator.html" class="cta-button">Open Bonus Calculator →</a>
+      </section>
 
-  <div class="seo-cards">
-    <a class="card-link" href="bonus-calculator.html">
-      <h3>Bonus Calculator</h3>
-      <p>Estimate bonus tax and net bonus amount.</p>
-    </a>
+      <section class="career-summary-box">
+        <h2>📌 Bonus Quick Summary</h2>
+        <p>
+          A bonus is an additional payment given on top of regular salary. It may be contractual, discretionary, performance-based or linked to company results.
+        </p>
 
-    <a class="card-link" href="income-tax-calculator.html">
-      <h3>Income Tax Calculator</h3>
-      <p>Estimate annual income tax after bonus.</p>
-    </a>
+        <div class="summary-grid">
+          <div class="summary-card">
+            <strong>1 Month</strong>
+            <span>Common bonus example used in salary comparison</span>
+          </div>
+          <div class="summary-card">
+            <strong>Contractual</strong>
+            <span>Bonus promised in employment contract or offer letter</span>
+          </div>
+          <div class="summary-card">
+            <strong>Discretionary</strong>
+            <span>Bonus decided by employer based on policy or performance</span>
+          </div>
+          <div class="summary-card">
+            <strong>Annual Pay</strong>
+            <span>Bonus should be considered when comparing total compensation</span>
+          </div>
+        </div>
+      </section>
 
-    <a class="card-link" href="pcb-calculator.html">
-      <h3>PCB Calculator</h3>
-      <p>Estimate monthly tax deduction.</p>
-    </a>
+      <h2>What Is a Bonus?</h2>
+      <p>
+        A bonus is an extra payment given to an employee in addition to monthly salary. In Malaysia, bonuses are commonly paid as annual bonus, performance bonus, contractual bonus, discretionary bonus or festival-related bonus.
+      </p>
+      <p>
+        Bonus is important because it can significantly affect annual income. When comparing job offers, employees should not only compare monthly salary, but also consider whether the employer offers contractual bonus, variable bonus or no guaranteed bonus.
+      </p>
 
-    <a class="card-link" href="salary-calculator.html">
-      <h3>Salary Calculator</h3>
-      <p>Calculate take-home salary after deductions.</p>
-    </a>
+      <section class="guide-box">
+        <h2>Common Types of Bonus in Malaysia</h2>
+        <p>
+          Bonus arrangements can differ between companies. The most important point is whether the bonus is guaranteed under the employment contract or only paid at the employer's discretion.
+        </p>
+
+        <div class="component-grid">
+          <div class="component-card">
+            <div class="component-icon">📄</div>
+            <h3>Contractual Bonus</h3>
+            <p>Bonus stated in the offer letter or employment contract, usually with clearer entitlement terms.</p>
+          </div>
+          <div class="component-card">
+            <div class="component-icon">🎯</div>
+            <h3>Performance Bonus</h3>
+            <p>Bonus linked to employee performance, KPI achievement or appraisal results.</p>
+          </div>
+          <div class="component-card">
+            <div class="component-icon">🏢</div>
+            <h3>Company Bonus</h3>
+            <p>Bonus based on company profit, management decision or business performance.</p>
+          </div>
+          <div class="component-card">
+            <div class="component-icon">🎁</div>
+            <h3>Discretionary Bonus</h3>
+            <p>Bonus that depends on employer decision and may not be guaranteed every year.</p>
+          </div>
+        </div>
+      </section>
+
+      <h2>How Bonus Is Calculated</h2>
+      <p>
+        Bonus is often calculated based on monthly salary. For example, a one-month bonus usually means the employee receives an additional amount equal to one month of salary. Some employers may calculate bonus based on basic salary only, while others may use gross salary or a different formula.
+      </p>
+
+      <div class="formula-box">
+        <strong>Bonus Amount = Monthly Salary × Bonus Months</strong>
+        <span>Example: RM4,000 × 1 month = RM4,000 bonus</span>
+      </div>
+
+      <section class="example-box">
+        <h2>Example Bonus Calculation</h2>
+        <p>
+          If an employee earns RM4,000 per month and receives a 1.5-month bonus, the estimated bonus may be:
+        </p>
+        <ul>
+          <li>Monthly salary: RM4,000</li>
+          <li>Bonus months: 1.5 months</li>
+          <li>Estimated bonus: RM6,000</li>
+        </ul>
+        <p>
+          Actual take-home bonus may be lower after statutory deductions and tax treatment, depending on payroll calculation and employee tax situation.
+        </p>
+      </section>
+
+      <h2>Contractual Bonus vs Discretionary Bonus</h2>
+      <p>
+        Contractual bonus and discretionary bonus are very different. A contractual bonus is usually written in the employment contract or offer letter. A discretionary bonus is usually not guaranteed and depends on employer decision, company performance or internal policy.
+      </p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead>
+            <tr>
+              <th>Bonus Type</th>
+              <th>Simple Meaning</th>
+              <th>Usually Guaranteed?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Contractual Bonus</td>
+              <td>Bonus stated in employment contract or offer letter</td>
+              <td>Usually yes, subject to terms</td>
+            </tr>
+            <tr>
+              <td>Discretionary Bonus</td>
+              <td>Bonus decided by employer based on policy or performance</td>
+              <td>Usually no</td>
+            </tr>
+            <tr>
+              <td>Performance Bonus</td>
+              <td>Bonus linked to KPI, appraisal or target achievement</td>
+              <td>Depends on scheme</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="career-note">
+        <strong>Career Note:</strong> When comparing job offers, a higher monthly salary is usually more stable than a non-guaranteed bonus. However, a strong bonus scheme can make total annual compensation much more attractive.
+      </div>
+
+      <h2>Does Bonus Affect EPF, SOCSO, EIS and PCB?</h2>
+      <p>
+        Bonus may affect payroll deductions and tax calculation. Depending on how the bonus is treated in payroll, it may increase monthly statutory deductions and PCB for that month. Employees should expect bonus months to have different deductions compared with normal salary months.
+      </p>
+
+      <section class="guide-box">
+        <h2>Bonus and Salary Package Comparison</h2>
+        <p>
+          Bonus should be viewed as part of total annual compensation. A job with RM4,000 salary and guaranteed 2-month bonus may have a different annual value compared with a job that pays RM4,300 salary but no guaranteed bonus.
+        </p>
+
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead>
+              <tr>
+                <th>Package</th>
+                <th>Monthly Salary</th>
+                <th>Bonus</th>
+                <th>Estimated Annual Income</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Package A</td>
+                <td>RM4,000</td>
+                <td>2 months</td>
+                <td>RM56,000</td>
+              </tr>
+              <tr>
+                <td>Package B</td>
+                <td>RM4,300</td>
+                <td>No guaranteed bonus</td>
+                <td>RM51,600</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <h2>Bonus on Payslip</h2>
+      <p>
+        Bonus is usually shown separately on the payslip as additional income, bonus payment or incentive. The payslip may also show higher deductions for the month if bonus affects statutory contributions or tax deduction.
+      </p>
+      <p>
+        Employees should keep bonus payslips for income tax filing, loan applications and personal financial records because bonus can affect annual income proof.
+      </p>
+
+      <section class="guide-box">
+        <h2>Who Should Read This Bonus Guide?</h2>
+        <ul>
+          <li>Employees checking how bonus affects annual income and take-home pay</li>
+          <li>Job seekers comparing salary packages with different bonus structures</li>
+          <li>HR and payroll staff explaining bonus treatment to employees</li>
+          <li>Malaysians preparing documents for tax filing or loan applications</li>
+        </ul>
+      </section>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-box">
+        <details class="faq-item" open>
+          <summary>Is bonus compulsory in Malaysia?</summary>
+          <p>
+            Bonus is not automatically compulsory unless it is stated in the employment contract, offer letter, collective agreement or company policy that creates a clear entitlement.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What is the difference between contractual bonus and discretionary bonus?</summary>
+          <p>
+            Contractual bonus is usually promised in writing and may be treated as part of employment terms. Discretionary bonus depends on employer decision and is usually not guaranteed every year.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>How do I calculate a one-month bonus?</summary>
+          <p>
+            A one-month bonus is commonly calculated as one month of salary. For example, if your monthly salary is RM4,000, a one-month bonus is RM4,000 before any applicable deductions.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Does bonus affect PCB tax?</summary>
+          <p>
+            Yes. Bonus may increase taxable income and can result in higher PCB deduction for the bonus month, depending on payroll calculation and the employee's tax position.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Does bonus affect EPF contribution?</summary>
+          <p>
+            Bonus may be subject to EPF depending on the nature of payment and payroll treatment. Employees should check payslip details or confirm with HR if unsure.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Should I compare jobs by monthly salary or annual income?</summary>
+          <p>
+            It is better to compare total annual income, including monthly salary, guaranteed bonus, allowances and benefits. Monthly salary is more stable, but guaranteed bonus can increase annual compensation.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can a company choose not to pay bonus?</summary>
+          <p>
+            If the bonus is discretionary, the company may decide whether to pay it based on performance, profit or policy. If the bonus is contractual, the employment terms should be reviewed carefully.
+          </p>
+        </details>
+      </div>
+
+      <section class="salary-guides-box">
+        <h2>📚 Related Salary & Career Guides</h2>
+        <p>Continue reading related Malaysia salary guides to understand pay, payslips and career income planning.</p>
+
+        <div class="guide-mini-grid">
+          <a href="salary-increment-guide.html">📈 Salary Increment Guide</a>
+          <a href="payslip-guide.html">🧾 Payslip Guide</a>
+          <a href="hourly-rate-guide.html">⏱️ Hourly Rate Guide</a>
+          <a href="salary-deduction-guide.html">➖ Salary Deduction Guide</a>
+        </div>
+
+        <p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p>
+      </section>
+
+      <section class="salary-guides-box">
+        <h2>🧮 Related Calculators</h2>
+        <p>Use these calculators to estimate bonus, salary growth and monthly take-home pay in Malaysia.</p>
+
+        <div class="guide-mini-grid">
+          <a href="bonus-calculator.html">Bonus Calculator</a>
+          <a href="salary-increment-calculator.html">Salary Increment Calculator</a>
+          <a href="index.html">Salary Calculator</a>
+          <a href="pcb-calculator.html">PCB Calculator</a>
+        </div>
+
+        <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
+      </section>
+
+    </div>
   </div>
-
-  <h2>What Is A Bonus?</h2>
-
-  <p>
-    A bonus is an additional payment given to employees on top of their normal salary.
-  </p>
-
-  <p>
-    It may be discretionary, contractual, performance-based or linked to company profitability.
-  </p>
-
-  <h2>Is Bonus Taxable In Malaysia?</h2>
-
-  <p>
-    Bonus is generally treated as employment income and may be subject to tax.
-  </p>
-
-  <p>
-    This means bonus may increase your annual taxable income and may also affect PCB deduction for the month it is paid.
-  </p>
-
-  <h2>How Bonus Affects PCB</h2>
-
-  <p>
-    PCB stands for Potongan Cukai Bulanan, which is Malaysia's monthly tax deduction system.
-  </p>
-
-  <p>
-    When a bonus is paid, payroll may estimate tax based on total annual income including bonus. This can result in higher PCB deduction in the bonus month.
-  </p>
-
-  <h2>Gross Bonus vs Net Bonus</h2>
-
-  <p>
-    Gross bonus is the bonus amount before deductions.
-  </p>
-
-  <p>
-    Net bonus is the amount received after deductions such as PCB or other applicable payroll deductions.
-  </p>
-
-  <h2>Example Bonus Calculation</h2>
-
-  <p>
-    Assume an employee earns RM5,000 per month and receives a RM10,000 bonus.
-  </p>
-
-  <p>
-    Annual income before bonus:
-  </p>
-
-  <p>
-    RM5,000 × 12 = RM60,000
-  </p>
-
-  <p>
-    Annual income after bonus:
-  </p>
-
-  <p>
-    RM60,000 + RM10,000 = RM70,000
-  </p>
-
-  <p>
-    The higher annual income may increase the estimated tax and PCB deduction.
-  </p>
-
-  <h2>Common Types Of Bonus</h2>
-
-  <ul>
-    <li>Annual bonus</li>
-    <li>Performance bonus</li>
-    <li>Contractual bonus</li>
-    <li>Discretionary bonus</li>
-    <li>Festive bonus</li>
-    <li>Commission-based bonus</li>
-  </ul>
-
-  <h2>Does Bonus Affect EPF?</h2>
-
-  <p>
-    Treatment of bonus for EPF or payroll deductions may depend on applicable rules and employer payroll practice.
-  </p>
-
-  <p>
-    Employees should check their payslip or confirm with HR if they are unsure how their bonus is treated.
-  </p>
-
-  <h2>Bonus And Income Tax Filing</h2>
-
-  <p>
-    Bonus received during the year may be included in annual employment income.
-  </p>
-
-  <p>
-    When filing income tax, employees should ensure their annual income, PCB and relief claims are accurate.
-  </p>
-
-  <h2>Frequently Asked Questions</h2>
-
-  <h3>Is bonus compulsory?</h3>
-  <p>
-    It depends on employment contract, company policy and employer decision.
-  </p>
-
-  <h3>Why is PCB higher when I receive bonus?</h3>
-  <p>
-    Bonus increases estimated annual income, which may increase tax deduction for that period.
-  </p>
-
-  <h3>Can bonus create a tax refund later?</h3>
-  <p>
-    It is possible if total PCB paid is higher than final tax payable after tax filing.
-  </p>
-
-  <h3>Is this guide official tax advice?</h3>
-  <p>
-    No. This guide is for general information only.
-  </p>
-
-  <h2>Useful Tools</h2>
-
-  <ul>
-    <li><a href="bonus-calculator.html">Bonus Calculator</a></li>
-    <li><a href="income-tax-calculator.html">Income Tax Calculator</a></li>
-    <li><a href="tax-refund-calculator.html">Tax Refund Calculator</a></li>
-    <li><a href="payslip-generator.html">Payslip Generator</a></li>
-    <li><a href="salary-calculator.html">Salary Calculator</a></li>
-  </ul>
 
   <hr style="margin-top:40px;">
 
-  <div style="text-align:center;padding:20px;">
+  <div class="footer">
     <p>© 2026 Malaysia Salary Tools</p>
-
     <p>
-      <a href="index.html">Home</a> |
       <a href="about.html">About Us</a> |
       <a href="contact.html">Contact Us</a> |
+      <a href="guides.html">Guides</a> |
       <a href="privacy-policy.html">Privacy Policy</a>
     </p>
   </div>
-
-</div>
 
 </body>
 </html>
