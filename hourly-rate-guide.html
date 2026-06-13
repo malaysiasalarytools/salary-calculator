@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-
-  <title>Malaysia Hourly Rate Guide 2026 | Convert Monthly Salary To Hourly Pay</title>
-
-  <meta name="description" content="Malaysia Hourly Rate Guide 2026. Learn how to convert monthly salary to daily rate and hourly rate for payroll and overtime estimates.">
-
+  <title>Malaysia Hourly Rate Guide 2026 | Convert Monthly Salary to Hourly Pay</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Malaysia Hourly Rate Guide 2026. Learn how to calculate hourly rate from monthly salary, compare job offers and estimate overtime value.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="robots" content="index, follow">
 
   <script async
@@ -18,13 +14,99 @@
 
   <style>
     body {
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #f6f7fb, #eef1f7);
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      color: #111827;
     }
 
-    .card {
+    .top-nav {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+      font-weight: bold;
+      color: #2563eb;
+      font-size: 22px;
+    }
+
+    .brand img {
+      width: 180px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .nav-links::-webkit-scrollbar { display: none; }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4b5563;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #2563eb;
+      color: white;
+    }
+
+    .main-wrapper { padding: 30px 20px; }
+
+    .hero {
+      text-align: center;
+      max-width: 900px;
+      margin: 35px auto 20px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: #64748b;
+      margin-top: 0;
+      line-height: 1.6;
+    }
+
+    .seo {
       background: white;
       max-width: 900px;
       margin: 30px auto;
@@ -34,234 +116,356 @@
       line-height: 1.7;
     }
 
-    .seo-cards {
+    h1 { font-size: 26px; }
+    h2 { font-size: 20px; margin-top: 25px; }
+    h3 { font-size: 16px; margin-top: 18px; }
+
+    .career-cta,
+    .summary-box,
+    .guide-box,
+    .example-box,
+    .salary-guides-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 16px;
+      padding: 24px;
+      margin: 25px 0;
+    }
+
+    .career-cta {
+      text-align: center;
+      background: linear-gradient(135deg, #f8fafc, #eef6ff);
+    }
+
+    .career-cta h2,
+    .summary-box h2,
+    .guide-box h2,
+    .example-box h2,
+    .salary-guides-box h2 { margin-top: 0; }
+
+    .career-cta p {
+      color: #4b5563;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .cta-button:hover { background: #1d4ed8; }
+
+    .summary-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .summary-card {
+      background: white;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .summary-card strong {
+      display: block;
+      color: #2563eb;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .summary-card span {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .contribution-table-wrap { overflow-x: auto; }
+
+    .contribution-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      overflow: hidden;
+      min-width: 520px;
+    }
+
+    .contribution-table th {
+      background: #f8fafc;
+      color: #64748b;
+      font-size: 13px;
+      text-align: left;
+      letter-spacing: 0.4px;
+      padding: 14px;
+      border-bottom: 1px solid #dbe3ef;
+    }
+
+    .contribution-table td {
+      padding: 14px;
+      border-bottom: 1px solid #eef2f7;
+      color: #334155;
+      font-size: 14px;
+    }
+
+    .contribution-table tr:last-child td { border-bottom: none; }
+
+    .note-box {
+      margin-top: 20px;
+      background: white;
+      border-left: 4px solid #2563eb;
+      padding: 12px;
+      border-radius: 8px;
+      color: #4b5563;
+    }
+
+    .formula-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 14px;
+      padding: 25px;
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .formula-box strong {
+      display: block;
+      font-size: 22px;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .formula-box span {
+      color: #64748b;
+      font-size: 15px;
+    }
+
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
       margin-top: 20px;
     }
 
-    .card-link {
-      display: block;
-      padding: 15px;
+    .component-card {
       background: white;
-      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
       text-decoration: none;
-      color: black;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      color: inherit;
     }
 
-    h1 { font-size: 28px; }
-    h2 { font-size: 22px; margin-top: 30px; }
-    h3 { font-size: 18px; margin-top: 20px; }
+    .component-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
 
-    a { color: black; }
+    .component-card h3 { margin: 8px 0; }
 
-    @media(max-width:700px){
-      body { padding:10px; }
+    .component-card p {
+      color: #4b5563;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
 
-      .card{
-        margin:15px auto;
-        padding:18px;
-      }
+    .faq-box { margin-top: 25px; }
+
+    .faq-item {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .faq-item summary {
+      font-weight: bold;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: "▼";
+      float: right;
+      font-size: 12px;
+    }
+
+    .faq-item[open] summary::after { content: "▲"; }
+
+    .faq-item p {
+      margin-top: 12px;
+      margin-bottom: 0;
+      color: #4b5563;
+      line-height: 1.5;
+    }
+
+    .guide-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .guide-mini-grid a {
+      background: white;
+      border: 1px solid #e5e7eb;
+      padding: 12px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .guide-mini-grid a:hover {
+      background: #2563eb;
+      color: white;
+    }
+
+    .view-all-guides {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .view-all-guides a {
+      color: #2563eb;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .footer { text-align:center; padding:20px; }
+
+    @media (max-width: 700px){
+      .main-wrapper { padding: 15px 10px; }
+      .seo { margin: 15px auto; padding: 18px; }
+      .nav-inner { padding: 8px 10px; gap: 8px; }
+      .brand img { width: 120px; }
+      .brand { font-size: 18px; }
+      .nav-links { gap: 6px; }
+      .nav-links a { font-size: 14px; padding: 8px 10px; }
+      .hero h1 { font-size: 26px; }
+      .component-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .component-card { padding: 14px; text-align: center; }
+      .component-icon { font-size: 22px; }
+      .component-card h3 { font-size: 15px; margin: 6px 0; }
+      .component-card p { font-size: 12px; line-height: 1.35; margin: 0; }
     }
   </style>
 </head>
-
 <body>
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Salary Calculator</a>
+        <a href="epf-calculator.html">EPF Calculator</a>
+        <a href="socso-calculator.html">SOCSO Calculator</a>
+        <a href="pcb-calculator.html">PCB Calculator</a>
+        <a href="income-tax-calculator.html">Income Tax Calculator</a>
+      </nav>
+    </div>
+  </header>
 
-<div class="card">
+  <div class="main-wrapper">
+    <div class="hero">
+      <h1>Malaysia Hourly Rate Guide 2026</h1>
+      <p>Learn how to convert monthly salary into hourly rate, compare job offers and understand how working hours affect your real pay.</p>
+    </div>
 
-  <h1>Malaysia Hourly Rate Guide 2026</h1>
+    <div class="seo">
 
-  <p>
-    This Malaysia Hourly Rate Guide explains how to convert monthly salary into daily rate and hourly rate.
-  </p>
+      <section class="career-cta">
+        <h2>⏱️ Estimate Your Hourly Rate</h2>
+        <p>Want to compare monthly salary with hourly pay? Use salary and overtime tools to estimate how much your working time is worth.</p>
+        <a href="overtime-calculator.html" class="cta-button">Open Overtime Calculator →</a>
+      </section>
 
-  <p>
-    Hourly rate is useful for overtime calculation, part-time work, unpaid leave, salary comparison and payroll estimates.
-  </p>
+      <section class="summary-box">
+        <h2>📌 Hourly Rate Quick Summary</h2>
+        <p>Hourly rate helps employees understand how much they earn per hour based on monthly salary, working days and working hours.</p>
+        <div class="summary-grid">
+          <div class="summary-card"><strong>Monthly Pay</strong><span>Starting point for conversion</span></div>
+          <div class="summary-card"><strong>Working Hours</strong><span>Daily and weekly hours matter</span></div>
+          <div class="summary-card"><strong>Overtime</strong><span>Hourly rate may affect OT estimates</span></div>
+          <div class="summary-card"><strong>Comparison</strong><span>Useful for job offer decisions</span></div>
+        </div>
+      </section>
 
-  <h2>Related Tools</h2>
+      <h2>What Is an Hourly Rate?</h2>
+      <p>An hourly rate is the estimated amount earned for each hour of work. Even if you receive a monthly salary, converting it into an hourly rate can help you compare different jobs, overtime pay and workload.</p>
+      <p>Hourly rate is especially useful when comparing jobs with different working hours, shift arrangements or overtime expectations.</p>
 
-  <div class="seo-cards">
-    <a class="card-link" href="hourly-rate-calculator.html">
-      <h3>Hourly Rate Calculator</h3>
-      <p>Convert monthly salary into daily and hourly rate.</p>
-    </a>
+      <h2>How to Calculate Hourly Rate from Monthly Salary</h2>
+      <p>A simple way to estimate hourly rate is to divide monthly salary by the estimated number of working hours in a month.</p>
+      <div class="formula-box"><strong>Hourly Rate = Monthly Salary ÷ Monthly Working Hours</strong><span>Example: RM3,000 ÷ 208 hours = RM14.42 per hour</span></div>
 
-    <a class="card-link" href="overtime-calculator.html">
-      <h3>Overtime Calculator</h3>
-      <p>Estimate overtime pay based on hourly rate.</p>
-    </a>
+      <section class="example-box">
+        <h2>Example Hourly Rate Calculation</h2>
+        <p>If your monthly salary is RM3,000 and your estimated monthly working hours are 208:</p>
+        <ul><li>Monthly salary: RM3,000</li><li>Monthly working hours: 208 hours</li><li>Estimated hourly rate: RM14.42</li></ul>
+      </section>
 
-    <a class="card-link" href="overtime-guide.html">
-      <h3>Overtime Guide</h3>
-      <p>Understand OT pay and overtime calculation.</p>
-    </a>
+      <section class="guide-box">
+        <h2>Common Hourly Rate Scenarios</h2>
+        <div class="component-grid">
+          <div class="component-card"><div class="component-icon">💼</div><h3>Monthly Salary</h3><p>Convert salary into hourly value for comparison.</p></div>
+          <div class="component-card"><div class="component-icon">⏰</div><h3>Overtime</h3><p>Useful when estimating overtime pay.</p></div>
+          <div class="component-card"><div class="component-icon">📊</div><h3>Job Offers</h3><p>Compare jobs with different work hours.</p></div>
+          <div class="component-card"><div class="component-icon">🧮</div><h3>Part-Time Work</h3><p>Estimate income for hourly or shift work.</p></div>
+        </div>
+      </section>
 
-    <a class="card-link" href="salary-calculator.html">
-      <h3>Salary Calculator</h3>
-      <p>Estimate take-home salary after deductions.</p>
-    </a>
+      <section class="guide-box">
+        <h2>Monthly Salary vs Hourly Rate</h2>
+        <div class="contribution-table-wrap"><table class="contribution-table"><thead><tr><th>Pay Type</th><th>Best For</th><th>What to Check</th></tr></thead><tbody><tr><td>Monthly Salary</td><td>Full-time employees</td><td>Benefits, deductions and working hours</td></tr><tr><td>Hourly Rate</td><td>Part-time or overtime comparison</td><td>Actual hours worked</td></tr><tr><td>Daily Rate</td><td>Short-term or contract work</td><td>Working days and unpaid days</td></tr></tbody></table></div>
+      </section>
+
+      <section class="guide-box">
+        <h2>Who Should Read This Hourly Rate Guide?</h2>
+        <ul><li>Employees comparing salary offers</li><li>Part-time workers estimating income</li><li>Employees checking overtime value</li><li>Job seekers comparing workload and pay</li></ul>
+      </section>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-box">
+        <details class="faq-item" open><summary>How do I calculate hourly rate from monthly salary?</summary><p>Divide monthly salary by estimated monthly working hours. For example, RM3,000 divided by 208 hours gives about RM14.42 per hour.</p></details>
+        <details class="faq-item"><summary>Is hourly rate the same as overtime rate?</summary><p>No. Hourly rate is the base hourly value of salary. Overtime rate may use a multiplier depending on overtime rules and company policy.</p></details>
+        <details class="faq-item"><summary>Why does hourly rate matter for monthly salary employees?</summary><p>It helps compare job offers, workload, overtime expectations and whether longer working hours reduce the true value of salary.</p></details>
+        <details class="faq-item"><summary>Should I use 26 days or 22 days to calculate hourly rate?</summary><p>It depends on the work arrangement. A 6-day workweek may use more working days than a 5-day workweek.</p></details>
+        <details class="faq-item"><summary>Can hourly rate help compare job offers?</summary><p>Yes. A higher salary may not always be better if working hours are much longer.</p></details>
+      </div>
+
+      <section class="salary-guides-box"><h2>📚 Related Salary & Career Guides</h2><p>Continue reading related salary guides for better income comparison.</p><div class="guide-mini-grid"><a href="bonus-guide.html">🎁 Bonus Guide</a><a href="payslip-guide.html">📄 Payslip Guide</a><a href="salary-increment-guide.html">📈 Salary Increment Guide</a><a href="overtime-guide.html">⏰ Overtime Guide</a></div><p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p></section>
+      <section class="salary-guides-box"><h2>🧮 Related Calculators</h2><p>Use these calculators to compare salary, overtime and take-home pay.</p><div class="guide-mini-grid"><a href="overtime-calculator.html">Overtime Calculator</a><a href="index.html">Salary Calculator</a><a href="annual-leave-calculator.html">Annual Leave Calculator</a><a href="pcb-calculator.html">PCB Calculator</a></div><p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p></section>
+
+    </div>
   </div>
 
-  <h2>What Is Hourly Rate?</h2>
-
-  <p>
-    Hourly rate is the amount earned for each hour of work.
-  </p>
-
-  <p>
-    Employees who receive monthly salary can still estimate an hourly rate for payroll and overtime purposes.
-  </p>
-
-  <h2>Why Hourly Rate Matters</h2>
-
-  <p>
-    Hourly rate helps employees and employers estimate:
-  </p>
-
-  <ul>
-    <li>Overtime pay</li>
-    <li>Part-time pay</li>
-    <li>Daily salary</li>
-    <li>Unpaid leave deduction</li>
-    <li>Salary comparison</li>
-  </ul>
-
-  <h2>How To Convert Monthly Salary To Hourly Rate</h2>
-
-  <p>
-    A simple formula is:
-  </p>
-
-  <p>
-    <b>Hourly Rate = Monthly Salary ÷ Working Days Per Month ÷ Working Hours Per Day</b>
-  </p>
-
-  <p>
-    A common simple estimate uses 26 working days and 8 working hours per day.
-  </p>
-
-  <h2>Example Hourly Rate Calculation</h2>
-
-  <p>
-    Assume monthly salary is RM5,000.
-  </p>
-
-  <p>
-    Working days per month: 26
-  </p>
-
-  <p>
-    Working hours per day: 8
-  </p>
-
-  <p>
-    Daily rate:
-  </p>
-
-  <p>
-    RM5,000 ÷ 26 = RM192.31
-  </p>
-
-  <p>
-    Hourly rate:
-  </p>
-
-  <p>
-    RM192.31 ÷ 8 = RM24.04
-  </p>
-
-  <h2>Hourly Rate And Overtime</h2>
-
-  <p>
-    Overtime pay is commonly estimated using hourly rate multiplied by an overtime rate and overtime hours.
-  </p>
-
-  <p>
-    For example:
-  </p>
-
-  <p>
-    Overtime Pay = Hourly Rate × 1.5 × OT Hours
-  </p>
-
-  <h2>Hourly Rate And Part-Time Work</h2>
-
-  <p>
-    Hourly rate can also help compare full-time monthly salary with part-time hourly pay.
-  </p>
-
-  <p>
-    This is useful for workers comparing job offers or planning side income.
-  </p>
-
-  <h2>Hourly Rate And Unpaid Leave</h2>
-
-  <p>
-    Employers may use daily or hourly rate to estimate unpaid leave deductions.
-  </p>
-
-  <p>
-    The exact method may depend on company policy and employment terms.
-  </p>
-
-  <h2>Common Mistakes</h2>
-
-  <ul>
-    <li>Using gross salary instead of basic salary where company policy requires otherwise</li>
-    <li>Using the wrong number of working days</li>
-    <li>Ignoring different work schedules</li>
-    <li>Assuming every company uses the same calculation method</li>
-  </ul>
-
-  <h2>Frequently Asked Questions</h2>
-
-  <h3>What working days should I use?</h3>
-  <p>
-    Many simple payroll estimates use 26 working days, but company policy may differ.
-  </p>
-
-  <h3>Can hourly rate be used for overtime?</h3>
-  <p>
-    Yes. Hourly rate is commonly used to estimate overtime pay.
-  </p>
-
-  <h3>Is hourly rate calculation exact?</h3>
-  <p>
-    It is an estimate. Actual payroll calculation may depend on employment terms.
-  </p>
-
-  <h3>Can I compare monthly salary with hourly pay?</h3>
-  <p>
-    Yes. Converting monthly salary to hourly rate helps compare different types of jobs.
-  </p>
-
-  <h2>Useful Tools</h2>
-
-  <ul>
-    <li><a href="hourly-rate-calculator.html">Hourly Rate Calculator</a></li>
-    <li><a href="overtime-calculator.html">Overtime Calculator</a></li>
-    <li><a href="overtime-guide.html">Overtime Guide</a></li>
-    <li><a href="salary-calculator.html">Salary Calculator</a></li>
-  </ul>
-
   <hr style="margin-top:40px;">
-
-  <div style="text-align:center;padding:20px;">
+  <div class="footer">
     <p>© 2026 Malaysia Salary Tools</p>
-
     <p>
-      <a href="index.html">Home</a> |
       <a href="about.html">About Us</a> |
       <a href="contact.html">Contact Us</a> |
+      <a href="guides.html">Guides</a> |
       <a href="privacy-policy.html">Privacy Policy</a>
     </p>
   </div>
-
-</div>
-
 </body>
 </html>
