@@ -1,131 +1,754 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <title>What is PCB in Malaysia? | Monthly Tax Deduction (LHDN Guide 2026)</title>
-
-  <meta name="description" content="Learn what PCB (Potongan Cukai Bulanan) is in Malaysia, how monthly tax deduction works, and how it is calculated by LHDN.">
-
+  <title>Malaysia PCB Guide 2026 | Monthly Tax Deduction, LHDN & Payroll Guide</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Malaysia PCB Guide 2026. Learn how monthly tax deduction works, how PCB is calculated, what affects PCB amount and how it relates to income tax, EPF, SOCSO and EIS.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
 
+  <script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6819619632324210"
+  crossorigin="anonymous"></script>
+
   <style>
     body {
-      font-family: Arial;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #f6f6f6;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+      margin: 0;
+      padding: 0;
+      color: #111827;
     }
 
-    .card {
+    .top-nav {
       background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+      font-weight: bold;
+      color: #2563eb;
+      font-size: 22px;
+    }
+
+    .brand img {
+      width: 180px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .nav-links::-webkit-scrollbar { display: none; }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4b5563;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #2563eb;
+      color: white;
+    }
+
+    .main-wrapper {
+      padding: 30px 20px;
+    }
+
+    .hero {
+      text-align: center;
+      max-width: 900px;
+      margin: 35px auto 20px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: #64748b;
+      margin-top: 0;
+      line-height: 1.6;
+    }
+
+    .card,
+    .seo {
+      background: white;
+      max-width: 900px;
+      margin: 30px auto;
       padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .seo {
+      line-height: 1.7;
+    }
+
+    .intro-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 25px;
+    }
+
+    .intro-box p {
+      margin-bottom: 0;
+      color: #4b5563;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .summary-card {
+      background: white;
+      border: 1px solid #dbe3ef;
       border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 16px;
+    }
+
+    .summary-card strong {
+      display: block;
+      color: #2563eb;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .summary-card span {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .formula-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 14px;
+      padding: 25px;
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .formula-box strong {
+      display: block;
+      font-size: 22px;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .formula-box span {
+      color: #64748b;
+      font-size: 15px;
+    }
+
+    .contribution-box,
+    .guide-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 16px;
+      padding: 24px;
+      margin: 25px 0;
+    }
+
+    .contribution-table-wrap { overflow-x: auto; }
+
+    .contribution-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      overflow: hidden;
+      min-width: 520px;
+    }
+
+    .contribution-table th {
+      background: #f8fafc;
+      color: #64748b;
+      font-size: 13px;
+      text-align: left;
+      letter-spacing: 0.4px;
+      padding: 14px;
+      border-bottom: 1px solid #dbe3ef;
+    }
+
+    .contribution-table td {
+      padding: 14px;
+      border-bottom: 1px solid #eef2f7;
+      color: #334155;
+      font-size: 14px;
+    }
+
+    .contribution-table tr:last-child td { border-bottom: none; }
+
+    .note-box {
+      margin-top: 20px;
+      background: white;
+      border-left: 4px solid #2563eb;
+      padding: 12px;
+      border-radius: 8px;
+      color: #4b5563;
+    }
+
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .component-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .component-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .component-card h3 {
+      margin: 8px 0;
+    }
+
+    .component-card p {
+      color: #4b5563;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .faq-box { margin-top: 25px; }
+
+    .faq-item {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .faq-item summary {
+      font-weight: bold;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: "▼";
+      float: right;
+      font-size: 12px;
+    }
+
+    .faq-item[open] summary::after { content: "▲"; }
+
+    .faq-item p {
+      margin-top: 12px;
+      margin-bottom: 0;
+      color: #4b5563;
+      line-height: 1.5;
+    }
+
+    .salary-guides-box {
+      margin-top: 35px;
+      padding: 24px;
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+    }
+
+    .salary-guides-box h2 { margin-top: 0; }
+    .salary-guides-box p { color: #4b5563; }
+
+    .guide-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .guide-mini-grid a {
+      background: white;
+      border: 1px solid #e5e7eb;
+      padding: 12px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .guide-mini-grid a:hover {
+      background: #2563eb;
+      color: white;
+    }
+
+    .view-all-guides {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .view-all-guides a {
+      color: #2563eb;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .calculator-cta {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 16px;
+      padding: 24px;
+      margin: 25px 0;
+      text-align: center;
+    }
+
+    .calculator-cta h2 {
+      margin-top: 0;
+    }
+
+    .calculator-cta p {
+      color: #4b5563;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .cta-button:hover {
+      background: #1d4ed8;
     }
 
     h1 { font-size: 26px; }
     h2 { font-size: 20px; margin-top: 25px; }
     h3 { font-size: 16px; margin-top: 18px; }
 
-    p { line-height: 1.7; }
+    @media (max-width: 700px){
+      .main-wrapper { padding: 15px 10px; }
+      .card, .seo { margin: 15px auto; padding: 18px; }
+      .nav-inner { padding: 8px 10px; gap: 8px; }
+      .brand img { width: 120px; }
+      .brand { font-size: 18px; }
+      .nav-links { gap: 6px; }
+      .nav-links a { font-size: 14px; padding: 8px 10px; }
+      .hero h1 { font-size: 26px; }
+      .component-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .component-card { padding: 14px; text-align: center; }
+      .component-icon { font-size: 22px; }
+      .component-card h3 { font-size: 15px; margin: 6px 0; }
+      .component-card p { font-size: 12px; line-height: 1.35; margin: 0; }
+    }
   </style>
 </head>
 
 <body>
 
-<div class="card">
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Salary Calculator</a>
+        <a href="epf-calculator.html">EPF Calculator</a>
+        <a href="socso-calculator.html">SOCSO Calculator</a>
+        <a href="pcb-calculator.html">PCB Calculator</a>
+        <a href="income-tax-calculator.html">Income Tax Calculator</a>
+      </nav>
+    </div>
+  </header>
 
-  <h1>What is PCB in Malaysia?</h1>
+  <div class="main-wrapper">
 
-  <p>
-    PCB stands for <b>Potongan Cukai Bulanan</b>, also known as Monthly Tax Deduction (MTD).
-    It is a system used in Malaysia where income tax is deducted automatically from your salary every month.
-  </p>
+    <div class="hero">
+      <h1>Malaysia PCB Guide 2026</h1>
+      <p>Learn how PCB monthly tax deduction works in Malaysia, including how it is calculated, what affects PCB amount and how it relates to annual income tax.</p>
+    </div>
 
-  <h2>Why does PCB exist?</h2>
+    <div class="seo">
 
-  <p>
-    PCB was introduced by LHDN (Inland Revenue Board of Malaysia) to make tax payments easier and more consistent.
-    Instead of paying tax once a year, employees pay gradually every month.
-  </p>
+      <section class="calculator-cta">
+        <h2>🧮 Calculate Your PCB Deduction</h2>
+        <p>
+          Want to estimate how much monthly tax may be deducted from your salary?
+          Use our free PCB Calculator to estimate your monthly PCB and take-home pay instantly.
+        </p>
+        <a href="pcb-calculator.html" class="cta-button">Open PCB Calculator →</a>
+      </section>
 
-  <ul>
-    <li>Reduce year-end tax burden</li>
-    <li>Ensure tax compliance</li>
-    <li>Spread tax payment across 12 months</li>
-  </ul>
+      <section class="intro-box">
+        <h2>📌 PCB Quick Summary</h2>
+        <p>PCB, also known as Potongan Cukai Bulanan, is Malaysia's monthly tax deduction system. Employers deduct estimated income tax from employees' salaries and remit it to LHDN through monthly payroll.</p>
 
-  <h2>How PCB works</h2>
+        <div class="summary-grid">
+          <div class="summary-card">
+            <strong>PCB</strong>
+            <span>Monthly tax deduction</span>
+          </div>
+          <div class="summary-card">
+            <strong>LHDN</strong>
+            <span>Malaysia tax authority</span>
+          </div>
+          <div class="summary-card">
+            <strong>Monthly</strong>
+            <span>Deducted through payroll</span>
+          </div>
+          <div class="summary-card">
+            <strong>Tax Reliefs</strong>
+            <span>May reduce PCB amount</span>
+          </div>
+        </div>
+      </section>
 
-  <p>
-    PCB is calculated based on your estimated annual income.
-    Your employer deducts a portion of your salary every month and submits it to LHDN.
-  </p>
+      <h2>What Is PCB?</h2>
+      <p>
+        PCB stands for Potongan Cukai Bulanan, which means Monthly Tax Deduction in Malaysia. It is a system where employers deduct estimated income tax from employees' monthly salary and pay it to LHDN on behalf of the employee.
+      </p>
+      <p>
+        PCB helps spread income tax payments across the year instead of requiring employees to pay the full tax amount only after submitting the annual income tax return.
+      </p>
 
-  <p>
-    At the end of the year:
-  </p>
+      <section class="contribution-box">
+        <h2>How PCB Works in Malaysia</h2>
+        <p>PCB is generally based on estimated annual chargeable income after considering income, deductions and applicable tax reliefs.</p>
 
-  <ul>
-    <li>If you overpay → you get tax refund</li>
-    <li>If you underpay → you pay the difference</li>
-  </ul>
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead>
+              <tr>
+                <th>Factor</th>
+                <th>How It Affects PCB</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monthly Salary</td>
+                <td>Higher salary usually increases estimated taxable income and PCB.</td>
+              </tr>
+              <tr>
+                <td>EPF Contribution</td>
+                <td>Employee EPF may reduce taxable income subject to applicable limits.</td>
+              </tr>
+              <tr>
+                <td>Tax Reliefs</td>
+                <td>Personal reliefs, spouse relief, child relief and other claims may reduce PCB.</td>
+              </tr>
+              <tr>
+                <td>Bonus / Allowance</td>
+                <td>Additional income may increase PCB for the relevant month.</td>
+              </tr>
+              <tr>
+                <td>Resident Tax Rate</td>
+                <td>PCB is affected by Malaysia's progressive income tax rates.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-  <h2>What income is included?</h2>
+        <div class="note-box">
+          <strong>Note:</strong> PCB is an estimate of monthly tax deduction. Your final tax payable is determined when you submit your annual income tax return to LHDN.
+        </div>
+      </section>
 
-  <ul>
-    <li>Monthly salary</li>
-    <li>Allowances</li>
-    <li>Bonuses</li>
-    <li>Benefits in cash</li>
-  </ul>
+      <h2>How PCB Is Calculated</h2>
+      <p>
+        PCB is usually calculated by estimating your annual taxable income, deducting eligible reliefs and applying Malaysia's progressive income tax rates. The estimated annual tax is then spread across monthly payroll deductions.
+      </p>
 
-  <h2>Is PCB the same as EPF or SOCSO?</h2>
+      <div class="formula-box">
+        <strong>Estimated PCB = Estimated Annual Tax ÷ 12</strong>
+        <span>Actual monthly PCB may vary depending on income, benefits, reliefs, bonuses and employer payroll settings.</span>
+      </div>
 
-  <p>
-    No. PCB is <b>income tax</b>, while EPF is retirement savings and SOCSO is social protection.
-  </p>
+      <section class="guide-box">
+        <h2>PCB Calculation Example</h2>
+        <p>Example based on a simple salary scenario:</p>
 
-  <ul>
-    <li>EPF → Retirement savings</li>
-    <li>SOCSO → Work injury protection</li>
-    <li>EIS → Job loss protection</li>
-    <li>PCB → Income tax</li>
-  </ul>
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monthly Salary</td>
+                <td>RM5,000</td>
+              </tr>
+              <tr>
+                <td>Annual Salary</td>
+                <td>RM60,000</td>
+              </tr>
+              <tr>
+                <td>Less: EPF and personal reliefs</td>
+                <td>Deduct eligible amounts based on tax rules</td>
+              </tr>
+              <tr>
+                <td>Estimated Tax Payable</td>
+                <td>Calculated using Malaysia progressive tax rates</td>
+              </tr>
+              <tr>
+                <td>Monthly PCB</td>
+                <td>Estimated annual tax divided into monthly deductions</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-  <h2>Minimum salary subject to PCB</h2>
+      <h2>What Can Increase or Reduce PCB?</h2>
+      <p>
+        Your PCB amount may change when your income or personal tax position changes. This is why two employees with the same basic salary may have different PCB deductions.
+      </p>
 
-  <p>
-    In Malaysia, employees earning above the taxable threshold (around RM37,000 annual income) are generally subject to PCB deductions.
-  </p>
+      <div class="component-grid">
+        <div class="component-card">
+          <div class="component-icon">📈</div>
+          <h3>Higher Income</h3>
+          <p>Salary increments, bonuses and allowances may increase monthly PCB.</p>
+        </div>
+        <div class="component-card">
+          <div class="component-icon">💸</div>
+          <h3>Tax Reliefs</h3>
+          <p>Eligible reliefs may reduce chargeable income and lower PCB.</p>
+        </div>
+        <div class="component-card">
+          <div class="component-icon">👨‍👩‍👧</div>
+          <h3>Personal Status</h3>
+          <p>Spouse and child reliefs may affect the final tax calculation.</p>
+        </div>
+        <div class="component-card">
+          <div class="component-icon">🎁</div>
+          <h3>Bonus Payments</h3>
+          <p>Bonuses and commissions may cause higher PCB in certain months.</p>
+        </div>
+      </div>
 
-  <h2>Related Calculator</h2>
+      <h2>PCB vs Annual Income Tax</h2>
+      <p>
+        PCB is not a separate tax. It is a monthly deduction toward your annual income tax. When you file your annual tax return, your final tax payable is compared against the PCB already deducted during the year.
+      </p>
 
-  <ul>
-    <li><a href="pcb-calculator.html">Try PCB Calculator</a></li>
-    <li><a href="index.html">Salary Calculator</a></li>
-  </ul>
+      <section class="guide-box">
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>PCB</td>
+                <td>Monthly tax deduction made through payroll.</td>
+              </tr>
+              <tr>
+                <td>Income Tax Return</td>
+                <td>Annual filing to declare income, reliefs and final tax position.</td>
+              </tr>
+              <tr>
+                <td>Tax Refund</td>
+                <td>May happen if PCB deducted is higher than final tax payable.</td>
+              </tr>
+              <tr>
+                <td>Additional Tax Payable</td>
+                <td>May happen if PCB deducted is lower than final tax payable.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-</div>
+      <h2>PCB vs EPF, SOCSO and EIS</h2>
+      <p>
+        EPF, SOCSO and EIS are statutory payroll deductions or contributions, while PCB relates to income tax. Together, these items affect an employee's monthly take-home pay.
+      </p>
 
-<hr style="margin-top:40px;">
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead>
+            <tr>
+              <th>Deduction</th>
+              <th>Main Purpose</th>
+              <th>Affects Take-Home Pay?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>EPF</td>
+              <td>Retirement savings</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>SOCSO</td>
+              <td>Social security protection</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>EIS</td>
+              <td>Employment insurance</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>PCB</td>
+              <td>Monthly income tax deduction</td>
+              <td>Yes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-<div style="text-align:center;padding:20px;">
+      <section class="guide-box">
+        <h2>Who Should Read This Guide?</h2>
+        <ul>
+          <li>Employees checking why PCB is deducted from monthly salary</li>
+          <li>Job seekers comparing salary packages and take-home pay</li>
+          <li>HR and payroll professionals handling monthly tax deductions</li>
+          <li>Business owners who want to understand PCB payroll obligations</li>
+        </ul>
+      </section>
 
-<p>
-© 2026 Malaysia Salary Tools
-</p>
+      <h2>Frequently Asked Questions</h2>
 
-<p>
-<a href="about.html">About Us</a> |
-<a href="contact.html">Contact Us</a> |
-<a href="privacy-policy.html">Privacy Policy</a>
-</p>
+      <div class="faq-box">
+        <details class="faq-item" open>
+          <summary>What is PCB in Malaysia payroll?</summary>
+          <p>PCB, or Potongan Cukai Bulanan, is a monthly tax deduction made by employers from employees' salaries and paid to LHDN as part of the employee's income tax obligation.</p>
+        </details>
 
-</div>
-  
+        <details class="faq-item">
+          <summary>Is PCB the same as income tax?</summary>
+          <p>PCB is not a separate tax. It is a monthly deduction toward your annual income tax. Your final tax payable is confirmed when you submit your annual income tax return.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Why is PCB deducted from my salary?</summary>
+          <p>PCB is deducted so that income tax is paid gradually throughout the year through payroll instead of being paid in one full amount after tax filing.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Why is my PCB different from another employee with the same salary?</summary>
+          <p>PCB may differ because of tax relief claims, spouse or child status, bonuses, allowances, benefits, EPF contribution treatment and payroll settings.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can PCB be reduced?</summary>
+          <p>PCB may be reduced if eligible tax reliefs and deductions are properly reflected in payroll. However, the final tax position still depends on your annual income tax return.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Will I get a tax refund if PCB is too high?</summary>
+          <p>If total PCB deducted during the year is higher than your final tax payable, you may be eligible for a tax refund after submitting your income tax return.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Does bonus affect PCB?</summary>
+          <p>Yes. Bonuses, commissions and other additional income may increase PCB in the month they are paid because they increase estimated taxable income.</p>
+        </details>
+      </div>
+
+      <section class="salary-guides-box">
+        <h2>📚 Related Salary Guides</h2>
+        <p>Learn more about salary deductions, tax reliefs and payroll rules in Malaysia.</p>
+
+        <div class="guide-mini-grid">
+          <a href="tax-relief-guide.html">💸 Tax Relief Guide</a>
+          <a href="income-tax-guide.html">🏛️ Income Tax Guide</a>
+          <a href="epf-guide.html">💰 EPF Guide</a>
+          <a href="socso-guide.html">🛡️ SOCSO Guide</a>
+        </div>
+
+        <p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p>
+      </section>
+
+      <section class="salary-guides-box">
+        <h2>🧮 Related Calculators</h2>
+        <p>Use these calculators to estimate PCB, salary deductions and monthly take-home pay in Malaysia.</p>
+
+        <div class="guide-mini-grid">
+          <a href="pcb-calculator.html">PCB Calculator</a>
+          <a href="index.html">Salary Calculator</a>
+          <a href="income-tax-calculator.html">Income Tax Calculator</a>
+          <a href="epf-calculator.html">EPF Calculator</a>
+        </div>
+
+        <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
+      </section>
+
+    </div>
+  </div>
+
+  <hr style="margin-top:40px;">
+
+  <div style="text-align:center;padding:20px;">
+    <p>© 2026 Malaysia Salary Tools</p>
+    <p>
+      <a href="about.html">About Us</a> |
+      <a href="contact.html">Contact Us</a> |
+      <a href="guides.html">Guides</a> |
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </p>
+  </div>
+
 </body>
 </html>
