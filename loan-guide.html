@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-
-  <title>Malaysia Loan Guide 2026 | Monthly Instalment & Loan Calculation</title>
-
-  <meta name="description" content="Malaysia Loan Guide 2026. Learn how loan instalments, interest rates, loan tenure and monthly repayment calculations work.">
-
+  <title>Malaysia Loan Guide 2026 | Loan Types, Repayment, DSR & Salary Planning</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Malaysia Loan Guide 2026. Learn common loan types, monthly repayment planning, debt service ratio, affordability checks and how loans affect salary cash flow.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="robots" content="index, follow">
 
   <script async
@@ -18,13 +14,99 @@
 
   <style>
     body {
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #f6f7fb, #eef1f7);
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      color: #111827;
     }
 
-    .card {
+    .top-nav {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+      font-weight: bold;
+      color: #2563eb;
+      font-size: 22px;
+    }
+
+    .brand img {
+      width: 180px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .nav-links::-webkit-scrollbar { display: none; }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4b5563;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #2563eb;
+      color: white;
+    }
+
+    .main-wrapper { padding: 30px 20px; }
+
+    .hero {
+      text-align: center;
+      max-width: 900px;
+      margin: 35px auto 20px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: #64748b;
+      margin-top: 0;
+      line-height: 1.6;
+    }
+
+    .seo {
       background: white;
       max-width: 900px;
       margin: 30px auto;
@@ -34,221 +116,384 @@
       line-height: 1.7;
     }
 
-    .seo-cards {
+    h1 { font-size: 26px; }
+    h2 { font-size: 20px; margin-top: 25px; }
+    h3 { font-size: 16px; margin-top: 18px; }
+
+    .calculator-cta,
+    .finance-summary-box,
+    .guide-box,
+    .example-box,
+    .salary-guides-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 16px;
+      padding: 24px;
+      margin: 25px 0;
+    }
+
+    .calculator-cta {
+      text-align: center;
+      background: linear-gradient(135deg, #f8fafc, #ecfdf5);
+    }
+
+    .calculator-cta h2,
+    .finance-summary-box h2,
+    .guide-box h2,
+    .example-box h2,
+    .salary-guides-box h2 {
+      margin-top: 0;
+    }
+
+    .calculator-cta p {
+      color: #4b5563;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .cta-button:hover { background: #1d4ed8; }
+
+    .summary-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .summary-card {
+      background: white;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .summary-card strong {
+      display: block;
+      color: #059669;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .summary-card span {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .finance-note {
+      margin-top: 20px;
+      background: white;
+      border-left: 4px solid #10b981;
+      padding: 12px;
+      border-radius: 8px;
+      color: #4b5563;
+    }
+
+    .warning-note {
+      margin-top: 20px;
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      padding: 12px;
+      border-radius: 8px;
+      color: #4b5563;
+    }
+
+    .contribution-table-wrap { overflow-x: auto; }
+
+    .contribution-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      overflow: hidden;
+      min-width: 520px;
+    }
+
+    .contribution-table th {
+      background: #f8fafc;
+      color: #64748b;
+      font-size: 13px;
+      text-align: left;
+      letter-spacing: 0.4px;
+      padding: 14px;
+      border-bottom: 1px solid #dbe3ef;
+    }
+
+    .contribution-table td {
+      padding: 14px;
+      border-bottom: 1px solid #eef2f7;
+      color: #334155;
+      font-size: 14px;
+    }
+
+    .contribution-table tr:last-child td { border-bottom: none; }
+
+    .formula-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 14px;
+      padding: 25px;
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .formula-box strong {
+      display: block;
+      font-size: 22px;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .formula-box span {
+      color: #64748b;
+      font-size: 15px;
+    }
+
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
       margin-top: 20px;
     }
 
-    .card-link {
-      display: block;
-      padding: 15px;
+    .component-card {
       background: white;
-      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
       text-decoration: none;
-      color: black;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      color: inherit;
     }
 
-    h1 { font-size: 28px; }
-    h2 { font-size: 22px; margin-top: 30px; }
-    h3 { font-size: 18px; margin-top: 20px; }
+    .component-icon { font-size: 28px; margin-bottom: 8px; }
+    .component-card h3 { margin: 8px 0; }
+    .component-card p { color: #4b5563; font-size: 14px; line-height: 1.5; margin-bottom: 0; }
 
-    a { color: black; }
+    .faq-box { margin-top: 25px; }
 
-    @media(max-width:700px){
-      body { padding:10px; }
+    .faq-item {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
 
-      .card{
-        margin:15px auto;
-        padding:18px;
-      }
+    .faq-item summary {
+      font-weight: bold;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "▼"; float: right; font-size: 12px; }
+    .faq-item[open] summary::after { content: "▲"; }
+
+    .faq-item p {
+      margin-top: 12px;
+      margin-bottom: 0;
+      color: #4b5563;
+      line-height: 1.5;
+    }
+
+    .guide-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .guide-mini-grid a {
+      background: white;
+      border: 1px solid #e5e7eb;
+      padding: 12px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .guide-mini-grid a:hover { background: #2563eb; color: white; }
+
+    .view-all-guides { text-align: center; margin-top: 20px; }
+    .view-all-guides a { color: #2563eb; font-weight: bold; text-decoration: none; }
+    .footer { text-align:center; padding:20px; }
+
+    @media (max-width: 700px){
+      .main-wrapper { padding: 15px 10px; }
+      .seo { margin: 15px auto; padding: 18px; }
+      .nav-inner { padding: 8px 10px; gap: 8px; }
+      .brand img { width: 120px; }
+      .brand { font-size: 18px; }
+      .nav-links { gap: 6px; }
+      .nav-links a { font-size: 14px; padding: 8px 10px; }
+      .hero h1 { font-size: 26px; }
+      .component-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .component-card { padding: 14px; text-align: center; }
+      .component-icon { font-size: 22px; }
+      .component-card h3 { font-size: 15px; margin: 6px 0; }
+      .component-card p { font-size: 12px; line-height: 1.35; margin: 0; }
     }
   </style>
 </head>
 
 <body>
 
-<div class="card">
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Salary Calculator</a>
+        <a href="epf-calculator.html">EPF Calculator</a>
+        <a href="socso-calculator.html">SOCSO Calculator</a>
+        <a href="pcb-calculator.html">PCB Calculator</a>
+        <a href="income-tax-calculator.html">Income Tax Calculator</a>
+      </nav>
+    </div>
+  </header>
 
-  <h1>Malaysia Loan Guide 2026</h1>
+  <div class="main-wrapper">
 
-  <p>
-    This Malaysia Loan Guide explains how loan instalments, interest rates and repayment periods affect monthly loan payments.
-  </p>
+    <div class="hero">
+      <h1>Malaysia Loan Guide 2026</h1>
+      <p>Understand common loan types in Malaysia, how monthly repayments work and how to check whether a loan fits your salary and financial plan.</p>
+    </div>
 
-  <p>
-    It is written for users who want a simple explanation before using a loan calculator.
-  </p>
+    <div class="seo">
 
-  <h2>Related Tools</h2>
+      <section class="calculator-cta">
+        <h2>🧮 Estimate Your Loan Repayment</h2>
+        <p>Want to estimate monthly instalment before applying? Use our free Loan Calculator to compare repayment amounts and affordability.</p>
+        <a href="loan-calculator.html" class="cta-button">Open Loan Calculator →</a>
+      </section>
 
-  <div class="seo-cards">
-    <a class="card-link" href="loan-calculator.html">
-      <h3>Loan Calculator</h3>
-      <p>Estimate monthly loan repayment.</p>
-    </a>
+      <section class="finance-summary-box">
+        <h2>📌 Loan Planning Quick Summary</h2>
+        <p>A loan can help with property, personal or business needs, but it also creates monthly commitments. Good planning means checking affordability before borrowing.</p>
+        <div class="summary-grid">
+          <div class="summary-card">
+            <strong>Loan Types</strong>
+            <span>Home, personal, car and business loans</span>
+          </div>
+          <div class="summary-card">
+            <strong>Monthly Instalment</strong>
+            <span>Main cash flow commitment</span>
+          </div>
+          <div class="summary-card">
+            <strong>DSR</strong>
+            <span>Used to assess borrowing capacity</span>
+          </div>
+          <div class="summary-card">
+            <strong>Affordability</strong>
+            <span>Salary, expenses and debts matter</span>
+          </div>
+        </div>
+      </section>
 
-    <a class="card-link" href="salary-calculator.html">
-      <h3>Salary Calculator</h3>
-      <p>Estimate take-home salary before taking a loan.</p>
-    </a>
+      <h2>What Is a Loan?</h2>
+      <p>A loan is money borrowed from a bank, financial institution or lender that must be repaid over time, usually with interest. In Malaysia, common loans include home loans, personal loans, car loans and business loans.</p>
+      <p>Before taking a loan, it is important to understand the monthly repayment, interest cost, loan tenure and how the new commitment affects your monthly cash flow.</p>
 
-    <a class="card-link" href="payslip-generator.html">
-      <h3>Payslip Generator</h3>
-      <p>Create a salary slip preview.</p>
-    </a>
+      <section class="guide-box">
+        <h2>Common Types of Loans in Malaysia</h2>
+        <div class="component-grid">
+          <div class="component-card"><div class="component-icon">🏠</div><h3>Home Loan</h3><p>Used to finance a property purchase, usually with a long repayment tenure.</p></div>
+          <div class="component-card"><div class="component-icon">💳</div><h3>Personal Loan</h3><p>Unsecured financing for personal needs, usually with fixed monthly instalments.</p></div>
+          <div class="component-card"><div class="component-icon">🚗</div><h3>Car Loan</h3><p>Used to finance a vehicle purchase over a fixed hire purchase period.</p></div>
+          <div class="component-card"><div class="component-icon">🏢</div><h3>Business Loan</h3><p>Financing used for business working capital, assets or expansion.</p></div>
+        </div>
+      </section>
 
-    <a class="card-link" href="income-tax-calculator.html">
-      <h3>Income Tax Calculator</h3>
-      <p>Estimate annual income tax.</p>
-    </a>
+      <h2>How Loan Repayment Works</h2>
+      <p>Loan repayment usually depends on the loan amount, interest rate and repayment period. A longer tenure may reduce monthly instalment, but it can increase total interest paid over time.</p>
+      <div class="formula-box"><strong>Monthly Commitment = Loan Instalment + Existing Debt Payments</strong><span>Use this amount when checking affordability and DSR.</span></div>
+
+      <section class="example-box">
+        <h2>Example Loan Affordability Check</h2>
+        <p>If your monthly net income is RM4,000 and your total monthly debt commitments are RM1,200, your debt commitment uses 30% of your income.</p>
+        <ul><li>Monthly income: RM4,000</li><li>Total monthly debt: RM1,200</li><li>Estimated DSR: 30%</li></ul>
+        <p>This does not guarantee approval, but it gives a simple starting point to understand whether a new loan may be affordable.</p>
+      </section>
+
+      <section class="guide-box">
+        <h2>Things to Check Before Taking a Loan</h2>
+        <div class="component-grid">
+          <div class="component-card"><h3>Monthly Instalment</h3><p>Make sure the repayment fits your salary and monthly expenses.</p></div>
+          <div class="component-card"><h3>Interest Cost</h3><p>Compare the total cost, not only the monthly amount.</p></div>
+          <div class="component-card"><h3>Loan Tenure</h3><p>Longer tenure may look cheaper monthly but can cost more overall.</p></div>
+          <div class="component-card"><h3>Emergency Buffer</h3><p>Keep cash reserves before adding long-term debt commitments.</p></div>
+        </div>
+        <div class="warning-note"><strong>Planning Note:</strong> A loan should improve your financial position or solve a real need. Avoid borrowing only because the monthly repayment looks affordable.</div>
+      </section>
+
+      <h2>Loan vs DSR vs Salary</h2>
+      <div class="contribution-table-wrap"><table class="contribution-table"><thead><tr><th>Item</th><th>Meaning</th><th>Why It Matters</th></tr></thead><tbody><tr><td>Loan Amount</td><td>Total amount borrowed</td><td>Affects instalment and interest cost</td></tr><tr><td>DSR</td><td>Debt Service Ratio</td><td>Shows how much income goes to debt</td></tr><tr><td>Net Salary</td><td>Income after deductions</td><td>Used to judge real affordability</td></tr></tbody></table></div>
+
+      <section class="guide-box"><h2>Who Should Read This Loan Guide?</h2><ul><li>Employees planning to apply for a home loan, personal loan or car loan</li><li>Borrowers checking whether a monthly repayment is affordable</li><li>Job seekers comparing salary packages with future loan plans</li><li>Anyone trying to understand DSR and loan commitments</li></ul></section>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-box">
+        <details class="faq-item" open><summary>What should I check before applying for a loan?</summary><p>Check your monthly instalment, total interest cost, loan tenure, existing commitments and emergency savings before applying.</p></details>
+        <details class="faq-item"><summary>Does salary affect loan approval?</summary><p>Yes. Salary is one of the key factors lenders use to assess repayment ability, together with credit profile, employment stability and existing debts.</p></details>
+        <details class="faq-item"><summary>What is DSR in loan applications?</summary><p>DSR stands for Debt Service Ratio. It compares your monthly debt commitments against your monthly income.</p></details>
+        <details class="faq-item"><summary>Is a lower monthly instalment always better?</summary><p>Not always. A lower instalment may come from a longer tenure, which can increase the total interest paid.</p></details>
+        <details class="faq-item"><summary>Can I take a loan if I already have other debts?</summary><p>It depends on your income, DSR, repayment record and lender requirements. Existing debts reduce your available borrowing capacity.</p></details>
+      </div>
+
+      <section class="salary-guides-box">
+        <h2>📚 Related Financial Planning Guides</h2>
+        <p>Continue reading related Malaysia finance and salary planning guides.</p>
+        <div class="guide-mini-grid">
+          <a href="debt-service-ratio-guide.html">📊 Debt Service Ratio Guide</a>
+          <a href="home-loan-guide.html">🏠 Home Loan Guide</a>
+          <a href="personal-loan-guide.html">💳 Personal Loan Guide</a>
+          <a href="salary-increment-guide.html">📈 Salary Increment Guide</a>
+        </div>
+        <p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p>
+      </section>
+
+      <section class="salary-guides-box">
+        <h2>🧮 Related Calculators</h2>
+        <p>Use these calculators to estimate salary, deductions and loan affordability.</p>
+        <div class="guide-mini-grid">
+          <a href="loan-calculator.html">Loan Calculator</a>
+          <a href="index.html">Salary Calculator</a>
+          <a href="pcb-calculator.html">PCB Calculator</a>
+          <a href="income-tax-calculator.html">Income Tax Calculator</a>
+        </div>
+        <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
+      </section>
+
+    </div>
   </div>
-
-  <h2>What Is A Loan?</h2>
-
-  <p>
-    A loan is money borrowed from a lender and repaid over time with interest.
-  </p>
-
-  <p>
-    Common loans include personal loans, housing loans, car loans and business loans.
-  </p>
-
-  <h2>What Is Monthly Instalment?</h2>
-
-  <p>
-    Monthly instalment is the amount paid to the lender every month.
-  </p>
-
-  <p>
-    It usually depends on the loan amount, interest rate and repayment period.
-  </p>
-
-  <h2>Factors That Affect Loan Repayment</h2>
-
-  <ul>
-    <li>Loan amount</li>
-    <li>Interest rate</li>
-    <li>Loan tenure</li>
-    <li>Repayment frequency</li>
-    <li>Processing fees or other charges</li>
-  </ul>
-
-  <h2>How Is Loan Repayment Calculated?</h2>
-
-  <p>
-    A simple loan estimate divides the total repayment amount across the loan tenure.
-  </p>
-
-  <p>
-    Some loans use reducing balance interest while others may use flat interest calculations.
-  </p>
-
-  <p>
-    Because different lenders may calculate interest differently, online calculators should be used as estimates only.
-  </p>
-
-  <h2>Example Loan Calculation</h2>
-
-  <p>
-    Assume a user borrows RM20,000 for 5 years.
-  </p>
-
-  <p>
-    If total repayment is RM25,000, the estimated monthly instalment is:
-  </p>
-
-  <p>
-    RM25,000 ÷ 60 months = RM416.67 per month
-  </p>
-
-  <h2>Loan Tenure Explained</h2>
-
-  <p>
-    Loan tenure is the repayment period.
-  </p>
-
-  <p>
-    Longer tenure may reduce monthly instalment but may increase total interest paid over time.
-  </p>
-
-  <h2>Interest Rate Explained</h2>
-
-  <p>
-    Interest rate is the cost of borrowing money.
-  </p>
-
-  <p>
-    A higher interest rate usually means higher total repayment.
-  </p>
-
-  <h2>Debt-To-Income Consideration</h2>
-
-  <p>
-    Before taking a loan, users should compare monthly instalment against their take-home salary.
-  </p>
-
-  <p>
-    A loan that looks affordable on paper may still create financial pressure if other commitments are high.
-  </p>
-
-  <h2>Tips Before Taking A Loan</h2>
-
-  <ul>
-    <li>Compare offers from different lenders</li>
-    <li>Check total repayment amount</li>
-    <li>Understand interest calculation method</li>
-    <li>Review late payment charges</li>
-    <li>Borrow only what you can afford to repay</li>
-  </ul>
-
-  <h2>Frequently Asked Questions</h2>
-
-  <h3>Is a longer loan tenure better?</h3>
-  <p>
-    Longer tenure may reduce monthly instalment but can increase total interest paid.
-  </p>
-
-  <h3>Is this loan calculator exact?</h3>
-  <p>
-    It provides an estimate only. Actual repayment depends on lender terms.
-  </p>
-
-  <h3>Should I use gross salary or net salary?</h3>
-  <p>
-    Net salary is usually more useful when checking affordability because it reflects income after deductions.
-  </p>
-
-  <h3>Can loan instalments affect financial health?</h3>
-  <p>
-    Yes. High monthly commitments can reduce savings and financial flexibility.
-  </p>
-
-  <h2>Useful Tools</h2>
-
-  <ul>
-    <li><a href="loan-calculator.html">Loan Calculator</a></li>
-    <li><a href="salary-calculator.html">Salary Calculator</a></li>
-    <li><a href="payslip-generator.html">Payslip Generator</a></li>
-    <li><a href="salary-increment-calculator.html">Salary Increment Calculator</a></li>
-  </ul>
 
   <hr style="margin-top:40px;">
 
-  <div style="text-align:center;padding:20px;">
+  <div class="footer">
     <p>© 2026 Malaysia Salary Tools</p>
-
     <p>
-      <a href="index.html">Home</a> |
       <a href="about.html">About Us</a> |
       <a href="contact.html">Contact Us</a> |
+      <a href="guides.html">Guides</a> |
       <a href="privacy-policy.html">Privacy Policy</a>
     </p>
   </div>
-
-</div>
 
 </body>
 </html>
