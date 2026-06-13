@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-
-  <title>Malaysia Public Holiday Guide 2026 | Public Holidays & Paid Leave</title>
-
-  <meta name="description" content="Malaysia Public Holiday Guide 2026. Learn how public holidays work, paid holidays, replacement holidays and leave planning in Malaysia.">
-
+  <title>Malaysia Public Holiday Guide 2026 | Paid Holiday, Replacement & Overtime Rules</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Malaysia Public Holiday Guide 2026. Learn paid public holiday entitlement, state holidays, replacement holidays, working on public holidays and payroll treatment.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="robots" content="index, follow">
 
   <script async
@@ -18,13 +14,101 @@
 
   <style>
     body {
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #f6f7fb, #eef1f7);
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      color: #111827;
     }
 
-    .card {
+    .top-nav {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+      font-weight: bold;
+      color: #2563eb;
+      font-size: 22px;
+    }
+
+    .brand img {
+      width: 180px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .nav-links::-webkit-scrollbar { display: none; }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4b5563;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #2563eb;
+      color: white;
+    }
+
+    .main-wrapper {
+      padding: 30px 20px;
+    }
+
+    .hero {
+      text-align: center;
+      max-width: 900px;
+      margin: 35px auto 20px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: #64748b;
+      margin-top: 0;
+      line-height: 1.6;
+    }
+
+    .seo {
       background: white;
       max-width: 900px;
       margin: 30px auto;
@@ -34,204 +118,568 @@
       line-height: 1.7;
     }
 
-    .seo-cards {
+    h1 { font-size: 26px; }
+    h2 { font-size: 20px; margin-top: 25px; }
+    h3 { font-size: 16px; margin-top: 18px; }
+
+    .calculator-cta,
+    .summary-box,
+    .guide-box,
+    .example-box,
+    .salary-guides-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 16px;
+      padding: 24px;
+      margin: 25px 0;
+    }
+
+    .calculator-cta {
+      text-align: center;
+    }
+
+    .calculator-cta h2,
+    .summary-box h2,
+    .guide-box h2,
+    .example-box h2,
+    .salary-guides-box h2 {
+      margin-top: 0;
+    }
+
+    .calculator-cta p {
+      color: #4b5563;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .cta-button:hover {
+      background: #1d4ed8;
+    }
+
+    .summary-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .summary-card {
+      background: white;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .summary-card strong {
+      display: block;
+      color: #2563eb;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .summary-card span {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .contribution-table-wrap {
+      overflow-x: auto;
+    }
+
+    .contribution-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      overflow: hidden;
+      min-width: 520px;
+    }
+
+    .contribution-table th {
+      background: #f8fafc;
+      color: #64748b;
+      font-size: 13px;
+      text-align: left;
+      letter-spacing: 0.4px;
+      padding: 14px;
+      border-bottom: 1px solid #dbe3ef;
+    }
+
+    .contribution-table td {
+      padding: 14px;
+      border-bottom: 1px solid #eef2f7;
+      color: #334155;
+      font-size: 14px;
+    }
+
+    .contribution-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .note-box {
+      margin-top: 20px;
+      background: white;
+      border-left: 4px solid #2563eb;
+      padding: 12px;
+      border-radius: 8px;
+      color: #4b5563;
+    }
+
+    .formula-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 14px;
+      padding: 25px;
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .formula-box strong {
+      display: block;
+      font-size: 22px;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .formula-box span {
+      color: #64748b;
+      font-size: 15px;
+    }
+
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
       margin-top: 20px;
     }
 
-    .card-link {
-      display: block;
-      padding: 15px;
+    .component-card {
       background: white;
-      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
       text-decoration: none;
-      color: black;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      color: inherit;
     }
 
-    h1 { font-size: 28px; }
-    h2 { font-size: 22px; margin-top: 30px; }
-    h3 { font-size: 18px; margin-top: 20px; }
+    .component-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
 
-    a { color: black; }
+    .component-card h3 {
+      margin: 8px 0;
+    }
 
-    @media(max-width:700px){
-      body { padding:10px; }
+    .component-card p {
+      color: #4b5563;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
 
-      .card{
-        margin:15px auto;
-        padding:18px;
-      }
+    .faq-box {
+      margin-top: 25px;
+    }
+
+    .faq-item {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .faq-item summary {
+      font-weight: bold;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: "▼";
+      float: right;
+      font-size: 12px;
+    }
+
+    .faq-item[open] summary::after { content: "▲"; }
+
+    .faq-item p {
+      margin-top: 12px;
+      margin-bottom: 0;
+      color: #4b5563;
+      line-height: 1.5;
+    }
+
+    .guide-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .guide-mini-grid a {
+      background: white;
+      border: 1px solid #e5e7eb;
+      padding: 12px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .guide-mini-grid a:hover {
+      background: #2563eb;
+      color: white;
+    }
+
+    .view-all-guides {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .view-all-guides a {
+      color: #2563eb;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .footer {
+      text-align:center;
+      padding:20px;
+    }
+
+    @media (max-width: 700px){
+      .main-wrapper { padding: 15px 10px; }
+      .seo { margin: 15px auto; padding: 18px; }
+      .nav-inner { padding: 8px 10px; gap: 8px; }
+      .brand img { width: 120px; }
+      .brand { font-size: 18px; }
+      .nav-links { gap: 6px; }
+      .nav-links a { font-size: 14px; padding: 8px 10px; }
+      .hero h1 { font-size: 26px; }
+      .component-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .component-card { padding: 14px; text-align: center; }
+      .component-icon { font-size: 22px; }
+      .component-card h3 { font-size: 15px; margin: 6px 0; }
+      .component-card p { font-size: 12px; line-height: 1.35; margin: 0; }
     }
   </style>
 </head>
 
 <body>
 
-<div class="card">
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Salary Calculator</a>
+        <a href="epf-calculator.html">EPF Calculator</a>
+        <a href="socso-calculator.html">SOCSO Calculator</a>
+        <a href="pcb-calculator.html">PCB Calculator</a>
+        <a href="income-tax-calculator.html">Income Tax Calculator</a>
+      </nav>
+    </div>
+  </header>
 
-  <h1>Malaysia Public Holiday Guide 2026</h1>
+  <div class="main-wrapper">
 
-  <p>
-    This Malaysia Public Holiday Guide explains how public holidays work and how employees can plan leave around holidays.
-  </p>
+    <div class="hero">
+      <h1>Malaysia Public Holiday Guide 2026</h1>
+      <p>Learn how public holidays work in Malaysia, including paid holiday entitlement, state holidays, replacement holidays and holiday work pay.</p>
+    </div>
 
-  <p>
-    Public holidays are useful for employees, employers and HR teams when planning annual leave, payroll and work schedules.
-  </p>
+    <div class="seo">
 
-  <h2>Related Tools</h2>
+      <section class="calculator-cta">
+        <h2>📅 Check Malaysia Public Holiday Rules</h2>
+        <p>
+          Want to understand how public holidays affect work, salary and overtime?
+          This guide explains public holiday entitlement, replacement holidays and common payroll situations.
+        </p>
+        <a href="public-holiday-guide.html" class="cta-button">Read Public Holiday Rules →</a>
+      </section>
 
-  <div class="seo-cards">
-    <a class="card-link" href="public-holiday-calculator.html">
-      <h3>Public Holiday Calculator</h3>
-      <p>Estimate total public holiday days.</p>
-    </a>
+      <section class="summary-box">
+        <h2>📌 Public Holiday Quick Summary</h2>
+        <p>
+          Public holidays are gazetted holidays observed in Malaysia. Employees may be entitled to paid holidays or additional pay depending on whether they are required to work.
+        </p>
 
-    <a class="card-link" href="annual-leave-calculator.html">
-      <h3>Annual Leave Calculator</h3>
-      <p>Estimate annual leave entitlement.</p>
-    </a>
+        <div class="summary-grid">
+          <div class="summary-card">
+            <strong>Paid Holiday</strong>
+            <span>Eligible employees usually receive paid public holidays</span>
+          </div>
+          <div class="summary-card">
+            <strong>Gazetted</strong>
+            <span>Public holidays may be national or state-specific</span>
+          </div>
+          <div class="summary-card">
+            <strong>Replacement</strong>
+            <span>Substitute holidays may apply in certain situations</span>
+          </div>
+          <div class="summary-card">
+            <strong>Overtime</strong>
+            <span>Working on holidays may affect overtime pay</span>
+          </div>
+        </div>
+      </section>
 
-    <a class="card-link" href="annual-leave-guide.html">
-      <h3>Annual Leave Guide</h3>
-      <p>Understand annual leave and pro-rated leave.</p>
-    </a>
+      <h2>What Are Public Holidays?</h2>
+      <p>
+        Public holidays are official holidays declared at national or state level. In Malaysia, some public holidays apply nationwide while others apply only in certain states.
+      </p>
+      <p>
+        Public holidays are important for payroll because they may affect paid leave, work schedules, replacement holidays and overtime calculations.
+      </p>
 
-    <a class="card-link" href="salary-calculator.html">
-      <h3>Salary Calculator</h3>
-      <p>Calculate net salary after deductions.</p>
-    </a>
+      <section class="guide-box">
+        <h2>Types of Public Holidays in Malaysia</h2>
+        <p>
+          Public holidays in Malaysia can generally be grouped into national holidays and state holidays.
+        </p>
+
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead>
+              <tr>
+                <th>Holiday Type</th>
+                <th>Applies To</th>
+                <th>Simple Explanation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>National Public Holiday</td>
+                <td>Usually all Malaysia</td>
+                <td>Examples include major nationwide holidays</td>
+              </tr>
+              <tr>
+                <td>State Public Holiday</td>
+                <td>Specific states only</td>
+                <td>Examples include state ruler birthdays or state-specific holidays</td>
+              </tr>
+              <tr>
+                <td>Replacement Holiday</td>
+                <td>Depends on situation</td>
+                <td>May apply when a holiday falls on a rest day or under company policy</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note-box">
+          <strong>Note:</strong> This is a simplified guide. Actual public holiday entitlement depends on gazetted holidays, state rules, employment terms and company policy.
+        </div>
+      </section>
+
+      <h2>Public Holiday Pay and Work</h2>
+      <p>
+        If an employee is not required to work on an applicable public holiday, the holiday is usually treated as paid time off for eligible employees. If the employee is required to work, additional pay or holiday work rates may apply.
+      </p>
+
+      <div class="formula-box">
+        <strong>Holiday Work Pay = Daily / Hourly Rate × Applicable Holiday Rate</strong>
+        <span>Example: Public holiday work may use a higher rate than normal work</span>
+      </div>
+
+      <section class="example-box">
+        <h2>Example Public Holiday Situation</h2>
+        <p>
+          If an employee is scheduled to work on a public holiday, payroll may need to consider:
+        </p>
+        <ul>
+          <li>Whether the holiday applies to the employee's state or workplace</li>
+          <li>Whether the employee is required to work</li>
+          <li>Whether additional pay, overtime or replacement holiday applies</li>
+        </ul>
+        <p>
+          The actual calculation should follow employment terms, payroll policy and applicable legal requirements.
+        </p>
+      </section>
+
+      <h2>National vs State Public Holidays</h2>
+      <p>
+        Not every public holiday applies to every employee in Malaysia. Some holidays are national, while others are state-specific. This means employees in different states may have different holiday calendars.
+      </p>
+      <p>
+        Businesses operating in multiple states should be careful when setting holiday schedules and payroll rules.
+      </p>
+
+      <section class="guide-box">
+        <h2>Common Public Holiday Situations</h2>
+        <div class="component-grid">
+          <div class="component-card">
+            <div class="component-icon">🇲🇾</div>
+            <h3>National Holiday</h3>
+            <p>Applies broadly across Malaysia, depending on the gazetted holiday.</p>
+          </div>
+          <div class="component-card">
+            <div class="component-icon">📍</div>
+            <h3>State Holiday</h3>
+            <p>Applies only to employees in the relevant state or workplace location.</p>
+          </div>
+          <div class="component-card">
+            <div class="component-icon">🔁</div>
+            <h3>Replacement Holiday</h3>
+            <p>May apply when holidays overlap with rest days or company policy.</p>
+          </div>
+          <div class="component-card">
+            <div class="component-icon">⏰</div>
+            <h3>Holiday Work</h3>
+            <p>Working on a public holiday may affect pay and overtime treatment.</p>
+          </div>
+        </div>
+      </section>
+
+      <h2>Public Holiday vs Annual Leave vs Rest Day</h2>
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Main Purpose</th>
+              <th>Usually Paid?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Public Holiday</td>
+              <td>Official gazetted holiday</td>
+              <td>Yes, if applicable</td>
+            </tr>
+            <tr>
+              <td>Annual Leave</td>
+              <td>Employee's planned paid leave</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Rest Day</td>
+              <td>Weekly rest day or non-working day</td>
+              <td>Depends on employment arrangement</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <section class="guide-box">
+        <h2>Who Should Read This Public Holiday Guide?</h2>
+        <ul>
+          <li>Employees checking whether a public holiday applies to them</li>
+          <li>Job seekers comparing work schedules and holiday benefits</li>
+          <li>HR and payroll staff planning public holiday calendars</li>
+          <li>Business owners managing staffing, payroll and holiday work</li>
+        </ul>
+      </section>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-box">
+        <details class="faq-item" open>
+          <summary>Are public holidays paid in Malaysia?</summary>
+          <p>
+            Applicable public holidays are normally paid for eligible employees. The exact entitlement may depend on employment terms, location, holiday type and company policy.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do all public holidays apply to every employee?</summary>
+          <p>
+            No. Some public holidays are national while others are state-specific. Employees should check whether the holiday applies to their workplace location.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What happens if an employee works on a public holiday?</summary>
+          <p>
+            Working on a public holiday may result in additional pay, overtime or other compensation depending on eligibility and applicable employment rules.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is a replacement holiday required if a public holiday falls on a rest day?</summary>
+          <p>
+            Replacement holiday treatment may depend on the holiday, rest day arrangement, state rules, employment terms and company policy.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can employers choose which public holidays to observe?</summary>
+          <p>
+            Employers must follow applicable legal requirements and employment terms. Some holidays may be mandatory while others may depend on the workplace calendar and policy.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Does public holiday work affect overtime calculation?</summary>
+          <p>
+            Yes. Work performed on a public holiday may use different rates compared with normal overtime, depending on eligibility and payroll rules.
+          </p>
+        </details>
+      </div>
+
+      <section class="salary-guides-box">
+        <h2>📚 Related Employment Guides</h2>
+        <p>Continue reading related Malaysia employment guides to understand leave, holidays and payroll rules.</p>
+
+        <div class="guide-mini-grid">
+          <a href="annual-leave-guide.html">🌴 Annual Leave Guide</a>
+          <a href="mc-leave-guide.html">🏥 MC Leave Guide</a>
+          <a href="overtime-guide.html">⏰ Overtime Guide</a>
+          <a href="salary-guide.html">💼 Salary Guide</a>
+        </div>
+
+        <p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p>
+      </section>
+
+      <section class="salary-guides-box">
+        <h2>🧮 Related Calculators</h2>
+        <p>Use these calculators to estimate overtime, leave and monthly take-home pay in Malaysia.</p>
+
+        <div class="guide-mini-grid">
+          <a href="overtime-calculator.html">Overtime Calculator</a>
+          <a href="annual-leave-calculator.html">Annual Leave Calculator</a>
+          <a href="index.html">Salary Calculator</a>
+          <a href="pcb-calculator.html">PCB Calculator</a>
+        </div>
+
+        <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
+      </section>
+
+    </div>
   </div>
-
-  <h2>What Is A Public Holiday?</h2>
-
-  <p>
-    A public holiday is a recognised holiday where many employees may be entitled to a day off or holiday pay depending on their employment terms and applicable rules.
-  </p>
-
-  <h2>National vs State Public Holidays</h2>
-
-  <p>
-    Malaysia has national public holidays and state-specific public holidays.
-  </p>
-
-  <p>
-    Some holidays apply across Malaysia, while others apply only in certain states.
-  </p>
-
-  <h2>Public Holiday And Annual Leave</h2>
-
-  <p>
-    Public holidays are different from annual leave.
-  </p>
-
-  <p>
-    Annual leave is usually applied by employees and approved by employers, while public holidays are set according to holiday calendars and applicable rules.
-  </p>
-
-  <h2>Replacement Public Holiday</h2>
-
-  <p>
-    If a public holiday falls on a rest day, some employers may provide a replacement holiday depending on employment terms and applicable rules.
-  </p>
-
-  <p>
-    Employees should check company policy or HR guidance for how replacement holidays are handled.
-  </p>
-
-  <h2>Working On Public Holiday</h2>
-
-  <p>
-    Employees who work on a public holiday may be entitled to additional pay or replacement benefits depending on employment terms and applicable rules.
-  </p>
-
-  <p>
-    The exact treatment may vary by job type, working schedule and employer policy.
-  </p>
-
-  <h2>How To Plan Leave Around Public Holidays</h2>
-
-  <p>
-    Employees often combine annual leave with public holidays to create longer breaks.
-  </p>
-
-  <p>
-    For example, taking one or two annual leave days before or after a public holiday may create a long weekend.
-  </p>
-
-  <h2>Example Leave Planning</h2>
-
-  <p>
-    If a public holiday falls on Friday, an employee may take annual leave on Thursday to create a four-day break including the weekend.
-  </p>
-
-  <h2>Tips For Employees</h2>
-
-  <ul>
-    <li>Check the public holiday calendar early</li>
-    <li>Apply annual leave in advance</li>
-    <li>Understand replacement holiday rules</li>
-    <li>Confirm holiday treatment with HR</li>
-    <li>Track annual leave balance</li>
-  </ul>
-
-  <h2>Tips For Employers</h2>
-
-  <ul>
-    <li>Publish holiday calendar early</li>
-    <li>Clarify replacement holiday policy</li>
-    <li>Manage staffing for holiday periods</li>
-    <li>Ensure payroll treatment is accurate</li>
-  </ul>
-
-  <h2>Frequently Asked Questions</h2>
-
-  <h3>Are all public holidays the same in every Malaysian state?</h3>
-  <p>
-    No. Some holidays are national while others are state-specific.
-  </p>
-
-  <h3>Can I combine annual leave with public holidays?</h3>
-  <p>
-    Yes, subject to employer approval and company policy.
-  </p>
-
-  <h3>Do public holidays reduce annual leave?</h3>
-  <p>
-    Public holidays and annual leave are generally separate, but exact treatment depends on employment terms.
-  </p>
-
-  <h3>Is this guide official legal advice?</h3>
-  <p>
-    No. It is for general information only.
-  </p>
-
-  <h2>Useful Tools</h2>
-
-  <ul>
-    <li><a href="public-holiday-calculator.html">Public Holiday Calculator</a></li>
-    <li><a href="annual-leave-calculator.html">Annual Leave Calculator</a></li>
-    <li><a href="annual-leave-guide.html">Annual Leave Guide</a></li>
-    <li><a href="resignation-notice-calculator.html">Resignation Notice Calculator</a></li>
-  </ul>
 
   <hr style="margin-top:40px;">
 
-  <div style="text-align:center;padding:20px;">
+  <div class="footer">
     <p>© 2026 Malaysia Salary Tools</p>
-
     <p>
-      <a href="index.html">Home</a> |
       <a href="about.html">About Us</a> |
       <a href="contact.html">Contact Us</a> |
+      <a href="guides.html">Guides</a> |
       <a href="privacy-policy.html">Privacy Policy</a>
     </p>
   </div>
-
-</div>
 
 </body>
 </html>
