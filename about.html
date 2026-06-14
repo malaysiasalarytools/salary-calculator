@@ -2,84 +2,514 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About Us | Malaysia Salary Tools</title>
-  <meta name="description" content="Learn more about Malaysia Salary Tools, a free platform providing salary, tax and payroll calculators for Malaysians.">
+  <title>About Malaysia Salary Tools | Salary, Payroll, Tax & Employment Calculators</title>
+  <meta name="description" content="About Malaysia Salary Tools. Learn about our free Malaysian salary calculators, payroll guides, tax resources and employment tools for employees, HR professionals and business owners.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
     body {
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #f6f7fb, #eef1f7);
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      color: #111827;
     }
 
-    .card {
+    .top-nav {
       background: white;
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      line-height: 1.7;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
     }
 
-    h1 { font-size: 26px; }
-    h2 { font-size: 20px; margin-top: 25px; }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
 
-    a { color: black; }
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+      font-weight: bold;
+      color: #2563eb;
+      font-size: 22px;
+    }
+
+    .brand img {
+      width: 180px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .nav-links::-webkit-scrollbar { display: none; }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4b5563;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #2563eb;
+      color: white;
+    }
+
+    .main-wrapper {
+      padding: 30px 20px;
+    }
+
+    .hero {
+      max-width: 950px;
+      margin: 35px auto 25px;
+      text-align: center;
+      padding: 10px 10px 0;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      color: #2563eb;
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #64748b;
+      line-height: 1.7;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .content-card {
+      background: white;
+      max-width: 950px;
+      margin: 30px auto;
+      padding: 32px;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .section {
+      margin-bottom: 36px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin: 0 0 14px;
+      color: #111827;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 0 0 10px;
+      color: #111827;
+    }
+
+    p {
+      color: #4b5563;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .stat-card {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 26px;
+      color: #2563eb;
+      margin-bottom: 6px;
+    }
+
+    .stat-card span {
+      color: #64748b;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .category-card {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .category-card ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: #4b5563;
+      line-height: 1.8;
+    }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .audience-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .audience-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .highlight-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-left: 5px solid #2563eb;
+      border-radius: 14px;
+      padding: 20px;
+      margin-top: 18px;
+    }
+
+    .highlight-box p {
+      margin: 0;
+    }
+
+    .official-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .official-list a {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: bold;
+    }
+
+    .official-list a:hover {
+      background: #2563eb;
+      color: white;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 14px 34px;
+      min-width: 220px;
+      text-align: center;
+      border-radius: 10px;
+      font-weight: bold;
+      box-sizing: border-box;
+      transition: all 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .cta-button.secondary {
+      background: white;
+      color: #2563eb;
+      border: 1px solid #dbe3ef;
+    }
+
+    .cta-button.secondary:hover {
+      background: #f8fafc;
+      color: #1d4ed8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 20px;
+      color: #64748b;
+    }
+
+    footer a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 700px) {
+      .main-wrapper { padding: 15px 10px; }
+      .content-card { margin: 18px auto; padding: 22px; }
+      .nav-inner { padding: 8px 10px; gap: 8px; }
+      .brand img { width: 120px; }
+      .nav-links a { font-size: 14px; padding: 8px 10px; }
+      .hero h1 { font-size: 28px; }
+      .hero p { font-size: 16px; }
+      .cta-button { width: 100%; }
+    }
   </style>
 </head>
 
 <body>
 
-<div class="card">
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Salary Calculator</a>
+        <a href="calculators.html">Calculators</a>
+        <a href="guides.html">Guides</a>
+        <a href="about.html" class="active">About</a>
+      </nav>
+    </div>
+  </header>
 
-  <h1>About Malaysia Salary Tools</h1>
+  <main class="main-wrapper">
 
-  <p>
-    Malaysia Salary Tools is a free online platform that provides salary, tax and payroll calculators for employees, employers, freelancers and job seekers in Malaysia.
-  </p>
+    <section class="hero">
+      <h1>About Malaysia Salary Tools</h1>
+      <p>
+        Malaysia Salary Tools is an independent online platform built to help Malaysians understand salary, payroll, taxation and employment-related calculations more easily.
+      </p>
+    </section>
 
-  <p>
-    Our goal is to make salary-related calculations simple, fast and easy to understand.
-  </p>
+    <section class="content-card">
 
-  <h2>What We Provide</h2>
+      <div class="section">
+        <h2>Our Mission</h2>
+        <p>
+          Our mission is to simplify complex salary, payroll and tax topics through easy-to-use calculators, practical guides and clear educational resources.
+        </p>
+        <p>
+          Whether you are checking your monthly take-home pay, comparing a job offer, estimating statutory deductions or learning about employment rules, Malaysia Salary Tools aims to make the information easier to understand in one place.
+        </p>
 
-  <p>
-    We provide tools such as Salary Calculator, EPF Calculator, SOCSO Calculator, EIS Calculator, PCB Calculator, Income Tax Calculator, Overtime Calculator, Bonus Calculator, Payslip Generator and other employment-related calculators.
-  </p>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <strong>25+</strong>
+            <span>Malaysia Guides</span>
+          </div>
+          <div class="stat-card">
+            <strong>15+</strong>
+            <span>Free Calculators</span>
+          </div>
+          <div class="stat-card">
+            <strong>Payroll</strong>
+            <span>Salary & Tax Resources</span>
+          </div>
+          <div class="stat-card">
+            <strong>Free</strong>
+            <span>Simple Tools For Users</span>
+          </div>
+        </div>
+      </div>
 
-  <h2>Important Disclaimer</h2>
+      <div class="section">
+        <h2>What We Offer</h2>
+        <p>
+          Malaysia Salary Tools provides a growing collection of calculators and guides covering key salary, payroll, employment, tax and financial planning topics in Malaysia.
+        </p>
 
-  <p>
-    The calculators and guides on this website are for general informational purposes only. They should not be considered professional tax, legal, payroll or financial advice.
-  </p>
+        <div class="category-grid">
+          <div class="category-card">
+            <h3>💼 Payroll & Salary</h3>
+            <ul>
+              <li>Salary Calculator</li>
+              <li>EPF Calculator</li>
+              <li>SOCSO Calculator</li>
+              <li>EIS Calculator</li>
+              <li>PCB Calculator</li>
+              <li>Payslip Resources</li>
+            </ul>
+          </div>
 
-  <p>
-    Users should refer to official government sources, employers, payroll providers or qualified professionals for accurate and up-to-date advice.
-  </p>
+          <div class="category-card">
+            <h3>📋 Employment & HR</h3>
+            <ul>
+              <li>Annual Leave</li>
+              <li>MC Leave</li>
+              <li>Public Holidays</li>
+              <li>Overtime Pay</li>
+              <li>Resignation Notice</li>
+              <li>Employment Contracts</li>
+            </ul>
+          </div>
 
-  <h2>Our Mission</h2>
+          <div class="category-card">
+            <h3>🏛️ Tax Resources</h3>
+            <ul>
+              <li>Income Tax</li>
+              <li>Tax Relief</li>
+              <li>Tax Filing</li>
+              <li>Tax Rebate</li>
+              <li>Tax Refund</li>
+              <li>PCB Tax</li>
+            </ul>
+          </div>
 
-  <p>
-    We aim to help Malaysians better understand salary, deductions, tax, leave entitlement and other employment-related matters.
-  </p>
+          <div class="category-card">
+            <h3>🏦 Financial Planning</h3>
+            <ul>
+              <li>Loan Calculator</li>
+              <li>Debt Service Ratio</li>
+              <li>Home Loan</li>
+              <li>Personal Loan</li>
+              <li>Affordability Planning</li>
+              <li>Salary-Based Estimates</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-  <hr style="margin-top:40px;">
+      <div class="section">
+        <h2>Who Uses Malaysia Salary Tools?</h2>
+        <p>
+          Our tools and guides are designed for everyday users who want fast, simple and practical information about salary and payroll matters in Malaysia.
+        </p>
 
-  <div style="text-align:center;padding:20px;">
+        <div class="audience-grid">
+          <div class="audience-card">
+            <div class="audience-icon">👨‍💼</div>
+            <h3>Employees</h3>
+            <p>Estimate take-home pay, statutory deductions, tax and leave entitlement.</p>
+          </div>
+
+          <div class="audience-card">
+            <div class="audience-icon">🎓</div>
+            <h3>Job Seekers</h3>
+            <p>Compare salary packages and understand how deductions affect net pay.</p>
+          </div>
+
+          <div class="audience-card">
+            <div class="audience-icon">📊</div>
+            <h3>HR & Payroll Teams</h3>
+            <p>Use quick references for payroll, leave, tax and employment-related topics.</p>
+          </div>
+
+          <div class="audience-card">
+            <div class="audience-icon">🏢</div>
+            <h3>Business Owners</h3>
+            <p>Understand basic payroll obligations and employee cost components.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Why Malaysia Salary Tools?</h2>
+        <p>
+          Salary and payroll information can be confusing, especially when multiple deductions, tax rules and employment requirements are involved.
+        </p>
+        <div class="highlight-box">
+          <p>
+            Malaysia Salary Tools focuses on making salary-related information simple, accessible and beginner-friendly while keeping the website fast, mobile-friendly and easy to use.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Our Commitment</h2>
+        <p>
+          We strive to keep our calculators and guides accurate, useful and up to date. However, salary rules, payroll rates, tax reliefs and employment laws may change over time.
+        </p>
+        <p>
+          The information on this website is provided for general educational and estimation purposes only. For official requirements, users should always refer to the latest information from the relevant Malaysian authorities.
+        </p>
+
+        <div class="official-list">
+          <a href="https://www.kwsp.gov.my/" target="_blank" rel="noopener">KWSP / EPF</a>
+          <a href="https://www.perkeso.gov.my/" target="_blank" rel="noopener">PERKESO / SOCSO</a>
+          <a href="https://www.hasil.gov.my/" target="_blank" rel="noopener">LHDN</a>
+          <a href="https://www.mohr.gov.my/" target="_blank" rel="noopener">Ministry of Human Resources</a>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Explore Malaysia Salary Tools</h2>
+        <p>
+          Start with our free calculators or browse our full guide library to learn more about salary, payroll, tax, employment and financial planning topics in Malaysia.
+        </p>
+
+        <div class="cta-row">
+          <a href="calculators.html" class="cta-button">Browse Calculators →</a>
+          <a href="guides.html" class="cta-button secondary">Browse Guides →</a>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
     <p>© 2026 Malaysia Salary Tools</p>
     <p>
       <a href="index.html">Home</a> |
+      <a href="calculators.html">Calculators</a> |
+      <a href="guides.html">Guides</a> |
       <a href="contact.html">Contact Us</a> |
       <a href="privacy-policy.html">Privacy Policy</a>
     </p>
-  </div>
-
-</div>
+  </footer>
 
 </body>
 </html>
