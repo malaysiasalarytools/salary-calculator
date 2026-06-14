@@ -135,23 +135,24 @@
     }
 
     .content-card{
-      background:white;
       max-width:1000px;
       margin:30px auto;
-      padding:28px;
-      border-radius:18px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      padding:0;
+      background:transparent;
+      border-radius:0;
+      box-shadow:none;
     }
 
     .category{
-      margin-bottom:34px;
-      padding-bottom:28px;
-      border-bottom:1px solid #e5e7eb;
+      background:white;
+      border:1px solid #e5e7eb;
+      border-radius:18px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      padding:28px;
+      margin:24px 0;
     }
 
     .category:last-child{
-      border-bottom:none;
-      padding-bottom:0;
       margin-bottom:0;
     }
 
@@ -250,41 +251,42 @@
       font-weight:600;
     }
 
+
     html{
       scroll-behavior:smooth;
     }
 
-/* Desktop */
-#payroll,
-#employment,
-#tax,
-#salary-career,
-#financial-planning{
-  scroll-margin-top:140px;
-}
+    /* Desktop */
+    #payroll,
+    #employment,
+    #tax,
+    #salary-career,
+    #financial-planning{
+      scroll-margin-top:140px;
+    }
 
-/* Tablet */
-@media(max-width:1000px){
-  #payroll,
-  #employment,
-  #tax,
-  #salary-career,
-  #financial-planning{
-    scroll-margin-top:110px;
-  }
-}
+    /* Tablet */
+    @media(max-width:1000px){
+      #payroll,
+      #employment,
+      #tax,
+      #salary-career,
+      #financial-planning{
+        scroll-margin-top:110px;
+      }
+    }
 
-/* Mobile */
-@media(max-width:700px){
-  #payroll,
-  #employment,
-  #tax,
-  #salary-career,
-  #financial-planning{
-    scroll-margin-top:80px;
-  }
-}
-    
+    /* Mobile */
+    @media(max-width:700px){
+      #payroll,
+      #employment,
+      #tax,
+      #salary-career,
+      #financial-planning{
+        scroll-margin-top:80px;
+      }
+    }
+
     @media(max-width:700px){
       .main-wrapper{padding:18px 10px;}
       .nav-inner{padding:8px 10px;gap:8px;}
@@ -294,7 +296,8 @@
       .hero{margin:24px auto 18px;}
       .hero h1{font-size:27px;}
       .hero p{font-size:15px;}
-      .content-card{padding:18px;margin:20px auto;border-radius:16px;}
+      .content-card{padding:0;margin:20px auto;border-radius:0;}
+      .category{padding:18px;margin:18px 0;border-radius:16px;}
       .category-header h2{font-size:21px;}
       .calculator-grid{grid-template-columns:1fr;}
       .calculator-card{min-height:auto;}
