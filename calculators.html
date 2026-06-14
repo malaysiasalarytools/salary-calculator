@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Malaysia Salary Calculators | Payroll, Tax, Leave & Loan Tools</title>
+  <meta name="description" content="Free Malaysia salary calculators for EPF, SOCSO, EIS, PCB, income tax, annual leave, overtime, bonus, loans, DSR, home loan and personal loan estimates.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+    *{box-sizing:border-box;}
+
+    body{
+      font-family:Arial, sans-serif;
+      background:linear-gradient(135deg,#f6f7fb,#eef1f7);
+      margin:0;
+      padding:0;
+      color:#111827;
+    }
+
+    .top-nav{
+      background:white;
+      border-bottom:1px solid #e5e7eb;
+      position:sticky;
+      top:0;
+      z-index:100;
+      box-shadow:0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .nav-inner{
+      max-width:1100px;
+      margin:0 auto;
+      padding:14px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:25px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      text-decoration:none;
+      flex-shrink:0;
+      font-weight:bold;
+      color:#2563eb;
+      font-size:22px;
+    }
+
+    .brand img{
+      width:180px;
+      height:auto;
+      display:block;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      overflow-x:auto;
+      flex-wrap:nowrap;
+      scrollbar-width:none;
+      -ms-overflow-style:none;
+    }
+
+    .nav-links::-webkit-scrollbar{display:none;}
+
+    .nav-links a{
+      text-decoration:none;
+      color:#4b5563;
+      font-weight:600;
+      font-size:15px;
+      padding:10px 14px;
+      border-radius:8px;
+      white-space:nowrap;
+      flex-shrink:0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active{
+      background:#2563eb;
+      color:white;
+    }
+
+    .main-wrapper{
+      padding:30px 20px;
+    }
+
+    .hero{
+      text-align:center;
+      max-width:900px;
+      margin:35px auto 22px;
+    }
+
+    .hero h1{
+      font-size:34px;
+      color:#2563eb;
+      margin:0 0 12px;
+      line-height:1.2;
+    }
+
+    .hero p{
+      font-size:17px;
+      color:#64748b;
+      line-height:1.7;
+      margin:0 auto;
+      max-width:760px;
+    }
+
+    .quick-nav{
+      max-width:1000px;
+      margin:24px auto 0;
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .quick-nav a{
+      background:white;
+      border:1px solid #dbe3ef;
+      color:#2563eb;
+      text-decoration:none;
+      font-weight:700;
+      padding:10px 14px;
+      border-radius:999px;
+      box-shadow:0 4px 14px rgba(0,0,0,0.04);
+      font-size:14px;
+    }
+
+    .quick-nav a:hover{
+      background:#2563eb;
+      color:white;
+    }
+
+    .content-card{
+      background:white;
+      max-width:1000px;
+      margin:30px auto;
+      padding:28px;
+      border-radius:18px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .category{
+      margin-bottom:34px;
+      padding-bottom:28px;
+      border-bottom:1px solid #e5e7eb;
+    }
+
+    .category:last-child{
+      border-bottom:none;
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+
+    .category-header{
+      margin-bottom:18px;
+    }
+
+    .category-header h2{
+      margin:0 0 8px;
+      font-size:24px;
+      color:#111827;
+    }
+
+    .category-header p{
+      margin:0;
+      color:#64748b;
+      line-height:1.6;
+      max-width:760px;
+    }
+
+    .calculator-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:14px;
+    }
+
+    .calculator-card{
+      background:#f8fafc;
+      border:1px solid #dbe3ef;
+      border-radius:16px;
+      padding:18px;
+      text-decoration:none;
+      color:#111827;
+      display:block;
+      min-height:150px;
+      transition:all .2s ease;
+    }
+
+    .calculator-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 24px rgba(37,99,235,0.12);
+      border-color:#2563eb;
+      background:white;
+    }
+
+    .calculator-card .icon{
+      font-size:28px;
+      margin-bottom:10px;
+    }
+
+    .calculator-card h3{
+      margin:0 0 8px;
+      font-size:18px;
+      color:#111827;
+    }
+
+    .calculator-card p{
+      margin:0;
+      color:#64748b;
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    .calculator-card span{
+      display:inline-block;
+      margin-top:12px;
+      color:#2563eb;
+      font-weight:700;
+      font-size:14px;
+    }
+
+    .note-box{
+      max-width:1000px;
+      margin:0 auto 30px;
+      background:#eff6ff;
+      border:1px solid #bfdbfe;
+      border-left:5px solid #2563eb;
+      border-radius:14px;
+      padding:18px 20px;
+      color:#334155;
+      line-height:1.6;
+    }
+
+    .footer{
+      text-align:center;
+      padding:30px 20px;
+      color:#64748b;
+      border-top:1px solid #e5e7eb;
+      background:white;
+      margin-top:40px;
+    }
+
+    .footer a{
+      color:#2563eb;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    @media(max-width:700px){
+      .main-wrapper{padding:18px 10px;}
+      .nav-inner{padding:8px 10px;gap:8px;}
+      .brand img{width:120px;}
+      .nav-links{gap:6px;}
+      .nav-links a{font-size:14px;padding:8px 10px;}
+      .hero{margin:24px auto 18px;}
+      .hero h1{font-size:27px;}
+      .hero p{font-size:15px;}
+      .content-card{padding:18px;margin:20px auto;border-radius:16px;}
+      .category-header h2{font-size:21px;}
+      .calculator-grid{grid-template-columns:1fr;}
+      .calculator-card{min-height:auto;}
+      .quick-nav{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding:0 4px 6px;scrollbar-width:none;}
+      .quick-nav::-webkit-scrollbar{display:none;}
+      .quick-nav a{white-space:nowrap;flex-shrink:0;}
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="top-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Salary Calculator</a>
+      <a href="calculators.html" class="active">Calculators</a>
+      <a href="guides.html">Guides</a>
+      <a href="epf-calculator.html">EPF Calculator</a>
+      <a href="socso-calculator.html">SOCSO Calculator</a>
+      <a href="pcb-calculator.html">PCB Calculator</a>
+    </nav>
+  </div>
+</header>
+
+<div class="main-wrapper">
+
+  <section class="hero">
+    <h1>Malaysia Salary Calculators</h1>
+    <p>Use free Malaysia payroll, tax, leave, salary and loan calculators to estimate deductions, take-home pay, employment benefits and financing affordability.</p>
+  </section>
+
+  <div class="quick-nav">
+    <a href="#payroll">Payroll</a>
+    <a href="#employment">Employment</a>
+    <a href="#tax">Tax</a>
+    <a href="#salary-career">Salary & Career</a>
+    <a href="#financial-planning">Financial Planning</a>
+  </div>
+
+  <section class="content-card">
+
+    <div class="category" id="payroll">
+      <div class="category-header">
+        <h2>🧾 Payroll Calculators</h2>
+        <p>Estimate common Malaysia payroll deductions and monthly take-home pay, including EPF, SOCSO, EIS and PCB.</p>
+      </div>
+
+      <div class="calculator-grid">
+        <a class="calculator-card" href="index.html">
+          <div class="icon">💰</div>
+          <h3>Salary Calculator</h3>
+          <p>Estimate monthly salary deductions and net take-home pay in Malaysia.</p>
+          <span>Calculate salary →</span>
+        </a>
+
+        <a class="calculator-card" href="epf-calculator.html">
+          <div class="icon">🏦</div>
+          <h3>EPF Calculator</h3>
+          <p>Calculate employee and employer EPF contributions based on monthly salary.</p>
+          <span>Check EPF →</span>
+        </a>
+
+        <a class="calculator-card" href="socso-calculator.html">
+          <div class="icon">🛡️</div>
+          <h3>SOCSO Calculator</h3>
+          <p>Estimate SOCSO contributions for employee and employer payroll calculation.</p>
+          <span>Check SOCSO →</span>
+        </a>
+
+        <a class="calculator-card" href="eis-calculator.html">
+          <div class="icon">📋</div>
+          <h3>EIS Calculator</h3>
+          <p>Calculate Employment Insurance System contribution based on salary.</p>
+          <span>Check EIS →</span>
+        </a>
+
+        <a class="calculator-card" href="pcb-calculator.html">
+          <div class="icon">🏛️</div>
+          <h3>PCB Calculator</h3>
+          <p>Estimate monthly PCB tax deduction for Malaysian employees.</p>
+          <span>Check PCB →</span>
+        </a>
+
+        <a class="calculator-card" href="payslip-generator.html">
+          <div class="icon">🧾</div>
+          <h3>Payslip Generator</h3>
+          <p>Create a simple payslip breakdown for salary, deductions and net pay.</p>
+          <span>Generate payslip →</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="category" id="employment">
+      <div class="category-header">
+        <h2>📅 Employment Calculators</h2>
+        <p>Tools for leave, overtime, public holidays, notice period and other employment-related calculations.</p>
+      </div>
+
+      <div class="calculator-grid">
+        <a class="calculator-card" href="annual-leave-calculator.html">
+          <div class="icon">🌴</div>
+          <h3>Annual Leave Calculator</h3>
+          <p>Estimate annual leave entitlement based on service period and employment rules.</p>
+          <span>Check leave →</span>
+        </a>
+
+        <a class="calculator-card" href="mc-leave-calculator.html">
+          <div class="icon">🏥</div>
+          <h3>MC Leave Calculator</h3>
+          <p>Estimate sick leave and hospitalisation leave entitlement in Malaysia.</p>
+          <span>Check MC leave →</span>
+        </a>
+
+        <a class="calculator-card" href="overtime-calculator.html">
+          <div class="icon">⏱️</div>
+          <h3>Overtime Calculator</h3>
+          <p>Calculate estimated overtime pay based on hourly rate and OT hours.</p>
+          <span>Calculate overtime →</span>
+        </a>
+
+        <a class="calculator-card" href="public-holiday-calculator.html">
+          <div class="icon">📆</div>
+          <h3>Public Holiday Calculator</h3>
+          <p>Estimate public holiday pay or check holiday-related salary treatment.</p>
+          <span>Check public holiday →</span>
+        </a>
+
+        <a class="calculator-card" href="resignation-notice-calculator.html">
+          <div class="icon">📨</div>
+          <h3>Resignation Notice Calculator</h3>
+          <p>Estimate notice period, last working day and basic resignation timeline.</p>
+          <span>Check notice period →</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="category" id="tax">
+      <div class="category-header">
+        <h2>🏛️ Tax Calculators</h2>
+        <p>Estimate personal income tax, monthly tax deduction and possible tax refund amount.</p>
+      </div>
+
+      <div class="calculator-grid">
+        <a class="calculator-card" href="income-tax-calculator.html">
+          <div class="icon">💼</div>
+          <h3>Income Tax Calculator</h3>
+          <p>Estimate annual Malaysia personal income tax based on income and reliefs.</p>
+          <span>Calculate income tax →</span>
+        </a>
+
+        <a class="calculator-card" href="tax-refund-calculator.html">
+          <div class="icon">💸</div>
+          <h3>Tax Refund Calculator</h3>
+          <p>Estimate whether you may have overpaid tax and could receive a refund.</p>
+          <span>Check tax refund →</span>
+        </a>
+
+        <a class="calculator-card" href="pcb-calculator.html">
+          <div class="icon">🏛️</div>
+          <h3>PCB Calculator</h3>
+          <p>Estimate monthly tax deduction deducted from salary by employer.</p>
+          <span>Check PCB →</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="category" id="salary-career">
+      <div class="category-header">
+        <h2>📈 Salary & Career Calculators</h2>
+        <p>Tools to estimate salary growth, bonus, hourly pay and other career-related salary calculations.</p>
+      </div>
+
+      <div class="calculator-grid">
+        <a class="calculator-card" href="bonus-calculator.html">
+          <div class="icon">🎁</div>
+          <h3>Bonus Calculator</h3>
+          <p>Calculate estimated bonus amount based on salary and bonus months.</p>
+          <span>Calculate bonus →</span>
+        </a>
+
+        <a class="calculator-card" href="salary-increment-calculator.html">
+          <div class="icon">📈</div>
+          <h3>Salary Increment Calculator</h3>
+          <p>Calculate salary increase amount, new salary and increment percentage.</p>
+          <span>Calculate increment →</span>
+        </a>
+
+        <a class="calculator-card" href="hourly-rate-calculator.html">
+          <div class="icon">⏰</div>
+          <h3>Hourly Rate Calculator</h3>
+          <p>Convert monthly salary into estimated daily or hourly pay rate.</p>
+          <span>Calculate hourly rate →</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="category" id="financial-planning">
+      <div class="category-header">
+        <h2>🏡 Financial Planning Calculators</h2>
+        <p>Estimate loan affordability, debt service ratio and monthly repayments for personal or housing finance planning.</p>
+      </div>
+
+      <div class="calculator-grid">
+        <a class="calculator-card" href="loan-calculator.html">
+          <div class="icon">💳</div>
+          <h3>Loan Calculator</h3>
+          <p>Estimate monthly repayment based on loan amount, interest rate and tenure.</p>
+          <span>Calculate loan →</span>
+        </a>
+
+        <a class="calculator-card" href="debt-service-ratio-calculator.html">
+          <div class="icon">📊</div>
+          <h3>Debt Service Ratio Calculator</h3>
+          <p>Calculate DSR to estimate how much of your income goes to debt repayment.</p>
+          <span>Calculate DSR →</span>
+        </a>
+
+        <a class="calculator-card" href="home-loan-calculator.html">
+          <div class="icon">🏠</div>
+          <h3>Home Loan Calculator</h3>
+          <p>Estimate housing loan repayment and affordability for home purchase planning.</p>
+          <span>Check home loan →</span>
+        </a>
+
+        <a class="calculator-card" href="personal-loan-calculator.html">
+          <div class="icon">💵</div>
+          <h3>Personal Loan Calculator</h3>
+          <p>Estimate personal loan repayment and compare monthly instalment amounts.</p>
+          <span>Check personal loan →</span>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="note-box">
+    <strong>Note:</strong> These calculators are for general estimation only. Actual payroll, tax, leave and loan results may differ depending on official rules, employer policy, bank assessment and latest government updates.
+  </div>
+
+</div>
+
+<footer class="footer">
+  <p>© 2026 Malaysia Salary Tools</p>
+  <p>
+    <a href="about.html">About Us</a> |
+    <a href="contact.html">Contact Us</a> |
+    <a href="guides.html">Guides</a> |
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </p>
+</footer>
+
+</body>
+</html>
