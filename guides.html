@@ -262,6 +262,173 @@
       font-weight:600;
     }
 
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: nowrap;
+      min-width: 0;
+      overflow-x: visible;
+    }
+
+    .nav-item {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .nav-links a,
+    .nav-drop-btn {
+      display: block;
+      text-decoration: none;
+      color: #4b5563;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      white-space: nowrap;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active,
+    .nav-item:hover .nav-drop-btn {
+      background: #2563eb;
+      color: white;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      min-width: 230px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(229, 231, 235, 0.9);
+      border-radius: 14px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+      padding: 10px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: 0.18s ease;
+      z-index: 999;
+    }
+
+    .nav-item:hover .dropdown-menu,
+    .nav-item:focus-within .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-menu a {
+      color: #334155;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      margin: 2px 0;
+    }
+
+    .dropdown-menu a:hover {
+      background: #eef4ff;
+      color: #2563eb;
+    }
+
+    .dropdown-title {
+      padding: 8px 12px 6px;
+      color: #64748b;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Desktop */
+    #payroll,
+    #employment,
+    #tax,
+    #salary-career,
+    #financial-planning{
+      scroll-margin-top:140px;
+    }
+
+    /* Tablet */
+    @media(max-width:1000px){
+      #payroll,
+      #employment,
+      #tax,
+      #salary-career,
+      #financial-planning{
+        scroll-margin-top:110px;
+      }
+    }
+
+    /* Mobile */
+    @media(max-width:700px){
+      #payroll,
+      #employment,
+      #tax,
+      #salary-career,
+      #financial-planning{
+        scroll-margin-top:80px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .nav-inner {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .nav-links {
+        width: auto;
+        flex: 1;
+        min-width: 0;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-item {
+        flex: 0 0 auto;
+      }
+
+      .dropdown-menu {
+        position: fixed;
+        top: 66px;
+        left: 12px;
+        right: 12px;
+        min-width: 0;
+        max-width: calc(100vw - 24px);
+        max-height: 70vh;
+        overflow-y: auto;
+      }
+    }
+
+
     @media(max-width:700px){
       .nav-inner{ padding:8px 10px; gap:8px; }
       .brand img{ width:120px; }
@@ -282,14 +449,51 @@
   <header class="top-nav">
     <div class="nav-inner">
       <a href="index.html" class="brand">
-        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+        <img src="logo.png" alt="Malaysia Salary Tools">
       </a>
-      <nav class="nav-links">
-        <a href="index.html">Salary Calculator</a>
-        <a href="calculators.html">Calculators</a>
-        <a href="guides.html" class="active">Guides</a>
-        <a href="epf-calculator.html">EPF Calculator</a>
-        <a href="pcb-calculator.html">PCB Calculator</a>
+      <nav class="nav-links" aria-label="Main navigation">
+
+        <div class="nav-item">
+          <a href="index.html">Home</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="calculators.html" class="nav-drop-btn">Calculators ▾</a>
+          <div class="dropdown-menu">
+            <div class="dropdown-title">Salary Calculators</div>
+            <a href="epf-calculator.html">EPF Calculator</a>
+            <a href="socso-calculator.html">SOCSO Calculator</a>
+            <a href="eis-calculator.html">EIS Calculator</a>
+            <a href="pcb-calculator.html">PCB Calculator</a>
+            <a href="income-tax-calculator.html">Income Tax Calculator</a>
+            <a href="annual-leave-calculator.html">Annual Leave Calculator</a>
+            <a href="bonus-calculator.html">Bonus Calculator</a>
+            <a href="loan-calculator.html">Loan Calculator</a>
+            <a href="overtime-calculator.html">Overtime Calculator</a>
+            <a href="calculators.html">View All Calculators →</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="guides.html" class="nav-drop-btn active">Guides ▾</a>
+          <div class="dropdown-menu">
+            <div class="dropdown-title">Salary Guides</div>
+            <a href="tax-relief-guide.html">Tax Relief Guide</a>
+            <a href="public-holiday-guide.html">Public Holiday Guide</a>
+            <a href="mc-leave-guide.html">MC Leave Guide</a>
+            <a href="overtime-guide.html">Overtime Guide</a>
+            <a href="epf-guide.html">EPF Guide</a>
+            <a href="socso-guide.html">SOCSO Guide</a>
+            <a href="eis-guide.html">EIS Guide</a>
+            <a href="pcb-guide.html">PCB Guide</a>
+            <a href="guides.html">View All Guides →</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="about.html">About</a>
+        </div>
+
       </nav>
     </div>
   </header>
