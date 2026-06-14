@@ -442,15 +442,210 @@
       .count-badge{ display:inline-block; margin-top:12px; }
       .guide-grid{ grid-template-columns:1fr; }
     }
+  
+
+    /* Unified navigation - same as index.html */
+    html {
+      overflow-x: hidden;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .top-nav {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      overflow: visible;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      width: 180px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: nowrap;
+      min-width: 0;
+      overflow: visible;
+    }
+
+    .nav-item {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .nav-links a,
+    .nav-drop-btn {
+      display: block;
+      text-decoration: none;
+      color: #4b5563;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      white-space: nowrap;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active,
+    .nav-item:hover .nav-drop-btn {
+      background: #2563eb;
+      color: white;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      min-width: 230px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(229, 231, 235, 0.9);
+      border-radius: 14px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+      padding: 10px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: 0.18s ease;
+      z-index: 999;
+      display: block;
+      width: auto;
+    }
+
+    .nav-item:hover .dropdown-menu,
+    .nav-item:focus-within .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-menu a {
+      color: #334155;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      margin: 2px 0;
+    }
+
+    .dropdown-menu a:hover {
+      background: #eef4ff;
+      color: #2563eb;
+    }
+
+    .dropdown-title {
+      padding: 8px 12px 6px;
+      color: #64748b;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 800px) {
+      .nav-inner {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .nav-links {
+        width: auto;
+        flex: 1;
+        min-width: 0;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-links a,
+      .nav-drop-btn {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+
+      .nav-inner {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        gap: 8px;
+      }
+
+      .brand img {
+        width: 120px;
+      }
+
+      .nav-links {
+        gap: 6px;
+      }
+
+      .nav-item {
+        flex: 0 0 auto;
+      }
+
+      .dropdown-menu {
+        position: fixed;
+        top: 66px;
+        left: 12px;
+        right: 12px;
+        min-width: 0;
+        max-width: calc(100vw - 24px);
+        max-height: 70vh;
+        overflow-y: auto;
+      }
+    }
+
   </style>
 </head>
 
 <body>
   <header class="top-nav">
     <div class="nav-inner">
+
       <a href="index.html" class="brand">
         <img src="logo.png" alt="Malaysia Salary Tools">
       </a>
+
       <nav class="nav-links" aria-label="Main navigation">
 
         <div class="nav-item">
@@ -495,6 +690,7 @@
         </div>
 
       </nav>
+
     </div>
   </header>
 
