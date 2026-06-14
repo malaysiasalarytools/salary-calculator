@@ -19,12 +19,17 @@
   crossorigin="anonymous"></script>
 
   <style>
+    html {
+      overflow-x: hidden;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #f6f7fb, #eef1f7);
       margin: 0;
       padding: 0;
       color: #111827;
+      overflow-x: hidden;
     }
 
     .tax-relief-box {
@@ -354,6 +359,7 @@
       align-items: center;
       gap: 8px;
       flex-wrap: nowrap;
+      min-width: 0;
     }
 
     .nav-item {
@@ -549,12 +555,17 @@
       }
 
       .nav-links {
-        width: 100%;
+        width: auto;
+        flex: 1;
+        min-width: 0;
         justify-content: flex-start;
         padding-bottom: 5px;
         overflow-x: auto;
+        overflow-y: hidden;
         scrollbar-width: none;
         -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
       }
 
       .nav-links::-webkit-scrollbar {
@@ -595,10 +606,22 @@
 
       .nav-links {
         gap: 6px;
+      }
+
+      .nav-item {
+        flex: 0 0 auto;
+      }
+
+      .dropdown-menu {
+        position: fixed;
+        top: 66px;
+        left: 12px;
+        right: 12px;
+        min-width: 0;
+        max-width: calc(100vw - 24px);
       }     
 
       .dropdown-menu {
-        min-width: 220px;
         max-height: 70vh;
         overflow-y: auto;
       }
