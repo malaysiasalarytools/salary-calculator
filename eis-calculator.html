@@ -1,343 +1,596 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-
-  <title>Malaysia EIS Calculator 2026 | Employment Insurance System Calculator</title>
-
-  <meta name="description" content="Free Malaysia EIS Calculator 2026. Calculate employee and employer Employment Insurance System (EIS) contributions instantly. Estimate monthly and annual EIS deductions based on salary.">
-
+  <title>Malaysia EIS Calculator 2026 | Employee & Employer EIS Contribution</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Free Malaysia EIS Calculator 2026. Estimate employee EIS deduction, employer EIS contribution, total EIS contribution and salary after EIS deduction.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="robots" content="index, follow">
 
+  <script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6819619632324210"
+  crossorigin="anonymous"></script>
+
   <style>
-
     body {
-      font-family: Arial;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #f6f6f6;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+      margin: 0;
+      padding: 0;
+      color: #111827;
     }
 
-    .card,
-    .seo {
+    .top-nav {
       background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
     }
 
-    .seo {
-      margin-top: 30px;
-      line-height: 1.7;
-    }
-
-    .layout {
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
       display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
     }
 
-    .box {
-      flex: 1;
-      min-width: 280px;
-      background: #f9f9f9;
-      padding: 15px;
-      border-radius: 10px;
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+      font-weight: bold;
+      color: #2563eb;
+      font-size: 22px;
     }
 
-    input,
-    button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      font-size: 16px;
+    .brand img {
+      width: 180px;
+      height: auto;
+      display: block;
     }
 
-    button {
-      background: black;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .nav-links::-webkit-scrollbar { display: none; }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4b5563;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #2563eb;
       color: white;
-      border: none;
-      cursor: pointer;
     }
 
-    .result {
-      margin-top: 15px;
+    .main-wrapper {
+      padding: 30px 20px;
+    }
+
+    .hero {
+      text-align: center;
+      max-width: 900px;
+      margin: 35px auto 20px;
+    }
+
+    .hero h1 {
+      font-size: 34px;
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: #64748b;
+      margin-top: 0;
       line-height: 1.6;
     }
 
-    .seo-cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:15px;
-      margin-top:20px;
+    .calculator-layout {
+      max-width: 1000px;
+      margin: 30px auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
     }
 
-    .card-link{
-      display:block;
-      padding:15px;
-      background:white;
-      border-radius:12px;
-      text-decoration:none;
-      color:black;
-      box-shadow:0 2px 10px rgba(0,0,0,0.06);
+    .calculator-card,
+    .result-card,
+    .seo {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid #e5e7eb;
     }
 
-    h1 { font-size: 26px; }
+    .calculator-card,
+    .result-card {
+      padding: 26px;
+    }
+
+    .calculator-card h2,
+    .result-card h2 {
+      margin-top: 0;
+      color: #111827;
+      font-size: 22px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #374151;
+    }
+
+    input,
+    select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 13px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 16px;
+      background: #fff;
+    }
+
+    input:focus,
+    select:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+
+    .calculate-btn {
+      width: 100%;
+      border: none;
+      background: #2563eb;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 14px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+
+    .calculate-btn:hover { background: #1d4ed8; }
+
+    .small-note {
+      color: #64748b;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-top: 12px;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .result-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .result-box span {
+      display: block;
+      color: #64748b;
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .result-box strong {
+      display: block;
+      color: #2563eb;
+      font-size: 22px;
+    }
+
+    .highlight-result {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #eff6ff, #f8fafc);
+      border-color: #bfdbfe;
+    }
+
+    .breakdown-table-wrap {
+      overflow-x: auto;
+      margin-top: 18px;
+    }
+
+    .breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 420px;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .breakdown-table th {
+      background: #f8fafc;
+      color: #64748b;
+      font-size: 13px;
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #dbe3ef;
+    }
+
+    .breakdown-table td {
+      padding: 12px;
+      border-bottom: 1px solid #eef2f7;
+      color: #334155;
+      font-size: 14px;
+    }
+
+    .breakdown-table tr:last-child td { border-bottom: none; }
+
+    .seo {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      line-height: 1.7;
+    }
+
     h2 { font-size: 20px; margin-top: 25px; }
     h3 { font-size: 16px; margin-top: 18px; }
 
-  </style>
+    .summary-box,
+    .guide-box,
+    .salary-guides-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 16px;
+      padding: 24px;
+      margin: 25px 0;
+    }
 
+    .summary-box h2,
+    .guide-box h2,
+    .salary-guides-box h2 {
+      margin-top: 0;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .summary-card {
+      background: white;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .summary-card strong {
+      display: block;
+      color: #2563eb;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .summary-card span {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .formula-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 14px;
+      padding: 25px;
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .formula-box strong {
+      display: block;
+      font-size: 22px;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .formula-box span {
+      color: #64748b;
+      font-size: 15px;
+    }
+
+    .note-box {
+      margin-top: 20px;
+      background: white;
+      border-left: 4px solid #2563eb;
+      padding: 12px;
+      border-radius: 8px;
+      color: #4b5563;
+    }
+
+    .guide-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .guide-mini-grid a {
+      background: white;
+      border: 1px solid #e5e7eb;
+      padding: 12px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .guide-mini-grid a:hover {
+      background: #2563eb;
+      color: white;
+    }
+
+    .faq-box { margin-top: 25px; }
+
+    .faq-item {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .faq-item summary {
+      font-weight: bold;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "▼"; float: right; font-size: 12px; }
+    .faq-item[open] summary::after { content: "▲"; }
+
+    .faq-item p {
+      margin-top: 12px;
+      margin-bottom: 0;
+      color: #4b5563;
+      line-height: 1.5;
+    }
+
+    .view-all-guides {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .view-all-guides a {
+      color: #2563eb;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .footer {
+      text-align:center;
+      padding:20px;
+    }
+
+    @media (max-width: 800px){
+      .calculator-layout { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 700px){
+      .main-wrapper { padding: 15px 10px; }
+      .seo { margin: 15px auto; padding: 18px; }
+      .calculator-card, .result-card { padding: 18px; }
+      .nav-inner { padding: 8px 10px; gap: 8px; }
+      .brand img { width: 120px; }
+      .brand { font-size: 18px; }
+      .nav-links { gap: 6px; }
+      .nav-links a { font-size: 14px; padding: 8px 10px; }
+      .hero h1 { font-size: 27px; }
+      .hero p { font-size: 15px; }
+      .result-grid { grid-template-columns: 1fr; }
+      .highlight-result { grid-column: auto; }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="card">
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="calculators.html" class="active">Calculators</a>
+        <a href="guides.html">Guides</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
 
-  <h1>Malaysia EIS Calculator 2026</h1>
+  <div class="main-wrapper">
 
-  <p><b>Malaysia EIS Calculator:</b> Instantly calculate employee and employer EIS contributions based on monthly salary.</p>
-
-  <p>This calculator estimates monthly and annual Employment Insurance System (EIS) contributions in Malaysia.</p>
-
-  <input type="number" id="salary" placeholder="Enter monthly salary (RM)">
-
-  <button onclick="calculate()">Calculate EIS</button>
-
-  <div class="layout">
-
-    <div class="box">
-      <h3>Monthly Breakdown</h3>
-      <div class="result" id="monthly"></div>
+    <div class="hero">
+      <h1>Malaysia EIS Calculator 2026</h1>
+      <p>Estimate employee EIS deduction, employer EIS contribution, total EIS contribution and salary after EIS deduction.</p>
     </div>
 
-    <div class="box">
-      <h3>Annual Breakdown</h3>
-      <div class="result" id="annual"></div>
+    <div class="calculator-layout">
+      <section class="calculator-card">
+        <h2>🧮 EIS Contribution Calculator</h2>
+
+        <div class="form-group">
+          <label for="salary">Monthly Salary (RM)</label>
+          <input type="number" id="salary" placeholder="Example: 4000" value="4000" min="0" step="0.01">
+        </div>
+
+        <div class="form-group">
+          <label for="eisRate">EIS Rate</label>
+          <select id="eisRate">
+            <option value="0.002" selected>0.2% employee + 0.2% employer</option>
+            <option value="0.000">0% - No EIS estimate</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="wageCap">Wage Cap for Estimate (RM)</label>
+          <input type="number" id="wageCap" value="5000" min="0" step="0.01">
+        </div>
+
+        <button class="calculate-btn" onclick="calculateEIS()">Calculate EIS</button>
+
+        <p class="small-note">
+          This calculator uses a simplified EIS percentage estimate with an optional wage cap. Actual payroll contribution may follow official contribution schedules and rounding rules.
+        </p>
+      </section>
+
+      <section class="result-card">
+        <h2>📊 EIS Result</h2>
+
+        <div class="result-grid">
+          <div class="result-box">
+            <span>Employee EIS</span>
+            <strong id="employeeEIS">RM8.00</strong>
+          </div>
+          <div class="result-box">
+            <span>Employer EIS</span>
+            <strong id="employerEIS">RM8.00</strong>
+          </div>
+          <div class="result-box highlight-result">
+            <span>Total EIS Contribution</span>
+            <strong id="totalEIS">RM16.00</strong>
+          </div>
+          <div class="result-box highlight-result">
+            <span>Salary After Employee EIS</span>
+            <strong id="salaryAfterEIS">RM3,992.00</strong>
+          </div>
+        </div>
+
+        <div class="breakdown-table-wrap">
+          <table class="breakdown-table">
+            <thead><tr><th>Item</th><th>Rate</th><th>Amount</th></tr></thead>
+            <tbody>
+              <tr><td>Employee EIS Deduction</td><td id="employeeRateText">0.2%</td><td id="employeeEISTable">RM8.00</td></tr>
+              <tr><td>Employer EIS Contribution</td><td id="employerRateText">0.2%</td><td id="employerEISTable">RM8.00</td></tr>
+              <tr><td>Total EIS Contribution</td><td>-</td><td id="totalEISTable">RM16.00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
 
+    <div class="seo">
+      <section class="summary-box">
+        <h2>📌 EIS Calculator Quick Summary</h2>
+        <p>This EIS calculator helps employees and employers estimate Malaysia Employment Insurance System contributions based on monthly salary.</p>
+        <div class="summary-grid">
+          <div class="summary-card"><strong>0.2%</strong><span>Common employee EIS contribution rate</span></div>
+          <div class="summary-card"><strong>0.2%</strong><span>Common employer EIS contribution rate</span></div>
+          <div class="summary-card"><strong>Monthly</strong><span>EIS is normally calculated through payroll</span></div>
+          <div class="summary-card"><strong>SOCSO</strong><span>EIS is administered together with employment protection</span></div>
+        </div>
+      </section>
+
+      <h2>How to Use This EIS Calculator</h2>
+      <p>Enter your monthly salary and choose the EIS rate. The calculator will estimate employee EIS deduction, employer EIS contribution and total EIS contribution.</p>
+
+      <div class="formula-box">
+        <strong>EIS Contribution = Monthly Wage × EIS Rate</strong>
+        <span>Example: RM4,000 × 0.2% = RM8 employee EIS deduction</span>
+      </div>
+
+      <section class="guide-box">
+        <h2>Employee EIS vs Employer EIS</h2>
+        <p>Employee EIS is deducted from salary. Employer EIS is paid by the employer on top of salary. Both are part of the employment insurance contribution system.</p>
+        <div class="note-box"><strong>Note:</strong> This is a simplified planning calculator. Actual EIS may differ due to official contribution tables and payroll rounding.</div>
+      </section>
+
+      <section class="guide-box">
+        <h2>Who Should Use This EIS Calculator?</h2>
+        <ul><li>Employees checking monthly EIS deduction</li><li>Job seekers comparing salary deductions</li><li>HR and payroll staff doing quick estimates</li><li>Employers planning payroll cost</li></ul>
+      </section>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-box">
+        <details class="faq-item" open><summary>How is EIS calculated in Malaysia?</summary><p>EIS is commonly estimated using a small percentage of monthly wages for both employee and employer contributions, subject to official contribution rules.</p></details>
+        <details class="faq-item"><summary>Is employer EIS deducted from my salary?</summary><p>No. Employee EIS is deducted from salary. Employer EIS is paid separately by the employer.</p></details>
+        <details class="faq-item"><summary>Why is my actual EIS different from this calculator?</summary><p>Actual payroll may use official EIS contribution tables and rounding rules, so it can differ slightly from a simple percentage estimate.</p></details>
+        <details class="faq-item"><summary>Does EIS affect take-home pay?</summary><p>Yes. Employee EIS is a salary deduction, so it slightly reduces monthly take-home pay.</p></details>
+      </div>
+
+      <section class="salary-guides-box"><h2>📚 Related Payroll Guides</h2><p>Continue reading related Malaysia payroll guides.</p><div class="guide-mini-grid"><a href="eis-guide.html">🏢 EIS Guide</a><a href="socso-guide.html">🛡️ SOCSO Guide</a><a href="epf-guide.html">💰 EPF Guide</a><a href="salary-deduction-guide.html">📉 Salary Deduction Guide</a></div><p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p></section>
+      <section class="salary-guides-box"><h2>🧮 Related Calculators</h2><p>Use these calculators to estimate full payroll deductions and take-home pay.</p><div class="guide-mini-grid"><a href="index.html">Salary Calculator</a><a href="epf-calculator.html">EPF Calculator</a><a href="socso-calculator.html">SOCSO Calculator</a><a href="pcb-calculator.html">PCB Calculator</a></div><p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p></section>
+    </div>
   </div>
 
-</div>
+  <hr style="margin-top:40px;">
 
-<div class="seo">
+  <div class="footer">
+    <p>© 2026 Malaysia Salary Tools</p>
+    <p>
+      <a href="about.html">About Us</a> |
+      <a href="contact.html">Contact Us</a> |
+      <a href="guides.html">Guides</a> |
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </p>
+  </div>
 
-<h2>Related Salary Guides</h2>
-
-<div class="seo-cards">
-
-<a class="card-link" href="epf-guide.html">
-<h3>EPF Guide Malaysia</h3>
-<p>EPF contribution rates and retirement savings</p>
-</a>
-
-<a class="card-link" href="socso-guide.html">
-<h3>SOCSO Guide Malaysia</h3>
-<p>Work injury protection and employee benefits</p>
-</a>
-
-<a class="card-link" href="eis-guide.html">
-<h3>EIS Guide Malaysia</h3>
-<p>Employment insurance and unemployment support</p>
-</a>
-
-<a class="card-link" href="pcb-guide.html">
-<h3>PCB Tax Guide Malaysia</h3>
-<p>Monthly tax deduction explained simply</p>
-</a>
-
-</div>
-
-<h2>What is EIS in Malaysia?</h2>
-
-<p>
-The Employment Insurance System (EIS) is a social protection scheme administered by PERKESO.
-</p>
-
-<p>
-It provides temporary financial assistance and employment support services to employees who lose their jobs through no fault of their own.
-</p>
-
-<p>
-EIS was introduced to help workers maintain financial stability while seeking new employment opportunities.
-</p>
-
-<h2>How Does EIS Work?</h2>
-
-<p>
-Both employers and employees contribute to EIS through monthly payroll deductions.
-</p>
-
-<p>
-The contribution amount is determined based on monthly wages and contribution schedules issued by PERKESO.
-</p>
-
-<p>
-When an eligible employee loses employment, EIS may provide financial assistance and employment support benefits.
-</p>
-
-<h2>Who Needs To Contribute To EIS?</h2>
-
-<p>
-Most employees working under a contract of service are generally covered by EIS.
-</p>
-
-<p>
-Employers are responsible for deducting employee contributions and remitting both employer and employee portions to PERKESO.
-</p>
-
-<h2>Benefits Provided Under EIS</h2>
-
-<ul>
-<li>Job Search Allowance</li>
-<li>Reduced Income Allowance</li>
-<li>Training Fee Assistance</li>
-<li>Training Allowance</li>
-<li>Career Counselling</li>
-<li>Employment Placement Services</li>
-</ul>
-
-<h2>How Is EIS Calculated?</h2>
-
-<p>
-EIS contributions are shared between employers and employees.
-</p>
-
-<p>
-Contribution rates are generally based on monthly wages and official EIS contribution schedules.
-</p>
-
-<p>
-The calculator above estimates both monthly and annual EIS contributions instantly.
-</p>
-
-<h2>Example EIS Calculation</h2>
-
-<p>
-For an employee earning RM5,000 per month, both the employee and employer contribute towards EIS.
-</p>
-
-<p>
-The contribution amount is relatively small compared to EPF and SOCSO, but it provides important protection in the event of unemployment.
-</p>
-
-<p>
-Use the EIS calculator above to estimate your monthly and annual contributions.
-</p>
-
-<h2>Why Is EIS Important?</h2>
-
-<p>
-Unexpected job loss can create significant financial challenges.
-</p>
-
-<p>
-EIS helps provide temporary income support while employees search for new employment opportunities.
-</p>
-
-<p>
-The scheme also encourages workforce reskilling and career development through training assistance programmes.
-</p>
-
-<h2>Frequently Asked Questions</h2>
-
-<h3>Is EIS mandatory in Malaysia?</h3>
-
-<p>
-Yes. EIS contributions are generally mandatory for eligible employers and employees.
-</p>
-
-<h3>Who manages EIS?</h3>
-
-<p>
-The Employment Insurance System is administered by PERKESO.
-</p>
-
-<h3>Can self-employed individuals contribute?</h3>
-
-<p>
-EIS mainly applies to employees working under contracts of service.
-</p>
-
-<h3>What happens if I lose my job?</h3>
-
-<p>
-Eligible employees may receive temporary financial assistance and employment support benefits under EIS.
-</p>
-
-<h3>Can I calculate annual EIS contributions?</h3>
-
-<p>
-Yes. The calculator above provides both monthly and annual EIS estimates.
-</p>
-
-<h2>Related Calculators</h2>
-
-<ul>
-<li><a href="index.html">Salary Calculator</a></li>
-<li><a href="epf-calculator.html">EPF Calculator</a></li>
-<li><a href="socso-calculator.html">SOCSO Calculator</a></li>
-<li><a href="pcb-calculator.html">PCB Tax Calculator</a></li>
-</ul>
-
-</div>
-
-<script>
-
-function formatRM(v){
-  return v.toLocaleString('en-MY',{
-    minimumFractionDigits:2,
-    maximumFractionDigits:2
-  });
-}
-
-function calculate(){
-
-  let salary = parseFloat(document.getElementById("salary").value);
-
-  if(!salary){
-    document.getElementById("monthly").innerHTML = "Please enter salary";
-    document.getElementById("annual").innerHTML = "";
-    return;
-  }
-
-  let employee = salary * 0.002;
-  let employer = salary * 0.002;
-
-  let total = employee + employer;
-
-  document.getElementById("monthly").innerHTML =
-    "Employee EIS (0.2%): RM " + formatRM(employee) + "<br>" +
-    "Employer EIS (0.2%): RM " + formatRM(employer) + "<br><br>" +
-    "<b>Total EIS: RM " + formatRM(total) + "</b>";
-
-  document.getElementById("annual").innerHTML =
-    "Annual Employee EIS: RM " + formatRM(employee*12) + "<br>" +
-    "Annual Employer EIS: RM " + formatRM(employer*12) + "<br><br>" +
-    "<b>Total Annual EIS: RM " + formatRM(total*12) + "</b>";
-}
-
-</script>
-
-<hr style="margin-top:40px;">
-
-<div style="text-align:center;padding:20px;">
-
-<p>
-© 2026 Malaysia Salary Tools
-</p>
-
-<p>
-<a href="about.html">About Us</a> |
-<a href="contact.html">Contact Us</a> |
-<a href="privacy-policy.html">Privacy Policy</a>
-</p>
-
-</div>
-  
+  <script>
+    function formatRM(amount) {
+      return 'RM' + amount.toLocaleString('en-MY', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+    function formatRate(rate) { return (rate * 100).toFixed(1).replace('.0','') + '%'; }
+    function calculateEIS() {
+      const salary = parseFloat(document.getElementById('salary').value) || 0;
+      const rate = parseFloat(document.getElementById('eisRate').value) || 0;
+      const wageCap = parseFloat(document.getElementById('wageCap').value) || 0;
+      const chargeableWage = wageCap > 0 ? Math.min(salary, wageCap) : salary;
+      const employeeEIS = chargeableWage * rate;
+      const employerEIS = chargeableWage * rate;
+      const totalEIS = employeeEIS + employerEIS;
+      const salaryAfterEIS = salary - employeeEIS;
+      document.getElementById('employeeEIS').textContent = formatRM(employeeEIS);
+      document.getElementById('employerEIS').textContent = formatRM(employerEIS);
+      document.getElementById('totalEIS').textContent = formatRM(totalEIS);
+      document.getElementById('salaryAfterEIS').textContent = formatRM(salaryAfterEIS);
+      document.getElementById('employeeRateText').textContent = formatRate(rate);
+      document.getElementById('employerRateText').textContent = formatRate(rate);
+      document.getElementById('employeeEISTable').textContent = formatRM(employeeEIS);
+      document.getElementById('employerEISTable').textContent = formatRM(employerEIS);
+      document.getElementById('totalEISTable').textContent = formatRM(totalEIS);
+    }
+    calculateEIS();
+  </script>
 </body>
 </html>
