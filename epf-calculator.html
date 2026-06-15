@@ -1,364 +1,689 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-
-  <title>Malaysia EPF Calculator 2026 | Employee & Employer EPF Calculation</title>
-
-  <meta name="description" content="Free Malaysia EPF Calculator 2026. Calculate employee and employer EPF contributions instantly. Estimate monthly and annual EPF savings based on salary.">
-
+  <title>Malaysia EPF Calculator 2026 | KWSP Employee & Employer Contribution</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Free Malaysia EPF Calculator 2026. Estimate employee EPF contribution, employer EPF contribution, total KWSP contribution and salary after EPF deduction.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="robots" content="index, follow">
+
+  <script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6819619632324210"
+  crossorigin="anonymous"></script>
 
   <style>
     body {
-      font-family: Arial;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #f6f6f6;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+      margin: 0;
+      padding: 0;
+      color: #111827;
     }
 
-    .card {
+    .top-nav {
       background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
     }
 
-    .layout {
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
       display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
     }
 
-    .box {
-      flex: 1;
-      min-width: 280px;
-      background: #f9f9f9;
-      padding: 15px;
-      border-radius: 10px;
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+      font-weight: bold;
+      color: #2563eb;
+      font-size: 22px;
     }
 
-    input, button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      font-size: 16px;
+    .brand img {
+      width: 180px;
+      height: auto;
+      display: block;
     }
 
-    button {
-      background: black;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .nav-links::-webkit-scrollbar { display: none; }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4b5563;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #2563eb;
       color: white;
-      border: none;
-      cursor: pointer;
     }
 
-    .result {
-      margin-top: 15px;
+    .main-wrapper {
+      padding: 30px 20px;
+    }
+
+    .hero {
+      text-align: center;
+      max-width: 900px;
+      margin: 35px auto 20px;
+    }
+
+    .hero h1 {
+      font-size: 34px;
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: #64748b;
+      margin-top: 0;
       line-height: 1.6;
     }
 
+    .calculator-layout {
+      max-width: 1000px;
+      margin: 30px auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .calculator-card,
+    .result-card,
     .seo {
-      margin-top: 40px;
       background: white;
-      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid #e5e7eb;
+    }
+
+    .calculator-card,
+    .result-card {
+      padding: 26px;
+    }
+
+    .calculator-card h2,
+    .result-card h2 {
+      margin-top: 0;
+      color: #111827;
+      font-size: 22px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #374151;
+    }
+
+    input,
+    select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 13px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 16px;
+      background: #fff;
+    }
+
+    input:focus,
+    select:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+
+    .calculate-btn {
+      width: 100%;
+      border: none;
+      background: #2563eb;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 14px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+
+    .calculate-btn:hover { background: #1d4ed8; }
+
+    .small-note {
+      color: #64748b;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-top: 12px;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .result-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .result-box span {
+      display: block;
+      color: #64748b;
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .result-box strong {
+      display: block;
+      color: #2563eb;
+      font-size: 22px;
+    }
+
+    .highlight-result {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #eff6ff, #f8fafc);
+      border-color: #bfdbfe;
+    }
+
+    .breakdown-table-wrap {
+      overflow-x: auto;
+      margin-top: 18px;
+    }
+
+    .breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 420px;
+      border: 1px solid #dbe3ef;
       border-radius: 12px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .breakdown-table th {
+      background: #f8fafc;
+      color: #64748b;
+      font-size: 13px;
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #dbe3ef;
+    }
+
+    .breakdown-table td {
+      padding: 12px;
+      border-bottom: 1px solid #eef2f7;
+      color: #334155;
+      font-size: 14px;
+    }
+
+    .breakdown-table tr:last-child td { border-bottom: none; }
+
+    .seo {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
       line-height: 1.7;
     }
 
-    .seo-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.card-link {
-  display: block;
-  padding: 15px;
-  background: white;
-  border-radius: 12px;
-  text-decoration: none;
-  color: black;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-}
-
-    h1 { font-size: 26px; }
     h2 { font-size: 20px; margin-top: 25px; }
     h3 { font-size: 16px; margin-top: 18px; }
 
+    .summary-box,
+    .guide-box,
+    .salary-guides-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 16px;
+      padding: 24px;
+      margin: 25px 0;
+    }
+
+    .summary-box h2,
+    .guide-box h2,
+    .salary-guides-box h2 {
+      margin-top: 0;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .summary-card {
+      background: white;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .summary-card strong {
+      display: block;
+      color: #2563eb;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .summary-card span {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .formula-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 14px;
+      padding: 25px;
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .formula-box strong {
+      display: block;
+      font-size: 22px;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .formula-box span {
+      color: #64748b;
+      font-size: 15px;
+    }
+
+    .note-box {
+      margin-top: 20px;
+      background: white;
+      border-left: 4px solid #2563eb;
+      padding: 12px;
+      border-radius: 8px;
+      color: #4b5563;
+    }
+
+    .guide-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .guide-mini-grid a {
+      background: white;
+      border: 1px solid #e5e7eb;
+      padding: 12px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .guide-mini-grid a:hover {
+      background: #2563eb;
+      color: white;
+    }
+
+    .faq-box { margin-top: 25px; }
+
+    .faq-item {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .faq-item summary {
+      font-weight: bold;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "▼"; float: right; font-size: 12px; }
+    .faq-item[open] summary::after { content: "▲"; }
+
+    .faq-item p {
+      margin-top: 12px;
+      margin-bottom: 0;
+      color: #4b5563;
+      line-height: 1.5;
+    }
+
+    .view-all-guides {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .view-all-guides a {
+      color: #2563eb;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .footer {
+      text-align:center;
+      padding:20px;
+    }
+
+    @media (max-width: 800px){
+      .calculator-layout { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 700px){
-      .layout {
-        flex-direction: column;
-      }
+      .main-wrapper { padding: 15px 10px; }
+      .seo { margin: 15px auto; padding: 18px; }
+      .calculator-card, .result-card { padding: 18px; }
+      .nav-inner { padding: 8px 10px; gap: 8px; }
+      .brand img { width: 120px; }
+      .brand { font-size: 18px; }
+      .nav-links { gap: 6px; }
+      .nav-links a { font-size: 14px; padding: 8px 10px; }
+      .hero h1 { font-size: 27px; }
+      .hero p { font-size: 15px; }
+      .result-grid { grid-template-columns: 1fr; }
+      .highlight-result { grid-column: auto; }
     }
   </style>
 </head>
 
 <body>
 
-<div class="card">
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="calculators.html" class="active">Calculators</a>
+        <a href="guides.html">Guides</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
 
-  <h1>Malaysia EPF Calculator 2026</h1>
+  <div class="main-wrapper">
 
-  <p><b>Malaysia EPF Calculator:</b> Instantly calculate employee (11%) and employer (12%) EPF contributions based on monthly salary.</p>
-
-  <p>This tool helps you estimate total EPF savings and annual contribution breakdown in Malaysia.</p>
-
-  <input type="number" id="salary" placeholder="Enter monthly salary (RM)">
-  <button onclick="calculate()">Calculate EPF Contribution </button>
-
-  <!-- 🔥 MONTHLY + ANNUAL SIDE BY SIDE -->
-  <div class="layout">
-
-    <div class="box">
-      <h3>Monthly Breakdown</h3>
-      <div class="result" id="monthly"></div>
+    <div class="hero">
+      <h1>Malaysia EPF Calculator 2026</h1>
+      <p>Estimate employee EPF deduction, employer EPF contribution, total KWSP contribution and salary after EPF deduction.</p>
     </div>
 
-    <div class="box">
-      <h3>Annual Breakdown</h3>
-      <div class="result" id="annual"></div>
+    <div class="calculator-layout">
+      <section class="calculator-card">
+        <h2>🧮 EPF Contribution Calculator</h2>
+
+        <div class="form-group">
+          <label for="salary">Monthly Salary (RM)</label>
+          <input type="number" id="salary" placeholder="Example: 4000" value="4000" min="0" step="0.01">
+        </div>
+
+        <div class="form-group">
+          <label for="employeeRate">Employee EPF Rate</label>
+          <select id="employeeRate">
+            <option value="0.11" selected>11% - Standard employee rate</option>
+            <option value="0.09">9% - Reduced employee rate</option>
+            <option value="0.00">0% - No employee EPF</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="employerRate">Employer EPF Rate</label>
+          <select id="employerRate">
+            <option value="0.13" selected>13% - Common rate for salary RM5,000 and below</option>
+            <option value="0.12">12% - Common rate for salary above RM5,000</option>
+            <option value="0.00">0% - No employer EPF</option>
+          </select>
+        </div>
+
+        <button class="calculate-btn" onclick="calculateEPF()">Calculate EPF</button>
+
+        <p class="small-note">
+          This calculator uses a simplified percentage estimate. Actual KWSP contribution may follow the official EPF contribution schedule and payroll rounding rules.
+        </p>
+      </section>
+
+      <section class="result-card">
+        <h2>📊 EPF Result</h2>
+
+        <div class="result-grid">
+          <div class="result-box">
+            <span>Employee EPF</span>
+            <strong id="employeeEPF">RM440.00</strong>
+          </div>
+          <div class="result-box">
+            <span>Employer EPF</span>
+            <strong id="employerEPF">RM520.00</strong>
+          </div>
+          <div class="result-box highlight-result">
+            <span>Total EPF Contribution</span>
+            <strong id="totalEPF">RM960.00</strong>
+          </div>
+          <div class="result-box highlight-result">
+            <span>Salary After Employee EPF</span>
+            <strong id="salaryAfterEPF">RM3,560.00</strong>
+          </div>
+        </div>
+
+        <div class="breakdown-table-wrap">
+          <table class="breakdown-table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Rate</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Employee EPF Deduction</td>
+                <td id="employeeRateText">11%</td>
+                <td id="employeeEPFTable">RM440.00</td>
+              </tr>
+              <tr>
+                <td>Employer EPF Contribution</td>
+                <td id="employerRateText">13%</td>
+                <td id="employerEPFTable">RM520.00</td>
+              </tr>
+              <tr>
+                <td>Total EPF Contribution</td>
+                <td>-</td>
+                <td id="totalEPFTable">RM960.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
 
+    <div class="seo">
+
+      <section class="summary-box">
+        <h2>📌 EPF Calculator Quick Summary</h2>
+        <p>This EPF calculator helps employees and employers estimate KWSP contributions based on monthly salary and selected contribution rates.</p>
+
+        <div class="summary-grid">
+          <div class="summary-card">
+            <strong>11%</strong>
+            <span>Common employee EPF contribution rate</span>
+          </div>
+          <div class="summary-card">
+            <strong>12% / 13%</strong>
+            <span>Common employer EPF contribution rates</span>
+          </div>
+          <div class="summary-card">
+            <strong>Monthly</strong>
+            <span>EPF is usually calculated through payroll</span>
+          </div>
+          <div class="summary-card">
+            <strong>KWSP</strong>
+            <span>EPF contributions are retirement savings</span>
+          </div>
+        </div>
+      </section>
+
+      <h2>How to Use This EPF Calculator</h2>
+      <p>Enter your monthly salary, choose the employee EPF rate and employer EPF rate, then click calculate. The calculator will estimate your employee EPF deduction, employer EPF contribution and total EPF contribution.</p>
+
+      <div class="formula-box">
+        <strong>EPF Contribution = Monthly Salary × EPF Rate</strong>
+        <span>Example: RM4,000 × 11% = RM440 employee EPF deduction</span>
+      </div>
+
+      <section class="guide-box">
+        <h2>Employee EPF vs Employer EPF</h2>
+        <p>Employee EPF is deducted from the employee's salary. Employer EPF is paid by the employer on top of salary. Both amounts contribute to the employee's EPF account.</p>
+        <div class="note-box">
+          <strong>Note:</strong> Actual payroll results may differ slightly because official EPF contribution schedules may use fixed contribution tables instead of simple percentage multiplication.
+        </div>
+      </section>
+
+      <section class="guide-box">
+        <h2>Who Should Use This EPF Calculator?</h2>
+        <ul>
+          <li>Employees checking monthly EPF deduction from salary</li>
+          <li>Job seekers comparing take-home pay after EPF</li>
+          <li>HR and payroll staff doing quick contribution estimates</li>
+          <li>Employers planning salary cost including employer EPF</li>
+        </ul>
+      </section>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-box">
+        <details class="faq-item" open>
+          <summary>How is EPF calculated in Malaysia?</summary>
+          <p>EPF is generally calculated based on monthly wages and applicable employee and employer contribution rates. This calculator uses percentage estimates for easier planning.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is employer EPF deducted from my salary?</summary>
+          <p>No. Employee EPF is deducted from your salary. Employer EPF is an additional contribution paid by the employer.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Why is my actual EPF different from this calculator?</summary>
+          <p>Actual EPF may follow the official KWSP contribution schedule and payroll rounding rules, so it may differ slightly from a simple percentage calculation.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Does EPF affect take-home pay?</summary>
+          <p>Yes. Employee EPF reduces your monthly take-home pay, but it goes into your EPF retirement savings account.</p>
+        </details>
+      </div>
+
+      <section class="salary-guides-box">
+        <h2>📚 Related Payroll Guides</h2>
+        <p>Continue reading related Malaysia payroll guides to understand salary deductions and contributions.</p>
+        <div class="guide-mini-grid">
+          <a href="epf-guide.html">💰 EPF Guide</a>
+          <a href="socso-guide.html">🛡️ SOCSO Guide</a>
+          <a href="eis-guide.html">🏢 EIS Guide</a>
+          <a href="salary-deduction-guide.html">📉 Salary Deduction Guide</a>
+        </div>
+        <p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p>
+      </section>
+
+      <section class="salary-guides-box">
+        <h2>🧮 Related Calculators</h2>
+        <p>Use these calculators to estimate full payroll deductions and take-home pay.</p>
+        <div class="guide-mini-grid">
+          <a href="index.html">Salary Calculator</a>
+          <a href="socso-calculator.html">SOCSO Calculator</a>
+          <a href="eis-calculator.html">EIS Calculator</a>
+          <a href="pcb-calculator.html">PCB Calculator</a>
+        </div>
+        <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
+      </section>
+
+    </div>
   </div>
 
-</div>
+  <hr style="margin-top:40px;">
 
-<!-- SEO CONTENT -->
-<div class="seo">
-
-  <h2>Related Salary Guides</h2>
-
-  <div class="seo-cards">
-
-    <a class="card-link" href="epf-guide.html">
-      <h3>EPF Guide Malaysia</h3>
-      <p>EPF contribution rates and retirement savings</p>
-    </a>
-
-    <a class="card-link" href="socso-guide.html">
-      <h3>SOCSO Guide Malaysia</h3>
-      <p>Work injury protection and employee benefits</p>
-    </a>
-
-    <a class="card-link" href="eis-guide.html">
-      <h3>EIS Guide Malaysia</h3>
-      <p>Employment insurance and unemployment support</p>
-    </a>
-
-    <a class="card-link" href="pcb-guide.html">
-      <h3>PCB Tax Guide Malaysia</h3>
-      <p>Monthly tax deduction explained simply</p>
-    </a>
-
+  <div class="footer">
+    <p>© 2026 Malaysia Salary Tools</p>
+    <p>
+      <a href="about.html">About Us</a> |
+      <a href="contact.html">Contact Us</a> |
+      <a href="guides.html">Guides</a> |
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </p>
   </div>
 
-  <h2>What is EPF in Malaysia?</h2>
+  <script>
+    function formatRM(amount) {
+      return 'RM' + amount.toLocaleString('en-MY', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+    }
 
-  <p>
-    The Employees Provident Fund (EPF), also known as KWSP, is Malaysia's mandatory retirement savings scheme.
-  </p>
+    function formatRate(rate) {
+      return (rate * 100).toFixed(rate * 100 % 1 === 0 ? 0 : 2) + '%';
+    }
 
-  <p>
-    Both employees and employers contribute a percentage of monthly wages into the employee's EPF account.
-  </p>
+    function calculateEPF() {
+      const salary = parseFloat(document.getElementById('salary').value) || 0;
+      const employeeRate = parseFloat(document.getElementById('employeeRate').value) || 0;
+      const employerRate = parseFloat(document.getElementById('employerRate').value) || 0;
 
-  <p>
-    EPF helps employees accumulate long-term retirement savings and provides financial security after leaving the workforce.
-  </p>
+      const employeeEPF = salary * employeeRate;
+      const employerEPF = salary * employerRate;
+      const totalEPF = employeeEPF + employerEPF;
+      const salaryAfterEPF = salary - employeeEPF;
 
-  <h2>How Does EPF Work?</h2>
+      document.getElementById('employeeEPF').textContent = formatRM(employeeEPF);
+      document.getElementById('employerEPF').textContent = formatRM(employerEPF);
+      document.getElementById('totalEPF').textContent = formatRM(totalEPF);
+      document.getElementById('salaryAfterEPF').textContent = formatRM(salaryAfterEPF);
 
-  <p>
-    EPF works by collecting monthly contributions from both employees and employers.
-    The employee portion is deducted from monthly salary, while the employer contribution is paid separately by the employer.
-  </p>
+      document.getElementById('employeeRateText').textContent = formatRate(employeeRate);
+      document.getElementById('employerRateText').textContent = formatRate(employerRate);
+      document.getElementById('employeeEPFTable').textContent = formatRM(employeeEPF);
+      document.getElementById('employerEPFTable').textContent = formatRM(employerEPF);
+      document.getElementById('totalEPFTable').textContent = formatRM(totalEPF);
+    }
 
-  <p>
-    These contributions are credited into the employee's EPF account and may grow over time through annual dividends declared by EPF.
-  </p>
+    calculateEPF();
+  </script>
 
-  <h2>Who Needs To Contribute To EPF?</h2>
-
-  <p>
-    Most employees working in Malaysia are required to contribute to EPF.
-  </p>
-
-  <p>
-    Employers are also required to make contributions on behalf of eligible employees according to prevailing EPF contribution schedules.
-  </p>
-
-  <h2>Employee vs Employer EPF Contribution</h2>
-
-  <p>
-    Employee EPF contributions are deducted directly from monthly salary and therefore reduce take-home pay.
-  </p>
-
-  <p>
-    Employer EPF contributions are paid separately by employers and do not reduce employee take-home salary.
-  </p>
-
-  <p>
-    Both contributions belong to the employee and are credited into the employee's EPF account.
-  </p>
-
-  <h2>Malaysia EPF Contribution Rates 2026</h2>
-
-  <p>
-    For many employees below 60 years old, the employee contribution rate is commonly 11% of monthly wages.
-  </p>
-
-  <p>
-    Employer contribution rates depend on salary level, employee age and applicable EPF contribution schedules.
-  </p>
-
-  <p>
-    The calculator above uses a simple estimate to show employee and employer EPF contributions for quick reference.
-  </p>
-
-  <h2>How Is EPF Calculated?</h2>
-
-  <p>
-    EPF contributions are generally calculated as a percentage of monthly salary.
-  </p>
-
-  <p>
-    Our EPF Calculator estimates monthly employee EPF, employer EPF, total monthly EPF and annual EPF savings instantly.
-  </p>
-
-  <h2>Benefits of EPF</h2>
-
-  <ul>
-    <li>Retirement savings</li>
-    <li>Annual dividend earnings</li>
-    <li>Housing withdrawal options</li>
-    <li>Education withdrawal options</li>
-    <li>Medical withdrawal options</li>
-    <li>Long-term financial security</li>
-  </ul>
-
-  <h2>Example EPF Calculation</h2>
-
-  <p>
-    An employee earning RM5,000 per month may contribute approximately RM550 monthly towards EPF based on an 11% employee contribution rate.
-  </p>
-
-  <p>
-    Employers also contribute separately according to the applicable employer contribution rate.
-  </p>
-
-  <p>
-    Use the calculator above to estimate monthly and annual EPF contributions based on your salary.
-  </p>
-
-  <h2>Why Is EPF Important?</h2>
-
-  <p>
-    EPF helps employees build retirement savings throughout their working career.
-  </p>
-
-  <p>
-    Regular contributions and dividend earnings can help Malaysians prepare for retirement and reduce financial pressure later in life.
-  </p>
-
-  <h2>Frequently Asked Questions</h2>
-
-  <h3>How much EPF do employees contribute?</h3>
-  <p>
-    Many employees below age 60 contribute 11% of monthly salary to EPF, subject to current regulations.
-  </p>
-
-  <h3>How much do employers contribute to EPF?</h3>
-  <p>
-    Employer EPF contribution rates depend on salary level, employee age and applicable contribution schedules.
-  </p>
-
-  <h3>Can I withdraw EPF before retirement?</h3>
-  <p>
-    Certain withdrawals may be allowed for housing, education, medical expenses and approved purposes.
-  </p>
-
-  <h3>Does employer EPF belong to the employee?</h3>
-  <p>
-    Yes. Employer contributions are credited into the employee's EPF account.
-  </p>
-
-  <h3>Can I calculate annual EPF savings?</h3>
-  <p>
-    Yes. This calculator estimates both monthly and annual EPF contributions.
-  </p>
-
-  <h2>Related Calculators</h2>
-
-  <ul>
-    <li><a href="index.html">Salary Calculator</a></li>
-    <li><a href="socso-calculator.html">SOCSO Calculator</a></li>
-    <li><a href="eis-calculator.html">EIS Calculator</a></li>
-    <li><a href="pcb-calculator.html">PCB Calculator</a></li>
-  </ul>
-
-</div>
-  
-<script>
-function formatRM(v){
-  return v.toLocaleString('en-MY', {
-    minimumFractionDigits:2,
-    maximumFractionDigits:2
-  });
-}
-
-function calculate(){
-
-  let salary = parseFloat(document.getElementById("salary").value);
-
-  if(!salary){
-    document.getElementById("monthly").innerHTML = "Please enter salary";
-    document.getElementById("annual").innerHTML = "";
-    return;
-  }
-
-  // EPF ONLY
-  let employeeEPF = salary * 0.11;
-  let employerEPF = salary * 0.12;
-  let totalEPF = employeeEPF + employerEPF;
-
-  let annualEmployee = employeeEPF * 12;
-  let annualEmployer = employerEPF * 12;
-  let annualTotal = totalEPF * 12;
-
-  document.getElementById("monthly").innerHTML =
-    "Monthly Salary: RM " + formatRM(salary) + "<br><br>" +
-    "Employee EPF (11%): RM " + formatRM(employeeEPF) + "<br>" +
-    "Employer EPF (12%): RM " + formatRM(employerEPF) + "<br>" +
-    "<b>Total EPF: RM " + formatRM(totalEPF) + "</b>";
-
-  document.getElementById("annual").innerHTML =
-    "Annual Employee EPF: RM " + formatRM(annualEmployee) + "<br>" +
-    "Annual Employer EPF: RM " + formatRM(annualEmployer) + "<br><br>" +
-    "<b>Total Annual EPF: RM " + formatRM(annualTotal) + "</b>";
-
-}
-</script>
-
-<hr style="margin-top:40px;">
-
-<div style="text-align:center;padding:20px;">
-
-<p>
-© 2026 Malaysia Salary Tools
-</p>
-
-<p>
-<a href="about.html">About Us</a> |
-<a href="contact.html">Contact Us</a> |
-<a href="privacy-policy.html">Privacy Policy</a>
-</p>
-
-</div>
-  
 </body>
 </html>
