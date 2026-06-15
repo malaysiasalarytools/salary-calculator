@@ -1,309 +1,620 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <title>Malaysia PCB Tax Calculator 2026 | Monthly Tax Deduction Calculator</title>
-
-  <meta name="description" content="Free Malaysia PCB Tax Calculator 2026. Estimate monthly PCB tax deductions, annual income tax and take-home salary based on monthly salary.">
-
+  <title>Malaysia PCB Calculator 2026 | Monthly Tax Deduction Estimate</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Free Malaysia PCB Calculator 2026. Estimate monthly PCB deduction, annual tax, chargeable income and salary after PCB using a simplified Malaysia tax calculation.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
 
+  <script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6819619632324210"
+  crossorigin="anonymous"></script>
+
   <style>
     body {
-      font-family: Arial;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #f6f6f6;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+      margin: 0;
+      padding: 0;
+      color: #111827;
     }
 
-    .card, .seo {
+    .top-nav {
       background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
     }
 
-    .seo {
-      margin-top: 30px;
-      line-height: 1.7;
-    }
-
-    .layout {
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
       display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
     }
 
-    .box {
-      flex: 1;
-      min-width: 280px;
-      background: #f9f9f9;
-      padding: 15px;
-      border-radius: 10px;
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+      font-weight: bold;
+      color: #2563eb;
+      font-size: 22px;
     }
 
-    input, button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      font-size: 16px;
+    .brand img {
+      width: 180px;
+      height: auto;
+      display: block;
     }
 
-    button {
-      background: black;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .nav-links::-webkit-scrollbar { display: none; }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4b5563;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #2563eb;
       color: white;
-      border: none;
-      cursor: pointer;
     }
 
-    .result {
-      margin-top: 15px;
+    .main-wrapper {
+      padding: 30px 20px;
+    }
+
+    .hero {
+      text-align: center;
+      max-width: 900px;
+      margin: 35px auto 20px;
+    }
+
+    .hero h1 {
+      font-size: 34px;
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: #64748b;
+      margin-top: 0;
       line-height: 1.6;
     }
 
-    .seo-cards {
+    .calculator-layout {
+      max-width: 1000px;
+      margin: 30px auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
     }
 
-    .card-link {
-      display: block;
-      padding: 15px;
+    .calculator-card,
+    .result-card,
+    .seo {
       background: white;
-      border-radius: 12px;
-      text-decoration: none;
-      color: black;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid #e5e7eb;
     }
 
-    h1 { font-size: 26px; }
+    .calculator-card,
+    .result-card {
+      padding: 26px;
+    }
+
+    .calculator-card h2,
+    .result-card h2 {
+      margin-top: 0;
+      color: #111827;
+      font-size: 22px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #374151;
+    }
+
+    input,
+    select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 13px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 16px;
+      background: #fff;
+    }
+
+    input:focus,
+    select:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+
+    .calculate-btn {
+      width: 100%;
+      border: none;
+      background: #2563eb;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 14px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+
+    .calculate-btn:hover { background: #1d4ed8; }
+
+    .small-note {
+      color: #64748b;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-top: 12px;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .result-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .result-box span {
+      display: block;
+      color: #64748b;
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .result-box strong {
+      display: block;
+      color: #2563eb;
+      font-size: 22px;
+    }
+
+    .highlight-result {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #eff6ff, #f8fafc);
+      border-color: #bfdbfe;
+    }
+
+    .breakdown-table-wrap {
+      overflow-x: auto;
+      margin-top: 18px;
+    }
+
+    .breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 420px;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .breakdown-table th {
+      background: #f8fafc;
+      color: #64748b;
+      font-size: 13px;
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #dbe3ef;
+    }
+
+    .breakdown-table td {
+      padding: 12px;
+      border-bottom: 1px solid #eef2f7;
+      color: #334155;
+      font-size: 14px;
+    }
+
+    .breakdown-table tr:last-child td { border-bottom: none; }
+
+    .seo {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      line-height: 1.7;
+    }
+
     h2 { font-size: 20px; margin-top: 25px; }
     h3 { font-size: 16px; margin-top: 18px; }
 
+    .summary-box,
+    .guide-box,
+    .salary-guides-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 16px;
+      padding: 24px;
+      margin: 25px 0;
+    }
+
+    .summary-box h2,
+    .guide-box h2,
+    .salary-guides-box h2 {
+      margin-top: 0;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .summary-card {
+      background: white;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .summary-card strong {
+      display: block;
+      color: #2563eb;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .summary-card span {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .formula-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 14px;
+      padding: 25px;
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .formula-box strong {
+      display: block;
+      font-size: 22px;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .formula-box span {
+      color: #64748b;
+      font-size: 15px;
+    }
+
+    .note-box {
+      margin-top: 20px;
+      background: white;
+      border-left: 4px solid #2563eb;
+      padding: 12px;
+      border-radius: 8px;
+      color: #4b5563;
+    }
+
+    .guide-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .guide-mini-grid a {
+      background: white;
+      border: 1px solid #e5e7eb;
+      padding: 12px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .guide-mini-grid a:hover {
+      background: #2563eb;
+      color: white;
+    }
+
+    .faq-box { margin-top: 25px; }
+
+    .faq-item {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .faq-item summary {
+      font-weight: bold;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "▼"; float: right; font-size: 12px; }
+    .faq-item[open] summary::after { content: "▲"; }
+
+    .faq-item p {
+      margin-top: 12px;
+      margin-bottom: 0;
+      color: #4b5563;
+      line-height: 1.5;
+    }
+
+    .view-all-guides {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .view-all-guides a {
+      color: #2563eb;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .footer {
+      text-align:center;
+      padding:20px;
+    }
+
+    @media (max-width: 800px){
+      .calculator-layout { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 700px){
-      .layout {
-        flex-direction: column;
-      }
+      .main-wrapper { padding: 15px 10px; }
+      .seo { margin: 15px auto; padding: 18px; }
+      .calculator-card, .result-card { padding: 18px; }
+      .nav-inner { padding: 8px 10px; gap: 8px; }
+      .brand img { width: 120px; }
+      .brand { font-size: 18px; }
+      .nav-links { gap: 6px; }
+      .nav-links a { font-size: 14px; padding: 8px 10px; }
+      .hero h1 { font-size: 27px; }
+      .hero p { font-size: 15px; }
+      .result-grid { grid-template-columns: 1fr; }
+      .highlight-result { grid-column: auto; }
     }
   </style>
 </head>
 
 <body>
 
-<div class="card">
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="calculators.html" class="active">Calculators</a>
+        <a href="guides.html">Guides</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
 
-  <h1>Malaysia PCB Calculator 2026</h1>
+  <div class="main-wrapper">
 
-  <p><b>Malaysia PCB Calculator:</b> Estimate your monthly income tax deduction based on salary.</p>
-
-  <p>This tool helps you estimate monthly PCB tax and annual tax deduction in Malaysia.</p>
-
-  <input type="number" id="salary" placeholder="Enter monthly salary (RM)">
-  <button onclick="calculate()">Calculate PCB</button>
-
-  <div class="layout">
-
-    <div class="box">
-      <h3>Monthly Breakdown</h3>
-      <div class="result" id="monthly"></div>
+    <div class="hero">
+      <h1>Malaysia PCB Calculator 2026</h1>
+      <p>Estimate monthly PCB deduction based on salary, bonus, EPF deduction and annual tax reliefs using a simplified resident tax calculation.</p>
     </div>
 
-    <div class="box">
-      <h3>Annual Breakdown</h3>
-      <div class="result" id="annual"></div>
+    <div class="calculator-layout">
+      <section class="calculator-card">
+        <h2>🧮 PCB Deduction Calculator</h2>
+
+        <div class="form-group">
+          <label for="salary">Monthly Salary (RM)</label>
+          <input type="number" id="salary" placeholder="Example: 5000" value="5000" min="0" step="0.01">
+        </div>
+
+        <div class="form-group">
+          <label for="bonus">Annual Bonus / Additional Income (RM)</label>
+          <input type="number" id="bonus" placeholder="Example: 5000" value="0" min="0" step="0.01">
+        </div>
+
+        <div class="form-group">
+          <label for="reliefs">Estimated Annual Tax Reliefs (RM)</label>
+          <input type="number" id="reliefs" placeholder="Example: 9000" value="9000" min="0" step="0.01">
+        </div>
+
+        <div class="form-group">
+          <label for="epfRate">Employee EPF Rate</label>
+          <select id="epfRate">
+            <option value="0.11" selected>11% - Standard employee EPF</option>
+            <option value="0.09">9% - Reduced employee EPF</option>
+            <option value="0.00">0% - Ignore EPF relief estimate</option>
+          </select>
+        </div>
+
+        <button class="calculate-btn" onclick="calculatePCB()">Calculate PCB</button>
+
+        <p class="small-note">
+          This is a simplified PCB estimate for planning. Actual PCB may differ due to LHDN formula, TP1 relief updates, bonus treatment, tax rebates and payroll settings.
+        </p>
+      </section>
+
+      <section class="result-card">
+        <h2>📊 PCB Result</h2>
+
+        <div class="result-grid">
+          <div class="result-box">
+            <span>Estimated Monthly PCB</span>
+            <strong id="monthlyPCB">RM0.00</strong>
+          </div>
+          <div class="result-box">
+            <span>Estimated Annual Tax</span>
+            <strong id="annualTax">RM0.00</strong>
+          </div>
+          <div class="result-box highlight-result">
+            <span>Chargeable Income</span>
+            <strong id="chargeableIncome">RM0.00</strong>
+          </div>
+          <div class="result-box highlight-result">
+            <span>Salary After PCB Only</span>
+            <strong id="salaryAfterPCB">RM5,000.00</strong>
+          </div>
+        </div>
+
+        <div class="breakdown-table-wrap">
+          <table class="breakdown-table">
+            <thead><tr><th>Item</th><th>Basis</th><th>Amount</th></tr></thead>
+            <tbody>
+              <tr><td>Annual Employment Income</td><td>Salary × 12 + bonus</td><td id="annualIncomeTable">RM60,000.00</td></tr>
+              <tr><td>Estimated EPF Deduction</td><td id="epfRateText">11%</td><td id="epfTable">RM6,600.00</td></tr>
+              <tr><td>Other Reliefs Entered</td><td>-</td><td id="reliefsTable">RM9,000.00</td></tr>
+              <tr><td>Estimated Chargeable Income</td><td>-</td><td id="chargeableTable">RM44,400.00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
 
+    <div class="seo">
+      <section class="summary-box">
+        <h2>📌 PCB Calculator Quick Summary</h2>
+        <p>This PCB calculator helps employees estimate monthly tax deduction from salary based on annual income, EPF deduction and tax relief assumptions.</p>
+        <div class="summary-grid">
+          <div class="summary-card"><strong>Monthly</strong><span>PCB is deducted through payroll</span></div>
+          <div class="summary-card"><strong>Annual</strong><span>Income tax is assessed yearly</span></div>
+          <div class="summary-card"><strong>Reliefs</strong><span>Reliefs can reduce taxable income</span></div>
+          <div class="summary-card"><strong>Estimate</strong><span>Final tax may differ during e-Filing</span></div>
+        </div>
+      </section>
+
+      <h2>How to Use This PCB Calculator</h2>
+      <p>Enter your monthly salary, expected annual bonus, estimated annual tax reliefs and EPF rate. The calculator will estimate annual chargeable income, annual tax and monthly PCB.</p>
+
+      <div class="formula-box">
+        <strong>Monthly PCB Estimate = Estimated Annual Tax ÷ 12</strong>
+        <span>Actual PCB may differ depending on payroll formula, TP1 claims, rebates and bonus treatment.</span>
+      </div>
+
+      <section class="guide-box">
+        <h2>PCB vs Final Income Tax</h2>
+        <p>PCB is a monthly tax deduction from salary. Final income tax is confirmed during annual tax filing after considering total income, reliefs, rebates and PCB already paid.</p>
+        <div class="note-box"><strong>Note:</strong> This calculator is for simple planning only and should not replace LHDN's official PCB formula or professional tax advice.</div>
+      </section>
+
+      <section class="guide-box">
+        <h2>Who Should Use This PCB Calculator?</h2>
+        <ul><li>Employees checking estimated monthly PCB deduction</li><li>Job seekers comparing take-home pay after tax</li><li>HR and payroll staff explaining basic PCB concepts</li><li>Taxpayers preparing for annual e-Filing</li></ul>
+      </section>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-box">
+        <details class="faq-item" open><summary>Is PCB the same as income tax?</summary><p>No. PCB is monthly tax deducted through payroll. Final income tax is calculated annually during tax filing.</p></details>
+        <details class="faq-item"><summary>Why is my actual PCB different from this calculator?</summary><p>Actual PCB may use LHDN's official formula, TP1 relief updates, spouse or child status, rebates, bonus treatment and payroll settings.</p></details>
+        <details class="faq-item"><summary>Can tax relief reduce PCB?</summary><p>Tax relief may reduce PCB if submitted through the proper payroll process, or it may be reflected during annual tax filing.</p></details>
+        <details class="faq-item"><summary>Does bonus affect PCB?</summary><p>Yes. Bonus can increase taxable income and may cause higher PCB deduction for the bonus month.</p></details>
+      </div>
+
+      <section class="salary-guides-box"><h2>📚 Related Tax Guides</h2><p>Continue reading related Malaysia tax and payroll guides.</p><div class="guide-mini-grid"><a href="pcb-guide.html">🧾 PCB Guide</a><a href="income-tax-guide.html">🏛️ Income Tax Guide</a><a href="tax-relief-guide.html">💸 Tax Relief Guide</a><a href="tax-filing-guide.html">📤 Tax Filing Guide</a></div><p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p></section>
+      <section class="salary-guides-box"><h2>🧮 Related Calculators</h2><p>Use these calculators to estimate tax, payroll deductions and take-home pay.</p><div class="guide-mini-grid"><a href="index.html">Salary Calculator</a><a href="income-tax-calculator.html">Income Tax Calculator</a><a href="epf-calculator.html">EPF Calculator</a><a href="socso-calculator.html">SOCSO Calculator</a></div><p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p></section>
+    </div>
   </div>
 
-</div>
+  <hr style="margin-top:40px;">
 
-<div class="seo">
-
-  <h2>Related Salary Guides</h2>
-
-  <div class="seo-cards">
-
-    <a class="card-link" href="epf-guide.html">
-      <h3>EPF Guide Malaysia</h3>
-      <p>EPF contribution rates and retirement savings</p>
-    </a>
-
-    <a class="card-link" href="socso-guide.html">
-      <h3>SOCSO Guide Malaysia</h3>
-      <p>Work injury protection and employee benefits</p>
-    </a>
-
-    <a class="card-link" href="eis-guide.html">
-      <h3>EIS Guide Malaysia</h3>
-      <p>Employment insurance and unemployment support</p>
-    </a>
-
-    <a class="card-link" href="pcb-guide.html">
-      <h3>PCB Tax Guide Malaysia</h3>
-      <p>Monthly tax deduction explained simply</p>
-    </a>
-
+  <div class="footer">
+    <p>© 2026 Malaysia Salary Tools</p>
+    <p>
+      <a href="about.html">About Us</a> |
+      <a href="contact.html">Contact Us</a> |
+      <a href="guides.html">Guides</a> |
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </p>
   </div>
 
-  <h2>What is PCB Tax in Malaysia?</h2>
-
-  <p>
-    PCB stands for Potongan Cukai Bulanan, also known as Monthly Tax Deduction.
-    It is Malaysia's monthly income tax deduction system.
-  </p>
-
-  <p>
-    Instead of paying income tax in one large amount at the end of the year,
-    PCB allows tax to be deducted gradually from monthly salary.
-  </p>
-
-  <h2>How Does PCB Work?</h2>
-
-  <p>
-    Employers calculate PCB based on employee income and deduct the amount from salary every month.
-    The deducted PCB amount is then submitted to LHDN.
-  </p>
-
-  <p>
-    PCB helps employees spread their income tax payments across the year instead of paying everything at once.
-  </p>
-
-  <h2>Who Needs To Pay PCB?</h2>
-
-  <p>
-    Employees whose income exceeds the taxable threshold may be subject to PCB deductions.
-  </p>
-
-  <p>
-    Actual PCB depends on income level, tax reliefs, personal circumstances and current tax rules.
-  </p>
-
-  <h2>How Is PCB Calculated?</h2>
-
-  <p>
-    PCB is generally calculated based on estimated annual income.
-    Higher income usually results in higher monthly PCB deductions.
-  </p>
-
-  <p>
-    Our PCB calculator provides a quick estimate of monthly and annual PCB deductions based on salary.
-  </p>
-
-  <h2>Example PCB Calculation</h2>
-
-  <p>
-    For an employee earning RM5,000 per month, the annual salary is RM60,000.
-    PCB may apply depending on taxable income and available tax reliefs.
-  </p>
-
-  <p>
-    The calculator above estimates the monthly PCB amount and annual tax deduction for quick reference.
-  </p>
-
-  <h2>Why PCB Is Important</h2>
-
-  <ul>
-    <li>Spreads income tax payment across the year</li>
-    <li>Reduces year-end tax burden</li>
-    <li>Helps employees manage cash flow</li>
-    <li>Assists employers with payroll tax compliance</li>
-  </ul>
-
-  <h2>Frequently Asked Questions</h2>
-
-  <h3>Is PCB mandatory in Malaysia?</h3>
-  <p>
-    Employers are generally required to deduct PCB from eligible employees according to applicable tax rules.
-  </p>
-
-  <h3>Is PCB the same as final income tax?</h3>
-  <p>
-    No. Final income tax is determined when the annual tax return is submitted.
-  </p>
-
-  <h3>Can PCB be refunded?</h3>
-  <p>
-    Yes. If excess tax has been deducted, the taxpayer may receive a refund after tax filing.
-  </p>
-
-  <h3>Does PCB reduce take-home pay?</h3>
-  <p>
-    Yes. PCB is deducted from monthly salary, so it reduces monthly take-home pay.
-  </p>
-
-  <h3>Can I calculate annual PCB?</h3>
-  <p>
-    Yes. This calculator estimates both monthly PCB and annual PCB deductions.
-  </p>
-
-  <h2>Related Calculators</h2>
-
-  <ul>
-    <li><a href="index.html">Salary Calculator</a></li>
-    <li><a href="epf-calculator.html">EPF Calculator</a></li>
-    <li><a href="socso-calculator.html">SOCSO Calculator</a></li>
-    <li><a href="eis-calculator.html">EIS Calculator</a></li>
-  </ul>
-
-</div>
-
-<script>
-function formatRM(v){
-  return v.toLocaleString('en-MY',{
-    minimumFractionDigits:2,
-    maximumFractionDigits:2
-  });
-}
-
-function calculate(){
-
-  let salary = parseFloat(document.getElementById("salary").value);
-
-  if(!salary){
-    document.getElementById("monthly").innerHTML = "Please enter salary";
-    document.getElementById("annual").innerHTML = "";
-    return;
-  }
-
-  let annual = salary * 12;
-
-  let taxRate =
-    annual <= 50000 ? 0.02 :
-    annual <= 100000 ? 0.06 :
-    annual <= 250000 ? 0.12 : 0.18;
-
-  let tax = salary * taxRate;
-
-  document.getElementById("monthly").innerHTML =
-    "Monthly Salary: RM " + formatRM(salary) + "<br>" +
-    "Estimated PCB: RM " + formatRM(tax);
-
-  document.getElementById("annual").innerHTML =
-    "Annual Salary: RM " + formatRM(annual) + "<br>" +
-    "Estimated Annual PCB: RM " + formatRM(tax * 12);
-}
-</script>
-
-<hr style="margin-top:40px;">
-
-<div style="text-align:center;padding:20px;">
-
-<p>
-© 2026 Malaysia Salary Tools
-</p>
-
-<p>
-<a href="about.html">About Us</a> |
-<a href="contact.html">Contact Us</a> |
-<a href="privacy-policy.html">Privacy Policy</a>
-</p>
-
-</div>
-  
+  <script>
+    function formatRM(amount) {
+      return 'RM' + amount.toLocaleString('en-MY', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+    function calculateTax(chargeable) {
+      const brackets = [
+        [5000, 0.00], [15000, 0.01], [15000, 0.03], [15000, 0.06],
+        [20000, 0.11], [30000, 0.19], [300000, 0.25], [200000, 0.26],
+        [1400000, 0.28], [Infinity, 0.30]
+      ];
+      let remaining = Math.max(0, chargeable);
+      let tax = 0;
+      for (const [limit, rate] of brackets) {
+        if (remaining <= 0) break;
+        const taxable = Math.min(remaining, limit);
+        tax += taxable * rate;
+        remaining -= taxable;
+      }
+      return tax;
+    }
+    function calculatePCB() {
+      const salary = parseFloat(document.getElementById('salary').value) || 0;
+      const bonus = parseFloat(document.getElementById('bonus').value) || 0;
+      const reliefs = parseFloat(document.getElementById('reliefs').value) || 0;
+      const epfRate = parseFloat(document.getElementById('epfRate').value) || 0;
+      const annualIncome = salary * 12 + bonus;
+      const estimatedEPF = salary * 12 * epfRate;
+      const chargeable = Math.max(0, annualIncome - estimatedEPF - reliefs);
+      const annualTax = calculateTax(chargeable);
+      const monthlyPCB = annualTax / 12;
+      const salaryAfterPCB = salary - monthlyPCB;
+      document.getElementById('monthlyPCB').textContent = formatRM(monthlyPCB);
+      document.getElementById('annualTax').textContent = formatRM(annualTax);
+      document.getElementById('chargeableIncome').textContent = formatRM(chargeable);
+      document.getElementById('salaryAfterPCB').textContent = formatRM(salaryAfterPCB);
+      document.getElementById('annualIncomeTable').textContent = formatRM(annualIncome);
+      document.getElementById('epfRateText').textContent = (epfRate * 100).toFixed(0) + '%';
+      document.getElementById('epfTable').textContent = formatRM(estimatedEPF);
+      document.getElementById('reliefsTable').textContent = formatRM(reliefs);
+      document.getElementById('chargeableTable').textContent = formatRM(chargeable);
+    }
+    calculatePCB();
+  </script>
 </body>
 </html>
