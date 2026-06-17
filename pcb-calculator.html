@@ -14,12 +14,17 @@
   crossorigin="anonymous"></script>
 
   <style>
+    html {
+      overflow-x: hidden;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #f6f7fb, #eef1f7);
       margin: 0;
       padding: 0;
       color: #111827;
+      overflow-x: hidden;
     }
 
     .top-nav {
@@ -61,15 +66,12 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      overflow-x: auto;
       flex-wrap: nowrap;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
+      min-width: 0;
     }
 
-    .nav-links::-webkit-scrollbar { display: none; }
-
     .nav-links a {
+      display: block;
       text-decoration: none;
       color: #4b5563;
       font-weight: 600;
@@ -77,6 +79,7 @@
       padding: 10px 14px;
       border-radius: 8px;
       white-space: nowrap;
+      background: transparent;
       flex-shrink: 0;
     }
 
@@ -111,6 +114,8 @@
 
     .calculator-layout {
       max-width: 1000px;
+      width: 100%;
+      box-sizing: border-box;
       margin: 30px auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -124,6 +129,7 @@
       border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       border: 1px solid #e5e7eb;
+      box-sizing: border-box;
     }
 
     .calculator-card,
@@ -180,7 +186,9 @@
       margin-top: 5px;
     }
 
-    .calculate-btn:hover { background: #1d4ed8; }
+    .calculate-btn:hover {
+      background: #1d4ed8;
+    }
 
     .small-note {
       color: #64748b;
@@ -225,12 +233,13 @@
     .breakdown-table-wrap {
       overflow-x: auto;
       margin-top: 18px;
+      width: 100%;
     }
 
     .breakdown-table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 420px;
+      min-width: 0;
       border: 1px solid #dbe3ef;
       border-radius: 12px;
       overflow: hidden;
@@ -253,17 +262,27 @@
       font-size: 14px;
     }
 
-    .breakdown-table tr:last-child td { border-bottom: none; }
+    .breakdown-table tr:last-child td {
+      border-bottom: none;
+    }
 
     .seo {
       max-width: 900px;
+      width: 100%;
       margin: 30px auto;
       padding: 25px;
       line-height: 1.7;
     }
 
-    h2 { font-size: 20px; margin-top: 25px; }
-    h3 { font-size: 16px; margin-top: 18px; }
+    h2 {
+      font-size: 20px;
+      margin-top: 25px;
+    }
+
+    h3 {
+      font-size: 16px;
+      margin-top: 18px;
+    }
 
     .summary-box,
     .guide-box,
@@ -360,7 +379,9 @@
       color: white;
     }
 
-    .faq-box { margin-top: 25px; }
+    .faq-box {
+      margin-top: 25px;
+    }
 
     .faq-item {
       background: #f8fafc;
@@ -376,9 +397,19 @@
       list-style: none;
     }
 
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after { content: "▼"; float: right; font-size: 12px; }
-    .faq-item[open] summary::after { content: "▲"; }
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "▼";
+      float: right;
+      font-size: 12px;
+    }
+
+    .faq-item[open] summary::after {
+      content: "▲";
+    }
 
     .faq-item p {
       margin-top: 12px;
@@ -399,27 +430,121 @@
     }
 
     .footer {
-      text-align:center;
-      padding:20px;
+      text-align: center;
+      padding: 20px;
     }
 
-    @media (max-width: 800px){
-      .calculator-layout { grid-template-columns: 1fr; }
+    @media (max-width: 800px) {
+      .calculator-layout {
+        grid-template-columns: 1fr;
+        max-width: 900px;
+        margin: 20px auto;
+      }
+
+      .nav-inner {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .nav-links {
+        width: auto;
+        flex: 1;
+        min-width: 0;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
     }
 
-    @media (max-width: 700px){
-      .main-wrapper { padding: 15px 10px; }
-      .seo { margin: 15px auto; padding: 18px; }
-      .calculator-card, .result-card { padding: 18px; }
-      .nav-inner { padding: 8px 10px; gap: 8px; }
-      .brand img { width: 120px; }
-      .brand { font-size: 18px; }
-      .nav-links { gap: 6px; }
-      .nav-links a { font-size: 14px; padding: 8px 10px; }
-      .hero h1 { font-size: 27px; }
-      .hero p { font-size: 15px; }
-      .result-grid { grid-template-columns: 1fr; }
-      .highlight-result { grid-column: auto; }
+    @media (max-width: 700px) {
+      .main-wrapper {
+        padding: 15px 10px;
+      }
+
+      .nav-inner {
+        padding: 8px 10px;
+        gap: 8px;
+      }
+
+      .brand img {
+        width: 120px;
+      }
+
+      .brand {
+        font-size: 18px;
+      }
+
+      .nav-links {
+        gap: 6px;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+
+      .hero {
+        margin: 25px auto 18px;
+      }
+
+      .hero h1 {
+        font-size: 27px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .calculator-layout {
+        grid-template-columns: 1fr;
+        width: 100%;
+        box-sizing: border-box;
+        gap: 18px;
+      }
+
+      .calculator-card,
+      .result-card,
+      .seo {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .calculator-card,
+      .result-card {
+        padding: 18px;
+      }
+
+      .seo {
+        margin: 15px auto;
+        padding: 18px;
+      }
+
+      .result-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .highlight-result {
+        grid-column: auto;
+      }
+
+      .breakdown-table {
+        min-width: 0;
+      }
+
+      .breakdown-table th,
+      .breakdown-table td {
+        padding: 10px;
+        font-size: 13px;
+      }
     }
   </style>
 </head>
@@ -506,12 +631,34 @@
 
         <div class="breakdown-table-wrap">
           <table class="breakdown-table">
-            <thead><tr><th>Item</th><th>Basis</th><th>Amount</th></tr></thead>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Basis</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
             <tbody>
-              <tr><td>Annual Employment Income</td><td>Salary × 12 + bonus</td><td id="annualIncomeTable">RM60,000.00</td></tr>
-              <tr><td>Estimated EPF Deduction</td><td id="epfRateText">11%</td><td id="epfTable">RM6,600.00</td></tr>
-              <tr><td>Other Reliefs Entered</td><td>-</td><td id="reliefsTable">RM9,000.00</td></tr>
-              <tr><td>Estimated Chargeable Income</td><td>-</td><td id="chargeableTable">RM44,400.00</td></tr>
+              <tr>
+                <td>Annual Employment Income</td>
+                <td>Salary × 12 + bonus</td>
+                <td id="annualIncomeTable">RM60,000.00</td>
+              </tr>
+              <tr>
+                <td>Estimated EPF Deduction</td>
+                <td id="epfRateText">11%</td>
+                <td id="epfTable">RM6,600.00</td>
+              </tr>
+              <tr>
+                <td>Other Reliefs Entered</td>
+                <td>-</td>
+                <td id="reliefsTable">RM9,000.00</td>
+              </tr>
+              <tr>
+                <td>Estimated Chargeable Income</td>
+                <td>-</td>
+                <td id="chargeableTable">RM44,400.00</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -522,11 +669,24 @@
       <section class="summary-box">
         <h2>📌 PCB Calculator Quick Summary</h2>
         <p>This PCB calculator helps employees estimate monthly tax deduction from salary based on annual income, EPF deduction and tax relief assumptions.</p>
+
         <div class="summary-grid">
-          <div class="summary-card"><strong>Monthly</strong><span>PCB is deducted through payroll</span></div>
-          <div class="summary-card"><strong>Annual</strong><span>Income tax is assessed yearly</span></div>
-          <div class="summary-card"><strong>Reliefs</strong><span>Reliefs can reduce taxable income</span></div>
-          <div class="summary-card"><strong>Estimate</strong><span>Final tax may differ during e-Filing</span></div>
+          <div class="summary-card">
+            <strong>Monthly</strong>
+            <span>PCB is deducted through payroll</span>
+          </div>
+          <div class="summary-card">
+            <strong>Annual</strong>
+            <span>Income tax is assessed yearly</span>
+          </div>
+          <div class="summary-card">
+            <strong>Reliefs</strong>
+            <span>Reliefs can reduce taxable income</span>
+          </div>
+          <div class="summary-card">
+            <strong>Estimate</strong>
+            <span>Final tax may differ during e-Filing</span>
+          </div>
         </div>
       </section>
 
@@ -541,24 +701,68 @@
       <section class="guide-box">
         <h2>PCB vs Final Income Tax</h2>
         <p>PCB is a monthly tax deduction from salary. Final income tax is confirmed during annual tax filing after considering total income, reliefs, rebates and PCB already paid.</p>
-        <div class="note-box"><strong>Note:</strong> This calculator is for simple planning only and should not replace LHDN's official PCB formula or professional tax advice.</div>
+        <div class="note-box">
+          <strong>Note:</strong> This calculator is for simple planning only and should not replace LHDN's official PCB formula or professional tax advice.
+        </div>
       </section>
 
       <section class="guide-box">
         <h2>Who Should Use This PCB Calculator?</h2>
-        <ul><li>Employees checking estimated monthly PCB deduction</li><li>Job seekers comparing take-home pay after tax</li><li>HR and payroll staff explaining basic PCB concepts</li><li>Taxpayers preparing for annual e-Filing</li></ul>
+        <ul>
+          <li>Employees checking estimated monthly PCB deduction</li>
+          <li>Job seekers comparing take-home pay after tax</li>
+          <li>HR and payroll staff explaining basic PCB concepts</li>
+          <li>Taxpayers preparing for annual e-Filing</li>
+        </ul>
       </section>
 
       <h2>Frequently Asked Questions</h2>
+
       <div class="faq-box">
-        <details class="faq-item" open><summary>Is PCB the same as income tax?</summary><p>No. PCB is monthly tax deducted through payroll. Final income tax is calculated annually during tax filing.</p></details>
-        <details class="faq-item"><summary>Why is my actual PCB different from this calculator?</summary><p>Actual PCB may use LHDN's official formula, TP1 relief updates, spouse or child status, rebates, bonus treatment and payroll settings.</p></details>
-        <details class="faq-item"><summary>Can tax relief reduce PCB?</summary><p>Tax relief may reduce PCB if submitted through the proper payroll process, or it may be reflected during annual tax filing.</p></details>
-        <details class="faq-item"><summary>Does bonus affect PCB?</summary><p>Yes. Bonus can increase taxable income and may cause higher PCB deduction for the bonus month.</p></details>
+        <details class="faq-item" open>
+          <summary>Is PCB the same as income tax?</summary>
+          <p>No. PCB is monthly tax deducted through payroll. Final income tax is calculated annually during tax filing.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Why is my actual PCB different from this calculator?</summary>
+          <p>Actual PCB may use LHDN's official formula, TP1 relief updates, spouse or child status, rebates, bonus treatment and payroll settings.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can tax relief reduce PCB?</summary>
+          <p>Tax relief may reduce PCB if submitted through the proper payroll process, or it may be reflected during annual tax filing.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Does bonus affect PCB?</summary>
+          <p>Yes. Bonus can increase taxable income and may cause higher PCB deduction for the bonus month.</p>
+        </details>
       </div>
 
-      <section class="salary-guides-box"><h2>📚 Related Tax Guides</h2><p>Continue reading related Malaysia tax and payroll guides.</p><div class="guide-mini-grid"><a href="pcb-guide.html">🧾 PCB Guide</a><a href="income-tax-guide.html">🏛️ Income Tax Guide</a><a href="tax-relief-guide.html">💸 Tax Relief Guide</a><a href="tax-filing-guide.html">📤 Tax Filing Guide</a></div><p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p></section>
-      <section class="salary-guides-box"><h2>🧮 Related Calculators</h2><p>Use these calculators to estimate tax, payroll deductions and take-home pay.</p><div class="guide-mini-grid"><a href="index.html">Salary Calculator</a><a href="income-tax-calculator.html">Income Tax Calculator</a><a href="epf-calculator.html">EPF Calculator</a><a href="socso-calculator.html">SOCSO Calculator</a></div><p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p></section>
+      <section class="salary-guides-box">
+        <h2>📚 Related Tax Guides</h2>
+        <p>Continue reading related Malaysia tax and payroll guides.</p>
+        <div class="guide-mini-grid">
+          <a href="pcb-guide.html">🧾 PCB Guide</a>
+          <a href="income-tax-guide.html">🏛️ Income Tax Guide</a>
+          <a href="tax-relief-guide.html">💸 Tax Relief Guide</a>
+          <a href="tax-filing-guide.html">📤 Tax Filing Guide</a>
+        </div>
+        <p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p>
+      </section>
+
+      <section class="salary-guides-box">
+        <h2>🧮 Related Calculators</h2>
+        <p>Use these calculators to estimate tax, payroll deductions and take-home pay.</p>
+        <div class="guide-mini-grid">
+          <a href="index.html">Salary Calculator</a>
+          <a href="income-tax-calculator.html">Income Tax Calculator</a>
+          <a href="epf-calculator.html">EPF Calculator</a>
+          <a href="socso-calculator.html">SOCSO Calculator</a>
+        </div>
+        <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
+      </section>
     </div>
   </div>
 
@@ -576,45 +780,64 @@
 
   <script>
     function formatRM(amount) {
-      return 'RM' + amount.toLocaleString('en-MY', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      return 'RM' + amount.toLocaleString('en-MY', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
     }
+
     function calculateTax(chargeable) {
       const brackets = [
-        [5000, 0.00], [15000, 0.01], [15000, 0.03], [15000, 0.06],
-        [20000, 0.11], [30000, 0.19], [300000, 0.25], [200000, 0.26],
-        [1400000, 0.28], [Infinity, 0.30]
+        [5000, 0.00],
+        [15000, 0.01],
+        [15000, 0.03],
+        [15000, 0.06],
+        [20000, 0.11],
+        [30000, 0.19],
+        [300000, 0.25],
+        [200000, 0.26],
+        [1400000, 0.28],
+        [Infinity, 0.30]
       ];
+
       let remaining = Math.max(0, chargeable);
       let tax = 0;
+
       for (const [limit, rate] of brackets) {
         if (remaining <= 0) break;
         const taxable = Math.min(remaining, limit);
         tax += taxable * rate;
         remaining -= taxable;
       }
+
       return tax;
     }
+
     function calculatePCB() {
       const salary = parseFloat(document.getElementById('salary').value) || 0;
       const bonus = parseFloat(document.getElementById('bonus').value) || 0;
       const reliefs = parseFloat(document.getElementById('reliefs').value) || 0;
       const epfRate = parseFloat(document.getElementById('epfRate').value) || 0;
+
       const annualIncome = salary * 12 + bonus;
       const estimatedEPF = salary * 12 * epfRate;
       const chargeable = Math.max(0, annualIncome - estimatedEPF - reliefs);
       const annualTax = calculateTax(chargeable);
       const monthlyPCB = annualTax / 12;
       const salaryAfterPCB = salary - monthlyPCB;
+
       document.getElementById('monthlyPCB').textContent = formatRM(monthlyPCB);
       document.getElementById('annualTax').textContent = formatRM(annualTax);
       document.getElementById('chargeableIncome').textContent = formatRM(chargeable);
       document.getElementById('salaryAfterPCB').textContent = formatRM(salaryAfterPCB);
+
       document.getElementById('annualIncomeTable').textContent = formatRM(annualIncome);
       document.getElementById('epfRateText').textContent = (epfRate * 100).toFixed(0) + '%';
       document.getElementById('epfTable').textContent = formatRM(estimatedEPF);
       document.getElementById('reliefsTable').textContent = formatRM(reliefs);
       document.getElementById('chargeableTable').textContent = formatRM(chargeable);
     }
+
     calculatePCB();
   </script>
 </body>
