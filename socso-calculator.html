@@ -14,12 +14,17 @@
   crossorigin="anonymous"></script>
 
   <style>
+    html {
+      overflow-x: hidden;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #f6f7fb, #eef1f7);
       margin: 0;
       padding: 0;
       color: #111827;
+      overflow-x: hidden;
     }
 
     .top-nav {
@@ -61,15 +66,12 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      overflow-x: auto;
       flex-wrap: nowrap;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
+      min-width: 0;
     }
 
-    .nav-links::-webkit-scrollbar { display: none; }
-
     .nav-links a {
+      display: block;
       text-decoration: none;
       color: #4b5563;
       font-weight: 600;
@@ -77,6 +79,7 @@
       padding: 10px 14px;
       border-radius: 8px;
       white-space: nowrap;
+      background: transparent;
       flex-shrink: 0;
     }
 
@@ -111,6 +114,8 @@
 
     .calculator-layout {
       max-width: 1000px;
+      width: 100%;
+      box-sizing: border-box;
       margin: 30px auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -124,6 +129,7 @@
       border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       border: 1px solid #e5e7eb;
+      box-sizing: border-box;
     }
 
     .calculator-card,
@@ -180,7 +186,9 @@
       margin-top: 5px;
     }
 
-    .calculate-btn:hover { background: #1d4ed8; }
+    .calculate-btn:hover {
+      background: #1d4ed8;
+    }
 
     .small-note {
       color: #64748b;
@@ -225,12 +233,13 @@
     .breakdown-table-wrap {
       overflow-x: auto;
       margin-top: 18px;
+      width: 100%;
     }
 
     .breakdown-table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 420px;
+      min-width: 0;
       border: 1px solid #dbe3ef;
       border-radius: 12px;
       overflow: hidden;
@@ -253,17 +262,27 @@
       font-size: 14px;
     }
 
-    .breakdown-table tr:last-child td { border-bottom: none; }
+    .breakdown-table tr:last-child td {
+      border-bottom: none;
+    }
 
     .seo {
       max-width: 900px;
+      width: 100%;
       margin: 30px auto;
       padding: 25px;
       line-height: 1.7;
     }
 
-    h2 { font-size: 20px; margin-top: 25px; }
-    h3 { font-size: 16px; margin-top: 18px; }
+    h2 {
+      font-size: 20px;
+      margin-top: 25px;
+    }
+
+    h3 {
+      font-size: 16px;
+      margin-top: 18px;
+    }
 
     .summary-box,
     .guide-box,
@@ -360,7 +379,9 @@
       color: white;
     }
 
-    .faq-box { margin-top: 25px; }
+    .faq-box {
+      margin-top: 25px;
+    }
 
     .faq-item {
       background: #f8fafc;
@@ -376,9 +397,19 @@
       list-style: none;
     }
 
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after { content: "▼"; float: right; font-size: 12px; }
-    .faq-item[open] summary::after { content: "▲"; }
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "▼";
+      float: right;
+      font-size: 12px;
+    }
+
+    .faq-item[open] summary::after {
+      content: "▲";
+    }
 
     .faq-item p {
       margin-top: 12px;
@@ -399,27 +430,121 @@
     }
 
     .footer {
-      text-align:center;
-      padding:20px;
+      text-align: center;
+      padding: 20px;
     }
 
-    @media (max-width: 800px){
-      .calculator-layout { grid-template-columns: 1fr; }
+    @media (max-width: 800px) {
+      .calculator-layout {
+        grid-template-columns: 1fr;
+        max-width: 900px;
+        margin: 20px auto;
+      }
+
+      .nav-inner {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .nav-links {
+        width: auto;
+        flex: 1;
+        min-width: 0;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
     }
 
-    @media (max-width: 700px){
-      .main-wrapper { padding: 15px 10px; }
-      .seo { margin: 15px auto; padding: 18px; }
-      .calculator-card, .result-card { padding: 18px; }
-      .nav-inner { padding: 8px 10px; gap: 8px; }
-      .brand img { width: 120px; }
-      .brand { font-size: 18px; }
-      .nav-links { gap: 6px; }
-      .nav-links a { font-size: 14px; padding: 8px 10px; }
-      .hero h1 { font-size: 27px; }
-      .hero p { font-size: 15px; }
-      .result-grid { grid-template-columns: 1fr; }
-      .highlight-result { grid-column: auto; }
+    @media (max-width: 700px) {
+      .main-wrapper {
+        padding: 15px 10px;
+      }
+
+      .nav-inner {
+        padding: 8px 10px;
+        gap: 8px;
+      }
+
+      .brand img {
+        width: 120px;
+      }
+
+      .brand {
+        font-size: 18px;
+      }
+
+      .nav-links {
+        gap: 6px;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+
+      .hero {
+        margin: 25px auto 18px;
+      }
+
+      .hero h1 {
+        font-size: 27px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .calculator-layout {
+        grid-template-columns: 1fr;
+        width: 100%;
+        box-sizing: border-box;
+        gap: 18px;
+      }
+
+      .calculator-card,
+      .result-card,
+      .seo {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .calculator-card,
+      .result-card {
+        padding: 18px;
+      }
+
+      .seo {
+        margin: 15px auto;
+        padding: 18px;
+      }
+
+      .result-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .highlight-result {
+        grid-column: auto;
+      }
+
+      .breakdown-table {
+        min-width: 0;
+      }
+
+      .breakdown-table th,
+      .breakdown-table td {
+        padding: 10px;
+        font-size: 13px;
+      }
     }
   </style>
 </head>
@@ -667,7 +792,6 @@
         employerBasis = 'Approx. 1.25%';
       }
 
-      // Simple cap-style estimate based on a RM5,000 wage ceiling.
       employeeSOCSO = Math.min(employeeSOCSO, 24.75);
       employerSOCSO = Math.min(employerSOCSO, category === 'first' ? 86.65 : 61.90);
 
