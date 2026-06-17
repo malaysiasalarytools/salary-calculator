@@ -1,76 +1,488 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact Us | Malaysia Salary Tools</title>
+  <title>Contact Malaysia Salary Tools | Feedback, Questions & Suggestions</title>
   <link rel="canonical" href="https://malaysiasalarytools.com/contact.html">
-  <meta name="description" content="Contact Malaysia Salary Tools for questions, suggestions and feedback about our salary and payroll calculators.">
+  <meta name="description" content="Contact Malaysia Salary Tools for questions, suggestions, feedback, calculator issues or content updates about Malaysian salary, payroll, tax and employment resources.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #f6f7fb, #eef1f7);
       margin: 0;
+      padding: 0;
+      color: #111827;
+      overflow-x: hidden;
+    }
+
+    .top-nav {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      overflow: visible;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      width: 180px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: nowrap;
+      min-width: 0;
+      overflow: visible;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4b5563;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #2563eb;
+      color: white;
+    }
+
+    .main-wrapper {
+      padding: 30px 20px;
+    }
+
+    .hero {
+      max-width: 950px;
+      margin: 35px auto 25px;
+      text-align: center;
+      padding: 10px 10px 0;
+    }
+
+    .hero h1 {
+      font-size: 38px;
+      color: #2563eb;
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #64748b;
+      line-height: 1.7;
+      max-width: 830px;
+      margin: 0 auto;
+    }
+
+    .content-card {
+      background: white;
+      max-width: 950px;
+      margin: 30px auto;
+      padding: 34px;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .section {
+      margin-bottom: 38px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin: 0 0 14px;
+      color: #111827;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 0 0 10px;
+      color: #111827;
+    }
+
+    p {
+      color: #4b5563;
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    .email-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-left: 5px solid #2563eb;
+      border-radius: 14px;
+      padding: 22px;
+      margin-top: 18px;
+    }
+
+    .email-box p {
+      margin: 0 0 10px;
+    }
+
+    .email-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .email-link {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 13px 24px;
+      border-radius: 10px;
+      font-weight: bold;
+      margin-top: 6px;
+    }
+
+    .email-link:hover {
+      background: #1d4ed8;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .contact-card {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 16px;
       padding: 20px;
     }
 
-    .card {
-      background: white;
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      line-height: 1.7;
+    .card-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
     }
 
-    h1 { font-size: 26px; }
-    h2 { font-size: 20px; margin-top: 25px; }
+    .contact-card p {
+      margin-bottom: 0;
+    }
 
-    a { color: black; }
+    .tips-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 16px;
+      padding: 22px;
+      margin-top: 18px;
+    }
+
+    .tips-box ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: #4b5563;
+      line-height: 1.8;
+    }
+
+    .disclaimer-box {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-left: 5px solid #f97316;
+      border-radius: 14px;
+      padding: 20px;
+      margin-top: 18px;
+    }
+
+    .disclaimer-box p {
+      margin: 0;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 14px 34px;
+      min-width: 220px;
+      text-align: center;
+      border-radius: 10px;
+      font-weight: bold;
+      box-sizing: border-box;
+      transition: all 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .cta-button.secondary {
+      background: white;
+      color: #2563eb;
+      border: 1px solid #dbe3ef;
+    }
+
+    .cta-button.secondary:hover {
+      background: #f8fafc;
+      color: #1d4ed8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 20px;
+      color: #64748b;
+    }
+
+    footer a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 800px) {
+      .nav-inner {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .nav-links {
+        width: auto;
+        flex: 1;
+        min-width: 0;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .main-wrapper {
+        padding: 15px 10px;
+      }
+
+      .content-card {
+        margin: 18px auto;
+        padding: 22px;
+      }
+
+      .nav-inner {
+        padding: 8px 10px;
+        gap: 8px;
+      }
+
+      .brand img {
+        width: 120px;
+      }
+
+      .nav-links {
+        gap: 6px;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .cta-button,
+      .email-link {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<div class="card">
+  <header class="top-nav">
+    <div class="nav-inner">
 
-  <h1>Contact Us</h1>
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Malaysia Salary Tools">
+      </a>
 
-  <p>
-    If you have any questions, suggestions or feedback regarding Malaysia Salary Tools, please feel free to contact us.
-  </p>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="calculators.html">Calculators</a>
+        <a href="guides.html">Guides</a>
+        <a href="about.html">About</a>
+      </nav>
 
-  <h2>Email</h2>
+    </div>
+  </header>
 
-  <p>
-    <a href="mailto:cheahmj1883@gmail.com">cheahmj1883@gmail.com</a>
-  </p>
+  <main class="main-wrapper">
 
-  <h2>Feedback</h2>
+    <section class="hero">
+      <h1>Contact Malaysia Salary Tools</h1>
+      <p>
+        Have a question, suggestion or feedback about our salary calculators, payroll guides, tax resources or employment content? We would be happy to hear from you.
+      </p>
+    </section>
 
-  <p>
-    We welcome feedback that can help improve our calculators, guides and user experience.
-  </p>
+    <section class="content-card">
 
-  <p>
-    Please note that we do not provide professional tax, legal, payroll or financial advice.
-  </p>
+      <div class="section">
+        <h2>How to Contact Us</h2>
+        <p>
+          For general questions, suggestions, correction requests, calculator issues or website feedback, please contact Malaysia Salary Tools by email.
+        </p>
 
-  <hr style="margin-top:40px;">
+        <div class="email-box">
+          <p><strong>Email:</strong></p>
+          <a class="email-link" href="mailto:cheahmj1883@gmail.com">cheahmj1883@gmail.com</a>
+          <p style="margin-top:14px;">
+            We aim to review feedback and suggestions as soon as possible, especially where they relate to calculator accuracy, outdated information or broken links.
+          </p>
+        </div>
+      </div>
 
-  <div style="text-align:center;padding:20px;">
+      <div class="section">
+        <h2>What You Can Contact Us About</h2>
+        <p>
+          Malaysia Salary Tools welcomes feedback that can help us improve the usefulness, clarity and accuracy of our website.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="card-icon">🧮</div>
+            <h3>Calculator Feedback</h3>
+            <p>Report issues or suggestions related to salary, EPF, SOCSO, EIS, PCB, overtime, leave or loan calculators.</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="card-icon">📚</div>
+            <h3>Guide Suggestions</h3>
+            <p>Suggest new Malaysian payroll, tax, employment or financial planning topics that users may find helpful.</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="card-icon">🔎</div>
+            <h3>Content Updates</h3>
+            <p>Let us know if you notice outdated information, broken links, unclear explanations or areas that need improvement.</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="card-icon">💬</div>
+            <h3>General Enquiries</h3>
+            <p>Contact us for general questions or comments about Malaysia Salary Tools and our free online resources.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Helpful Details to Include</h2>
+        <p>
+          To help us understand your message more clearly, you may include relevant details when contacting us.
+        </p>
+
+        <div class="tips-box">
+          <h3>For faster review, you may include:</h3>
+          <ul>
+            <li>The page or calculator you are referring to</li>
+            <li>A short description of the issue, question or suggestion</li>
+            <li>The salary amount, calculation scenario or example involved, if relevant</li>
+            <li>A screenshot or explanation if something is not displaying correctly</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Before You Contact Us</h2>
+        <p>
+          Malaysia Salary Tools provides general educational information and estimation tools only. Our calculators and guides are designed to help users understand salary, payroll, tax and employment-related topics in Malaysia.
+        </p>
+
+        <div class="disclaimer-box">
+          <p>
+            We do not provide personalised tax, legal, payroll, accounting, employment or financial advice. For advice specific to your situation, please consult the relevant official authority or a qualified professional.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Explore More Resources</h2>
+        <p>
+          You can also browse our calculators and guides to learn more about Malaysian salary, payroll, tax, employment and financial planning topics.
+        </p>
+
+        <div class="cta-row">
+          <a href="calculators.html" class="cta-button">Browse Calculators →</a>
+          <a href="guides.html" class="cta-button secondary">Browse Guides →</a>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
     <p>© 2026 Malaysia Salary Tools</p>
     <p>
       <a href="index.html">Home</a> |
-      <a href="about.html">About Us</a> |
+      <a href="calculators.html">Calculators</a> |
+      <a href="guides.html">Guides</a> |
+      <a href="about.html">About</a> |
       <a href="privacy-policy.html">Privacy Policy</a>
     </p>
-  </div>
-
-</div>
+  </footer>
 
 </body>
 </html>
+```
