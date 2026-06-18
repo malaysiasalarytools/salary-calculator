@@ -850,7 +850,6 @@
 
   <div class="main-wrapper">
 
-
 <section class="hero">
   <div class="eyebrow">Salary Slip Tool</div>
   <h1>Malaysia Payslip Generator 2026</h1>
@@ -886,146 +885,150 @@
     <h2>🧮 Payslip Details</h2>
     <p class="calculator-intro">Enter employee details, salary and deduction settings to generate a simple monthly payslip preview.</p>
 
-    <div class="input-row">
-      <div class="form-group">
-        <label for="employeeName">Employee Name</label>
-        <input type="text" id="employeeName" placeholder="Example: Ahmad Tan">
-      </div>
 
-      <div class="form-group">
-        <label for="employeeNo">Employee No. / ID</label>
-        <input type="text" id="employeeNo" placeholder="Example: EMP001">
-      </div>
+<div class="input-row">
+  <div class="form-group">
+    <label for="employeeName">Employee Name</label>
+    <input type="text" id="employeeName" placeholder="Example: Ahmad Tan" value="Ahmad Tan">
+  </div>
+
+  <div class="form-group">
+    <label for="employeeNo">Employee No. / ID</label>
+    <input type="text" id="employeeNo" placeholder="Example: EMP001" value="EMP001">
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="companyName">Company Name</label>
+  <input type="text" id="companyName" placeholder="Example: ABC Sdn Bhd" value="ABC Sdn Bhd">
+</div>
+
+<div class="input-row">
+  <div class="form-group">
+    <label for="month">Payslip Month</label>
+    <input type="text" id="month" placeholder="Example: January 2026" value="January 2026">
+  </div>
+
+  <div class="form-group">
+    <label for="paymentDate">Payment Date</label>
+    <input type="date" id="paymentDate" value="2026-01-31">
+  </div>
+</div>
+
+<div class="input-row">
+  <div class="form-group">
+    <label for="salary">Basic Salary (RM)</label>
+    <input type="number" id="salary" placeholder="Example: 4000" value="4000" min="0" step="0.01">
+  </div>
+
+  <div class="form-group">
+    <label for="allowance">Allowance / Other Earnings (RM)</label>
+    <input type="number" id="allowance" placeholder="Example: 300" value="300" min="0" step="0.01">
+  </div>
+</div>
+
+<div class="input-row">
+  <div class="form-group">
+    <label for="overtime">Overtime / Commission (RM)</label>
+    <input type="number" id="overtime" placeholder="Example: 200" value="150" min="0" step="0.01">
+  </div>
+
+  <div class="form-group">
+    <label for="unpaidLeave">Unpaid Leave / Other Deduction (RM)</label>
+    <input type="number" id="unpaidLeave" placeholder="Example: 0" value="0" min="0" step="0.01">
+  </div>
+</div>
+
+<div class="input-row">
+  <div class="form-group">
+    <label for="deductionMode">Deduction Mode</label>
+    <select id="deductionMode" onchange="handleDeductionMode()">
+      <option value="auto" selected>Auto estimate deductions</option>
+      <option value="manual">Manual enter deductions</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="epfRate">Employee EPF Rate</label>
+    <select id="epfRate" onchange="generatePayslip()">
+      <option value="0.11" selected>11% - Standard employee EPF</option>
+      <option value="0.09">9% - Reduced employee EPF</option>
+      <option value="0.00">0% - No EPF estimate</option>
+    </select>
+  </div>
+</div>
+
+<div id="manualDeductions" style="display:none;">
+  <div class="input-row">
+    <div class="form-group">
+      <label for="manualEPF">EPF Deduction (RM)</label>
+      <input type="number" id="manualEPF" placeholder="Example: 440" value="0" min="0" step="0.01">
     </div>
 
     <div class="form-group">
-      <label for="companyName">Company Name</label>
-      <input type="text" id="companyName" placeholder="Example: ABC Sdn Bhd">
+      <label for="manualSOCSO">SOCSO Deduction (RM)</label>
+      <input type="number" id="manualSOCSO" placeholder="Example: 19.75" value="0" min="0" step="0.01">
+    </div>
+  </div>
+
+  <div class="input-row">
+    <div class="form-group">
+      <label for="manualEIS">EIS Deduction (RM)</label>
+      <input type="number" id="manualEIS" placeholder="Example: 8" value="0" min="0" step="0.01">
     </div>
 
-    <div class="input-row">
-      <div class="form-group">
-        <label for="month">Payslip Month</label>
-        <input type="text" id="month" placeholder="Example: January 2026">
-      </div>
-
-      <div class="form-group">
-        <label for="paymentDate">Payment Date</label>
-        <input type="date" id="paymentDate">
-      </div>
+    <div class="form-group">
+      <label for="manualPCB">PCB Tax Deduction (RM)</label>
+      <input type="number" id="manualPCB" placeholder="Example: 0" value="0" min="0" step="0.01">
     </div>
+  </div>
+</div>
 
-    <div class="input-row">
-      <div class="form-group">
-        <label for="salary">Basic Salary (RM)</label>
-        <input type="number" id="salary" placeholder="Example: 4000" value="4000" min="0" step="0.01">
-      </div>
+<div class="input-row" id="autoTaxInputs">
+  <div class="form-group">
+    <label for="taxReliefs">Estimated Annual Tax Reliefs (RM)</label>
+    <input type="number" id="taxReliefs" value="9000" min="0" step="0.01">
+  </div>
 
-      <div class="form-group">
-        <label for="allowance">Allowance / Other Earnings (RM)</label>
-        <input type="number" id="allowance" placeholder="Example: 300" value="0" min="0" step="0.01">
-      </div>
-    </div>
+  <div class="form-group">
+    <label for="includePCB">PCB Estimate</label>
+    <select id="includePCB" onchange="generatePayslip()">
+      <option value="yes" selected>Include simplified PCB estimate</option>
+      <option value="no">Do not include PCB estimate</option>
+    </select>
+  </div>
+</div>
 
-    <div class="input-row">
-      <div class="form-group">
-        <label for="overtime">Overtime / Commission (RM)</label>
-        <input type="number" id="overtime" placeholder="Example: 200" value="0" min="0" step="0.01">
-      </div>
+<div class="button-row">
+  <button class="btn" onclick="generatePayslip()">Generate Payslip</button>
+  <button class="secondary-btn" type="button" onclick="resetForm()">Reset</button>
+</div>
 
-      <div class="form-group">
-        <label for="unpaidLeave">Unpaid Leave / Other Deduction (RM)</label>
-        <input type="number" id="unpaidLeave" placeholder="Example: 0" value="0" min="0" step="0.01">
-      </div>
-    </div>
+<button class="secondary-btn" type="button" onclick="printPayslip()">Print / Save as PDF</button>
 
-    <div class="input-row">
-      <div class="form-group">
-        <label for="deductionMode">Deduction Mode</label>
-        <select id="deductionMode" onchange="handleDeductionMode()">
-          <option value="auto" selected>Auto estimate deductions</option>
-          <option value="manual">Manual enter deductions</option>
-        </select>
-      </div>
+<p class="small-note">
+  This generator provides a simple salary slip preview only. Actual payroll may differ due to official EPF, SOCSO, EIS, PCB schedules, company payroll policy and employment terms.
+</p>
 
-      <div class="form-group">
-        <label for="epfRate">Employee EPF Rate</label>
-        <select id="epfRate" onchange="generatePayslip()">
-          <option value="0.11" selected>11% - Standard employee EPF</option>
-          <option value="0.09">9% - Reduced employee EPF</option>
-          <option value="0.00">0% - No EPF estimate</option>
-        </select>
-      </div>
-    </div>
+<div class="input-help-card">
+  <strong>Quick payslip notes:</strong>
+  <ul>
+    <li>Gross pay usually includes basic salary, allowance and overtime.</li>
+    <li>Net salary is gross pay less employee deductions.</li>
+    <li>Employer contributions are usually not deducted from employee salary.</li>
+  </ul>
+</div>
 
-    <div id="manualDeductions" style="display:none;">
-      <div class="input-row">
-        <div class="form-group">
-          <label for="manualEPF">EPF Deduction (RM)</label>
-          <input type="number" id="manualEPF" placeholder="Example: 440" value="0" min="0" step="0.01">
-        </div>
 
-        <div class="form-group">
-          <label for="manualSOCSO">SOCSO Deduction (RM)</label>
-          <input type="number" id="manualSOCSO" placeholder="Example: 19.75" value="0" min="0" step="0.01">
-        </div>
-      </div>
-
-      <div class="input-row">
-        <div class="form-group">
-          <label for="manualEIS">EIS Deduction (RM)</label>
-          <input type="number" id="manualEIS" placeholder="Example: 8" value="0" min="0" step="0.01">
-        </div>
-
-        <div class="form-group">
-          <label for="manualPCB">PCB Tax Deduction (RM)</label>
-          <input type="number" id="manualPCB" placeholder="Example: 0" value="0" min="0" step="0.01">
-        </div>
-      </div>
-    </div>
-
-    <div class="input-row" id="autoTaxInputs">
-      <div class="form-group">
-        <label for="taxReliefs">Estimated Annual Tax Reliefs (RM)</label>
-        <input type="number" id="taxReliefs" value="9000" min="0" step="0.01">
-      </div>
-
-      <div class="form-group">
-        <label for="includePCB">PCB Estimate</label>
-        <select id="includePCB" onchange="generatePayslip()">
-          <option value="yes" selected>Include simplified PCB estimate</option>
-          <option value="no">Do not include PCB estimate</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="button-row">
-      <button class="btn" onclick="generatePayslip()">Generate Payslip</button>
-      <button class="secondary-btn" type="button" onclick="resetForm()">Reset</button>
-    </div>
-
-    <button class="secondary-btn" type="button" onclick="printPayslip()">Print / Save as PDF</button>
-
-    <p class="small-note">
-      This generator provides a simple salary slip preview only. Actual payroll may differ due to official EPF, SOCSO, EIS, PCB schedules, company payroll policy and employment terms.
-    </p>
-
-    <div class="input-help-card">
-      <strong>Quick payslip notes:</strong>
-      <ul>
-        <li>Gross pay usually includes basic salary, allowance and overtime.</li>
-        <li>Net salary is gross pay less employee deductions.</li>
-        <li>Employer contributions are usually not deducted from employee salary.</li>
-      </ul>
-    </div>
   </section>
 
   <section class="preview-card">
     <h2>📄 Payslip Preview</h2>
 
-    <div id="payslipOutput" class="preview-placeholder">
-      Enter salary details and click <strong>Generate Payslip</strong>. Your payslip preview will appear here.
-    </div>
+
+<div id="payslipOutput" class="payslip-preview"></div>
+
+
   </section>
 
 </div>
@@ -1036,121 +1039,138 @@
     <h2>📌 Payslip Generator Quick Summary</h2>
     <p>This Malaysia payslip generator helps employees, freelancers, HR users and small business owners create a simple salary slip preview with earnings, deductions and net salary.</p>
 
-    <div class="summary-grid">
-      <div class="summary-card">
-        <strong>Gross Pay</strong>
-        <span>Basic salary plus allowance, overtime or other earnings.</span>
-      </div>
-      <div class="summary-card">
-        <strong>Deductions</strong>
-        <span>EPF, SOCSO, EIS, PCB and other salary deductions.</span>
-      </div>
-      <div class="summary-card">
-        <strong>Net Salary</strong>
-        <span>Estimated take-home pay after employee deductions.</span>
-      </div>
-      <div class="summary-card">
-        <strong>Preview</strong>
-        <span>Generate a clean payslip preview for simple reference.</span>
-      </div>
-    </div>
+
+<div class="summary-grid">
+  <div class="summary-card">
+    <strong>Gross Pay</strong>
+    <span>Basic salary plus allowance, overtime or other earnings.</span>
+  </div>
+  <div class="summary-card">
+    <strong>Deductions</strong>
+    <span>EPF, SOCSO, EIS, PCB and other salary deductions.</span>
+  </div>
+  <div class="summary-card">
+    <strong>Net Salary</strong>
+    <span>Estimated take-home pay after employee deductions.</span>
+  </div>
+  <div class="summary-card">
+    <strong>Preview</strong>
+    <span>Generate a clean payslip preview for simple reference.</span>
+  </div>
+</div>
+
+
   </section>
 
   <section class="content-card">
     <h2>What Is a Payslip?</h2>
     <p>A payslip is a salary document that shows an employee's earnings, deductions and net salary for a specific pay period. In Malaysia, a payslip commonly includes basic salary, allowance, EPF, SOCSO, EIS, PCB and net pay.</p>
 
-    <div class="two-column">
-      <div class="info-panel">
-        <h3>Common Earnings</h3>
-        <ul>
-          <li>Basic salary</li>
-          <li>Fixed allowance</li>
-          <li>Overtime pay</li>
-          <li>Commission or bonus</li>
-        </ul>
-      </div>
 
-      <div class="info-panel">
-        <h3>Common Deductions</h3>
-        <ul>
-          <li>Employee EPF</li>
-          <li>Employee SOCSO</li>
-          <li>Employee EIS</li>
-          <li>PCB monthly tax deduction</li>
-        </ul>
-      </div>
-    </div>
+<div class="two-column">
+  <div class="info-panel">
+    <h3>Common Earnings</h3>
+    <ul>
+      <li>Basic salary</li>
+      <li>Fixed allowance</li>
+      <li>Overtime pay</li>
+      <li>Commission or bonus</li>
+    </ul>
+  </div>
+
+  <div class="info-panel">
+    <h3>Common Deductions</h3>
+    <ul>
+      <li>Employee EPF</li>
+      <li>Employee SOCSO</li>
+      <li>Employee EIS</li>
+      <li>PCB monthly tax deduction</li>
+    </ul>
+  </div>
+</div>
+
+
   </section>
 
   <section class="content-card">
     <h2>How to Use This Payslip Generator</h2>
     <p>Enter employee details, company name, pay period, salary amount and deduction settings. You can choose auto estimate mode for quick planning, or manual mode if you already know the exact EPF, SOCSO, EIS and PCB amounts from payroll.</p>
 
-    <div class="disclaimer-box">
-      <strong>Important:</strong> This tool is for simple payslip preview and general information only. It should not be treated as professional payroll, tax, legal, accounting or HR advice.
-    </div>
+
+<div class="disclaimer-box">
+  <strong>Important:</strong> This tool is for simple payslip preview and general information only. It should not be treated as professional payroll, tax, legal, accounting or HR advice.
+</div>
+
+
   </section>
 
   <section class="content-card">
     <h2>Frequently Asked Questions</h2>
 
-    <div class="faq-box">
-      <details class="faq-item" open>
-        <summary>Is this payslip generator free?</summary>
-        <p>Yes. This simple Malaysia payslip generator is free to use.</p>
-      </details>
 
-      <details class="faq-item">
-        <summary>Can I print the generated payslip?</summary>
-        <p>Yes. After generating the payslip, click the print button. You can print it or save it as PDF using your browser's print function.</p>
-      </details>
+<div class="faq-box">
+  <details class="faq-item" open>
+    <summary>Is this payslip generator free?</summary>
+    <p>Yes. This simple Malaysia payslip generator is free to use.</p>
+  </details>
 
-      <details class="faq-item">
-        <summary>Is this payslip suitable for official payroll?</summary>
-        <p>This tool provides a simple payslip format. Employers should follow proper payroll, statutory and record-keeping requirements.</p>
-      </details>
+  <details class="faq-item">
+    <summary>Can I print the generated payslip?</summary>
+    <p>Yes. After generating the payslip, click the print button. You can print it or save it as PDF using your browser's print function.</p>
+  </details>
 
-      <details class="faq-item">
-        <summary>Does this calculate EPF, SOCSO, EIS and PCB automatically?</summary>
-        <p>It can estimate them using simplified calculations. Actual payroll may differ based on official schedules, contribution tables and payroll settings.</p>
-      </details>
+  <details class="faq-item">
+    <summary>Is this payslip suitable for official payroll?</summary>
+    <p>This tool provides a simple payslip format. Employers should follow proper payroll, statutory and record-keeping requirements.</p>
+  </details>
 
-      <details class="faq-item">
-        <summary>Can I enter my own deduction amounts?</summary>
-        <p>Yes. Choose manual deduction mode if you want to enter EPF, SOCSO, EIS and PCB amounts yourself.</p>
-      </details>
-    </div>
+  <details class="faq-item">
+    <summary>Does this calculate EPF, SOCSO, EIS and PCB automatically?</summary>
+    <p>It can estimate them using simplified calculations. Actual payroll may differ based on official schedules, contribution tables and payroll settings.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>Can I enter my own deduction amounts?</summary>
+    <p>Yes. Choose manual deduction mode if you want to enter EPF, SOCSO, EIS and PCB amounts yourself.</p>
+  </details>
+</div>
+
+
   </section>
 
   <section class="content-card">
     <h2>📚 Related Salary Guides</h2>
     <p>Continue reading related Malaysia payroll guides to understand salary deductions and payslip items.</p>
 
-    <div class="guide-mini-grid">
-      <a href="payslip-guide.html">🧾 Payslip Guide</a>
-      <a href="epf-guide.html">💰 EPF Guide</a>
-      <a href="socso-guide.html">🛡️ SOCSO Guide</a>
-      <a href="pcb-guide.html">🏛️ PCB Guide</a>
-    </div>
+
+<div class="guide-mini-grid">
+  <a href="payslip-guide.html">🧾 Payslip Guide</a>
+  <a href="epf-guide.html">💰 EPF Guide</a>
+  <a href="socso-guide.html">🛡️ SOCSO Guide</a>
+  <a href="pcb-guide.html">🏛️ PCB Guide</a>
+</div>
+
+
   </section>
 
   <section class="content-card">
     <h2>🧮 Related Calculators</h2>
     <p>Use these calculators to estimate payroll deductions and salary details in Malaysia.</p>
 
-    <div class="guide-mini-grid">
-      <a href="index.html">Salary Calculator</a>
-      <a href="epf-calculator.html">EPF Calculator</a>
-      <a href="socso-calculator.html">SOCSO Calculator</a>
-      <a href="eis-calculator.html">EIS Calculator</a>
-      <a href="pcb-calculator.html">PCB Calculator</a>
-      <a href="overtime-calculator.html">Overtime Calculator</a>
-    </div>
+
+<div class="guide-mini-grid">
+  <a href="index.html">Salary Calculator</a>
+  <a href="epf-calculator.html">EPF Calculator</a>
+  <a href="socso-calculator.html">SOCSO Calculator</a>
+  <a href="eis-calculator.html">EIS Calculator</a>
+  <a href="pcb-calculator.html">PCB Calculator</a>
+  <a href="overtime-calculator.html">Overtime Calculator</a>
+</div>
+
+
   </section>
 
 </main>
-
 
   </div>
 
@@ -1351,29 +1371,36 @@
     }
 
     function resetForm() {
-      document.getElementById('employeeName').value = '';
-      document.getElementById('employeeNo').value = '';
-      document.getElementById('companyName').value = '';
-      document.getElementById('month').value = '';
-      document.getElementById('paymentDate').value = '';
+      document.getElementById('employeeName').value = 'Ahmad Tan';
+      document.getElementById('employeeNo').value = 'EMP001';
+      document.getElementById('companyName').value = 'ABC Sdn Bhd';
+      document.getElementById('month').value = 'January 2026';
+      document.getElementById('paymentDate').value = '2026-01-31';
+
       document.getElementById('salary').value = 4000;
-      document.getElementById('allowance').value = 0;
-      document.getElementById('overtime').value = 0;
+      document.getElementById('allowance').value = 300;
+      document.getElementById('overtime').value = 150;
       document.getElementById('unpaidLeave').value = 0;
+
       document.getElementById('deductionMode').value = 'auto';
       document.getElementById('epfRate').value = '0.11';
       document.getElementById('taxReliefs').value = 9000;
       document.getElementById('includePCB').value = 'yes';
+
       document.getElementById('manualEPF').value = 0;
       document.getElementById('manualSOCSO').value = 0;
       document.getElementById('manualEIS').value = 0;
       document.getElementById('manualPCB').value = 0;
-      handleDeductionMode();
 
-      document.getElementById('payslipOutput').className = 'preview-placeholder';
-      document.getElementById('payslipOutput').innerHTML =
-        "Enter salary details and click <strong>Generate Payslip</strong>. Your payslip preview will appear here.";
+      handleDeductionMode();
+      generatePayslip();
     }
+
+    document.getElementById('employeeName').addEventListener('input', generatePayslip);
+    document.getElementById('employeeNo').addEventListener('input', generatePayslip);
+    document.getElementById('companyName').addEventListener('input', generatePayslip);
+    document.getElementById('month').addEventListener('input', generatePayslip);
+    document.getElementById('paymentDate').addEventListener('input', generatePayslip);
 
     document.getElementById('salary').addEventListener('input', generatePayslip);
     document.getElementById('allowance').addEventListener('input', generatePayslip);
@@ -1384,6 +1411,8 @@
     document.getElementById('manualSOCSO').addEventListener('input', generatePayslip);
     document.getElementById('manualEIS').addEventListener('input', generatePayslip);
     document.getElementById('manualPCB').addEventListener('input', generatePayslip);
+
+    generatePayslip();
   </script>
 
 </body>
