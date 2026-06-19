@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <title>Malaysia MC Leave Guide 2026 | Medical Leave Entitlement, Sick Leave & HR Rules</title>
+
   <link rel="canonical" href="https://malaysiasalarytools.com/mc-leave-guide.html">
   <link rel="icon" type="image/png" href="favicon.png">
+
   <meta name="description" content="Malaysia MC Leave Guide 2026. Learn medical leave entitlement, sick leave days, hospitalisation leave, MC submission and common HR questions.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
@@ -14,25 +17,60 @@
   crossorigin="anonymous"></script>
 
   <style>
+    :root {
+      --background: #f4f1ea;
+      --card: #fbfaf6;
+      --foreground: #302c26;
+      --muted: #7c766c;
+      --primary: #2f2b25;
+      --primary-foreground: #f6f3ec;
+      --accent: #2f7d5e;
+      --accent-soft: rgba(47,125,94,.10);
+      --accent-border: rgba(47,125,94,.22);
+      --border: #e2ddd2;
+      --white: #ffffff;
+      --radius: 18px;
+      --shadow: 0 18px 45px rgba(47,43,37,.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47,125,94,.08), transparent 34%),
+        linear-gradient(135deg, #f4f1ea, #efe9de);
       margin: 0;
       padding: 0;
-      color: #111827;
+      color: var(--foreground);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .serif {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
     }
 
     .top-nav {
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
+      background: rgba(251,250,246,.84);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      backdrop-filter: blur(10px);
     }
 
     .nav-inner {
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 14px 20px;
       display: flex;
@@ -46,13 +84,10 @@
       align-items: center;
       text-decoration: none;
       flex-shrink: 0;
-      font-weight: bold;
-      color: #2563eb;
-      font-size: 22px;
     }
 
     .brand img {
-      width: 180px;
+      width: 220px;
       height: auto;
       display: block;
     }
@@ -61,138 +96,178 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      overflow-x: auto;
       flex-wrap: nowrap;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
+      min-width: 0;
     }
 
-    .nav-links::-webkit-scrollbar { display: none; }
-
     .nav-links a {
+      display: block;
       text-decoration: none;
-      color: #4b5563;
+      color: var(--muted);
       font-weight: 600;
       font-size: 15px;
       padding: 10px 14px;
-      border-radius: 8px;
+      border-radius: 999px;
       white-space: nowrap;
-      flex-shrink: 0;
+      background: transparent;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      background: #2563eb;
-      color: white;
+      background: var(--primary);
+      color: var(--primary-foreground);
     }
 
     .main-wrapper {
-      padding: 30px 20px;
+      padding: 46px 20px 54px;
     }
 
     .hero {
       text-align: center;
-      max-width: 900px;
-      margin: 35px auto 20px;
+      max-width: 940px;
+      margin: 0 auto 32px;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      padding: 7px 15px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      font-weight: 700;
     }
 
     .hero h1 {
-      font-size: 32px;
-      color: #2563eb;
-      margin-bottom: 10px;
+      margin: 0;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      color: var(--foreground);
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-style: italic;
     }
 
     .hero p {
+      max-width: 820px;
+      margin: 18px auto 0;
       font-size: 17px;
-      color: #64748b;
-      margin-top: 0;
-      line-height: 1.6;
+      color: var(--muted);
     }
 
     .seo {
-      background: white;
-      max-width: 900px;
+      background: var(--card);
+      max-width: 1120px;
       margin: 30px auto;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      line-height: 1.7;
+      padding: 34px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
-    h1 { font-size: 26px; }
-    h2 { font-size: 20px; margin-top: 25px; }
-    h3 { font-size: 16px; margin-top: 18px; }
+    h2 {
+      font-size: clamp(25px, 4vw, 36px);
+      line-height: 1.15;
+      margin: 34px 0 14px;
+      color: var(--foreground);
+      letter-spacing: -.01em;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    h2:first-child { margin-top: 0; }
+
+    h3 {
+      font-size: 18px;
+      margin: 18px 0 10px;
+      color: var(--foreground);
+    }
+
+    p, li { color: var(--muted); }
 
     .calculator-cta,
     .summary-box,
     .guide-box,
     .example-box,
-    .salary-guides-box {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
+    .salary-guides-box,
+    .formula-box {
+      background: #f8f5ef;
+      border: 1px solid var(--border);
       border-radius: 16px;
       padding: 24px;
-      margin: 25px 0;
+      margin: 26px 0;
     }
 
-    .calculator-cta {
-      text-align: center;
-    }
+    .calculator-cta { text-align: center; }
 
-    .calculator-cta h2,
-    .summary-box h2,
-    .guide-box h2,
-    .example-box h2,
-    .salary-guides-box h2 {
-      margin-top: 0;
-    }
+    .calculator-cta h2 { margin-top: 0; }
 
     .calculator-cta p {
-      color: #4b5563;
-      max-width: 700px;
+      max-width: 720px;
       margin-left: auto;
       margin-right: auto;
     }
 
     .cta-button {
       display: inline-block;
-      background: #2563eb;
-      color: white;
+      background: var(--accent);
+      color: #fff;
       text-decoration: none;
-      padding: 12px 24px;
-      border-radius: 10px;
-      font-weight: bold;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 800;
       margin-top: 8px;
     }
 
-    .cta-button:hover {
-      background: #1d4ed8;
-    }
+    .cta-button:hover { filter: brightness(.95); }
 
     .summary-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 12px;
-      margin-top: 18px;
+      margin-top: 20px;
     }
 
     .summary-card {
-      background: white;
-      border: 1px solid #dbe3ef;
-      border-radius: 12px;
-      padding: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
     }
 
     .summary-card strong {
       display: block;
-      color: #2563eb;
-      font-size: 20px;
+      color: var(--accent);
+      font-size: 22px;
       margin-bottom: 6px;
+      font-family: Georgia, "Times New Roman", serif;
     }
 
     .summary-card span {
-      color: #64748b;
+      color: var(--muted);
       font-size: 14px;
+      font-weight: 600;
+    }
+
+    .formula-box { text-align: center; }
+
+    .formula-box strong {
+      display: block;
+      font-size: 22px;
+      color: var(--foreground);
+      margin-bottom: 8px;
+    }
+
+    .formula-box span {
+      color: var(--muted);
+      font-size: 15px;
     }
 
     .contribution-table-wrap {
@@ -202,28 +277,29 @@
     .contribution-table {
       width: 100%;
       border-collapse: collapse;
-      background: white;
-      border: 1px solid #dbe3ef;
+      background: var(--card);
+      border: 1px solid var(--border);
       border-radius: 12px;
       overflow: hidden;
       min-width: 520px;
     }
 
     .contribution-table th {
-      background: #f8fafc;
-      color: #64748b;
+      background: #f1ece3;
+      color: var(--muted);
       font-size: 13px;
       text-align: left;
-      letter-spacing: 0.4px;
+      letter-spacing: .03em;
       padding: 14px;
-      border-bottom: 1px solid #dbe3ef;
+      border-bottom: 1px solid var(--border);
     }
 
     .contribution-table td {
       padding: 14px;
-      border-bottom: 1px solid #eef2f7;
-      color: #334155;
+      border-bottom: 1px solid var(--border);
+      color: var(--foreground);
       font-size: 14px;
+      vertical-align: top;
     }
 
     .contribution-table tr:last-child td {
@@ -231,618 +307,711 @@
     }
 
     .note-box {
+      margin-top: 18px;
+      background: var(--card);
+      border-left: 4px solid var(--accent);
+      padding: 14px;
+      border-radius: 10px;
+      color: var(--muted);
+    }
+
+    .component-grid,
+    .guide-mini-grid {
+      display: grid;
+      gap: 14px;
       margin-top: 20px;
-      background: white;
-      border-left: 4px solid #2563eb;
-      padding: 12px;
-      border-radius: 8px;
-      color: #4b5563;
-    }
-
-    .formula-box {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 14px;
-      padding: 25px;
-      text-align: center;
-      margin: 25px 0;
-    }
-
-    .formula-box strong {
-      display: block;
-      font-size: 22px;
-      color: #111827;
-      margin-bottom: 8px;
-    }
-
-    .formula-box span {
-      color: #64748b;
-      font-size: 15px;
     }
 
     .component-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .guide-mini-grid {
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    }
+
+    .component-card,
+    .guide-mini-grid a,
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
     }
 
     .component-card {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      padding: 18px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-      text-decoration: none;
-      color: inherit;
+      padding: 20px;
+      transition: .18s ease;
+    }
+
+    .component-card:hover,
+    .guide-mini-grid a:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 30px rgba(47,43,37,.08);
     }
 
     .component-icon {
-      font-size: 28px;
-      margin-bottom: 8px;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      display: grid;
+      place-items: center;
+      margin-bottom: 10px;
+      font-size: 21px;
     }
 
     .component-card h3 {
-      margin: 8px 0;
+      margin: 8px 0 4px;
     }
 
     .component-card p {
-      color: #4b5563;
+      margin: 0;
       font-size: 14px;
       line-height: 1.5;
-      margin-bottom: 0;
     }
 
     .faq-box {
-      margin-top: 25px;
+      margin-top: 18px;
+      max-width: 850px;
     }
 
     .faq-item {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 10px;
-      padding: 14px;
+      padding: 4px 20px;
       margin-bottom: 12px;
     }
 
     .faq-item summary {
-      font-weight: bold;
+      font-weight: 800;
       cursor: pointer;
       list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--foreground);
+      padding: 16px 0;
     }
 
-    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
 
     .faq-item summary::after {
-      content: "▼";
-      float: right;
-      font-size: 12px;
+      content: "+";
+      color: var(--accent);
+      font-size: 20px;
+      line-height: 1;
     }
 
-    .faq-item[open] summary::after { content: "▲"; }
+    .faq-item[open] summary::after {
+      content: "−";
+    }
 
     .faq-item p {
-      margin-top: 12px;
-      margin-bottom: 0;
-      color: #4b5563;
-      line-height: 1.5;
-    }
-
-    .guide-mini-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 12px;
-      margin-top: 18px;
+      padding-bottom: 18px;
+      margin: 0;
+      line-height: 1.55;
+      font-size: 14px;
     }
 
     .guide-mini-grid a {
-      background: white;
-      border: 1px solid #e5e7eb;
-      padding: 12px 14px;
-      border-radius: 10px;
+      display: block;
+      padding: 14px 16px;
       text-decoration: none;
-      color: #2563eb;
-      font-weight: bold;
+      color: var(--foreground);
+      font-weight: 800;
       text-align: center;
+      transition: .18s ease;
     }
 
     .guide-mini-grid a:hover {
-      background: #2563eb;
-      color: white;
+      color: var(--accent);
+      background: var(--white);
     }
 
     .view-all-guides {
       text-align: center;
-      margin-top: 20px;
+      margin: 20px 0 0;
     }
 
     .view-all-guides a {
-      color: #2563eb;
-      font-weight: bold;
+      color: var(--accent);
+      font-weight: 800;
       text-decoration: none;
     }
 
     .footer {
-      text-align:center;
-      padding:20px;
+      border-top: 1px solid var(--border);
+      padding: 28px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
     }
 
-    @media (max-width: 700px){
-      .main-wrapper { padding: 15px 10px; }
-      .seo { margin: 15px auto; padding: 18px; }
-      .nav-inner { padding: 8px 10px; gap: 8px; }
-      .brand img { width: 120px; }
-      .brand { font-size: 18px; }
-      .nav-links { gap: 6px; }
-      .nav-links a { font-size: 14px; padding: 8px 10px; }
-      .hero h1 { font-size: 26px; }
-      .component-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-      .component-card { padding: 14px; text-align: center; }
-      .component-icon { font-size: 22px; }
-      .component-card h3 { font-size: 15px; margin: 6px 0; }
-      .component-card p { font-size: 12px; line-height: 1.35; margin: 0; }
+    .footer a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer a:hover { color: var(--accent); }
+
+    @media (max-width: 800px) {
+      .nav-inner {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .nav-links {
+        width: auto;
+        flex: 1;
+        min-width: 0;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+      }
+
+      .nav-links::-webkit-scrollbar { display: none; }
+    }
+
+    @media (max-width: 700px) {
+      .main-wrapper {
+        padding: 34px 10px 40px;
+      }
+
+      .seo {
+        padding: 22px;
+      }
+
+      .nav-inner {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        gap: 8px;
+      }
+
+      .brand img {
+        width: 150px;
+      }
+
+      .nav-links {
+        gap: 6px;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .component-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .component-card {
+        padding: 14px;
+        text-align: center;
+      }
+
+      .component-icon {
+        margin-left: auto;
+        margin-right: auto;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+      }
+
+      .component-card h3 {
+        font-size: 15px;
+        margin: 6px 0;
+      }
+
+      .component-card p {
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .cta-button {
+        width: 100%;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <header class="top-nav">
-    <div class="nav-inner">
-      <a href="index.html" class="brand">
-        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
-      </a>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="calculators.html">Calculators</a>
-        <a href="guides.html" class="active">Guides</a>
-        <a href="about.html">About</a>
-      </nav>
-    </div>
-  </header>
+<header class="top-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="logo.png" alt="Malaysia Salary Tools">
+    </a>
 
-  <div class="main-wrapper">
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="guides.html" class="active">Guides</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
 
-    <div class="hero">
-      <h1>Malaysia MC Leave Guide 2026</h1>
-      <p>Learn how MC leave works in Malaysia, including paid sick leave entitlement, hospitalisation leave, medical certificates and common employment questions.</p>
-    </div>
+<main class="main-wrapper">
 
-    <div class="seo">
+  <section class="hero">
+    <span class="pill">Updated for Malaysia employment rules 2026</span>
+    <h1 class="serif">Malaysia <em>MC leave</em> guide 2026</h1>
+    <p>
+      Learn how medical leave works in Malaysia, including paid sick leave entitlement,
+      hospitalisation leave, medical certificates and common employment questions.
+    </p>
+  </section>
 
-      <section class="calculator-cta">
-        <h2>🏥 Understand Your Medical Leave Entitlement</h2>
-        <p>
-          Want to understand how paid medical leave works in Malaysia?
-          This guide explains MC leave entitlement, hospitalisation leave, salary treatment and common HR questions.
-        </p>
-        <a href="mc-leave-calculator.html" class="cta-button">Open MC Leave Calculator →</a>
-      </section>
+  <section class="seo">
 
-      <section class="summary-box">
-        <h2>📌 MC Leave Quick Summary</h2>
-        <p>
-          Medical leave, often called MC leave or sick leave, is paid leave given when an employee is medically unfit for work and has a valid medical certificate.
-        </p>
-
-        <div class="summary-grid">
-          <div class="summary-card">
-            <strong>14 Days</strong>
-            <span>Less than 2 years of service</span>
-          </div>
-          <div class="summary-card">
-            <strong>18 Days</strong>
-            <span>2 to 5 years of service</span>
-          </div>
-          <div class="summary-card">
-            <strong>22 Days</strong>
-            <span>More than 5 years of service</span>
-          </div>
-          <div class="summary-card">
-            <strong>60 Days</strong>
-            <span>Hospitalisation leave, where applicable</span>
-          </div>
-        </div>
-      </section>
-
-      <h2>What Is MC Leave?</h2>
+    <section class="calculator-cta">
+      <h2>Understand Your Medical Leave Entitlement</h2>
       <p>
-        MC leave is paid medical leave granted when an employee is sick or medically unfit to work. In Malaysia, employees are usually required to provide a valid medical certificate from a registered medical practitioner or approved medical institution.
+        Want to understand how paid medical leave works in Malaysia?
+        This guide explains MC leave entitlement, hospitalisation leave, salary treatment and common HR questions.
       </p>
+      <a href="mc-leave-calculator.html" class="cta-button">Open MC Leave Calculator →</a>
+    </section>
+
+    <section class="summary-box">
+      <h2>MC Leave Quick Summary</h2>
       <p>
-        Medical leave is different from annual leave because it is used for illness or medical reasons. It is also different from unpaid leave because eligible MC leave is normally paid.
+        Medical leave, often called MC leave or sick leave, is paid leave given when an employee is medically unfit for work and has a valid medical certificate.
       </p>
 
-      <section class="guide-box">
-        <h2>Medical Leave Entitlement in Malaysia</h2>
-        <p>
-          The table below shows a simplified guide to common paid sick leave entitlement based on length of service.
-        </p>
-
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Length of Service</th>
-                <th>Paid Sick Leave</th>
-                <th>Simple Explanation</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Less than 2 years</td>
-                <td>14 days per year</td>
-                <td>For employees with shorter service period</td>
-              </tr>
-              <tr>
-                <td>2 years or more but less than 5 years</td>
-                <td>18 days per year</td>
-                <td>For employees with mid-level service period</td>
-              </tr>
-              <tr>
-                <td>5 years or more</td>
-                <td>22 days per year</td>
-                <td>For long-serving employees</td>
-              </tr>
-              <tr>
-                <td>Hospitalisation</td>
-                <td>Up to 60 days per year</td>
-                <td>Subject to eligibility and medical certification</td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <strong>14 Days</strong>
+          <span>Less than 2 years of service</span>
         </div>
-
-        <div class="note-box">
-          <strong>Note:</strong> This is a simplified employment guide. Actual entitlement may depend on employment terms, company policy, eligibility and the latest employment law requirements.
+        <div class="summary-card">
+          <strong>18 Days</strong>
+          <span>2 to 5 years of service</span>
         </div>
-      </section>
-
-      <section class="guide-box">
-        <h2>Outpatient MC Leave vs Hospitalisation Leave</h2>
-        <p>
-          In Malaysia, ordinary outpatient MC leave and hospitalisation leave are usually treated differently. Outpatient MC leave commonly applies when an employee visits a clinic or doctor and is certified unfit for work, while hospitalisation leave applies when the employee requires hospital treatment or qualifying medical care.
-        </p>
-
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Type of Medical Leave</th>
-                <th>Common Entitlement</th>
-                <th>Typical Situation</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Outpatient MC Leave</td>
-                <td>14, 18 or 22 days per year depending on service period</td>
-                <td>Clinic visit, illness, fever, infection or other medical condition certified by a doctor</td>
-              </tr>
-              <tr>
-                <td>Hospitalisation Leave</td>
-                <td>Up to 60 days per year, where applicable</td>
-                <td>Hospital admission, surgery, treatment or medical condition requiring hospital care</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="summary-card">
+          <strong>22 Days</strong>
+          <span>More than 5 years of service</span>
         </div>
-
-        <p>
-          The exact treatment may depend on medical documents, company policy and the latest employment law requirements. Employees should submit the correct certificate or hospital documents so HR can record the leave properly.
-        </p>
-      </section>
-
-      <h2>How MC Leave Is Usually Applied</h2>
-      <p>
-        Employees usually need to inform their employer as soon as possible and submit a valid medical certificate. Employers may have internal procedures for reporting MC, uploading the certificate and updating payroll records.
-      </p>
-
-      <div class="formula-box">
-        <strong>MC Leave Used = Approved Medical Leave Days Taken</strong>
-        <span>Example: 2 approved MC days reduce the remaining yearly MC balance by 2 days</span>
+        <div class="summary-card">
+          <strong>60 Days</strong>
+          <span>Hospitalisation leave, where applicable</span>
+        </div>
       </div>
+    </section>
 
-      <section class="guide-box">
-        <h2>Documents Commonly Required for MC Leave</h2>
-        <p>
-          Employers usually require proper supporting documents before approving medical leave. This helps HR confirm that the absence is supported by a valid medical reason and record the leave correctly in payroll.
-        </p>
-        <ul>
-          <li>Medical certificate issued by a registered clinic, doctor or hospital</li>
-          <li>Hospitalisation certificate or admission record, where applicable</li>
-          <li>Discharge summary or supporting hospital documents, if requested</li>
-          <li>Company MC submission form or HR system upload, if required</li>
-          <li>Employee notification to supervisor or HR according to company policy</li>
-        </ul>
-        <p>
-          Some employers may require the original certificate, while others may accept a scanned copy or HR system upload first. Employees should follow internal procedures to avoid the absence being treated as unpaid or unauthorised.
-        </p>
-      </section>
+    <h2>What Is MC Leave?</h2>
+    <p>
+      MC leave is paid medical leave granted when an employee is sick or medically unfit to work. In Malaysia, employees are usually required to provide a valid medical certificate from a registered medical practitioner or approved medical institution.
+    </p>
+    <p>
+      Medical leave is different from annual leave because it is used for illness or medical reasons. It is also different from unpaid leave because eligible MC leave is normally paid.
+    </p>
 
-      <section class="example-box">
-        <h2>Example MC Leave Situation</h2>
-        <p>
-          If an employee has worked for 3 years and is entitled to 18 days of paid sick leave per year:
-        </p>
-        <ul>
-          <li>Annual MC entitlement: 18 days</li>
-          <li>MC taken this month: 2 days</li>
-          <li>Remaining estimated MC balance: 16 days</li>
-        </ul>
-        <p>
-          Payroll treatment may depend on whether the MC is approved, properly documented and submitted according to company policy.
-        </p>
-      </section>
-
-      <h2>Hospitalisation Leave</h2>
+    <section class="guide-box">
+      <h2>Medical Leave Entitlement in Malaysia</h2>
       <p>
-        Hospitalisation leave is usually treated separately from ordinary outpatient MC leave. It applies where an employee requires hospitalisation or medical treatment that qualifies under the relevant rules.
-      </p>
-      <p>
-        Employers may require supporting medical documents, hospital admission records or certificates before approving hospitalisation leave.
+        The table below shows a simplified guide to common paid sick leave entitlement based on length of service.
       </p>
 
-      <section class="guide-box">
-        <h2>MC Leave During Probation</h2>
-        <p>
-          Employees on probation may still fall sick and may need to take medical leave. Whether the leave is paid and how it is recorded can depend on eligibility, employment terms and company policy.
-        </p>
-        <p>
-          A valid MC should be submitted even during probation. Taking genuine medical leave should not automatically mean an employee fails probation, but employers may still assess attendance, performance and overall suitability during the probation period.
-        </p>
-      </section>
-
-      <section class="guide-box">
-        <h2>MC Leave During Annual Leave</h2>
-        <p>
-          Employees sometimes become sick while they are already on annual leave. Whether the leave can be converted from annual leave to MC leave depends on company policy, medical documents and employer approval.
-        </p>
-        <p>
-          If this happens, the employee should inform HR or the supervisor as soon as possible and provide a valid medical certificate. Employers may review the timing, documents and internal policy before deciding how the leave should be recorded.
-        </p>
-      </section>
-
-      <section class="guide-box">
-        <h2>MC Leave During a Public Holiday</h2>
-        <p>
-          MC leave and public holidays are separate concepts. If an employee is sick on or around a public holiday, the payroll and leave treatment may depend on the actual date of the MC, the employee's work schedule and company policy.
-        </p>
-        <p>
-          For example, an MC issued for a normal working day after a public holiday may be recorded as medical leave. If the MC overlaps with a non-working public holiday, HR may need to review how the absence should be treated.
-        </p>
-      </section>
-
-      <section class="guide-box">
-        <h2>Common MC Leave Situations</h2>
-        <div class="component-grid">
-          <div class="component-card">
-            <div class="component-icon">🩺</div>
-            <h3>Outpatient MC</h3>
-            <p>Medical leave supported by a valid medical certificate.</p>
-          </div>
-          <div class="component-card">
-            <div class="component-icon">🏥</div>
-            <h3>Hospitalisation</h3>
-            <p>Leave for hospital treatment or qualifying medical care.</p>
-          </div>
-          <div class="component-card">
-            <div class="component-icon">📄</div>
-            <h3>MC Submission</h3>
-            <p>Employees should submit certificates according to HR policy.</p>
-          </div>
-          <div class="component-card">
-            <div class="component-icon">💼</div>
-            <h3>Payroll Treatment</h3>
-            <p>Approved MC is normally treated as paid leave for eligible employees.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="guide-box">
-        <h2>Common MC Leave Mistakes</h2>
-        <p>
-          Many MC leave disputes happen because employees and employers do not follow the same documentation or notification process. Clear HR policies can help reduce confusion and make payroll treatment more consistent.
-        </p>
-        <ul>
-          <li>Not informing the employer as soon as possible</li>
-          <li>Submitting the MC certificate late or not submitting it at all</li>
-          <li>Assuming a photo of the MC is enough without checking HR policy</li>
-          <li>Using annual leave when the absence should be medical leave</li>
-          <li>Taking sick leave without proper medical consultation or certification</li>
-          <li>Confusing outpatient MC leave with hospitalisation leave</li>
-        </ul>
-      </section>
-
-      <section class="guide-box">
-        <h2>Common MC Leave Examples</h2>
-
-        <h3>Example 1: Employee With 3 Years of Service</h3>
-        <p>
-          An employee with 3 years of service may commonly be entitled to 18 days of paid outpatient sick leave per year. If the employee takes 5 approved MC days, the estimated remaining balance would be 13 days.
-        </p>
-
-        <h3>Example 2: Employee Hospitalised for 4 Days</h3>
-        <p>
-          If an employee is admitted to hospital and provides the required hospitalisation certificate, the absence may be treated under hospitalisation leave rather than ordinary outpatient MC leave, subject to eligibility and company policy.
-        </p>
-
-        <h3>Example 3: Employee Takes MC During Probation</h3>
-        <p>
-          A probationary employee who falls sick should still notify the employer and submit a valid MC. The leave may be recorded according to company policy, while overall probation assessment may consider attendance and work performance.
-        </p>
-      </section>
-
-      <h2>MC Leave vs Annual Leave vs Unpaid Leave</h2>
       <div class="contribution-table-wrap">
         <table class="contribution-table">
           <thead>
             <tr>
-              <th>Leave Type</th>
-              <th>Main Purpose</th>
-              <th>Usually Paid?</th>
+              <th>Length of Service</th>
+              <th>Paid Sick Leave</th>
+              <th>Simple Explanation</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Medical Leave</td>
-              <td>Illness or medical reasons with valid MC</td>
-              <td>Yes, if eligible</td>
+              <td>Less than 2 years</td>
+              <td>14 days per year</td>
+              <td>For employees with shorter service period</td>
             </tr>
             <tr>
-              <td>Annual Leave</td>
-              <td>Planned time off for rest or personal matters</td>
-              <td>Yes</td>
+              <td>2 years or more but less than 5 years</td>
+              <td>18 days per year</td>
+              <td>For employees with mid-level service period</td>
             </tr>
             <tr>
-              <td>Unpaid Leave</td>
-              <td>Leave without salary when paid leave is not available or approved</td>
-              <td>No</td>
+              <td>5 years or more</td>
+              <td>22 days per year</td>
+              <td>For long-serving employees</td>
+            </tr>
+            <tr>
+              <td>Hospitalisation</td>
+              <td>Up to 60 days per year</td>
+              <td>Subject to eligibility and medical certification</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <section class="guide-box">
-        <h2>Who Should Read This MC Leave Guide?</h2>
-        <ul>
-          <li>Employees checking sick leave entitlement and MC submission rules</li>
-          <li>Job seekers comparing employment benefits and leave policies</li>
-          <li>HR and payroll staff handling medical leave records</li>
-          <li>Business owners preparing employee leave policies</li>
-        </ul>
-      </section>
+      <div class="note-box">
+        <strong>Note:</strong> This is a simplified employment guide. Actual entitlement may depend on employment terms, company policy, eligibility and the latest employment law requirements.
+      </div>
+    </section>
 
-      <section class="guide-box">
-        <h2>Official Reference</h2>
-        <p>
-          Medical leave rules may change over time. Employees and employers should refer to official government sources, the latest Employment Act requirements and their employment contract or HR policy for the most up-to-date guidance.
-        </p>
-      </section>
+    <section class="guide-box">
+      <h2>Outpatient MC Leave vs Hospitalisation Leave</h2>
+      <p>
+        In Malaysia, ordinary outpatient MC leave and hospitalisation leave are usually treated differently. Outpatient MC leave commonly applies when an employee visits a clinic or doctor and is certified unfit for work, while hospitalisation leave applies when the employee requires hospital treatment or qualifying medical care.
+      </p>
 
-      <h2>Frequently Asked Questions</h2>
-
-      <div class="faq-box">
-        <details class="faq-item" open>
-          <summary>How many days of paid medical leave are employees entitled to in Malaysia?</summary>
-          <p>
-            Common sick leave entitlement is 14 days for less than 2 years of service, 18 days for 2 to 5 years and 22 days for more than 5 years, subject to eligibility and applicable employment rules.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is MC leave paid in Malaysia?</summary>
-          <p>
-            Approved medical leave is normally paid for eligible employees when supported by a valid medical certificate and submitted according to company policy.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can I take MC during probation?</summary>
-          <p>
-            Employees on probation may still need medical leave if they are genuinely unfit for work. The employee should notify the employer and submit a valid MC according to company policy. Payroll treatment may depend on eligibility, employment terms and internal HR rules.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can an employer reject an MC?</summary>
-          <p>
-            Employers may review whether the MC is valid, properly issued and submitted according to company procedures. Disputes may depend on facts, documents and employment terms.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can an employer verify an MC with the clinic?</summary>
-          <p>
-            Employers may want to verify whether a medical certificate is genuine if there are reasonable concerns. Verification should be handled carefully and professionally, taking into account privacy, company policy and the information reasonably needed to confirm the certificate.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Does MC leave affect annual leave?</summary>
-          <p>
-            MC leave and annual leave are normally separate leave categories. Approved medical leave should not usually reduce annual leave balance.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can MC be taken during annual leave?</summary>
-          <p>
-            This depends on company policy and employer approval. If an employee becomes sick during annual leave, the employee should inform HR and provide a valid MC. The employer may decide whether the leave record can be changed from annual leave to medical leave.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can MC be taken during a public holiday?</summary>
-          <p>
-            If the MC overlaps with a public holiday or non-working day, HR may need to review the work schedule, the MC date and company policy. The treatment may differ depending on whether the employee was scheduled to work on that day.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What happens if an employee takes MC without a certificate?</summary>
-          <p>
-            Without a valid certificate, the absence may be treated under company policy, such as unpaid leave, emergency leave or unauthorised absence.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is hospitalisation leave the same as normal MC leave?</summary>
-          <p>
-            No. Hospitalisation leave is usually a separate entitlement and may require additional medical documents or hospital records.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can an employee be terminated for taking MC?</summary>
-          <p>
-            Genuine medical leave supported by proper documents should be handled according to employment law, employment terms and company policy. However, repeated absence, fake MC, misuse of medical leave or failure to follow procedures may create disciplinary issues depending on the facts.
-          </p>
-        </details>
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead>
+            <tr>
+              <th>Type of Medical Leave</th>
+              <th>Common Entitlement</th>
+              <th>Typical Situation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Outpatient MC Leave</td>
+              <td>14, 18 or 22 days per year depending on service period</td>
+              <td>Clinic visit, illness, fever, infection or other medical condition certified by a doctor</td>
+            </tr>
+            <tr>
+              <td>Hospitalisation Leave</td>
+              <td>Up to 60 days per year, where applicable</td>
+              <td>Hospital admission, surgery, treatment or medical condition requiring hospital care</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
-      <section class="salary-guides-box">
-        <h2>📚 Related Employment Guides</h2>
-        <p>Continue reading related Malaysia employment guides to understand leave, holidays and payroll rules.</p>
+      <p>
+        The exact treatment may depend on medical documents, company policy and the latest employment law requirements. Employees should submit the correct certificate or hospital documents so HR can record the leave properly.
+      </p>
+    </section>
 
-        <div class="guide-mini-grid">
-          <a href="annual-leave-guide.html">🌴 Annual Leave Guide</a>
-          <a href="public-holiday-guide.html">📅 Public Holiday Guide</a>
-          <a href="overtime-guide.html">⏰ Overtime Guide</a>
-          <a href="salary-guide.html">💼 Salary Guide</a>
-        </div>
-
-        <p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p>
-      </section>
-
-      <section class="salary-guides-box">
-        <h2>🧮 Related Calculators</h2>
-        <p>Use these calculators to estimate leave, overtime and monthly take-home pay in Malaysia.</p>
-
-        <div class="guide-mini-grid">
-          <a href="annual-leave-calculator.html">Annual Leave Calculator</a>
-          <a href="overtime-calculator.html">Overtime Calculator</a>
-          <a href="index.html">Salary Calculator</a>
-          <a href="mc-leave-calculator.html">MC Leave Calculator</a>
-        </div>
-
-        <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
-      </section>
-
-    </div>
-  </div>
-
-  <hr style="margin-top:40px;">
-
-  <div class="footer">
-    <p>© 2026 Malaysia Salary Tools</p>
+    <h2>How MC Leave Is Usually Applied</h2>
     <p>
-      <a href="about.html">About Us</a> |
-      <a href="contact.html">Contact Us</a> |
-      <a href="guides.html">Guides</a> |
-      <a href="privacy-policy.html">Privacy Policy</a>
+      Employees usually need to inform their employer as soon as possible and submit a valid medical certificate. Employers may have internal procedures for reporting MC, uploading the certificate and updating payroll records.
     </p>
-  </div>
+
+    <div class="formula-box">
+      <strong>MC Leave Used = Approved Medical Leave Days Taken</strong>
+      <span>Example: 2 approved MC days reduce the remaining yearly MC balance by 2 days</span>
+    </div>
+
+    <section class="guide-box">
+      <h2>Documents Commonly Required for MC Leave</h2>
+      <p>
+        Employers usually require proper supporting documents before approving medical leave. This helps HR confirm that the absence is supported by a valid medical reason and record the leave correctly in payroll.
+      </p>
+      <ul>
+        <li>Medical certificate issued by a registered clinic, doctor or hospital</li>
+        <li>Hospitalisation certificate or admission record, where applicable</li>
+        <li>Discharge summary or supporting hospital documents, if requested</li>
+        <li>Company MC submission form or HR system upload, if required</li>
+        <li>Employee notification to supervisor or HR according to company policy</li>
+      </ul>
+      <p>
+        Some employers may require the original certificate, while others may accept a scanned copy or HR system upload first. Employees should follow internal procedures to avoid the absence being treated as unpaid or unauthorised.
+      </p>
+    </section>
+
+    <section class="example-box">
+      <h2>Example MC Leave Situation</h2>
+      <p>
+        If an employee has worked for 3 years and is entitled to 18 days of paid sick leave per year:
+      </p>
+      <ul>
+        <li>Annual MC entitlement: 18 days</li>
+        <li>MC taken this month: 2 days</li>
+        <li>Remaining estimated MC balance: 16 days</li>
+      </ul>
+      <p>
+        Payroll treatment may depend on whether the MC is approved, properly documented and submitted according to company policy.
+      </p>
+    </section>
+
+    <h2>Hospitalisation Leave</h2>
+    <p>
+      Hospitalisation leave is usually treated separately from ordinary outpatient MC leave. It applies where an employee requires hospitalisation or medical treatment that qualifies under the relevant rules.
+    </p>
+    <p>
+      Employers may require supporting medical documents, hospital admission records or certificates before approving hospitalisation leave.
+    </p>
+
+    <section class="guide-box">
+      <h2>MC Leave During Probation</h2>
+      <p>
+        Employees on probation may still fall sick and may need to take medical leave. Whether the leave is paid and how it is recorded can depend on eligibility, employment terms and company policy.
+      </p>
+      <p>
+        A valid MC should be submitted even during probation. Taking genuine medical leave should not automatically mean an employee fails probation, but employers may still assess attendance, performance and overall suitability during the probation period.
+      </p>
+    </section>
+
+    <section class="guide-box">
+      <h2>MC Leave During Annual Leave</h2>
+      <p>
+        Employees sometimes become sick while they are already on annual leave. Whether the leave can be converted from annual leave to MC leave depends on company policy, medical documents and employer approval.
+      </p>
+      <p>
+        If this happens, the employee should inform HR or the supervisor as soon as possible and provide a valid medical certificate. Employers may review the timing, documents and internal policy before deciding how the leave should be recorded.
+      </p>
+    </section>
+
+    <section class="guide-box">
+      <h2>MC Leave During a Public Holiday</h2>
+      <p>
+        MC leave and public holidays are separate concepts. If an employee is sick on or around a public holiday, the payroll and leave treatment may depend on the actual date of the MC, the employee's work schedule and company policy.
+      </p>
+      <p>
+        For example, an MC issued for a normal working day after a public holiday may be recorded as medical leave. If the MC overlaps with a non-working public holiday, HR may need to review how the absence should be treated.
+      </p>
+    </section>
+
+    <section class="guide-box">
+      <h2>Common MC Leave Situations</h2>
+      <div class="component-grid">
+        <div class="component-card">
+          <div class="component-icon">🩺</div>
+          <h3>Outpatient MC</h3>
+          <p>Medical leave supported by a valid medical certificate.</p>
+        </div>
+        <div class="component-card">
+          <div class="component-icon">🏥</div>
+          <h3>Hospitalisation</h3>
+          <p>Leave for hospital treatment or qualifying medical care.</p>
+        </div>
+        <div class="component-card">
+          <div class="component-icon">📄</div>
+          <h3>MC Submission</h3>
+          <p>Employees should submit certificates according to HR policy.</p>
+        </div>
+        <div class="component-card">
+          <div class="component-icon">💼</div>
+          <h3>Payroll Treatment</h3>
+          <p>Approved MC is normally treated as paid leave for eligible employees.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-box">
+      <h2>Common MC Leave Mistakes</h2>
+      <p>
+        Many MC leave disputes happen because employees and employers do not follow the same documentation or notification process. Clear HR policies can help reduce confusion and make payroll treatment more consistent.
+      </p>
+      <ul>
+        <li>Not informing the employer as soon as possible</li>
+        <li>Submitting the MC certificate late or not submitting it at all</li>
+        <li>Assuming a photo of the MC is enough without checking HR policy</li>
+        <li>Using annual leave when the absence should be medical leave</li>
+        <li>Taking sick leave without proper medical consultation or certification</li>
+        <li>Confusing outpatient MC leave with hospitalisation leave</li>
+      </ul>
+    </section>
+
+    <section class="guide-box">
+      <h2>Common MC Leave Examples</h2>
+
+      <h3>Example 1: Employee With 3 Years of Service</h3>
+      <p>
+        An employee with 3 years of service may commonly be entitled to 18 days of paid outpatient sick leave per year. If the employee takes 5 approved MC days, the estimated remaining balance would be 13 days.
+      </p>
+
+      <h3>Example 2: Employee Hospitalised for 4 Days</h3>
+      <p>
+        If an employee is admitted to hospital and provides the required hospitalisation certificate, the absence may be treated under hospitalisation leave rather than ordinary outpatient MC leave, subject to eligibility and company policy.
+      </p>
+
+      <h3>Example 3: Employee Takes MC During Probation</h3>
+      <p>
+        A probationary employee who falls sick should still notify the employer and submit a valid MC. The leave may be recorded according to company policy, while overall probation assessment may consider attendance and work performance.
+      </p>
+    </section>
+
+    <h2>MC Leave vs Annual Leave vs Unpaid Leave</h2>
+    <div class="contribution-table-wrap">
+      <table class="contribution-table">
+        <thead>
+          <tr>
+            <th>Leave Type</th>
+            <th>Main Purpose</th>
+            <th>Usually Paid?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Medical Leave</td>
+            <td>Illness or medical reasons with valid MC</td>
+            <td>Yes, if eligible</td>
+          </tr>
+          <tr>
+            <td>Annual Leave</td>
+            <td>Planned time off for rest or personal matters</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Unpaid Leave</td>
+            <td>Leave without salary when paid leave is not available or approved</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <section class="guide-box">
+      <h2>Who Should Read This MC Leave Guide?</h2>
+      <ul>
+        <li>Employees checking sick leave entitlement and MC submission rules</li>
+        <li>Job seekers comparing employment benefits and leave policies</li>
+        <li>HR and payroll staff handling medical leave records</li>
+        <li>Business owners preparing employee leave policies</li>
+      </ul>
+    </section>
+
+    <section class="guide-box">
+      <h2>Official Reference</h2>
+      <p>
+        Medical leave rules may change over time. Employees and employers should refer to official government sources, the latest Employment Act requirements and their employment contract or HR policy for the most up-to-date guidance.
+      </p>
+    </section>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-box">
+      <details class="faq-item" open>
+        <summary>How many days of paid medical leave are employees entitled to in Malaysia?</summary>
+        <p>
+          Common sick leave entitlement is 14 days for less than 2 years of service, 18 days for 2 to 5 years and 22 days for more than 5 years, subject to eligibility and applicable employment rules.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is MC leave paid in Malaysia?</summary>
+        <p>
+          Approved medical leave is normally paid for eligible employees when supported by a valid medical certificate and submitted according to company policy.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I take MC during probation?</summary>
+        <p>
+          Employees on probation may still need medical leave if they are genuinely unfit for work. The employee should notify the employer and submit a valid MC according to company policy. Payroll treatment may depend on eligibility, employment terms and internal HR rules.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can an employer reject an MC?</summary>
+        <p>
+          Employers may review whether the MC is valid, properly issued and submitted according to company procedures. Disputes may depend on facts, documents and employment terms.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can an employer verify an MC with the clinic?</summary>
+        <p>
+          Employers may want to verify whether a medical certificate is genuine if there are reasonable concerns. Verification should be handled carefully and professionally, taking into account privacy, company policy and the information reasonably needed to confirm the certificate.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does MC leave affect annual leave?</summary>
+        <p>
+          MC leave and annual leave are normally separate leave categories. Approved medical leave should not usually reduce annual leave balance.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can MC be taken during annual leave?</summary>
+        <p>
+          This depends on company policy and employer approval. If an employee becomes sick during annual leave, the employee should inform HR and provide a valid MC. The employer may decide whether the leave record can be changed from annual leave to medical leave.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can MC be taken during a public holiday?</summary>
+        <p>
+          If the MC overlaps with a public holiday or non-working day, HR may need to review the work schedule, the MC date and company policy. The treatment may differ depending on whether the employee was scheduled to work on that day.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What happens if an employee takes MC without a certificate?</summary>
+        <p>
+          Without a valid certificate, the absence may be treated under company policy, such as unpaid leave, emergency leave or unauthorised absence.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is hospitalisation leave the same as normal MC leave?</summary>
+        <p>
+          No. Hospitalisation leave is usually a separate entitlement and may require additional medical documents or hospital records.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can an employee be terminated for taking MC?</summary>
+        <p>
+          Genuine medical leave supported by proper documents should be handled according to employment law, employment terms and company policy. However, repeated absence, fake MC, misuse of medical leave or failure to follow procedures may create disciplinary issues depending on the facts.
+        </p>
+      </details>
+    </div>
+
+    <section class="salary-guides-box">
+      <h2>Related Employment Guides</h2>
+      <p>Continue reading related Malaysia employment guides to understand leave, holidays and payroll rules.</p>
+
+      <div class="guide-mini-grid">
+        <a href="annual-leave-guide.html">Annual Leave Guide</a>
+        <a href="public-holiday-guide.html">Public Holiday Guide</a>
+        <a href="overtime-guide.html">Overtime Guide</a>
+        <a href="rest-day-guide.html">Rest Day Guide</a>
+      </div>
+
+      <p class="view-all-guides"><a href="guides.html">View All Guides →</a></p>
+    </section>
+
+    <section class="salary-guides-box">
+      <h2>Related Calculators</h2>
+      <p>Use these calculators to estimate leave, overtime and monthly take-home pay in Malaysia.</p>
+
+      <div class="guide-mini-grid">
+        <a href="mc-leave-calculator.html">MC Leave Calculator</a>
+        <a href="annual-leave-calculator.html">Annual Leave Calculator</a>
+        <a href="overtime-calculator.html">Overtime Calculator</a>
+        <a href="index.html">Salary Calculator</a>
+      </div>
+
+      <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
+    </section>
+
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 Malaysia Salary Tools</p>
+  <p>
+    <a href="about.html">About Us</a> |
+    <a href="contact.html">Contact Us</a> |
+    <a href="guides.html">Guides</a> |
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </p>
+</footer>
 
 </body>
 </html>
