@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <title>Malaysia EPF Contribution Guide 2026 | KWSP Rates, Employer & Employee Contribution</title>
+
   <link rel="canonical" href="https://malaysiasalarytools.com/epf-guide.html">
   <link rel="icon" type="image/png" href="favicon.png">
+
   <meta name="description" content="Malaysia EPF Contribution Guide 2026. Learn KWSP employee and employer EPF rates, eligibility, calculation examples, tax relief, EPF vs SOCSO vs EIS, withdrawals and retirement savings tips.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
@@ -14,25 +17,64 @@
   crossorigin="anonymous"></script>
 
   <style>
+    :root {
+      --background: #f4f1ea;
+      --card: #fbfaf6;
+      --foreground: #302c26;
+      --muted: #7c766c;
+      --primary: #2f2b25;
+      --primary-foreground: #f6f3ec;
+      --accent: #2f7d5e;
+      --accent-soft: rgba(47,125,94,.10);
+      --accent-border: rgba(47,125,94,.22);
+      --border: #e2ddd2;
+      --white: #ffffff;
+      --radius: 18px;
+      --shadow: 0 18px 45px rgba(47,43,37,.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47,125,94,.08), transparent 34%),
+        linear-gradient(135deg, #f4f1ea, #efe9de);
       margin: 0;
       padding: 0;
-      color: #111827;
+      color: var(--foreground);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .serif {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
     }
 
     .top-nav {
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
+      background: rgba(251,250,246,.84);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      backdrop-filter: blur(10px);
     }
 
     .nav-inner {
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 14px 20px;
       display: flex;
@@ -46,13 +88,10 @@
       align-items: center;
       text-decoration: none;
       flex-shrink: 0;
-      font-weight: bold;
-      color: #2563eb;
-      font-size: 22px;
     }
 
     .brand img {
-      width: 180px;
+      width: 220px;
       height: auto;
       display: block;
     }
@@ -68,284 +107,114 @@
     .nav-links a {
       display: block;
       text-decoration: none;
-      color: #4b5563;
+      color: var(--muted);
       font-weight: 600;
       font-size: 15px;
       padding: 10px 14px;
-      border-radius: 8px;
+      border-radius: 999px;
       white-space: nowrap;
-      flex-shrink: 0;
+      background: transparent;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      background: #2563eb;
-      color: white;
+      background: var(--primary);
+      color: var(--primary-foreground);
     }
 
     .main-wrapper {
-      padding: 30px 20px;
+      padding: 46px 20px 54px;
     }
 
     .hero {
       text-align: center;
-      max-width: 900px;
-      margin: 35px auto 20px;
+      max-width: 940px;
+      margin: 0 auto 32px;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      padding: 7px 15px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      font-weight: 700;
     }
 
     .hero h1 {
-      font-size: 32px;
-      color: #2563eb;
-      margin-bottom: 10px;
+      margin: 0;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      color: var(--foreground);
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-style: italic;
     }
 
     .hero p {
+      max-width: 820px;
+      margin: 18px auto 0;
       font-size: 17px;
-      color: #64748b;
-      margin-top: 0;
-      line-height: 1.6;
+      color: var(--muted);
     }
 
-    .card,
     .seo {
-      background: white;
-      max-width: 900px;
+      background: var(--card);
+      max-width: 1120px;
       margin: 30px auto;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      padding: 34px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
-    .seo {
-      line-height: 1.7;
+    h2 {
+      font-size: clamp(25px, 4vw, 36px);
+      line-height: 1.15;
+      margin: 34px 0 14px;
+      color: var(--foreground);
+      letter-spacing: -.01em;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
     }
 
-    .intro-box {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 16px;
-      padding: 22px;
-      margin-bottom: 25px;
+    h2:first-child {
+      margin-top: 0;
     }
 
-    .intro-box p {
-      margin-bottom: 0;
-      color: #4b5563;
+    h3 {
+      font-size: 18px;
+      margin: 18px 0 10px;
+      color: var(--foreground);
     }
 
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      margin-top: 18px;
+    p,
+    li {
+      color: var(--muted);
     }
 
-    .summary-card {
-      background: white;
-      border: 1px solid #dbe3ef;
-      border-radius: 12px;
-      padding: 16px;
-    }
-
-    .summary-card strong {
-      display: block;
-      color: #2563eb;
-      font-size: 20px;
-      margin-bottom: 6px;
-    }
-
-    .summary-card span {
-      color: #64748b;
-      font-size: 14px;
-    }
-
-    .formula-box {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 14px;
-      padding: 25px;
-      text-align: center;
-      margin: 25px 0;
-    }
-
-    .formula-box strong {
-      display: block;
-      font-size: 22px;
-      color: #111827;
-      margin-bottom: 8px;
-    }
-
-    .formula-box span {
-      color: #64748b;
-      font-size: 15px;
-    }
-
+    .calculator-cta,
+    .intro-box,
     .contribution-box,
-    .guide-box {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
+    .guide-box,
+    .salary-guides-box,
+    .formula-box {
+      background: #f8f5ef;
+      border: 1px solid var(--border);
       border-radius: 16px;
       padding: 24px;
-      margin: 25px 0;
+      margin: 26px 0;
     }
-
-    .contribution-table-wrap { overflow-x: auto; }
-
-    .contribution-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-      border: 1px solid #dbe3ef;
-      border-radius: 12px;
-      overflow: hidden;
-      min-width: 520px;
-    }
-
-    .contribution-table th {
-      background: #f8fafc;
-      color: #64748b;
-      font-size: 13px;
-      text-align: left;
-      letter-spacing: 0.4px;
-      padding: 14px;
-      border-bottom: 1px solid #dbe3ef;
-    }
-
-    .contribution-table td {
-      padding: 14px;
-      border-bottom: 1px solid #eef2f7;
-      color: #334155;
-      font-size: 14px;
-    }
-
-    .contribution-table tr:last-child td { border-bottom: none; }
-
-    .note-box {
-      margin-top: 20px;
-      background: white;
-      border-left: 4px solid #2563eb;
-      padding: 12px;
-      border-radius: 8px;
-      color: #4b5563;
-    }
-
-    .component-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
-      margin-top: 20px;
-    }
-
-    .component-card {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      padding: 18px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .component-icon {
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
-
-    .component-card h3 {
-      margin: 8px 0;
-    }
-
-    .component-card p {
-      color: #4b5563;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .faq-box { margin-top: 25px; }
-
-    .faq-item {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 10px;
-      padding: 14px;
-      margin-bottom: 12px;
-    }
-
-    .faq-item summary {
-      font-weight: bold;
-      cursor: pointer;
-      list-style: none;
-    }
-
-    .faq-item summary::-webkit-details-marker { display: none; }
-
-    .faq-item summary::after {
-      content: "▼";
-      float: right;
-      font-size: 12px;
-    }
-
-    .faq-item[open] summary::after { content: "▲"; }
-
-    .faq-item p {
-      margin-top: 12px;
-      margin-bottom: 0;
-      color: #4b5563;
-      line-height: 1.5;
-    }
-
-    .salary-guides-box {
-      margin-top: 35px;
-      padding: 24px;
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-    }
-
-    .salary-guides-box h2 { margin-top: 0; }
-    .salary-guides-box p { color: #4b5563; }
-
-    .guide-mini-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .guide-mini-grid a {
-      background: white;
-      border: 1px solid #e5e7eb;
-      padding: 12px 14px;
-      border-radius: 10px;
-      text-decoration: none;
-      color: #2563eb;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    .guide-mini-grid a:hover {
-      background: #2563eb;
-      color: white;
-    }
-
-    .view-all-guides {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .view-all-guides a {
-      color: #2563eb;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
 
     .calculator-cta {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 16px;
-      padding: 24px;
-      margin: 25px 0;
       text-align: center;
     }
 
@@ -354,48 +223,269 @@
     }
 
     .calculator-cta p {
-      color: #4b5563;
-      max-width: 700px;
+      max-width: 720px;
       margin-left: auto;
       margin-right: auto;
     }
 
     .cta-button {
       display: inline-block;
-      background: #2563eb;
-      color: white;
+      background: var(--accent);
+      color: #fff;
       text-decoration: none;
-      padding: 12px 24px;
-      border-radius: 10px;
-      font-weight: bold;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 800;
       margin-top: 8px;
     }
 
     .cta-button:hover {
-      background: #1d4ed8;
+      filter: brightness(.95);
     }
 
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .summary-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .summary-card strong {
+      display: block;
+      color: var(--accent);
+      font-size: 22px;
+      margin-bottom: 6px;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .summary-card span {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .formula-box {
+      text-align: center;
+    }
+
+    .formula-box strong {
+      display: block;
+      font-size: 22px;
+      color: var(--foreground);
+      margin-bottom: 8px;
+    }
+
+    .formula-box span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .contribution-table-wrap {
+      overflow-x: auto;
+    }
+
+    .contribution-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      min-width: 520px;
+    }
+
+    .contribution-table th {
+      background: #f1ece3;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: left;
+      letter-spacing: .03em;
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contribution-table td {
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--foreground);
+      font-size: 14px;
+    }
+
+    .contribution-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .note-box,
+    .source-note {
+      margin-top: 18px;
+      background: var(--card);
+      border-left: 4px solid var(--accent);
+      padding: 14px;
+      border-radius: 10px;
+      color: var(--muted);
+    }
 
     .source-note {
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
       font-size: 13px;
-      color: #64748b;
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
-      border-radius: 10px;
-      padding: 12px;
-      margin-top: 18px;
     }
 
     .source-note a {
-      color: #2563eb;
-      font-weight: bold;
+      color: var(--accent);
+      font-weight: 800;
       text-decoration: none;
     }
 
-    h1 { font-size: 26px; }
-    h2 { font-size: 20px; margin-top: 25px; }
-    h3 { font-size: 16px; margin-top: 18px; }
+    .component-grid,
+    .guide-mini-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 20px;
+    }
 
+    .component-grid {
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .guide-mini-grid {
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    }
+
+    .component-card,
+    .guide-mini-grid a,
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .component-card {
+      padding: 20px;
+      transition: .18s ease;
+    }
+
+    .component-card:hover,
+    .guide-mini-grid a:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 30px rgba(47,43,37,.08);
+    }
+
+    .component-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      display: grid;
+      place-items: center;
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .component-card h3 {
+      margin: 8px 0 4px;
+    }
+
+    .component-card p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .faq-box {
+      margin-top: 18px;
+      max-width: 850px;
+    }
+
+    .faq-item {
+      padding: 4px 20px;
+      margin-bottom: 12px;
+    }
+
+    .faq-item summary {
+      font-weight: 800;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--foreground);
+      padding: 16px 0;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      color: var(--accent);
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .faq-item[open] summary::after {
+      content: "−";
+    }
+
+    .faq-item p {
+      padding-bottom: 18px;
+      margin: 0;
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .guide-mini-grid a {
+      display: block;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: var(--foreground);
+      font-weight: 800;
+      text-align: center;
+      transition: .18s ease;
+    }
+
+    .guide-mini-grid a:hover {
+      color: var(--accent);
+      background: var(--white);
+    }
+
+    .view-all-guides {
+      text-align: center;
+      margin: 20px 0 0;
+    }
+
+    .view-all-guides a {
+      color: var(--accent);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer a:hover {
+      color: var(--accent);
+    }
 
     @media (max-width: 800px) {
       .nav-inner {
@@ -422,497 +512,558 @@
       }
     }
 
-    @media (max-width: 700px){
-      .main-wrapper { padding: 15px 10px; }
-      .card, .seo { margin: 15px auto; padding: 18px; }
-      .nav-inner { padding: 8px 10px; gap: 8px; }
-      .brand img { width: 120px; }
-      .brand { font-size: 18px; }
-      .nav-links { gap: 6px; }
-      .nav-links a { font-size: 14px; padding: 8px 10px; }
-      .hero h1 { font-size: 26px; }
-      .component-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-      .component-card { padding: 14px; text-align: center; }
-      .component-icon { font-size: 22px; }
-      .component-card h3 { font-size: 15px; margin: 6px 0; }
-      .component-card p { font-size: 12px; line-height: 1.35; margin: 0; }
-      .cta-button { min-width: 260px; padding: 14px 28px; }
+    @media (max-width: 700px) {
+      .main-wrapper {
+        padding: 34px 10px 40px;
+      }
+
+      .seo {
+        padding: 22px;
+      }
+
+      .nav-inner {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        gap: 8px;
+      }
+
+      .brand img {
+        width: 150px;
+      }
+
+      .nav-links {
+        gap: 6px;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .component-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .component-card {
+        padding: 14px;
+        text-align: center;
+      }
+
+      .component-icon {
+        margin-left: auto;
+        margin-right: auto;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+      }
+
+      .component-card h3 {
+        font-size: 15px;
+        margin: 6px 0;
+      }
+
+      .component-card p {
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .cta-button {
+        width: 100%;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <header class="top-nav">
-    <div class="nav-inner">
-      <a href="index.html" class="brand">
-        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
-      </a>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="calculators.html">Calculators</a>
-        <a href="guides.html" class="active">Guides</a>
-        <a href="about.html">About</a>
-      </nav>
-    </div>
-  </header>
+<header class="top-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="logo.png" alt="Malaysia Salary Tools">
+    </a>
 
-  <div class="main-wrapper">
-
-    <div class="hero">
-      <h1>Malaysia EPF Contribution Guide 2026</h1>
-      <p>Learn how EPF contributions work in Malaysia, including employee and employer rates, KWSP eligibility, salary examples, tax relief, EPF withdrawals and how EPF affects your take-home pay.</p>
-    </div>
-
-    <div class="seo">
-
-      <section class="calculator-cta">
-        <h2>🧮 Calculate Your EPF Contribution</h2>
-        <p>
-          Want to know how much EPF you and your employer contribute each month?
-          Use our free EPF Calculator to estimate employee and employer contributions instantly.
-        </p>
-        <a href="epf-calculator.html" class="cta-button">Calculate My EPF →</a>
-      </section>
-
-      <section class="intro-box">
-        <h2>📌 EPF Quick Summary</h2>
-        <p>EPF, also known as KWSP, is Malaysia's main retirement savings scheme for employees. For most private sector employees, both the employee and employer contribute every month based on wages that are subject to EPF contribution. This guide explains the common rates, examples and practical payroll points employees should understand.</p>
-
-        <div class="summary-grid">
-          <div class="summary-card">
-            <strong>11%</strong>
-            <span>Common employee contribution rate</span>
-          </div>
-          <div class="summary-card">
-            <strong>12% - 13%</strong>
-            <span>Common employer contribution rate</span>
-          </div>
-          <div class="summary-card">
-            <strong>KWSP</strong>
-            <span>EPF is managed by KWSP</span>
-          </div>
-          <div class="summary-card">
-            <strong>Retirement</strong>
-            <span>Main purpose of EPF savings</span>
-          </div>
-        </div>
-      </section>
-
-      <h2>What Is EPF?</h2>
-      <p>
-        The Employees Provident Fund (EPF), commonly known as KWSP, is a retirement savings scheme in Malaysia. It helps employees build long-term savings by requiring monthly contributions from both employees and employers.
-      </p>
-      <p>
-        EPF savings are mainly intended for retirement, but members may also be allowed to withdraw for approved purposes such as housing, education, medical needs and specific age-based withdrawals.
-      </p>
-
-      <h2>Who Needs to Contribute EPF?</h2>
-      <p>
-        EPF contributions generally apply to employees in Malaysia who work under a contract of service and receive wages from an employer. In a normal payroll arrangement, the employee contribution is deducted from monthly salary and the employer contribution is paid by the employer on top of the employee's wages.
-      </p>
-      <p>
-        For many Malaysian private sector employees, EPF contribution is a standard monthly payroll deduction. However, contribution rules may differ for certain groups such as foreign employees, domestic workers, self-employed individuals, pensionable public servants or employees above certain age categories.
-      </p>
-      <p>
-        This is why employees should not only look at the headline EPF rate, but also check whether their salary components are subject to EPF. Fixed wages are commonly included, while some irregular reimbursements or excluded payments may be treated differently depending on KWSP rules.
-      </p>
-
-      <section class="contribution-box">
-        <h2>EPF Contribution Rates 2026</h2>
-        <p>Below is a simplified quick reference for common EPF contribution rates in Malaysia for many employees below age 60. It is useful for quick salary estimation, but the actual statutory contribution should still follow the latest KWSP contribution schedule.</p>
-
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Monthly Salary Range</th>
-                <th>Employee Contribution</th>
-                <th>Employer Contribution</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>RM5,000 and below</td>
-                <td>11%</td>
-                <td>13%</td>
-              </tr>
-              <tr>
-                <td>Above RM5,000</td>
-                <td>11%</td>
-                <td>12%</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="note-box">
-          <strong>Note:</strong> EPF rates may differ depending on age, citizenship status and specific employee categories. The table above is designed as a practical salary guide. For payroll submission or compliance decisions, always refer to the latest official KWSP contribution rules.
-        </div>
-      </section>
-
-      <h2>How EPF Contributions Are Calculated</h2>
-      <p>
-        EPF contribution is usually calculated based on the employee's monthly wages that are subject to EPF. For most employees, the employee portion is deducted from gross salary, while the employer contributes an additional amount on top of the employee's salary.
-      </p>
-      <p>
-        From an employee's point of view, EPF reduces monthly take-home pay because the employee contribution is deducted before salary is paid out. From a total compensation point of view, EPF is valuable because the employer contribution is an extra retirement saving amount that the employee receives indirectly.
-      </p>
-
-      <div class="formula-box">
-        <strong>Employee EPF = Monthly Salary × Employee Rate</strong>
-        <span>Example: RM5,000 × 11% = RM550 employee EPF contribution</span>
-      </div>
-
-      <div class="formula-box">
-        <strong>Employer EPF = Monthly Salary × Employer Rate</strong>
-        <span>Example: RM5,000 × 13% = RM650 employer EPF contribution</span>
-      </div>
-
-      <section class="guide-box">
-        <h2>EPF Calculation Examples by Salary Level</h2>
-        <p>
-          The examples below show how EPF can affect different salary levels. The employee rate is shown as 11%. Employer contribution is shown as 13% for salary of RM5,000 and below, and 12% for salary above RM5,000.
-        </p>
-
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Monthly Salary</th>
-                <th>Employee EPF</th>
-                <th>Employer EPF</th>
-                <th>Total Monthly EPF</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>RM3,000</td>
-                <td>RM330</td>
-                <td>RM390</td>
-                <td>RM720</td>
-              </tr>
-              <tr>
-                <td>RM5,000</td>
-                <td>RM550</td>
-                <td>RM650</td>
-                <td>RM1,200</td>
-              </tr>
-              <tr>
-                <td>RM8,000</td>
-                <td>RM880</td>
-                <td>RM960</td>
-                <td>RM1,840</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="note-box">
-          These examples are simplified to help employees understand the relationship between salary and EPF. Actual payroll calculations may vary if certain salary components are not subject to EPF or if a different contribution rate applies.
-        </div>
-      </section>
-
-      <h2>EPF Account Structure</h2>
-      <p>
-        EPF savings are divided into accounts with different purposes. The exact account names, percentages and withdrawal rules may change based on KWSP policy updates, but the general idea is to separate long-term retirement savings from savings that may be used for approved needs.
-      </p>
-      <p>
-        For employees, this matters because not every ringgit in EPF is equally flexible. Some savings are meant mainly for retirement and are more restricted, while some portions may be available for specific purposes such as housing, education, medical needs or approved flexible withdrawals.
-      </p>
-
-      <div class="component-grid">
-        <div class="component-card">
-          <div class="component-icon">🏦</div>
-          <h3>Retirement Savings</h3>
-          <p>Main savings for long-term retirement planning.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">🏠</div>
-          <h3>Housing Support</h3>
-          <p>May support approved housing-related withdrawals.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">🎓</div>
-          <h3>Education</h3>
-          <p>May support approved education-related withdrawals.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">💳</div>
-          <h3>Flexible Needs</h3>
-          <p>Some savings may be available for approved flexible usage.</p>
-        </div>
-      </div>
-
-
-      <h2>EPF Dividends and Long-Term Retirement Growth</h2>
-      <p>
-        EPF is not just a monthly deduction from salary. The money contributed into EPF is invested by KWSP and may receive annual dividends. Over time, these dividends can help members grow their retirement savings through compounding.
-      </p>
-      <p>
-        For example, a fresh graduate who contributes consistently for many years may see EPF become one of the largest parts of their personal retirement fund. The combination of employee contributions, employer contributions and annual dividends can create meaningful long-term savings.
-      </p>
-      <p>
-        However, EPF dividends are not the same as a fixed bank interest rate. Dividend rates can change from year to year depending on KWSP's investment performance and official dividend declaration.
-      </p>
-
-      <section class="guide-box">
-        <h2>EPF Tax Relief in Malaysia</h2>
-        <p>
-          Employee EPF contributions may qualify for personal income tax relief, subject to the applicable LHDN limit and rules for the relevant year of assessment. This means EPF can help employees save for retirement and may also reduce chargeable income when filing income tax.
-        </p>
-        <p>
-          Tax relief does not mean the government refunds your full EPF contribution. It means eligible EPF contributions can reduce the amount of income that is taxed, which may lower annual tax payable depending on your income level and other tax relief claims.
-        </p>
-        <div class="note-box">
-          For tax filing, employees should check their EA Form, EPF statement and the latest LHDN tax relief rules before claiming.
-        </div>
-      </section>
-
-      <section class="guide-box">
-        <h2>EPF vs SOCSO vs EIS</h2>
-        <p>
-          EPF, SOCSO and EIS are often shown together in salary calculators because all three affect payroll, but they serve different purposes.
-        </p>
-
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Scheme</th>
-                <th>Main Purpose</th>
-                <th>How It Affects Salary</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>EPF / KWSP</td>
-                <td>Retirement savings</td>
-                <td>Employee deduction plus employer contribution</td>
-              </tr>
-              <tr>
-                <td>SOCSO / PERKESO</td>
-                <td>Social security protection</td>
-                <td>Small employee deduction and employer contribution</td>
-              </tr>
-              <tr>
-                <td>EIS</td>
-                <td>Employment insurance for job loss support</td>
-                <td>Small employee deduction and employer contribution</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <h2>Advantages of EPF</h2>
-      <p>
-        EPF is useful because it forces disciplined retirement saving. Many employees may find it difficult to save consistently on their own, but EPF contributions happen automatically through payroll every month.
-      </p>
-
-      <div class="component-grid">
-        <div class="component-card">
-          <div class="component-icon">🤝</div>
-          <h3>Employer Top-Up</h3>
-          <p>Your employer contributes an additional amount, increasing your overall employment benefit.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">📈</div>
-          <h3>Compounding</h3>
-          <p>Contributions and dividends can grow over time when kept for the long term.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">🧾</div>
-          <h3>Tax Relief</h3>
-          <p>Eligible employee EPF contributions may help reduce chargeable income.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">🛡️</div>
-          <h3>Retirement Discipline</h3>
-          <p>Restricted access can protect retirement savings from being spent too early.</p>
-        </div>
-      </div>
-
-      <h2>Limitations of EPF</h2>
-      <p>
-        EPF also has limitations. The employee contribution lowers monthly take-home pay, and savings are not fully flexible because EPF is mainly designed for retirement. Employees who need cash flow today may feel the deduction more strongly, especially at lower salary levels.
-      </p>
-      <p>
-        Another limitation is that EPF dividends are not guaranteed at a fixed rate. Although EPF has historically been an important savings vehicle for many Malaysians, future returns can still vary. Employees should treat EPF as one part of retirement planning, not the only source of future financial security.
-      </p>
-
-      <h2>Common EPF Withdrawal Options</h2>
-      <p>
-        EPF members may be allowed to withdraw savings under specific situations. Common examples include age-based withdrawals, housing withdrawals, education withdrawals and medical-related withdrawals. Each withdrawal type normally has its own eligibility conditions, documentation requirements and available balance rules.
-      </p>
-      <p>
-        Employees should be careful not to treat EPF as a normal bank account. Withdrawals can be useful for major life needs, but taking out retirement savings too early may reduce the amount available later in life.
-      </p>
-
-      <section class="guide-box">
-        <div class="component-grid">
-          <div class="component-card">
-            <h3>Age 50 / 55 Withdrawal</h3>
-            <p>Withdraw eligible savings when reaching qualifying retirement ages.</p>
-          </div>
-          <div class="component-card">
-            <h3>Housing Withdrawal</h3>
-            <p>Use eligible EPF savings for approved home purchase or housing needs.</p>
-          </div>
-          <div class="component-card">
-            <h3>Education Withdrawal</h3>
-            <p>Support approved education expenses for members or eligible family members.</p>
-          </div>
-          <div class="component-card">
-            <h3>Medical Withdrawal</h3>
-            <p>Withdraw for approved medical expenses, subject to KWSP conditions.</p>
-          </div>
-        </div>
-      </section>
-
-      <h2>How EPF Affects Take-Home Pay</h2>
-      <p>
-        EPF affects take-home pay because the employee contribution is deducted before salary is paid to the employee. For example, if your gross monthly salary is RM5,000 and your employee EPF is RM550, your salary after EPF deduction will be lower before considering SOCSO, EIS and PCB.
-      </p>
-      <p>
-        However, employees should not look only at net salary. Employer EPF contribution is part of the wider value of a job package. A job with a similar gross salary but stronger statutory compliance and proper employer EPF contribution can be more valuable in the long run.
-      </p>
-
-      <div class="component-grid">
-        <div class="component-card">
-          <div class="component-icon">📈</div>
-          <h3>Long-Term Savings</h3>
-          <p>Contributions accumulate over time for retirement planning.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">🤝</div>
-          <h3>Employer Contribution</h3>
-          <p>Your employer contributes additional savings on top of your salary.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">💰</div>
-          <h3>Annual Dividends</h3>
-          <p>EPF savings may earn annual dividends declared by KWSP.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">🛡️</div>
-          <h3>Retirement Protection</h3>
-          <p>Helps employees prepare for retirement and future financial needs.</p>
-        </div>
-      </div>
-
-      <section class="guide-box">
-        <h2>Who Should Read This Guide?</h2>
-        <ul>
-          <li>Employees checking why EPF is deducted from monthly salary</li>
-          <li>Job seekers comparing gross salary, net salary and employer EPF contribution</li>
-          <li>HR and payroll professionals who need a simple explanation for employees</li>
-          <li>Business owners who want to understand basic EPF contribution obligations</li>
-          <li>Fresh graduates learning how salary deductions work in Malaysia</li>
-        </ul>
-      </section>
-
-      <section class="guide-box">
-        <h2>Official References</h2>
-        <p>
-          EPF rules and contribution rates can change. This guide is written as a practical explanation for salary planning and payroll understanding. For official contribution schedules, employer obligations and withdrawal conditions, users should always refer to KWSP / EPF and relevant Malaysian government sources.
-        </p>
-        <div class="source-note">
-          Suggested official reference: <a href="https://www.kwsp.gov.my/" target="_blank" rel="noopener">KWSP Official Website</a>
-        </div>
-      </section>
-
-      <h2>Frequently Asked Questions</h2>
-
-      <div class="faq-box">
-        <details class="faq-item" open>
-          <summary>Is EPF contribution mandatory for employees in Malaysia?</summary>
-          <p>EPF contribution is generally mandatory for employees in Malaysia who are covered under KWSP rules. Both the employee and employer are required to contribute based on the employee’s monthly wages.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>How much EPF does an employee contribute every month?</summary>
-          <p>The standard employee EPF contribution rate is commonly 11% of monthly wages. However, the actual rate may differ depending on age, citizenship status and any latest KWSP contribution rules.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>How much EPF does an employer contribute?</summary>
-          <p>For many employees, the employer contribution is usually 13% for monthly wages of RM5,000 and below, and 12% for monthly wages above RM5,000. Different rules may apply for certain employee categories.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is EPF calculated on basic salary or gross salary?</summary>
-          <p>EPF is generally calculated based on wages that are subject to EPF contribution. In practice, this may include basic salary and certain fixed payments, while some payments may be excluded depending on KWSP rules.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can employees contribute more than 11% to EPF?</summary>
-          <p>Yes. Employees may choose to contribute more than the standard employee rate by applying through the proper KWSP process. This can increase retirement savings but will reduce monthly take-home pay.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What happens if an employer does not pay EPF contributions?</summary>
-          <p>Employers are responsible for deducting and remitting EPF contributions on time. Failure to pay EPF may lead to penalties, enforcement action and outstanding contribution claims by KWSP.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can EPF reduce taxable income in Malaysia?</summary>
-          <p>Employee EPF contributions may qualify for personal tax relief, subject to the applicable annual limit and LHDN rules. This can help reduce chargeable income when filing income tax.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Does employer EPF count as part of my salary?</summary>
-          <p>Employer EPF is not usually paid to you as monthly cash salary. It is an additional employer contribution into your EPF account, so it increases your retirement savings rather than your immediate take-home pay.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Why is my EPF amount different from an online calculator?</summary>
-          <p>Your actual EPF may differ because of age category, citizenship status, salary components, payroll rounding, contribution schedule rules or special employee arrangements. Online calculators are useful estimates, but payroll should follow official KWSP rules.</p>
-        </details>
-      </div>
-
-      <section class="salary-guides-box">
-        <h2>📚 Related Salary Guides</h2>
-        <p>Learn more about salary deductions, tax and payroll rules in Malaysia.</p>
-
-        <div class="guide-mini-grid">
-          <a href="socso-guide.html">🛡️ SOCSO Guide</a>
-          <a href="eis-guide.html">📋 EIS Guide</a>
-          <a href="pcb-guide.html">🏛️ PCB Guide</a>
-          <a href="tax-relief-guide.html">💸 Tax Relief Guide</a>
-        </div>
-
-        <p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p>
-      </section>
-
-      <section class="salary-guides-box">
-        <h2>🧮 Related Calculators</h2>
-        <p>Use these calculators to estimate EPF contributions, salary deductions and monthly take-home pay in Malaysia.</p>
-
-        <div class="guide-mini-grid">
-          <a href="epf-calculator.html">EPF Calculator</a>
-          <a href="index.html">Salary Calculator</a>
-          <a href="pcb-calculator.html">PCB Calculator</a>
-          <a href="income-tax-calculator.html">Income Tax Calculator</a>
-        </div>
-
-        <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
-      </section>
-
-    </div>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="guides.html" class="active">Guides</a>
+      <a href="about.html">About</a>
+    </nav>
   </div>
+</header>
 
-  <hr style="margin-top:40px;">
+<main class="main-wrapper">
 
-  <div style="text-align:center;padding:20px;">
-    <p>© 2026 Malaysia Salary Tools</p>
+  <section class="hero">
+    <span class="pill">Updated for Malaysia 2026 payroll estimates</span>
+    <h1 class="serif">Malaysia <em>EPF contribution</em> guide 2026</h1>
     <p>
-      <a href="about.html">About Us</a> |
-      <a href="contact.html">Contact Us</a> |
-      <a href="guides.html">Guides</a> |
-      <a href="privacy-policy.html">Privacy Policy</a>
+      Learn how EPF contributions work in Malaysia, including employee and employer rates,
+      KWSP eligibility, salary examples, tax relief, withdrawals and how EPF affects your take-home pay.
     </p>
-  </div>
+  </section>
+
+  <section class="seo">
+
+    <section class="calculator-cta">
+      <h2>Calculate Your EPF Contribution</h2>
+      <p>
+        Want to know how much EPF you and your employer contribute each month?
+        Use our free EPF Calculator to estimate employee and employer contributions instantly.
+      </p>
+      <a href="epf-calculator.html" class="cta-button">Calculate My EPF →</a>
+    </section>
+
+    <section class="intro-box">
+      <h2>EPF Quick Summary</h2>
+      <p>
+        EPF, also known as KWSP, is Malaysia's main retirement savings scheme for employees.
+        For most private sector employees, both the employee and employer contribute every month based on wages that are subject to EPF contribution.
+      </p>
+
+      <div class="summary-grid">
+        <div class="summary-card">
+          <strong>11%</strong>
+          <span>Common employee contribution rate</span>
+        </div>
+        <div class="summary-card">
+          <strong>12% - 13%</strong>
+          <span>Common employer contribution rate</span>
+        </div>
+        <div class="summary-card">
+          <strong>KWSP</strong>
+          <span>EPF is managed by KWSP</span>
+        </div>
+        <div class="summary-card">
+          <strong>Retirement</strong>
+          <span>Main purpose of EPF savings</span>
+        </div>
+      </div>
+    </section>
+
+    <h2>What Is EPF?</h2>
+    <p>
+      The Employees Provident Fund (EPF), commonly known as KWSP, is a retirement savings scheme in Malaysia. It helps employees build long-term savings by requiring monthly contributions from both employees and employers.
+    </p>
+    <p>
+      EPF savings are mainly intended for retirement, but members may also be allowed to withdraw for approved purposes such as housing, education, medical needs and specific age-based withdrawals.
+    </p>
+
+    <h2>Who Needs to Contribute EPF?</h2>
+    <p>
+      EPF contributions generally apply to employees in Malaysia who work under a contract of service and receive wages from an employer. In a normal payroll arrangement, the employee contribution is deducted from monthly salary and the employer contribution is paid by the employer on top of the employee's wages.
+    </p>
+    <p>
+      For many Malaysian private sector employees, EPF contribution is a standard monthly payroll deduction. However, contribution rules may differ for certain groups such as foreign employees, domestic workers, self-employed individuals, pensionable public servants or employees above certain age categories.
+    </p>
+    <p>
+      This is why employees should not only look at the headline EPF rate, but also check whether their salary components are subject to EPF. Fixed wages are commonly included, while some irregular reimbursements or excluded payments may be treated differently depending on KWSP rules.
+    </p>
+
+    <section class="contribution-box">
+      <h2>EPF Contribution Rates 2026</h2>
+      <p>
+        Below is a simplified quick reference for common EPF contribution rates in Malaysia for many employees below age 60. It is useful for quick salary estimation, but the actual statutory contribution should still follow the latest KWSP contribution schedule.
+      </p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead>
+            <tr>
+              <th>Monthly Salary Range</th>
+              <th>Employee Contribution</th>
+              <th>Employer Contribution</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>RM5,000 and below</td>
+              <td>11%</td>
+              <td>13%</td>
+            </tr>
+            <tr>
+              <td>Above RM5,000</td>
+              <td>11%</td>
+              <td>12%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box">
+        <strong>Note:</strong> EPF rates may differ depending on age, citizenship status and specific employee categories. The table above is designed as a practical salary guide. For payroll submission or compliance decisions, always refer to the latest official KWSP contribution rules.
+      </div>
+    </section>
+
+    <h2>How EPF Contributions Are Calculated</h2>
+    <p>
+      EPF contribution is usually calculated based on the employee's monthly wages that are subject to EPF. For most employees, the employee portion is deducted from gross salary, while the employer contributes an additional amount on top of the employee's salary.
+    </p>
+    <p>
+      From an employee's point of view, EPF reduces monthly take-home pay because the employee contribution is deducted before salary is paid out. From a total compensation point of view, EPF is valuable because the employer contribution is an extra retirement saving amount that the employee receives indirectly.
+    </p>
+
+    <div class="formula-box">
+      <strong>Employee EPF = Monthly Salary × Employee Rate</strong>
+      <span>Example: RM5,000 × 11% = RM550 employee EPF contribution</span>
+    </div>
+
+    <div class="formula-box">
+      <strong>Employer EPF = Monthly Salary × Employer Rate</strong>
+      <span>Example: RM5,000 × 13% = RM650 employer EPF contribution</span>
+    </div>
+
+    <section class="guide-box">
+      <h2>EPF Calculation Examples by Salary Level</h2>
+      <p>
+        The examples below show how EPF can affect different salary levels. The employee rate is shown as 11%. Employer contribution is shown as 13% for salary of RM5,000 and below, and 12% for salary above RM5,000.
+      </p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead>
+            <tr>
+              <th>Monthly Salary</th>
+              <th>Employee EPF</th>
+              <th>Employer EPF</th>
+              <th>Total Monthly EPF</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>RM3,000</td>
+              <td>RM330</td>
+              <td>RM390</td>
+              <td>RM720</td>
+            </tr>
+            <tr>
+              <td>RM5,000</td>
+              <td>RM550</td>
+              <td>RM650</td>
+              <td>RM1,200</td>
+            </tr>
+            <tr>
+              <td>RM8,000</td>
+              <td>RM880</td>
+              <td>RM960</td>
+              <td>RM1,840</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box">
+        These examples are simplified to help employees understand the relationship between salary and EPF. Actual payroll calculations may vary if certain salary components are not subject to EPF or if a different contribution rate applies.
+      </div>
+    </section>
+
+    <h2>EPF Account Structure</h2>
+    <p>
+      EPF savings are divided into accounts with different purposes. The exact account names, percentages and withdrawal rules may change based on KWSP policy updates, but the general idea is to separate long-term retirement savings from savings that may be used for approved needs.
+    </p>
+    <p>
+      For employees, this matters because not every ringgit in EPF is equally flexible. Some savings are meant mainly for retirement and are more restricted, while some portions may be available for specific purposes such as housing, education, medical needs or approved flexible withdrawals.
+    </p>
+
+    <div class="component-grid">
+      <div class="component-card">
+        <div class="component-icon">🏦</div>
+        <h3>Retirement Savings</h3>
+        <p>Main savings for long-term retirement planning.</p>
+      </div>
+      <div class="component-card">
+        <div class="component-icon">🏠</div>
+        <h3>Housing Support</h3>
+        <p>May support approved housing-related withdrawals.</p>
+      </div>
+      <div class="component-card">
+        <div class="component-icon">🎓</div>
+        <h3>Education</h3>
+        <p>May support approved education-related withdrawals.</p>
+      </div>
+      <div class="component-card">
+        <div class="component-icon">💳</div>
+        <h3>Flexible Needs</h3>
+        <p>Some savings may be available for approved flexible usage.</p>
+      </div>
+    </div>
+
+    <h2>EPF Dividends and Long-Term Retirement Growth</h2>
+    <p>
+      EPF is not just a monthly deduction from salary. The money contributed into EPF is invested by KWSP and may receive annual dividends. Over time, these dividends can help members grow their retirement savings through compounding.
+    </p>
+    <p>
+      For example, a fresh graduate who contributes consistently for many years may see EPF become one of the largest parts of their personal retirement fund. The combination of employee contributions, employer contributions and annual dividends can create meaningful long-term savings.
+    </p>
+    <p>
+      However, EPF dividends are not the same as a fixed bank interest rate. Dividend rates can change from year to year depending on KWSP's investment performance and official dividend declaration.
+    </p>
+
+    <section class="guide-box">
+      <h2>EPF Tax Relief in Malaysia</h2>
+      <p>
+        Employee EPF contributions may qualify for personal income tax relief, subject to the applicable LHDN limit and rules for the relevant year of assessment. This means EPF can help employees save for retirement and may also reduce chargeable income when filing income tax.
+      </p>
+      <p>
+        Tax relief does not mean the government refunds your full EPF contribution. It means eligible EPF contributions can reduce the amount of income that is taxed, which may lower annual tax payable depending on your income level and other tax relief claims.
+      </p>
+      <div class="note-box">
+        For tax filing, employees should check their EA Form, EPF statement and the latest LHDN tax relief rules before claiming.
+      </div>
+    </section>
+
+    <section class="guide-box">
+      <h2>EPF vs SOCSO vs EIS</h2>
+      <p>
+        EPF, SOCSO and EIS are often shown together in salary calculators because all three affect payroll, but they serve different purposes.
+      </p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead>
+            <tr>
+              <th>Scheme</th>
+              <th>Main Purpose</th>
+              <th>How It Affects Salary</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>EPF / KWSP</td>
+              <td>Retirement savings</td>
+              <td>Employee deduction plus employer contribution</td>
+            </tr>
+            <tr>
+              <td>SOCSO / PERKESO</td>
+              <td>Social security protection</td>
+              <td>Small employee deduction and employer contribution</td>
+            </tr>
+            <tr>
+              <td>EIS</td>
+              <td>Employment insurance for job loss support</td>
+              <td>Small employee deduction and employer contribution</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <h2>Advantages of EPF</h2>
+    <p>
+      EPF is useful because it forces disciplined retirement saving. Many employees may find it difficult to save consistently on their own, but EPF contributions happen automatically through payroll every month.
+    </p>
+
+    <div class="component-grid">
+      <div class="component-card">
+        <div class="component-icon">🤝</div>
+        <h3>Employer Top-Up</h3>
+        <p>Your employer contributes an additional amount, increasing your overall employment benefit.</p>
+      </div>
+      <div class="component-card">
+        <div class="component-icon">📈</div>
+        <h3>Compounding</h3>
+        <p>Contributions and dividends can grow over time when kept for the long term.</p>
+      </div>
+      <div class="component-card">
+        <div class="component-icon">🧾</div>
+        <h3>Tax Relief</h3>
+        <p>Eligible employee EPF contributions may help reduce chargeable income.</p>
+      </div>
+      <div class="component-card">
+        <div class="component-icon">🛡️</div>
+        <h3>Retirement Discipline</h3>
+        <p>Restricted access can protect retirement savings from being spent too early.</p>
+      </div>
+    </div>
+
+    <h2>Limitations of EPF</h2>
+    <p>
+      EPF also has limitations. The employee contribution lowers monthly take-home pay, and savings are not fully flexible because EPF is mainly designed for retirement. Employees who need cash flow today may feel the deduction more strongly, especially at lower salary levels.
+    </p>
+    <p>
+      Another limitation is that EPF dividends are not guaranteed at a fixed rate. Although EPF has historically been an important savings vehicle for many Malaysians, future returns can still vary. Employees should treat EPF as one part of retirement planning, not the only source of future financial security.
+    </p>
+
+    <h2>Common EPF Withdrawal Options</h2>
+    <p>
+      EPF members may be allowed to withdraw savings under specific situations. Common examples include age-based withdrawals, housing withdrawals, education withdrawals and medical-related withdrawals. Each withdrawal type normally has its own eligibility conditions, documentation requirements and available balance rules.
+    </p>
+    <p>
+      Employees should be careful not to treat EPF as a normal bank account. Withdrawals can be useful for major life needs, but taking out retirement savings too early may reduce the amount available later in life.
+    </p>
+
+    <section class="guide-box">
+      <div class="component-grid">
+        <div class="component-card">
+          <h3>Age 50 / 55 Withdrawal</h3>
+          <p>Withdraw eligible savings when reaching qualifying retirement ages.</p>
+        </div>
+        <div class="component-card">
+          <h3>Housing Withdrawal</h3>
+          <p>Use eligible EPF savings for approved home purchase or housing needs.</p>
+        </div>
+        <div class="component-card">
+          <h3>Education Withdrawal</h3>
+          <p>Support approved education expenses for members or eligible family members.</p>
+        </div>
+        <div class="component-card">
+          <h3>Medical Withdrawal</h3>
+          <p>Withdraw for approved medical expenses, subject to KWSP conditions.</p>
+        </div>
+      </div>
+    </section>
+
+    <h2>How EPF Affects Take-Home Pay</h2>
+    <p>
+      EPF affects take-home pay because the employee contribution is deducted before salary is paid to the employee. For example, if your gross monthly salary is RM5,000 and your employee EPF is RM550, your salary after EPF deduction will be lower before considering SOCSO, EIS and PCB.
+    </p>
+    <p>
+      However, employees should not look only at net salary. Employer EPF contribution is part of the wider value of a job package. A job with a similar gross salary but stronger statutory compliance and proper employer EPF contribution can be more valuable in the long run.
+    </p>
+
+    <div class="component-grid">
+      <div class="component-card">
+        <div class="component-icon">📈</div>
+        <h3>Long-Term Savings</h3>
+        <p>Contributions accumulate over time for retirement planning.</p>
+      </div>
+      <div class="component-card">
+        <div class="component-icon">🤝</div>
+        <h3>Employer Contribution</h3>
+        <p>Your employer contributes additional savings on top of your salary.</p>
+      </div>
+      <div class="component-card">
+        <div class="component-icon">💰</div>
+        <h3>Annual Dividends</h3>
+        <p>EPF savings may earn annual dividends declared by KWSP.</p>
+      </div>
+      <div class="component-card">
+        <div class="component-icon">🛡️</div>
+        <h3>Retirement Protection</h3>
+        <p>Helps employees prepare for retirement and future financial needs.</p>
+      </div>
+    </div>
+
+    <section class="guide-box">
+      <h2>Who Should Read This Guide?</h2>
+      <ul>
+        <li>Employees checking why EPF is deducted from monthly salary</li>
+        <li>Job seekers comparing gross salary, net salary and employer EPF contribution</li>
+        <li>HR and payroll professionals who need a simple explanation for employees</li>
+        <li>Business owners who want to understand basic EPF contribution obligations</li>
+        <li>Fresh graduates learning how salary deductions work in Malaysia</li>
+      </ul>
+    </section>
+
+    <section class="guide-box">
+      <h2>Official References</h2>
+      <p>
+        EPF rules and contribution rates can change. This guide is written as a practical explanation for salary planning and payroll understanding. For official contribution schedules, employer obligations and withdrawal conditions, users should always refer to KWSP / EPF and relevant Malaysian government sources.
+      </p>
+      <div class="source-note">
+        Suggested official reference: <a href="https://www.kwsp.gov.my/" target="_blank" rel="noopener">KWSP Official Website</a>
+      </div>
+    </section>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-box">
+      <details class="faq-item" open>
+        <summary>Is EPF contribution mandatory for employees in Malaysia?</summary>
+        <p>EPF contribution is generally mandatory for employees in Malaysia who are covered under KWSP rules. Both the employee and employer are required to contribute based on the employee’s monthly wages.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How much EPF does an employee contribute every month?</summary>
+        <p>The standard employee EPF contribution rate is commonly 11% of monthly wages. However, the actual rate may differ depending on age, citizenship status and any latest KWSP contribution rules.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How much EPF does an employer contribute?</summary>
+        <p>For many employees, the employer contribution is usually 13% for monthly wages of RM5,000 and below, and 12% for monthly wages above RM5,000. Different rules may apply for certain employee categories.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is EPF calculated on basic salary or gross salary?</summary>
+        <p>EPF is generally calculated based on wages that are subject to EPF contribution. In practice, this may include basic salary and certain fixed payments, while some payments may be excluded depending on KWSP rules.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can employees contribute more than 11% to EPF?</summary>
+        <p>Yes. Employees may choose to contribute more than the standard employee rate by applying through the proper KWSP process. This can increase retirement savings but will reduce monthly take-home pay.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What happens if an employer does not pay EPF contributions?</summary>
+        <p>Employers are responsible for deducting and remitting EPF contributions on time. Failure to pay EPF may lead to penalties, enforcement action and outstanding contribution claims by KWSP.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can EPF reduce taxable income in Malaysia?</summary>
+        <p>Employee EPF contributions may qualify for personal tax relief, subject to the applicable annual limit and LHDN rules. This can help reduce chargeable income when filing income tax.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does employer EPF count as part of my salary?</summary>
+        <p>Employer EPF is not usually paid to you as monthly cash salary. It is an additional employer contribution into your EPF account, so it increases your retirement savings rather than your immediate take-home pay.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Why is my EPF amount different from an online calculator?</summary>
+        <p>Your actual EPF may differ because of age category, citizenship status, salary components, payroll rounding, contribution schedule rules or special employee arrangements. Online calculators are useful estimates, but payroll should follow official KWSP rules.</p>
+      </details>
+    </div>
+
+    <section class="salary-guides-box">
+      <h2>Related Salary Guides</h2>
+      <p>Learn more about salary deductions, tax and payroll rules in Malaysia.</p>
+
+      <div class="guide-mini-grid">
+        <a href="socso-guide.html">SOCSO Guide</a>
+        <a href="eis-guide.html">EIS Guide</a>
+        <a href="pcb-guide.html">PCB Guide</a>
+        <a href="tax-relief-guide.html">Tax Relief Guide</a>
+      </div>
+
+      <p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p>
+    </section>
+
+    <section class="salary-guides-box">
+      <h2>Related Calculators</h2>
+      <p>Use these calculators to estimate EPF contributions, salary deductions and monthly take-home pay in Malaysia.</p>
+
+      <div class="guide-mini-grid">
+        <a href="epf-calculator.html">EPF Calculator</a>
+        <a href="index.html">Salary Calculator</a>
+        <a href="pcb-calculator.html">PCB Calculator</a>
+        <a href="income-tax-calculator.html">Income Tax Calculator</a>
+      </div>
+
+      <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
+    </section>
+
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 Malaysia Salary Tools</p>
+  <p>
+    <a href="about.html">About Us</a> |
+    <a href="contact.html">Contact Us</a> |
+    <a href="guides.html">Guides</a> |
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </p>
+</footer>
 
 </body>
 </html>
+
