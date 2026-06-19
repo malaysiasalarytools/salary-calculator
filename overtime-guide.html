@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <title>Malaysia Overtime Guide 2026 | Overtime Rate, Calculation & Employment Rules</title>
+
   <link rel="canonical" href="https://malaysiasalarytools.com/overtime-guide.html">
   <link rel="icon" type="image/png" href="favicon.png">
+
   <meta name="description" content="Malaysia Overtime Guide 2026. Learn overtime rates, overtime pay calculation, ordinary day, rest day, public holiday overtime and payroll examples.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
@@ -14,25 +17,60 @@
   crossorigin="anonymous"></script>
 
   <style>
+    :root {
+      --background: #f4f1ea;
+      --card: #fbfaf6;
+      --foreground: #302c26;
+      --muted: #7c766c;
+      --primary: #2f2b25;
+      --primary-foreground: #f6f3ec;
+      --accent: #2f7d5e;
+      --accent-soft: rgba(47,125,94,.10);
+      --accent-border: rgba(47,125,94,.22);
+      --border: #e2ddd2;
+      --white: #ffffff;
+      --radius: 18px;
+      --shadow: 0 18px 45px rgba(47,43,37,.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47,125,94,.08), transparent 34%),
+        linear-gradient(135deg, #f4f1ea, #efe9de);
       margin: 0;
       padding: 0;
-      color: #111827;
+      color: var(--foreground);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .serif {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
     }
 
     .top-nav {
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
+      background: rgba(251,250,246,.84);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      backdrop-filter: blur(10px);
     }
 
     .nav-inner {
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 14px 20px;
       display: flex;
@@ -46,13 +84,10 @@
       align-items: center;
       text-decoration: none;
       flex-shrink: 0;
-      font-weight: bold;
-      color: #2563eb;
-      font-size: 22px;
     }
 
     .brand img {
-      width: 180px;
+      width: 220px;
       height: auto;
       display: block;
     }
@@ -61,138 +96,178 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      overflow-x: auto;
       flex-wrap: nowrap;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
+      min-width: 0;
     }
 
-    .nav-links::-webkit-scrollbar { display: none; }
-
     .nav-links a {
+      display: block;
       text-decoration: none;
-      color: #4b5563;
+      color: var(--muted);
       font-weight: 600;
       font-size: 15px;
       padding: 10px 14px;
-      border-radius: 8px;
+      border-radius: 999px;
       white-space: nowrap;
-      flex-shrink: 0;
+      background: transparent;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      background: #2563eb;
-      color: white;
+      background: var(--primary);
+      color: var(--primary-foreground);
     }
 
     .main-wrapper {
-      padding: 30px 20px;
+      padding: 46px 20px 54px;
     }
 
     .hero {
       text-align: center;
-      max-width: 900px;
-      margin: 35px auto 20px;
+      max-width: 940px;
+      margin: 0 auto 32px;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      padding: 7px 15px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      font-weight: 700;
     }
 
     .hero h1 {
-      font-size: 32px;
-      color: #2563eb;
-      margin-bottom: 10px;
+      margin: 0;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      color: var(--foreground);
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-style: italic;
     }
 
     .hero p {
+      max-width: 820px;
+      margin: 18px auto 0;
       font-size: 17px;
-      color: #64748b;
-      margin-top: 0;
-      line-height: 1.6;
+      color: var(--muted);
     }
 
     .seo {
-      background: white;
-      max-width: 900px;
+      background: var(--card);
+      max-width: 1120px;
       margin: 30px auto;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      line-height: 1.7;
+      padding: 34px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
-    h1 { font-size: 26px; }
-    h2 { font-size: 20px; margin-top: 25px; }
-    h3 { font-size: 16px; margin-top: 18px; }
+    h2 {
+      font-size: clamp(25px, 4vw, 36px);
+      line-height: 1.15;
+      margin: 34px 0 14px;
+      color: var(--foreground);
+      letter-spacing: -.01em;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    h2:first-child { margin-top: 0; }
+
+    h3 {
+      font-size: 18px;
+      margin: 18px 0 10px;
+      color: var(--foreground);
+    }
+
+    p, li { color: var(--muted); }
 
     .calculator-cta,
     .summary-box,
     .guide-box,
     .example-box,
-    .salary-guides-box {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
+    .salary-guides-box,
+    .formula-box {
+      background: #f8f5ef;
+      border: 1px solid var(--border);
       border-radius: 16px;
       padding: 24px;
-      margin: 25px 0;
+      margin: 26px 0;
     }
 
-    .calculator-cta {
-      text-align: center;
-    }
+    .calculator-cta { text-align: center; }
 
-    .calculator-cta h2,
-    .summary-box h2,
-    .guide-box h2,
-    .example-box h2,
-    .salary-guides-box h2 {
-      margin-top: 0;
-    }
+    .calculator-cta h2 { margin-top: 0; }
 
     .calculator-cta p {
-      color: #4b5563;
-      max-width: 700px;
+      max-width: 720px;
       margin-left: auto;
       margin-right: auto;
     }
 
     .cta-button {
       display: inline-block;
-      background: #2563eb;
-      color: white;
+      background: var(--accent);
+      color: #fff;
       text-decoration: none;
-      padding: 12px 24px;
-      border-radius: 10px;
-      font-weight: bold;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 800;
       margin-top: 8px;
     }
 
-    .cta-button:hover {
-      background: #1d4ed8;
-    }
+    .cta-button:hover { filter: brightness(.95); }
 
     .summary-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 12px;
-      margin-top: 18px;
+      margin-top: 20px;
     }
 
     .summary-card {
-      background: white;
-      border: 1px solid #dbe3ef;
-      border-radius: 12px;
-      padding: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
     }
 
     .summary-card strong {
       display: block;
-      color: #2563eb;
-      font-size: 20px;
+      color: var(--accent);
+      font-size: 22px;
       margin-bottom: 6px;
+      font-family: Georgia, "Times New Roman", serif;
     }
 
     .summary-card span {
-      color: #64748b;
+      color: var(--muted);
       font-size: 14px;
+      font-weight: 600;
+    }
+
+    .formula-box { text-align: center; }
+
+    .formula-box strong {
+      display: block;
+      font-size: 22px;
+      color: var(--foreground);
+      margin-bottom: 8px;
+    }
+
+    .formula-box span {
+      color: var(--muted);
+      font-size: 15px;
     }
 
     .contribution-table-wrap {
@@ -202,28 +277,29 @@
     .contribution-table {
       width: 100%;
       border-collapse: collapse;
-      background: white;
-      border: 1px solid #dbe3ef;
+      background: var(--card);
+      border: 1px solid var(--border);
       border-radius: 12px;
       overflow: hidden;
       min-width: 520px;
     }
 
     .contribution-table th {
-      background: #f8fafc;
-      color: #64748b;
+      background: #f1ece3;
+      color: var(--muted);
       font-size: 13px;
       text-align: left;
-      letter-spacing: 0.4px;
+      letter-spacing: .03em;
       padding: 14px;
-      border-bottom: 1px solid #dbe3ef;
+      border-bottom: 1px solid var(--border);
     }
 
     .contribution-table td {
       padding: 14px;
-      border-bottom: 1px solid #eef2f7;
-      color: #334155;
+      border-bottom: 1px solid var(--border);
+      color: var(--foreground);
       font-size: 14px;
+      vertical-align: top;
     }
 
     .contribution-table tr:last-child td {
@@ -231,558 +307,624 @@
     }
 
     .note-box {
+      margin-top: 18px;
+      background: var(--card);
+      border-left: 4px solid var(--accent);
+      padding: 14px;
+      border-radius: 10px;
+      color: var(--muted);
+    }
+
+    .component-grid,
+    .guide-mini-grid {
+      display: grid;
+      gap: 14px;
       margin-top: 20px;
-      background: white;
-      border-left: 4px solid #2563eb;
-      padding: 12px;
-      border-radius: 8px;
-      color: #4b5563;
-    }
-
-    .formula-box {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 14px;
-      padding: 25px;
-      text-align: center;
-      margin: 25px 0;
-    }
-
-    .formula-box strong {
-      display: block;
-      font-size: 22px;
-      color: #111827;
-      margin-bottom: 8px;
-    }
-
-    .formula-box span {
-      color: #64748b;
-      font-size: 15px;
     }
 
     .component-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .guide-mini-grid {
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    }
+
+    .component-card,
+    .guide-mini-grid a,
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
     }
 
     .component-card {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      padding: 18px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-      text-decoration: none;
-      color: inherit;
+      padding: 20px;
+      transition: .18s ease;
+    }
+
+    .component-card:hover,
+    .guide-mini-grid a:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 30px rgba(47,43,37,.08);
     }
 
     .component-icon {
-      font-size: 28px;
-      margin-bottom: 8px;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      display: grid;
+      place-items: center;
+      margin-bottom: 10px;
+      font-size: 21px;
     }
 
     .component-card h3 {
-      margin: 8px 0;
+      margin: 8px 0 4px;
     }
 
     .component-card p {
-      color: #4b5563;
+      margin: 0;
       font-size: 14px;
       line-height: 1.5;
-      margin-bottom: 0;
     }
 
     .faq-box {
-      margin-top: 25px;
+      margin-top: 18px;
+      max-width: 850px;
     }
 
     .faq-item {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 10px;
-      padding: 14px;
+      padding: 4px 20px;
       margin-bottom: 12px;
     }
 
     .faq-item summary {
-      font-weight: bold;
+      font-weight: 800;
       cursor: pointer;
       list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--foreground);
+      padding: 16px 0;
     }
 
-    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
 
     .faq-item summary::after {
-      content: "▼";
-      float: right;
-      font-size: 12px;
+      content: "+";
+      color: var(--accent);
+      font-size: 20px;
+      line-height: 1;
     }
 
-    .faq-item[open] summary::after { content: "▲"; }
+    .faq-item[open] summary::after {
+      content: "−";
+    }
 
     .faq-item p {
-      margin-top: 12px;
-      margin-bottom: 0;
-      color: #4b5563;
-      line-height: 1.5;
-    }
-
-    .guide-mini-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 12px;
-      margin-top: 18px;
+      padding-bottom: 18px;
+      margin: 0;
+      line-height: 1.55;
+      font-size: 14px;
     }
 
     .guide-mini-grid a {
-      background: white;
-      border: 1px solid #e5e7eb;
-      padding: 12px 14px;
-      border-radius: 10px;
+      display: block;
+      padding: 14px 16px;
       text-decoration: none;
-      color: #2563eb;
-      font-weight: bold;
+      color: var(--foreground);
+      font-weight: 800;
       text-align: center;
+      transition: .18s ease;
     }
 
     .guide-mini-grid a:hover {
-      background: #2563eb;
-      color: white;
+      color: var(--accent);
+      background: var(--white);
     }
 
     .view-all-guides {
       text-align: center;
-      margin-top: 20px;
+      margin: 20px 0 0;
     }
 
     .view-all-guides a {
-      color: #2563eb;
-      font-weight: bold;
+      color: var(--accent);
+      font-weight: 800;
       text-decoration: none;
     }
 
     .footer {
-      text-align:center;
-      padding:20px;
+      border-top: 1px solid var(--border);
+      padding: 28px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
     }
 
-    @media (max-width: 700px){
-      .main-wrapper { padding: 15px 10px; }
-      .seo { margin: 15px auto; padding: 18px; }
-      .nav-inner { padding: 8px 10px; gap: 8px; }
-      .brand img { width: 120px; }
-      .brand { font-size: 18px; }
+    .footer a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer a:hover { color: var(--accent); }
+
+    @media (max-width: 800px) {
+      .nav-inner {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .nav-links {
+        width: auto;
+        flex: 1;
+        min-width: 0;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+      }
+
+      .nav-links::-webkit-scrollbar { display: none; }
+    }
+
+    @media (max-width: 700px) {
+      .main-wrapper { padding: 34px 10px 40px; }
+      .seo { padding: 22px; }
+
+      .nav-inner {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        gap: 8px;
+      }
+
+      .brand img { width: 150px; }
       .nav-links { gap: 6px; }
-      .nav-links a { font-size: 14px; padding: 8px 10px; }
-      .hero h1 { font-size: 26px; }
-      .component-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-      .component-card { padding: 14px; text-align: center; }
-      .component-icon { font-size: 22px; }
-      .component-card h3 { font-size: 15px; margin: 6px 0; }
-      .component-card p { font-size: 12px; line-height: 1.35; margin: 0; }
+
+      .nav-links a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+
+      .hero h1 { font-size: 36px; }
+      .hero p { font-size: 15px; }
+
+      .component-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .component-card {
+        padding: 14px;
+        text-align: center;
+      }
+
+      .component-icon {
+        margin-left: auto;
+        margin-right: auto;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+      }
+
+      .component-card h3 {
+        font-size: 15px;
+        margin: 6px 0;
+      }
+
+      .component-card p {
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .cta-button { width: 100%; }
     }
   </style>
 </head>
 
 <body>
 
-  <header class="top-nav">
-    <div class="nav-inner">
-      <a href="index.html" class="brand">
-        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
-      </a>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="calculators.html">Calculators</a>
-        <a href="guides.html" class="active">Guides</a>
-        <a href="about.html">About</a>
-      </nav>
-    </div>
-  </header>
+<header class="top-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="logo.png" alt="Malaysia Salary Tools">
+    </a>
 
-  <div class="main-wrapper">
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="guides.html" class="active">Guides</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
 
-    <div class="hero">
-      <h1>Malaysia Overtime Guide 2026</h1>
-      <p>Learn how overtime pay works in Malaysia, including overtime rates, calculation examples, rest day work, public holiday work and common payroll questions.</p>
-    </div>
+<main class="main-wrapper">
 
-    <div class="seo">
+  <section class="hero">
+    <span class="pill">Updated for Malaysia employment rules 2026</span>
+    <h1 class="serif">Malaysia <em>overtime</em> guide 2026</h1>
+    <p>
+      Learn how overtime pay works in Malaysia, including overtime rates,
+      calculation examples, rest day work, public holiday work and common payroll questions.
+    </p>
+  </section>
 
-      <section class="calculator-cta">
-        <h2>🧮 Calculate Your Overtime Pay</h2>
-        <p>
-          Want to estimate overtime pay based on your salary and overtime hours?
-          Use our free Overtime Calculator to estimate ordinary day, rest day and public holiday overtime.
-        </p>
-        <a href="overtime-calculator.html" class="cta-button">Open Overtime Calculator →</a>
-      </section>
+  <section class="seo">
 
-      <section class="summary-box">
-        <h2>📌 Overtime Quick Summary</h2>
-        <p>
-          Overtime pay is additional pay for eligible employees who work beyond normal working hours. The applicable rate depends on when the overtime is performed.
-        </p>
-
-        <div class="summary-grid">
-          <div class="summary-card">
-            <strong>1.5x</strong>
-            <span>Common rate for ordinary working day overtime</span>
-          </div>
-          <div class="summary-card">
-            <strong>2.0x</strong>
-            <span>Common rate for rest day overtime</span>
-          </div>
-          <div class="summary-card">
-            <strong>3.0x</strong>
-            <span>Common rate for public holiday overtime</span>
-          </div>
-          <div class="summary-card">
-            <strong>Hourly Rate</strong>
-            <span>Usually based on ordinary rate of pay</span>
-          </div>
-        </div>
-      </section>
-
-      <h2>What Is Overtime Pay?</h2>
+    <section class="calculator-cta">
+      <h2>Calculate Your Overtime Pay</h2>
       <p>
-        Overtime pay is extra compensation for eligible employees who work beyond their normal working hours. It is commonly calculated based on the employee's ordinary rate of pay and the applicable overtime multiplier.
+        Want to estimate overtime pay based on your salary and overtime hours?
+        Use our free Overtime Calculator to estimate ordinary day, rest day and public holiday overtime.
       </p>
+      <a href="overtime-calculator.html" class="cta-button">Open Overtime Calculator →</a>
+    </section>
+
+    <section class="summary-box">
+      <h2>Overtime Quick Summary</h2>
       <p>
-        In Malaysia, overtime rules may depend on employment coverage, salary level, working arrangement, employment contract and applicable labour law requirements.
+        Overtime pay is additional pay for eligible employees who work beyond normal working hours.
+        The applicable rate depends on when the overtime is performed.
       </p>
 
-<section class="guide-box">
-<h2>Who Is Eligible for Overtime Pay?</h2>
-
-<p>
-Not all employees are automatically entitled to overtime pay. Eligibility may depend on employment coverage, job responsibilities, salary level and applicable employment law requirements.
-</p>
-
-<p>
-Employees should review their employment contract and company policies to understand whether overtime payments apply to their position.
-</p>
-</section>
-      
-      <section class="guide-box">
-        <h2>Common Overtime Rates in Malaysia</h2>
-        <p>
-          The table below shows a simplified guide to common overtime multipliers used in Malaysia employment calculations.
-        </p>
-
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Overtime Type</th>
-                <th>Common Multiplier</th>
-                <th>Simple Explanation</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Ordinary Working Day</td>
-                <td>1.5x hourly rate</td>
-                <td>Work beyond normal hours on a normal workday</td>
-              </tr>
-              <tr>
-                <td>Rest Day</td>
-                <td>2.0x hourly rate</td>
-                <td>Work performed on a designated rest day</td>
-              </tr>
-              <tr>
-                <td>Public Holiday</td>
-                <td>3.0x hourly rate</td>
-                <td>Work performed on an applicable public holiday</td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <strong>1.5x</strong>
+          <span>Common rate for ordinary working day overtime</span>
         </div>
-
-        <div class="note-box">
-          <strong>Note:</strong> This is a simplified guide. Actual overtime entitlement may depend on employment terms, employee eligibility, company policy and latest employment law requirements.
+        <div class="summary-card">
+          <strong>2.0x</strong>
+          <span>Common rate for rest day overtime</span>
         </div>
-      </section>
-
-      <h2>How Overtime Pay Is Calculated</h2>
-      <p>
-        Overtime is usually calculated using the employee's hourly rate and the applicable overtime multiplier. The hourly rate may be based on ordinary rate of pay according to the payroll method used.
-      </p>
-
-      <div class="formula-box">
-        <strong>Overtime Pay = Hourly Rate × Overtime Hours × Multiplier</strong>
-        <span>Example: RM15 × 4 hours × 1.5 = RM90 overtime pay</span>
+        <div class="summary-card">
+          <strong>3.0x</strong>
+          <span>Common rate for public holiday overtime</span>
+        </div>
+        <div class="summary-card">
+          <strong>Hourly Rate</strong>
+          <span>Usually based on ordinary rate of pay</span>
+        </div>
       </div>
+    </section>
 
-      <section class="example-box">
-        <h2>Example Overtime Calculation</h2>
-        <p>
-          If an employee's hourly rate is RM15 and the employee works 4 overtime hours on an ordinary working day:
-        </p>
-        <ul>
-          <li>Hourly rate: RM15</li>
-          <li>Overtime hours: 4 hours</li>
-          <li>Multiplier: 1.5x</li>
-          <li>Estimated overtime pay: RM90</li>
-        </ul>
-        <p>
-          Different rates may apply for rest days, public holidays or special working arrangements.
-        </p>
-      </section>
+    <h2>What Is Overtime Pay?</h2>
+    <p>
+      Overtime pay is extra compensation for eligible employees who work beyond their normal working hours.
+      It is commonly calculated based on the employee's ordinary rate of pay and the applicable overtime multiplier.
+    </p>
+    <p>
+      In Malaysia, overtime rules may depend on employment coverage, salary level, working arrangement,
+      employment contract and applicable labour law requirements.
+    </p>
 
-      <h2>Ordinary Day, Rest Day and Public Holiday Overtime</h2>
+    <section class="guide-box">
+      <h2>Who Is Eligible for Overtime Pay?</h2>
       <p>
-        Overtime is not always paid at the same rate. Work performed after normal hours on a normal working day is usually treated differently from work performed on a rest day or public holiday.
+        Not all employees are automatically entitled to overtime pay. Eligibility may depend on employment coverage,
+        job responsibilities, salary level and applicable employment law requirements.
       </p>
       <p>
-        Employees should check their employment contract and company payroll policy to understand how different overtime situations are recorded and paid.
+        Employees should review their employment contract and company policies to understand whether overtime payments apply to their position.
+      </p>
+    </section>
+
+    <section class="guide-box">
+      <h2>Common Overtime Rates in Malaysia</h2>
+      <p>
+        The table below shows a simplified guide to common overtime multipliers used in Malaysia employment calculations.
       </p>
 
-<section class="guide-box">
-<h2>Overtime on Rest Days</h2>
-
-<p>
-Work performed on a designated rest day is commonly treated differently from ordinary working day overtime.
-</p>
-
-<p>
-Different overtime multipliers and payment rules may apply depending on the number of hours worked and the employee's employment arrangement.
-</p>
-</section>
-
-<section class="guide-box">
-<h2>Overtime on Public Holidays</h2>
-
-<p>
-Employees who work on public holidays may be entitled to higher overtime rates compared to ordinary working days.
-</p>
-
-<p>
-Actual calculations may depend on company policy, employment terms and applicable employment law requirements.
-</p>
-</section>
-
-<section class="guide-box">
-<h2>How Overtime Is Usually Approved</h2>
-
-<p>
-Many employers require overtime to be approved before payment is processed.
-</p>
-
-<ul>
-<li>Employee works overtime</li>
-<li>Manager reviews and approves hours</li>
-<li>HR verifies records</li>
-<li>Payroll calculates overtime pay</li>
-<li>Payment is included in salary</li>
-</ul>
-
-</section>
-
-<section class="guide-box">
-<h2>Overtime Pay vs Replacement Leave</h2>
-
-<p>
-Some employers may offer replacement leave instead of overtime pay for certain situations.
-</p>
-
-<p>
-Replacement leave allows employees to take time off in exchange for additional hours worked, subject to company policy and approval requirements.
-</p>
-</section>
-
-<section class="guide-box">
-<h2>Does Overtime Affect EPF, SOCSO, EIS and PCB?</h2>
-
-<p>
-Overtime pay may increase an employee's gross income. Depending on payroll treatment and applicable contribution rules, overtime payments may affect EPF, SOCSO, EIS and PCB calculations.
-</p>
-
-<p>
-Employees should review their payslip and payroll records to understand how overtime payments are reflected.
-</p>
-</section>
-
-      <section class="guide-box">
-<h2>Common Overtime Mistakes</h2>
-
-<p>
-Overtime disputes often occur because overtime hours are not properly recorded or approved.
-</p>
-
-<ul>
-<li>Failing to record overtime hours</li>
-<li>Assuming all employees qualify for overtime</li>
-<li>Missing approval requirements</li>
-<li>Submitting claims after payroll cut-off dates</li>
-<li>Confusing overtime pay with allowances</li>
-</ul>
-
-</section>
-
-      <section class="guide-box">
-<h2>Common Overtime Examples</h2>
-
-<h3>Example 1: Ordinary Working Day</h3>
-<p>
-An employee works 2 overtime hours after completing normal working hours on a weekday.
-</p>
-
-<h3>Example 2: Rest Day Work</h3>
-<p>
-An employee is required to work on a scheduled rest day and may be entitled to a different overtime rate.
-</p>
-
-<h3>Example 3: Public Holiday Work</h3>
-<p>
-An employee works during a public holiday and may receive a higher overtime payment depending on eligibility and applicable rules.
-</p>
-
-</section>
-      
-      <h2>Overtime vs Allowance vs Bonus</h2>
       <div class="contribution-table-wrap">
         <table class="contribution-table">
           <thead>
             <tr>
-              <th>Payment Type</th>
-              <th>Main Purpose</th>
-              <th>Usually Linked to Hours?</th>
+              <th>Overtime Type</th>
+              <th>Common Multiplier</th>
+              <th>Simple Explanation</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Overtime Pay</td>
-              <td>Payment for extra eligible working hours</td>
-              <td>Yes</td>
+              <td>Ordinary Working Day</td>
+              <td>1.5x hourly rate</td>
+              <td>Work beyond normal hours on a normal workday</td>
             </tr>
             <tr>
-              <td>Allowance</td>
-              <td>Additional payment for role, travel, meal or other purposes</td>
-              <td>Not always</td>
+              <td>Rest Day</td>
+              <td>2.0x hourly rate</td>
+              <td>Work performed on a designated rest day</td>
             </tr>
             <tr>
-              <td>Bonus</td>
-              <td>Additional reward based on company or employee performance</td>
-              <td>No</td>
+              <td>Public Holiday</td>
+              <td>3.0x hourly rate</td>
+              <td>Work performed on an applicable public holiday</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <section class="guide-box">
-        <h2>Who Should Read This Overtime Guide?</h2>
-        <ul>
-          <li>Employees checking whether overtime pay is calculated correctly</li>
-          <li>Job seekers comparing working hours and overtime benefits</li>
-          <li>HR and payroll staff calculating overtime payments</li>
-          <li>Business owners preparing payroll and working hour policies</li>
-        </ul>
-      </section>
+      <div class="note-box">
+        <strong>Note:</strong> This is a simplified guide. Actual overtime entitlement may depend on employment terms, employee eligibility, company policy and latest employment law requirements.
+      </div>
+    </section>
 
-      <h2>Frequently Asked Questions</h2>
-
-      <div class="faq-box">
-        <details class="faq-item" open>
-          <summary>How is overtime pay calculated in Malaysia?</summary>
-          <p>
-            Overtime pay is commonly calculated using hourly rate multiplied by overtime hours and the applicable multiplier, such as 1.5x for ordinary working day overtime.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What is the common overtime rate for a normal working day?</summary>
-          <p>
-            A common overtime rate for eligible ordinary working day overtime is 1.5 times the hourly rate, subject to eligibility and applicable employment rules.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is public holiday overtime higher than normal overtime?</summary>
-          <p>
-            Public holiday overtime is commonly paid at a higher rate than ordinary working day overtime. The actual calculation depends on applicable rules and company payroll policy.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Are all employees entitled to overtime pay?</summary>
-          <p>
-            Not necessarily. Overtime entitlement may depend on employment coverage, salary level, job category, working arrangement and employment contract terms.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can an employer require approval before paying overtime?</summary>
-          <p>
-            Many employers require overtime to be pre-approved or properly recorded before payment. Employees should follow company procedures for overtime claims.
-          </p>
-        </details>
-
-<details class="faq-item">
-  <summary>Can overtime be replaced with time off instead of payment?</summary>
-  <p>
-    Some employers may offer replacement leave instead of overtime payment depending on company policy and employment arrangements. Employees should confirm the applicable arrangement with their employer.
-  </p>
-</details>
-
-<details class="faq-item">
-  <summary>Can part-time employees receive overtime pay?</summary>
-  <p>
-    Overtime entitlement for part-time employees may depend on employment terms, working hours and applicable employment requirements. Employees should review their employment contract for details.
-  </p>
-</details>
-
-<details class="faq-item">
-  <summary>Can employers limit overtime hours?</summary>
-  <p>
-    Employers commonly manage overtime through scheduling, approval procedures and operational requirements. Employees should follow company policies regarding overtime arrangements.
-  </p>
-</details>
-</div>
-      
-      <section class="salary-guides-box">
-        <h2>📚 Related Employment Guides</h2>
-        <p>Continue reading related Malaysia employment guides to understand leave, holidays and payroll rules.</p>
-
-        <div class="guide-mini-grid">
-          <a href="annual-leave-guide.html">🌴 Annual Leave Guide</a>
-          <a href="mc-leave-guide.html">🏥 MC Leave Guide</a>
-          <a href="public-holiday-guide.html">📅 Public Holiday Guide</a>
-          <a href="salary-guide.html">💼 Salary Guide</a>
-        </div>
-
-        <p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p>
-      </section>
-
-      <section class="salary-guides-box">
-        <h2>🧮 Related Calculators</h2>
-        <p>Use these calculators to estimate overtime, leave and monthly take-home pay in Malaysia.</p>
-
-        <div class="guide-mini-grid">
-          <a href="overtime-calculator.html">Overtime Calculator</a>
-          <a href="annual-leave-calculator.html">Annual Leave Calculator</a>
-          <a href="index.html">Salary Calculator</a>
-          <a href="pcb-calculator.html">PCB Calculator</a>
-        </div>
-
-        <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
-      </section>
-
-    </div>
-  </div>
-
-  <hr style="margin-top:40px;">
-
-  <div class="footer">
-    <p>© 2026 Malaysia Salary Tools</p>
+    <h2>How Overtime Pay Is Calculated</h2>
     <p>
-      <a href="about.html">About Us</a> |
-      <a href="contact.html">Contact Us</a> |
-      <a href="guides.html">Guides</a> |
-      <a href="privacy-policy.html">Privacy Policy</a>
+      Overtime is usually calculated using the employee's hourly rate and the applicable overtime multiplier.
+      The hourly rate may be based on ordinary rate of pay according to the payroll method used.
     </p>
-  </div>
+
+    <div class="formula-box">
+      <strong>Overtime Pay = Hourly Rate × Overtime Hours × Multiplier</strong>
+      <span>Example: RM15 × 4 hours × 1.5 = RM90 overtime pay</span>
+    </div>
+
+    <section class="example-box">
+      <h2>Example Overtime Calculation</h2>
+      <p>
+        If an employee's hourly rate is RM15 and the employee works 4 overtime hours on an ordinary working day:
+      </p>
+      <ul>
+        <li>Hourly rate: RM15</li>
+        <li>Overtime hours: 4 hours</li>
+        <li>Multiplier: 1.5x</li>
+        <li>Estimated overtime pay: RM90</li>
+      </ul>
+      <p>
+        Different rates may apply for rest days, public holidays or special working arrangements.
+      </p>
+    </section>
+
+    <h2>Ordinary Day, Rest Day and Public Holiday Overtime</h2>
+    <p>
+      Overtime is not always paid at the same rate. Work performed after normal hours on a normal working day is usually treated differently from work performed on a rest day or public holiday.
+    </p>
+    <p>
+      Employees should check their employment contract and company payroll policy to understand how different overtime situations are recorded and paid.
+    </p>
+
+    <section class="guide-box">
+      <h2>Overtime on Rest Days</h2>
+      <p>
+        Work performed on a designated rest day is commonly treated differently from ordinary working day overtime.
+      </p>
+      <p>
+        Different overtime multipliers and payment rules may apply depending on the number of hours worked and the employee's employment arrangement.
+      </p>
+    </section>
+
+    <section class="guide-box">
+      <h2>Overtime on Public Holidays</h2>
+      <p>
+        Employees who work on public holidays may be entitled to higher overtime rates compared to ordinary working days.
+      </p>
+      <p>
+        Actual calculations may depend on company policy, employment terms and applicable employment law requirements.
+      </p>
+    </section>
+
+    <section class="guide-box">
+      <h2>How Overtime Is Usually Approved</h2>
+      <p>
+        Many employers require overtime to be approved before payment is processed.
+      </p>
+      <ul>
+        <li>Employee works overtime</li>
+        <li>Manager reviews and approves hours</li>
+        <li>HR verifies records</li>
+        <li>Payroll calculates overtime pay</li>
+        <li>Payment is included in salary</li>
+      </ul>
+    </section>
+
+    <section class="guide-box">
+      <h2>Overtime Pay vs Replacement Leave</h2>
+      <p>
+        Some employers may offer replacement leave instead of overtime pay for certain situations.
+      </p>
+      <p>
+        Replacement leave allows employees to take time off in exchange for additional hours worked,
+        subject to company policy and approval requirements.
+      </p>
+    </section>
+
+    <section class="guide-box">
+      <h2>Does Overtime Affect EPF, SOCSO, EIS and PCB?</h2>
+      <p>
+        Overtime pay may increase an employee's gross income. Depending on payroll treatment and applicable contribution rules,
+        overtime payments may affect EPF, SOCSO, EIS and PCB calculations.
+      </p>
+      <p>
+        Employees should review their payslip and payroll records to understand how overtime payments are reflected.
+      </p>
+    </section>
+
+    <section class="guide-box">
+      <h2>Common Overtime Mistakes</h2>
+      <p>
+        Overtime disputes often occur because overtime hours are not properly recorded or approved.
+      </p>
+      <ul>
+        <li>Failing to record overtime hours</li>
+        <li>Assuming all employees qualify for overtime</li>
+        <li>Missing approval requirements</li>
+        <li>Submitting claims after payroll cut-off dates</li>
+        <li>Confusing overtime pay with allowances</li>
+      </ul>
+    </section>
+
+    <section class="guide-box">
+      <h2>Common Overtime Examples</h2>
+
+      <h3>Example 1: Ordinary Working Day</h3>
+      <p>
+        An employee works 2 overtime hours after completing normal working hours on a weekday.
+      </p>
+
+      <h3>Example 2: Rest Day Work</h3>
+      <p>
+        An employee is required to work on a scheduled rest day and may be entitled to a different overtime rate.
+      </p>
+
+      <h3>Example 3: Public Holiday Work</h3>
+      <p>
+        An employee works during a public holiday and may receive a higher overtime payment depending on eligibility and applicable rules.
+      </p>
+    </section>
+
+    <h2>Overtime vs Allowance vs Bonus</h2>
+    <div class="contribution-table-wrap">
+      <table class="contribution-table">
+        <thead>
+          <tr>
+            <th>Payment Type</th>
+            <th>Main Purpose</th>
+            <th>Usually Linked to Hours?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Overtime Pay</td>
+            <td>Payment for extra eligible working hours</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Allowance</td>
+            <td>Additional payment for role, travel, meal or other purposes</td>
+            <td>Not always</td>
+          </tr>
+          <tr>
+            <td>Bonus</td>
+            <td>Additional reward based on company or employee performance</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <section class="guide-box">
+      <h2>Who Should Read This Overtime Guide?</h2>
+      <ul>
+        <li>Employees checking whether overtime pay is calculated correctly</li>
+        <li>Job seekers comparing working hours and overtime benefits</li>
+        <li>HR and payroll staff calculating overtime payments</li>
+        <li>Business owners preparing payroll and working hour policies</li>
+      </ul>
+    </section>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-box">
+      <details class="faq-item" open>
+        <summary>How is overtime pay calculated in Malaysia?</summary>
+        <p>
+          Overtime pay is commonly calculated using hourly rate multiplied by overtime hours and the applicable multiplier, such as 1.5x for ordinary working day overtime.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is the common overtime rate for a normal working day?</summary>
+        <p>
+          A common overtime rate for eligible ordinary working day overtime is 1.5 times the hourly rate, subject to eligibility and applicable employment rules.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is public holiday overtime higher than normal overtime?</summary>
+        <p>
+          Public holiday overtime is commonly paid at a higher rate than ordinary working day overtime. The actual calculation depends on applicable rules and company payroll policy.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Are all employees entitled to overtime pay?</summary>
+        <p>
+          Not necessarily. Overtime entitlement may depend on employment coverage, salary level, job category, working arrangement and employment contract terms.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can an employer require approval before paying overtime?</summary>
+        <p>
+          Many employers require overtime to be pre-approved or properly recorded before payment. Employees should follow company procedures for overtime claims.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can overtime be replaced with time off instead of payment?</summary>
+        <p>
+          Some employers may offer replacement leave instead of overtime payment depending on company policy and employment arrangements. Employees should confirm the applicable arrangement with their employer.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can part-time employees receive overtime pay?</summary>
+        <p>
+          Overtime entitlement for part-time employees may depend on employment terms, working hours and applicable employment requirements. Employees should review their employment contract for details.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can employers limit overtime hours?</summary>
+        <p>
+          Employers commonly manage overtime through scheduling, approval procedures and operational requirements. Employees should follow company policies regarding overtime arrangements.
+        </p>
+      </details>
+    </div>
+
+    <section class="salary-guides-box">
+      <h2>Related Employment Guides</h2>
+      <p>Continue reading related Malaysia employment guides to understand leave, holidays and payroll rules.</p>
+
+      <div class="guide-mini-grid">
+        <a href="annual-leave-guide.html">Annual Leave Guide</a>
+        <a href="mc-leave-guide.html">MC Leave Guide</a>
+        <a href="public-holiday-guide.html">Public Holiday Guide</a>
+        <a href="rest-day-guide.html">Rest Day Guide</a>
+      </div>
+
+      <p class="view-all-guides"><a href="guides.html">View All Guides →</a></p>
+    </section>
+
+    <section class="salary-guides-box">
+      <h2>Related Calculators</h2>
+      <p>Use these calculators to estimate overtime, leave and monthly take-home pay in Malaysia.</p>
+
+      <div class="guide-mini-grid">
+        <a href="overtime-calculator.html">Overtime Calculator</a>
+        <a href="annual-leave-calculator.html">Annual Leave Calculator</a>
+        <a href="mc-leave-calculator.html">MC Leave Calculator</a>
+        <a href="index.html">Salary Calculator</a>
+      </div>
+
+      <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
+    </section>
+
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 Malaysia Salary Tools</p>
+  <p>
+    <a href="about.html">About Us</a> |
+    <a href="contact.html">Contact Us</a> |
+    <a href="guides.html">Guides</a> |
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </p>
+</footer>
 
 </body>
 </html>
