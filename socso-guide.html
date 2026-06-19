@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <title>Malaysia SOCSO Contribution Guide 2026 | PERKESO Rates, Benefits & Payroll Guide</title>
+
   <link rel="canonical" href="https://malaysiasalarytools.com/socso-guide.html">
   <link rel="icon" type="image/png" href="favicon.png">
+
   <meta name="description" content="Malaysia SOCSO Contribution Guide 2026. Learn how SOCSO works, employee and employer contribution rates, PERKESO benefits, salary ceiling and example calculations.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
@@ -14,25 +17,64 @@
   crossorigin="anonymous"></script>
 
   <style>
+    :root {
+      --background: #f4f1ea;
+      --card: #fbfaf6;
+      --foreground: #302c26;
+      --muted: #7c766c;
+      --primary: #2f2b25;
+      --primary-foreground: #f6f3ec;
+      --accent: #2f7d5e;
+      --accent-soft: rgba(47,125,94,.10);
+      --accent-border: rgba(47,125,94,.22);
+      --border: #e2ddd2;
+      --white: #ffffff;
+      --radius: 18px;
+      --shadow: 0 18px 45px rgba(47,43,37,.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47,125,94,.08), transparent 34%),
+        linear-gradient(135deg, #f4f1ea, #efe9de);
       margin: 0;
       padding: 0;
-      color: #111827;
+      color: var(--foreground);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .serif {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
     }
 
     .top-nav {
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
+      background: rgba(251,250,246,.84);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      backdrop-filter: blur(10px);
     }
 
     .nav-inner {
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 14px 20px;
       display: flex;
@@ -49,7 +91,7 @@
     }
 
     .brand img {
-      width: 180px;
+      width: 220px;
       height: auto;
       display: block;
     }
@@ -58,86 +100,147 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      overflow-x: auto;
       flex-wrap: nowrap;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-
-    .nav-links::-webkit-scrollbar {
-      display: none;
+      min-width: 0;
     }
 
     .nav-links a {
+      display: block;
       text-decoration: none;
-      color: #4b5563;
+      color: var(--muted);
       font-weight: 600;
       font-size: 15px;
       padding: 10px 14px;
-      border-radius: 8px;
+      border-radius: 999px;
       white-space: nowrap;
-      flex-shrink: 0;
+      background: transparent;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      background: #2563eb;
-      color: white;
+      background: var(--primary);
+      color: var(--primary-foreground);
     }
 
     .main-wrapper {
-      padding: 30px 20px;
+      padding: 46px 20px 54px;
     }
 
     .hero {
       text-align: center;
-      max-width: 900px;
-      margin: 35px auto 20px;
+      max-width: 940px;
+      margin: 0 auto 32px;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      padding: 7px 15px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      font-weight: 700;
     }
 
     .hero h1 {
-      font-size: 32px;
-      color: #2563eb;
-      margin-bottom: 10px;
+      margin: 0;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      color: var(--foreground);
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-style: italic;
     }
 
     .hero p {
+      max-width: 820px;
+      margin: 18px auto 0;
       font-size: 17px;
-      color: #64748b;
-      margin-top: 0;
-      line-height: 1.6;
+      color: var(--muted);
     }
 
     .seo {
-      background: white;
-      max-width: 900px;
+      background: var(--card);
+      max-width: 1120px;
       margin: 30px auto;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      line-height: 1.7;
+      padding: 34px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
-    h1 { font-size: 26px; }
-    h2 { font-size: 20px; margin-top: 28px; }
-    h3 { font-size: 16px; margin-top: 18px; }
+    h2 {
+      font-size: clamp(25px, 4vw, 36px);
+      line-height: 1.15;
+      margin: 34px 0 14px;
+      color: var(--foreground);
+      letter-spacing: -.01em;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
 
+    h2:first-child {
+      margin-top: 0;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 18px 0 10px;
+      color: var(--foreground);
+    }
+
+    p,
+    li {
+      color: var(--muted);
+    }
+
+    .calculator-cta,
     .summary-box,
     .info-box,
     .example-box,
-    .salary-guides-box {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
+    .salary-guides-box,
+    .formula-box {
+      background: #f8f5ef;
+      border: 1px solid var(--border);
       border-radius: 16px;
       padding: 24px;
-      margin: 25px 0;
+      margin: 26px 0;
     }
 
-    .summary-box h2,
-    .info-box h2,
-    .example-box h2,
-    .salary-guides-box h2 {
+    .calculator-cta {
+      text-align: center;
+    }
+
+    .calculator-cta h2 {
       margin-top: 0;
+    }
+
+    .calculator-cta p {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 800;
+      margin-top: 8px;
+    }
+
+    .cta-button:hover {
+      filter: brightness(.95);
     }
 
     .summary-table-wrap,
@@ -149,8 +252,8 @@
     .contribution-table {
       width: 100%;
       border-collapse: collapse;
-      background: white;
-      border: 1px solid #dbe3ef;
+      background: var(--card);
+      border: 1px solid var(--border);
       border-radius: 12px;
       overflow: hidden;
       min-width: 520px;
@@ -158,20 +261,20 @@
 
     .summary-table th,
     .contribution-table th {
-      background: #f8fafc;
-      color: #64748b;
+      background: #f1ece3;
+      color: var(--muted);
       font-size: 13px;
       text-align: left;
-      letter-spacing: 0.4px;
+      letter-spacing: .03em;
       padding: 14px;
-      border-bottom: 1px solid #dbe3ef;
+      border-bottom: 1px solid var(--border);
     }
 
     .summary-table td,
     .contribution-table td {
       padding: 14px;
-      border-bottom: 1px solid #eef2f7;
-      color: #334155;
+      border-bottom: 1px solid var(--border);
+      color: var(--foreground);
       font-size: 14px;
     }
 
@@ -181,70 +284,94 @@
     }
 
     .formula-box {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 14px;
-      padding: 25px;
       text-align: center;
-      margin: 25px 0;
     }
 
     .formula-box strong {
       display: block;
       font-size: 22px;
-      color: #111827;
+      color: var(--foreground);
       margin-bottom: 8px;
     }
 
     .formula-box span {
-      color: #64748b;
+      color: var(--muted);
       font-size: 15px;
     }
 
-    .component-grid {
+    .note-box {
+      margin-top: 18px;
+      background: var(--card);
+      border-left: 4px solid var(--accent);
+      padding: 14px;
+      border-radius: 10px;
+      color: var(--muted);
+    }
+
+    .component-grid,
+    .guide-mini-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
+      gap: 14px;
       margin-top: 20px;
     }
 
-    .component-card {
-      background: white;
-      border: 1px solid #e5e7eb;
+    .component-grid {
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .guide-mini-grid {
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    }
+
+    .component-card,
+    .guide-mini-grid a,
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 18px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-      text-decoration: none;
-      color: inherit;
+    }
+
+    .component-card {
+      padding: 20px;
+      transition: .18s ease;
+    }
+
+    .component-card:hover,
+    .guide-mini-grid a:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 30px rgba(47,43,37,.08);
     }
 
     .component-card h3 {
-      margin: 8px 0;
+      margin: 8px 0 4px;
     }
 
     .component-card p {
-      color: #4b5563;
+      margin: 0;
       font-size: 14px;
       line-height: 1.5;
-      margin-bottom: 0;
     }
 
     .faq-box {
-      margin-top: 25px;
+      margin-top: 18px;
+      max-width: 850px;
     }
 
     .faq-item {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 10px;
-      padding: 14px;
+      padding: 4px 20px;
       margin-bottom: 12px;
     }
 
     .faq-item summary {
-      font-weight: bold;
+      font-weight: 800;
       cursor: pointer;
       list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--foreground);
+      padding: 16px 0;
     }
 
     .faq-item summary::-webkit-details-marker {
@@ -252,105 +379,65 @@
     }
 
     .faq-item summary::after {
-      content: "▼";
-      float: right;
-      font-size: 12px;
+      content: "+";
+      color: var(--accent);
+      font-size: 20px;
+      line-height: 1;
     }
 
     .faq-item[open] summary::after {
-      content: "▲";
+      content: "−";
     }
 
     .faq-item p {
-      margin-top: 12px;
-      margin-bottom: 0;
-      color: #4b5563;
-      line-height: 1.5;
-    }
-
-    .guide-mini-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 12px;
-      margin-top: 18px;
+      padding-bottom: 18px;
+      margin: 0;
+      line-height: 1.55;
+      font-size: 14px;
     }
 
     .guide-mini-grid a {
-      background: white;
-      border: 1px solid #e5e7eb;
-      padding: 12px 14px;
-      border-radius: 10px;
+      display: block;
+      padding: 14px 16px;
       text-decoration: none;
-      color: #2563eb;
-      font-weight: bold;
+      color: var(--foreground);
+      font-weight: 800;
       text-align: center;
+      transition: .18s ease;
     }
 
     .guide-mini-grid a:hover {
-      background: #2563eb;
-      color: white;
+      color: var(--accent);
+      background: var(--white);
     }
 
     .view-all-guides {
       text-align: center;
-      margin-top: 20px;
+      margin: 20px 0 0;
     }
 
     .view-all-guides a {
-      color: #2563eb;
-      font-weight: bold;
+      color: var(--accent);
+      font-weight: 800;
       text-decoration: none;
-    }
-
-    .note-box {
-      margin-top: 20px;
-      background: white;
-      border-left: 4px solid #2563eb;
-      padding: 12px;
-      border-radius: 8px;
-      color: #4b5563;
-    }
-
-
-
-    .calculator-cta {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 16px;
-      padding: 24px;
-      margin: 25px 0;
-      text-align: center;
-    }
-
-    .calculator-cta h2 {
-      margin-top: 0;
-    }
-
-    .calculator-cta p {
-      color: #4b5563;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background: #2563eb;
-      color: white;
-      text-decoration: none;
-      padding: 12px 24px;
-      border-radius: 10px;
-      font-weight: bold;
-      margin-top: 8px;
-    }
-
-    .cta-button:hover {
-      background: #1d4ed8;
     }
 
     .footer {
-      text-align:center;
-      padding:20px;
+      border-top: 1px solid var(--border);
+      padding: 28px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer a:hover {
+      color: var(--accent);
     }
 
     @media (max-width: 800px) {
@@ -360,29 +447,31 @@
       }
 
       .nav-links {
-        width: 100%;
+        width: auto;
+        flex: 1;
+        min-width: 0;
         justify-content: flex-start;
         padding-bottom: 5px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
       }
     }
 
-    @media (max-width: 700px){
+    @media (max-width: 700px) {
       .main-wrapper {
-        padding: 15px 10px;
+        padding: 34px 10px 40px;
       }
 
       .seo {
-        margin: 15px auto;
-        padding: 18px;
-      }
-
-      .hero h1 {
-        font-size: 26px;
-      }
-
-      .nav-links a {
-        font-size: 14px;
-        padding: 8px 10px;
+        padding: 22px;
       }
 
       .nav-inner {
@@ -392,11 +481,24 @@
       }
 
       .brand img {
-        width: 120px;
+        width: 150px;
       }
 
       .nav-links {
         gap: 6px;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 15px;
       }
 
       .component-grid {
@@ -418,154 +520,315 @@
         font-size: 12px;
         line-height: 1.35;
       }
+
+      .cta-button {
+        width: 100%;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <header class="top-nav">
-    <div class="nav-inner">
-      <a href="index.html" class="brand">
-        <img src="logo.png" alt="Malaysia Salary Tools">
-      </a>
+<header class="top-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="logo.png" alt="Malaysia Salary Tools">
+    </a>
 
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="calculators.html">Calculators</a>
-        <a href="guides.html" class="active">Guides</a>
-        <a href="about.html">About</a>
-      </nav>
-    </div>
-  </header>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="guides.html" class="active">Guides</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
 
-  <div class="main-wrapper">
+<main class="main-wrapper">
 
-    <div class="hero">
-      <h1>Malaysia SOCSO Contribution Guide 2026</h1>
+  <section class="hero">
+    <span class="pill">Updated for Malaysia 2026 payroll estimates</span>
+    <h1 class="serif">Malaysia <em>SOCSO contribution</em> guide 2026</h1>
+    <p>
+      Learn how SOCSO contributions work in Malaysia, including employee and employer contribution rates,
+      PERKESO benefits, salary ceiling and payroll examples.
+    </p>
+  </section>
+
+  <section class="seo">
+
+    <section class="calculator-cta">
+      <h2>Calculate Your SOCSO Contribution</h2>
       <p>
-        Learn how SOCSO contributions work in Malaysia, including employee and employer contribution rates, PERKESO benefits, salary ceiling and payroll examples.
+        Want to know how much SOCSO you and your employer contribute each month?
+        Use our free SOCSO Calculator to estimate employee and employer contributions instantly.
       </p>
-    </div>
+      <a href="socso-calculator.html" class="cta-button">Calculate My SOCSO →</a>
+    </section>
 
-    <div class="seo">
+    <section class="summary-box">
+      <h2>SOCSO Quick Summary</h2>
+      <p>
+        SOCSO, also known as PERKESO, provides social security protection for employees in Malaysia.
+        Contributions are paid by both employees and employers through monthly payroll.
+      </p>
 
-      <section class="calculator-cta">
-        <h2>🧮 Calculate Your SOCSO Contribution</h2>
-        <p>
-          Want to know how much SOCSO you and your employer contribute each month?
-          Use our free SOCSO Calculator to estimate employee and employer contributions instantly.
-        </p>
-        <a href="socso-calculator.html" class="cta-button">Calculate My SOCSO →</a>
-      </section>
+      <div class="summary-table-wrap">
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Scheme Name</td>
+              <td>SOCSO / PERKESO</td>
+            </tr>
+            <tr>
+              <td>Purpose</td>
+              <td>Employment injury and invalidity protection</td>
+            </tr>
+            <tr>
+              <td>Paid By</td>
+              <td>Employee and employer</td>
+            </tr>
+            <tr>
+              <td>Salary Ceiling</td>
+              <td>Commonly capped based on the latest SOCSO wage ceiling</td>
+            </tr>
+            <tr>
+              <td>Payroll Frequency</td>
+              <td>Monthly</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-      <section class="summary-box">
-        <h2>📌 SOCSO Quick Summary</h2>
-        <p>
-          SOCSO, also known as PERKESO, provides social security protection for employees in Malaysia. Contributions are paid by both employees and employers through monthly payroll.
-        </p>
+    <h2>What Is SOCSO?</h2>
+    <p>
+      SOCSO stands for Social Security Organisation, also known as PERKESO in Malaysia.
+      It provides protection to eligible employees in cases such as employment injury, occupational disease, invalidity and death.
+    </p>
 
-        <div class="summary-table-wrap">
-          <table class="summary-table">
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Scheme Name</td>
-                <td>SOCSO / PERKESO</td>
-              </tr>
-              <tr>
-                <td>Purpose</td>
-                <td>Employment injury and invalidity protection</td>
-              </tr>
-              <tr>
-                <td>Paid By</td>
-                <td>Employee and employer</td>
-              </tr>
-              <tr>
-                <td>Salary Ceiling</td>
-                <td>Commonly capped based on the latest SOCSO wage ceiling</td>
-              </tr>
-              <tr>
-                <td>Payroll Frequency</td>
-                <td>Monthly</td>
-              </tr>
-            </tbody>
-          </table>
+    <p>
+      Unlike EPF, which focuses mainly on retirement savings, SOCSO is designed as a social protection scheme.
+      It helps employees and their families receive financial support when unexpected work-related or health-related events occur.
+    </p>
+
+    <section class="info-box">
+      <h2>What Does SOCSO Cover?</h2>
+      <div class="component-grid">
+        <div class="component-card">
+          <h3>Employment Injury</h3>
+          <p>Protection for accidents that happen during work or while commuting for work purposes.</p>
         </div>
-      </section>
 
-      <h2>What Is SOCSO?</h2>
-      <p>
-        SOCSO stands for Social Security Organisation, also known as PERKESO in Malaysia. It provides protection to eligible employees in cases such as employment injury, occupational disease, invalidity and death.
-      </p>
-
-      <p>
-        Unlike EPF, which focuses mainly on retirement savings, SOCSO is designed as a social protection scheme. It helps employees and their families receive financial support when unexpected work-related or health-related events occur.
-      </p>
-
-      <section class="info-box">
-        <h2>🛡️ What Does SOCSO Cover?</h2>
-        <div class="component-grid">
-          <div class="component-card">
-            <h3>Employment Injury</h3>
-            <p>Protection for accidents that happen during work or while commuting for work purposes.</p>
-          </div>
-
-          <div class="component-card">
-            <h3>Invalidity</h3>
-            <p>Support for employees who become unable to work due to serious illness or disability.</p>
-          </div>
-
-          <div class="component-card">
-            <h3>Medical Benefits</h3>
-            <p>Medical treatment and related support may be provided for eligible SOCSO cases.</p>
-          </div>
-
-          <div class="component-card">
-            <h3>Dependants' Benefits</h3>
-            <p>Financial support may be available to eligible dependants in certain cases.</p>
-          </div>
+        <div class="component-card">
+          <h3>Invalidity</h3>
+          <p>Support for employees who become unable to work due to serious illness or disability.</p>
         </div>
-      </section>
 
-      <h2>SOCSO Contribution Rates 2026</h2>
+        <div class="component-card">
+          <h3>Medical Benefits</h3>
+          <p>Medical treatment and related support may be provided for eligible SOCSO cases.</p>
+        </div>
+
+        <div class="component-card">
+          <h3>Dependants' Benefits</h3>
+          <p>Financial support may be available to eligible dependants in certain cases.</p>
+        </div>
+      </div>
+    </section>
+
+    <h2>SOCSO Contribution Rates 2026</h2>
+    <p>
+      SOCSO contributions are calculated based on monthly wages using the official SOCSO contribution table.
+      The employee contribution is lower than the employer contribution, and the actual amount depends on the salary bracket.
+    </p>
+
+    <div class="contribution-table-wrap">
+      <table class="contribution-table">
+        <thead>
+          <tr>
+            <th>Monthly Wages</th>
+            <th>Employee Contribution</th>
+            <th>Employer Contribution</th>
+            <th>Total Contribution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>RM1,000 – RM2,000</td>
+            <td>RM4.75</td>
+            <td>RM16.65</td>
+            <td>RM21.40</td>
+          </tr>
+          <tr>
+            <td>RM3,000 – RM4,000</td>
+            <td>RM14.75</td>
+            <td>RM51.65</td>
+            <td>RM66.40</td>
+          </tr>
+          <tr>
+            <td>RM5,000 – RM6,000</td>
+            <td>RM24.75</td>
+            <td>RM86.65</td>
+            <td>RM111.40</td>
+          </tr>
+          <tr>
+            <td>RM6,000</td>
+            <td>RM29.75</td>
+            <td>RM104.15</td>
+            <td>RM133.90</td>
+          </tr>
+          <tr>
+            <td>Above RM6,000</td>
+            <td>RM30.00</td>
+            <td>RM105.00</td>
+            <td>RM135.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="note-box">
+      <strong>Note:</strong> This table is a simplified quick reference. Actual SOCSO payroll calculations should follow the latest official PERKESO contribution schedule.
+    </p>
+
+    <h2>How SOCSO Contributions Are Calculated</h2>
+    <p>
+      SOCSO is not usually calculated using a simple fixed percentage from salary.
+      Instead, the contribution amount is selected from the SOCSO wage bracket table according to the employee's monthly wages.
+    </p>
+
+    <div class="formula-box">
+      <strong>SOCSO Contribution = Amount Based on Salary Bracket</strong>
+      <span>Employee and employer contributions are determined using the SOCSO contribution table.</span>
+    </div>
+
+    <section class="example-box">
+      <h2>Example SOCSO Calculation</h2>
       <p>
-        SOCSO contributions are calculated based on monthly wages using the official SOCSO contribution table. The employee contribution is lower than the employer contribution, and the actual amount depends on the salary bracket.
+        If an employee earns RM4,000 per month, the estimated SOCSO contribution based on the simplified table may be:
+      </p>
+      <ul>
+        <li>Employee SOCSO: RM14.75</li>
+        <li>Employer SOCSO: RM51.65</li>
+        <li>Total SOCSO Contribution: RM66.40</li>
+      </ul>
+      <p>
+        The employee's portion is deducted from monthly salary, while the employer pays the employer portion separately.
+      </p>
+    </section>
+
+    <h2>Employee vs Employer SOCSO Contribution</h2>
+    <p>
+      In Malaysia payroll, SOCSO contributions involve two separate portions.
+      The employee contribution is deducted from the employee's salary.
+      The employer contribution is paid by the employer and is not deducted from the employee's take-home pay.
+    </p>
+
+    <p>
+      This means your net salary is affected only by the employee portion of SOCSO,
+      together with other deductions such as EPF, EIS and PCB.
+    </p>
+
+    <h2>SOCSO vs EPF vs EIS</h2>
+    <div class="contribution-table-wrap">
+      <table class="contribution-table">
+        <thead>
+          <tr>
+            <th>Contribution</th>
+            <th>Main Purpose</th>
+            <th>Paid Monthly?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>EPF</td>
+            <td>Retirement savings</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>SOCSO</td>
+            <td>Social security and employment injury protection</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>EIS</td>
+            <td>Employment insurance and job loss support</td>
+            <td>Yes</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <section class="info-box">
+      <h2>Who Should Read This SOCSO Guide?</h2>
+      <ul>
+        <li>Employees checking SOCSO deductions from monthly salary</li>
+        <li>Job seekers comparing Malaysian salary packages and take-home pay</li>
+        <li>HR and payroll staff preparing monthly payroll contributions</li>
+        <li>Business owners who need a simple overview of SOCSO responsibilities</li>
+      </ul>
+    </section>
+
+    <section class="info-box">
+      <h2>Who Needs to Contribute to SOCSO?</h2>
+      <p>
+        SOCSO contributions generally apply to eligible employees working in Malaysia under an employment contract.
+        For payroll purposes, employers normally need to identify whether an employee is covered, register the employee where required and make monthly contributions based on the employee's wages.
+      </p>
+      <p>
+        The contribution treatment may differ depending on the employee category, age, citizenship status and the type of employment.
+        This is why payroll teams should not rely only on a fixed percentage estimate.
+        The official PERKESO contribution schedule should be used when preparing actual monthly payroll.
+      </p>
+    </section>
+
+    <h2>SOCSO Salary Ceiling and Wage Brackets</h2>
+    <p>
+      SOCSO contributions are usually determined by wage brackets instead of a flat percentage.
+      This means an employee earning RM3,980 and an employee earning RM4,000 may fall within the same bracket, depending on the official contribution table.
+    </p>
+    <p>
+      The wage ceiling is important because once wages exceed the applicable ceiling, the contribution may be capped at the maximum scheduled amount.
+      For employees, this makes SOCSO a relatively small monthly deduction compared with EPF and PCB, but it still provides important protection if something unexpected happens.
+    </p>
+
+    <section class="example-box">
+      <h2>SOCSO Contribution Examples by Salary</h2>
+      <p>
+        The examples below show how SOCSO may appear in a typical salary breakdown.
+        These are simplified examples based on the quick reference table above.
       </p>
 
       <div class="contribution-table-wrap">
         <table class="contribution-table">
           <thead>
             <tr>
-              <th>Monthly Wages</th>
-              <th>Employee Contribution</th>
-              <th>Employer Contribution</th>
-              <th>Total Contribution</th>
+              <th>Monthly Salary</th>
+              <th>Employee SOCSO</th>
+              <th>Employer SOCSO</th>
+              <th>Total SOCSO</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>RM1,000 – RM2,000</td>
+              <td>RM2,000</td>
               <td>RM4.75</td>
               <td>RM16.65</td>
               <td>RM21.40</td>
             </tr>
             <tr>
-              <td>RM3,000 – RM4,000</td>
+              <td>RM4,000</td>
               <td>RM14.75</td>
               <td>RM51.65</td>
               <td>RM66.40</td>
-            </tr>
-            <tr>
-              <td>RM5,000 – RM6,000</td>
-              <td>RM24.75</td>
-              <td>RM86.65</td>
-              <td>RM111.40</td>
             </tr>
             <tr>
               <td>RM6,000</td>
@@ -583,300 +846,178 @@
         </table>
       </div>
 
-      <p class="note-box">
-        <strong>Note:</strong> This table is a simplified quick reference. Actual SOCSO payroll calculations should follow the latest official PERKESO contribution schedule.
-      </p>
-
-      <h2>How SOCSO Contributions Are Calculated</h2>
       <p>
-        SOCSO is not usually calculated using a simple fixed percentage from salary. Instead, the contribution amount is selected from the SOCSO wage bracket table according to the employee's monthly wages.
+        In payroll, only the employee portion reduces the employee's take-home pay.
+        The employer portion is an additional cost borne by the employer.
       </p>
+    </section>
 
-      <div class="formula-box">
-        <strong>SOCSO Contribution = Amount Based on Salary Bracket</strong>
-        <span>Employee and employer contributions are determined using the SOCSO contribution table.</span>
-      </div>
-
-      <section class="example-box">
-        <h2>Example SOCSO Calculation</h2>
-        <p>
-          If an employee earns RM4,000 per month, the estimated SOCSO contribution based on the simplified table may be:
-        </p>
-        <ul>
-          <li>Employee SOCSO: RM14.75</li>
-          <li>Employer SOCSO: RM51.65</li>
-          <li>Total SOCSO Contribution: RM66.40</li>
-        </ul>
-        <p>
-          The employee's portion is deducted from monthly salary, while the employer pays the employer portion separately.
-        </p>
-      </section>
-
-      <h2>Employee vs Employer SOCSO Contribution</h2>
-      <p>
-        In Malaysia payroll, SOCSO contributions involve two separate portions. The employee contribution is deducted from the employee's salary. The employer contribution is paid by the employer and is not deducted from the employee's take-home pay.
-      </p>
-
-      <p>
-        This means your net salary is affected only by the employee portion of SOCSO, together with other deductions such as EPF, EIS and PCB.
-      </p>
-
-      <h2>SOCSO vs EPF vs EIS</h2>
-      <div class="contribution-table-wrap">
-        <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Contribution</th>
-              <th>Main Purpose</th>
-              <th>Paid Monthly?</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>EPF</td>
-              <td>Retirement savings</td>
-              <td>Yes</td>
-            </tr>
-            <tr>
-              <td>SOCSO</td>
-              <td>Social security and employment injury protection</td>
-              <td>Yes</td>
-            </tr>
-            <tr>
-              <td>EIS</td>
-              <td>Employment insurance and job loss support</td>
-              <td>Yes</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <section class="info-box">
-        <h2>Who Should Read This SOCSO Guide?</h2>
-        <ul>
-          <li>Employees checking SOCSO deductions from monthly salary</li>
-          <li>Job seekers comparing Malaysian salary packages and take-home pay</li>
-          <li>HR and payroll staff preparing monthly payroll contributions</li>
-          <li>Business owners who need a simple overview of SOCSO responsibilities</li>
-        </ul>
-      </section>
-
-
-
-      <section class="info-box">
-        <h2>Who Needs to Contribute to SOCSO?</h2>
-        <p>
-          SOCSO contributions generally apply to eligible employees working in Malaysia under an employment contract. For payroll purposes, employers normally need to identify whether an employee is covered, register the employee where required and make monthly contributions based on the employee's wages.
-        </p>
-        <p>
-          The contribution treatment may differ depending on the employee category, age, citizenship status and the type of employment. This is why payroll teams should not rely only on a fixed percentage estimate. The official PERKESO contribution schedule should be used when preparing actual monthly payroll.
-        </p>
-      </section>
-
-      <h2>SOCSO Salary Ceiling and Wage Brackets</h2>
-      <p>
-        SOCSO contributions are usually determined by wage brackets instead of a flat percentage. This means an employee earning RM3,980 and an employee earning RM4,000 may fall within the same bracket, depending on the official contribution table.
-      </p>
-      <p>
-        The wage ceiling is important because once wages exceed the applicable ceiling, the contribution may be capped at the maximum scheduled amount. For employees, this makes SOCSO a relatively small monthly deduction compared with EPF and PCB, but it still provides important protection if something unexpected happens.
-      </p>
-
-      <section class="example-box">
-        <h2>SOCSO Contribution Examples by Salary</h2>
-        <p>
-          The examples below show how SOCSO may appear in a typical salary breakdown. These are simplified examples based on the quick reference table above.
-        </p>
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Monthly Salary</th>
-                <th>Employee SOCSO</th>
-                <th>Employer SOCSO</th>
-                <th>Total SOCSO</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>RM2,000</td>
-                <td>RM4.75</td>
-                <td>RM16.65</td>
-                <td>RM21.40</td>
-              </tr>
-              <tr>
-                <td>RM4,000</td>
-                <td>RM14.75</td>
-                <td>RM51.65</td>
-                <td>RM66.40</td>
-              </tr>
-              <tr>
-                <td>RM6,000</td>
-                <td>RM29.75</td>
-                <td>RM104.15</td>
-                <td>RM133.90</td>
-              </tr>
-              <tr>
-                <td>Above RM6,000</td>
-                <td>RM30.00</td>
-                <td>RM105.00</td>
-                <td>RM135.00</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p>
-          In payroll, only the employee portion reduces the employee's take-home pay. The employer portion is an additional cost borne by the employer.
-        </p>
-      </section>
-
-      <h2>How SOCSO Affects Monthly Take-Home Pay</h2>
-      <p>
-        SOCSO reduces take-home pay by the employee contribution amount only. For example, if the employee portion is RM14.75, that amount is deducted from the employee's salary together with EPF, EIS and PCB where applicable.
-      </p>
-      <p>
-        Although the monthly SOCSO deduction is usually small, employees should still understand it because it appears on payslips and forms part of the total statutory deductions. For job offer comparisons, the employer SOCSO portion is not part of take-home pay, but it is part of the employer's total employment cost.
-      </p>
-
-      <section class="info-box">
-        <h2>Advantages and Limitations of SOCSO</h2>
-        <div class="component-grid">
-          <div class="component-card">
-            <h3>Employee Protection</h3>
-            <p>SOCSO provides social security protection for eligible employees when employment injury, invalidity or other covered events occur.</p>
-          </div>
-          <div class="component-card">
-            <h3>Employer Support</h3>
-            <p>Employers contribute a higher portion, helping fund protection without fully passing the cost to employees.</p>
-          </div>
-          <div class="component-card">
-            <h3>Not Retirement Savings</h3>
-            <p>SOCSO is not the same as EPF. It does not function as a personal retirement savings account.</p>
-          </div>
-          <div class="component-card">
-            <h3>Eligibility Conditions</h3>
-            <p>Benefits depend on eligibility, contribution history, documentation and approval by the relevant authority.</p>
-          </div>
-        </div>
-      </section>
-
-      <h2>Common Payroll Mistakes With SOCSO</h2>
-      <p>
-        A common mistake is treating SOCSO as a simple percentage of salary. In practice, payroll should follow the official contribution schedule and wage bracket. Another mistake is confusing SOCSO with EIS because both are administered through PERKESO-related payroll processes, but the purpose of each scheme is different.
-      </p>
-      <p>
-        Employers should also be careful when processing new employees, resigned employees, bonuses, allowances and salary changes. If wage information is not updated properly, the monthly contribution may be understated or overstated.
-      </p>
-
-      <section class="info-box">
-        <h2>Official Reference</h2>
-        <p>
-          This guide is written for general salary and payroll understanding. For actual payroll submission, contribution eligibility and benefit claims, employees and employers should refer to PERKESO / SOCSO official guidance and the latest contribution schedule.
-        </p>
-      </section>
-
-      <h2>Frequently Asked Questions</h2>
-
-      <div class="faq-box">
-        <details class="faq-item" open>
-          <summary>Is SOCSO contribution mandatory for employees in Malaysia?</summary>
-          <p>
-            SOCSO contribution is generally mandatory for eligible employees in Malaysia. Employers are responsible for registering eligible employees and making monthly SOCSO contributions through payroll.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>How much SOCSO does an employee contribute every month?</summary>
-          <p>
-            The employee contribution depends on the employee's monthly wage bracket. SOCSO is usually based on a contribution table rather than a simple fixed percentage of salary.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>How much SOCSO does an employer contribute?</summary>
-          <p>
-            The employer contribution is higher than the employee contribution and is paid separately by the employer. It is not deducted from the employee's take-home salary.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is SOCSO calculated on basic salary or gross salary?</summary>
-          <p>
-            SOCSO is generally calculated based on wages that are subject to SOCSO contribution. Payroll treatment may depend on the type of payment, such as basic salary, allowances, overtime or other remuneration.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Does SOCSO affect take-home pay?</summary>
-          <p>
-            Yes. The employee portion of SOCSO is deducted from monthly salary, so it reduces take-home pay. The employer portion does not reduce the employee's net salary.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What happens if an employer does not pay SOCSO?</summary>
-          <p>
-            Employers are responsible for making SOCSO contributions for eligible employees. Failure to contribute may result in compliance issues, penalties or enforcement action by the relevant authority.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is SOCSO the same as EIS?</summary>
-          <p>
-            No. SOCSO provides social security protection such as employment injury and invalidity benefits, while EIS focuses on employment insurance and support for eligible employees who lose their jobs.
-          </p>
-        </details>
-      </div>
-
-      <section class="salary-guides-box">
-        <h2>📚 Related Salary Guides</h2>
-        <p>
-          Continue reading related Malaysia payroll guides to understand how monthly salary deductions work.
-        </p>
-
-        <div class="guide-mini-grid">
-          <a href="epf-guide.html">💰 EPF Guide</a>
-          <a href="eis-guide.html">📋 EIS Guide</a>
-          <a href="pcb-guide.html">🏛️ PCB Guide</a>
-          <a href="tax-relief-guide.html">💸 Tax Relief Guide</a>
-        </div>
-
-        <p class="view-all-guides">
-          <a href="guides.html">View All Salary Guides →</a>
-        </p>
-      </section>
-
-      <section class="salary-guides-box">
-        <h2>🧮 Related Calculators</h2>
-        <p>
-          Use these calculators to estimate salary deductions and monthly take-home pay in Malaysia.
-        </p>
-
-        <div class="guide-mini-grid">
-          <a href="socso-calculator.html">SOCSO Calculator</a>
-          <a href="index.html">Salary Calculator</a>
-          <a href="pcb-calculator.html">PCB Calculator</a>
-          <a href="epf-calculator.html">EPF Calculator</a>
-        </div>
-
-        <p class="view-all-guides">
-          <a href="calculators.html">View All Calculators →</a>
-        </p>
-      </section>
-
-    </div>
-  </div>
-
-  <hr style="margin-top:40px;">
-
-  <div class="footer">
-    <p>© 2026 Malaysia Salary Tools</p>
+    <h2>How SOCSO Affects Monthly Take-Home Pay</h2>
     <p>
-      <a href="about.html">About Us</a> |
-      <a href="contact.html">Contact Us</a> |
-      <a href="guides.html">Guides</a> |
-      <a href="privacy-policy.html">Privacy Policy</a>
+      SOCSO reduces take-home pay by the employee contribution amount only.
+      For example, if the employee portion is RM14.75, that amount is deducted from the employee's salary together with EPF, EIS and PCB where applicable.
     </p>
-  </div>
+    <p>
+      Although the monthly SOCSO deduction is usually small, employees should still understand it because it appears on payslips and forms part of the total statutory deductions.
+      For job offer comparisons, the employer SOCSO portion is not part of take-home pay, but it is part of the employer's total employment cost.
+    </p>
+
+    <section class="info-box">
+      <h2>Advantages and Limitations of SOCSO</h2>
+      <div class="component-grid">
+        <div class="component-card">
+          <h3>Employee Protection</h3>
+          <p>SOCSO provides social security protection for eligible employees when employment injury, invalidity or other covered events occur.</p>
+        </div>
+        <div class="component-card">
+          <h3>Employer Support</h3>
+          <p>Employers contribute a higher portion, helping fund protection without fully passing the cost to employees.</p>
+        </div>
+        <div class="component-card">
+          <h3>Not Retirement Savings</h3>
+          <p>SOCSO is not the same as EPF. It does not function as a personal retirement savings account.</p>
+        </div>
+        <div class="component-card">
+          <h3>Eligibility Conditions</h3>
+          <p>Benefits depend on eligibility, contribution history, documentation and approval by the relevant authority.</p>
+        </div>
+      </div>
+    </section>
+
+    <h2>Common Payroll Mistakes With SOCSO</h2>
+    <p>
+      A common mistake is treating SOCSO as a simple percentage of salary.
+      In practice, payroll should follow the official contribution schedule and wage bracket.
+      Another mistake is confusing SOCSO with EIS because both are administered through PERKESO-related payroll processes, but the purpose of each scheme is different.
+    </p>
+    <p>
+      Employers should also be careful when processing new employees, resigned employees, bonuses, allowances and salary changes.
+      If wage information is not updated properly, the monthly contribution may be understated or overstated.
+    </p>
+
+    <section class="info-box">
+      <h2>Official Reference</h2>
+      <p>
+        This guide is written for general salary and payroll understanding.
+        For actual payroll submission, contribution eligibility and benefit claims, employees and employers should refer to PERKESO / SOCSO official guidance and the latest contribution schedule.
+      </p>
+
+      <p class="note-box">
+        Suggested official reference:
+        <a href="https://www.perkeso.gov.my/" target="_blank" rel="noopener">PERKESO Official Website</a>
+      </p>
+    </section>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-box">
+      <details class="faq-item" open>
+        <summary>Is SOCSO contribution mandatory for employees in Malaysia?</summary>
+        <p>
+          SOCSO contribution is generally mandatory for eligible employees in Malaysia.
+          Employers are responsible for registering eligible employees and making monthly SOCSO contributions through payroll.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How much SOCSO does an employee contribute every month?</summary>
+        <p>
+          The employee contribution depends on the employee's monthly wage bracket.
+          SOCSO is usually based on a contribution table rather than a simple fixed percentage of salary.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How much SOCSO does an employer contribute?</summary>
+        <p>
+          The employer contribution is higher than the employee contribution and is paid separately by the employer.
+          It is not deducted from the employee's take-home salary.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is SOCSO calculated on basic salary or gross salary?</summary>
+        <p>
+          SOCSO is generally calculated based on wages that are subject to SOCSO contribution.
+          Payroll treatment may depend on the type of payment, such as basic salary, allowances, overtime or other remuneration.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does SOCSO affect take-home pay?</summary>
+        <p>
+          Yes. The employee portion of SOCSO is deducted from monthly salary, so it reduces take-home pay.
+          The employer portion does not reduce the employee's net salary.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What happens if an employer does not pay SOCSO?</summary>
+        <p>
+          Employers are responsible for making SOCSO contributions for eligible employees.
+          Failure to contribute may result in compliance issues, penalties or enforcement action by the relevant authority.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is SOCSO the same as EIS?</summary>
+        <p>
+          No. SOCSO provides social security protection such as employment injury and invalidity benefits,
+          while EIS focuses on employment insurance and support for eligible employees who lose their jobs.
+        </p>
+      </details>
+    </div>
+
+    <section class="salary-guides-box">
+      <h2>Related Salary Guides</h2>
+      <p>
+        Continue reading related Malaysia payroll guides to understand how monthly salary deductions work.
+      </p>
+
+      <div class="guide-mini-grid">
+        <a href="epf-guide.html">EPF Guide</a>
+        <a href="eis-guide.html">EIS Guide</a>
+        <a href="pcb-guide.html">PCB Guide</a>
+        <a href="tax-relief-guide.html">Tax Relief Guide</a>
+      </div>
+
+      <p class="view-all-guides">
+        <a href="guides.html">View All Salary Guides →</a>
+      </p>
+    </section>
+
+    <section class="salary-guides-box">
+      <h2>Related Calculators</h2>
+      <p>
+        Use these calculators to estimate salary deductions and monthly take-home pay in Malaysia.
+      </p>
+
+      <div class="guide-mini-grid">
+        <a href="socso-calculator.html">SOCSO Calculator</a>
+        <a href="index.html">Salary Calculator</a>
+        <a href="pcb-calculator.html">PCB Calculator</a>
+        <a href="epf-calculator.html">EPF Calculator</a>
+      </div>
+
+      <p class="view-all-guides">
+        <a href="calculators.html">View All Calculators →</a>
+      </p>
+    </section>
+
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 Malaysia Salary Tools</p>
+  <p>
+    <a href="about.html">About Us</a> |
+    <a href="contact.html">Contact Us</a> |
+    <a href="guides.html">Guides</a> |
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </p>
+</footer>
 
 </body>
 </html>
+
