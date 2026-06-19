@@ -1,10 +1,14 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <title>Malaysia Annual Leave Guide 2026 | Entitlement, Calculation & Employment Act Rules</title>
+
   <link rel="canonical" href="https://malaysiasalarytools.com/annual-leave-guide.html">
   <link rel="icon" type="image/png" href="favicon.png">
+
   <meta name="description" content="Malaysia Annual Leave Guide 2026. Learn annual leave entitlement under Malaysia Employment Act, leave calculation, examples, probation, resignation and common HR questions.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
@@ -14,25 +18,60 @@
   crossorigin="anonymous"></script>
 
   <style>
+    :root {
+      --background: #f4f1ea;
+      --card: #fbfaf6;
+      --foreground: #302c26;
+      --muted: #7c766c;
+      --primary: #2f2b25;
+      --primary-foreground: #f6f3ec;
+      --accent: #2f7d5e;
+      --accent-soft: rgba(47,125,94,.10);
+      --accent-border: rgba(47,125,94,.22);
+      --border: #e2ddd2;
+      --white: #ffffff;
+      --radius: 18px;
+      --shadow: 0 18px 45px rgba(47,43,37,.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47,125,94,.08), transparent 34%),
+        linear-gradient(135deg, #f4f1ea, #efe9de);
       margin: 0;
       padding: 0;
-      color: #111827;
+      color: var(--foreground);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .serif {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
     }
 
     .top-nav {
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
+      background: rgba(251,250,246,.84);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      backdrop-filter: blur(10px);
     }
 
     .nav-inner {
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 14px 20px;
       display: flex;
@@ -46,13 +85,10 @@
       align-items: center;
       text-decoration: none;
       flex-shrink: 0;
-      font-weight: bold;
-      color: #2563eb;
-      font-size: 22px;
     }
 
     .brand img {
-      width: 180px;
+      width: 220px;
       height: auto;
       display: block;
     }
@@ -61,138 +97,180 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      overflow-x: auto;
       flex-wrap: nowrap;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
+      min-width: 0;
     }
 
-    .nav-links::-webkit-scrollbar { display: none; }
-
     .nav-links a {
+      display: block;
       text-decoration: none;
-      color: #4b5563;
+      color: var(--muted);
       font-weight: 600;
       font-size: 15px;
       padding: 10px 14px;
-      border-radius: 8px;
+      border-radius: 999px;
       white-space: nowrap;
-      flex-shrink: 0;
+      background: transparent;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      background: #2563eb;
-      color: white;
+      background: var(--primary);
+      color: var(--primary-foreground);
     }
 
     .main-wrapper {
-      padding: 30px 20px;
+      padding: 46px 20px 54px;
     }
 
     .hero {
       text-align: center;
-      max-width: 900px;
-      margin: 35px auto 20px;
+      max-width: 940px;
+      margin: 0 auto 32px;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      padding: 7px 15px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      font-weight: 700;
     }
 
     .hero h1 {
-      font-size: 32px;
-      color: #2563eb;
-      margin-bottom: 10px;
+      margin: 0;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      color: var(--foreground);
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-style: italic;
     }
 
     .hero p {
+      max-width: 820px;
+      margin: 18px auto 0;
       font-size: 17px;
-      color: #64748b;
-      margin-top: 0;
-      line-height: 1.6;
+      color: var(--muted);
     }
 
     .seo {
-      background: white;
-      max-width: 900px;
+      background: var(--card);
+      max-width: 1120px;
       margin: 30px auto;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      line-height: 1.7;
+      padding: 34px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
-    h1 { font-size: 26px; }
-    h2 { font-size: 20px; margin-top: 25px; }
-    h3 { font-size: 16px; margin-top: 18px; }
+    h2 {
+      font-size: clamp(25px, 4vw, 36px);
+      line-height: 1.15;
+      margin: 34px 0 14px;
+      color: var(--foreground);
+      letter-spacing: -.01em;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    h2:first-child { margin-top: 0; }
+
+    h3 {
+      font-size: 18px;
+      margin: 18px 0 10px;
+      color: var(--foreground);
+    }
+
+    p, li { color: var(--muted); }
 
     .calculator-cta,
     .summary-box,
     .guide-box,
     .example-box,
-    .salary-guides-box {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
+    .salary-guides-box,
+    .formula-box {
+      background: #f8f5ef;
+      border: 1px solid var(--border);
       border-radius: 16px;
       padding: 24px;
-      margin: 25px 0;
+      margin: 26px 0;
     }
 
-    .calculator-cta {
-      text-align: center;
-    }
+    .calculator-cta { text-align: center; }
 
-    .calculator-cta h2,
-    .summary-box h2,
-    .guide-box h2,
-    .example-box h2,
-    .salary-guides-box h2 {
-      margin-top: 0;
-    }
+    .calculator-cta h2 { margin-top: 0; }
 
     .calculator-cta p {
-      color: #4b5563;
-      max-width: 700px;
+      max-width: 720px;
       margin-left: auto;
       margin-right: auto;
     }
 
     .cta-button {
       display: inline-block;
-      background: #2563eb;
-      color: white;
+      background: var(--accent);
+      color: #fff;
       text-decoration: none;
-      padding: 12px 24px;
-      border-radius: 10px;
-      font-weight: bold;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 800;
       margin-top: 8px;
     }
 
-    .cta-button:hover {
-      background: #1d4ed8;
-    }
+    .cta-button:hover { filter: brightness(.95); }
 
     .summary-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 12px;
-      margin-top: 18px;
+      margin-top: 20px;
     }
 
     .summary-card {
-      background: white;
-      border: 1px solid #dbe3ef;
-      border-radius: 12px;
-      padding: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
     }
 
     .summary-card strong {
       display: block;
-      color: #2563eb;
-      font-size: 20px;
+      color: var(--accent);
+      font-size: 22px;
       margin-bottom: 6px;
+      font-family: Georgia, "Times New Roman", serif;
     }
 
     .summary-card span {
-      color: #64748b;
+      color: var(--muted);
       font-size: 14px;
+      font-weight: 600;
+    }
+
+    .formula-box {
+      text-align: center;
+    }
+
+    .formula-box strong {
+      display: block;
+      font-size: 22px;
+      color: var(--foreground);
+      margin-bottom: 8px;
+    }
+
+    .formula-box span {
+      color: var(--muted);
+      font-size: 15px;
     }
 
     .contribution-table-wrap {
@@ -202,28 +280,29 @@
     .contribution-table {
       width: 100%;
       border-collapse: collapse;
-      background: white;
-      border: 1px solid #dbe3ef;
+      background: var(--card);
+      border: 1px solid var(--border);
       border-radius: 12px;
       overflow: hidden;
       min-width: 520px;
     }
 
     .contribution-table th {
-      background: #f8fafc;
-      color: #64748b;
+      background: #f1ece3;
+      color: var(--muted);
       font-size: 13px;
       text-align: left;
-      letter-spacing: 0.4px;
+      letter-spacing: .03em;
       padding: 14px;
-      border-bottom: 1px solid #dbe3ef;
+      border-bottom: 1px solid var(--border);
     }
 
     .contribution-table td {
       padding: 14px;
-      border-bottom: 1px solid #eef2f7;
-      color: #334155;
+      border-bottom: 1px solid var(--border);
+      color: var(--foreground);
       font-size: 14px;
+      vertical-align: top;
     }
 
     .contribution-table tr:last-child td {
@@ -231,563 +310,665 @@
     }
 
     .note-box {
+      margin-top: 18px;
+      background: var(--card);
+      border-left: 4px solid var(--accent);
+      padding: 14px;
+      border-radius: 10px;
+      color: var(--muted);
+    }
+
+    .component-grid,
+    .guide-mini-grid {
+      display: grid;
+      gap: 14px;
       margin-top: 20px;
-      background: white;
-      border-left: 4px solid #2563eb;
-      padding: 12px;
-      border-radius: 8px;
-      color: #4b5563;
-    }
-
-    .formula-box {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 14px;
-      padding: 25px;
-      text-align: center;
-      margin: 25px 0;
-    }
-
-    .formula-box strong {
-      display: block;
-      font-size: 22px;
-      color: #111827;
-      margin-bottom: 8px;
-    }
-
-    .formula-box span {
-      color: #64748b;
-      font-size: 15px;
     }
 
     .component-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .guide-mini-grid {
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    }
+
+    .component-card,
+    .guide-mini-grid a,
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
     }
 
     .component-card {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      padding: 18px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-      text-decoration: none;
-      color: inherit;
+      padding: 20px;
+      transition: .18s ease;
+    }
+
+    .component-card:hover,
+    .guide-mini-grid a:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 30px rgba(47,43,37,.08);
     }
 
     .component-icon {
-      font-size: 28px;
-      margin-bottom: 8px;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      display: grid;
+      place-items: center;
+      margin-bottom: 10px;
+      font-size: 21px;
     }
 
     .component-card h3 {
-      margin: 8px 0;
+      margin: 8px 0 4px;
     }
 
     .component-card p {
-      color: #4b5563;
+      margin: 0;
       font-size: 14px;
       line-height: 1.5;
-      margin-bottom: 0;
     }
 
     .faq-box {
-      margin-top: 25px;
+      margin-top: 18px;
+      max-width: 850px;
     }
 
     .faq-item {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 10px;
-      padding: 14px;
+      padding: 4px 20px;
       margin-bottom: 12px;
     }
 
     .faq-item summary {
-      font-weight: bold;
+      font-weight: 800;
       cursor: pointer;
       list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--foreground);
+      padding: 16px 0;
     }
 
-    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
 
     .faq-item summary::after {
-      content: "▼";
-      float: right;
-      font-size: 12px;
+      content: "+";
+      color: var(--accent);
+      font-size: 20px;
+      line-height: 1;
     }
 
-    .faq-item[open] summary::after { content: "▲"; }
+    .faq-item[open] summary::after {
+      content: "−";
+    }
 
     .faq-item p {
-      margin-top: 12px;
-      margin-bottom: 0;
-      color: #4b5563;
-      line-height: 1.5;
-    }
-
-    .guide-mini-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 12px;
-      margin-top: 18px;
+      padding-bottom: 18px;
+      margin: 0;
+      line-height: 1.55;
+      font-size: 14px;
     }
 
     .guide-mini-grid a {
-      background: white;
-      border: 1px solid #e5e7eb;
-      padding: 12px 14px;
-      border-radius: 10px;
+      display: block;
+      padding: 14px 16px;
       text-decoration: none;
-      color: #2563eb;
-      font-weight: bold;
+      color: var(--foreground);
+      font-weight: 800;
       text-align: center;
+      transition: .18s ease;
     }
 
     .guide-mini-grid a:hover {
-      background: #2563eb;
-      color: white;
+      color: var(--accent);
+      background: var(--white);
     }
 
     .view-all-guides {
       text-align: center;
-      margin-top: 20px;
+      margin: 20px 0 0;
     }
 
     .view-all-guides a {
-      color: #2563eb;
-      font-weight: bold;
+      color: var(--accent);
+      font-weight: 800;
       text-decoration: none;
     }
 
     .footer {
-      text-align:center;
-      padding:20px;
+      border-top: 1px solid var(--border);
+      padding: 28px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
     }
 
-    @media (max-width: 700px){
-      .main-wrapper { padding: 15px 10px; }
-      .seo { margin: 15px auto; padding: 18px; }
-      .nav-inner { padding: 8px 10px; gap: 8px; }
-      .brand img { width: 120px; }
-      .brand { font-size: 18px; }
-      .nav-links { gap: 6px; }
-      .nav-links a { font-size: 14px; padding: 8px 10px; }
-      .hero h1 { font-size: 26px; }
-      .component-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-      .component-card { padding: 14px; text-align: center; }
-      .component-icon { font-size: 22px; }
-      .component-card h3 { font-size: 15px; margin: 6px 0; }
-      .component-card p { font-size: 12px; line-height: 1.35; margin: 0; }
+    .footer a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer a:hover { color: var(--accent); }
+
+    @media (max-width: 800px) {
+      .nav-inner {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .nav-links {
+        width: auto;
+        flex: 1;
+        min-width: 0;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+      }
+
+      .nav-links::-webkit-scrollbar { display: none; }
+    }
+
+    @media (max-width: 700px) {
+      .main-wrapper {
+        padding: 34px 10px 40px;
+      }
+
+      .seo {
+        padding: 22px;
+      }
+
+      .nav-inner {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        gap: 8px;
+      }
+
+      .brand img {
+        width: 150px;
+      }
+
+      .nav-links {
+        gap: 6px;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .component-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .component-card {
+        padding: 14px;
+        text-align: center;
+      }
+
+      .component-icon {
+        margin-left: auto;
+        margin-right: auto;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+      }
+
+      .component-card h3 {
+        font-size: 15px;
+        margin: 6px 0;
+      }
+
+      .component-card p {
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .cta-button {
+        width: 100%;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <header class="top-nav">
-    <div class="nav-inner">
-      <a href="index.html" class="brand">
-        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
-      </a>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="calculators.html">Calculators</a>
-        <a href="guides.html" class="active">Guides</a>
-        <a href="about.html">About</a>
-      </nav>
-    </div>
-  </header>
+<header class="top-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="logo.png" alt="Malaysia Salary Tools">
+    </a>
 
-  <div class="main-wrapper">
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="guides.html" class="active">Guides</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
 
-    <div class="hero">
-      <h1>Malaysia Annual Leave Guide 2026</h1>
-      <p>Learn how annual leave entitlement works in Malaysia, including minimum leave days, eligibility, calculation examples and common employment questions.</p>
-    </div>
+<main class="main-wrapper">
 
-    <div class="seo">
+  <section class="hero">
+    <span class="pill">Updated for Malaysia employment rules 2026</span>
+    <h1 class="serif">Malaysia <em>annual leave</em> guide 2026</h1>
+    <p>
+      Learn annual leave entitlement, pro-rated leave calculations,
+      probation rules, resignation scenarios and common employment questions in Malaysia.
+    </p>
+  </section>
 
-      <section class="calculator-cta">
-        <h2>🧮 Calculate Your Annual Leave Entitlement</h2>
-        <p>
-          Want to estimate how many annual leave days you may be entitled to?
-          Use our free Annual Leave Calculator to estimate leave entitlement based on your service period.
-        </p>
-        <a href="annual-leave-calculator.html" class="cta-button">Open Annual Leave Calculator →</a>
-      </section>
+  <section class="seo">
 
-      <section class="summary-box">
-        <h2>📌 Annual Leave Quick Summary</h2>
-        <p>
-          Annual leave is paid time off given to employees each year. In Malaysia, the minimum annual leave entitlement depends mainly on the employee's length of service.
-        </p>
-
-        <div class="summary-grid">
-          <div class="summary-card">
-            <strong>8 Days</strong>
-            <span>Less than 2 years of service</span>
-          </div>
-          <div class="summary-card">
-            <strong>12 Days</strong>
-            <span>2 to 5 years of service</span>
-          </div>
-          <div class="summary-card">
-            <strong>16 Days</strong>
-            <span>More than 5 years of service</span>
-          </div>
-          <div class="summary-card">
-            <strong>Paid Leave</strong>
-            <span>Annual leave is normally paid time off</span>
-          </div>
-        </div>
-      </section>
-
-      <h2>What Is Annual Leave?</h2>
+    <section class="calculator-cta">
+      <h2>Calculate Your Annual Leave Entitlement</h2>
       <p>
-        Annual leave is paid leave given to employees so they can take time off work while still receiving salary. It is one of the key employment benefits employees look at when comparing salary packages and job offers.
+        Want to estimate how many annual leave days you may be entitled to?
+        Use our free Annual Leave Calculator to estimate leave entitlement based on your service period.
       </p>
+      <a href="annual-leave-calculator.html" class="cta-button">Open Annual Leave Calculator →</a>
+    </section>
+
+    <section class="summary-box">
+      <h2>Annual Leave Quick Summary</h2>
       <p>
-        In Malaysia, annual leave entitlement is commonly based on the employee's length of service. Employers may provide more leave than the statutory minimum, but they should not provide less than the minimum entitlement required for eligible employees.
+        Annual leave is paid time off given to employees each year. In Malaysia, the minimum annual leave entitlement depends mainly on the employee's length of service.
       </p>
 
-      <section class="guide-box">
-        <h2>Annual Leave Entitlement in Malaysia</h2>
-        <p>
-Annual leave entitlement is generally linked to an employee's completed years of service. Employees with longer service periods are typically entitled to more annual leave days under the minimum employment standards.
-</p>
-        <p>
-          The table below shows a simplified guide to minimum annual leave entitlement based on completed years of service.
-        </p>
-
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Length of Service</th>
-                <th>Minimum Annual Leave</th>
-                <th>Simple Explanation</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Less than 2 years</td>
-                <td>8 days per year</td>
-                <td>For employees with shorter service period</td>
-              </tr>
-              <tr>
-                <td>2 years or more but less than 5 years</td>
-                <td>12 days per year</td>
-                <td>For employees with mid-level service period</td>
-              </tr>
-              <tr>
-                <td>5 years or more</td>
-                <td>16 days per year</td>
-                <td>For long-serving employees</td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <strong>8 Days</strong>
+          <span>Less than 2 years of service</span>
         </div>
-
-        <div class="note-box">
-          <strong>Note:</strong> This is a simplified guide. Actual entitlement may depend on employment contract terms, company policy, eligibility and the latest employment law requirements.
+        <div class="summary-card">
+          <strong>12 Days</strong>
+          <span>2 to 5 years of service</span>
         </div>
-      </section>
-
-      <h2>How Annual Leave Is Calculated</h2>
-      <p>
-        Annual leave is usually calculated based on the employee's yearly entitlement. If an employee joins or leaves during the year, annual leave may be calculated on a pro-rated basis depending on company policy and applicable employment rules.
-      </p>
-
-      <div class="formula-box">
-        <strong>Pro-Rated Leave = Annual Entitlement × Months Worked ÷ 12</strong>
-        <span>Example: 8 days × 6 months ÷ 12 = 4 days of annual leave</span>
+        <div class="summary-card">
+          <strong>16 Days</strong>
+          <span>More than 5 years of service</span>
+        </div>
+        <div class="summary-card">
+          <strong>Paid Leave</strong>
+          <span>Annual leave is normally paid time off</span>
+        </div>
       </div>
+    </section>
 
-      <section class="example-box">
-        <h2>Example Annual Leave Calculation</h2>
-        <p>
-          If an employee is entitled to 8 days of annual leave per year and works for 6 months in the year, the estimated pro-rated leave may be:
-        </p>
-        <ul>
-          <li>Annual entitlement: 8 days</li>
-          <li>Months worked: 6 months</li>
-          <li>Estimated pro-rated leave: 4 days</li>
-        </ul>
-        <p>
-          Some companies may have specific rounding rules, cut-off dates or HR policies, so the actual result may differ slightly.
-        </p>
-      </section>
+    <h2>What Is Annual Leave?</h2>
+    <p>
+      Annual leave is paid leave given to employees so they can take time off work while still receiving salary. It is one of the key employment benefits employees look at when comparing salary packages and job offers.
+    </p>
+    <p>
+      In Malaysia, annual leave entitlement is commonly based on the employee's length of service. Employers may provide more leave than the statutory minimum, but they should not provide less than the minimum entitlement required for eligible employees.
+    </p>
 
-      <h2>Annual Leave During Probation</h2>
+    <section class="guide-box">
+      <h2>Annual Leave Entitlement in Malaysia</h2>
       <p>
-        Employees often ask whether they can take annual leave during probation. This depends on the employment contract and company policy. Some employers allow leave to be taken after confirmation, while others allow pro-rated leave during probation.
+        Annual leave entitlement is generally linked to an employee's completed years of service. Employees with longer service periods are typically entitled to more annual leave days under the minimum employment standards.
       </p>
       <p>
-        Even if annual leave is not normally taken during probation, employees may still accumulate entitlement depending on the employment arrangement and applicable rules.
+        The table below shows a simplified guide to minimum annual leave entitlement based on completed years of service.
       </p>
 
-<section class="guide-box">
-<h2>Can Annual Leave Be Carried Forward?</h2>
-
-<p>
-Many companies allow employees to carry forward unused annual leave to the following year. However, carry-forward rules vary between employers.
-</p>
-
-<p>
-Some companies allow leave to be carried forward for a limited period, while others require employees to use their leave before a specific deadline.
-</p>
-
-<p>
-Employees should review company policies carefully to avoid losing unused leave entitlement.
-</p>
-
-</section>
-      
-<section class="guide-box">
-<h2>Annual Leave During Resignation</h2>
-
-<p>
-Employees who resign often ask what happens to unused annual leave during the notice period. Depending on company policy and employment terms, unused leave may be taken during the notice period, paid out in cash or adjusted against final salary.
-</p>
-
-<p>
-Employers may also have internal policies regarding whether annual leave can be taken during the notice period. Employees should check their employment contract and discuss arrangements with HR before submitting leave applications.
-</p>
-
-</section>
-      
-      <section class="guide-box">
-        <h2>Common Annual Leave Situations</h2>
-        <div class="component-grid">
-          <div class="component-card">
-            <div class="component-icon">🧑‍💼</div>
-            <h3>New Joiner</h3>
-            <p>Leave may be pro-rated based on joining date and months worked.</p>
-          </div>
-          <div class="component-card">
-            <div class="component-icon">📆</div>
-            <h3>Mid-Year Resignation</h3>
-            <p>Unused or excess leave may be adjusted in final payroll.</p>
-          </div>
-          <div class="component-card">
-            <div class="component-icon">🏢</div>
-            <h3>Company Policy</h3>
-            <p>Employers may offer more leave than the minimum requirement.</p>
-          </div>
-          <div class="component-card">
-            <div class="component-icon">📝</div>
-            <h3>Leave Approval</h3>
-            <p>Annual leave usually requires employer approval before taking time off.</p>
-          </div>
-        </div>
-      </section>
-
-<section class="guide-box">
-<h2>Common Annual Leave Mistakes</h2>
-
-<p>
-Many disputes between employees and employers arise because annual leave policies are misunderstood. Employees should always check company policies, approval requirements and carry-forward rules before making leave plans.
-</p>
-  
-<ul>
-<li>Assuming annual leave can be taken without approval</li>
-<li>Not checking carry-forward deadlines</li>
-<li>Misunderstanding pro-rated leave calculations</li>
-<li>Using all leave before resignation without HR confirmation</li>
-<li>Confusing annual leave with medical leave entitlement</li>
-</ul>
-
-</section>
-      
-      <h2>Unused Annual Leave</h2>
-      <p>
-        Unused annual leave is a common issue during year-end, resignation or payroll processing. Depending on company policy, unused leave may be carried forward, forfeited or paid out in certain situations.
-      </p>
-      <p>
-        Employees should check their employment contract or HR policy to understand whether unused annual leave can be carried forward and whether there is any deadline to use it.
-      </p>
-
-      <h2>Annual Leave vs Medical Leave vs Public Holiday</h2>
       <div class="contribution-table-wrap">
         <table class="contribution-table">
           <thead>
             <tr>
-              <th>Leave Type</th>
-              <th>Main Purpose</th>
-              <th>Usually Paid?</th>
+              <th>Length of Service</th>
+              <th>Minimum Annual Leave</th>
+              <th>Simple Explanation</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Annual Leave</td>
-              <td>Planned time off for rest, travel or personal matters</td>
-              <td>Yes</td>
+              <td>Less than 2 years</td>
+              <td>8 days per year</td>
+              <td>For employees with shorter service period</td>
             </tr>
             <tr>
-              <td>Medical Leave</td>
-              <td>Time off due to illness or medical reasons</td>
-              <td>Yes, if eligible</td>
+              <td>2 years or more but less than 5 years</td>
+              <td>12 days per year</td>
+              <td>For employees with mid-level service period</td>
             </tr>
             <tr>
-              <td>Public Holiday</td>
-              <td>Gazetted public holidays observed by employer</td>
-              <td>Yes, if applicable</td>
+              <td>5 years or more</td>
+              <td>16 days per year</td>
+              <td>For long-serving employees</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <section class="guide-box">
-        <h2>Who Should Read This Annual Leave Guide?</h2>
-        <ul>
-          <li>Employees checking how many annual leave days they are entitled to</li>
-          <li>Job seekers comparing leave benefits in employment offers</li>
-          <li>HR and payroll staff calculating pro-rated annual leave</li>
-          <li>Business owners preparing basic employment policies</li>
-        </ul>
-      </section>
+      <div class="note-box">
+        <strong>Note:</strong> This is a simplified guide. Actual entitlement may depend on employment contract terms, company policy, eligibility and the latest employment law requirements.
+      </div>
+    </section>
 
-<section class="guide-box">
-<h2>Common Annual Leave Examples</h2>
+    <h2>How Annual Leave Is Calculated</h2>
+    <p>
+      Annual leave is usually calculated based on the employee's yearly entitlement. If an employee joins or leaves during the year, annual leave may be calculated on a pro-rated basis depending on company policy and applicable employment rules.
+    </p>
 
-<h3>Example 1: New Employee</h3>
-<p>
-An employee joins in July and is entitled to 8 days per year. The estimated pro-rated entitlement may be around 4 days for the remaining six months.
-</p>
+    <div class="formula-box">
+      <strong>Pro-Rated Leave = Annual Entitlement × Months Worked ÷ 12</strong>
+      <span>Example: 8 days × 6 months ÷ 12 = 4 days of annual leave</span>
+    </div>
 
-<h3>Example 2: Employee With 3 Years Service</h3>
-<p>
-An employee with more than 2 years but less than 5 years of service may be entitled to 12 days of annual leave per year.
-</p>
+    <section class="example-box">
+      <h2>Example Annual Leave Calculation</h2>
+      <p>
+        If an employee is entitled to 8 days of annual leave per year and works for 6 months in the year, the estimated pro-rated leave may be:
+      </p>
+      <ul>
+        <li>Annual entitlement: 8 days</li>
+        <li>Months worked: 6 months</li>
+        <li>Estimated pro-rated leave: 4 days</li>
+      </ul>
+      <p>
+        Some companies may have specific rounding rules, cut-off dates or HR policies, so the actual result may differ slightly.
+      </p>
+    </section>
 
-<h3>Example 3: Employee With 6 Years Service</h3>
-<p>
-An employee with more than 5 years of service may be entitled to 16 days of annual leave annually, subject to employment terms and company policies.
-</p>
+    <h2>Annual Leave During Probation</h2>
+    <p>
+      Employees often ask whether they can take annual leave during probation. This depends on the employment contract and company policy. Some employers allow leave to be taken after confirmation, while others allow pro-rated leave during probation.
+    </p>
+    <p>
+      Even if annual leave is not normally taken during probation, employees may still accumulate entitlement depending on the employment arrangement and applicable rules.
+    </p>
 
-</section>
+    <section class="guide-box">
+      <h2>Can Annual Leave Be Carried Forward?</h2>
+      <p>
+        Many companies allow employees to carry forward unused annual leave to the following year. However, carry-forward rules vary between employers.
+      </p>
+      <p>
+        Some companies allow leave to be carried forward for a limited period, while others require employees to use their leave before a specific deadline.
+      </p>
+      <p>
+        Employees should review company policies carefully to avoid losing unused leave entitlement.
+      </p>
+    </section>
 
-<section class="guide-box">
-<h2>Official Reference</h2>
+    <section class="guide-box">
+      <h2>Annual Leave During Resignation</h2>
+      <p>
+        Employees who resign often ask what happens to unused annual leave during the notice period. Depending on company policy and employment terms, unused leave may be taken during the notice period, paid out in cash or adjusted against final salary.
+      </p>
+      <p>
+        Employers may also have internal policies regarding whether annual leave can be taken during the notice period. Employees should check their employment contract and discuss arrangements with HR before submitting leave applications.
+      </p>
+    </section>
 
-<p>
-Employment rules may change over time. Employees and employers should refer to official government sources and the latest Employment Act requirements for the most up-to-date information.
-</p>
+    <section class="guide-box">
+      <h2>Common Annual Leave Situations</h2>
+      <div class="component-grid">
+        <div class="component-card">
+          <div class="component-icon">🧑‍💼</div>
+          <h3>New Joiner</h3>
+          <p>Leave may be pro-rated based on joining date and months worked.</p>
+        </div>
+        <div class="component-card">
+          <div class="component-icon">📆</div>
+          <h3>Mid-Year Resignation</h3>
+          <p>Unused or excess leave may be adjusted in final payroll.</p>
+        </div>
+        <div class="component-card">
+          <div class="component-icon">🏢</div>
+          <h3>Company Policy</h3>
+          <p>Employers may offer more leave than the minimum requirement.</p>
+        </div>
+        <div class="component-card">
+          <div class="component-icon">📝</div>
+          <h3>Leave Approval</h3>
+          <p>Annual leave usually requires employer approval before taking time off.</p>
+        </div>
+      </div>
+    </section>
 
-</section>
-      
-      <h2>Frequently Asked Questions</h2>
+    <section class="guide-box">
+      <h2>Common Annual Leave Mistakes</h2>
+      <p>
+        Many disputes between employees and employers arise because annual leave policies are misunderstood. Employees should always check company policies, approval requirements and carry-forward rules before making leave plans.
+      </p>
+      <ul>
+        <li>Assuming annual leave can be taken without approval</li>
+        <li>Not checking carry-forward deadlines</li>
+        <li>Misunderstanding pro-rated leave calculations</li>
+        <li>Using all leave before resignation without HR confirmation</li>
+        <li>Confusing annual leave with medical leave entitlement</li>
+      </ul>
+    </section>
 
-      <div class="faq-box">
-        <details class="faq-item" open>
-          <summary>How many days of annual leave are employees entitled to in Malaysia?</summary>
-          <p>
-            Minimum annual leave entitlement commonly depends on length of service: 8 days for less than 2 years, 12 days for 2 to 5 years and 16 days for more than 5 years of service.
-          </p>
-        </details>
+    <h2>Unused Annual Leave</h2>
+    <p>
+      Unused annual leave is a common issue during year-end, resignation or payroll processing. Depending on company policy, unused leave may be carried forward, forfeited or paid out in certain situations.
+    </p>
+    <p>
+      Employees should check their employment contract or HR policy to understand whether unused annual leave can be carried forward and whether there is any deadline to use it.
+    </p>
 
-        <details class="faq-item">
-          <summary>Is annual leave paid in Malaysia?</summary>
-          <p>
-            Yes. Annual leave is normally paid time off, which means employees continue to receive salary while taking approved annual leave.
-          </p>
-        </details>
+    <h2>Annual Leave vs Medical Leave vs Public Holiday</h2>
+    <div class="contribution-table-wrap">
+      <table class="contribution-table">
+        <thead>
+          <tr>
+            <th>Leave Type</th>
+            <th>Main Purpose</th>
+            <th>Usually Paid?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Annual Leave</td>
+            <td>Planned time off for rest, travel or personal matters</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Medical Leave</td>
+            <td>Time off due to illness or medical reasons</td>
+            <td>Yes, if eligible</td>
+          </tr>
+          <tr>
+            <td>Public Holiday</td>
+            <td>Gazetted public holidays observed by employer</td>
+            <td>Yes, if applicable</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-        <details class="faq-item">
-          <summary>Can annual leave be pro-rated?</summary>
-          <p>
-            Yes. Annual leave is commonly pro-rated when an employee joins or leaves during the year. The calculation may depend on months worked, company policy and employment terms.
-          </p>
-        </details>
+    <section class="guide-box">
+      <h2>Who Should Read This Annual Leave Guide?</h2>
+      <ul>
+        <li>Employees checking how many annual leave days they are entitled to</li>
+        <li>Job seekers comparing leave benefits in employment offers</li>
+        <li>HR and payroll staff calculating pro-rated annual leave</li>
+        <li>Business owners preparing basic employment policies</li>
+      </ul>
+    </section>
 
-        <details class="faq-item">
-          <summary>Can employees take annual leave during probation?</summary>
-          <p>
-            This depends on the employment contract and company policy. Some employers allow pro-rated annual leave during probation, while others require employees to wait until confirmation.
-          </p>
-        </details>
+    <section class="guide-box">
+      <h2>Common Annual Leave Examples</h2>
 
-        <details class="faq-item">
-          <summary>Can annual leave be taken during the notice period?</summary>
-          <p>
-            This depends on company policy, employment contract terms and employer approval. Some employers allow employees to use annual leave during the notice period, while others may restrict leave to ensure a proper handover of duties before the employee leaves the company.
-          </p>
-        </details>
+      <h3>Example 1: New Employee</h3>
+      <p>
+        An employee joins in July and is entitled to 8 days per year. The estimated pro-rated entitlement may be around 4 days for the remaining six months.
+      </p>
 
-        <details class="faq-item">
-          <summary>Can annual leave be encashed?</summary>
-          <p>
-            Whether annual leave can be converted into cash depends on company policy and employment arrangements. In certain situations, unused annual leave may be paid out when an employee resigns or leaves the company, while other employers may require leave to be taken before the end of employment.
-          </p>
-        </details>
-        
-        <details class="faq-item">
-          <summary>What happens to unused annual leave when resigning?</summary>
-          <p>
-            Unused annual leave may be paid out, offset against notice period or adjusted in final salary depending on company policy and employment terms.
-          </p>
-        </details>
+      <h3>Example 2: Employee With 3 Years Service</h3>
+      <p>
+        An employee with more than 2 years but less than 5 years of service may be entitled to 12 days of annual leave per year.
+      </p>
 
-        <details class="faq-item">
-          <summary>Can employers reject annual leave applications?</summary>
-          <p>
-            Annual leave usually requires employer approval. Employers may reject or reschedule leave requests due to operational needs, staffing issues or company policy.
-          </p>
-        </details>
+      <h3>Example 3: Employee With 6 Years Service</h3>
+      <p>
+        An employee with more than 5 years of service may be entitled to 16 days of annual leave annually, subject to employment terms and company policies.
+      </p>
+    </section>
 
-        <details class="faq-item">
-          <summary>Can annual leave be carried forward to the next year?</summary>
-          <p>
-            Carry-forward rules depend on company policy or employment terms. Some companies allow unused leave to be carried forward for a limited period, while others may require leave to be used within the year.
-          </p>
-        </details>
+    <section class="guide-box">
+      <h2>Official Reference</h2>
+      <p>
+        Employment rules may change over time. Employees and employers should refer to official government sources and the latest Employment Act requirements for the most up-to-date information.
+      </p>
+    </section>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-box">
+      <details class="faq-item" open>
+        <summary>How many days of annual leave are employees entitled to in Malaysia?</summary>
+        <p>
+          Minimum annual leave entitlement commonly depends on length of service: 8 days for less than 2 years, 12 days for 2 to 5 years and 16 days for more than 5 years of service.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is annual leave paid in Malaysia?</summary>
+        <p>
+          Yes. Annual leave is normally paid time off, which means employees continue to receive salary while taking approved annual leave.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can annual leave be pro-rated?</summary>
+        <p>
+          Yes. Annual leave is commonly pro-rated when an employee joins or leaves during the year. The calculation may depend on months worked, company policy and employment terms.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can employees take annual leave during probation?</summary>
+        <p>
+          This depends on the employment contract and company policy. Some employers allow pro-rated annual leave during probation, while others require employees to wait until confirmation.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can annual leave be taken during the notice period?</summary>
+        <p>
+          This depends on company policy, employment contract terms and employer approval. Some employers allow employees to use annual leave during the notice period, while others may restrict leave to ensure a proper handover of duties before the employee leaves the company.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can annual leave be encashed?</summary>
+        <p>
+          Whether annual leave can be converted into cash depends on company policy and employment arrangements. In certain situations, unused annual leave may be paid out when an employee resigns or leaves the company, while other employers may require leave to be taken before the end of employment.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can annual leave expire?</summary>
+        <p>
+          Annual leave may expire if company policy requires employees to use it within a certain period. Some employers allow carry-forward, while others set a deadline for unused leave.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can employer force employee to take annual leave?</summary>
+        <p>
+          This depends on employment terms, company policy and the reason for the arrangement. Employees should check with HR if annual leave is being scheduled by the employer.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can annual leave be carried forward indefinitely?</summary>
+        <p>
+          Usually no. Most employers that allow carry-forward will set a limit or expiry period. Employees should check the company leave policy to avoid losing unused leave.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What happens to unused annual leave when resigning?</summary>
+        <p>
+          Unused annual leave may be paid out, offset against notice period or adjusted in final salary depending on company policy and employment terms.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can employers reject annual leave applications?</summary>
+        <p>
+          Annual leave usually requires employer approval. Employers may reject or reschedule leave requests due to operational needs, staffing issues or company policy.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can annual leave be carried forward to the next year?</summary>
+        <p>
+          Carry-forward rules depend on company policy or employment terms. Some companies allow unused leave to be carried forward for a limited period, while others may require leave to be used within the year.
+        </p>
+      </details>
+    </div>
+
+    <section class="salary-guides-box">
+      <h2>Related Employment Guides</h2>
+      <p>Continue reading related Malaysia employment guides to understand leave, holidays and payroll rules.</p>
+
+      <div class="guide-mini-grid">
+        <a href="mc-leave-guide.html">MC Leave Guide</a>
+        <a href="public-holiday-guide.html">Public Holiday Guide</a>
+        <a href="overtime-guide.html">Overtime Guide</a>
+        <a href="resignation-notice-guide.html">Resignation Notice Guide</a>
       </div>
 
-      <section class="salary-guides-box">
-        <h2>📚 Related Employment Guides</h2>
-        <p>Continue reading related Malaysia employment guides to understand leave, holidays and payroll rules.</p>
+      <p class="view-all-guides"><a href="guides.html">View All Guides →</a></p>
+    </section>
 
-        <div class="guide-mini-grid">
-          <a href="mc-leave-guide.html">🏥 MC Leave Guide</a>
-          <a href="public-holiday-guide.html">📅 Public Holiday Guide</a>
-          <a href="overtime-guide.html">⏰ Overtime Guide</a>
-          <a href="salary-guide.html">💼 Salary Guide</a>
-        </div>
+    <section class="salary-guides-box">
+      <h2>Related Calculators</h2>
+      <p>Use these calculators to estimate leave, overtime and monthly take-home pay in Malaysia.</p>
 
-        <p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p>
-      </section>
+      <div class="guide-mini-grid">
+        <a href="annual-leave-calculator.html">Annual Leave Calculator</a>
+        <a href="mc-leave-calculator.html">MC Leave Calculator</a>
+        <a href="overtime-calculator.html">Overtime Calculator</a>
+        <a href="index.html">Salary Calculator</a>
+      </div>
 
-      <section class="salary-guides-box">
-        <h2>🧮 Related Calculators</h2>
-        <p>Use these calculators to estimate leave, overtime and monthly take-home pay in Malaysia.</p>
+      <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
+    </section>
 
-        <div class="guide-mini-grid">
-          <a href="annual-leave-calculator.html">Annual Leave Calculator</a>
-          <a href="overtime-calculator.html">Overtime Calculator</a>
-          <a href="index.html">Salary Calculator</a>
-          <a href="pcb-calculator.html">PCB Calculator</a>
-        </div>
+  </section>
 
-        <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
-      </section>
+</main>
 
-    </div>
-  </div>
-
-  <hr style="margin-top:40px;">
-
-  <div class="footer">
-    <p>© 2026 Malaysia Salary Tools</p>
-    <p>
-      <a href="about.html">About Us</a> |
-      <a href="contact.html">Contact Us</a> |
-      <a href="guides.html">Guides</a> |
-      <a href="privacy-policy.html">Privacy Policy</a>
-    </p>
-  </div>
+<footer class="footer">
+  <p>© 2026 Malaysia Salary Tools</p>
+  <p>
+    <a href="about.html">About Us</a> |
+    <a href="contact.html">Contact Us</a> |
+    <a href="guides.html">Guides</a> |
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </p>
+</footer>
 
 </body>
 </html>
+```
