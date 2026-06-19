@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <title>Malaysia EIS Contribution Guide 2026 | SIP Rates, Benefits & Payroll Guide</title>
+
   <link rel="canonical" href="https://malaysiasalarytools.com/eis-guide.html">
   <link rel="icon" type="image/png" href="favicon.png">
+
   <meta name="description" content="Malaysia EIS Contribution Guide 2026. Learn employee and employer EIS rates, SIP contribution examples, job loss benefits, eligibility and how EIS affects monthly payroll.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
@@ -14,25 +17,64 @@
   crossorigin="anonymous"></script>
 
   <style>
+    :root {
+      --background: #f4f1ea;
+      --card: #fbfaf6;
+      --foreground: #302c26;
+      --muted: #7c766c;
+      --primary: #2f2b25;
+      --primary-foreground: #f6f3ec;
+      --accent: #2f7d5e;
+      --accent-soft: rgba(47,125,94,.10);
+      --accent-border: rgba(47,125,94,.22);
+      --border: #e2ddd2;
+      --white: #ffffff;
+      --radius: 18px;
+      --shadow: 0 18px 45px rgba(47,43,37,.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47,125,94,.08), transparent 34%),
+        linear-gradient(135deg, #f4f1ea, #efe9de);
       margin: 0;
       padding: 0;
-      color: #111827;
+      color: var(--foreground);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .serif {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
     }
 
     .top-nav {
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
+      background: rgba(251,250,246,.84);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      backdrop-filter: blur(10px);
     }
 
     .nav-inner {
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 14px 20px;
       display: flex;
@@ -46,13 +88,10 @@
       align-items: center;
       text-decoration: none;
       flex-shrink: 0;
-      font-weight: bold;
-      color: #2563eb;
-      font-size: 22px;
     }
 
     .brand img {
-      width: 180px;
+      width: 220px;
       height: auto;
       display: block;
     }
@@ -61,294 +100,121 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      overflow-x: auto;
       flex-wrap: nowrap;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
+      min-width: 0;
     }
 
-    .nav-links::-webkit-scrollbar { display: none; }
-
     .nav-links a {
+      display: block;
       text-decoration: none;
-      color: #4b5563;
+      color: var(--muted);
       font-weight: 600;
       font-size: 15px;
       padding: 10px 14px;
-      border-radius: 8px;
+      border-radius: 999px;
       white-space: nowrap;
-      flex-shrink: 0;
+      background: transparent;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      background: #2563eb;
-      color: white;
+      background: var(--primary);
+      color: var(--primary-foreground);
     }
 
     .main-wrapper {
-      padding: 30px 20px;
+      padding: 46px 20px 54px;
     }
 
     .hero {
       text-align: center;
-      max-width: 900px;
-      margin: 35px auto 20px;
+      max-width: 940px;
+      margin: 0 auto 32px;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      padding: 7px 15px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      font-weight: 700;
     }
 
     .hero h1 {
-      font-size: 32px;
-      color: #2563eb;
-      margin-bottom: 10px;
+      margin: 0;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      color: var(--foreground);
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-style: italic;
     }
 
     .hero p {
+      max-width: 820px;
+      margin: 18px auto 0;
       font-size: 17px;
-      color: #64748b;
-      margin-top: 0;
-      line-height: 1.6;
+      color: var(--muted);
     }
 
-    .card,
     .seo {
-      background: white;
-      max-width: 900px;
+      background: var(--card);
+      max-width: 1120px;
       margin: 30px auto;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      padding: 34px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
-    .seo {
-      line-height: 1.7;
+    h2 {
+      font-size: clamp(25px, 4vw, 36px);
+      line-height: 1.15;
+      margin: 34px 0 14px;
+      color: var(--foreground);
+      letter-spacing: -.01em;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
     }
 
-    .intro-box {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 16px;
-      padding: 22px;
-      margin-bottom: 25px;
+    h2:first-child {
+      margin-top: 0;
     }
 
-    .intro-box p {
-      margin-bottom: 0;
-      color: #4b5563;
+    h3 {
+      font-size: 18px;
+      margin: 18px 0 10px;
+      color: var(--foreground);
     }
 
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      margin-top: 18px;
+    p,
+    li {
+      color: var(--muted);
     }
 
-    .summary-card {
-      background: white;
-      border: 1px solid #dbe3ef;
-      border-radius: 12px;
-      padding: 16px;
-    }
-
-    .summary-card strong {
-      display: block;
-      color: #2563eb;
-      font-size: 20px;
-      margin-bottom: 6px;
-    }
-
-    .summary-card span {
-      color: #64748b;
-      font-size: 14px;
-    }
-
-    .formula-box {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 14px;
-      padding: 25px;
-      text-align: center;
-      margin: 25px 0;
-    }
-
-    .formula-box strong {
-      display: block;
-      font-size: 22px;
-      color: #111827;
-      margin-bottom: 8px;
-    }
-
-    .formula-box span {
-      color: #64748b;
-      font-size: 15px;
-    }
-
+    .calculator-cta,
+    .intro-box,
     .contribution-box,
-    .guide-box {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
+    .guide-box,
+    .salary-guides-box,
+    .formula-box {
+      background: #f8f5ef;
+      border: 1px solid var(--border);
       border-radius: 16px;
       padding: 24px;
-      margin: 25px 0;
-    }
-
-    .contribution-table-wrap { overflow-x: auto; }
-
-    .contribution-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-      border: 1px solid #dbe3ef;
-      border-radius: 12px;
-      overflow: hidden;
-      min-width: 520px;
-    }
-
-    .contribution-table th {
-      background: #f8fafc;
-      color: #64748b;
-      font-size: 13px;
-      text-align: left;
-      letter-spacing: 0.4px;
-      padding: 14px;
-      border-bottom: 1px solid #dbe3ef;
-    }
-
-    .contribution-table td {
-      padding: 14px;
-      border-bottom: 1px solid #eef2f7;
-      color: #334155;
-      font-size: 14px;
-      vertical-align: top;
-    }
-
-    .contribution-table tr:last-child td { border-bottom: none; }
-
-    .note-box {
-      margin-top: 20px;
-      background: white;
-      border-left: 4px solid #2563eb;
-      padding: 12px;
-      border-radius: 8px;
-      color: #4b5563;
-    }
-
-    .component-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
-      margin-top: 20px;
-    }
-
-    .component-card {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      padding: 18px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .component-icon {
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
-
-    .component-card h3 {
-      margin: 8px 0;
-    }
-
-    .component-card p {
-      color: #4b5563;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .faq-box { margin-top: 25px; }
-
-    .faq-item {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 10px;
-      padding: 14px;
-      margin-bottom: 12px;
-    }
-
-    .faq-item summary {
-      font-weight: bold;
-      cursor: pointer;
-      list-style: none;
-    }
-
-    .faq-item summary::-webkit-details-marker { display: none; }
-
-    .faq-item summary::after {
-      content: "▼";
-      float: right;
-      font-size: 12px;
-    }
-
-    .faq-item[open] summary::after { content: "▲"; }
-
-    .faq-item p {
-      margin-top: 12px;
-      margin-bottom: 0;
-      color: #4b5563;
-      line-height: 1.5;
-    }
-
-    .salary-guides-box {
-      margin-top: 35px;
-      padding: 24px;
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-    }
-
-    .salary-guides-box h2 { margin-top: 0; }
-    .salary-guides-box p { color: #4b5563; }
-
-    .guide-mini-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .guide-mini-grid a {
-      background: white;
-      border: 1px solid #e5e7eb;
-      padding: 12px 14px;
-      border-radius: 10px;
-      text-decoration: none;
-      color: #2563eb;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    .guide-mini-grid a:hover {
-      background: #2563eb;
-      color: white;
-    }
-
-    .view-all-guides {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .view-all-guides a {
-      color: #2563eb;
-      font-weight: bold;
-      text-decoration: none;
+      margin: 26px 0;
     }
 
     .calculator-cta {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 16px;
-      padding: 24px;
-      margin: 25px 0;
       text-align: center;
     }
 
@@ -357,492 +223,824 @@
     }
 
     .calculator-cta p {
-      color: #4b5563;
-      max-width: 700px;
+      max-width: 720px;
       margin-left: auto;
       margin-right: auto;
     }
 
     .cta-button {
       display: inline-block;
-      background: #2563eb;
-      color: white;
+      background: var(--accent);
+      color: #fff;
       text-decoration: none;
-      padding: 12px 24px;
-      border-radius: 10px;
-      font-weight: bold;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 800;
       margin-top: 8px;
     }
 
     .cta-button:hover {
-      background: #1d4ed8;
+      filter: brightness(.95);
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .summary-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .summary-card strong {
+      display: block;
+      color: var(--accent);
+      font-size: 22px;
+      margin-bottom: 6px;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .summary-card span {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .formula-box {
+      text-align: center;
+    }
+
+    .formula-box strong {
+      display: block;
+      font-size: 22px;
+      color: var(--foreground);
+      margin-bottom: 8px;
+    }
+
+    .formula-box span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .contribution-table-wrap {
+      overflow-x: auto;
+    }
+
+    .contribution-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      min-width: 520px;
+    }
+
+    .contribution-table th {
+      background: #f1ece3;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: left;
+      letter-spacing: .03em;
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contribution-table td {
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--foreground);
+      font-size: 14px;
+      vertical-align: top;
+    }
+
+    .contribution-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .note-box {
+      margin-top: 18px;
+      background: var(--card);
+      border-left: 4px solid var(--accent);
+      padding: 14px;
+      border-radius: 10px;
+      color: var(--muted);
+    }
+
+    .component-grid,
+    .guide-mini-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .component-grid {
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .guide-mini-grid {
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    }
+
+    .component-card,
+    .guide-mini-grid a,
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .component-card {
+      padding: 20px;
+      transition: .18s ease;
+    }
+
+    .component-card:hover,
+    .guide-mini-grid a:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 30px rgba(47,43,37,.08);
+    }
+
+    .component-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      display: grid;
+      place-items: center;
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .component-card h3 {
+      margin: 8px 0 4px;
+    }
+
+    .component-card p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.5;
     }
 
     .source-list a {
-      color: #2563eb;
-      font-weight: bold;
+      color: var(--accent);
+      font-weight: 800;
       text-decoration: none;
     }
 
-    h1 { font-size: 26px; }
-    h2 { font-size: 20px; margin-top: 25px; }
-    h3 { font-size: 16px; margin-top: 18px; }
+    .faq-box {
+      margin-top: 18px;
+      max-width: 850px;
+    }
 
-    @media (max-width: 700px){
-      .main-wrapper { padding: 15px 10px; }
-      .card, .seo { margin: 15px auto; padding: 18px; }
-      .nav-inner { padding: 8px 10px; gap: 8px; }
-      .brand img { width: 120px; }
-      .brand { font-size: 18px; }
-      .nav-links { gap: 6px; }
-      .nav-links a { font-size: 14px; padding: 8px 10px; }
-      .hero h1 { font-size: 26px; }
-      .component-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-      .component-card { padding: 14px; text-align: center; }
-      .component-icon { font-size: 22px; }
-      .component-card h3 { font-size: 15px; margin: 6px 0; }
-      .component-card p { font-size: 12px; line-height: 1.35; margin: 0; }
+    .faq-item {
+      padding: 4px 20px;
+      margin-bottom: 12px;
+    }
+
+    .faq-item summary {
+      font-weight: 800;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--foreground);
+      padding: 16px 0;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      color: var(--accent);
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .faq-item[open] summary::after {
+      content: "−";
+    }
+
+    .faq-item p {
+      padding-bottom: 18px;
+      margin: 0;
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .guide-mini-grid a {
+      display: block;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: var(--foreground);
+      font-weight: 800;
+      text-align: center;
+      transition: .18s ease;
+    }
+
+    .guide-mini-grid a:hover {
+      color: var(--accent);
+      background: var(--white);
+    }
+
+    .view-all-guides {
+      text-align: center;
+      margin: 20px 0 0;
+    }
+
+    .view-all-guides a {
+      color: var(--accent);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 800px) {
+      .nav-inner {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .nav-links {
+        width: auto;
+        flex: 1;
+        min-width: 0;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .main-wrapper {
+        padding: 34px 10px 40px;
+      }
+
+      .seo {
+        padding: 22px;
+      }
+
+      .nav-inner {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        gap: 8px;
+      }
+
+      .brand img {
+        width: 150px;
+      }
+
+      .nav-links {
+        gap: 6px;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .component-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .component-card {
+        padding: 14px;
+        text-align: center;
+      }
+
+      .component-icon {
+        margin-left: auto;
+        margin-right: auto;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+      }
+
+      .component-card h3 {
+        font-size: 15px;
+        margin: 6px 0;
+      }
+
+      .component-card p {
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .cta-button {
+        width: 100%;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <header class="top-nav">
-    <div class="nav-inner">
-      <a href="index.html" class="brand">
-        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
-      </a>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="calculators.html">Calculators</a>
-        <a href="guides.html" class="active">Guides</a>
-        <a href="about.html">About</a>
-      </nav>
-    </div>
-  </header>
+<header class="top-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="logo.png" alt="Malaysia Salary Tools">
+    </a>
 
-  <div class="main-wrapper">
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="guides.html" class="active">Guides</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
 
-    <div class="hero">
-      <h1>Malaysia EIS Contribution Guide 2026</h1>
-      <p>Learn how EIS contributions work in Malaysia, including employee rates, employer rates, job loss benefits, eligibility, claim situations and monthly payroll examples.</p>
-    </div>
+<main class="main-wrapper">
 
-    <div class="seo">
+  <section class="hero">
+    <span class="pill">Updated for Malaysia 2026 payroll estimates</span>
+    <h1 class="serif">Malaysia <em>EIS contribution</em> guide 2026</h1>
+    <p>
+      Learn how EIS contributions work in Malaysia, including employee rates,
+      employer rates, job loss benefits, eligibility, claim situations and monthly payroll examples.
+    </p>
+  </section>
 
-      <section class="calculator-cta">
-        <h2>🧮 Calculate Your EIS Contribution</h2>
-        <p>
-          Want to know how much EIS you and your employer contribute each month?
-          Use our free EIS Calculator to estimate employee and employer contributions instantly.
-        </p>
-        <a href="eis-calculator.html" class="cta-button">Calculate My EIS →</a>
-      </section>
+  <section class="seo">
 
-      <section class="intro-box">
-        <h2>📌 EIS Quick Summary</h2>
-        <p>
-          EIS, also known as the Employment Insurance System or Sistem Insurans Pekerjaan (SIP), is Malaysia's job loss protection scheme under PERKESO. It is designed to provide temporary financial assistance and re-employment support to eligible employees who lose their jobs.
-        </p>
-
-        <div class="summary-grid">
-          <div class="summary-card">
-            <strong>0.2%</strong>
-            <span>Common employee contribution rate</span>
-          </div>
-          <div class="summary-card">
-            <strong>0.2%</strong>
-            <span>Common employer contribution rate</span>
-          </div>
-          <div class="summary-card">
-            <strong>RM6,000</strong>
-            <span>Current wage ceiling for contribution reference</span>
-          </div>
-          <div class="summary-card">
-            <strong>Job Loss</strong>
-            <span>Main purpose of EIS protection</span>
-          </div>
-        </div>
-      </section>
-
-      <h2>What Is EIS in Malaysia?</h2>
+    <section class="calculator-cta">
+      <h2>Calculate Your EIS Contribution</h2>
       <p>
-        The Employment Insurance System (EIS), also called Sistem Insurans Pekerjaan (SIP), is a statutory contribution scheme administered by PERKESO. Its main purpose is to protect eligible employees when they lose employment through circumstances such as retrenchment, business closure or other qualifying job loss situations.
+        Want to know how much EIS you and your employer contribute each month?
+        Use our free EIS Calculator to estimate employee and employer contributions instantly.
       </p>
+      <a href="eis-calculator.html" class="cta-button">Calculate My EIS →</a>
+    </section>
+
+    <section class="intro-box">
+      <h2>EIS Quick Summary</h2>
       <p>
-        EIS is different from EPF and SOCSO. EPF is mainly for retirement savings. SOCSO focuses on social security protection such as employment injury and invalidity benefits. EIS focuses specifically on job loss protection, temporary income replacement and support to help affected employees return to work.
-      </p>
-      <p>
-        For employees, the EIS deduction is usually small compared with EPF and PCB. However, it is still an important statutory deduction because it provides a safety net during unemployment.
+        EIS, also known as the Employment Insurance System or Sistem Insurans Pekerjaan (SIP),
+        is Malaysia's job loss protection scheme under PERKESO. It is designed to provide temporary
+        financial assistance and re-employment support to eligible employees who lose their jobs.
       </p>
 
-      <section class="guide-box">
-        <h2>Who Needs to Contribute to EIS?</h2>
-        <p>
-          EIS generally applies to eligible private sector employees in Malaysia who are covered under PERKESO rules. Employers are responsible for registering eligible employees, deducting the employee portion from monthly wages and paying both the employee and employer portions through monthly payroll.
-        </p>
-        <p>
-          Some categories of workers may not be covered or may be treated differently depending on age, employment status, contract type or statutory rules. Employers should always refer to PERKESO's latest contribution rules when confirming whether a specific employee must contribute.
-        </p>
-        <div class="note-box">
-          <strong>Practical payroll note:</strong> For most employees, EIS appears together with SOCSO in payroll records because both are administered through PERKESO, but they are separate contribution schemes with different purposes.
+      <div class="summary-grid">
+        <div class="summary-card">
+          <strong>0.2%</strong>
+          <span>Common employee contribution rate</span>
         </div>
-      </section>
-
-      <section class="contribution-box">
-        <h2>EIS Contribution Rates 2026</h2>
-        <p>
-          EIS contributions are shared between employee and employer. PERKESO states that EIS contributions are set at 0.4% of the employee's assumed monthly salary: 0.2% paid by the employer and 0.2% deducted from the employee's monthly salary.
-        </p>
-
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Monthly Wages</th>
-                <th>Employee Contribution</th>
-                <th>Employer Contribution</th>
-                <th>Total Contribution</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Up to RM300</td>
-                <td>RM0.50</td>
-                <td>RM0.50</td>
-                <td>RM1.00</td>
-              </tr>
-              <tr>
-                <td>RM2,000 – RM2,100</td>
-                <td>RM4.10</td>
-                <td>RM4.10</td>
-                <td>RM8.20</td>
-              </tr>
-              <tr>
-                <td>RM4,000 – RM4,100</td>
-                <td>RM8.10</td>
-                <td>RM8.10</td>
-                <td>RM16.20</td>
-              </tr>
-              <tr>
-                <td>RM4,900 – RM5,000</td>
-                <td>RM9.90</td>
-                <td>RM9.90</td>
-                <td>RM19.80</td>
-              </tr>
-              <tr>
-                <td>Above RM6,000</td>
-                <td>Subject to RM6,000 wage ceiling</td>
-                <td>Subject to RM6,000 wage ceiling</td>
-                <td>Based on maximum wage bracket</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="summary-card">
+          <strong>0.2%</strong>
+          <span>Common employer contribution rate</span>
         </div>
-
-        <div class="note-box">
-          <strong>Note:</strong> The table above is a simplified quick reference. Actual EIS contributions should follow the official PERKESO contribution schedule and the applicable wage ceiling. The wage ceiling was increased to RM6,000 from 1 October 2024.
+        <div class="summary-card">
+          <strong>RM6,000</strong>
+          <span>Current wage ceiling for contribution reference</span>
         </div>
-      </section>
-
-      <h2>How EIS Contributions Are Calculated</h2>
-      <p>
-        EIS is not usually calculated by simply multiplying the exact salary in every payroll case. In practice, payroll systems follow the official contribution table and wage brackets issued by PERKESO. This is why the contribution may appear as a fixed amount such as RM4.10, RM8.10 or RM9.90 depending on the salary range.
-      </p>
-      <p>
-        The employee portion reduces take-home pay because it is deducted from salary. The employer portion is an additional cost paid by the employer and does not reduce the employee's net salary.
-      </p>
-
-      <div class="formula-box">
-        <strong>EIS = 0.2% Employee + 0.2% Employer</strong>
-        <span>Total EIS is commonly 0.4% of the assumed monthly salary, subject to the official PERKESO table and wage ceiling.</span>
-      </div>
-
-      <section class="guide-box">
-        <h2>EIS Calculation Examples</h2>
-        <p>
-          The examples below show how EIS may affect payroll at different salary levels. Exact amounts should be checked against the official PERKESO table.
-        </p>
-
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Monthly Salary</th>
-                <th>Employee EIS</th>
-                <th>Employer EIS</th>
-                <th>Payroll Meaning</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>RM2,000</td>
-                <td>About RM4.00 - RM4.10</td>
-                <td>About RM4.00 - RM4.10</td>
-                <td>Small deduction from employee salary, matched by employer contribution.</td>
-              </tr>
-              <tr>
-                <td>RM4,000</td>
-                <td>About RM8.00 - RM8.10</td>
-                <td>About RM8.00 - RM8.10</td>
-                <td>Employee and employer contribute similar amounts based on wage bracket.</td>
-              </tr>
-              <tr>
-                <td>RM5,000</td>
-                <td>About RM9.90 - RM10.00</td>
-                <td>About RM9.90 - RM10.00</td>
-                <td>EIS remains relatively small compared with EPF and PCB.</td>
-              </tr>
-              <tr>
-                <td>Above RM6,000</td>
-                <td>Based on maximum wage ceiling</td>
-                <td>Based on maximum wage ceiling</td>
-                <td>Contribution does not keep increasing after the wage ceiling.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <h2>What Benefits Does EIS Provide?</h2>
-      <p>
-        EIS is not only a monthly deduction. It is designed to help eligible employees after job loss by providing temporary financial support and employment assistance. The exact benefit depends on the employee's eligibility, contribution record, job loss reason and PERKESO approval.
-      </p>
-
-      <div class="component-grid">
-        <div class="component-card">
-          <div class="component-icon">💵</div>
-          <h3>Job Search Allowance</h3>
-          <p>Temporary financial support may be available while an eligible person is searching for new employment.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">📉</div>
-          <h3>Reduced Income Allowance</h3>
-          <p>Support may apply when a person with multiple jobs loses one or more jobs, but not all income sources.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">🎓</div>
-          <h3>Training Support</h3>
-          <p>Eligible individuals may receive training or upskilling support to improve re-employment chances.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">🤝</div>
-          <h3>Re-employment Help</h3>
-          <p>EIS focuses on helping affected employees return to suitable work as soon as possible.</p>
+        <div class="summary-card">
+          <strong>Job Loss</strong>
+          <span>Main purpose of EIS protection</span>
         </div>
       </div>
+    </section>
 
-      <section class="guide-box">
-        <h2>Common Situations Where EIS May Help</h2>
-        <p>
-          EIS is mainly relevant when an employee loses employment through a qualifying loss of employment. This may include retrenchment, company closure, restructuring or other job loss situations accepted under PERKESO rules.
-        </p>
-        <p>
-          However, not every resignation or job change automatically qualifies for EIS benefits. Employees who resign voluntarily, are dismissed for misconduct or leave employment for non-qualifying reasons may not be eligible. Because eligibility can depend on facts and documents, affected employees should check directly with PERKESO before assuming they can claim.
-        </p>
-      </section>
+    <h2>What Is EIS in Malaysia?</h2>
+    <p>
+      The Employment Insurance System (EIS), also called Sistem Insurans Pekerjaan (SIP),
+      is a statutory contribution scheme administered by PERKESO. Its main purpose is to protect eligible employees
+      when they lose employment through circumstances such as retrenchment, business closure or other qualifying job loss situations.
+    </p>
+    <p>
+      EIS is different from EPF and SOCSO. EPF is mainly for retirement savings.
+      SOCSO focuses on social security protection such as employment injury and invalidity benefits.
+      EIS focuses specifically on job loss protection, temporary income replacement and support to help affected employees return to work.
+    </p>
+    <p>
+      For employees, the EIS deduction is usually small compared with EPF and PCB.
+      However, it is still an important statutory deduction because it provides a safety net during unemployment.
+    </p>
 
-      <h2>Does EIS Affect Take-Home Pay?</h2>
+    <section class="guide-box">
+      <h2>Who Needs to Contribute to EIS?</h2>
       <p>
-        Yes. The employee portion of EIS is deducted from monthly salary, so it slightly reduces take-home pay. For example, if the employee contribution is around RM8, the employee's net salary is reduced by around RM8 before considering other deductions such as EPF, SOCSO and PCB.
+        EIS generally applies to eligible private sector employees in Malaysia who are covered under PERKESO rules.
+        Employers are responsible for registering eligible employees, deducting the employee portion from monthly wages
+        and paying both the employee and employer portions through monthly payroll.
       </p>
       <p>
-        The employer portion does not reduce the employee's salary. It is paid separately by the employer as part of payroll compliance. This is why salary calculators usually show EIS as an employee deduction and may show the employer portion separately.
+        Some categories of workers may not be covered or may be treated differently depending on age,
+        employment status, contract type or statutory rules. Employers should always refer to PERKESO's latest
+        contribution rules when confirming whether a specific employee must contribute.
       </p>
+      <div class="note-box">
+        <strong>Practical payroll note:</strong> For most employees, EIS appears together with SOCSO in payroll records because both are administered through PERKESO, but they are separate contribution schemes with different purposes.
+      </div>
+    </section>
 
-      <h2>EIS vs EPF vs SOCSO</h2>
+    <section class="contribution-box">
+      <h2>EIS Contribution Rates 2026</h2>
       <p>
-        Many employees see EPF, SOCSO and EIS on their payslip but do not know the difference. All three may appear in payroll, but each serves a different purpose.
+        EIS contributions are shared between employee and employer. PERKESO states that EIS contributions are set at 0.4% of the employee's assumed monthly salary: 0.2% paid by the employer and 0.2% deducted from the employee's monthly salary.
       </p>
 
       <div class="contribution-table-wrap">
         <table class="contribution-table">
           <thead>
             <tr>
-              <th>Scheme</th>
-              <th>Main Purpose</th>
-              <th>Who Contributes?</th>
-              <th>Common Payroll Effect</th>
+              <th>Monthly Wages</th>
+              <th>Employee Contribution</th>
+              <th>Employer Contribution</th>
+              <th>Total Contribution</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>EPF / KWSP</td>
-              <td>Retirement savings and long-term member savings</td>
-              <td>Employee and employer</td>
-              <td>Usually the largest statutory deduction from salary.</td>
+              <td>Up to RM300</td>
+              <td>RM0.50</td>
+              <td>RM0.50</td>
+              <td>RM1.00</td>
             </tr>
             <tr>
-              <td>SOCSO / PERKESO</td>
-              <td>Social security protection such as employment injury and invalidity coverage</td>
-              <td>Employee and employer</td>
-              <td>Monthly contribution based on salary schedule.</td>
+              <td>RM2,000 – RM2,100</td>
+              <td>RM4.10</td>
+              <td>RM4.10</td>
+              <td>RM8.20</td>
             </tr>
             <tr>
-              <td>EIS / SIP</td>
-              <td>Job loss protection and re-employment support</td>
-              <td>Employee and employer</td>
-              <td>Small monthly deduction, mainly for unemployment protection.</td>
+              <td>RM4,000 – RM4,100</td>
+              <td>RM8.10</td>
+              <td>RM8.10</td>
+              <td>RM16.20</td>
+            </tr>
+            <tr>
+              <td>RM4,900 – RM5,000</td>
+              <td>RM9.90</td>
+              <td>RM9.90</td>
+              <td>RM19.80</td>
+            </tr>
+            <tr>
+              <td>Above RM6,000</td>
+              <td>Subject to RM6,000 wage ceiling</td>
+              <td>Subject to RM6,000 wage ceiling</td>
+              <td>Based on maximum wage bracket</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <section class="guide-box">
-        <h2>Advantages and Limitations of EIS</h2>
-        <div class="component-grid">
-          <div class="component-card">
-            <div class="component-icon">🛡️</div>
-            <h3>Job Loss Protection</h3>
-            <p>EIS provides a safety net if an eligible employee loses employment through a qualifying situation.</p>
-          </div>
-          <div class="component-card">
-            <div class="component-icon">🔎</div>
-            <h3>Employment Support</h3>
-            <p>The scheme supports re-employment through job search and training-related assistance.</p>
-          </div>
-          <div class="component-card">
-            <div class="component-icon">📌</div>
-            <h3>Eligibility Conditions</h3>
-            <p>Benefits are not automatic. Employees must meet contribution, job loss and application requirements.</p>
-          </div>
-          <div class="component-card">
-            <div class="component-icon">💼</div>
-            <h3>Not a Replacement Salary</h3>
-            <p>EIS helps temporarily, but it is not meant to fully replace long-term employment income.</p>
-          </div>
+      <div class="note-box">
+        <strong>Note:</strong> The table above is a simplified quick reference. Actual EIS contributions should follow the official PERKESO contribution schedule and the applicable wage ceiling. The wage ceiling was increased to RM6,000 from 1 October 2024.
+      </div>
+    </section>
+
+    <h2>How EIS Contributions Are Calculated</h2>
+    <p>
+      EIS is not usually calculated by simply multiplying the exact salary in every payroll case.
+      In practice, payroll systems follow the official contribution table and wage brackets issued by PERKESO.
+      This is why the contribution may appear as a fixed amount such as RM4.10, RM8.10 or RM9.90 depending on the salary range.
+    </p>
+    <p>
+      The employee portion reduces take-home pay because it is deducted from salary.
+      The employer portion is an additional cost paid by the employer and does not reduce the employee's net salary.
+    </p>
+
+    <div class="formula-box">
+      <strong>EIS = 0.2% Employee + 0.2% Employer</strong>
+      <span>Total EIS is commonly 0.4% of the assumed monthly salary, subject to the official PERKESO table and wage ceiling.</span>
+    </div>
+
+    <section class="guide-box">
+      <h2>EIS Calculation Examples</h2>
+      <p>
+        The examples below show how EIS may affect payroll at different salary levels.
+        Exact amounts should be checked against the official PERKESO table.
+      </p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead>
+            <tr>
+              <th>Monthly Salary</th>
+              <th>Employee EIS</th>
+              <th>Employer EIS</th>
+              <th>Payroll Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>RM2,000</td>
+              <td>About RM4.00 - RM4.10</td>
+              <td>About RM4.00 - RM4.10</td>
+              <td>Small deduction from employee salary, matched by employer contribution.</td>
+            </tr>
+            <tr>
+              <td>RM4,000</td>
+              <td>About RM8.00 - RM8.10</td>
+              <td>About RM8.00 - RM8.10</td>
+              <td>Employee and employer contribute similar amounts based on wage bracket.</td>
+            </tr>
+            <tr>
+              <td>RM5,000</td>
+              <td>About RM9.90 - RM10.00</td>
+              <td>About RM9.90 - RM10.00</td>
+              <td>EIS remains relatively small compared with EPF and PCB.</td>
+            </tr>
+            <tr>
+              <td>Above RM6,000</td>
+              <td>Based on maximum wage ceiling</td>
+              <td>Based on maximum wage ceiling</td>
+              <td>Contribution does not keep increasing after the wage ceiling.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <h2>What Benefits Does EIS Provide?</h2>
+    <p>
+      EIS is not only a monthly deduction. It is designed to help eligible employees after job loss by providing temporary financial support and employment assistance.
+      The exact benefit depends on the employee's eligibility, contribution record, job loss reason and PERKESO approval.
+    </p>
+
+    <div class="component-grid">
+      <div class="component-card">
+        <div class="component-icon">💵</div>
+        <h3>Job Search Allowance</h3>
+        <p>Temporary financial support may be available while an eligible person is searching for new employment.</p>
+      </div>
+      <div class="component-card">
+        <div class="component-icon">📉</div>
+        <h3>Reduced Income Allowance</h3>
+        <p>Support may apply when a person with multiple jobs loses one or more jobs, but not all income sources.</p>
+      </div>
+      <div class="component-card">
+        <div class="component-icon">🎓</div>
+        <h3>Training Support</h3>
+        <p>Eligible individuals may receive training or upskilling support to improve re-employment chances.</p>
+      </div>
+      <div class="component-card">
+        <div class="component-icon">🤝</div>
+        <h3>Re-employment Help</h3>
+        <p>EIS focuses on helping affected employees return to suitable work as soon as possible.</p>
+      </div>
+    </div>
+
+    <section class="guide-box">
+      <h2>Common Situations Where EIS May Help</h2>
+      <p>
+        EIS is mainly relevant when an employee loses employment through a qualifying loss of employment.
+        This may include retrenchment, company closure, restructuring or other job loss situations accepted under PERKESO rules.
+      </p>
+      <p>
+        However, not every resignation or job change automatically qualifies for EIS benefits.
+        Employees who resign voluntarily, are dismissed for misconduct or leave employment for non-qualifying reasons may not be eligible.
+        Because eligibility can depend on facts and documents, affected employees should check directly with PERKESO before assuming they can claim.
+      </p>
+    </section>
+
+    <h2>Does EIS Affect Take-Home Pay?</h2>
+    <p>
+      Yes. The employee portion of EIS is deducted from monthly salary, so it slightly reduces take-home pay.
+      For example, if the employee contribution is around RM8, the employee's net salary is reduced by around RM8 before considering other deductions such as EPF, SOCSO and PCB.
+    </p>
+    <p>
+      The employer portion does not reduce the employee's salary. It is paid separately by the employer as part of payroll compliance.
+      This is why salary calculators usually show EIS as an employee deduction and may show the employer portion separately.
+    </p>
+
+    <h2>EIS vs EPF vs SOCSO</h2>
+    <p>
+      Many employees see EPF, SOCSO and EIS on their payslip but do not know the difference.
+      All three may appear in payroll, but each serves a different purpose.
+    </p>
+
+    <div class="contribution-table-wrap">
+      <table class="contribution-table">
+        <thead>
+          <tr>
+            <th>Scheme</th>
+            <th>Main Purpose</th>
+            <th>Who Contributes?</th>
+            <th>Common Payroll Effect</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>EPF / KWSP</td>
+            <td>Retirement savings and long-term member savings</td>
+            <td>Employee and employer</td>
+            <td>Usually the largest statutory deduction from salary.</td>
+          </tr>
+          <tr>
+            <td>SOCSO / PERKESO</td>
+            <td>Social security protection such as employment injury and invalidity coverage</td>
+            <td>Employee and employer</td>
+            <td>Monthly contribution based on salary schedule.</td>
+          </tr>
+          <tr>
+            <td>EIS / SIP</td>
+            <td>Job loss protection and re-employment support</td>
+            <td>Employee and employer</td>
+            <td>Small monthly deduction, mainly for unemployment protection.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <section class="guide-box">
+      <h2>Advantages and Limitations of EIS</h2>
+      <div class="component-grid">
+        <div class="component-card">
+          <div class="component-icon">🛡️</div>
+          <h3>Job Loss Protection</h3>
+          <p>EIS provides a safety net if an eligible employee loses employment through a qualifying situation.</p>
         </div>
-      </section>
+        <div class="component-card">
+          <div class="component-icon">🔎</div>
+          <h3>Employment Support</h3>
+          <p>The scheme supports re-employment through job search and training-related assistance.</p>
+        </div>
+        <div class="component-card">
+          <div class="component-icon">📌</div>
+          <h3>Eligibility Conditions</h3>
+          <p>Benefits are not automatic. Employees must meet contribution, job loss and application requirements.</p>
+        </div>
+        <div class="component-card">
+          <div class="component-icon">💼</div>
+          <h3>Not a Replacement Salary</h3>
+          <p>EIS helps temporarily, but it is not meant to fully replace long-term employment income.</p>
+        </div>
+      </div>
+    </section>
 
-      <section class="guide-box">
-        <h2>Payroll Checklist for Employers</h2>
-        <ul>
-          <li>Confirm whether the employee is covered under EIS rules.</li>
-          <li>Use the official PERKESO contribution schedule and wage ceiling.</li>
-          <li>Deduct the employee portion from monthly wages.</li>
-          <li>Pay the employer portion together with the employee portion.</li>
-          <li>Keep payroll records, payslips and contribution records for reference.</li>
-          <li>Check for PERKESO updates when contribution ceilings or schedules change.</li>
-        </ul>
-      </section>
+    <section class="guide-box">
+      <h2>Payroll Checklist for Employers</h2>
+      <ul>
+        <li>Confirm whether the employee is covered under EIS rules.</li>
+        <li>Use the official PERKESO contribution schedule and wage ceiling.</li>
+        <li>Deduct the employee portion from monthly wages.</li>
+        <li>Pay the employer portion together with the employee portion.</li>
+        <li>Keep payroll records, payslips and contribution records for reference.</li>
+        <li>Check for PERKESO updates when contribution ceilings or schedules change.</li>
+      </ul>
+    </section>
 
-      <section class="guide-box">
-        <h2>Official References</h2>
-        <p>
-          For official contribution tables, eligibility requirements and claim procedures, always refer to PERKESO. This guide is written as a simplified payroll explanation for employees and employers.
-        </p>
-        <ul class="source-list">
-          <li><a href="https://www.perkeso.gov.my/en/our-services/employer-employee/contributions.html" target="_blank" rel="noopener">PERKESO Contributions</a></li>
-          <li><a href="https://www.perkeso.gov.my/en/our-services/protection/employment-insurance.html" target="_blank" rel="noopener">PERKESO Employment Insurance</a></li>
-          <li><a href="https://www.perkeso.gov.my/en/rate-of-contribution.html" target="_blank" rel="noopener">PERKESO Rate of Contribution</a></li>
-        </ul>
-      </section>
+    <section class="guide-box">
+      <h2>Official References</h2>
+      <p>
+        For official contribution tables, eligibility requirements and claim procedures, always refer to PERKESO.
+        This guide is written as a simplified payroll explanation for employees and employers.
+      </p>
+      <ul class="source-list">
+        <li><a href="https://www.perkeso.gov.my/en/our-services/employer-employee/contributions.html" target="_blank" rel="noopener">PERKESO Contributions</a></li>
+        <li><a href="https://www.perkeso.gov.my/en/our-services/protection/employment-insurance.html" target="_blank" rel="noopener">PERKESO Employment Insurance</a></li>
+        <li><a href="https://www.perkeso.gov.my/en/rate-of-contribution.html" target="_blank" rel="noopener">PERKESO Rate of Contribution</a></li>
+      </ul>
+    </section>
 
-      <section class="guide-box">
-        <h2>Who Should Read This Guide?</h2>
-        <ul>
-          <li>Employees checking EIS deductions from monthly salary</li>
-          <li>Job seekers comparing salary packages and payroll deductions</li>
-          <li>HR and payroll professionals handling monthly payroll submissions</li>
-          <li>Business owners who want to understand EIS contribution obligations</li>
-          <li>Employees who want to understand possible support after job loss</li>
-        </ul>
-      </section>
+    <section class="guide-box">
+      <h2>Who Should Read This Guide?</h2>
+      <ul>
+        <li>Employees checking EIS deductions from monthly salary</li>
+        <li>Job seekers comparing salary packages and payroll deductions</li>
+        <li>HR and payroll professionals handling monthly payroll submissions</li>
+        <li>Business owners who want to understand EIS contribution obligations</li>
+        <li>Employees who want to understand possible support after job loss</li>
+      </ul>
+    </section>
 
-      <h2>Frequently Asked Questions</h2>
+    <h2>Frequently Asked Questions</h2>
 
-      <div class="faq-box">
-        <details class="faq-item" open>
-          <summary>Is EIS contribution mandatory for employees in Malaysia?</summary>
-          <p>EIS contribution is generally mandatory for eligible employees covered under the Employment Insurance System. Employers are responsible for deducting the employee portion and paying the employer portion through monthly payroll.</p>
-        </details>
+    <div class="faq-box">
+      <details class="faq-item" open>
+        <summary>Is EIS contribution mandatory for employees in Malaysia?</summary>
+        <p>EIS contribution is generally mandatory for eligible employees covered under the Employment Insurance System. Employers are responsible for deducting the employee portion and paying the employer portion through monthly payroll.</p>
+      </details>
 
-        <details class="faq-item">
-          <summary>How much EIS does an employee contribute every month?</summary>
-          <p>The employee portion is commonly 0.2% of the employee's assumed monthly salary, subject to the official PERKESO contribution table and wage ceiling.</p>
-        </details>
+      <details class="faq-item">
+        <summary>How much EIS does an employee contribute every month?</summary>
+        <p>The employee portion is commonly 0.2% of the employee's assumed monthly salary, subject to the official PERKESO contribution table and wage ceiling.</p>
+      </details>
 
-        <details class="faq-item">
-          <summary>How much EIS does an employer contribute?</summary>
-          <p>The employer also commonly contributes 0.2% of the employee's assumed monthly salary. This employer portion is paid separately and is not deducted from the employee's take-home salary.</p>
-        </details>
+      <details class="faq-item">
+        <summary>How much EIS does an employer contribute?</summary>
+        <p>The employer also commonly contributes 0.2% of the employee's assumed monthly salary. This employer portion is paid separately and is not deducted from the employee's take-home salary.</p>
+      </details>
 
-        <details class="faq-item">
-          <summary>Is EIS calculated on basic salary or gross salary?</summary>
-          <p>EIS is generally based on wages that are subject to EIS contribution. Payroll treatment may depend on the type of payment, such as basic salary, fixed allowances, overtime or other remuneration.</p>
-        </details>
+      <details class="faq-item">
+        <summary>Is EIS calculated on basic salary or gross salary?</summary>
+        <p>EIS is generally based on wages that are subject to EIS contribution. Payroll treatment may depend on the type of payment, such as basic salary, fixed allowances, overtime or other remuneration.</p>
+      </details>
 
-        <details class="faq-item">
-          <summary>Does EIS reduce take-home pay?</summary>
-          <p>Yes. The employee portion of EIS is deducted from monthly salary, so it slightly reduces monthly take-home pay. The employer portion does not reduce the employee's net salary.</p>
-        </details>
+      <details class="faq-item">
+        <summary>Does EIS reduce take-home pay?</summary>
+        <p>Yes. The employee portion of EIS is deducted from monthly salary, so it slightly reduces monthly take-home pay. The employer portion does not reduce the employee's net salary.</p>
+      </details>
 
-        <details class="faq-item">
-          <summary>Is EIS the same as SOCSO?</summary>
-          <p>No. SOCSO provides social security protection such as employment injury and invalidity benefits. EIS focuses on job loss protection, financial assistance and re-employment support.</p>
-        </details>
+      <details class="faq-item">
+        <summary>Is EIS the same as SOCSO?</summary>
+        <p>No. SOCSO provides social security protection such as employment injury and invalidity benefits. EIS focuses on job loss protection, financial assistance and re-employment support.</p>
+      </details>
 
-        <details class="faq-item">
-          <summary>Can EIS help if I lose my job?</summary>
-          <p>Eligible employees may apply for EIS benefits after job loss, subject to PERKESO rules, qualifying conditions and approval. Benefits may include financial assistance, reduced income allowance, training support and re-employment services.</p>
-        </details>
+      <details class="faq-item">
+        <summary>Can EIS help if I lose my job?</summary>
+        <p>Eligible employees may apply for EIS benefits after job loss, subject to PERKESO rules, qualifying conditions and approval. Benefits may include financial assistance, reduced income allowance, training support and re-employment services.</p>
+      </details>
 
-        <details class="faq-item">
-          <summary>Does EIS apply if I resign?</summary>
-          <p>Voluntary resignation may not qualify as a loss of employment for EIS benefits. Eligibility depends on the reason for leaving employment and PERKESO's assessment of the claim.</p>
-        </details>
+      <details class="faq-item">
+        <summary>Does EIS apply if I resign?</summary>
+        <p>Voluntary resignation may not qualify as a loss of employment for EIS benefits. Eligibility depends on the reason for leaving employment and PERKESO's assessment of the claim.</p>
+      </details>
 
-        <details class="faq-item">
-          <summary>What is the EIS wage ceiling?</summary>
-          <p>EIS contributions are subject to the applicable wage ceiling. PERKESO announced the wage ceiling increase to RM6,000 effective from 1 October 2024, so wages above the ceiling are generally treated based on the maximum contribution bracket.</p>
-        </details>
+      <details class="faq-item">
+        <summary>What is the EIS wage ceiling?</summary>
+        <p>EIS contributions are subject to the applicable wage ceiling. PERKESO announced the wage ceiling increase to RM6,000 effective from 1 October 2024, so wages above the ceiling are generally treated based on the maximum contribution bracket.</p>
+      </details>
+    </div>
+
+    <section class="salary-guides-box">
+      <h2>Related Salary Guides</h2>
+      <p>Learn more about salary deductions, tax and payroll rules in Malaysia.</p>
+
+      <div class="guide-mini-grid">
+        <a href="socso-guide.html">SOCSO Guide</a>
+        <a href="epf-guide.html">EPF Guide</a>
+        <a href="pcb-guide.html">PCB Guide</a>
+        <a href="tax-relief-guide.html">Tax Relief Guide</a>
       </div>
 
-      <section class="salary-guides-box">
-        <h2>📚 Related Salary Guides</h2>
-        <p>Learn more about salary deductions, tax and payroll rules in Malaysia.</p>
+      <p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p>
+    </section>
 
-        <div class="guide-mini-grid">
-          <a href="socso-guide.html">🛡️ SOCSO Guide</a>
-          <a href="epf-guide.html">💰 EPF Guide</a>
-          <a href="pcb-guide.html">🏛️ PCB Guide</a>
-          <a href="tax-relief-guide.html">💸 Tax Relief Guide</a>
-        </div>
+    <section class="salary-guides-box">
+      <h2>Related Calculators</h2>
+      <p>Use these calculators to estimate EIS contributions, salary deductions and monthly take-home pay in Malaysia.</p>
 
-        <p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p>
-      </section>
+      <div class="guide-mini-grid">
+        <a href="eis-calculator.html">EIS Calculator</a>
+        <a href="index.html">Salary Calculator</a>
+        <a href="socso-calculator.html">SOCSO Calculator</a>
+        <a href="epf-calculator.html">EPF Calculator</a>
+        <a href="pcb-calculator.html">PCB Calculator</a>
+        <a href="income-tax-calculator.html">Income Tax Calculator</a>
+      </div>
 
-      <section class="salary-guides-box">
-        <h2>🧮 Related Calculators</h2>
-        <p>Use these calculators to estimate EIS contributions, salary deductions and monthly take-home pay in Malaysia.</p>
+      <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
+    </section>
 
-        <div class="guide-mini-grid">
-          <a href="eis-calculator.html">EIS Calculator</a>
-          <a href="index.html">Salary Calculator</a>
-          <a href="socso-calculator.html">SOCSO Calculator</a>
-          <a href="epf-calculator.html">EPF Calculator</a>
-          <a href="pcb-calculator.html">PCB Calculator</a>
-          <a href="income-tax-calculator.html">Income Tax Calculator</a>
-        </div>
+  </section>
 
-        <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
-      </section>
+</main>
 
-    </div>
-  </div>
-
-  <hr style="margin-top:40px;">
-
-  <div style="text-align:center;padding:20px;">
-    <p>© 2026 Malaysia Salary Tools</p>
-    <p>
-      <a href="about.html">About Us</a> |
-      <a href="contact.html">Contact Us</a> |
-      <a href="guides.html">Guides</a> |
-      <a href="privacy-policy.html">Privacy Policy</a>
-    </p>
-  </div>
+<footer class="footer">
+  <p>© 2026 Malaysia Salary Tools</p>
+  <p>
+    <a href="about.html">About Us</a> |
+    <a href="contact.html">Contact Us</a> |
+    <a href="guides.html">Guides</a> |
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </p>
+</footer>
 
 </body>
 </html>
