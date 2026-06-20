@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
 
-  <title>Malaysia Bonus Guide 2026 | Bonus Calculation, Types & Salary Package Guide</title>
+  <title>Malaysia Salary Tools 2026 | Salary, EPF, SOCSO, EIS & PCB Calculator</title>
 
-  <link rel="canonical" href="https://malaysiasalarytools.com/bonus-guide.html">
+  <link rel="canonical" href="https://malaysiasalarytools.com/">
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <meta name="description" content="Malaysia Bonus Guide 2026. Learn how bonus works in Malaysia, including contractual bonus, discretionary bonus, bonus calculation examples, payslip treatment and salary package planning.">
+  <meta name="description" content="Free Malaysia Salary Calculator 2026. Calculate net take-home pay after EPF, SOCSO, EIS and PCB tax deductions. Estimate monthly and annual salary breakdown instantly.">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
@@ -65,6 +65,12 @@
     .serif {
       font-family: Georgia, "Times New Roman", serif;
       font-weight: 400;
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
     .top-nav {
@@ -128,7 +134,7 @@
     .hero {
       text-align: center;
       padding: 56px 20px 18px;
-      max-width: 920px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
@@ -160,7 +166,7 @@
     }
 
     .hero p {
-      max-width: 720px;
+      max-width: 680px;
       margin: 18px auto 0;
       font-size: 17px;
       color: var(--muted);
@@ -170,14 +176,246 @@
       padding: 16px 20px 44px;
     }
 
-    .seo {
+    .calculator-shell {
       max-width: 1120px;
-      margin: 30px auto;
-      padding: 30px;
+      margin: 28px auto 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .panel,
+    .seo {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
+    }
+
+    .panel {
+      padding: 28px;
+    }
+
+    .panel h2 {
+      margin: 0 0 4px;
+      font-size: 22px;
+      color: var(--foreground);
+    }
+
+    .panel .sub {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--foreground);
+    }
+
+    .input-row {
+      position: relative;
+    }
+
+    .input-row span {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 15px 14px 15px 46px;
+      font-size: 20px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+      color: var(--foreground);
+      outline: none;
+    }
+
+    input[type="number"]:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(47,125,94,.14);
+    }
+
+    input[type="range"] {
+      width: 100%;
+      margin-top: 18px;
+      accent-color: var(--accent);
+    }
+
+    .preset-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .preset,
+    .calc-button,
+    .contribution-tabs button {
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .preset {
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--foreground);
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .preset:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .calc-button {
+      width: 100%;
+      background: var(--accent);
+      color: var(--accent-foreground, #fff);
+      padding: 14px 18px;
+      margin-top: 20px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .calc-button:hover {
+      filter: brightness(.95);
+    }
+
+    .input-note {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .results-panel {
+      background: var(--primary);
+      color: var(--primary-foreground);
+      border: 1px solid var(--primary);
+      padding: 28px;
+      border-radius: var(--radius);
+      box-shadow: 0 24px 55px rgba(47,43,37,.20);
+    }
+
+    .results-panel h2 {
+      margin: 0 0 4px;
+      font-size: 22px;
+      color: var(--primary-foreground);
+    }
+
+    .results-panel .sub {
+      margin: 0;
+      color: rgba(246,243,236,.62);
+      font-size: 14px;
+    }
+
+    .net {
+      font-size: clamp(36px, 5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      margin: 16px 0 0;
+    }
+
+    .net-caption {
+      color: rgba(246,243,236,.62);
+      font-size: 14px;
+      margin-top: 0;
+    }
+
+    .bar {
+      height: 9px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      display: flex;
+      overflow: hidden;
+      margin: 22px 0;
+    }
+
+    .bar i {
+      display: block;
+      height: 100%;
+    }
+
+    .result-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .result-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      font-size: 14px;
+    }
+
+    .result-line:last-child {
+      border-bottom: none;
+    }
+
+    .result-line .k {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(246,243,236,.86);
+    }
+
+    .result-line .v {
+      font-weight: 800;
+      text-align: right;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 3px;
+      flex: 0 0 auto;
+    }
+
+    .annual-summary {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,.18);
+      display: grid;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .annual-summary div {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: rgba(246,243,236,.82);
+    }
+
+    .annual-summary strong {
+      color: var(--primary-foreground);
+    }
+
+    .seo {
+      max-width: 1120px;
+      margin: 30px auto;
+      padding: 30px;
       line-height: 1.72;
     }
 
@@ -192,14 +430,14 @@
       font-weight: 400;
     }
 
-    .seo h2:first-child {
+    .seo h2:first-child,
+    .salary-components h2:first-child {
       margin-top: 0;
     }
 
     .seo h3 {
       font-size: 17px;
       margin-top: 18px;
-      color: var(--foreground);
     }
 
     .seo p,
@@ -207,99 +445,15 @@
       color: var(--muted);
     }
 
-    .hero-card {
-      background: var(--primary);
-      color: var(--primary-foreground);
-      border-radius: var(--radius);
-      padding: 30px;
-      margin-bottom: 28px;
-      box-shadow: 0 24px 55px rgba(47,43,37,.20);
-    }
-
-    .hero-card h2 {
-      color: var(--primary-foreground);
-      margin-top: 0;
-    }
-
-    .hero-card p {
-      color: rgba(246,243,236,.78);
-      max-width: 760px;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      padding: 14px 26px;
-      border-radius: 12px;
-      font-weight: 800;
-      margin-top: 10px;
-    }
-
-    .cta-button:hover {
-      filter: brightness(.95);
-    }
-
-    .summary-grid,
-    .component-grid,
-    .guide-mini-grid {
-      display: grid;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .summary-grid {
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    }
-
-    .component-grid,
-    .guide-mini-grid {
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    }
-
-    .summary-card,
-    .component-card,
-    .guide-mini-grid a,
-    .info-box,
-    .faq-item {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-    }
-
-    .summary-card {
-      padding: 18px;
-      background: rgba(255,255,255,.42);
-    }
-
-    .summary-card strong {
-      display: block;
-      color: var(--accent);
-      font-size: 22px;
-      margin-bottom: 6px;
-      line-height: 1.2;
-    }
-
-    .summary-card span {
-      display: block;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .info-box,
     .formula-box,
+    .contribution-box,
+    .tax-relief-box,
     .salary-guides-box {
       background: #f8f5ef;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 24px;
       margin: 26px 0;
-    }
-
-    .info-box h2,
-    .salary-guides-box h2 {
-      margin-top: 0;
     }
 
     .formula-box {
@@ -316,6 +470,102 @@
     .formula-box span {
       color: var(--muted);
       font-size: 15px;
+    }
+
+    .contribution-tabs {
+      display: inline-flex;
+      background: #ede7dc;
+      border-radius: 12px;
+      padding: 5px;
+      gap: 4px;
+      margin: 12px 0 20px;
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .contribution-tabs button {
+      width: auto;
+      margin: 0;
+      padding: 10px 18px;
+      background: transparent;
+      color: var(--muted);
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .contribution-tabs button.active {
+      background: var(--card);
+      color: var(--accent);
+      box-shadow: 0 2px 10px rgba(47,43,37,.08);
+    }
+
+    .contribution-table-wrap {
+      overflow-x: auto;
+    }
+
+    .contribution-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      min-width: 520px;
+    }
+
+    .contribution-table th {
+      background: #f1ece3;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: left;
+      letter-spacing: .03em;
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contribution-table td {
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--foreground);
+      font-size: 14px;
+    }
+
+    .contribution-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .contribution-note {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .component-grid,
+    .guide-mini-grid,
+    .tax-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .component-grid {
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .guide-mini-grid,
+    .tax-grid {
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .component-card,
+    .guide-mini-grid a,
+    .tax-item,
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
     }
 
     .component-card {
@@ -354,63 +604,12 @@
       font-size: 14px;
     }
 
-    .contribution-table-wrap {
-      overflow-x: auto;
-      margin-top: 18px;
+    .tax-item {
+      padding: 15px;
     }
 
-    .contribution-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      min-width: 560px;
-    }
-
-    .contribution-table th {
-      background: #f1ece3;
-      color: var(--muted);
-      font-size: 13px;
-      text-align: left;
-      letter-spacing: .03em;
-      padding: 14px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .contribution-table td {
-      padding: 14px;
-      border-bottom: 1px solid var(--border);
-      color: var(--foreground);
-      font-size: 14px;
-    }
-
-    .contribution-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .payroll-note {
-      margin: 20px 0;
-      background: var(--card);
-      border-left: 4px solid var(--accent);
-      padding: 14px;
-      border-radius: 10px;
-      color: var(--muted);
-    }
-
-    .faq-box {
-      margin-top: 18px;
-      max-width: 820px;
-    }
-
-    .faq-item {
-      padding: 4px 20px;
-      margin-bottom: 12px;
-    }
-
+    .tax-item summary,
     .faq-item summary {
-      padding: 16px 0;
       font-weight: 800;
       cursor: pointer;
       list-style: none;
@@ -420,10 +619,12 @@
       color: var(--foreground);
     }
 
+    .tax-item summary::-webkit-details-marker,
     .faq-item summary::-webkit-details-marker {
       display: none;
     }
 
+    .tax-item summary::after,
     .faq-item summary::after {
       content: "+";
       color: var(--accent);
@@ -431,16 +632,45 @@
       line-height: 1;
     }
 
+    .tax-item[open] summary::after,
     .faq-item[open] summary::after {
       content: "−";
+    }
+
+    .tax-item p,
+    .faq-item p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .payroll-note {
+      margin-top: 20px;
+      background: var(--card);
+      border-left: 4px solid var(--accent);
+      padding: 14px;
+      border-radius: 10px;
+      color: var(--muted);
+    }
+
+    .faq-box {
+      margin-top: 18px;
+      max-width: 780px;
+    }
+
+    .faq-item {
+      padding: 4px 20px;
+      margin-bottom: 12px;
+    }
+
+    .faq-item summary {
+      padding: 16px 0;
     }
 
     .faq-item p {
       padding-bottom: 18px;
       margin-top: 0;
-      color: var(--muted);
-      line-height: 1.55;
-      font-size: 14px;
     }
 
     .guide-mini-grid a {
@@ -482,6 +712,16 @@
       color: var(--accent);
     }
 
+    @media (max-width: 900px) {
+      .calculator-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .seo {
+        padding: 24px;
+      }
+    }
+
     @media (max-width: 800px) {
       .nav-inner {
         flex-direction: row;
@@ -516,8 +756,9 @@
         padding: 10px;
       }
 
-      .seo,
-      .hero-card {
+      .panel,
+      .results-panel,
+      .seo {
         padding: 20px;
       }
 
@@ -540,15 +781,12 @@
         padding: 8px 10px;
       }
 
-      .component-grid,
-      .summary-grid,
-      .guide-mini-grid {
+      .component-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
       }
 
-      .component-card,
-      .summary-card {
+      .component-card {
         padding: 14px;
         text-align: center;
       }
@@ -566,15 +804,13 @@
         margin: 6px 0;
       }
 
-      .component-card p,
-      .summary-card span {
+      .component-card p {
         font-size: 12px;
         line-height: 1.35;
       }
 
-      .guide-mini-grid a {
-        font-size: 13px;
-        padding: 12px 10px;
+      .net {
+        font-size: 34px;
       }
     }
   </style>
@@ -586,13 +822,13 @@
     <div class="nav-inner">
 
       <a href="index.html" class="brand">
-        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+        <img src="logo.png" alt="Malaysia Salary Tools">
       </a>
 
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="calculators.html">Calculators</a>
-        <a href="guides.html" class="active">Guides</a>
+        <a href="guides.html">Guides</a>
         <a href="about.html">About</a>
       </nav>
 
@@ -600,488 +836,411 @@
   </header>
 
   <section class="hero">
-    <span class="pill">Updated for Malaysia 2026 salary planning</span>
-    <h1 class="serif">Malaysia <em>Bonus Guide</em> 2026</h1>
+    <span class="pill">Updated for Malaysia 2026 payroll estimates</span>
+    <h1 class="serif">Know your real <em>take-home pay</em> in Malaysia</h1>
     <p>
-      Learn how bonus works in Malaysia, including bonus types, calculation examples, payslip treatment, tax impact and how to compare bonus as part of a salary package.
+      Free Malaysia salary calculator for employees, job seekers and payroll users. Estimate EPF, SOCSO, EIS, PCB, monthly net salary and annual salary breakdown instantly.
     </p>
   </section>
 
   <main class="main-wrapper">
 
+    <section class="calculator-shell" id="calculator">
+
+      <div class="panel">
+        <h2 class="serif">Calculate Your Take-Home Pay</h2>
+        <p class="sub">Enter your gross monthly salary before EPF, SOCSO, EIS and PCB deductions.</p>
+
+        <label for="salary">Gross monthly salary</label>
+        <div class="input-row">
+          <span>RM</span>
+          <input type="number" id="salary" value="5000" min="0" step="100" placeholder="Enter monthly salary">
+        </div>
+
+        <input type="range" id="salaryRange" min="0" max="20000" step="100" value="5000">
+
+        <div class="preset-grid">
+          <button type="button" class="preset" onclick="setSalary(3000)">RM 3,000</button>
+          <button type="button" class="preset" onclick="setSalary(5000)">RM 5,000</button>
+          <button type="button" class="preset" onclick="setSalary(7500)">RM 7,500</button>
+          <button type="button" class="preset" onclick="setSalary(10000)">RM 10,000</button>
+          <button type="button" class="preset" onclick="setSalary(15000)">RM 15,000</button>
+        </div>
+
+        <button type="button" class="calc-button" onclick="calculate()">Calculate My Net Salary</button>
+
+        <p class="input-note">
+          This tool gives you a monthly and annual salary breakdown based on your gross monthly salary.
+        </p>
+      </div>
+
+      <div class="results-panel">
+        <h2 class="serif">Your take-home pay</h2>
+        <p class="sub">Estimated monthly net salary</p>
+
+        <div class="net">RM <span id="netSalary">0.00</span></div>
+        <p class="net-caption" id="netPercent">0% of gross salary</p>
+
+        <div class="bar" id="deductionBar"></div>
+        <div class="result-rows" id="monthlyRows"></div>
+
+        <div class="annual-summary" id="annualRows"></div>
+      </div>
+
+    </section>
+
     <div class="seo">
 
-      <section class="hero-card">
-        <h2 class="serif">Calculate Your Bonus Impact</h2>
-        <p>
-          Want to estimate how a bonus affects your annual income and take-home pay?
-          Use our free Bonus Calculator to calculate bonus amount, estimated deductions and yearly salary impact.
-        </p>
-        <a href="bonus-calculator.html" class="cta-button">Calculate My Bonus →</a>
-      </section>
+      <section class="salary-components">
 
-      <section class="info-box">
-        <h2>Bonus Quick Summary</h2>
+        <h2>How Salary Is Calculated in Malaysia</h2>
+
         <p>
-          A bonus is an additional payment given on top of regular salary. It may be contractual, discretionary, performance-based or linked to company results.
+          Calculating your take-home pay means subtracting statutory deductions from your gross monthly salary.
+          In Malaysia, the main deductions are usually EPF, SOCSO, EIS and PCB.
         </p>
 
-        <div class="summary-grid">
-          <div class="summary-card">
-            <strong>1 Month</strong>
-            <span>Common bonus example used in salary comparison</span>
-          </div>
-          <div class="summary-card">
-            <strong>Contractual</strong>
-            <span>Bonus promised in employment contract or offer letter</span>
-          </div>
-          <div class="summary-card">
-            <strong>Discretionary</strong>
-            <span>Bonus decided by employer based on policy or performance</span>
-          </div>
-          <div class="summary-card">
-            <strong>Annual Pay</strong>
-            <span>Bonus should be considered when comparing total compensation</span>
-          </div>
+        <div class="formula-box">
+          <strong>Net Salary = Gross Salary − Total Deductions</strong>
+          <span>Total Deductions = EPF + SOCSO + EIS + PCB</span>
         </div>
-      </section>
 
-      <h2>What Is a Bonus?</h2>
-      <p>
-        A bonus is an extra payment given to an employee in addition to monthly salary. In Malaysia, bonuses are commonly paid as annual bonus, performance bonus, contractual bonus, discretionary bonus or festival-related bonus.
-      </p>
-      <p>
-        Bonus is important because it can significantly affect annual income. When comparing job offers, employees should not only compare monthly salary, but also consider whether the employer offers contractual bonus, variable bonus or no guaranteed bonus.
-      </p>
+        <section class="contribution-box">
 
-      <section class="info-box">
-        <h2>Common Types of Bonus in Malaysia</h2>
-        <p>
-          Bonus arrangements can differ between companies. The most important point is whether the bonus is guaranteed under the employment contract or only paid at the employer's discretion.
-        </p>
+          <h2>Contribution Tables 2026</h2>
+
+          <p>
+            Quick reference for common EPF, SOCSO and EIS contribution rates in Malaysia.
+          </p>
+
+          <div class="contribution-tabs">
+            <button type="button" class="active" onclick="showContributionTable('epf', this)">EPF (KWSP)</button>
+            <button type="button" onclick="showContributionTable('socso', this)">SOCSO (PERKESO)</button>
+            <button type="button" onclick="showContributionTable('eis', this)">EIS</button>
+          </div>
+
+          <div class="contribution-table-wrap" id="epf-table">
+            <table class="contribution-table">
+              <thead>
+                <tr>
+                  <th>Salary Range</th>
+                  <th>Employee (%)</th>
+                  <th>Employer (%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>≤ RM5,000</td>
+                  <td>11%</td>
+                  <td>13%</td>
+                </tr>
+                <tr>
+                  <td>&gt; RM5,000</td>
+                  <td>11%</td>
+                  <td>12%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="contribution-table-wrap" id="socso-table" style="display:none;">
+            <table class="contribution-table">
+              <thead>
+                <tr>
+                  <th>Monthly Wages (RM)</th>
+                  <th>Employee (RM)</th>
+                  <th>Employer (RM)</th>
+                  <th>Total (RM)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>RM1,000 – RM2,000</td>
+                  <td>4.75</td>
+                  <td>16.65</td>
+                  <td>21.40</td>
+                </tr>
+                <tr>
+                  <td>RM3,000 – RM4,000</td>
+                  <td>14.75</td>
+                  <td>51.65</td>
+                  <td>66.40</td>
+                </tr>
+                <tr>
+                  <td>RM5,000 – RM6,000</td>
+                  <td>24.75</td>
+                  <td>86.65</td>
+                  <td>111.40</td>
+                </tr>
+                <tr>
+                  <td>RM6,000</td>
+                  <td>29.75</td>
+                  <td>104.15</td>
+                  <td>133.90</td>
+                </tr>
+                <tr>
+                  <td>&gt; RM6,000</td>
+                  <td>30.00</td>
+                  <td>105.00</td>
+                  <td>135.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="contribution-table-wrap" id="eis-table" style="display:none;">
+            <table class="contribution-table">
+              <thead>
+                <tr>
+                  <th>Salary Range (RM)</th>
+                  <th>Employee (RM)</th>
+                  <th>Employer (RM)</th>
+                  <th>Total (RM)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Up to 300</td>
+                  <td>0.50</td>
+                  <td>0.50</td>
+                  <td>1.00</td>
+                </tr>
+                <tr>
+                  <td>2,000 – 2,100</td>
+                  <td>4.10</td>
+                  <td>4.10</td>
+                  <td>8.20</td>
+                </tr>
+                <tr>
+                  <td>4,000 – 4,100</td>
+                  <td>8.10</td>
+                  <td>8.10</td>
+                  <td>16.20</td>
+                </tr>
+                <tr>
+                  <td>4,900 – 5,000</td>
+                  <td>9.90</td>
+                  <td>9.90</td>
+                  <td>19.80</td>
+                </tr>
+                <tr>
+                  <td>&gt; 6,000</td>
+                  <td>11.90</td>
+                  <td>11.90</td>
+                  <td>23.80</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="contribution-note">
+            Note: These tables are simplified quick references. For full statutory tables, refer to the detailed EPF, SOCSO and EIS guides.
+          </p>
+
+        </section>
 
         <div class="component-grid">
-          <div class="component-card">
-            <div class="component-icon">📄</div>
-            <h3>Contractual Bonus</h3>
-            <p>Bonus stated in the offer letter or employment contract, usually with clearer entitlement terms.</p>
-          </div>
-          <div class="component-card">
-            <div class="component-icon">🎯</div>
-            <h3>Performance Bonus</h3>
-            <p>Bonus linked to employee performance, KPI achievement or appraisal results.</p>
-          </div>
-          <div class="component-card">
-            <div class="component-icon">🏢</div>
-            <h3>Company Bonus</h3>
-            <p>Bonus based on company profit, management decision or business performance.</p>
-          </div>
-          <div class="component-card">
-            <div class="component-icon">🎁</div>
-            <h3>Discretionary Bonus</h3>
-            <p>Bonus that depends on employer decision and may not be guaranteed every year.</p>
-          </div>
+
+          <a class="component-card" href="epf-guide.html">
+            <div class="component-icon">💰</div>
+            <h3>EPF</h3>
+            <p>Employee Provident Fund guide</p>
+          </a>
+
+          <a class="component-card" href="socso-guide.html">
+            <div class="component-icon">🛡️</div>
+            <h3>SOCSO</h3>
+            <p>Social security contribution guide</p>
+          </a>
+
+          <a class="component-card" href="eis-guide.html">
+            <div class="component-icon">📋</div>
+            <h3>EIS</h3>
+            <p>Employment insurance guide</p>
+          </a>
+
+          <a class="component-card" href="pcb-guide.html">
+            <div class="component-icon">🏛️</div>
+            <h3>PCB</h3>
+            <p>Monthly tax deduction guide</p>
+          </a>
+
         </div>
+
       </section>
 
-      <section class="info-box">
-        <h2>Annual Bonus vs Performance Bonus</h2>
-        <p>
-          Annual bonus and performance bonus are often used interchangeably, but they may work differently depending on the employer's policy. An annual bonus is commonly linked to the company's yearly results or general bonus cycle, while a performance bonus is more closely connected to individual KPI, appraisal rating or department targets.
-        </p>
-        <p>
-          Employees should check whether the bonus is based on a fixed number of months, a percentage of salary, a performance score or management discretion. Understanding the bonus basis helps employees compare salary packages more accurately.
+      <h2>Who Should Use This Calculator?</h2>
+
+      <ul>
+        <li>Employees checking monthly take-home pay after deductions</li>
+        <li>Job seekers comparing salary packages and job offers</li>
+        <li>HR and payroll staff estimating employee deductions</li>
+        <li>Malaysians planning personal finances and income tax</li>
+      </ul>
+
+      <section class="tax-relief-box">
+
+        <h2>Tax Relief & Payroll Notes</h2>
+
+        <p style="margin-bottom:8px;">
+          Click each tax relief below to see common claim limits and examples.
         </p>
 
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Bonus Type</th>
-                <th>Common Basis</th>
-                <th>What Employees Should Check</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Annual Bonus</td>
-                <td>Company yearly results or annual bonus cycle</td>
-                <td>Whether it is guaranteed, discretionary or linked to company performance</td>
-              </tr>
-              <tr>
-                <td>Performance Bonus</td>
-                <td>Individual KPI, appraisal rating or target achievement</td>
-                <td>How performance is measured and when the bonus is paid</td>
-              </tr>
-              <tr>
-                <td>Contractual Bonus</td>
-                <td>Written employment contract or offer letter</td>
-                <td>Exact entitlement, conditions and payment timing</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="tax-grid">
+
+          <details class="tax-item">
+            <summary>Lifestyle Relief</summary>
+            <p>
+              Claim up to RM2,500 for books, smartphone, laptop,
+              internet subscription and gym membership.
+            </p>
+          </details>
+
+          <details class="tax-item">
+            <summary>Medical Expenses</summary>
+            <p>
+              Claim up to RM8,000 for parents' medical treatment,
+              serious diseases and related healthcare expenses.
+            </p>
+          </details>
+
+          <details class="tax-item">
+            <summary>Education Fees</summary>
+            <p>
+              Claim tax relief for approved self-education fees and
+              professional courses.
+            </p>
+          </details>
+
+          <details class="tax-item">
+            <summary>Insurance & Takaful</summary>
+            <p>
+              Life insurance and takaful premiums may qualify for
+              tax relief up to applicable limits.
+            </p>
+          </details>
+
+          <details class="tax-item">
+            <summary>EPF Contributions</summary>
+            <p>
+              EPF contributions can be claimed up to RM4,000
+              (combined with certain insurance reliefs).
+            </p>
+          </details>
+
+          <details class="tax-item">
+            <summary>Child Relief</summary>
+            <p>
+              RM2,000 per child under 18.
+              RM8,000 per child in tertiary education.
+            </p>
+          </details>
+
         </div>
-      </section>
 
-      <h2>How Bonus Is Calculated</h2>
-      <p>
-        Bonus is often calculated based on monthly salary. For example, a one-month bonus usually means the employee receives an additional amount equal to one month of salary. Some employers may calculate bonus based on basic salary only, while others may use gross salary or a different formula.
-      </p>
-
-      <div class="formula-box">
-        <strong>Bonus Amount = Monthly Salary × Bonus Months</strong>
-        <span>Example: RM4,000 × 1 month = RM4,000 bonus</span>
-      </div>
-
-      <section class="info-box">
-        <h2>Example Bonus Calculation</h2>
-        <p>
-          If an employee earns RM4,000 per month and receives a 1.5-month bonus, the estimated bonus may be:
-        </p>
-        <ul>
-          <li>Monthly salary: RM4,000</li>
-          <li>Bonus months: 1.5 months</li>
-          <li>Estimated bonus: RM6,000</li>
-        </ul>
-        <p>
-          Actual take-home bonus may be lower after statutory deductions and tax treatment, depending on payroll calculation and employee tax situation.
-        </p>
-      </section>
-
-      <h2>Contractual Bonus vs Discretionary Bonus</h2>
-      <p>
-        Contractual bonus and discretionary bonus are very different. A contractual bonus is usually written in the employment contract or offer letter. A discretionary bonus is usually not guaranteed and depends on employer decision, company performance or internal policy.
-      </p>
-
-      <div class="contribution-table-wrap">
-        <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Bonus Type</th>
-              <th>Simple Meaning</th>
-              <th>Usually Guaranteed?</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Contractual Bonus</td>
-              <td>Bonus stated in employment contract or offer letter</td>
-              <td>Usually yes, subject to terms</td>
-            </tr>
-            <tr>
-              <td>Discretionary Bonus</td>
-              <td>Bonus decided by employer based on policy or performance</td>
-              <td>Usually no</td>
-            </tr>
-            <tr>
-              <td>Performance Bonus</td>
-              <td>Bonus linked to KPI, appraisal or target achievement</td>
-              <td>Depends on scheme</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="payroll-note">
-        <strong>Career Note:</strong> When comparing job offers, a higher monthly salary is usually more stable than a non-guaranteed bonus. However, a strong bonus scheme can make total annual compensation much more attractive.
-      </div>
-
-      <h2>Does Bonus Affect EPF, SOCSO, EIS and PCB?</h2>
-      <p>
-        Bonus may affect payroll deductions and tax calculation. Depending on how the bonus is treated in payroll, it may increase monthly statutory deductions and PCB for that month. Employees should expect bonus months to have different deductions compared with normal salary months.
-      </p>
-
-      <section class="info-box">
-        <h2>Bonus After Tax and Deductions</h2>
-        <p>
-          Many employees focus on the gross bonus amount, but the actual take-home bonus may be lower after payroll deductions. Bonus payments may affect EPF contributions, PCB tax deductions and other salary-related calculations for the month.
-        </p>
-        <p>
-          A higher bonus month may therefore show higher deductions on the payslip compared with a normal salary month. Employees should compare gross bonus, net bonus and total annual income before deciding how much the bonus really improves their cash flow.
-        </p>
-      </section>
-
-      <section class="info-box">
-        <h2>Bonus vs Salary Increment</h2>
-        <p>
-          A bonus can increase annual income, but it does not usually increase monthly basic salary unless it is converted into a permanent salary adjustment. A salary increment, on the other hand, increases future monthly salary and may also affect future EPF, PCB, overtime rate and salary-based benefits.
-        </p>
-
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Bonus</th>
-                <th>Salary Increment</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Payment Nature</td>
-                <td>Usually one-off or periodic</td>
-                <td>Permanent increase in monthly salary</td>
-              </tr>
-              <tr>
-                <td>Monthly Salary</td>
-                <td>Usually no change</td>
-                <td>Higher monthly salary going forward</td>
-              </tr>
-              <tr>
-                <td>Annual Income</td>
-                <td>Can increase annual income</td>
-                <td>Increases annual income every year if maintained</td>
-              </tr>
-              <tr>
-                <td>Long-Term Impact</td>
-                <td>Depends on whether bonus continues</td>
-                <td>Usually stronger long-term income impact</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="payroll-note">
+          <strong>Payroll Note:</strong>
+          EPF, SOCSO, EIS and PCB deductions are generally processed by employers through monthly payroll submissions.
         </div>
-      </section>
 
-      <section class="info-box">
-        <h2>Bonus and Salary Package Comparison</h2>
-        <p>
-          Bonus should be viewed as part of total annual compensation. A job with RM4,000 salary and guaranteed 2-month bonus may have a different annual value compared with a job that pays RM4,300 salary but no guaranteed bonus.
-        </p>
-
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Package</th>
-                <th>Monthly Salary</th>
-                <th>Bonus</th>
-                <th>Estimated Annual Income</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Package A</td>
-                <td>RM4,000</td>
-                <td>2 months</td>
-                <td>RM56,000</td>
-              </tr>
-              <tr>
-                <td>Package B</td>
-                <td>RM4,300</td>
-                <td>No guaranteed bonus</td>
-                <td>RM51,600</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section class="info-box">
-        <h2>Bonus During Probation</h2>
-        <p>
-          Bonus entitlement during probation depends on the employment contract, bonus policy and the timing of the bonus period. Some employers exclude probationary employees from bonus schemes, while others may allow pro-rated bonus if the employee meets the required conditions.
-        </p>
-        <p>
-          Employees should check whether the bonus policy requires confirmation, minimum service period or active employment on the payment date. If the bonus is discretionary, the employer may have more flexibility in deciding whether probation employees are included.
-        </p>
-      </section>
-
-      <section class="info-box">
-        <h2>Bonus and Resignation</h2>
-        <p>
-          Employees who resign before bonus payout often ask whether they are still entitled to bonus. The answer depends on whether the bonus is contractual or discretionary, whether the employee has completed the required service period and whether the bonus policy requires the employee to be actively employed on the payment date.
-        </p>
-        <p>
-          If the bonus is clearly contractual, the employment terms should be reviewed carefully. If the bonus is discretionary, employers usually have more room to decide based on policy, performance and company practice.
-        </p>
-      </section>
-
-      <section class="info-box">
-        <h2>Common Bonus Mistakes</h2>
-        <p>
-          Bonus misunderstandings usually happen because employees compare only the headline bonus amount without checking contract terms, tax impact or whether the bonus is guaranteed.
-        </p>
-        <ul>
-          <li>Assuming a discretionary bonus is guaranteed every year</li>
-          <li>Comparing only monthly salary instead of total annual compensation</li>
-          <li>Ignoring PCB and payroll deductions in the bonus month</li>
-          <li>Not checking whether bonus is based on basic salary or gross salary</li>
-          <li>Assuming probation employees automatically receive bonus</li>
-          <li>Resigning before checking bonus payment conditions</li>
-        </ul>
-      </section>
-
-      <section class="info-box">
-        <h2>Common Bonus Examples</h2>
-
-        <h3>Example 1: One-Month Bonus</h3>
-        <p>
-          An employee earning RM4,000 per month receives a one-month bonus. The gross bonus is RM4,000 before any applicable deductions.
-        </p>
-
-        <h3>Example 2: 1.5-Month Bonus</h3>
-        <p>
-          An employee earning RM4,000 per month receives a 1.5-month bonus. The gross bonus is RM6,000, but the net amount may be lower after payroll deductions.
-        </p>
-
-        <h3>Example 3: Performance Bonus</h3>
-        <p>
-          An employee receives a performance bonus based on KPI achievement. The final bonus may depend on appraisal rating, department performance and company policy.
-        </p>
-
-        <h3>Example 4: Bonus vs Salary Increment</h3>
-        <p>
-          A RM4,000 one-off bonus increases income for that year, while a RM300 monthly increment increases salary by RM3,600 per year and may continue into future years.
-        </p>
-      </section>
-
-      <h2>Bonus on Payslip</h2>
-      <p>
-        Bonus is usually shown separately on the payslip as additional income, bonus payment or incentive. The payslip may also show higher deductions for the month if bonus affects statutory contributions or tax deduction.
-      </p>
-      <p>
-        Employees should keep bonus payslips for income tax filing, loan applications and personal financial records because bonus can affect annual income proof.
-      </p>
-
-      <section class="info-box">
-        <h2>Who Should Read This Bonus Guide?</h2>
-        <ul>
-          <li>Employees checking how bonus affects annual income and take-home pay</li>
-          <li>Job seekers comparing salary packages with different bonus structures</li>
-          <li>HR and payroll staff explaining bonus treatment to employees</li>
-          <li>Malaysians preparing documents for tax filing or loan applications</li>
-        </ul>
       </section>
 
       <h2>Frequently Asked Questions</h2>
 
       <div class="faq-box">
+
         <details class="faq-item" open>
-          <summary>Is bonus compulsory in Malaysia?</summary>
+          <summary>Does this salary calculator include EPF, SOCSO, EIS and PCB?</summary>
           <p>
-            Bonus is not automatically compulsory unless it is stated in the employment contract, offer letter, collective agreement or company policy that creates a clear entitlement.
+            Yes. This calculator estimates your monthly take-home pay after deducting EPF, SOCSO, EIS and estimated PCB tax based on your gross monthly salary.
           </p>
         </details>
 
         <details class="faq-item">
-          <summary>What is the difference between contractual bonus and discretionary bonus?</summary>
+          <summary>Why is my actual salary different from the calculator result?</summary>
           <p>
-            Contractual bonus is usually promised in writing and may be treated as part of employment terms. Discretionary bonus depends on employer decision and is usually not guaranteed every year.
+            Actual payroll calculations may vary depending on tax relief claims, additional allowances, bonuses, overtime payments, unpaid leave and employer payroll settings.
           </p>
         </details>
 
         <details class="faq-item">
-          <summary>How do I calculate a one-month bonus?</summary>
+          <summary>How is PCB tax calculated in Malaysia?</summary>
           <p>
-            A one-month bonus is commonly calculated as one month of salary. For example, if your monthly salary is RM4,000, a one-month bonus is RM4,000 before any applicable deductions.
+            PCB (Potongan Cukai Bulanan) is a monthly tax deduction system administered by LHDN. The amount depends on your chargeable income, tax reliefs and personal circumstances.
           </p>
         </details>
 
         <details class="faq-item">
-          <summary>Does bonus affect PCB tax?</summary>
+          <summary>Can I calculate annual salary from monthly salary?</summary>
           <p>
-            Yes. Bonus may increase taxable income and can result in higher PCB deduction for the bonus month, depending on payroll calculation and the employee's tax position.
+            Yes. This calculator automatically provides both monthly and annual salary breakdowns based on the gross monthly salary entered.
           </p>
         </details>
 
         <details class="faq-item">
-          <summary>Does bonus affect EPF contribution?</summary>
+          <summary>Do bonuses and allowances affect take-home pay?</summary>
           <p>
-            Bonus may be subject to EPF depending on the nature of payment and payroll treatment. Employees should check payslip details or confirm with HR if unsure.
+            Yes. Additional income such as bonuses, commissions, allowances and overtime payments may increase statutory deductions and PCB tax.
           </p>
         </details>
 
         <details class="faq-item">
-          <summary>Should I compare jobs by monthly salary or annual income?</summary>
+          <summary>What tax reliefs can reduce PCB deductions?</summary>
           <p>
-            It is better to compare total annual income, including monthly salary, guaranteed bonus, allowances and benefits. Monthly salary is more stable, but guaranteed bonus can increase annual compensation.
+            Common Malaysia tax reliefs include EPF contributions, life insurance, medical insurance, lifestyle expenses, education fees, medical expenses and child reliefs.
           </p>
         </details>
 
-        <details class="faq-item">
-          <summary>Can a company choose not to pay bonus?</summary>
-          <p>
-            If the bonus is discretionary, the company may decide whether to pay it based on performance, profit or policy. If the bonus is contractual, the employment terms should be reviewed carefully.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can employees receive bonus during probation?</summary>
-          <p>
-            This depends on the employment contract and bonus policy. Some employers may exclude probation employees, while others may provide pro-rated or discretionary bonus if the employee meets the conditions.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can bonus be paid monthly?</summary>
-          <p>
-            Some companies may pay incentives, commissions or variable bonuses monthly, but annual bonus is commonly paid once a year or after performance review. The exact timing depends on company policy.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can employers cancel a bonus?</summary>
-          <p>
-            If the bonus is discretionary, employers may decide not to pay it depending on performance, profit or policy. If the bonus is contractual, the written employment terms should be reviewed carefully.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is bonus taxable in Malaysia?</summary>
-          <p>
-            Bonus may form part of taxable employment income and may affect PCB deduction for the month. Employees should review their EA Form and tax filing records.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Does bonus affect loan applications?</summary>
-          <p>
-            Bonus may help show higher annual income, but banks may treat fixed salary and variable bonus differently. Keeping bonus payslips and EA Forms can help support income verification.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Should I compare jobs based on salary or total compensation?</summary>
-          <p>
-            It is better to compare total compensation, including monthly salary, guaranteed bonus, allowances, benefits and long-term increment potential.
-          </p>
-        </details>
       </div>
 
       <section class="salary-guides-box">
-        <h2>Related Salary & Career Guides</h2>
+
+        <h2>Malaysia Salary Guides</h2>
+
         <p>
-          Continue reading other Malaysia salary and career guides related to bonus, salary increment and payslip planning.
+          Learn more about salary deductions, tax, leave, bonus and payroll rules in Malaysia.
         </p>
 
         <div class="guide-mini-grid">
-          <a href="salary-increment-guide.html">📈 Salary Increment Guide</a>
-          <a href="payslip-guide.html">🧾 Payslip Guide</a>
-          <a href="hourly-rate-guide.html">⏱️ Hourly Rate Guide</a>
-          <a href="income-tax-guide.html">🏛️ Income Tax Guide</a>
+          <a href="tax-relief-guide.html">💸 Tax Relief Guide</a>
+          <a href="public-holiday-guide.html">📅 Public Holiday Guide</a>
+          <a href="mc-leave-guide.html">🏥 MC Leave Guide</a>
+          <a href="overtime-guide.html">⏰ Overtime Guide</a>
+          <a href="epf-guide.html">💰 EPF Guide</a>
+          <a href="socso-guide.html">🛡️ SOCSO Guide</a>
+          <a href="eis-guide.html">📋 EIS Guide</a>
+          <a href="pcb-guide.html">🏛️ PCB Guide</a>
         </div>
 
         <p class="view-all-guides">
           <a href="guides.html">View All Salary Guides →</a>
         </p>
+
       </section>
 
       <section class="salary-guides-box">
+
         <h2>Related Calculators</h2>
+
         <p>
-          Explore free Malaysia calculators that help you understand salary, tax, payroll deductions and financial planning.
+          Explore more free Malaysia salary and payroll calculators.
         </p>
 
         <div class="guide-mini-grid">
-          <a href="bonus-calculator.html">Bonus Calculator</a>
-          <a href="salary-increment-calculator.html">Salary Increment Calculator</a>
-          <a href="payslip-generator.html">Payslip Generator</a>
+          <a href="epf-calculator.html">EPF Calculator</a>
+          <a href="socso-calculator.html">SOCSO Calculator</a>
+          <a href="pcb-calculator.html">PCB Calculator</a>
           <a href="income-tax-calculator.html">Income Tax Calculator</a>
+          <a href="annual-leave-calculator.html">Annual Leave Calculator</a>
+          <a href="bonus-calculator.html">Bonus Calculator</a>
+          <a href="loan-calculator.html">Loan Calculator</a>
+          <a href="overtime-calculator.html">Overtime Calculator</a>
         </div>
 
         <p class="view-all-guides">
           <a href="calculators.html">View All Calculators →</a>
         </p>
+
       </section>
 
     </div>
@@ -1096,6 +1255,162 @@
       <a href="privacy-policy.html">Privacy Policy</a>
     </p>
   </footer>
+
+  <script>
+    function showContributionTable(type, button){
+      document.getElementById("epf-table").style.display = "none";
+      document.getElementById("socso-table").style.display = "none";
+      document.getElementById("eis-table").style.display = "none";
+
+      document.getElementById(type + "-table").style.display = "block";
+
+      let buttons = document.querySelectorAll(".contribution-tabs button");
+      buttons.forEach(function(btn){
+        btn.classList.remove("active");
+      });
+
+      button.classList.add("active");
+    }
+
+    function formatRM(v){
+      return v.toLocaleString('en-MY', {
+        minimumFractionDigits:2,
+        maximumFractionDigits:2
+      });
+    }
+
+    function setSalary(value){
+      document.getElementById("salary").value = value;
+      document.getElementById("salaryRange").value = value;
+      calculate();
+    }
+
+    function getSocso(salary){
+      let socsoSalary = Math.min(salary, 6000);
+      let socso = 0;
+
+      if (socsoSalary <= 30) {
+        socso = 0.10;
+      } else if (socsoSalary <= 50) {
+        socso = 0.20;
+      } else if (socsoSalary <= 70) {
+        socso = 0.30;
+      } else if (socsoSalary <= 100) {
+        socso = 0.40;
+      } else {
+        let bracketUpper = Math.ceil(socsoSalary / 100) * 100;
+        let bracketLower = bracketUpper - 100;
+        let bracketMid = (bracketLower + bracketUpper) / 2;
+        socso = bracketMid * 0.005;
+      }
+
+      return Math.round(socso * 100) / 100;
+    }
+
+    function getPcb(salary, epf){
+      let annual = salary * 12;
+      let taxableAnnualIncome = annual - (epf * 12) - 9000;
+      let annualTax = 0;
+
+      if (taxableAnnualIncome > 35000) {
+        if (taxableAnnualIncome <= 50000) {
+          annualTax = (taxableAnnualIncome - 35000) * 0.06;
+        } else if (taxableAnnualIncome <= 70000) {
+          annualTax = 900 + (taxableAnnualIncome - 50000) * 0.11;
+        } else if (taxableAnnualIncome <= 100000) {
+          annualTax = 3100 + (taxableAnnualIncome - 70000) * 0.19;
+        } else if (taxableAnnualIncome <= 400000) {
+          annualTax = 8800 + (taxableAnnualIncome - 100000) * 0.25;
+        } else if (taxableAnnualIncome <= 600000) {
+          annualTax = 83800 + (taxableAnnualIncome - 400000) * 0.26;
+        } else if (taxableAnnualIncome <= 2000000) {
+          annualTax = 135800 + (taxableAnnualIncome - 600000) * 0.28;
+        } else {
+          annualTax = 527800 + (taxableAnnualIncome - 2000000) * 0.30;
+        }
+      }
+
+      return Math.max(0, annualTax / 12);
+    }
+
+    function calculate(){
+      let salaryInput = document.getElementById("salary");
+      let rangeInput = document.getElementById("salaryRange");
+      let salary = parseFloat(salaryInput.value);
+
+      if(!salary || salary < 0){
+        document.getElementById("netSalary").textContent = "0.00";
+        document.getElementById("netPercent").textContent = "Please enter a salary";
+        document.getElementById("deductionBar").innerHTML = "";
+        document.getElementById("monthlyRows").innerHTML = "";
+        document.getElementById("annualRows").innerHTML = "";
+        return;
+      }
+
+      rangeInput.value = Math.min(salary, rangeInput.max);
+
+      let epf = salary * 0.11;
+      let socso = getSocso(salary);
+      let eis = salary * 0.002;
+      let tax = getPcb(salary, epf);
+      let totalDeduction = epf + socso + eis + tax;
+      let net = salary - totalDeduction;
+      let annual = salary * 12;
+
+      let colors = {
+        net: "#2f7d5e",
+        epf: "#5aa783",
+        socso: "#c9a14e",
+        eis: "#7d97c4",
+        pcb: "#cf6f5b"
+      };
+
+      document.getElementById("netSalary").textContent = formatRM(net);
+      document.getElementById("netPercent").textContent = Math.round((net / salary) * 100) + "% of gross salary";
+
+      let barItems = [
+        ["Net", net, colors.net],
+        ["EPF", epf, colors.epf],
+        ["SOCSO", socso, colors.socso],
+        ["EIS", eis, colors.eis],
+        ["PCB", tax, colors.pcb]
+      ];
+
+      document.getElementById("deductionBar").innerHTML = barItems.map(function(item){
+        let width = salary ? (item[1] / salary) * 100 : 0;
+        return '<i style="width:' + width + '%;background:' + item[2] + '"></i>';
+      }).join("");
+
+      let monthlyItems = [
+        ["Gross Salary", salary, "#f6f3ec"],
+        ["EPF / KWSP", epf, colors.epf],
+        ["SOCSO", socso, colors.socso],
+        ["EIS", eis, colors.eis],
+        ["Estimated PCB", tax, colors.pcb],
+        ["Total Deductions", totalDeduction, "#d7cec0"]
+      ];
+
+      document.getElementById("monthlyRows").innerHTML = monthlyItems.map(function(item){
+        return '<div class="result-line"><span class="k"><span class="dot" style="background:' + item[2] + '"></span>' + item[0] + '</span><span class="v">RM ' + formatRM(item[1]) + '</span></div>';
+      }).join("");
+
+      document.getElementById("annualRows").innerHTML =
+        '<div><span>Annual Gross Salary</span><strong>RM ' + formatRM(annual) + '</strong></div>' +
+        '<div><span>Annual EPF</span><strong>RM ' + formatRM(epf * 12) + '</strong></div>' +
+        '<div><span>Annual SOCSO</span><strong>RM ' + formatRM(socso * 12) + '</strong></div>' +
+        '<div><span>Annual EIS</span><strong>RM ' + formatRM(eis * 12) + '</strong></div>' +
+        '<div><span>Annual PCB</span><strong>RM ' + formatRM(tax * 12) + '</strong></div>' +
+        '<div><span>Annual Net Salary</span><strong>RM ' + formatRM(net * 12) + '</strong></div>';
+    }
+
+    document.getElementById("salary").addEventListener("input", calculate);
+    document.getElementById("salaryRange").addEventListener("input", function(){
+      document.getElementById("salary").value = this.value;
+      calculate();
+    });
+
+    calculate();
+  </script>
 
 </body>
 </html>
