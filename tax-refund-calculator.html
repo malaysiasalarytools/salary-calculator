@@ -7,102 +7,784 @@
   <title>Malaysia Tax Refund Calculator 2026 | PCB Refund Calculator</title>
 
   <link rel="canonical" href="https://malaysiasalarytools.com/tax-refund-calculator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
 
-  <meta name="description" content="Free Malaysia Tax Refund Calculator 2026. Estimate income tax refund or additional tax payable based on PCB paid and actual income tax.">
+  <meta name="description" content="Free Malaysia Tax Refund Calculator 2026. Estimate income tax refund or additional tax payable based on total PCB paid and actual income tax payable.">
+  <meta name="keywords" content="Malaysia tax refund calculator, PCB refund calculator Malaysia, income tax refund Malaysia, LHDN refund calculator, additional tax payable Malaysia">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="robots" content="index, follow">
 
   <style>
+    :root {
+      --background:#f4f1ea;
+      --card:#fbfaf6;
+      --foreground:#302c26;
+      --muted:#7c766c;
+      --primary:#2f2b25;
+      --primary-foreground:#f6f3ec;
+      --accent:#2f7d5e;
+      --accent-soft:rgba(47,125,94,.10);
+      --accent-border:rgba(47,125,94,.22);
+      --border:#e2ddd2;
+      --white:#ffffff;
+      --radius:16px;
+      --shadow:0 18px 45px rgba(47,43,37,.08);
+    }
+
+    * { box-sizing:border-box; }
+
+    html {
+      overflow-x:hidden;
+      scroll-behavior:smooth;
+    }
+
     body {
-      font-family: Arial;
-      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
-      margin: 0;
-      padding: 20px;
+      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47,125,94,.08), transparent 34%),
+        linear-gradient(135deg, #f4f1ea, #efe9de);
+      margin:0;
+      padding:0;
+      color:var(--foreground);
+      line-height:1.6;
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
     }
 
-    .card,
+    a { color:inherit; }
+
+    .serif {
+      font-family:Georgia, "Times New Roman", serif;
+      font-weight:400;
+    }
+
+    .top-nav {
+      background:rgba(251,250,246,.84);
+      border-bottom:1px solid var(--border);
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(10px);
+    }
+
+    .nav-inner {
+      max-width:1120px;
+      margin:0 auto;
+      padding:14px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:25px;
+    }
+
+    .brand {
+      display:flex;
+      align-items:center;
+      text-decoration:none;
+      flex-shrink:0;
+    }
+
+    .brand img {
+      width:220px;
+      height:auto;
+      display:block;
+    }
+
+    .nav-links {
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:nowrap;
+      min-width:0;
+    }
+
+    .nav-links a {
+      display:block;
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:600;
+      font-size:15px;
+      padding:10px 14px;
+      border-radius:999px;
+      white-space:nowrap;
+      background:transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background:var(--primary);
+      color:var(--primary-foreground);
+    }
+
+    .hero {
+      text-align:center;
+      padding:56px 20px 18px;
+      max-width:900px;
+      margin:0 auto;
+    }
+
+    .pill {
+      display:inline-block;
+      font-size:12px;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      color:var(--accent);
+      background:var(--accent-soft);
+      border:1px solid var(--accent-border);
+      padding:7px 15px;
+      border-radius:999px;
+      margin-bottom:20px;
+      font-weight:700;
+    }
+
+    .hero h1 {
+      margin:0;
+      font-size:clamp(36px, 6vw, 62px);
+      line-height:1.05;
+      letter-spacing:-.03em;
+      color:var(--foreground);
+    }
+
+    .hero h1 em {
+      color:var(--accent);
+      font-style:italic;
+    }
+
+    .hero p {
+      max-width:760px;
+      margin:18px auto 0;
+      font-size:17px;
+      color:var(--muted);
+    }
+
+    .main-wrapper {
+      padding:16px 20px 44px;
+    }
+
+    .calculator-shell {
+      max-width:1120px;
+      margin:28px auto 32px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      align-items:stretch;
+    }
+
+    .panel,
     .seo {
-      background: white;
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
     }
 
-    .seo { line-height: 1.7; }
-
-    .layout {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
+    .panel {
+      padding:28px;
     }
 
-    .box {
-      flex: 1;
-      min-width: 320px;
-      background: #f8f9fc;
-      border: 1px solid #eee;
-      border-radius: 12px;
-      padding: 15px;
+    .panel h2 {
+      margin:0 0 4px;
+      font-size:22px;
+      color:var(--foreground);
     }
 
-    input, button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      font-size: 16px;
-      box-sizing: border-box;
+    .panel .sub {
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    label {
+      display:block;
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:8px;
+      color:var(--foreground);
+    }
+
+    .form-group {
+      margin-bottom:18px;
+    }
+
+    .field-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .input-row {
+      position:relative;
+    }
+
+    .input-row span {
+      position:absolute;
+      left:14px;
+      top:50%;
+      transform:translateY(-50%);
+      color:var(--muted);
+      font-size:16px;
+      font-weight:700;
     }
 
     input {
-      border-radius: 10px;
-      border: 1px solid #ddd;
+      width:100%;
+      padding:15px 14px 15px 46px;
+      font-size:20px;
+      font-weight:700;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:var(--white);
+      color:var(--foreground);
+      outline:none;
     }
 
-    button {
-      background: #111;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
+    input:focus {
+      border-color:var(--accent);
+      box-shadow:0 0 0 3px rgba(47,125,94,.14);
     }
 
-    .result {
-      margin-top: 10px;
-      line-height: 1.6;
+    input[type="range"] {
+      width:100%;
+      margin-top:18px;
+      padding:0;
+      accent-color:var(--accent);
     }
 
-    .seo-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
+    .preset-grid {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:16px;
     }
 
-    .card-link {
-      display: block;
-      padding: 15px;
-      background: white;
-      border-radius: 12px;
-      text-decoration: none;
-      color: black;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    .preset,
+    .calc-button {
+      border:none;
+      cursor:pointer;
+      font-family:inherit;
     }
 
-    h1 { font-size: 26px; }
-    h2 { font-size: 20px; margin-top: 25px; }
-    h3 { font-size: 16px; margin-top: 18px; }
+    .preset {
+      background:var(--white);
+      border:1px solid var(--border);
+      color:var(--foreground);
+      padding:8px 13px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:13px;
+    }
 
-    @media (max-width: 700px){
-      .layout { flex-direction: column; }
-      body { padding: 10px; }
-      .card, .seo {
-        margin: 15px auto;
-        padding: 18px;
+    .preset:hover {
+      color:var(--accent);
+      border-color:var(--accent);
+    }
+
+    .calc-button {
+      width:100%;
+      background:var(--accent);
+      color:#fff;
+      padding:14px 18px;
+      margin-top:6px;
+      border-radius:12px;
+      font-size:16px;
+      font-weight:800;
+    }
+
+    .calc-button:hover {
+      filter:brightness(.95);
+    }
+
+    .secondary-button {
+      display:block;
+      text-align:center;
+      width:100%;
+      background:var(--white);
+      color:var(--accent);
+      border:1px solid var(--accent-border);
+      padding:13px 18px;
+      margin-top:12px;
+      border-radius:12px;
+      font-size:15px;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .secondary-button:hover {
+      background:var(--accent-soft);
+    }
+
+    .input-note {
+      margin:16px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .results-panel {
+      background:var(--primary);
+      color:var(--primary-foreground);
+      border:1px solid var(--primary);
+      padding:28px;
+      border-radius:var(--radius);
+      box-shadow:0 24px 55px rgba(47,43,37,.20);
+    }
+
+    .results-panel h2 {
+      margin:0 0 4px;
+      font-size:22px;
+      color:var(--primary-foreground);
+    }
+
+    .results-panel .sub {
+      margin:0;
+      color:rgba(246,243,236,.62);
+      font-size:14px;
+    }
+
+    .net {
+      font-size:clamp(36px, 5vw, 48px);
+      font-weight:800;
+      letter-spacing:-.03em;
+      margin:16px 0 0;
+    }
+
+    .net-caption {
+      color:rgba(246,243,236,.62);
+      font-size:14px;
+      margin-top:0;
+    }
+
+    .bar {
+      height:9px;
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+      display:flex;
+      overflow:hidden;
+      margin:22px 0;
+    }
+
+    .bar i {
+      display:block;
+      height:100%;
+    }
+
+    .result-rows {
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+
+    .result-line {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      padding:11px 0;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      font-size:14px;
+    }
+
+    .result-line:last-child {
+      border-bottom:none;
+    }
+
+    .result-line .k {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:rgba(246,243,236,.86);
+    }
+
+    .result-line .v {
+      font-weight:800;
+      text-align:right;
+    }
+
+    .dot {
+      width:9px;
+      height:9px;
+      border-radius:3px;
+      flex:0 0 auto;
+    }
+
+    .annual-summary {
+      margin-top:18px;
+      padding-top:16px;
+      border-top:1px solid rgba(255,255,255,.18);
+      display:grid;
+      gap:8px;
+      font-size:14px;
+    }
+
+    .annual-summary div {
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      color:rgba(246,243,236,.82);
+    }
+
+    .annual-summary strong {
+      color:var(--primary-foreground);
+      text-align:right;
+    }
+
+    .seo {
+      max-width:1120px;
+      margin:30px auto;
+      padding:30px;
+      line-height:1.72;
+    }
+
+    .seo h2 {
+      font-size:clamp(25px, 4vw, 36px);
+      line-height:1.15;
+      margin:34px 0 12px;
+      color:var(--foreground);
+      letter-spacing:-.01em;
+      font-family:Georgia, "Times New Roman", serif;
+      font-weight:400;
+    }
+
+    .seo h2:first-child {
+      margin-top:0;
+    }
+
+    .seo h3 {
+      font-size:17px;
+      margin-top:18px;
+    }
+
+    .seo p,
+    .seo li {
+      color:var(--muted);
+    }
+
+    .formula-box,
+    .contribution-box,
+    .salary-guides-box {
+      background:#f8f5ef;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:24px;
+      margin:26px 0;
+    }
+
+    .formula-box {
+      text-align:center;
+    }
+
+    .formula-box strong {
+      display:block;
+      font-size:22px;
+      color:var(--foreground);
+      margin-bottom:8px;
+    }
+
+    .formula-box span {
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .component-grid,
+    .guide-mini-grid,
+    .rate-grid {
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+      grid-template-columns:repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .component-card,
+    .guide-mini-grid a,
+    .rate-card,
+    .faq-item {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:14px;
+    }
+
+    .component-card {
+      display:block;
+      padding:20px;
+      text-decoration:none;
+      color:inherit;
+      transition:.18s ease;
+    }
+
+    .component-card:hover,
+    .guide-mini-grid a:hover {
+      transform:translateY(-2px);
+      border-color:var(--accent);
+      box-shadow:0 12px 30px rgba(47,43,37,.08);
+    }
+
+    .component-icon {
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      background:var(--accent-soft);
+      display:grid;
+      place-items:center;
+      margin-bottom:10px;
+      font-size:21px;
+    }
+
+    .component-card h3,
+    .rate-card h3 {
+      margin:8px 0 4px;
+      color:var(--foreground);
+    }
+
+    .component-card p,
+    .rate-card p {
+      margin:0;
+      font-size:14px;
+    }
+
+    .rate-card {
+      padding:20px;
+    }
+
+    .rate-card strong {
+      display:block;
+      color:var(--accent);
+      font-size:28px;
+      line-height:1.1;
+      margin-bottom:8px;
+    }
+
+    .contribution-table-wrap {
+      overflow-x:auto;
+      margin-top:18px;
+    }
+
+    .contribution-table {
+      width:100%;
+      border-collapse:collapse;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:12px;
+      overflow:hidden;
+      min-width:520px;
+    }
+
+    .contribution-table th {
+      background:#f1ece3;
+      color:var(--muted);
+      font-size:13px;
+      text-align:left;
+      letter-spacing:.03em;
+      padding:14px;
+      border-bottom:1px solid var(--border);
+    }
+
+    .contribution-table td {
+      padding:14px;
+      border-bottom:1px solid var(--border);
+      color:var(--foreground);
+      font-size:14px;
+    }
+
+    .contribution-table tr:last-child td {
+      border-bottom:none;
+    }
+
+    .payroll-note {
+      margin-top:20px;
+      background:var(--card);
+      border-left:4px solid var(--accent);
+      padding:14px;
+      border-radius:10px;
+      color:var(--muted);
+    }
+
+    .faq-box {
+      margin-top:18px;
+      max-width:780px;
+    }
+
+    .faq-item {
+      padding:4px 20px;
+      margin-bottom:12px;
+    }
+
+    .faq-item summary {
+      font-weight:800;
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      color:var(--foreground);
+      padding:16px 0;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display:none;
+    }
+
+    .faq-item summary::after {
+      content:"+";
+      color:var(--accent);
+      font-size:20px;
+      line-height:1;
+    }
+
+    .faq-item[open] summary::after {
+      content:"−";
+    }
+
+    .faq-item p {
+      padding-bottom:18px;
+      margin-top:0;
+      color:var(--muted);
+      line-height:1.55;
+      font-size:14px;
+    }
+
+    .guide-mini-grid a {
+      display:block;
+      padding:14px 16px;
+      text-decoration:none;
+      color:var(--foreground);
+      font-weight:800;
+      text-align:center;
+      transition:.18s ease;
+    }
+
+    .view-all-guides {
+      text-align:center;
+      margin:20px 0 0;
+    }
+
+    .view-all-guides a {
+      color:var(--accent);
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .footer {
+      border-top:1px solid var(--border);
+      padding:28px 20px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .footer a {
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    .footer a:hover {
+      color:var(--accent);
+    }
+
+    @media (max-width:900px) {
+      .calculator-shell,
+      .field-grid {
+        grid-template-columns:1fr;
+      }
+
+      .seo {
+        padding:24px;
+      }
+    }
+
+    @media (max-width:800px) {
+      .nav-inner {
+        flex-direction:row;
+        align-items:center;
+      }
+
+      .nav-links {
+        width:auto;
+        flex:1;
+        min-width:0;
+        justify-content:flex-start;
+        padding-bottom:5px;
+        overflow-x:auto;
+        overflow-y:hidden;
+        scrollbar-width:none;
+        -ms-overflow-style:none;
+        -webkit-overflow-scrolling:touch;
+        touch-action:pan-x;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display:none;
+      }
+    }
+
+    @media (max-width:700px) {
+      .hero {
+        padding:38px 14px 12px;
+      }
+
+      .main-wrapper {
+        padding:10px;
+      }
+
+      .panel,
+      .results-panel,
+      .seo {
+        padding:20px;
+      }
+
+      .nav-inner {
+        padding-top:8px;
+        padding-bottom:8px;
+        gap:8px;
+      }
+
+      .brand img {
+        width:150px;
+      }
+
+      .nav-links {
+        gap:6px;
+      }
+
+      .nav-links a {
+        font-size:14px;
+        padding:8px 10px;
+      }
+
+      .component-grid,
+      .rate-grid {
+        grid-template-columns:repeat(2, 1fr);
+        gap:10px;
+      }
+
+      .component-card,
+      .rate-card {
+        padding:14px;
+        text-align:center;
+      }
+
+      .component-icon {
+        margin-left:auto;
+        margin-right:auto;
+        width:36px;
+        height:36px;
+        font-size:18px;
+      }
+
+      .component-card h3,
+      .rate-card h3 {
+        font-size:15px;
+        margin:6px 0;
+      }
+
+      .component-card p,
+      .rate-card p {
+        font-size:12px;
+        line-height:1.35;
+      }
+
+      .net {
+        font-size:34px;
       }
     }
   </style>
@@ -110,214 +792,409 @@
 
 <body>
 
-<div class="card">
+<header class="top-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+    </a>
 
-  <h1>Malaysia Tax Refund Calculator 2026</h1>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="calculators.html" class="active">Calculators</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
 
-  <p><b>Malaysia Tax Refund Calculator:</b> Estimate whether you may receive a tax refund or need to pay additional tax.</p>
+<section class="hero">
+  <span class="pill">Updated for Malaysia 2026 tax refund estimates</span>
+  <h1 class="serif">Estimate your <em>tax refund</em> or tax payable</h1>
+  <p>
+    Free Malaysia tax refund calculator for employees and taxpayers. Compare total PCB paid with actual income tax payable to estimate refund, additional tax payable or no balance.
+  </p>
+</section>
 
-  <p>Enter total PCB paid and your actual income tax payable to estimate your refund or additional tax payable.</p>
+<main class="main-wrapper">
 
-  <input type="number" id="pcbPaid" placeholder="Total PCB Paid (RM)">
+  <section class="calculator-shell" id="calculator">
 
-  <input type="number" id="actualTax" placeholder="Actual Income Tax Payable (RM)">
+    <div class="panel">
+      <h2 class="serif">Calculate Tax Refund</h2>
+      <p class="sub">Enter total PCB paid and actual income tax payable from your tax estimate or assessment.</p>
 
-  <button onclick="calculate()">Calculate Tax Refund</button>
+      <div class="form-group">
+        <label for="pcbPaid">Total PCB paid</label>
+        <div class="input-row">
+          <span>RM</span>
+          <input type="number" id="pcbPaid" value="5000" min="0" step="100" placeholder="Example: 5000">
+        </div>
 
-  <div class="layout">
+        <input type="range" id="pcbRange" min="0" max="50000" step="100" value="5000">
 
-    <div class="box">
-      <h3>Tax Refund Estimate</h3>
-      <div class="result" id="monthly"></div>
+        <div class="preset-grid">
+          <button type="button" class="preset" onclick="setPCB(1200)">RM 1,200</button>
+          <button type="button" class="preset" onclick="setPCB(3000)">RM 3,000</button>
+          <button type="button" class="preset" onclick="setPCB(5000)">RM 5,000</button>
+          <button type="button" class="preset" onclick="setPCB(10000)">RM 10,000</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="actualTax">Actual income tax payable</label>
+        <div class="input-row">
+          <span>RM</span>
+          <input type="number" id="actualTax" value="4200" min="0" step="100" placeholder="Example: 4200">
+        </div>
+      </div>
+
+      <button type="button" class="calc-button" onclick="calculateRefund()">Calculate Tax Refund</button>
+
+      <a class="secondary-button" href="income-tax-calculator.html">
+        Estimate Actual Income Tax First →
+      </a>
+
+      <a class="secondary-button" href="pcb-calculator.html">
+        Estimate Monthly PCB →
+      </a>
+
+      <p class="input-note">
+        This calculator compares PCB paid with actual tax payable. Actual refund depends on LHDN assessment, e-Filing details, tax reliefs, rebates, zakat and any outstanding tax matters.
+      </p>
     </div>
 
-    <div class="box">
-      <h3>Tax Position</h3>
-      <div class="result" id="annual"></div>
+    <div class="results-panel">
+      <h2 class="serif">Your tax position</h2>
+      <p class="sub">Estimated refund or additional tax payable</p>
+
+      <div class="net">RM <span id="refundResult">0.00</span></div>
+      <p class="net-caption" id="refundExplanation">Enter PCB paid and actual tax payable.</p>
+
+      <div class="bar" id="refundBar"></div>
+
+      <div class="result-rows" id="resultRows"></div>
+
+      <div class="annual-summary" id="summaryRows"></div>
     </div>
+
+  </section>
+
+  <div class="seo">
+
+    <section>
+      <h2>How Tax Refund Is Calculated in Malaysia</h2>
+
+      <p>
+        A tax refund happens when the total tax already paid is more than the actual income tax payable. In Malaysia, many employees pay tax through monthly PCB deductions. During annual tax filing, the final tax payable may be lower or higher than the total PCB already deducted.
+      </p>
+
+      <div class="formula-box">
+        <strong>Tax Refund = Total PCB Paid − Actual Income Tax Payable</strong>
+        <span>If the result is positive, you may have a refund. If negative, you may have additional tax payable.</span>
+      </div>
+
+      <div class="rate-grid">
+        <div class="rate-card">
+          <strong>Refund</strong>
+          <h3>Overpaid Tax</h3>
+          <p>PCB paid is higher than actual income tax payable.</p>
+        </div>
+
+        <div class="rate-card">
+          <strong>Payable</strong>
+          <h3>Additional Tax</h3>
+          <p>Actual tax payable is higher than PCB already paid.</p>
+        </div>
+
+        <div class="rate-card">
+          <strong>PCB</strong>
+          <h3>Monthly Deduction</h3>
+          <p>Tax deducted from salary by employer through payroll.</p>
+        </div>
+
+        <div class="rate-card">
+          <strong>e-Filing</strong>
+          <h3>Final Position</h3>
+          <p>Final refund or payable is confirmed after tax filing and assessment.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contribution-box">
+      <h2>Tax Refund Example</h2>
+
+      <p>
+        The table below shows simple examples of refund, additional tax payable and no balance.
+      </p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead>
+            <tr>
+              <th>Total PCB Paid</th>
+              <th>Actual Tax Payable</th>
+              <th>Estimated Result</th>
+              <th>Tax Position</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>RM5,000</td>
+              <td>RM4,200</td>
+              <td>RM800 refund</td>
+              <td>Overpaid tax</td>
+            </tr>
+            <tr>
+              <td>RM3,000</td>
+              <td>RM3,000</td>
+              <td>RM0</td>
+              <td>No balance</td>
+            </tr>
+            <tr>
+              <td>RM2,500</td>
+              <td>RM3,200</td>
+              <td>RM700 payable</td>
+              <td>Additional tax payable</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="payroll-note">
+        <strong>Note:</strong>
+        This is a simplified estimate. Actual refund timing and amount depend on LHDN processing and your submitted tax return.
+      </p>
+    </section>
+
+    <section>
+      <h2>What This Tax Refund Calculator Shows</h2>
+
+      <p>
+        This calculator helps you estimate whether you may receive a tax refund, need to pay additional tax, or have no estimated balance after comparing PCB paid with actual income tax payable.
+      </p>
+
+      <div class="component-grid">
+        <a class="component-card" href="pcb-guide.html">
+          <div class="component-icon">🧾</div>
+          <h3>PCB Paid</h3>
+          <p>Compare total monthly PCB deductions already paid through salary.</p>
+        </a>
+
+        <a class="component-card" href="income-tax-calculator.html">
+          <div class="component-icon">🏛️</div>
+          <h3>Actual Tax</h3>
+          <p>Estimate annual income tax payable before comparing with PCB.</p>
+        </a>
+
+        <a class="component-card" href="tax-relief-guide.html">
+          <div class="component-icon">💸</div>
+          <h3>Tax Reliefs</h3>
+          <p>Reliefs may reduce final tax payable and increase possible refund.</p>
+        </a>
+
+        <a class="component-card" href="tax-refund-guide.html">
+          <div class="component-icon">🔁</div>
+          <h3>Refund Position</h3>
+          <p>Understand refund, no balance or additional payable situations.</p>
+        </a>
+      </div>
+    </section>
+
+    <h2>Who Should Use This Tax Refund Calculator?</h2>
+
+    <ul>
+      <li>Employees comparing PCB paid with actual income tax payable</li>
+      <li>Taxpayers preparing for annual e-Filing</li>
+      <li>Employees checking possible overpaid tax</li>
+      <li>Taxpayers estimating additional tax payable</li>
+      <li>Anyone planning cash flow before tax filing</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-box">
+      <details class="faq-item" open>
+        <summary>Is this tax refund calculator exact?</summary>
+        <p>
+          No. This calculator provides an estimate only. Actual refund depends on LHDN assessment, tax reliefs, rebates, zakat and filing details.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is PCB?</summary>
+        <p>
+          PCB is Malaysia's monthly tax deduction system where employers deduct tax from salary every month.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>When do I get a tax refund?</summary>
+        <p>
+          A refund may arise when total tax already paid is higher than final tax payable after annual tax filing.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What if my result is negative?</summary>
+        <p>
+          A negative result means your actual tax payable is higher than PCB paid, so you may need to pay additional tax.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can tax relief increase my refund?</summary>
+        <p>
+          Yes. If eligible tax reliefs reduce your actual tax payable below your PCB paid, your refund estimate may increase.
+        </p>
+      </details>
+    </div>
+
+    <section class="salary-guides-box">
+      <h2>Malaysia Tax Guides</h2>
+
+      <p>
+        Learn more about PCB, income tax, tax reliefs and tax refund in Malaysia.
+      </p>
+
+      <div class="guide-mini-grid">
+        <a href="tax-refund-guide.html">🔁 Tax Refund Guide</a>
+        <a href="pcb-guide.html">🧾 PCB Guide</a>
+        <a href="income-tax-guide.html">🏛️ Income Tax Guide</a>
+        <a href="tax-relief-guide.html">💸 Tax Relief Guide</a>
+        <a href="tax-filing-guide.html">📤 Tax Filing Guide</a>
+        <a href="tax-rebate-guide.html">💵 Tax Rebate Guide</a>
+      </div>
+
+      <p class="view-all-guides">
+        <a href="guides.html">View All Salary Guides →</a>
+      </p>
+    </section>
+
+    <section class="salary-guides-box">
+      <h2>Related Calculators</h2>
+
+      <p>
+        Explore more free Malaysia salary, tax and payroll calculators.
+      </p>
+
+      <div class="guide-mini-grid">
+        <a href="income-tax-calculator.html">Income Tax Calculator</a>
+        <a href="pcb-calculator.html">PCB Calculator</a>
+        <a href="index.html">Salary Calculator</a>
+        <a href="bonus-calculator.html">Bonus Calculator</a>
+        <a href="payslip-generator.html">Payslip Generator</a>
+        <a href="epf-calculator.html">EPF Calculator</a>
+      </div>
+
+      <p class="view-all-guides">
+        <a href="calculators.html">View All Calculators →</a>
+      </p>
+    </section>
 
   </div>
 
-</div>
+</main>
 
-<div class="seo">
-
-  <h2>Related Salary Guides</h2>
-
-  <div class="seo-cards">
-
-    <a class="card-link" href="epf-guide.html">
-      <h3>EPF Guide Malaysia</h3>
-      <p>EPF contribution rates and retirement savings</p>
-    </a>
-
-    <a class="card-link" href="socso-guide.html">
-      <h3>SOCSO Guide Malaysia</h3>
-      <p>Work injury protection and employee benefits</p>
-    </a>
-
-    <a class="card-link" href="eis-guide.html">
-      <h3>EIS Guide Malaysia</h3>
-      <p>Employment insurance and unemployment support</p>
-    </a>
-
-    <a class="card-link" href="pcb-guide.html">
-      <h3>PCB Tax Guide Malaysia</h3>
-      <p>Monthly tax deduction explained simply</p>
-    </a>
-
-  </div>
-
-  <h2>What Is A Tax Refund?</h2>
-
+<footer class="footer">
+  <p>© 2026 Malaysia Salary Tools</p>
   <p>
-    A tax refund happens when the total tax already paid is more than the actual income tax payable.
+    <a href="index.html">Home</a> |
+    <a href="calculators.html">Calculators</a> |
+    <a href="guides.html">Guides</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact Us</a> |
+    <a href="privacy-policy.html">Privacy Policy</a>
   </p>
-
-  <p>
-    In Malaysia, many employees pay tax through monthly PCB deductions. When annual tax filing is completed, the final tax payable may be lower or higher than the total PCB already deducted.
-  </p>
-
-  <h2>How Is Tax Refund Calculated?</h2>
-
-  <p>
-    This calculator compares total PCB paid with actual income tax payable.
-  </p>
-
-  <p>
-    Formula:
-  </p>
-
-  <p>
-    Tax Refund = Total PCB Paid - Actual Income Tax Payable
-  </p>
-
-  <h2>When Will You Get A Tax Refund?</h2>
-
-  <p>
-    If your total PCB paid is higher than your actual tax payable, you may receive a refund.
-  </p>
-
-  <p>
-    If your actual tax payable is higher than PCB paid, you may need to pay additional tax.
-  </p>
-
-  <h2>Example Tax Refund Calculation</h2>
-
-  <p>
-    If your total PCB paid is RM5,000 and your actual income tax payable is RM4,200, your estimated tax refund is RM800.
-  </p>
-
-  <h2>Why Use This Tax Refund Calculator?</h2>
-
-  <ul>
-    <li>Estimate possible income tax refund</li>
-    <li>Compare PCB paid with actual tax payable</li>
-    <li>Estimate additional tax payable</li>
-    <li>Useful before annual tax filing</li>
-  </ul>
-
-  <h2>Frequently Asked Questions</h2>
-
-  <h3>Is this tax refund calculator exact?</h3>
-  <p>
-    No. This calculator provides an estimate only. Actual refund depends on LHDN assessment, tax reliefs, rebates and filing details.
-  </p>
-
-  <h3>What is PCB?</h3>
-  <p>
-    PCB is Malaysia's monthly tax deduction system where employers deduct tax from salary every month.
-  </p>
-
-  <h3>When do I get a tax refund?</h3>
-  <p>
-    A refund may arise when total tax already paid is higher than final tax payable.
-  </p>
-
-  <h3>What if my result is negative?</h3>
-  <p>
-    A negative result means your actual tax payable is higher than PCB paid, so you may need to pay additional tax.
-  </p>
-
-  <h2>Related Calculators</h2>
-
-  <ul>
-    <li><a href="index.html">Salary Calculator</a></li>
-    <li><a href="pcb-calculator.html">PCB Tax Calculator</a></li>
-    <li><a href="income-tax-calculator.html">Income Tax Calculator</a></li>
-    <li><a href="bonus-calculator.html">Bonus Calculator</a></li>
-    <li><a href="payslip-generator.html">Payslip Generator</a></li>
-  </ul>
-
-</div>
+</footer>
 
 <script>
-function formatRM(v){
-  return v.toLocaleString('en-MY',{
-    minimumFractionDigits:2,
-    maximumFractionDigits:2
+  function formatRM(value) {
+    return Number(value).toLocaleString('en-MY', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+  }
+
+  function setPCB(value) {
+    document.getElementById("pcbPaid").value = value;
+    document.getElementById("pcbRange").value = value;
+    calculateRefund();
+  }
+
+  function calculateRefund() {
+    const pcbInput = document.getElementById("pcbPaid");
+    const pcbRange = document.getElementById("pcbRange");
+
+    const pcbPaid = parseFloat(pcbInput.value);
+    const actualTax = parseFloat(document.getElementById("actualTax").value);
+
+    if (isNaN(pcbPaid) || isNaN(actualTax) || pcbPaid < 0 || actualTax < 0) {
+      document.getElementById("refundResult").textContent = "0.00";
+      document.getElementById("refundExplanation").textContent = "Please enter valid PCB paid and actual income tax payable.";
+      document.getElementById("refundBar").innerHTML = "";
+      document.getElementById("resultRows").innerHTML = "";
+      document.getElementById("summaryRows").innerHTML = "";
+      return;
+    }
+
+    pcbRange.value = Math.min(pcbPaid, pcbRange.max);
+
+    const difference = pcbPaid - actualTax;
+    const absoluteDifference = Math.abs(difference);
+    const totalCompared = Math.max(pcbPaid, actualTax, 1);
+    const pcbPercent = Math.min(100, (pcbPaid / totalCompared) * 100);
+    const taxPercent = Math.min(100, (actualTax / totalCompared) * 100);
+
+    let position = "";
+    let explanation = "";
+    let resultLabel = "";
+    let resultColor = "#5aa783";
+
+    if (difference > 0) {
+      position = "Estimated Refund Position";
+      explanation = "You may have overpaid tax because PCB paid is higher than actual income tax payable.";
+      resultLabel = "Estimated Tax Refund";
+      resultColor = "#5aa783";
+    } else if (difference < 0) {
+      position = "Estimated Additional Tax Position";
+      explanation = "You may need to pay additional tax because actual tax payable is higher than PCB paid.";
+      resultLabel = "Additional Tax Payable";
+      resultColor = "#c9a14e";
+    } else {
+      position = "Estimated No Balance Position";
+      explanation = "Your PCB paid matches the actual income tax payable entered.";
+      resultLabel = "No Refund / No Additional Tax";
+      resultColor = "#f6f3ec";
+    }
+
+    document.getElementById("refundResult").textContent = formatRM(absoluteDifference);
+    document.getElementById("refundExplanation").textContent = explanation;
+
+    document.getElementById("refundBar").innerHTML =
+      '<i style="width:' + pcbPercent + '%;background:#5aa783"></i>' +
+      '<i style="width:' + Math.max(0, taxPercent - pcbPercent) + '%;background:#c9a14e"></i>';
+
+    document.getElementById("resultRows").innerHTML =
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#5aa783"></span>Total PCB Paid</span><span class="v">RM ' + formatRM(pcbPaid) + '</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#c9a14e"></span>Actual Tax Payable</span><span class="v">RM ' + formatRM(actualTax) + '</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:' + resultColor + '"></span>' + resultLabel + '</span><span class="v">RM ' + formatRM(absoluteDifference) + '</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#2f7d5e"></span>Tax Position</span><span class="v">' + position + '</span></div>';
+
+    document.getElementById("summaryRows").innerHTML =
+      '<div><span>Formula Used</span><strong>PCB paid − Actual tax payable</strong></div>' +
+      '<div><span>Calculation</span><strong>RM ' + formatRM(pcbPaid) + ' − RM ' + formatRM(actualTax) + '</strong></div>' +
+      '<div><span>Estimated Position</span><strong>' + position + '</strong></div>';
+  }
+
+  document.getElementById("pcbPaid").addEventListener("input", calculateRefund);
+  document.getElementById("pcbRange").addEventListener("input", function() {
+    document.getElementById("pcbPaid").value = this.value;
+    calculateRefund();
   });
-}
+  document.getElementById("actualTax").addEventListener("input", calculateRefund);
 
-function calculate(){
-
-  let pcbPaid = parseFloat(document.getElementById("pcbPaid").value);
-  let actualTax = parseFloat(document.getElementById("actualTax").value);
-
-  if(isNaN(pcbPaid) || isNaN(actualTax)){
-    document.getElementById("monthly").innerHTML =
-      "Please enter total PCB paid and actual income tax payable.";
-    document.getElementById("annual").innerHTML = "";
-    return;
-  }
-
-  let difference = pcbPaid - actualTax;
-
-  if(difference > 0){
-    document.getElementById("monthly").innerHTML =
-      "Total PCB Paid: RM " + formatRM(pcbPaid) + "<br>" +
-      "Actual Tax Payable: RM " + formatRM(actualTax) + "<br><br>" +
-      "<b>Estimated Tax Refund: RM " + formatRM(difference) + "</b>";
-
-    document.getElementById("annual").innerHTML =
-      "You may have overpaid tax.<br><br>" +
-      "<b>Estimated Refund Position</b>";
-  } else if(difference < 0){
-    document.getElementById("monthly").innerHTML =
-      "Total PCB Paid: RM " + formatRM(pcbPaid) + "<br>" +
-      "Actual Tax Payable: RM " + formatRM(actualTax) + "<br><br>" +
-      "<b>Additional Tax Payable: RM " + formatRM(Math.abs(difference)) + "</b>";
-
-    document.getElementById("annual").innerHTML =
-      "Your actual tax may be higher than PCB paid.<br><br>" +
-      "<b>Estimated Additional Tax Position</b>";
-  } else {
-    document.getElementById("monthly").innerHTML =
-      "Total PCB Paid: RM " + formatRM(pcbPaid) + "<br>" +
-      "Actual Tax Payable: RM " + formatRM(actualTax) + "<br><br>" +
-      "<b>No Estimated Refund Or Additional Tax</b>";
-
-    document.getElementById("annual").innerHTML =
-      "Your PCB paid matches the estimated actual tax payable.";
-  }
-}
+  calculateRefund();
 </script>
 
-<hr style="margin-top:40px;">
-
-<div style="text-align:center;padding:20px;">
-
-<p>
-© 2026 Malaysia Salary Tools
-</p>
-
-<p>
-<a href="about.html">About Us</a> |
-<a href="contact.html">Contact Us</a> |
-<a href="privacy-policy.html">Privacy Policy</a>
-</p>
-
-</div>
-  
 </body>
 </html>
