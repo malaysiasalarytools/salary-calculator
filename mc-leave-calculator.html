@@ -7,102 +7,768 @@
   <title>Malaysia MC Leave Calculator 2026 | Medical Leave Calculator</title>
 
   <link rel="canonical" href="https://malaysiasalarytools.com/mc-leave-calculator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <meta name="description" content="Free Malaysia MC Leave Calculator 2026. Calculate medical leave entitlement, MC used and remaining sick leave days.">
+  <meta name="keywords" content="Malaysia MC leave calculator, medical leave calculator Malaysia, sick leave calculator, MC entitlement Malaysia, medical certificate leave Malaysia">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="robots" content="index, follow">
 
   <style>
+    :root {
+      --background: #f4f1ea;
+      --card: #fbfaf6;
+      --foreground: #302c26;
+      --muted: #7c766c;
+      --primary: #2f2b25;
+      --primary-foreground: #f6f3ec;
+      --accent: #2f7d5e;
+      --accent-soft: rgba(47,125,94,.10);
+      --accent-border: rgba(47,125,94,.22);
+      --border: #e2ddd2;
+      --white: #ffffff;
+      --radius: 16px;
+      --shadow: 0 18px 45px rgba(47,43,37,.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial;
-      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47,125,94,.08), transparent 34%),
+        linear-gradient(135deg, #f4f1ea, #efe9de);
       margin: 0;
+      padding: 0;
+      color: var(--foreground);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .serif {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    .top-nav {
+      background: rgba(251,250,246,.84);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      width: 220px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: nowrap;
+      min-width: 0;
+    }
+
+    .nav-links a {
+      display: block;
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 15px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      white-space: nowrap;
+      background: transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: var(--primary);
+      color: var(--primary-foreground);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 56px 20px 18px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      padding: 7px 15px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      color: var(--foreground);
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 18px auto 0;
+      font-size: 17px;
+      color: var(--muted);
+    }
+
+    .main-wrapper {
+      padding: 16px 20px 44px;
+    }
+
+    .calculator-shell {
+      max-width: 1120px;
+      margin: 28px auto 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .panel,
+    .seo {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .panel {
+      padding: 28px;
+    }
+
+    .panel h2 {
+      margin: 0 0 4px;
+      font-size: 22px;
+      color: var(--foreground);
+    }
+
+    .panel .sub {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--foreground);
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+      color: var(--foreground);
+      outline: none;
+    }
+
+    input[type="number"] {
+      font-size: 20px;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(47,125,94,.14);
+    }
+
+    input[type="range"] {
+      width: 100%;
+      margin-top: 18px;
+      accent-color: var(--accent);
+    }
+
+    .preset-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .preset,
+    .calc-button {
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .preset {
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--foreground);
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .preset:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .calc-button {
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 18px;
+      margin-top: 6px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .calc-button:hover {
+      filter: brightness(.95);
+    }
+
+    .secondary-button {
+      display: block;
+      text-align: center;
+      width: 100%;
+      background: var(--white);
+      color: var(--accent);
+      border: 1px solid var(--accent-border);
+      padding: 13px 18px;
+      margin-top: 12px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .secondary-button:hover {
+      background: var(--accent-soft);
+    }
+
+    .input-note {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .results-panel {
+      background: var(--primary);
+      color: var(--primary-foreground);
+      border: 1px solid var(--primary);
+      padding: 28px;
+      border-radius: var(--radius);
+      box-shadow: 0 24px 55px rgba(47,43,37,.20);
+    }
+
+    .results-panel h2 {
+      margin: 0 0 4px;
+      font-size: 22px;
+      color: var(--primary-foreground);
+    }
+
+    .results-panel .sub {
+      margin: 0;
+      color: rgba(246,243,236,.62);
+      font-size: 14px;
+    }
+
+    .net {
+      font-size: clamp(36px, 5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      margin: 16px 0 0;
+    }
+
+    .net-caption {
+      color: rgba(246,243,236,.62);
+      font-size: 14px;
+      margin-top: 0;
+    }
+
+    .bar {
+      height: 9px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      display: flex;
+      overflow: hidden;
+      margin: 22px 0;
+    }
+
+    .bar i {
+      display: block;
+      height: 100%;
+    }
+
+    .result-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .result-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      font-size: 14px;
+    }
+
+    .result-line:last-child {
+      border-bottom: none;
+    }
+
+    .result-line .k {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(246,243,236,.86);
+    }
+
+    .result-line .v {
+      font-weight: 800;
+      text-align: right;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 3px;
+      flex: 0 0 auto;
+    }
+
+    .annual-summary {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,.18);
+      display: grid;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .annual-summary div {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: rgba(246,243,236,.82);
+    }
+
+    .annual-summary strong {
+      color: var(--primary-foreground);
+    }
+
+    .seo {
+      max-width: 1120px;
+      margin: 30px auto;
+      padding: 30px;
+      line-height: 1.72;
+    }
+
+    .seo h2,
+    .section-title {
+      font-size: clamp(25px, 4vw, 36px);
+      line-height: 1.15;
+      margin: 34px 0 12px;
+      color: var(--foreground);
+      letter-spacing: -.01em;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    .seo h2:first-child {
+      margin-top: 0;
+    }
+
+    .seo h3 {
+      font-size: 17px;
+      margin-top: 18px;
+    }
+
+    .seo p,
+    .seo li {
+      color: var(--muted);
+    }
+
+    .formula-box,
+    .contribution-box,
+    .salary-guides-box {
+      background: #f8f5ef;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 26px 0;
+    }
+
+    .formula-box {
+      text-align: center;
+    }
+
+    .formula-box strong {
+      display: block;
+      font-size: 22px;
+      color: var(--foreground);
+      margin-bottom: 8px;
+    }
+
+    .formula-box span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .component-grid,
+    .guide-mini-grid,
+    .rate-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .component-card,
+    .guide-mini-grid a,
+    .rate-card,
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .component-card {
+      display: block;
+      padding: 20px;
+      text-decoration: none;
+      color: inherit;
+      transition: .18s ease;
+    }
+
+    .component-card:hover,
+    .guide-mini-grid a:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 30px rgba(47,43,37,.08);
+    }
+
+    .component-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      display: grid;
+      place-items: center;
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .component-card h3,
+    .rate-card h3 {
+      margin: 8px 0 4px;
+      color: var(--foreground);
+    }
+
+    .component-card p,
+    .rate-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .rate-card {
       padding: 20px;
     }
 
-    .card,
-    .seo {
-      background: white;
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-
-    .seo { line-height: 1.7; }
-
-    .layout {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .box {
-      flex: 1;
-      min-width: 320px;
-      background: #f8f9fc;
-      border: 1px solid #eee;
-      border-radius: 12px;
-      padding: 15px;
-    }
-
-    input, select, button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      font-size: 16px;
-      box-sizing: border-box;
-    }
-
-    input, select {
-      border-radius: 10px;
-      border: 1px solid #ddd;
-    }
-
-    button {
-      background: #111;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .result {
-      margin-top: 10px;
-      line-height: 1.6;
-    }
-
-    .seo-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .card-link {
+    .rate-card strong {
       display: block;
-      padding: 15px;
-      background: white;
-      border-radius: 12px;
-      text-decoration: none;
-      color: black;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      color: var(--accent);
+      font-size: 28px;
+      line-height: 1.1;
+      margin-bottom: 8px;
     }
 
-    h1 { font-size: 26px; }
-    h2 { font-size: 20px; margin-top: 25px; }
-    h3 { font-size: 16px; margin-top: 18px; }
+    .contribution-table-wrap {
+      overflow-x: auto;
+      margin-top: 18px;
+    }
 
-    @media (max-width: 700px){
-      .layout { flex-direction: column; }
-      body { padding: 10px; }
-      .card, .seo {
-        margin: 15px auto;
-        padding: 18px;
+    .contribution-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      min-width: 520px;
+    }
+
+    .contribution-table th {
+      background: #f1ece3;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: left;
+      letter-spacing: .03em;
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contribution-table td {
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--foreground);
+      font-size: 14px;
+    }
+
+    .contribution-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .payroll-note {
+      margin-top: 20px;
+      background: var(--card);
+      border-left: 4px solid var(--accent);
+      padding: 14px;
+      border-radius: 10px;
+      color: var(--muted);
+    }
+
+    .faq-box {
+      margin-top: 18px;
+      max-width: 780px;
+    }
+
+    .faq-item {
+      padding: 4px 20px;
+      margin-bottom: 12px;
+    }
+
+    .faq-item summary {
+      font-weight: 800;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--foreground);
+      padding: 16px 0;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      color: var(--accent);
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .faq-item[open] summary::after {
+      content: "−";
+    }
+
+    .faq-item p {
+      padding-bottom: 18px;
+      margin-top: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .guide-mini-grid a {
+      display: block;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: var(--foreground);
+      font-weight: 800;
+      text-align: center;
+      transition: .18s ease;
+    }
+
+    .view-all-guides {
+      text-align: center;
+      margin: 20px 0 0;
+    }
+
+    .view-all-guides a {
+      color: var(--accent);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 900px) {
+      .calculator-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .seo {
+        padding: 24px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .nav-inner {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .nav-links {
+        width: auto;
+        flex: 1;
+        min-width: 0;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding: 38px 14px 12px;
+      }
+
+      .main-wrapper {
+        padding: 10px;
+      }
+
+      .panel,
+      .results-panel,
+      .seo {
+        padding: 20px;
+      }
+
+      .nav-inner {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        gap: 8px;
+      }
+
+      .brand img {
+        width: 150px;
+      }
+
+      .nav-links {
+        gap: 6px;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+
+      .component-grid,
+      .rate-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .component-card,
+      .rate-card {
+        padding: 14px;
+        text-align: center;
+      }
+
+      .component-icon {
+        margin-left: auto;
+        margin-right: auto;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+      }
+
+      .component-card h3,
+      .rate-card h3 {
+        font-size: 15px;
+        margin: 6px 0;
+      }
+
+      .component-card p,
+      .rate-card p {
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .net {
+        font-size: 34px;
       }
     }
   </style>
@@ -110,191 +776,397 @@
 
 <body>
 
-<div class="card">
+  <header class="top-nav">
+    <div class="nav-inner">
 
-  <h1>Malaysia MC Leave Calculator 2026</h1>
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+      </a>
 
-  <p><b>Malaysia MC Leave Calculator:</b> Calculate medical leave entitlement, MC taken and remaining sick leave days.</p>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="calculators.html" class="active">Calculators</a>
+        <a href="guides.html">Guides</a>
+        <a href="about.html">About</a>
+      </nav>
 
-  <p>Enter your MC entitlement and medical leave used to estimate your remaining MC balance.</p>
+    </div>
+  </header>
 
-  <select id="entitlement">
-    <option value="">Select MC Entitlement</option>
-    <option value="14">14 days</option>
-    <option value="18">18 days</option>
-    <option value="22">22 days</option>
-  </select>
+  <section class="hero">
+    <span class="pill">Updated for Malaysia 2026 medical leave estimates</span>
+    <h1 class="serif">Calculate your <em>MC leave</em> balance</h1>
+    <p>
+      Free Malaysia MC leave calculator for employees and employers. Estimate medical leave entitlement, MC days used, remaining sick leave balance and usage percentage.
+    </p>
+  </section>
 
-  <input type="number" id="used" placeholder="MC Days Used">
+  <main class="main-wrapper">
 
-  <button onclick="calculate()">Calculate MC Leave</button>
+    <section class="calculator-shell" id="calculator">
 
-  <div class="layout">
+      <div class="panel">
+        <h2 class="serif">Calculate MC Leave</h2>
+        <p class="sub">Select your MC entitlement and enter how many medical leave days have been used.</p>
 
-    <div class="box">
-      <h3>MC Leave Balance</h3>
-      <div class="result" id="monthly"></div>
+        <div class="form-group">
+          <label for="entitlement">MC entitlement</label>
+          <select id="entitlement" onchange="calculateMC()">
+            <option value="">Select MC entitlement</option>
+            <option value="14">14 days - Less than 2 years</option>
+            <option value="18">18 days - 2 to 5 years</option>
+            <option value="22">22 days - More than 5 years</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="used">MC days used</label>
+          <input type="number" id="used" value="0" min="0" step="0.5" placeholder="Enter MC days used">
+
+          <input type="range" id="usedRange" min="0" max="22" step="0.5" value="0">
+
+          <div class="preset-grid">
+            <button type="button" class="preset" onclick="setUsed(0)">0 days</button>
+            <button type="button" class="preset" onclick="setUsed(3)">3 days</button>
+            <button type="button" class="preset" onclick="setUsed(7)">7 days</button>
+            <button type="button" class="preset" onclick="setUsed(14)">14 days</button>
+          </div>
+        </div>
+
+        <button type="button" class="calc-button" onclick="calculateMC()">Calculate My MC Leave</button>
+
+        <a class="secondary-button" href="mc-leave-guide.html">
+          Read MC Leave Guide →
+        </a>
+
+        <p class="input-note">
+          This calculator provides a simplified medical leave estimate. Actual entitlement may depend on employment contract, company policy, valid medical certificate and applicable employment law.
+        </p>
+      </div>
+
+      <div class="results-panel">
+        <h2 class="serif">Your MC leave result</h2>
+        <p class="sub">Estimated remaining medical leave balance</p>
+
+        <div class="net"><span id="remainingResult">0.00</span> days</div>
+        <p class="net-caption" id="mcExplanation">Select MC entitlement to calculate remaining balance.</p>
+
+        <div class="bar" id="mcBar"></div>
+
+        <div class="result-rows" id="resultRows"></div>
+
+        <div class="annual-summary" id="summaryRows"></div>
+      </div>
+
+    </section>
+
+    <div class="seo">
+
+      <section>
+
+        <h2>How MC Leave Is Calculated in Malaysia</h2>
+
+        <p>
+          MC leave, also known as medical leave or sick leave, is paid leave given to employees who are unable to work due to illness and have a valid medical certificate.
+        </p>
+
+        <div class="formula-box">
+          <strong>Remaining MC Leave = MC Entitlement − MC Days Used</strong>
+          <span>Example: 14 days entitlement − 5 days used = 9 days remaining</span>
+        </div>
+
+        <div class="rate-grid">
+          <div class="rate-card">
+            <strong>14</strong>
+            <h3>Less than 2 years</h3>
+            <p>Common medical leave entitlement reference.</p>
+          </div>
+
+          <div class="rate-card">
+            <strong>18</strong>
+            <h3>2 to 5 years</h3>
+            <p>Common medical leave entitlement reference for mid-service employees.</p>
+          </div>
+
+          <div class="rate-card">
+            <strong>22</strong>
+            <h3>More than 5 years</h3>
+            <p>Common medical leave entitlement reference for longer-service employees.</p>
+          </div>
+
+          <div class="rate-card">
+            <strong>MC</strong>
+            <h3>Medical Certificate</h3>
+            <p>Paid MC leave usually requires a valid medical certificate.</p>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="contribution-box">
+
+        <h2>Malaysia Medical Leave Entitlement Snapshot</h2>
+
+        <p>
+          The table below shows a simple MC leave entitlement reference based on years of service.
+        </p>
+
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead>
+              <tr>
+                <th>Years of Service</th>
+                <th>Common MC Entitlement</th>
+                <th>Example If 5 Days Used</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Less than 2 years</td>
+                <td>14 days</td>
+                <td>9 days remaining</td>
+              </tr>
+              <tr>
+                <td>2 to 5 years</td>
+                <td>18 days</td>
+                <td>13 days remaining</td>
+              </tr>
+              <tr>
+                <td>More than 5 years</td>
+                <td>22 days</td>
+                <td>17 days remaining</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="payroll-note">
+          <strong>Note:</strong>
+          This table is for simple planning only. Employment contract, company policy and legal coverage may affect actual medical leave entitlement.
+        </p>
+
+      </section>
+
+      <section>
+
+        <h2>What This MC Leave Calculator Shows</h2>
+
+        <p>
+          This calculator helps you estimate MC entitlement, medical leave used, remaining MC balance and usage percentage. It is useful for employees checking leave balance and HR users preparing simple leave tracking estimates.
+        </p>
+
+        <div class="component-grid">
+
+          <a class="component-card" href="mc-leave-guide.html">
+            <div class="component-icon">🏥</div>
+            <h3>MC Entitlement</h3>
+            <p>Estimate common medical leave entitlement based on service length.</p>
+          </a>
+
+          <a class="component-card" href="mc-leave-guide.html">
+            <div class="component-icon">🧾</div>
+            <h3>MC Used</h3>
+            <p>Track medical leave days already taken during the year.</p>
+          </a>
+
+          <a class="component-card" href="annual-leave-calculator.html">
+            <div class="component-icon">📅</div>
+            <h3>Leave Balance</h3>
+            <p>Compare MC leave with annual leave and other leave types.</p>
+          </a>
+
+          <a class="component-card" href="salary-deduction-guide.html">
+            <div class="component-icon">📉</div>
+            <h3>Leave & Salary</h3>
+            <p>Understand how leave and salary deductions may interact.</p>
+          </a>
+
+        </div>
+
+      </section>
+
+      <h2>Who Should Use This MC Leave Calculator?</h2>
+
+      <ul>
+        <li>Employees checking remaining MC leave balance</li>
+        <li>Employees tracking medical leave used during the year</li>
+        <li>HR users preparing simple leave summaries</li>
+        <li>Small businesses checking sick leave entitlement quickly</li>
+        <li>Employees comparing leave entitlement by years of service</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-box">
+
+        <details class="faq-item" open>
+          <summary>Is MC leave paid in Malaysia?</summary>
+          <p>
+            Medical leave is generally paid when supported by a valid medical certificate, subject to employment terms, company policy and applicable rules.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>How many MC days are employees entitled to?</summary>
+          <p>
+            Common entitlement levels are 14, 18 or 22 days depending on length of service.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is this MC leave calculator exact?</summary>
+          <p>
+            No. This calculator provides an estimate only. Actual entitlement may depend on company policy, employment contract and applicable employment law.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What happens if I use more MC than my entitlement?</summary>
+          <p>
+            If MC used is higher than entitlement, the excess may be treated according to company policy, employment contract and applicable rules.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is hospitalisation leave included here?</summary>
+          <p>
+            No. This calculator focuses on basic non-hospitalisation MC leave balance. Hospitalisation leave may have separate rules and entitlement.
+          </p>
+        </details>
+
+      </div>
+
+      <section class="salary-guides-box">
+
+        <h2>Malaysia Employment Guides</h2>
+
+        <p>
+          Learn more about MC leave, annual leave, public holidays and employment rules in Malaysia.
+        </p>
+
+        <div class="guide-mini-grid">
+          <a href="mc-leave-guide.html">🏥 MC Leave Guide</a>
+          <a href="annual-leave-guide.html">📅 Annual Leave Guide</a>
+          <a href="public-holiday-guide.html">🎉 Public Holiday Guide</a>
+          <a href="resignation-notice-guide.html">🚪 Resignation Notice Guide</a>
+          <a href="overtime-guide.html">⏰ Overtime Guide</a>
+          <a href="employment-contract-guide.html">📄 Employment Contract Guide</a>
+        </div>
+
+        <p class="view-all-guides">
+          <a href="guides.html">View All Salary Guides →</a>
+        </p>
+
+      </section>
+
+      <section class="salary-guides-box">
+
+        <h2>Related Calculators</h2>
+
+        <p>
+          Explore more free Malaysia salary and employment calculators.
+        </p>
+
+        <div class="guide-mini-grid">
+          <a href="index.html">Salary Calculator</a>
+          <a href="annual-leave-calculator.html">Annual Leave Calculator</a>
+          <a href="overtime-calculator.html">Overtime Calculator</a>
+          <a href="bonus-calculator.html">Bonus Calculator</a>
+          <a href="salary-increment-calculator.html">Salary Increment Calculator</a>
+          <a href="payslip-generator.html">Payslip Generator</a>
+        </div>
+
+        <p class="view-all-guides">
+          <a href="calculators.html">View All Calculators →</a>
+        </p>
+
+      </section>
+
     </div>
 
-    <div class="box">
-      <h3>Usage Summary</h3>
-      <div class="result" id="annual"></div>
-    </div>
+  </main>
 
-  </div>
+  <footer class="footer">
+    <p>© 2026 Malaysia Salary Tools</p>
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="calculators.html">Calculators</a> |
+      <a href="guides.html">Guides</a> |
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact Us</a> |
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </p>
+  </footer>
 
-</div>
+  <script>
+    function setUsed(value) {
+      document.getElementById("used").value = value;
+      document.getElementById("usedRange").value = value;
+      calculateMC();
+    }
 
-<div class="seo">
+    function calculateMC() {
+      const entitlement = parseFloat(document.getElementById("entitlement").value);
+      const usedInput = document.getElementById("used");
+      const rangeInput = document.getElementById("usedRange");
+      const used = parseFloat(usedInput.value);
 
-  <h2>Related Salary Guides</h2>
+      if (!entitlement || used < 0 || isNaN(used)) {
+        document.getElementById("remainingResult").textContent = "0.00";
+        document.getElementById("mcExplanation").textContent = "Please select MC entitlement and enter MC days used.";
+        document.getElementById("mcBar").innerHTML = "";
+        document.getElementById("resultRows").innerHTML = "";
+        document.getElementById("summaryRows").innerHTML = "";
+        return;
+      }
 
-  <div class="seo-cards">
+      rangeInput.max = entitlement;
+      rangeInput.value = Math.min(used, entitlement);
 
-    <a class="card-link" href="epf-guide.html">
-      <h3>EPF Guide Malaysia</h3>
-      <p>EPF contribution rates and retirement savings</p>
-    </a>
+      const remaining = entitlement - used;
+      const usedPercent = entitlement > 0 ? (used / entitlement) * 100 : 0;
+      const remainingPercent = 100 - usedPercent;
+      const safeUsedPercent = Math.max(0, Math.min(100, usedPercent));
+      const safeRemainingPercent = Math.max(0, Math.min(100, remainingPercent));
 
-    <a class="card-link" href="socso-guide.html">
-      <h3>SOCSO Guide Malaysia</h3>
-      <p>Work injury protection and employee benefits</p>
-    </a>
+      let serviceLabel = "";
+      if (entitlement === 14) {
+        serviceLabel = "Less than 2 years";
+      } else if (entitlement === 18) {
+        serviceLabel = "2 to 5 years";
+      } else {
+        serviceLabel = "More than 5 years";
+      }
 
-    <a class="card-link" href="eis-guide.html">
-      <h3>EIS Guide Malaysia</h3>
-      <p>Employment insurance and unemployment support</p>
-    </a>
+      document.getElementById("remainingResult").textContent = remaining.toFixed(2);
+      document.getElementById("mcExplanation").textContent =
+        "Based on " + serviceLabel + ", " + used + " MC day(s) used.";
 
-    <a class="card-link" href="pcb-guide.html">
-      <h3>PCB Tax Guide Malaysia</h3>
-      <p>Monthly tax deduction explained simply</p>
-    </a>
+      document.getElementById("mcBar").innerHTML =
+        '<i style="width:' + safeUsedPercent + '%;background:#c9a14e"></i>' +
+        '<i style="width:' + safeRemainingPercent + '%;background:#5aa783"></i>';
 
-  </div>
+      document.getElementById("resultRows").innerHTML =
+        '<div class="result-line"><span class="k"><span class="dot" style="background:#f6f3ec"></span>Years of Service</span><span class="v">' + serviceLabel + '</span></div>' +
+        '<div class="result-line"><span class="k"><span class="dot" style="background:#5aa783"></span>MC Entitlement</span><span class="v">' + entitlement.toFixed(2) + ' days</span></div>' +
+        '<div class="result-line"><span class="k"><span class="dot" style="background:#c9a14e"></span>MC Used</span><span class="v">' + used.toFixed(2) + ' days</span></div>' +
+        '<div class="result-line"><span class="k"><span class="dot" style="background:#2f7d5e"></span>Remaining MC Leave</span><span class="v">' + remaining.toFixed(2) + ' days</span></div>';
 
-  <h2>What Is MC Leave In Malaysia?</h2>
+      document.getElementById("summaryRows").innerHTML =
+        '<div><span>Formula Used</span><strong>' + entitlement + ' − ' + used + '</strong></div>' +
+        '<div><span>Used Percentage</span><strong>' + usedPercent.toFixed(1) + '%</strong></div>' +
+        '<div><span>Remaining Percentage</span><strong>' + remainingPercent.toFixed(1) + '%</strong></div>';
+    }
 
-  <p>
-    MC leave, also known as medical leave or sick leave, is paid leave given to employees who are unable to work due to illness and have a valid medical certificate.
-  </p>
+    document.getElementById("entitlement").addEventListener("change", calculateMC);
+    document.getElementById("used").addEventListener("input", calculateMC);
+    document.getElementById("usedRange").addEventListener("input", function() {
+      document.getElementById("used").value = this.value;
+      calculateMC();
+    });
 
-  <p>
-    Medical leave entitlement in Malaysia may depend on length of service, employment terms and applicable employment law.
-  </p>
+    calculateMC();
+  </script>
 
-  <h2>How Is MC Leave Calculated?</h2>
-
-  <p>
-    This calculator subtracts MC days used from annual medical leave entitlement.
-  </p>
-
-  <p>
-    Formula:
-  </p>
-
-  <p>
-    Remaining MC Leave = MC Entitlement - MC Days Used
-  </p>
-
-  <h2>Malaysia Medical Leave Entitlement</h2>
-
-  <ul>
-    <li>Less than 2 years of service: 14 days</li>
-    <li>2 to 5 years of service: 18 days</li>
-    <li>More than 5 years of service: 22 days</li>
-  </ul>
-
-  <h2>Example MC Leave Calculation</h2>
-
-  <p>
-    If an employee is entitled to 14 days of MC and has used 5 days, the remaining MC balance is 9 days.
-  </p>
-
-  <h2>Why Use This MC Leave Calculator?</h2>
-
-  <ul>
-    <li>Calculate remaining MC leave</li>
-    <li>Track medical leave used</li>
-    <li>Estimate sick leave balance</li>
-    <li>Useful for employees and small businesses</li>
-  </ul>
-
-  <h2>Frequently Asked Questions</h2>
-
-  <h3>Is MC leave paid in Malaysia?</h3>
-  <p>
-    Medical leave is generally paid when supported by a valid medical certificate, subject to employment terms and applicable rules.
-  </p>
-
-  <h3>How many MC days are employees entitled to?</h3>
-  <p>
-    Common entitlement levels are 14, 18 or 22 days depending on length of service.
-  </p>
-
-  <h3>Is this calculator exact?</h3>
-  <p>
-    This calculator provides an estimate only. Actual entitlement may depend on company policy and employment contract.
-  </p>
-
-  <h2>Related Calculators</h2>
-
-  <ul>
-    <li><a href="index.html">Salary Calculator</a></li>
-    <li><a href="annual-leave-calculator.html">Annual Leave Calculator</a></li>
-    <li><a href="public-holiday-calculator.html">Public Holiday Calculator</a></li>
-    <li><a href="overtime-calculator.html">Overtime Calculator</a></li>
-    <li><a href="bonus-calculator.html">Bonus Calculator</a></li>
-    <li><a href="salary-increment-calculator.html">Salary Increment Calculator</a></li>
-    <li><a href="loan-calculator.html">Loan Calculator</a></li>
-    <li><a href="payslip-generator.html">Payslip Generator</a></li>
-  </ul>
-
-</div>
-
-<script>
-function calculate(){
-
-  let entitlement = parseFloat(document.getElementById("entitlement").value);
-  let used = parseFloat(document.getElementById("used").value);
-
-  if(!entitlement || used < 0 || isNaN(used)){
-    document.getElementById("monthly").innerHTML =
-      "Please select MC entitlement and enter MC days used.";
-    document.getElementById("annual").innerHTML = "";
-    return;
-  }
-
-  let remaining = entitlement - used;
-  let usedPercent = (used / entitlement) * 100;
-
-  document.getElementById("monthly").innerHTML =
-    "MC Entitlement: " + entitlement + " days<br>" +
-    "MC Used: " + used + " days<br><br>" +
-    "<b>Remaining MC Leave: " + remaining.toFixed(2) + " days</b>";
-
-  document.getElementById("annual").innerHTML =
-    "Used: " + usedPercent.toFixed(1) + "% of entitlement<br>" +
-    "Remaining: " + (100 - usedPercent).toFixed(1) + "%<br><br>" +
-    "<b>Total Annual MC Entitlement: " + entitlement + " days</b>";
-}
-</script>
-
-<hr style="margin-top:40px;">
-
-<div style="text-align:center;padding:20px;">
-
-<p>
-© 2026 Malaysia Salary Tools
-</p>
-
-<p>
-<a href="about.html">About Us</a> |
-<a href="contact.html">Contact Us</a> |
-<a href="privacy-policy.html">Privacy Policy</a>
-</p>
-
-</div>
-  
 </body>
 </html>
