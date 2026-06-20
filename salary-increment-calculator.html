@@ -7,102 +7,784 @@
   <title>Malaysia Salary Increment Calculator 2026 | Salary Raise Calculator</title>
 
   <link rel="canonical" href="https://malaysiasalarytools.com/salary-increment-calculator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <meta name="description" content="Free Malaysia Salary Increment Calculator 2026. Calculate salary raise, increment percentage, new monthly salary and annual salary increase instantly.">
+  <meta name="keywords" content="Malaysia salary increment calculator, salary raise calculator Malaysia, increment percentage calculator, new salary calculator, annual salary increase calculator">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="robots" content="index, follow">
 
   <style>
+    :root {
+      --background:#f4f1ea;
+      --card:#fbfaf6;
+      --foreground:#302c26;
+      --muted:#7c766c;
+      --primary:#2f2b25;
+      --primary-foreground:#f6f3ec;
+      --accent:#2f7d5e;
+      --accent-soft:rgba(47,125,94,.10);
+      --accent-border:rgba(47,125,94,.22);
+      --border:#e2ddd2;
+      --white:#ffffff;
+      --radius:16px;
+      --shadow:0 18px 45px rgba(47,43,37,.08);
+    }
+
+    * { box-sizing:border-box; }
+
+    html {
+      overflow-x:hidden;
+      scroll-behavior:smooth;
+    }
+
     body {
-      font-family: Arial;
-      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
-      margin: 0;
-      padding: 20px;
+      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47,125,94,.08), transparent 34%),
+        linear-gradient(135deg, #f4f1ea, #efe9de);
+      margin:0;
+      padding:0;
+      color:var(--foreground);
+      line-height:1.6;
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
     }
 
-    .card,
+    a { color:inherit; }
+
+    .serif {
+      font-family:Georgia, "Times New Roman", serif;
+      font-weight:400;
+    }
+
+    .top-nav {
+      background:rgba(251,250,246,.84);
+      border-bottom:1px solid var(--border);
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(10px);
+    }
+
+    .nav-inner {
+      max-width:1120px;
+      margin:0 auto;
+      padding:14px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:25px;
+    }
+
+    .brand {
+      display:flex;
+      align-items:center;
+      text-decoration:none;
+      flex-shrink:0;
+    }
+
+    .brand img {
+      width:220px;
+      height:auto;
+      display:block;
+    }
+
+    .nav-links {
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:nowrap;
+      min-width:0;
+    }
+
+    .nav-links a {
+      display:block;
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:600;
+      font-size:15px;
+      padding:10px 14px;
+      border-radius:999px;
+      white-space:nowrap;
+      background:transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background:var(--primary);
+      color:var(--primary-foreground);
+    }
+
+    .hero {
+      text-align:center;
+      padding:56px 20px 18px;
+      max-width:900px;
+      margin:0 auto;
+    }
+
+    .pill {
+      display:inline-block;
+      font-size:12px;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      color:var(--accent);
+      background:var(--accent-soft);
+      border:1px solid var(--accent-border);
+      padding:7px 15px;
+      border-radius:999px;
+      margin-bottom:20px;
+      font-weight:700;
+    }
+
+    .hero h1 {
+      margin:0;
+      font-size:clamp(36px, 6vw, 62px);
+      line-height:1.05;
+      letter-spacing:-.03em;
+      color:var(--foreground);
+    }
+
+    .hero h1 em {
+      color:var(--accent);
+      font-style:italic;
+    }
+
+    .hero p {
+      max-width:760px;
+      margin:18px auto 0;
+      font-size:17px;
+      color:var(--muted);
+    }
+
+    .main-wrapper {
+      padding:16px 20px 44px;
+    }
+
+    .calculator-shell {
+      max-width:1120px;
+      margin:28px auto 32px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      align-items:stretch;
+    }
+
+    .panel,
     .seo {
-      background: white;
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
     }
 
-    .seo { line-height: 1.7; }
-
-    .layout {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
+    .panel {
+      padding:28px;
     }
 
-    .box {
-      flex: 1;
-      min-width: 320px;
-      background: #f8f9fc;
-      border: 1px solid #eee;
-      border-radius: 12px;
-      padding: 15px;
+    .panel h2 {
+      margin:0 0 4px;
+      font-size:22px;
+      color:var(--foreground);
     }
 
-    input, button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      font-size: 16px;
-      box-sizing: border-box;
+    .panel .sub {
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    label {
+      display:block;
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:8px;
+      color:var(--foreground);
+    }
+
+    .form-group {
+      margin-bottom:18px;
+    }
+
+    .field-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .input-row {
+      position:relative;
+    }
+
+    .input-row span {
+      position:absolute;
+      left:14px;
+      top:50%;
+      transform:translateY(-50%);
+      color:var(--muted);
+      font-size:16px;
+      font-weight:700;
     }
 
     input {
-      border-radius: 10px;
-      border: 1px solid #ddd;
+      width:100%;
+      padding:15px 14px 15px 46px;
+      font-size:20px;
+      font-weight:700;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:var(--white);
+      color:var(--foreground);
+      outline:none;
     }
 
-    button {
-      background: #111;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
+    input:focus {
+      border-color:var(--accent);
+      box-shadow:0 0 0 3px rgba(47,125,94,.14);
     }
 
-    .result {
-      margin-top: 10px;
-      line-height: 1.6;
+    input[type="range"] {
+      width:100%;
+      margin-top:18px;
+      padding:0;
+      accent-color:var(--accent);
     }
 
-    .seo-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
+    .preset-grid {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:16px;
     }
 
-    .card-link {
-      display: block;
-      padding: 15px;
-      background: white;
-      border-radius: 12px;
-      text-decoration: none;
-      color: black;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    .preset,
+    .calc-button {
+      border:none;
+      cursor:pointer;
+      font-family:inherit;
     }
 
-    h1 { font-size: 26px; }
-    h2 { font-size: 20px; margin-top: 25px; }
-    h3 { font-size: 16px; margin-top: 18px; }
+    .preset {
+      background:var(--white);
+      border:1px solid var(--border);
+      color:var(--foreground);
+      padding:8px 13px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:13px;
+    }
 
-    @media (max-width: 700px){
-      .layout { flex-direction: column; }
-      body { padding: 10px; }
-      .card, .seo {
-        margin: 15px auto;
-        padding: 18px;
+    .preset:hover {
+      color:var(--accent);
+      border-color:var(--accent);
+    }
+
+    .calc-button {
+      width:100%;
+      background:var(--accent);
+      color:#fff;
+      padding:14px 18px;
+      margin-top:6px;
+      border-radius:12px;
+      font-size:16px;
+      font-weight:800;
+    }
+
+    .calc-button:hover {
+      filter:brightness(.95);
+    }
+
+    .secondary-button {
+      display:block;
+      text-align:center;
+      width:100%;
+      background:var(--white);
+      color:var(--accent);
+      border:1px solid var(--accent-border);
+      padding:13px 18px;
+      margin-top:12px;
+      border-radius:12px;
+      font-size:15px;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .secondary-button:hover {
+      background:var(--accent-soft);
+    }
+
+    .input-note {
+      margin:16px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .results-panel {
+      background:var(--primary);
+      color:var(--primary-foreground);
+      border:1px solid var(--primary);
+      padding:28px;
+      border-radius:var(--radius);
+      box-shadow:0 24px 55px rgba(47,43,37,.20);
+    }
+
+    .results-panel h2 {
+      margin:0 0 4px;
+      font-size:22px;
+      color:var(--primary-foreground);
+    }
+
+    .results-panel .sub {
+      margin:0;
+      color:rgba(246,243,236,.62);
+      font-size:14px;
+    }
+
+    .net {
+      font-size:clamp(36px, 5vw, 48px);
+      font-weight:800;
+      letter-spacing:-.03em;
+      margin:16px 0 0;
+    }
+
+    .net-caption {
+      color:rgba(246,243,236,.62);
+      font-size:14px;
+      margin-top:0;
+    }
+
+    .bar {
+      height:9px;
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+      display:flex;
+      overflow:hidden;
+      margin:22px 0;
+    }
+
+    .bar i {
+      display:block;
+      height:100%;
+    }
+
+    .result-rows {
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+
+    .result-line {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      padding:11px 0;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      font-size:14px;
+    }
+
+    .result-line:last-child {
+      border-bottom:none;
+    }
+
+    .result-line .k {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:rgba(246,243,236,.86);
+    }
+
+    .result-line .v {
+      font-weight:800;
+      text-align:right;
+    }
+
+    .dot {
+      width:9px;
+      height:9px;
+      border-radius:3px;
+      flex:0 0 auto;
+    }
+
+    .annual-summary {
+      margin-top:18px;
+      padding-top:16px;
+      border-top:1px solid rgba(255,255,255,.18);
+      display:grid;
+      gap:8px;
+      font-size:14px;
+    }
+
+    .annual-summary div {
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      color:rgba(246,243,236,.82);
+    }
+
+    .annual-summary strong {
+      color:var(--primary-foreground);
+      text-align:right;
+    }
+
+    .seo {
+      max-width:1120px;
+      margin:30px auto;
+      padding:30px;
+      line-height:1.72;
+    }
+
+    .seo h2 {
+      font-size:clamp(25px, 4vw, 36px);
+      line-height:1.15;
+      margin:34px 0 12px;
+      color:var(--foreground);
+      letter-spacing:-.01em;
+      font-family:Georgia, "Times New Roman", serif;
+      font-weight:400;
+    }
+
+    .seo h2:first-child {
+      margin-top:0;
+    }
+
+    .seo h3 {
+      font-size:17px;
+      margin-top:18px;
+    }
+
+    .seo p,
+    .seo li {
+      color:var(--muted);
+    }
+
+    .formula-box,
+    .contribution-box,
+    .salary-guides-box {
+      background:#f8f5ef;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:24px;
+      margin:26px 0;
+    }
+
+    .formula-box {
+      text-align:center;
+    }
+
+    .formula-box strong {
+      display:block;
+      font-size:22px;
+      color:var(--foreground);
+      margin-bottom:8px;
+    }
+
+    .formula-box span {
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .component-grid,
+    .guide-mini-grid,
+    .rate-grid {
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+      grid-template-columns:repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .component-card,
+    .guide-mini-grid a,
+    .rate-card,
+    .faq-item {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:14px;
+    }
+
+    .component-card {
+      display:block;
+      padding:20px;
+      text-decoration:none;
+      color:inherit;
+      transition:.18s ease;
+    }
+
+    .component-card:hover,
+    .guide-mini-grid a:hover {
+      transform:translateY(-2px);
+      border-color:var(--accent);
+      box-shadow:0 12px 30px rgba(47,43,37,.08);
+    }
+
+    .component-icon {
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      background:var(--accent-soft);
+      display:grid;
+      place-items:center;
+      margin-bottom:10px;
+      font-size:21px;
+    }
+
+    .component-card h3,
+    .rate-card h3 {
+      margin:8px 0 4px;
+      color:var(--foreground);
+    }
+
+    .component-card p,
+    .rate-card p {
+      margin:0;
+      font-size:14px;
+    }
+
+    .rate-card {
+      padding:20px;
+    }
+
+    .rate-card strong {
+      display:block;
+      color:var(--accent);
+      font-size:28px;
+      line-height:1.1;
+      margin-bottom:8px;
+    }
+
+    .contribution-table-wrap {
+      overflow-x:auto;
+      margin-top:18px;
+    }
+
+    .contribution-table {
+      width:100%;
+      border-collapse:collapse;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:12px;
+      overflow:hidden;
+      min-width:520px;
+    }
+
+    .contribution-table th {
+      background:#f1ece3;
+      color:var(--muted);
+      font-size:13px;
+      text-align:left;
+      letter-spacing:.03em;
+      padding:14px;
+      border-bottom:1px solid var(--border);
+    }
+
+    .contribution-table td {
+      padding:14px;
+      border-bottom:1px solid var(--border);
+      color:var(--foreground);
+      font-size:14px;
+    }
+
+    .contribution-table tr:last-child td {
+      border-bottom:none;
+    }
+
+    .payroll-note {
+      margin-top:20px;
+      background:var(--card);
+      border-left:4px solid var(--accent);
+      padding:14px;
+      border-radius:10px;
+      color:var(--muted);
+    }
+
+    .faq-box {
+      margin-top:18px;
+      max-width:780px;
+    }
+
+    .faq-item {
+      padding:4px 20px;
+      margin-bottom:12px;
+    }
+
+    .faq-item summary {
+      font-weight:800;
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      color:var(--foreground);
+      padding:16px 0;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display:none;
+    }
+
+    .faq-item summary::after {
+      content:"+";
+      color:var(--accent);
+      font-size:20px;
+      line-height:1;
+    }
+
+    .faq-item[open] summary::after {
+      content:"−";
+    }
+
+    .faq-item p {
+      padding-bottom:18px;
+      margin-top:0;
+      color:var(--muted);
+      line-height:1.55;
+      font-size:14px;
+    }
+
+    .guide-mini-grid a {
+      display:block;
+      padding:14px 16px;
+      text-decoration:none;
+      color:var(--foreground);
+      font-weight:800;
+      text-align:center;
+      transition:.18s ease;
+    }
+
+    .view-all-guides {
+      text-align:center;
+      margin:20px 0 0;
+    }
+
+    .view-all-guides a {
+      color:var(--accent);
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .footer {
+      border-top:1px solid var(--border);
+      padding:28px 20px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .footer a {
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    .footer a:hover {
+      color:var(--accent);
+    }
+
+    @media (max-width:900px) {
+      .calculator-shell,
+      .field-grid {
+        grid-template-columns:1fr;
+      }
+
+      .seo {
+        padding:24px;
+      }
+    }
+
+    @media (max-width:800px) {
+      .nav-inner {
+        flex-direction:row;
+        align-items:center;
+      }
+
+      .nav-links {
+        width:auto;
+        flex:1;
+        min-width:0;
+        justify-content:flex-start;
+        padding-bottom:5px;
+        overflow-x:auto;
+        overflow-y:hidden;
+        scrollbar-width:none;
+        -ms-overflow-style:none;
+        -webkit-overflow-scrolling:touch;
+        touch-action:pan-x;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display:none;
+      }
+    }
+
+    @media (max-width:700px) {
+      .hero {
+        padding:38px 14px 12px;
+      }
+
+      .main-wrapper {
+        padding:10px;
+      }
+
+      .panel,
+      .results-panel,
+      .seo {
+        padding:20px;
+      }
+
+      .nav-inner {
+        padding-top:8px;
+        padding-bottom:8px;
+        gap:8px;
+      }
+
+      .brand img {
+        width:150px;
+      }
+
+      .nav-links {
+        gap:6px;
+      }
+
+      .nav-links a {
+        font-size:14px;
+        padding:8px 10px;
+      }
+
+      .component-grid,
+      .rate-grid {
+        grid-template-columns:repeat(2, 1fr);
+        gap:10px;
+      }
+
+      .component-card,
+      .rate-card {
+        padding:14px;
+        text-align:center;
+      }
+
+      .component-icon {
+        margin-left:auto;
+        margin-right:auto;
+        width:36px;
+        height:36px;
+        font-size:18px;
+      }
+
+      .component-card h3,
+      .rate-card h3 {
+        font-size:15px;
+        margin:6px 0;
+      }
+
+      .component-card p,
+      .rate-card p {
+        font-size:12px;
+        line-height:1.35;
+      }
+
+      .net {
+        font-size:34px;
       }
     }
   </style>
@@ -110,203 +792,417 @@
 
 <body>
 
-<div class="card">
+<header class="top-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+    </a>
 
-  <h1>Malaysia Salary Increment Calculator 2026</h1>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="calculators.html" class="active">Calculators</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
 
-  <p><b>Malaysia Salary Increment Calculator:</b> Calculate your salary raise, new monthly salary and annual income increase.</p>
+<section class="hero">
+  <span class="pill">Updated for Malaysia 2026 salary raise estimates</span>
+  <h1 class="serif">Calculate your <em>salary increment</em></h1>
+  <p>
+    Free Malaysia salary increment calculator for employees and job seekers. Estimate salary raise, new monthly salary, annual increase and total annual income after increment.
+  </p>
+</section>
 
-  <p>Enter your current salary and increment percentage to estimate your new salary after increment.</p>
+<main class="main-wrapper">
 
-  <input type="number" id="salary" placeholder="Current Monthly Salary (RM)">
+  <section class="calculator-shell" id="calculator">
 
-  <input type="number" id="increment" placeholder="Increment Percentage (%)">
+    <div class="panel">
+      <h2 class="serif">Calculate Salary Increment</h2>
+      <p class="sub">Enter your current monthly salary and increment percentage.</p>
 
-  <button onclick="calculate()">Calculate Salary Increment</button>
+      <div class="form-group">
+        <label for="salary">Current monthly salary</label>
+        <div class="input-row">
+          <span>RM</span>
+          <input type="number" id="salary" value="5000" min="0" step="100" placeholder="Example: 5000">
+        </div>
 
-  <div class="layout">
+        <input type="range" id="salaryRange" min="0" max="30000" step="100" value="5000">
 
-    <div class="box">
-      <h3>Monthly Salary Increase</h3>
-      <div class="result" id="monthly"></div>
+        <div class="preset-grid">
+          <button type="button" class="preset" onclick="setSalary(3000)">RM 3,000</button>
+          <button type="button" class="preset" onclick="setSalary(5000)">RM 5,000</button>
+          <button type="button" class="preset" onclick="setSalary(7500)">RM 7,500</button>
+          <button type="button" class="preset" onclick="setSalary(10000)">RM 10,000</button>
+        </div>
+      </div>
+
+      <div class="field-grid">
+        <div class="form-group">
+          <label for="increment">Increment percentage</label>
+          <div class="input-row">
+            <span>%</span>
+            <input type="number" id="increment" value="8" min="0" step="0.1" style="padding-left:46px;">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="months">Annual months</label>
+          <div class="input-row">
+            <span>×</span>
+            <input type="number" id="months" value="12" min="1" step="1">
+          </div>
+        </div>
+      </div>
+
+      <div class="preset-grid">
+        <button type="button" class="preset" onclick="setIncrement(3)">3%</button>
+        <button type="button" class="preset" onclick="setIncrement(5)">5%</button>
+        <button type="button" class="preset" onclick="setIncrement(8)">8%</button>
+        <button type="button" class="preset" onclick="setIncrement(10)">10%</button>
+        <button type="button" class="preset" onclick="setIncrement(15)">15%</button>
+      </div>
+
+      <button type="button" class="calc-button" onclick="calculateIncrement()">Calculate My New Salary</button>
+
+      <a class="secondary-button" href="index.html">
+        Check New Take-Home Pay →
+      </a>
+
+      <a class="secondary-button" href="salary-increment-guide.html">
+        Read Salary Increment Guide →
+      </a>
+
+      <p class="input-note">
+        This calculator estimates salary increase before statutory deductions. Your actual take-home pay may also change due to EPF, SOCSO, EIS, PCB and other payroll deductions.
+      </p>
     </div>
 
-    <div class="box">
-      <h3>Annual Salary Increase</h3>
-      <div class="result" id="annual"></div>
+    <div class="results-panel">
+      <h2 class="serif">Your increment result</h2>
+      <p class="sub">Estimated new monthly salary</p>
+
+      <div class="net">RM <span id="newSalary">0.00</span></div>
+      <p class="net-caption" id="incrementExplanation">Based on current salary and increment percentage.</p>
+
+      <div class="bar" id="incrementBar"></div>
+
+      <div class="result-rows" id="resultRows"></div>
+
+      <div class="annual-summary" id="summaryRows"></div>
     </div>
+
+  </section>
+
+  <div class="seo">
+
+    <section>
+      <h2>How Salary Increment Is Calculated</h2>
+
+      <p>
+        Salary increment means an increase in an employee's salary, usually expressed as a fixed amount or a percentage of current salary. In Malaysia, salary increments may happen during annual performance reviews, promotion, job confirmation or salary adjustment exercises.
+      </p>
+
+      <div class="formula-box">
+        <strong>Salary Increase = Current Salary × Increment Percentage</strong>
+        <span>New Salary = Current Salary + Salary Increase</span>
+      </div>
+
+      <div class="rate-grid">
+        <div class="rate-card">
+          <strong>Raise</strong>
+          <h3>Monthly Increase</h3>
+          <p>Extra monthly salary from the increment.</p>
+        </div>
+
+        <div class="rate-card">
+          <strong>New</strong>
+          <h3>New Salary</h3>
+          <p>Current salary plus salary increase.</p>
+        </div>
+
+        <div class="rate-card">
+          <strong>Annual</strong>
+          <h3>Annual Increase</h3>
+          <p>Monthly increase multiplied by annual months.</p>
+        </div>
+
+        <div class="rate-card">
+          <strong>Net</strong>
+          <h3>Take-Home Impact</h3>
+          <p>Higher salary may increase EPF, SOCSO, EIS and PCB.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contribution-box">
+      <h2>Salary Increment Example</h2>
+
+      <p>
+        If an employee earns RM5,000 per month and receives an 8% increment, the monthly increase is RM400. The new monthly salary becomes RM5,400 and the annual salary increase is RM4,800.
+      </p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead>
+            <tr>
+              <th>Current Salary</th>
+              <th>Increment</th>
+              <th>Monthly Increase</th>
+              <th>New Monthly Salary</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>RM3,000</td>
+              <td>5%</td>
+              <td>RM150</td>
+              <td>RM3,150</td>
+            </tr>
+            <tr>
+              <td>RM5,000</td>
+              <td>8%</td>
+              <td>RM400</td>
+              <td>RM5,400</td>
+            </tr>
+            <tr>
+              <td>RM8,000</td>
+              <td>10%</td>
+              <td>RM800</td>
+              <td>RM8,800</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="payroll-note">
+        <strong>Note:</strong>
+        This calculator shows gross salary increase. Use the salary calculator to estimate new take-home pay after EPF, SOCSO, EIS and PCB.
+      </p>
+    </section>
+
+    <section>
+      <h2>What This Salary Increment Calculator Shows</h2>
+
+      <p>
+        This calculator helps estimate current salary, increment percentage, monthly raise, new monthly salary, annual salary increase and new annual salary. It is useful for performance review, promotion discussion and job offer comparison.
+      </p>
+
+      <div class="component-grid">
+        <a class="component-card" href="salary-increment-guide.html">
+          <div class="component-icon">📈</div>
+          <h3>Increment %</h3>
+          <p>Calculate salary raise based on percentage increase.</p>
+        </a>
+
+        <a class="component-card" href="index.html">
+          <div class="component-icon">💰</div>
+          <h3>New Salary</h3>
+          <p>Estimate your new monthly salary after increment.</p>
+        </a>
+
+        <a class="component-card" href="bonus-calculator.html">
+          <div class="component-icon">🎁</div>
+          <h3>Annual Income</h3>
+          <p>Compare yearly salary impact with bonus and other income.</p>
+        </a>
+
+        <a class="component-card" href="pcb-calculator.html">
+          <div class="component-icon">🏛️</div>
+          <h3>Tax Impact</h3>
+          <p>Higher salary may increase PCB and final income tax.</p>
+        </a>
+      </div>
+    </section>
+
+    <h2>Who Should Use This Salary Increment Calculator?</h2>
+
+    <ul>
+      <li>Employees calculating salary raise after review</li>
+      <li>Job seekers comparing new offer with current salary</li>
+      <li>Employees preparing increment negotiation</li>
+      <li>HR users explaining salary adjustment impact</li>
+      <li>Anyone estimating monthly and annual income increase</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-box">
+      <details class="faq-item" open>
+        <summary>What is a good salary increment in Malaysia?</summary>
+        <p>
+          A good increment depends on company performance, industry, experience level, role, promotion and market salary range.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do I calculate a 10% increment?</summary>
+        <p>
+          Multiply your current salary by 10%, then add the result to your current salary. For example, RM4,000 × 10% = RM400 increase, so the new salary is RM4,400.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does salary increment affect EPF and tax?</summary>
+        <p>
+          Yes. A higher salary may increase EPF contributions, SOCSO, EIS and PCB tax deductions.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I calculate annual salary increase?</summary>
+        <p>
+          Yes. This calculator shows both monthly salary increase and annual salary increase.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is this salary increment calculator after tax?</summary>
+        <p>
+          No. This calculator shows gross salary increase. Use the salary calculator or PCB calculator to estimate after-tax impact.
+        </p>
+      </details>
+    </div>
+
+    <section class="salary-guides-box">
+      <h2>Malaysia Salary Guides</h2>
+
+      <p>
+        Learn more about salary increment, bonus, payslip and salary deductions in Malaysia.
+      </p>
+
+      <div class="guide-mini-grid">
+        <a href="salary-increment-guide.html">📈 Salary Increment Guide</a>
+        <a href="bonus-guide.html">🎁 Bonus Guide</a>
+        <a href="payslip-guide.html">🧾 Payslip Guide</a>
+        <a href="salary-deduction-guide.html">📉 Salary Deduction Guide</a>
+        <a href="pcb-guide.html">🏛️ PCB Guide</a>
+        <a href="tax-relief-guide.html">💸 Tax Relief Guide</a>
+      </div>
+
+      <p class="view-all-guides">
+        <a href="guides.html">View All Salary Guides →</a>
+      </p>
+    </section>
+
+    <section class="salary-guides-box">
+      <h2>Related Calculators</h2>
+
+      <p>
+        Explore more free Malaysia salary and payroll calculators.
+      </p>
+
+      <div class="guide-mini-grid">
+        <a href="index.html">Salary Calculator</a>
+        <a href="bonus-calculator.html">Bonus Calculator</a>
+        <a href="pcb-calculator.html">PCB Calculator</a>
+        <a href="income-tax-calculator.html">Income Tax Calculator</a>
+        <a href="epf-calculator.html">EPF Calculator</a>
+        <a href="payslip-generator.html">Payslip Generator</a>
+      </div>
+
+      <p class="view-all-guides">
+        <a href="calculators.html">View All Calculators →</a>
+      </p>
+    </section>
 
   </div>
 
-</div>
+</main>
 
-<div class="seo">
-
-  <h2>Related Salary Guides</h2>
-
-  <div class="seo-cards">
-
-    <a class="card-link" href="epf-guide.html">
-      <h3>EPF Guide Malaysia</h3>
-      <p>EPF contribution rates and retirement savings</p>
-    </a>
-
-    <a class="card-link" href="socso-guide.html">
-      <h3>SOCSO Guide Malaysia</h3>
-      <p>Work injury protection and employee benefits</p>
-    </a>
-
-    <a class="card-link" href="eis-guide.html">
-      <h3>EIS Guide Malaysia</h3>
-      <p>Employment insurance and unemployment support</p>
-    </a>
-
-    <a class="card-link" href="pcb-guide.html">
-      <h3>PCB Tax Guide Malaysia</h3>
-      <p>Monthly tax deduction explained simply</p>
-    </a>
-
-  </div>
-
-  <h2>What Is Salary Increment?</h2>
-
+<footer class="footer">
+  <p>© 2026 Malaysia Salary Tools</p>
   <p>
-    Salary increment means an increase in an employee's salary, usually expressed as a fixed amount or a percentage of current salary.
+    <a href="index.html">Home</a> |
+    <a href="calculators.html">Calculators</a> |
+    <a href="guides.html">Guides</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact Us</a> |
+    <a href="privacy-policy.html">Privacy Policy</a>
   </p>
-
-  <p>
-    In Malaysia, salary increments may happen during annual performance reviews, promotion, job confirmation or salary adjustment exercises.
-  </p>
-
-  <h2>How Is Salary Increment Calculated?</h2>
-
-  <p>
-    A percentage increment is calculated by multiplying current salary by the increment percentage.
-  </p>
-
-  <p>
-    For example, if your monthly salary is RM4,000 and your increment is 10%, your salary increase is RM400.
-    Your new monthly salary becomes RM4,400.
-  </p>
-
-  <h2>Formula Used</h2>
-
-  <p>
-    Salary Increase = Current Salary × Increment Percentage
-  </p>
-
-  <p>
-    New Salary = Current Salary + Salary Increase
-  </p>
-
-  <h2>Example Salary Increment Calculation</h2>
-
-  <p>
-    If an employee earns RM5,000 per month and receives an 8% increment, the monthly increase is RM400.
-  </p>
-
-  <p>
-    The new monthly salary becomes RM5,400 and the annual salary increase is RM4,800.
-  </p>
-
-  <h2>Why Use This Salary Increment Calculator?</h2>
-
-  <ul>
-    <li>Calculate salary raise instantly</li>
-    <li>Estimate new monthly salary</li>
-    <li>Estimate annual salary increase</li>
-    <li>Compare current salary and new salary</li>
-  </ul>
-
-  <h2>Frequently Asked Questions</h2>
-
-  <h3>What is a good salary increment in Malaysia?</h3>
-  <p>
-    A good increment depends on company performance, industry, experience level and job role.
-  </p>
-
-  <h3>How do I calculate a 10% increment?</h3>
-  <p>
-    Multiply your current salary by 10%, then add the result to your current salary.
-  </p>
-
-  <h3>Does salary increment affect EPF and tax?</h3>
-  <p>
-    Yes. A higher salary may increase EPF contributions, SOCSO, EIS and PCB tax deductions.
-  </p>
-
-  <h3>Can I calculate annual salary increase?</h3>
-  <p>
-    Yes. This calculator shows both monthly and annual salary increase.
-  </p>
-
-  <h2>Related Calculators</h2>
-
-  <ul>
-    <li><a href="index.html">Salary Calculator</a></li>
-    <li><a href="epf-calculator.html">EPF Calculator</a></li>
-    <li><a href="socso-calculator.html">SOCSO Calculator</a></li>
-    <li><a href="eis-calculator.html">EIS Calculator</a></li>
-    <li><a href="pcb-calculator.html">PCB Tax Calculator</a></li>
-    <li><a href="bonus-calculator.html">Bonus Calculator</a></li>
-    <li><a href="overtime-calculator.html">Overtime Calculator</a></li>
-    <li><a href="annual-leave-calculator.html">Annual Leave Calculator</a></li>
-  </ul>
-
-</div>
+</footer>
 
 <script>
-function formatRM(v){
-  return v.toLocaleString('en-MY',{
-    minimumFractionDigits:2,
-    maximumFractionDigits:2
-  });
-}
-
-function calculate(){
-
-  let salary = parseFloat(document.getElementById("salary").value);
-  let increment = parseFloat(document.getElementById("increment").value);
-
-  if(!salary || !increment){
-    document.getElementById("monthly").innerHTML = "Please enter salary and increment percentage";
-    document.getElementById("annual").innerHTML = "";
-    return;
+  function formatRM(value) {
+    return Number(value).toLocaleString('en-MY', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
   }
 
-  let increase = salary * increment / 100;
-  let newSalary = salary + increase;
-  let annualIncrease = increase * 12;
-  let annualSalary = newSalary * 12;
+  function setSalary(value) {
+    document.getElementById("salary").value = value;
+    document.getElementById("salaryRange").value = value;
+    calculateIncrement();
+  }
 
-  document.getElementById("monthly").innerHTML =
-    "Current Salary: RM " + formatRM(salary) + "<br>" +
-    "Increment: " + increment + "%<br>" +
-    "Monthly Increase: RM " + formatRM(increase) + "<br><br>" +
-    "<b>New Monthly Salary: RM " + formatRM(newSalary) + "</b>";
+  function setIncrement(value) {
+    document.getElementById("increment").value = value;
+    calculateIncrement();
+  }
 
-  document.getElementById("annual").innerHTML =
-    "Annual Increase: RM " + formatRM(annualIncrease) + "<br>" +
-    "New Annual Salary: RM " + formatRM(annualSalary) + "<br><br>" +
-    "<b>Total Annual Salary After Increment: RM " + formatRM(annualSalary) + "</b>";
-}
+  function calculateIncrement() {
+    const salaryInput = document.getElementById("salary");
+    const salaryRange = document.getElementById("salaryRange");
+
+    const salary = parseFloat(salaryInput.value) || 0;
+    const increment = parseFloat(document.getElementById("increment").value) || 0;
+    const months = parseFloat(document.getElementById("months").value) || 12;
+
+    if (!salary || salary < 0 || increment < 0 || !months || months < 1) {
+      document.getElementById("newSalary").textContent = "0.00";
+      document.getElementById("incrementExplanation").textContent = "Please enter current salary, increment percentage and annual months.";
+      document.getElementById("incrementBar").innerHTML = "";
+      document.getElementById("resultRows").innerHTML = "";
+      document.getElementById("summaryRows").innerHTML = "";
+      return;
+    }
+
+    salaryRange.value = Math.min(salary, salaryRange.max);
+
+    const monthlyIncrease = salary * increment / 100;
+    const newSalary = salary + monthlyIncrease;
+    const annualIncrease = monthlyIncrease * months;
+    const currentAnnualSalary = salary * months;
+    const newAnnualSalary = newSalary * months;
+
+    const salaryPercent = newSalary > 0 ? (salary / newSalary) * 100 : 0;
+    const increasePercent = newSalary > 0 ? (monthlyIncrease / newSalary) * 100 : 0;
+
+    document.getElementById("newSalary").textContent = formatRM(newSalary);
+    document.getElementById("incrementExplanation").textContent =
+      "Based on " + increment + "% increment from RM " + formatRM(salary) + " current monthly salary.";
+
+    document.getElementById("incrementBar").innerHTML =
+      '<i style="width:' + salaryPercent + '%;background:#f6f3ec"></i>' +
+      '<i style="width:' + increasePercent + '%;background:#5aa783"></i>';
+
+    document.getElementById("resultRows").innerHTML =
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#f6f3ec"></span>Current Monthly Salary</span><span class="v">RM ' + formatRM(salary) + '</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#5aa783"></span>Monthly Increase</span><span class="v">RM ' + formatRM(monthlyIncrease) + '</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#2f7d5e"></span>New Monthly Salary</span><span class="v">RM ' + formatRM(newSalary) + '</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#c9a14e"></span>Increment Percentage</span><span class="v">' + increment.toFixed(2) + '%</span></div>';
+
+    document.getElementById("summaryRows").innerHTML =
+      '<div><span>Formula Used</span><strong>Salary × Increment %</strong></div>' +
+      '<div><span>Current Annual Salary</span><strong>RM ' + formatRM(currentAnnualSalary) + '</strong></div>' +
+      '<div><span>Annual Increase</span><strong>RM ' + formatRM(annualIncrease) + '</strong></div>' +
+      '<div><span>New Annual Salary</span><strong>RM ' + formatRM(newAnnualSalary) + '</strong></div>';
+  }
+
+  document.getElementById("salary").addEventListener("input", calculateIncrement);
+  document.getElementById("salaryRange").addEventListener("input", function() {
+    document.getElementById("salary").value = this.value;
+    calculateIncrement();
+  });
+  document.getElementById("increment").addEventListener("input", calculateIncrement);
+  document.getElementById("months").addEventListener("input", calculateIncrement);
+
+  calculateIncrement();
 </script>
 
-<hr style="margin-top:40px;">
-
-<div style="text-align:center;padding:20px;">
-
-<p>
-© 2026 Malaysia Salary Tools
-</p>
-
-<p>
-<a href="about.html">About Us</a> |
-<a href="contact.html">Contact Us</a> |
-<a href="privacy-policy.html">Privacy Policy</a>
-</p>
-
-</div>
-  
 </body>
 </html>
