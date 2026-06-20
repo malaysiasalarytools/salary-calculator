@@ -7,102 +7,845 @@
   <title>Malaysia Annual Leave Calculator 2026 | Leave Entitlement Calculator</title>
 
   <link rel="canonical" href="https://malaysiasalarytools.com/annual-leave-calculator.html">
-  
-  <meta name="description" content="Free Malaysia Annual Leave Calculator 2026. Estimate annual leave entitlement based on years of service and employment period.">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <meta name="description" content="Free Malaysia Annual Leave Calculator 2026. Estimate annual leave entitlement based on years of service, months worked and pro-rated leave calculation.">
+  <meta name="keywords" content="Malaysia annual leave calculator, annual leave entitlement Malaysia, leave calculator Malaysia, pro rated annual leave, Employment Act annual leave Malaysia">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="robots" content="index, follow">
 
+  <script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6819619632324210"
+  crossorigin="anonymous"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://malaysiasalarytools.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://malaysiasalarytools.com/calculators.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Annual Leave Calculator",
+        "item": "https://malaysiasalarytools.com/annual-leave-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is annual leave calculated in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Annual leave is commonly estimated based on the employee's full-year entitlement and months worked. A simple pro-rated formula is annual entitlement multiplied by months worked divided by 12."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many annual leave days do employees get in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A common minimum annual leave reference is 8 days for less than 2 years of service, 12 days for 2 to 5 years, and 16 days for more than 5 years."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can annual leave be pro-rated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Annual leave is often pro-rated when an employee joins or leaves during the year, depending on company policy, contract and applicable rules."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this annual leave calculator exact?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. This calculator provides a simplified estimate only. Actual entitlement may depend on employment contract, company policy and applicable law."
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
-    body {
-      font-family: Arial;
-      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
-      margin: 0;
-      padding: 20px;
+    :root {
+      --background: #f4f1ea;
+      --card: #fbfaf6;
+      --foreground: #302c26;
+      --muted: #7c766c;
+      --primary: #2f2b25;
+      --primary-soft: #403a32;
+      --primary-foreground: #f6f3ec;
+      --accent: #2f7d5e;
+      --accent-soft: rgba(47,125,94,.10);
+      --accent-border: rgba(47,125,94,.22);
+      --border: #e2ddd2;
+      --white: #ffffff;
+      --radius: 16px;
+      --shadow: 0 18px 45px rgba(47,43,37,.08);
     }
 
-    .card,
-    .seo {
-      background: white;
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-
-    .seo { line-height: 1.7; }
-
-    .layout {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .box {
-      flex: 1;
-      min-width: 320px;
-      background: #f8f9fc;
-      border: 1px solid #eee;
-      border-radius: 12px;
-      padding: 15px;
-    }
-
-    input, select, button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      font-size: 16px;
+    * {
       box-sizing: border-box;
     }
 
-    input, select {
-      border-radius: 10px;
-      border: 1px solid #ddd;
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
-    button {
-      background: #111;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .result {
-      margin-top: 10px;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47,125,94,.08), transparent 34%),
+        linear-gradient(135deg, #f4f1ea, #efe9de);
+      margin: 0;
+      padding: 0;
+      color: var(--foreground);
       line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .seo-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
+    a {
+      color: inherit;
     }
 
-    .card-link {
-      display: block;
-      padding: 15px;
-      background: white;
-      border-radius: 12px;
+    .serif {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    .top-nav {
+      background: rgba(251,250,246,.84);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
       text-decoration: none;
-      color: black;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      flex-shrink: 0;
     }
 
-    h1 { font-size: 26px; }
-    h2 { font-size: 20px; margin-top: 25px; }
-    h3 { font-size: 16px; margin-top: 18px; }
+    .brand img {
+      width: 220px;
+      height: auto;
+      display: block;
+    }
 
-    @media (max-width: 700px){
-      .layout { flex-direction: column; }
-      body { padding: 10px; }
-      .card, .seo {
-        margin: 15px auto;
-        padding: 18px;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: nowrap;
+      min-width: 0;
+    }
+
+    .nav-links a {
+      display: block;
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 15px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      white-space: nowrap;
+      background: transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: var(--primary);
+      color: var(--primary-foreground);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 56px 20px 18px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      padding: 7px 15px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      color: var(--foreground);
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 18px auto 0;
+      font-size: 17px;
+      color: var(--muted);
+    }
+
+    .main-wrapper {
+      padding: 16px 20px 44px;
+    }
+
+    .calculator-shell {
+      max-width: 1120px;
+      margin: 28px auto 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .panel,
+    .seo {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .panel {
+      padding: 28px;
+    }
+
+    .panel h2 {
+      margin: 0 0 4px;
+      font-size: 22px;
+      color: var(--foreground);
+    }
+
+    .panel .sub {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--foreground);
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+      color: var(--foreground);
+      outline: none;
+    }
+
+    input[type="number"] {
+      font-size: 20px;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(47,125,94,.14);
+    }
+
+    input[type="range"] {
+      width: 100%;
+      margin-top: 18px;
+      accent-color: var(--accent);
+    }
+
+    .preset-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .preset,
+    .calc-button {
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .preset {
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--foreground);
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .preset:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .calc-button {
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 18px;
+      margin-top: 6px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .calc-button:hover {
+      filter: brightness(.95);
+    }
+
+    .secondary-button {
+      display: block;
+      text-align: center;
+      width: 100%;
+      background: var(--white);
+      color: var(--accent);
+      border: 1px solid var(--accent-border);
+      padding: 13px 18px;
+      margin-top: 12px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .secondary-button:hover {
+      background: var(--accent-soft);
+    }
+
+    .input-note {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .results-panel {
+      background: var(--primary);
+      color: var(--primary-foreground);
+      border: 1px solid var(--primary);
+      padding: 28px;
+      border-radius: var(--radius);
+      box-shadow: 0 24px 55px rgba(47,43,37,.20);
+    }
+
+    .results-panel h2 {
+      margin: 0 0 4px;
+      font-size: 22px;
+      color: var(--primary-foreground);
+    }
+
+    .results-panel .sub {
+      margin: 0;
+      color: rgba(246,243,236,.62);
+      font-size: 14px;
+    }
+
+    .net {
+      font-size: clamp(36px, 5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      margin: 16px 0 0;
+    }
+
+    .net-caption {
+      color: rgba(246,243,236,.62);
+      font-size: 14px;
+      margin-top: 0;
+    }
+
+    .bar {
+      height: 9px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      display: flex;
+      overflow: hidden;
+      margin: 22px 0;
+    }
+
+    .bar i {
+      display: block;
+      height: 100%;
+    }
+
+    .result-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .result-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      font-size: 14px;
+    }
+
+    .result-line:last-child {
+      border-bottom: none;
+    }
+
+    .result-line .k {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(246,243,236,.86);
+    }
+
+    .result-line .v {
+      font-weight: 800;
+      text-align: right;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 3px;
+      flex: 0 0 auto;
+    }
+
+    .annual-summary {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,.18);
+      display: grid;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .annual-summary div {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: rgba(246,243,236,.82);
+    }
+
+    .annual-summary strong {
+      color: var(--primary-foreground);
+    }
+
+    .seo {
+      max-width: 1120px;
+      margin: 30px auto;
+      padding: 30px;
+      line-height: 1.72;
+    }
+
+    .seo h2,
+    .section-title {
+      font-size: clamp(25px, 4vw, 36px);
+      line-height: 1.15;
+      margin: 34px 0 12px;
+      color: var(--foreground);
+      letter-spacing: -.01em;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    .seo h2:first-child {
+      margin-top: 0;
+    }
+
+    .seo h3 {
+      font-size: 17px;
+      margin-top: 18px;
+    }
+
+    .seo p,
+    .seo li {
+      color: var(--muted);
+    }
+
+    .formula-box,
+    .contribution-box,
+    .salary-guides-box {
+      background: #f8f5ef;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 26px 0;
+    }
+
+    .formula-box {
+      text-align: center;
+    }
+
+    .formula-box strong {
+      display: block;
+      font-size: 22px;
+      color: var(--foreground);
+      margin-bottom: 8px;
+    }
+
+    .formula-box span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .component-grid,
+    .guide-mini-grid,
+    .rate-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .component-card,
+    .guide-mini-grid a,
+    .rate-card,
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .component-card {
+      display: block;
+      padding: 20px;
+      text-decoration: none;
+      color: inherit;
+      transition: .18s ease;
+    }
+
+    .component-card:hover,
+    .guide-mini-grid a:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 30px rgba(47,43,37,.08);
+    }
+
+    .component-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      display: grid;
+      place-items: center;
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .component-card h3,
+    .rate-card h3 {
+      margin: 8px 0 4px;
+      color: var(--foreground);
+    }
+
+    .component-card p,
+    .rate-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .rate-card {
+      padding: 20px;
+    }
+
+    .rate-card strong {
+      display: block;
+      color: var(--accent);
+      font-size: 28px;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .contribution-table-wrap {
+      overflow-x: auto;
+      margin-top: 18px;
+    }
+
+    .contribution-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      min-width: 520px;
+    }
+
+    .contribution-table th {
+      background: #f1ece3;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: left;
+      letter-spacing: .03em;
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contribution-table td {
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--foreground);
+      font-size: 14px;
+    }
+
+    .contribution-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .payroll-note {
+      margin-top: 20px;
+      background: var(--card);
+      border-left: 4px solid var(--accent);
+      padding: 14px;
+      border-radius: 10px;
+      color: var(--muted);
+    }
+
+    .faq-box {
+      margin-top: 18px;
+      max-width: 780px;
+    }
+
+    .faq-item {
+      padding: 4px 20px;
+      margin-bottom: 12px;
+    }
+
+    .faq-item summary {
+      font-weight: 800;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--foreground);
+      padding: 16px 0;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      color: var(--accent);
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .faq-item[open] summary::after {
+      content: "−";
+    }
+
+    .faq-item p {
+      padding-bottom: 18px;
+      margin-top: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .guide-mini-grid a {
+      display: block;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: var(--foreground);
+      font-weight: 800;
+      text-align: center;
+      transition: .18s ease;
+    }
+
+    .view-all-guides {
+      text-align: center;
+      margin: 20px 0 0;
+    }
+
+    .view-all-guides a {
+      color: var(--accent);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 900px) {
+      .calculator-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .seo {
+        padding: 24px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .nav-inner {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .nav-links {
+        width: auto;
+        flex: 1;
+        min-width: 0;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding: 38px 14px 12px;
+      }
+
+      .main-wrapper {
+        padding: 10px;
+      }
+
+      .panel,
+      .results-panel,
+      .seo {
+        padding: 20px;
+      }
+
+      .nav-inner {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        gap: 8px;
+      }
+
+      .brand img {
+        width: 150px;
+      }
+
+      .nav-links {
+        gap: 6px;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+
+      .component-grid,
+      .rate-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .component-card,
+      .rate-card {
+        padding: 14px;
+        text-align: center;
+      }
+
+      .component-icon {
+        margin-left: auto;
+        margin-right: auto;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+      }
+
+      .component-card h3,
+      .rate-card h3 {
+        font-size: 15px;
+        margin: 6px 0;
+      }
+
+      .component-card p,
+      .rate-card p {
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .net {
+        font-size: 34px;
       }
     }
   </style>
@@ -110,186 +853,394 @@
 
 <body>
 
-<div class="card">
+  <header class="top-nav">
+    <div class="nav-inner">
 
-  <h1>Malaysia Annual Leave Calculator 2026</h1>
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+      </a>
 
-  <p><b>Malaysia Annual Leave Calculator:</b> Estimate annual leave entitlement based on years of service and months worked.</p>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="calculators.html" class="active">Calculators</a>
+        <a href="guides.html">Guides</a>
+        <a href="about.html">About</a>
+      </nav>
 
-  <p>This calculator helps employees estimate annual leave entitlement under a simple Malaysia employment leave calculation.</p>
+    </div>
+  </header>
 
-  <select id="service">
-    <option value="">Select Years of Service</option>
-    <option value="8">Less than 2 years</option>
-    <option value="12">2 to 5 years</option>
-    <option value="16">More than 5 years</option>
-  </select>
+  <section class="hero">
+    <span class="pill">Updated for Malaysia 2026 leave estimates</span>
+    <h1 class="serif">Calculate your <em>annual leave</em> entitlement</h1>
+    <p>
+      Free Malaysia annual leave calculator for employees and employers. Estimate full-year leave entitlement and pro-rated annual leave based on years of service and months worked.
+    </p>
+  </section>
 
-  <input type="number" id="months" placeholder="Months worked in the year (1 - 12)">
+  <main class="main-wrapper">
 
-  <button onclick="calculate()">Calculate Annual Leave</button>
+    <section class="calculator-shell" id="calculator">
 
-  <div class="layout">
+      <div class="panel">
+        <h2 class="serif">Calculate Annual Leave</h2>
+        <p class="sub">Select your years of service and enter how many months you worked in the year.</p>
 
-    <div class="box">
-      <h3>Leave Entitlement</h3>
-      <div class="result" id="monthly"></div>
+        <div class="form-group">
+          <label for="service">Years of service</label>
+          <select id="service" onchange="calculateLeave()">
+            <option value="">Select years of service</option>
+            <option value="8">Less than 2 years - 8 days</option>
+            <option value="12">2 to 5 years - 12 days</option>
+            <option value="16">More than 5 years - 16 days</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="months">Months worked in the year</label>
+          <input type="number" id="months" value="12" min="1" max="12" step="1" placeholder="Enter 1 to 12">
+
+          <input type="range" id="monthsRange" min="1" max="12" step="1" value="12">
+
+          <div class="preset-grid">
+            <button type="button" class="preset" onclick="setMonths(3)">3 months</button>
+            <button type="button" class="preset" onclick="setMonths(6)">6 months</button>
+            <button type="button" class="preset" onclick="setMonths(9)">9 months</button>
+            <button type="button" class="preset" onclick="setMonths(12)">12 months</button>
+          </div>
+        </div>
+
+        <button type="button" class="calc-button" onclick="calculateLeave()">Calculate My Leave</button>
+
+        <a class="secondary-button" href="annual-leave-guide.html">
+          Read Annual Leave Guide →
+        </a>
+
+        <p class="input-note">
+          This calculator provides a simplified annual leave estimate. Actual entitlement may depend on employment contract, company policy and applicable employment law.
+        </p>
+      </div>
+
+      <div class="results-panel">
+        <h2 class="serif">Your annual leave result</h2>
+        <p class="sub">Estimated pro-rated leave entitlement</p>
+
+        <div class="net"><span id="leaveResult">0.00</span> days</div>
+        <p class="net-caption" id="leaveExplanation">Select your years of service to calculate leave.</p>
+
+        <div class="bar" id="leaveBar"></div>
+
+        <div class="result-rows" id="resultRows"></div>
+
+        <div class="annual-summary" id="summaryRows"></div>
+      </div>
+
+    </section>
+
+    <div class="seo">
+
+      <section>
+
+        <h2>How Annual Leave Is Calculated in Malaysia</h2>
+
+        <p>
+          Annual leave is paid leave that employees may take during the year while still receiving salary. In Malaysia, minimum annual leave entitlement commonly depends on the employee's length of service.
+        </p>
+
+        <div class="formula-box">
+          <strong>Pro-Rated Leave = Annual Entitlement × Months Worked ÷ 12</strong>
+          <span>Example: 12 days × 6 months ÷ 12 = 6 days</span>
+        </div>
+
+        <div class="rate-grid">
+          <div class="rate-card">
+            <strong>8</strong>
+            <h3>Less than 2 years</h3>
+            <p>Common minimum annual leave entitlement reference.</p>
+          </div>
+
+          <div class="rate-card">
+            <strong>12</strong>
+            <h3>2 to 5 years</h3>
+            <p>Common leave entitlement reference for mid-service employees.</p>
+          </div>
+
+          <div class="rate-card">
+            <strong>16</strong>
+            <h3>More than 5 years</h3>
+            <p>Common leave entitlement reference for longer-service employees.</p>
+          </div>
+
+          <div class="rate-card">
+            <strong>Pro-rate</strong>
+            <h3>Joined or left mid-year</h3>
+            <p>Leave may be pro-rated based on months worked in the year.</p>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="contribution-box">
+
+        <h2>Malaysia Annual Leave Entitlement Snapshot</h2>
+
+        <p>
+          The table below shows a simple annual leave entitlement reference based on years of service.
+        </p>
+
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead>
+              <tr>
+                <th>Years of Service</th>
+                <th>Full-Year Entitlement</th>
+                <th>6-Month Pro-Rated Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Less than 2 years</td>
+                <td>8 days</td>
+                <td>4 days</td>
+              </tr>
+              <tr>
+                <td>2 to 5 years</td>
+                <td>12 days</td>
+                <td>6 days</td>
+              </tr>
+              <tr>
+                <td>More than 5 years</td>
+                <td>16 days</td>
+                <td>8 days</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="payroll-note">
+          <strong>Note:</strong>
+          This table is for simple planning only. Employment contract, company policy and legal coverage may affect actual leave entitlement.
+        </p>
+
+      </section>
+
+      <section>
+
+        <h2>What This Annual Leave Calculator Shows</h2>
+
+        <p>
+          This calculator helps you estimate full-year leave entitlement and pro-rated annual leave when an employee joins, leaves or works only part of the year.
+        </p>
+
+        <div class="component-grid">
+
+          <a class="component-card" href="annual-leave-guide.html">
+            <div class="component-icon">📅</div>
+            <h3>Full-Year Leave</h3>
+            <p>Estimate annual leave entitlement based on years of service.</p>
+          </a>
+
+          <a class="component-card" href="annual-leave-guide.html">
+            <div class="component-icon">➗</div>
+            <h3>Pro-Rated Leave</h3>
+            <p>Calculate leave entitlement based on months worked.</p>
+          </a>
+
+          <a class="component-card" href="resignation-notice-guide.html">
+            <div class="component-icon">🚪</div>
+            <h3>Leaving Employment</h3>
+            <p>Useful when checking leave balance during resignation period.</p>
+          </a>
+
+          <a class="component-card" href="salary-deduction-guide.html">
+            <div class="component-icon">📉</div>
+            <h3>Leave & Pay</h3>
+            <p>Understand how leave, unpaid leave and salary deductions may interact.</p>
+          </a>
+
+        </div>
+
+      </section>
+
+      <h2>Who Should Use This Annual Leave Calculator?</h2>
+
+      <ul>
+        <li>Employees checking estimated annual leave entitlement</li>
+        <li>Employees who joined or left during the year</li>
+        <li>HR users preparing a simple leave entitlement estimate</li>
+        <li>Small businesses checking pro-rated leave quickly</li>
+        <li>Job seekers comparing employment benefits</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-box">
+
+        <details class="faq-item" open>
+          <summary>Is this annual leave calculator exact?</summary>
+          <p>
+            No. This calculator provides an estimate only. Actual entitlement may depend on employment contract, company policy and applicable law.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>How many annual leave days do employees get in Malaysia?</summary>
+          <p>
+            A common minimum annual leave reference is 8 days for less than 2 years of service, 12 days for 2 to 5 years, and 16 days for more than 5 years.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can annual leave be pro-rated?</summary>
+          <p>
+            Yes. Annual leave is often pro-rated when an employee joins or leaves during the year, depending on employment contract, company policy and applicable rules.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can annual leave be taken during notice period?</summary>
+          <p>
+            It may be possible, but it usually depends on employer approval, employment contract and company policy.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can unused annual leave be encashed?</summary>
+          <p>
+            It depends on the employment contract, company policy and situation. Some employers may allow encashment, especially when employment ends.
+          </p>
+        </details>
+
+      </div>
+
+      <section class="salary-guides-box">
+
+        <h2>Malaysia Employment Guides</h2>
+
+        <p>
+          Learn more about leave, resignation, public holidays and employment rules in Malaysia.
+        </p>
+
+        <div class="guide-mini-grid">
+          <a href="annual-leave-guide.html">📅 Annual Leave Guide</a>
+          <a href="mc-leave-guide.html">🏥 MC Leave Guide</a>
+          <a href="public-holiday-guide.html">🎉 Public Holiday Guide</a>
+          <a href="resignation-notice-guide.html">🚪 Resignation Notice Guide</a>
+          <a href="overtime-guide.html">⏰ Overtime Guide</a>
+          <a href="employment-contract-guide.html">📄 Employment Contract Guide</a>
+        </div>
+
+        <p class="view-all-guides">
+          <a href="guides.html">View All Salary Guides →</a>
+        </p>
+
+      </section>
+
+      <section class="salary-guides-box">
+
+        <h2>Related Calculators</h2>
+
+        <p>
+          Explore more free Malaysia salary and employment calculators.
+        </p>
+
+        <div class="guide-mini-grid">
+          <a href="index.html">Salary Calculator</a>
+          <a href="epf-calculator.html">EPF Calculator</a>
+          <a href="socso-calculator.html">SOCSO Calculator</a>
+          <a href="pcb-calculator.html">PCB Calculator</a>
+          <a href="overtime-calculator.html">Overtime Calculator</a>
+          <a href="bonus-calculator.html">Bonus Calculator</a>
+        </div>
+
+        <p class="view-all-guides">
+          <a href="calculators.html">View All Calculators →</a>
+        </p>
+
+      </section>
+
     </div>
 
-    <div class="box">
-      <h3>Pro-Rated Leave</h3>
-      <div class="result" id="annual"></div>
-    </div>
+  </main>
 
-  </div>
+  <footer class="footer">
+    <p>© 2026 Malaysia Salary Tools</p>
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="calculators.html">Calculators</a> |
+      <a href="guides.html">Guides</a> |
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact Us</a> |
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </p>
+  </footer>
 
-</div>
+  <script>
+    function setMonths(value) {
+      document.getElementById("months").value = value;
+      document.getElementById("monthsRange").value = value;
+      calculateLeave();
+    }
 
-<div class="seo">
+    function calculateLeave() {
+      const entitlement = parseFloat(document.getElementById("service").value);
+      const monthsInput = document.getElementById("months");
+      const rangeInput = document.getElementById("monthsRange");
+      const months = parseFloat(monthsInput.value);
 
-  <h2>Related Salary Guides</h2>
+      if (!entitlement || !months || months < 1 || months > 12) {
+        document.getElementById("leaveResult").textContent = "0.00";
+        document.getElementById("leaveExplanation").textContent = "Please select years of service and enter months worked between 1 and 12.";
+        document.getElementById("leaveBar").innerHTML = "";
+        document.getElementById("resultRows").innerHTML = "";
+        document.getElementById("summaryRows").innerHTML = "";
+        return;
+      }
 
-  <div class="seo-cards">
+      rangeInput.value = months;
 
-    <a class="card-link" href="epf-guide.html">
-      <h3>EPF Guide Malaysia</h3>
-      <p>EPF contribution rates and retirement savings</p>
-    </a>
+      const prorated = entitlement * months / 12;
+      const unused = Math.max(0, entitlement - prorated);
+      const percentage = Math.min(100, (months / 12) * 100);
 
-    <a class="card-link" href="socso-guide.html">
-      <h3>SOCSO Guide Malaysia</h3>
-      <p>Work injury protection and employee benefits</p>
-    </a>
+      let serviceLabel = "";
+      if (entitlement === 8) {
+        serviceLabel = "Less than 2 years";
+      } else if (entitlement === 12) {
+        serviceLabel = "2 to 5 years";
+      } else {
+        serviceLabel = "More than 5 years";
+      }
 
-    <a class="card-link" href="eis-guide.html">
-      <h3>EIS Guide Malaysia</h3>
-      <p>Employment insurance and unemployment support</p>
-    </a>
+      document.getElementById("leaveResult").textContent = prorated.toFixed(2);
+      document.getElementById("leaveExplanation").textContent =
+        "Based on " + serviceLabel + " and " + months + " month(s) worked.";
 
-    <a class="card-link" href="pcb-guide.html">
-      <h3>PCB Tax Guide Malaysia</h3>
-      <p>Monthly tax deduction explained simply</p>
-    </a>
+      document.getElementById("leaveBar").innerHTML =
+        '<i style="width:' + percentage + '%;background:#5aa783"></i>' +
+        '<i style="width:' + (100 - percentage) + '%;background:#c9a14e"></i>';
 
-  </div>
+      document.getElementById("resultRows").innerHTML =
+        '<div class="result-line"><span class="k"><span class="dot" style="background:#f6f3ec"></span>Years of Service</span><span class="v">' + serviceLabel + '</span></div>' +
+        '<div class="result-line"><span class="k"><span class="dot" style="background:#5aa783"></span>Full-Year Entitlement</span><span class="v">' + entitlement.toFixed(2) + ' days</span></div>' +
+        '<div class="result-line"><span class="k"><span class="dot" style="background:#c9a14e"></span>Months Worked</span><span class="v">' + months + ' months</span></div>' +
+        '<div class="result-line"><span class="k"><span class="dot" style="background:#2f7d5e"></span>Pro-Rated Leave</span><span class="v">' + prorated.toFixed(2) + ' days</span></div>';
 
-  <h2>What Is Annual Leave In Malaysia?</h2>
+      document.getElementById("summaryRows").innerHTML =
+        '<div><span>Formula Used</span><strong>' + entitlement + ' × ' + months + ' ÷ 12</strong></div>' +
+        '<div><span>Estimated Leave Entitlement</span><strong>' + prorated.toFixed(2) + ' days</strong></div>' +
+        '<div><span>Remaining Non-Worked Portion</span><strong>' + unused.toFixed(2) + ' days</strong></div>';
+    }
 
-  <p>
-    Annual leave is paid leave that employees may take during the year while still receiving salary.
-    In Malaysia, minimum annual leave entitlement generally depends on the employee's length of service.
-  </p>
+    document.getElementById("service").addEventListener("change", calculateLeave);
+    document.getElementById("months").addEventListener("input", calculateLeave);
+    document.getElementById("monthsRange").addEventListener("input", function() {
+      document.getElementById("months").value = this.value;
+      calculateLeave();
+    });
 
-  <h2>How Is Annual Leave Calculated?</h2>
+    calculateLeave();
+  </script>
 
-  <p>
-    A common simple approach is to determine the employee's annual leave entitlement based on years of service,
-    then pro-rate the entitlement based on the number of months worked during the year.
-  </p>
-
-  <p>
-    This calculator uses a simple pro-rated formula:
-  </p>
-
-  <p>
-    Annual Leave Entitlement × Months Worked ÷ 12
-  </p>
-
-  <h2>Malaysia Annual Leave Entitlement</h2>
-
-  <ul>
-    <li>Less than 2 years of service: 8 days</li>
-    <li>2 to 5 years of service: 12 days</li>
-    <li>More than 5 years of service: 16 days</li>
-  </ul>
-
-  <h2>Example Annual Leave Calculation</h2>
-
-  <p>
-    If an employee is entitled to 12 days of annual leave and worked 6 months in the year,
-    the pro-rated leave entitlement is 12 × 6 ÷ 12 = 6 days.
-  </p>
-
-  <h2>Why Use This Annual Leave Calculator?</h2>
-
-  <ul>
-    <li>Estimate annual leave entitlement</li>
-    <li>Calculate pro-rated leave</li>
-    <li>Understand leave entitlement by years of service</li>
-    <li>Useful for employees and small businesses</li>
-  </ul>
-
-  <h2>Frequently Asked Questions</h2>
-
-  <h3>Is this annual leave calculator exact?</h3>
-  <p>
-    This calculator provides an estimate only. Actual entitlement may depend on employment contract, company policy and applicable law.
-  </p>
-
-  <h3>How many annual leave days do employees get in Malaysia?</h3>
-  <p>
-    Minimum annual leave entitlement commonly depends on length of service: 8, 12 or 16 days.
-  </p>
-
-  <h3>Can annual leave be pro-rated?</h3>
-  <p>
-    Yes. Annual leave is often pro-rated when an employee joins or leaves during the year.
-  </p>
-
-  <h2>Related Calculators</h2>
-
-  <ul>
-    <li><a href="index.html">Salary Calculator</a></li>
-    <li><a href="epf-calculator.html">EPF Calculator</a></li>
-    <li><a href="socso-calculator.html">SOCSO Calculator</a></li>
-    <li><a href="eis-calculator.html">EIS Calculator</a></li>
-    <li><a href="pcb-calculator.html">PCB Tax Calculator</a></li>
-    <li><a href="bonus-calculator.html">Bonus Calculator</a></li>
-    <li><a href="overtime-calculator.html">Overtime Calculator</a></li>
-  </ul>
-
-</div>
-
-<script>
-function calculate(){
-
-  let entitlement = parseFloat(document.getElementById("service").value);
-  let months = parseFloat(document.getElementById("months").value);
-
-  if(!entitlement || !months || months < 1 || months > 12){
-    document.getElementById("monthly").innerHTML =
-      "Please select years of service and enter months worked between 1 and 12.";
-    document.getElementById("annual").innerHTML = "";
-    return;
-  }
-
-  let prorated = entitlement * months / 12;
-
-  document.getElementById("monthly").innerHTML =
-    "Full-Year Entitlement: " + entitlement + " days<br>" +
-    "Months Worked: " + months + " months";
-
-  document.getElementById("annual").innerHTML =
-    "Pro-Rated Leave: " + prorated.toFixed(2) + " days<br><br>" +
-    "<b>Estimated Leave Entitlement: " + prorated.toFixed(2) + " days</b>";
-}
-</script>
-
-<hr style="margin-top:40px;">
-
-<div style="text-align:center;padding:20px;">
-
-<p>
-© 2026 Malaysia Salary Tools
-</p>
-
-<p>
-<a href="about.html">About Us</a> |
-<a href="contact.html">Contact Us</a> |
-<a href="privacy-policy.html">Privacy Policy</a>
-</p>
-
-</div>
-  
 </body>
 </html>
