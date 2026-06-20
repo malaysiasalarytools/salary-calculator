@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Malaysia Debt Service Ratio Calculator 2026 | DSR Calculator</title>
+
+  <link rel="canonical" href="https://malaysiasalarytools.com/debt-service-ratio-calculator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <meta name="description" content="Free Malaysia Debt Service Ratio Calculator 2026. Calculate your DSR based on monthly income, loan installments and debt commitments.">
+  <meta name="keywords" content="Malaysia debt service ratio calculator, DSR calculator Malaysia, loan affordability calculator, debt ratio calculator Malaysia, mortgage affordability calculator Malaysia">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+
+  <style>
+    :root {
+      --background:#f4f1ea;
+      --card:#fbfaf6;
+      --foreground:#302c26;
+      --muted:#7c766c;
+      --primary:#2f2b25;
+      --primary-foreground:#f6f3ec;
+      --accent:#2f7d5e;
+      --accent-soft:rgba(47,125,94,.10);
+      --accent-border:rgba(47,125,94,.22);
+      --border:#e2ddd2;
+      --white:#ffffff;
+      --radius:16px;
+      --shadow:0 18px 45px rgba(47,43,37,.08);
+    }
+
+    * { box-sizing:border-box; }
+
+    html {
+      overflow-x:hidden;
+      scroll-behavior:smooth;
+    }
+
+    body {
+      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47,125,94,.08), transparent 34%),
+        linear-gradient(135deg, #f4f1ea, #efe9de);
+      margin:0;
+      padding:0;
+      color:var(--foreground);
+      line-height:1.6;
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    a { color:inherit; }
+
+    .serif {
+      font-family:Georgia, "Times New Roman", serif;
+      font-weight:400;
+    }
+
+    .top-nav {
+      background:rgba(251,250,246,.84);
+      border-bottom:1px solid var(--border);
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(10px);
+    }
+
+    .nav-inner {
+      max-width:1120px;
+      margin:0 auto;
+      padding:14px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:25px;
+    }
+
+    .brand {
+      display:flex;
+      align-items:center;
+      text-decoration:none;
+      flex-shrink:0;
+    }
+
+    .brand img {
+      width:220px;
+      height:auto;
+      display:block;
+    }
+
+    .nav-links {
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:nowrap;
+      min-width:0;
+    }
+
+    .nav-links a {
+      display:block;
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:600;
+      font-size:15px;
+      padding:10px 14px;
+      border-radius:999px;
+      white-space:nowrap;
+      background:transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background:var(--primary);
+      color:var(--primary-foreground);
+    }
+
+    .hero {
+      text-align:center;
+      padding:56px 20px 18px;
+      max-width:900px;
+      margin:0 auto;
+    }
+
+    .pill {
+      display:inline-block;
+      font-size:12px;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      color:var(--accent);
+      background:var(--accent-soft);
+      border:1px solid var(--accent-border);
+      padding:7px 15px;
+      border-radius:999px;
+      margin-bottom:20px;
+      font-weight:700;
+    }
+
+    .hero h1 {
+      margin:0;
+      font-size:clamp(36px, 6vw, 62px);
+      line-height:1.05;
+      letter-spacing:-.03em;
+      color:var(--foreground);
+    }
+
+    .hero h1 em {
+      color:var(--accent);
+      font-style:italic;
+    }
+
+    .hero p {
+      max-width:760px;
+      margin:18px auto 0;
+      font-size:17px;
+      color:var(--muted);
+    }
+
+    .main-wrapper {
+      padding:16px 20px 44px;
+    }
+
+    .calculator-shell {
+      max-width:1120px;
+      margin:28px auto 32px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      align-items:stretch;
+    }
+
+    .panel,
+    .seo {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+
+    .panel {
+      padding:28px;
+    }
+
+    .panel h2 {
+      margin:0 0 4px;
+      font-size:22px;
+      color:var(--foreground);
+    }
+
+    .panel .sub {
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    label {
+      display:block;
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:8px;
+      color:var(--foreground);
+    }
+
+    .form-group {
+      margin-bottom:18px;
+    }
+
+    .field-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .input-row {
+      position:relative;
+    }
+
+    .input-row span {
+      position:absolute;
+      left:14px;
+      top:50%;
+      transform:translateY(-50%);
+      color:var(--muted);
+      font-size:16px;
+      font-weight:700;
+    }
+
+    input {
+      width:100%;
+      padding:15px 14px 15px 46px;
+      font-size:20px;
+      font-weight:700;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:var(--white);
+      color:var(--foreground);
+      outline:none;
+    }
+
+    input:focus {
+      border-color:var(--accent);
+      box-shadow:0 0 0 3px rgba(47,125,94,.14);
+    }
+
+    input[type="range"] {
+      width:100%;
+      margin-top:18px;
+      padding:0;
+      accent-color:var(--accent);
+    }
+
+    .preset-grid {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:16px;
+    }
+
+    .preset,
+    .calc-button {
+      border:none;
+      cursor:pointer;
+      font-family:inherit;
+    }
+
+    .preset {
+      background:var(--white);
+      border:1px solid var(--border);
+      color:var(--foreground);
+      padding:8px 13px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:13px;
+    }
+
+    .preset:hover {
+      color:var(--accent);
+      border-color:var(--accent);
+    }
+
+    .calc-button {
+      width:100%;
+      background:var(--accent);
+      color:#fff;
+      padding:14px 18px;
+      margin-top:6px;
+      border-radius:12px;
+      font-size:16px;
+      font-weight:800;
+    }
+
+    .secondary-button {
+      display:block;
+      text-align:center;
+      width:100%;
+      background:var(--white);
+      color:var(--accent);
+      border:1px solid var(--accent-border);
+      padding:13px 18px;
+      margin-top:12px;
+      border-radius:12px;
+      font-size:15px;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .input-note {
+      margin:16px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .results-panel {
+      background:var(--primary);
+      color:var(--primary-foreground);
+      border:1px solid var(--primary);
+      padding:28px;
+      border-radius:var(--radius);
+      box-shadow:0 24px 55px rgba(47,43,37,.20);
+    }
+
+    .results-panel h2 {
+      margin:0 0 4px;
+      font-size:22px;
+      color:var(--primary-foreground);
+    }
+
+    .results-panel .sub {
+      margin:0;
+      color:rgba(246,243,236,.62);
+      font-size:14px;
+    }
+
+    .net {
+      font-size:clamp(36px, 5vw, 48px);
+      font-weight:800;
+      letter-spacing:-.03em;
+      margin:16px 0 0;
+    }
+
+    .net-caption {
+      color:rgba(246,243,236,.62);
+      font-size:14px;
+      margin-top:0;
+    }
+
+    .bar {
+      height:9px;
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+      display:flex;
+      overflow:hidden;
+      margin:22px 0;
+    }
+
+    .bar i {
+      display:block;
+      height:100%;
+    }
+
+    .result-rows {
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+
+    .result-line {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      padding:11px 0;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      font-size:14px;
+    }
+
+    .result-line .k {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:rgba(246,243,236,.86);
+    }
+
+    .result-line .v {
+      font-weight:800;
+      text-align:right;
+    }
+
+    .dot {
+      width:9px;
+      height:9px;
+      border-radius:3px;
+      flex:0 0 auto;
+    }
+
+    .annual-summary {
+      margin-top:18px;
+      padding-top:16px;
+      border-top:1px solid rgba(255,255,255,.18);
+      display:grid;
+      gap:8px;
+      font-size:14px;
+    }
+
+    .annual-summary div {
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      color:rgba(246,243,236,.82);
+    }
+
+    .annual-summary strong {
+      color:var(--primary-foreground);
+      text-align:right;
+    }
+
+    .seo {
+      max-width:1120px;
+      margin:30px auto;
+      padding:30px;
+      line-height:1.72;
+    }
+
+    .seo h2 {
+      font-size:clamp(25px, 4vw, 36px);
+      line-height:1.15;
+      margin:34px 0 12px;
+      color:var(--foreground);
+      letter-spacing:-.01em;
+      font-family:Georgia, "Times New Roman", serif;
+      font-weight:400;
+    }
+
+    .seo h2:first-child {
+      margin-top:0;
+    }
+
+    .seo h3 {
+      font-size:17px;
+      margin-top:18px;
+    }
+
+    .seo p,
+    .seo li {
+      color:var(--muted);
+    }
+
+    .formula-box,
+    .contribution-box,
+    .salary-guides-box {
+      background:#f8f5ef;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:24px;
+      margin:26px 0;
+    }
+
+    .formula-box {
+      text-align:center;
+    }
+
+    .formula-box strong {
+      display:block;
+      font-size:22px;
+      color:var(--foreground);
+      margin-bottom:8px;
+    }
+
+    .formula-box span {
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .component-grid,
+    .guide-mini-grid,
+    .rate-grid {
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+      grid-template-columns:repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .component-card,
+    .guide-mini-grid a,
+    .rate-card,
+    .faq-item {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:14px;
+    }
+
+    .component-card {
+      display:block;
+      padding:20px;
+      text-decoration:none;
+      color:inherit;
+      transition:.18s ease;
+    }
+
+    .component-card:hover,
+    .guide-mini-grid a:hover {
+      transform:translateY(-2px);
+      border-color:var(--accent);
+      box-shadow:0 12px 30px rgba(47,43,37,.08);
+    }
+
+    .component-icon {
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      background:var(--accent-soft);
+      display:grid;
+      place-items:center;
+      margin-bottom:10px;
+      font-size:21px;
+    }
+
+    .component-card h3,
+    .rate-card h3 {
+      margin:8px 0 4px;
+      color:var(--foreground);
+    }
+
+    .component-card p,
+    .rate-card p {
+      margin:0;
+      font-size:14px;
+    }
+
+    .rate-card {
+      padding:20px;
+    }
+
+    .rate-card strong {
+      display:block;
+      color:var(--accent);
+      font-size:28px;
+      line-height:1.1;
+      margin-bottom:8px;
+    }
+
+    .contribution-table-wrap {
+      overflow-x:auto;
+      margin-top:18px;
+    }
+
+    .contribution-table {
+      width:100%;
+      border-collapse:collapse;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:12px;
+      overflow:hidden;
+      min-width:520px;
+    }
+
+    .contribution-table th {
+      background:#f1ece3;
+      color:var(--muted);
+      font-size:13px;
+      text-align:left;
+      letter-spacing:.03em;
+      padding:14px;
+      border-bottom:1px solid var(--border);
+    }
+
+    .contribution-table td {
+      padding:14px;
+      border-bottom:1px solid var(--border);
+      color:var(--foreground);
+      font-size:14px;
+    }
+
+    .payroll-note {
+      margin-top:20px;
+      background:var(--card);
+      border-left:4px solid var(--accent);
+      padding:14px;
+      border-radius:10px;
+      color:var(--muted);
+    }
+
+    .faq-box {
+      margin-top:18px;
+      max-width:780px;
+    }
+
+    .faq-item {
+      padding:4px 20px;
+      margin-bottom:12px;
+    }
+
+    .faq-item summary {
+      font-weight:800;
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      color:var(--foreground);
+      padding:16px 0;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display:none;
+    }
+
+    .faq-item summary::after {
+      content:"+";
+      color:var(--accent);
+      font-size:20px;
+      line-height:1;
+    }
+
+    .faq-item[open] summary::after {
+      content:"−";
+    }
+
+    .faq-item p {
+      padding-bottom:18px;
+      margin-top:0;
+      color:var(--muted);
+      line-height:1.55;
+      font-size:14px;
+    }
+
+    .guide-mini-grid a {
+      display:block;
+      padding:14px 16px;
+      text-decoration:none;
+      color:var(--foreground);
+      font-weight:800;
+      text-align:center;
+      transition:.18s ease;
+    }
+
+    .view-all-guides {
+      text-align:center;
+      margin:20px 0 0;
+    }
+
+    .view-all-guides a {
+      color:var(--accent);
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .footer {
+      border-top:1px solid var(--border);
+      padding:28px 20px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .footer a {
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    @media (max-width:900px) {
+      .calculator-shell,
+      .field-grid {
+        grid-template-columns:1fr;
+      }
+
+      .seo {
+        padding:24px;
+      }
+    }
+
+    @media (max-width:800px) {
+      .nav-inner {
+        flex-direction:row;
+        align-items:center;
+      }
+
+      .nav-links {
+        width:auto;
+        flex:1;
+        min-width:0;
+        justify-content:flex-start;
+        padding-bottom:5px;
+        overflow-x:auto;
+        overflow-y:hidden;
+        scrollbar-width:none;
+        -ms-overflow-style:none;
+        -webkit-overflow-scrolling:touch;
+        touch-action:pan-x;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display:none;
+      }
+    }
+
+    @media (max-width:700px) {
+      .hero {
+        padding:38px 14px 12px;
+      }
+
+      .main-wrapper {
+        padding:10px;
+      }
+
+      .panel,
+      .results-panel,
+      .seo {
+        padding:20px;
+      }
+
+      .nav-inner {
+        padding-top:8px;
+        padding-bottom:8px;
+        gap:8px;
+      }
+
+      .brand img {
+        width:150px;
+      }
+
+      .nav-links {
+        gap:6px;
+      }
+
+      .nav-links a {
+        font-size:14px;
+        padding:8px 10px;
+      }
+
+      .component-grid,
+      .rate-grid {
+        grid-template-columns:repeat(2, 1fr);
+        gap:10px;
+      }
+
+      .component-card,
+      .rate-card {
+        padding:14px;
+        text-align:center;
+      }
+
+      .component-icon {
+        margin-left:auto;
+        margin-right:auto;
+        width:36px;
+        height:36px;
+        font-size:18px;
+      }
+
+      .component-card h3,
+      .rate-card h3 {
+        font-size:15px;
+        margin:6px 0;
+      }
+
+      .component-card p,
+      .rate-card p {
+        font-size:12px;
+        line-height:1.35;
+      }
+
+      .net {
+        font-size:34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="top-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="calculators.html" class="active">Calculators</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="pill">Updated for Malaysia 2026 loan affordability estimates</span>
+  <h1 class="serif">Calculate your <em>debt service ratio</em></h1>
+  <p>
+    Free Malaysia DSR calculator for loan planning. Estimate your debt service ratio based on monthly income, existing commitments and new loan installment.
+  </p>
+</section>
+
+<main class="main-wrapper">
+
+  <section class="calculator-shell" id="calculator">
+
+    <div class="panel">
+      <h2 class="serif">Calculate Debt Service Ratio</h2>
+      <p class="sub">Enter monthly income, existing commitments and new loan installment.</p>
+
+      <div class="form-group">
+        <label for="income">Gross monthly income</label>
+        <div class="input-row">
+          <span>RM</span>
+          <input type="number" id="income" value="5000" min="0" step="100" placeholder="Example: 5000">
+        </div>
+
+        <input type="range" id="incomeRange" min="0" max="30000" step="100" value="5000">
+
+        <div class="preset-grid">
+          <button type="button" class="preset" onclick="setIncome(3000)">RM 3,000</button>
+          <button type="button" class="preset" onclick="setIncome(5000)">RM 5,000</button>
+          <button type="button" class="preset" onclick="setIncome(8000)">RM 8,000</button>
+          <button type="button" class="preset" onclick="setIncome(12000)">RM 12,000</button>
+        </div>
+      </div>
+
+      <div class="field-grid">
+        <div class="form-group">
+          <label for="existingDebt">Existing monthly commitments</label>
+          <div class="input-row">
+            <span>RM</span>
+            <input type="number" id="existingDebt" value="800" min="0" step="50" placeholder="Example: 800">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="newLoan">New loan installment</label>
+          <div class="input-row">
+            <span>RM</span>
+            <input type="number" id="newLoan" value="1200" min="0" step="50" placeholder="Example: 1200">
+          </div>
+        </div>
+      </div>
+
+      <div class="field-grid">
+        <div class="form-group">
+          <label for="creditCard">Credit card minimum payment</label>
+          <div class="input-row">
+            <span>RM</span>
+            <input type="number" id="creditCard" value="0" min="0" step="50" placeholder="Example: 0">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="otherDebt">Other monthly debt</label>
+          <div class="input-row">
+            <span>RM</span>
+            <input type="number" id="otherDebt" value="0" min="0" step="50" placeholder="Example: 0">
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="calc-button" onclick="calculateDSR()">Calculate My DSR</button>
+
+      <a class="secondary-button" href="loan-calculator.html">
+        Calculate Loan Installment →
+      </a>
+
+      <a class="secondary-button" href="debt-service-ratio-guide.html">
+        Read DSR Guide →
+      </a>
+
+      <p class="input-note">
+        This DSR calculator gives a simple affordability estimate. Banks may use different income recognition, commitment treatment, credit score, CCRIS/CTOS and internal approval rules.
+      </p>
+    </div>
+
+    <div class="results-panel">
+      <h2 class="serif">Your DSR result</h2>
+      <p class="sub">Estimated debt service ratio</p>
+
+      <div class="net"><span id="dsrResult">0.00</span>%</div>
+      <p class="net-caption" id="dsrExplanation">Based on total monthly debt divided by monthly income.</p>
+
+      <div class="bar" id="dsrBar"></div>
+
+      <div class="result-rows" id="resultRows"></div>
+
+      <div class="annual-summary" id="summaryRows"></div>
+    </div>
+
+  </section>
+
+  <div class="seo">
+
+    <section>
+      <h2>How Debt Service Ratio Is Calculated</h2>
+
+      <p>
+        Debt Service Ratio, or DSR, compares your total monthly debt commitments with your monthly income. It is commonly used as a simple loan affordability indicator before applying for housing loans, car loans or personal loans.
+      </p>
+
+      <div class="formula-box">
+        <strong>DSR = Total Monthly Debt Commitments ÷ Monthly Income × 100%</strong>
+        <span>Example: RM2,000 total debt ÷ RM5,000 income × 100% = 40% DSR</span>
+      </div>
+
+      <div class="rate-grid">
+        <div class="rate-card">
+          <strong>&lt;40%</strong>
+          <h3>Lower DSR</h3>
+          <p>Usually easier to manage, subject to bank assessment.</p>
+        </div>
+
+        <div class="rate-card">
+          <strong>40–60%</strong>
+          <h3>Moderate DSR</h3>
+          <p>May still be acceptable depending on income and bank policy.</p>
+        </div>
+
+        <div class="rate-card">
+          <strong>&gt;60%</strong>
+          <h3>Higher DSR</h3>
+          <p>May be harder to approve unless income profile is strong.</p>
+        </div>
+
+        <div class="rate-card">
+          <strong>Bank</strong>
+          <h3>Final Approval</h3>
+          <p>Actual approval depends on more than DSR alone.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contribution-box">
+      <h2>Debt Service Ratio Example</h2>
+
+      <p>
+        If your monthly income is RM5,000, existing commitments are RM800 and new loan installment is RM1,200, your total monthly debt is RM2,000. Your estimated DSR is 40%.
+      </p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead>
+            <tr>
+              <th>Monthly Income</th>
+              <th>Total Debt</th>
+              <th>Estimated DSR</th>
+              <th>Simple Reading</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>RM5,000</td>
+              <td>RM1,500</td>
+              <td>30%</td>
+              <td>Lower commitment level</td>
+            </tr>
+            <tr>
+              <td>RM5,000</td>
+              <td>RM2,500</td>
+              <td>50%</td>
+              <td>Moderate commitment level</td>
+            </tr>
+            <tr>
+              <td>RM5,000</td>
+              <td>RM3,500</td>
+              <td>70%</td>
+              <td>High commitment level</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="payroll-note">
+        <strong>Note:</strong>
+        Different banks may use different DSR limits. Some banks may accept higher DSR for higher income applicants, while others may be stricter.
+      </p>
+    </section>
+
+    <section>
+      <h2>What This DSR Calculator Shows</h2>
+
+      <p>
+        This calculator helps estimate total monthly debt, DSR percentage, remaining monthly income after debt and simple affordability reading. It is useful before applying for personal loan, home loan or car loan.
+      </p>
+
+      <div class="component-grid">
+        <a class="component-card" href="loan-calculator.html">
+          <div class="component-icon">💳</div>
+          <h3>Loan Installment</h3>
+          <p>Estimate new loan repayment before calculating DSR.</p>
+        </a>
+
+        <a class="component-card" href="home-loan-calculator.html">
+          <div class="component-icon">🏠</div>
+          <h3>Home Loan</h3>
+          <p>Check DSR before planning a property purchase.</p>
+        </a>
+
+        <a class="component-card" href="personal-loan-calculator.html">
+          <div class="component-icon">🧾</div>
+          <h3>Personal Loan</h3>
+          <p>Estimate how new personal loan affects your DSR.</p>
+        </a>
+
+        <a class="component-card" href="index.html">
+          <div class="component-icon">💰</div>
+          <h3>Salary</h3>
+          <p>Use income and take-home pay to plan affordability.</p>
+        </a>
+      </div>
+    </section>
+
+    <h2>Who Should Use This DSR Calculator?</h2>
+
+    <ul>
+      <li>Borrowers checking loan affordability before applying</li>
+      <li>Home buyers estimating mortgage affordability</li>
+      <li>Employees comparing monthly commitments against income</li>
+      <li>Personal loan applicants checking repayment pressure</li>
+      <li>Anyone planning cash flow before taking new debt</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-box">
+      <details class="faq-item" open>
+        <summary>What is Debt Service Ratio?</summary>
+        <p>
+          Debt Service Ratio compares your monthly debt commitments with monthly income. It helps estimate how much of your income is used to repay loans.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is a good DSR in Malaysia?</summary>
+        <p>
+          A lower DSR is generally safer. Many people use below 40% as a comfortable level, but actual bank approval depends on lender policy and applicant profile.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does high DSR mean my loan will be rejected?</summary>
+        <p>
+          Not always. Banks may also consider income level, credit record, job stability, collateral, loan type and internal scoring.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Should I use gross income or net income?</summary>
+        <p>
+          This calculator uses gross monthly income by default. Some banks may use gross income, net income or adjusted income depending on their policy.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I reduce my DSR?</summary>
+        <p>
+          Yes. You can reduce DSR by lowering existing commitments, reducing new loan amount, extending tenure, increasing income or paying down debt.
+        </p>
+      </details>
+    </div>
+
+    <section class="salary-guides-box">
+      <h2>Malaysia Financial Planning Guides</h2>
+
+      <p>
+        Learn more about debt service ratio, loans and home financing in Malaysia.
+      </p>
+
+      <div class="guide-mini-grid">
+        <a href="debt-service-ratio-guide.html">📊 DSR Guide</a>
+        <a href="loan-guide.html">💳 Loan Guide</a>
+        <a href="home-loan-guide.html">🏠 Home Loan Guide</a>
+        <a href="personal-loan-guide.html">🧾 Personal Loan Guide</a>
+        <a href="salary-increment-guide.html">📈 Salary Increment Guide</a>
+        <a href="bonus-guide.html">🎁 Bonus Guide</a>
+      </div>
+
+      <p class="view-all-guides">
+        <a href="guides.html">View All Salary Guides →</a>
+      </p>
+    </section>
+
+    <section class="salary-guides-box">
+      <h2>Related Calculators</h2>
+
+      <p>
+        Explore more free Malaysia loan and salary calculators.
+      </p>
+
+      <div class="guide-mini-grid">
+        <a href="loan-calculator.html">Loan Calculator</a>
+        <a href="home-loan-calculator.html">Home Loan Calculator</a>
+        <a href="personal-loan-calculator.html">Personal Loan Calculator</a>
+        <a href="index.html">Salary Calculator</a>
+        <a href="bonus-calculator.html">Bonus Calculator</a>
+        <a href="salary-increment-calculator.html">Salary Increment Calculator</a>
+      </div>
+
+      <p class="view-all-guides">
+        <a href="calculators.html">View All Calculators →</a>
+      </p>
+    </section>
+
+  </div>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 Malaysia Salary Tools</p>
+  <p>
+    <a href="index.html">Home</a> |
+    <a href="calculators.html">Calculators</a> |
+    <a href="guides.html">Guides</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact Us</a> |
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </p>
+</footer>
+
+<script>
+  function formatRM(value) {
+    return Number(value).toLocaleString('en-MY', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+  }
+
+  function setIncome(value) {
+    document.getElementById("income").value = value;
+    document.getElementById("incomeRange").value = value;
+    calculateDSR();
+  }
+
+  function calculateDSR() {
+    const incomeInput = document.getElementById("income");
+    const incomeRange = document.getElementById("incomeRange");
+
+    const income = parseFloat(incomeInput.value) || 0;
+    const existingDebt = parseFloat(document.getElementById("existingDebt").value) || 0;
+    const newLoan = parseFloat(document.getElementById("newLoan").value) || 0;
+    const creditCard = parseFloat(document.getElementById("creditCard").value) || 0;
+    const otherDebt = parseFloat(document.getElementById("otherDebt").value) || 0;
+
+    if (!income || income <= 0 || existingDebt < 0 || newLoan < 0 || creditCard < 0 || otherDebt < 0) {
+      document.getElementById("dsrResult").textContent = "0.00";
+      document.getElementById("dsrExplanation").textContent = "Please enter valid monthly income and debt commitments.";
+      document.getElementById("dsrBar").innerHTML = "";
+      document.getElementById("resultRows").innerHTML = "";
+      document.getElementById("summaryRows").innerHTML = "";
+      return;
+    }
+
+    incomeRange.value = Math.min(income, incomeRange.max);
+
+    const totalDebt = existingDebt + newLoan + creditCard + otherDebt;
+    const dsr = (totalDebt / income) * 100;
+    const remainingIncome = income - totalDebt;
+    const debtPercent = Math.min(100, dsr);
+    const freePercent = Math.max(0, 100 - debtPercent);
+
+    let status = "";
+    let statusText = "";
+
+    if (dsr < 40) {
+      status = "Lower DSR";
+      statusText = "Your estimated DSR is relatively low.";
+    } else if (dsr <= 60) {
+      status = "Moderate DSR";
+      statusText = "Your estimated DSR is moderate.";
+    } else {
+      status = "High DSR";
+      statusText = "Your estimated DSR is high.";
+    }
+
+    document.getElementById("dsrResult").textContent = dsr.toFixed(2);
+    document.getElementById("dsrExplanation").textContent =
+      statusText + " This is a simple estimate only.";
+
+    document.getElementById("dsrBar").innerHTML =
+      '<i style="width:' + debtPercent + '%;background:#5aa783"></i>' +
+      '<i style="width:' + freePercent + '%;background:#c9a14e"></i>';
+
+    document.getElementById("resultRows").innerHTML =
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#f6f3ec"></span>Monthly Income</span><span class="v">RM ' + formatRM(income) + '</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#5aa783"></span>Existing Commitments</span><span class="v">RM ' + formatRM(existingDebt) + '</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#2f7d5e"></span>New Loan Installment</span><span class="v">RM ' + formatRM(newLoan) + '</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#c9a14e"></span>Total Monthly Debt</span><span class="v">RM ' + formatRM(totalDebt) + '</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#cf6f5b"></span>DSR Status</span><span class="v">' + status + '</span></div>';
+
+    document.getElementById("summaryRows").innerHTML =
+      '<div><span>Formula Used</span><strong>Total debt ÷ income × 100%</strong></div>' +
+      '<div><span>Credit Card Minimum Payment</span><strong>RM ' + formatRM(creditCard) + '</strong></div>' +
+      '<div><span>Other Monthly Debt</span><strong>RM ' + formatRM(otherDebt) + '</strong></div>' +
+      '<div><span>Remaining Income After Debt</span><strong>RM ' + formatRM(remainingIncome) + '</strong></div>';
+  }
+
+  document.getElementById("income").addEventListener("input", calculateDSR);
+  document.getElementById("incomeRange").addEventListener("input", function() {
+    document.getElementById("income").value = this.value;
+    calculateDSR();
+  });
+  document.getElementById("existingDebt").addEventListener("input", calculateDSR);
+  document.getElementById("newLoan").addEventListener("input", calculateDSR);
+  document.getElementById("creditCard").addEventListener("input", calculateDSR);
+  document.getElementById("otherDebt").addEventListener("input", calculateDSR);
+
+  calculateDSR();
+</script>
+
+</body>
+</html>
