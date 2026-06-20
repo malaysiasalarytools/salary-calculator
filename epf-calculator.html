@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
 
   <title>Malaysia EPF Calculator 2026 | KWSP Employee & Employer Contribution</title>
+
   <link rel="canonical" href="https://malaysiasalarytools.com/epf-calculator.html">
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <meta name="description" content="Free Malaysia EPF Calculator 2026. Estimate employee EPF deduction, employer EPF contribution, total KWSP contribution, annual EPF savings and salary after EPF deduction.">
-  <meta name="keywords" content="Malaysia EPF calculator, KWSP calculator, EPF contribution calculator, employee EPF, employer EPF, Malaysia salary calculator, EPF 2026">
+  <meta name="description" content="Free Malaysia EPF Calculator 2026. Calculate employee EPF deduction, employer EPF contribution, total KWSP contribution, annual EPF savings and salary after EPF deduction.">
+
+  <meta name="keywords" content="Malaysia EPF calculator, KWSP calculator, EPF contribution calculator, employee EPF, employer EPF, EPF 2026, Malaysia salary calculator">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
 
@@ -82,10 +86,10 @@
       },
       {
         "@type": "Question",
-        "name": "What is the common employer EPF rate in Malaysia?",
+        "name": "Does this EPF calculator include SOCSO, EIS and PCB?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For Malaysian citizens and permanent residents below age 60, a common employer EPF rate is 13% for monthly wages of RM5,000 and below, and 12% for monthly wages above RM5,000. Users should confirm the latest official KWSP schedule."
+          "text": "No. This page focuses on EPF only. To estimate EPF together with SOCSO, EIS and PCB, users can use the full Malaysia salary calculator."
         }
       }
     ]
@@ -93,35 +97,65 @@
   </script>
 
   <style>
-    html {
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
-      margin: 0;
-      padding: 0;
-      color: #111827;
-      overflow-x: hidden;
+    :root {
+      --background: #f4f1ea;
+      --card: #fbfaf6;
+      --foreground: #302c26;
+      --muted: #7c766c;
+      --primary: #2f2b25;
+      --primary-soft: #403a32;
+      --primary-foreground: #f6f3ec;
+      --accent: #2f7d5e;
+      --accent-soft: rgba(47,125,94,.10);
+      --accent-border: rgba(47,125,94,.22);
+      --border: #e2ddd2;
+      --white: #ffffff;
+      --radius: 16px;
+      --shadow: 0 18px 45px rgba(47,43,37,.08);
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47,125,94,.08), transparent 34%),
+        linear-gradient(135deg, #f4f1ea, #efe9de);
+      margin: 0;
+      padding: 0;
+      color: var(--foreground);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .serif {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
     .top-nav {
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
+      background: rgba(251,250,246,.84);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      backdrop-filter: blur(10px);
     }
 
     .nav-inner {
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 14px 20px;
       display: flex;
@@ -135,13 +169,10 @@
       align-items: center;
       text-decoration: none;
       flex-shrink: 0;
-      font-weight: bold;
-      color: #2563eb;
-      font-size: 22px;
     }
 
     .brand img {
-      width: 180px;
+      width: 220px;
       height: auto;
       display: block;
     }
@@ -157,227 +188,188 @@
     .nav-links a {
       display: block;
       text-decoration: none;
-      color: #4b5563;
+      color: var(--muted);
       font-weight: 600;
       font-size: 15px;
       padding: 10px 14px;
-      border-radius: 8px;
+      border-radius: 999px;
       white-space: nowrap;
       background: transparent;
-      flex-shrink: 0;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      background: #2563eb;
-      color: white;
-    }
-
-    .main-wrapper {
-      padding: 30px 20px;
+      background: var(--primary);
+      color: var(--primary-foreground);
     }
 
     .hero {
-      max-width: 1050px;
-      margin: 35px auto 22px;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 24px;
-      align-items: center;
+      text-align: center;
+      padding: 56px 20px 18px;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    .hero-copy {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 22px;
-      padding: 34px;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #eff6ff;
-      color: #2563eb;
-      border: 1px solid #bfdbfe;
-      padding: 8px 14px;
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      padding: 7px 15px;
       border-radius: 999px;
-      font-size: 13px;
-      font-weight: bold;
-      margin-bottom: 14px;
+      margin-bottom: 20px;
+      font-weight: 700;
     }
 
     .hero h1 {
-      font-size: 40px;
-      color: #111827;
-      margin: 0 0 12px;
-      line-height: 1.15;
-      letter-spacing: -0.5px;
+      margin: 0;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      color: var(--foreground);
     }
 
-    .hero h1 span {
-      color: #2563eb;
+    .hero h1 em {
+      color: var(--accent);
+      font-style: italic;
     }
 
     .hero p {
-      font-size: 17px;
-      color: #64748b;
-      margin: 0;
-      line-height: 1.7;
       max-width: 720px;
+      margin: 18px auto 0;
+      font-size: 17px;
+      color: var(--muted);
     }
 
-    .hero-points {
+    .main-wrapper {
+      padding: 16px 20px 44px;
+    }
+
+    .calculator-shell {
+      max-width: 1120px;
+      margin: 28px auto 32px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 20px;
+      align-items: stretch;
     }
 
-    .hero-point {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 12px;
-      padding: 12px;
-      color: #334155;
-      font-size: 14px;
-      font-weight: bold;
+    .panel,
+    .seo {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
-    .hero-result {
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
-      border-radius: 22px;
+    .panel {
       padding: 28px;
-      color: white;
-      box-shadow: 0 16px 35px rgba(37, 99, 235, 0.25);
     }
 
-    .hero-result span {
-      display: block;
-      color: #dbeafe;
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
-
-    .hero-result strong {
-      display: block;
-      font-size: 34px;
-      line-height: 1.15;
-      margin-bottom: 12px;
-    }
-
-    .hero-result p {
-      color: #dbeafe;
-      font-size: 14px;
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    .rate-strip {
-      max-width: 1050px;
-      margin: 24px auto 0;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .rate-card {
-      background: white;
-      border: 1px solid #dbe3ef;
-      border-radius: 16px;
-      padding: 18px;
-      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
-    }
-
-    .rate-card span {
-      display: block;
-      color: #64748b;
-      font-size: 13px;
-      margin-bottom: 6px;
-    }
-
-    .rate-card strong {
-      display: block;
-      color: #111827;
-      font-size: 26px;
-      margin-bottom: 6px;
-    }
-
-    .rate-card p {
-      color: #64748b;
-      font-size: 13px;
-      line-height: 1.5;
-      margin: 0;
-    }
-
-    .calculator-layout {
-      max-width: 1050px;
-      width: 100%;
-      margin: 28px auto;
-      display: grid;
-      grid-template-columns: 0.92fr 1.08fr;
-      gap: 22px;
-      align-items: start;
-    }
-
-    .calculator-card,
-    .result-card,
-    .content-card {
-      background: white;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      border: 1px solid #e5e7eb;
-    }
-
-    .calculator-card,
-    .result-card {
-      padding: 26px;
-    }
-
-    .calculator-card h2,
-    .result-card h2,
-    .content-card h2 {
-      margin-top: 0;
-      color: #111827;
+    .panel h2 {
+      margin: 0 0 4px;
       font-size: 22px;
-      line-height: 1.35;
+      color: var(--foreground);
     }
 
-    .calculator-intro {
-      color: #64748b;
-      line-height: 1.6;
-      margin-top: -5px;
-      margin-bottom: 20px;
+    .panel .sub {
+      margin: 0 0 22px;
+      color: var(--muted);
       font-size: 14px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--foreground);
     }
 
     .form-group {
       margin-bottom: 18px;
     }
 
-    label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 8px;
-      color: #374151;
+    .input-row {
+      position: relative;
     }
 
-    input,
+    .input-row span {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 15px 14px 15px 46px;
+      font-size: 20px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+      color: var(--foreground);
+      outline: none;
+    }
+
     select {
       width: 100%;
-      padding: 13px 14px;
-      border: 1px solid #d1d5db;
-      border-radius: 10px;
-      font-size: 16px;
-      background: #fff;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+      color: var(--foreground);
+      outline: none;
     }
 
-    input:focus,
+    input[type="number"]:focus,
     select:focus {
-      outline: none;
-      border-color: #2563eb;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(47,125,94,.14);
+    }
+
+    input[type="range"] {
+      width: 100%;
+      margin-top: 18px;
+      accent-color: var(--accent);
+    }
+
+    .preset-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .preset,
+    .calc-button {
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .preset {
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--foreground);
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .preset:hover {
+      color: var(--accent);
+      border-color: var(--accent);
     }
 
     .custom-rate-grid {
@@ -391,418 +383,367 @@
       display: grid;
     }
 
-    .calculate-btn {
-      width: 100%;
-      border: none;
-      background: #2563eb;
-      color: white;
+    .custom-rate-grid input[type="number"] {
+      padding-left: 14px;
       font-size: 16px;
-      font-weight: bold;
+    }
+
+    .calc-button {
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
       padding: 14px 18px;
-      border-radius: 10px;
-      cursor: pointer;
-      margin-top: 4px;
+      margin-top: 6px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 800;
     }
 
-    .calculate-btn:hover {
-      background: #1d4ed8;
+    .calc-button:hover {
+      filter: brightness(.95);
     }
 
-    .secondary-btn {
+    .secondary-button {
       display: block;
       text-align: center;
-      text-decoration: none;
       width: 100%;
-      border: 1px solid #dbe3ef;
-      background: #f8fafc;
-      color: #2563eb;
-      font-size: 15px;
-      font-weight: bold;
+      background: var(--white);
+      color: var(--accent);
+      border: 1px solid var(--accent-border);
       padding: 13px 18px;
-      border-radius: 10px;
-      margin-top: 10px;
-    }
-
-    .secondary-btn:hover {
-      background: #eff6ff;
-      border-color: #bfdbfe;
-    }
-
-    .small-note {
-      color: #64748b;
-      font-size: 13px;
-      line-height: 1.5;
-      margin: 14px 0 0;
-    }
-
-    .main-result-box {
-      background: linear-gradient(135deg, #eff6ff, #f8fafc);
-      border: 1px solid #bfdbfe;
-      border-radius: 18px;
-      padding: 22px;
-      margin-bottom: 14px;
-    }
-
-    .main-result-box span {
-      display: block;
-      color: #64748b;
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
-
-    .main-result-box strong {
-      display: block;
-      color: #2563eb;
-      font-size: 34px;
-      line-height: 1.15;
-      margin-bottom: 8px;
-    }
-
-    .main-result-box p {
-      margin: 0;
-      color: #64748b;
-      font-size: 13px;
-      line-height: 1.55;
-    }
-
-    .result-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 16px;
-    }
-
-    .result-box {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 14px;
-      padding: 16px;
-    }
-
-    .result-box span {
-      display: block;
-      color: #64748b;
-      font-size: 13px;
-      margin-bottom: 6px;
-    }
-
-    .result-box strong {
-      display: block;
-      color: #2563eb;
-      font-size: 22px;
-      line-height: 1.2;
-    }
-
-    .result-subnote {
-      font-size: 13px;
-      color: #64748b;
-      line-height: 1.5;
-      margin: 14px 0 0;
-    }
-
-    .breakdown-table-wrap {
-      overflow-x: auto;
-      margin-top: 18px;
-      width: 100%;
-    }
-
-    .breakdown-table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 0;
-      border: 1px solid #dbe3ef;
+      margin-top: 12px;
       border-radius: 12px;
-      overflow: hidden;
-      background: white;
+      font-size: 15px;
+      font-weight: 800;
+      text-decoration: none;
     }
 
-    .breakdown-table th {
-      background: #f8fafc;
-      color: #64748b;
+    .secondary-button:hover {
+      background: var(--accent-soft);
+    }
+
+    .input-note {
+      margin: 16px 0 0;
+      color: var(--muted);
       font-size: 13px;
-      text-align: left;
-      padding: 12px;
-      border-bottom: 1px solid #dbe3ef;
     }
 
-    .breakdown-table td {
-      padding: 12px;
-      border-bottom: 1px solid #eef2f7;
-      color: #334155;
+    .results-panel {
+      background: var(--primary);
+      color: var(--primary-foreground);
+      border: 1px solid var(--primary);
+      padding: 28px;
+      border-radius: var(--radius);
+      box-shadow: 0 24px 55px rgba(47,43,37,.20);
+    }
+
+    .results-panel h2 {
+      margin: 0 0 4px;
+      font-size: 22px;
+      color: var(--primary-foreground);
+    }
+
+    .results-panel .sub {
+      margin: 0;
+      color: rgba(246,243,236,.62);
       font-size: 14px;
     }
 
-    .breakdown-table tr:last-child td {
+    .net {
+      font-size: clamp(36px, 5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      margin: 16px 0 0;
+    }
+
+    .net-caption {
+      color: rgba(246,243,236,.62);
+      font-size: 14px;
+      margin-top: 0;
+    }
+
+    .bar {
+      height: 9px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      display: flex;
+      overflow: hidden;
+      margin: 22px 0;
+    }
+
+    .bar i {
+      display: block;
+      height: 100%;
+    }
+
+    .result-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .result-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      font-size: 14px;
+    }
+
+    .result-line:last-child {
       border-bottom: none;
     }
 
-    .mini-alert {
+    .result-line .k {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(246,243,236,.86);
+    }
+
+    .result-line .v {
+      font-weight: 800;
+      text-align: right;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 3px;
+      flex: 0 0 auto;
+    }
+
+    .annual-summary {
       margin-top: 18px;
-      border-left: 4px solid #2563eb;
-      background: #eff6ff;
-      color: #334155;
-      padding: 14px;
-      border-radius: 10px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,.18);
+      display: grid;
+      gap: 8px;
       font-size: 14px;
-      line-height: 1.55;
+    }
+
+    .annual-summary div {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: rgba(246,243,236,.82);
+    }
+
+    .annual-summary strong {
+      color: var(--primary-foreground);
     }
 
     .seo {
-      max-width: 1050px;
-      width: 100%;
+      max-width: 1120px;
       margin: 30px auto;
-      line-height: 1.7;
+      padding: 30px;
+      line-height: 1.72;
     }
 
-    .content-card {
-      padding: 26px;
-      margin-bottom: 22px;
+    .seo h2,
+    .section-title {
+      font-size: clamp(25px, 4vw, 36px);
+      line-height: 1.15;
+      margin: 34px 0 12px;
+      color: var(--foreground);
+      letter-spacing: -.01em;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
     }
 
-    .content-card p {
-      color: #4b5563;
-      line-height: 1.75;
+    .seo h2:first-child {
+      margin-top: 0;
     }
 
-    .section-label {
-      display: inline-block;
-      background: #eff6ff;
-      color: #2563eb;
-      border: 1px solid #bfdbfe;
-      border-radius: 999px;
-      padding: 6px 12px;
-      font-size: 12px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
+    .seo h3 {
+      font-size: 17px;
       margin-top: 18px;
     }
 
-    .summary-card {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 14px;
-      padding: 16px;
+    .seo p,
+    .seo li {
+      color: var(--muted);
     }
 
-    .summary-card strong {
-      display: block;
-      color: #2563eb;
-      font-size: 22px;
-      margin-bottom: 6px;
-    }
-
-    .summary-card span {
-      color: #64748b;
-      font-size: 14px;
-      line-height: 1.45;
+    .formula-box,
+    .contribution-box,
+    .salary-guides-box,
+    .official-box {
+      background: #f8f5ef;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 26px 0;
     }
 
     .formula-box {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 14px;
-      padding: 24px;
       text-align: center;
-      margin: 22px 0;
     }
 
     .formula-box strong {
       display: block;
       font-size: 22px;
-      color: #111827;
+      color: var(--foreground);
       margin-bottom: 8px;
     }
 
     .formula-box span {
-      color: #64748b;
+      color: var(--muted);
       font-size: 15px;
     }
 
-    .snapshot-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 16px;
-      border: 1px solid #dbe3ef;
+    .component-grid,
+    .guide-mini-grid,
+    .rate-grid,
+    .official-links {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .component-grid,
+    .rate-grid,
+    .guide-mini-grid,
+    .official-links {
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .component-card,
+    .guide-mini-grid a,
+    .rate-card,
+    .official-links a,
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
       border-radius: 14px;
-      overflow: hidden;
-      background: white;
     }
 
-    .snapshot-table th {
-      background: #f8fafc;
-      color: #64748b;
-      padding: 13px;
-      text-align: left;
-      font-size: 13px;
-      border-bottom: 1px solid #dbe3ef;
+    .component-card,
+    .official-links a {
+      display: block;
+      padding: 20px;
+      text-decoration: none;
+      color: inherit;
+      transition: .18s ease;
     }
 
-    .snapshot-table td {
-      padding: 13px;
-      color: #334155;
-      border-bottom: 1px solid #eef2f7;
+    .component-card:hover,
+    .guide-mini-grid a:hover,
+    .official-links a:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 30px rgba(47,43,37,.08);
+    }
+
+    .component-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      display: grid;
+      place-items: center;
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .component-card h3,
+    .rate-card h3,
+    .official-links h3 {
+      margin: 8px 0 4px;
+      color: var(--foreground);
+    }
+
+    .component-card p,
+    .rate-card p,
+    .official-links p {
+      margin: 0;
       font-size: 14px;
     }
 
-    .snapshot-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .snapshot-table strong {
-      color: #2563eb;
-    }
-
-    .two-column {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .info-panel {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 16px;
+    .rate-card {
       padding: 20px;
     }
 
-    .info-panel h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      color: #111827;
-      font-size: 18px;
-    }
-
-    .info-panel ul {
-      margin: 10px 0 0;
-      padding-left: 20px;
-      color: #4b5563;
-    }
-
-    .info-panel li {
+    .rate-card strong {
+      display: block;
+      color: var(--accent);
+      font-size: 28px;
+      line-height: 1.1;
       margin-bottom: 8px;
     }
 
-    .cta-box {
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
-      color: white;
-      border-radius: 18px;
-      padding: 26px;
-      margin: 24px 0 0;
-    }
-
-    .cta-box h2 {
-      color: white;
-      margin-top: 0;
-      margin-bottom: 10px;
-    }
-
-    .cta-box p {
-      color: #dbeafe;
-      margin-bottom: 18px;
-    }
-
-    .cta-actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .cta-actions a {
-      display: block;
-      text-align: center;
-      text-decoration: none;
-      padding: 13px 16px;
-      border-radius: 10px;
-      font-weight: bold;
-    }
-
-    .cta-primary {
-      background: white;
-      color: #2563eb;
-    }
-
-    .cta-secondary {
-      background: rgba(255,255,255,0.12);
-      color: white;
-      border: 1px solid rgba(255,255,255,0.45);
-    }
-
-    .guide-mini-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-      gap: 12px;
+    .contribution-table-wrap {
+      overflow-x: auto;
       margin-top: 18px;
     }
 
-    .guide-mini-grid a {
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
-      padding: 13px 14px;
-      border-radius: 10px;
-      text-decoration: none;
-      color: #2563eb;
-      font-weight: bold;
-      text-align: center;
+    .contribution-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      min-width: 520px;
     }
 
-    .guide-mini-grid a:hover {
-      background: #2563eb;
-      color: white;
-    }
-
-    .official-links {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .official-links a {
-      text-decoration: none;
-      color: #111827;
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 14px;
-      padding: 16px;
-      display: block;
-    }
-
-    .official-links a strong {
-      display: block;
-      color: #2563eb;
-      margin-bottom: 6px;
-    }
-
-    .official-links a span {
-      color: #64748b;
+    .contribution-table th {
+      background: #f1ece3;
+      color: var(--muted);
       font-size: 13px;
-      line-height: 1.45;
+      text-align: left;
+      letter-spacing: .03em;
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contribution-table td {
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--foreground);
+      font-size: 14px;
+    }
+
+    .contribution-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .contribution-note {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .payroll-note {
+      margin-top: 20px;
+      background: var(--card);
+      border-left: 4px solid var(--accent);
+      padding: 14px;
+      border-radius: 10px;
+      color: var(--muted);
     }
 
     .faq-box {
       margin-top: 18px;
+      max-width: 780px;
     }
 
     .faq-item {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 12px;
-      padding: 15px;
+      padding: 4px 20px;
       margin-bottom: 12px;
     }
 
     .faq-item summary {
-      font-weight: bold;
+      font-weight: 800;
       cursor: pointer;
       list-style: none;
-      color: #111827;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--foreground);
+      padding: 16px 0;
     }
 
     .faq-item summary::-webkit-details-marker {
@@ -810,66 +751,73 @@
     }
 
     .faq-item summary::after {
-      content: "▼";
-      float: right;
-      font-size: 12px;
-      color: #64748b;
+      content: "+";
+      color: var(--accent);
+      font-size: 20px;
+      line-height: 1;
     }
 
     .faq-item[open] summary::after {
-      content: "▲";
+      content: "−";
     }
 
     .faq-item p {
-      margin-top: 12px;
-      margin-bottom: 0;
-      color: #4b5563;
-      line-height: 1.6;
+      padding-bottom: 18px;
+      margin-top: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .guide-mini-grid a {
+      display: block;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: var(--foreground);
+      font-weight: 800;
+      text-align: center;
+      transition: .18s ease;
     }
 
     .view-all-guides {
       text-align: center;
-      margin-top: 20px;
+      margin: 20px 0 0;
     }
 
     .view-all-guides a {
-      color: #2563eb;
-      font-weight: bold;
+      color: var(--accent);
+      font-weight: 800;
       text-decoration: none;
-    }
-
-    .disclaimer-box {
-      background: #fff7ed;
-      border: 1px solid #fed7aa;
-      border-left: 5px solid #f97316;
-      border-radius: 14px;
-      padding: 18px;
-      color: #7c2d12;
-      line-height: 1.65;
-      margin-top: 18px;
     }
 
     .footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 20px;
       text-align: center;
-      padding: 20px;
-      color: #4b5563;
+      color: var(--muted);
+      font-size: 13px;
     }
 
     .footer a {
-      color: #2563eb;
+      color: var(--muted);
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 700;
+    }
+
+    .footer a:hover {
+      color: var(--accent);
     }
 
     @media (max-width: 900px) {
-      .hero,
-      .calculator-layout,
-      .rate-strip,
-      .two-column {
+      .calculator-shell {
         grid-template-columns: 1fr;
       }
 
-      .cta-actions {
+      .seo {
+        padding: 24px;
+      }
+
+      .custom-rate-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -900,21 +848,28 @@
     }
 
     @media (max-width: 700px) {
+      .hero {
+        padding: 38px 14px 12px;
+      }
+
       .main-wrapper {
-        padding: 15px 10px;
+        padding: 10px;
+      }
+
+      .panel,
+      .results-panel,
+      .seo {
+        padding: 20px;
       }
 
       .nav-inner {
-        padding: 8px 10px;
+        padding-top: 8px;
+        padding-bottom: 8px;
         gap: 8px;
       }
 
       .brand img {
-        width: 120px;
-      }
-
-      .brand {
-        font-size: 18px;
+        width: 150px;
       }
 
       .nav-links {
@@ -926,64 +881,40 @@
         padding: 8px 10px;
       }
 
-      .hero {
-        margin: 25px auto 18px;
+      .component-grid,
+      .rate-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
       }
 
-      .hero-copy,
-      .hero-result {
-        padding: 22px;
+      .component-card,
+      .rate-card {
+        padding: 14px;
+        text-align: center;
       }
 
-      .hero h1 {
-        font-size: 30px;
+      .component-icon {
+        margin-left: auto;
+        margin-right: auto;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
       }
 
-      .hero p {
+      .component-card h3,
+      .rate-card h3 {
         font-size: 15px;
+        margin: 6px 0;
       }
 
-      .hero-points {
-        grid-template-columns: 1fr;
+      .component-card p,
+      .rate-card p {
+        font-size: 12px;
+        line-height: 1.35;
       }
 
-      .calculator-layout {
-        width: 100%;
-        gap: 18px;
-        margin: 20px auto;
-      }
-
-      .calculator-card,
-      .result-card,
-      .content-card {
-        width: 100%;
-        padding: 18px;
-      }
-
-      .custom-rate-grid,
-      .result-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .main-result-box strong,
-      .hero-result strong {
-        font-size: 28px;
-      }
-
-      .breakdown-table th,
-      .breakdown-table td,
-      .snapshot-table th,
-      .snapshot-table td {
-        padding: 10px;
-        font-size: 13px;
-      }
-
-      .rate-card strong {
-        font-size: 24px;
-      }
-
-      .formula-box strong {
-        font-size: 19px;
+      .net {
+        font-size: 34px;
       }
     }
   </style>
@@ -991,556 +922,562 @@
 
 <body>
 
-<header class="top-nav">
-  <div class="nav-inner">
-    <a href="index.html" class="brand">
-      <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
-    </a>
+  <header class="top-nav">
+    <div class="nav-inner">
 
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="calculators.html" class="active">Calculators</a>
-      <a href="guides.html">Guides</a>
-      <a href="about.html">About</a>
-    </nav>
-  </div>
-</header>
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+      </a>
 
-<div class="main-wrapper">
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="calculators.html" class="active">Calculators</a>
+        <a href="guides.html">Guides</a>
+        <a href="about.html">About</a>
+      </nav>
+
+    </div>
+  </header>
 
   <section class="hero">
-    <div class="hero-copy">
-      <div class="eyebrow">KWSP Contribution Tool</div>
-      <h1>Malaysia <span>EPF Calculator</span> 2026</h1>
-      <p>Estimate your employee EPF deduction, employer EPF contribution, total KWSP contribution and salary after EPF deduction using a simple Malaysia payroll calculator.</p>
-
-      <div class="hero-points">
-        <div class="hero-point">✓ Employee EPF</div>
-        <div class="hero-point">✓ Employer EPF</div>
-        <div class="hero-point">✓ Annual EPF estimate</div>
-        <div class="hero-point">✓ Salary after EPF</div>
-      </div>
-    </div>
-
-    <div class="hero-result">
-      <span>Example based on RM4,000 salary</span>
-      <strong id="heroTotalEPF">RM960.00</strong>
-      <p>Total estimated monthly EPF contribution, including employee and employer contribution.</p>
-    </div>
+    <span class="pill">Updated for Malaysia 2026 KWSP estimates</span>
+    <h1 class="serif">Calculate your <em>EPF contribution</em> in Malaysia</h1>
+    <p>
+      Free Malaysia EPF calculator for employees, job seekers and payroll users. Estimate employee EPF deduction, employer EPF contribution, total monthly KWSP contribution and annual EPF savings instantly.
+    </p>
   </section>
 
-  <section class="rate-strip" aria-label="Common EPF contribution rates">
-    <div class="rate-card">
-      <span>Employee EPF</span>
-      <strong>11%</strong>
-      <p>Common employee contribution rate for Malaysian citizens and permanent residents below age 60.</p>
-    </div>
+  <main class="main-wrapper">
 
-    <div class="rate-card">
-      <span>Employer EPF</span>
-      <strong>13%</strong>
-      <p>Common employer contribution rate when monthly wages are RM5,000 and below.</p>
-    </div>
+    <section class="calculator-shell" id="calculator">
 
-    <div class="rate-card">
-      <span>Employer EPF</span>
-      <strong>12%</strong>
-      <p>Common employer contribution rate when monthly wages are above RM5,000.</p>
-    </div>
-  </section>
+      <div class="panel">
+        <h2 class="serif">Calculate Your EPF</h2>
+        <p class="sub">Enter your monthly salary and select your employee category.</p>
 
-  <div class="calculator-layout">
-    <section class="calculator-card">
-      <h2>🧮 Calculate EPF Contribution</h2>
-      <p class="calculator-intro">Enter your monthly salary and choose your employee category. You can use automatic common EPF rates or enter custom rates manually.</p>
-
-      <div class="form-group">
-        <label for="salary">Monthly Salary / Wages (RM)</label>
-        <input type="number" id="salary" placeholder="Example: 4000" value="4000" min="0" step="0.01">
-      </div>
-
-      <div class="form-group">
-        <label for="employeeCategory">Employee Category</label>
-        <select id="employeeCategory" onchange="handleCategoryChange()">
-          <option value="malaysianUnder60" selected>Malaysian / PR below age 60 - Auto rate</option>
-          <option value="malaysian60">Malaysian / PR age 60 and above - Auto rate</option>
-          <option value="nonMalaysianNew">Non-Malaysian registered from 1 Aug 1998 - Auto rate</option>
-          <option value="manual">Manual custom rates</option>
-        </select>
-      </div>
-
-      <div class="custom-rate-grid" id="customRateGrid">
         <div class="form-group">
-          <label for="employeeRate">Employee Rate (%)</label>
-          <input type="number" id="employeeRate" value="11" min="0" step="0.01">
+          <label for="salary">Monthly salary / wages</label>
+          <div class="input-row">
+            <span>RM</span>
+            <input type="number" id="salary" value="4000" min="0" step="100" placeholder="Enter monthly salary">
+          </div>
+
+          <input type="range" id="salaryRange" min="0" max="20000" step="100" value="4000">
+
+          <div class="preset-grid">
+            <button type="button" class="preset" onclick="setSalary(3000)">RM 3,000</button>
+            <button type="button" class="preset" onclick="setSalary(4000)">RM 4,000</button>
+            <button type="button" class="preset" onclick="setSalary(5000)">RM 5,000</button>
+            <button type="button" class="preset" onclick="setSalary(6000)">RM 6,000</button>
+            <button type="button" class="preset" onclick="setSalary(10000)">RM 10,000</button>
+          </div>
         </div>
 
         <div class="form-group">
-          <label for="employerRate">Employer Rate (%)</label>
-          <input type="number" id="employerRate" value="13" min="0" step="0.01">
+          <label for="employeeCategory">Employee category</label>
+          <select id="employeeCategory" onchange="handleCategoryChange()">
+            <option value="malaysianUnder60" selected>Malaysian / PR below age 60 - Auto rate</option>
+            <option value="malaysian60">Malaysian / PR age 60 and above - Auto rate</option>
+            <option value="nonMalaysianNew">Non-Malaysian registered from 1 Aug 1998 - Auto rate</option>
+            <option value="manual">Manual custom rates</option>
+          </select>
         </div>
+
+        <div class="custom-rate-grid" id="customRateGrid">
+          <div class="form-group">
+            <label for="employeeRate">Employee rate (%)</label>
+            <input type="number" id="employeeRate" value="11" min="0" step="0.01">
+          </div>
+
+          <div class="form-group">
+            <label for="employerRate">Employer rate (%)</label>
+            <input type="number" id="employerRate" value="13" min="0" step="0.01">
+          </div>
+        </div>
+
+        <button type="button" class="calc-button" onclick="calculateEPF()">Calculate My EPF</button>
+
+        <a class="secondary-button" href="index.html">
+          Calculate Full Salary After EPF, SOCSO, EIS & PCB →
+        </a>
+
+        <p class="input-note">
+          This tool gives a simplified EPF estimate. Actual KWSP contribution may follow the official contribution schedule, wage category and payroll rounding rules.
+        </p>
       </div>
 
-      <button class="calculate-btn" onclick="calculateEPF()">Calculate EPF</button>
-      <a class="secondary-btn" href="index.html">Calculate Full Salary After EPF, SOCSO, EIS & PCB →</a>
+      <div class="results-panel">
+        <h2 class="serif">Your EPF result</h2>
+        <p class="sub">Estimated total monthly EPF contribution</p>
 
-      <p class="small-note">This calculator gives a simplified percentage-based estimate. Actual KWSP contribution may follow the official EPF contribution schedule, wage category and payroll rounding rules.</p>
+        <div class="net">RM <span id="totalEPF">0.00</span></div>
+        <p class="net-caption" id="rateExplanation">Applied common EPF rates.</p>
 
-      <div class="mini-alert">
-        <strong>Quick notes:</strong>
-        <ul style="margin:8px 0 0; padding-left:18px;">
-          <li>Employee EPF reduces take-home pay.</li>
-          <li>Employer EPF is paid on top of salary.</li>
-          <li>Use the full salary calculator for EPF, SOCSO, EIS and PCB together.</li>
-        </ul>
+        <div class="bar" id="epfBar"></div>
+
+        <div class="result-rows" id="monthlyRows"></div>
+
+        <div class="annual-summary" id="annualRows"></div>
       </div>
+
     </section>
 
-    <section class="result-card">
-      <h2>📊 Your EPF Result</h2>
+    <div class="seo">
 
-      <div class="main-result-box">
-        <span>Total Monthly EPF Contribution</span>
-        <strong id="totalEPF">RM960.00</strong>
-        <p>This includes both employee EPF deduction and employer EPF contribution.</p>
-      </div>
+      <section>
 
-      <div class="result-grid">
-        <div class="result-box">
-          <span>Salary After Employee EPF</span>
-          <strong id="salaryAfterEPF">RM3,560.00</strong>
+        <h2>How EPF Is Calculated in Malaysia</h2>
+
+        <p>
+          EPF, also known as KWSP, is usually calculated based on your monthly wages and the applicable employee and employer contribution rates. Employee EPF is deducted from salary, while employer EPF is paid by the employer on top of salary.
+        </p>
+
+        <div class="formula-box">
+          <strong>EPF Contribution = Monthly Salary × EPF Rate</strong>
+          <span>Example: RM4,000 × 11% = RM440 employee EPF deduction</span>
         </div>
 
-        <div class="result-box">
-          <span>Employee EPF</span>
-          <strong id="employeeEPF">RM440.00</strong>
+        <div class="rate-grid">
+          <div class="rate-card">
+            <strong>11%</strong>
+            <h3>Employee EPF</h3>
+            <p>Common employee contribution rate for Malaysian citizens and PR below age 60.</p>
+          </div>
+
+          <div class="rate-card">
+            <strong>13%</strong>
+            <h3>Employer EPF</h3>
+            <p>Common employer contribution rate when monthly wages are RM5,000 and below.</p>
+          </div>
+
+          <div class="rate-card">
+            <strong>12%</strong>
+            <h3>Employer EPF</h3>
+            <p>Common employer contribution rate when monthly wages are above RM5,000.</p>
+          </div>
+
+          <div class="rate-card">
+            <strong>Annual</strong>
+            <h3>EPF Savings</h3>
+            <p>Use the annual estimate to understand your yearly retirement savings.</p>
+          </div>
         </div>
 
-        <div class="result-box">
-          <span>Employer EPF</span>
-          <strong id="employerEPF">RM520.00</strong>
+      </section>
+
+      <section class="contribution-box">
+
+        <h2>EPF Contribution Snapshot 2026</h2>
+
+        <p>
+          The table below shows quick percentage-based estimates using 11% employee EPF and common employer rates of 13% for RM5,000 and below, and 12% for above RM5,000.
+        </p>
+
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead>
+              <tr>
+                <th>Monthly Salary</th>
+                <th>Employee EPF</th>
+                <th>Employer EPF</th>
+                <th>Total EPF</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>RM2,000</td>
+                <td>RM220.00</td>
+                <td>RM260.00</td>
+                <td>RM480.00</td>
+              </tr>
+              <tr>
+                <td>RM3,000</td>
+                <td>RM330.00</td>
+                <td>RM390.00</td>
+                <td>RM720.00</td>
+              </tr>
+              <tr>
+                <td>RM4,000</td>
+                <td>RM440.00</td>
+                <td>RM520.00</td>
+                <td>RM960.00</td>
+              </tr>
+              <tr>
+                <td>RM5,000</td>
+                <td>RM550.00</td>
+                <td>RM650.00</td>
+                <td>RM1,200.00</td>
+              </tr>
+              <tr>
+                <td>RM6,000</td>
+                <td>RM660.00</td>
+                <td>RM720.00</td>
+                <td>RM1,380.00</td>
+              </tr>
+              <tr>
+                <td>RM8,000</td>
+                <td>RM880.00</td>
+                <td>RM960.00</td>
+                <td>RM1,840.00</td>
+              </tr>
+              <tr>
+                <td>RM10,000</td>
+                <td>RM1,100.00</td>
+                <td>RM1,200.00</td>
+                <td>RM2,300.00</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <div class="result-box">
-          <span>Annual Total EPF</span>
-          <strong id="annualTotalEPF">RM11,520.00</strong>
+        <p class="contribution-note">
+          Note: This table is a simplified quick reference. Actual EPF contributions may differ based on the official KWSP contribution schedule.
+        </p>
+
+      </section>
+
+      <section>
+
+        <h2>What This EPF Calculator Shows</h2>
+
+        <p>
+          This calculator is designed to help you understand both the salary deduction side and the employer contribution side of EPF. This is useful when checking payslips, comparing job offers, estimating salary cost or planning long-term savings.
+        </p>
+
+        <div class="component-grid">
+
+          <a class="component-card" href="epf-guide.html">
+            <div class="component-icon">💰</div>
+            <h3>Employee EPF</h3>
+            <p>Amount deducted from your monthly salary and contributed into your EPF account.</p>
+          </a>
+
+          <a class="component-card" href="epf-guide.html">
+            <div class="component-icon">🏢</div>
+            <h3>Employer EPF</h3>
+            <p>Additional contribution paid by your employer on top of your salary.</p>
+          </a>
+
+          <a class="component-card" href="index.html">
+            <div class="component-icon">📊</div>
+            <h3>Salary After EPF</h3>
+            <p>Estimate your salary after employee EPF deduction before other deductions.</p>
+          </a>
+
+          <a class="component-card" href="epf-guide.html">
+            <div class="component-icon">📅</div>
+            <h3>Annual EPF</h3>
+            <p>Estimate yearly employee EPF and total EPF contribution for planning.</p>
+          </a>
+
         </div>
 
-        <div class="result-box">
-          <span>Annual Employee EPF</span>
-          <strong id="annualEmployeeEPF">RM5,280.00</strong>
-        </div>
+      </section>
 
-        <div class="result-box">
-          <span>Monthly Salary Used</span>
-          <strong id="salaryUsed">RM4,000.00</strong>
-        </div>
-      </div>
-
-      <p class="result-subnote" id="rateExplanation">Applied common rate: Employee 11%, Employer 13% because monthly wages are RM5,000 and below.</p>
-
-      <div class="breakdown-table-wrap">
-        <table class="breakdown-table">
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th>Rate</th>
-              <th>Monthly Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Employee EPF Deduction</td>
-              <td id="employeeRateText">11%</td>
-              <td id="employeeEPFTable">RM440.00</td>
-            </tr>
-            <tr>
-              <td>Employer EPF Contribution</td>
-              <td id="employerRateText">13%</td>
-              <td id="employerEPFTable">RM520.00</td>
-            </tr>
-            <tr>
-              <td>Total EPF Contribution</td>
-              <td>-</td>
-              <td id="totalEPFTable">RM960.00</td>
-            </tr>
-            <tr>
-              <td>Estimated Annual Total EPF</td>
-              <td>12 months</td>
-              <td id="annualTotalEPFTable">RM11,520.00</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="mini-alert">
-        <strong>Planning tip:</strong> Employee EPF reduces your monthly take-home pay, while employer EPF is an additional contribution paid by your employer into your EPF account.
-      </div>
-    </section>
-  </div>
-
-  <main class="seo">
-
-    <section class="content-card">
-      <span class="section-label">Quick Summary</span>
-      <h2>EPF Calculator Quick Summary</h2>
-      <p>This EPF calculator helps employees, job seekers, employers and payroll users estimate KWSP contributions based on monthly salary and selected contribution rates.</p>
-
-      <div class="summary-grid">
-        <div class="summary-card">
-          <strong>11%</strong>
-          <span>Common employee EPF contribution rate for Malaysians / PR below age 60.</span>
-        </div>
-
-        <div class="summary-card">
-          <strong>12% / 13%</strong>
-          <span>Common employer EPF contribution rates depending on monthly wage level.</span>
-        </div>
-
-        <div class="summary-card">
-          <strong>Monthly</strong>
-          <span>EPF is usually calculated and contributed through payroll each month.</span>
-        </div>
-
-        <div class="summary-card">
-          <strong>Annual</strong>
-          <span>Use the annual estimate to understand your yearly retirement savings.</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-card">
-      <span class="section-label">How It Works</span>
-      <h2>How to Use This EPF Calculator</h2>
-      <p>Enter your monthly salary, choose your employee category, and click calculate. The calculator will estimate your employee EPF deduction, employer EPF contribution, total monthly EPF contribution, annual EPF savings and salary after employee EPF deduction.</p>
-
-      <div class="formula-box">
-        <strong>EPF Contribution = Monthly Salary × EPF Rate</strong>
-        <span>Example: RM4,000 × 11% = RM440 employee EPF deduction</span>
-      </div>
-
-      <div class="two-column">
-        <div class="info-panel">
-          <h3>Employee EPF</h3>
-          <p>Employee EPF is deducted from your monthly salary. This amount reduces your take-home pay, but it is credited into your EPF retirement savings account.</p>
-        </div>
-
-        <div class="info-panel">
-          <h3>Employer EPF</h3>
-          <p>Employer EPF is paid by your employer on top of your salary. It is part of your employment cost and contributes to your EPF account.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-card">
-      <span class="section-label">Salary Examples</span>
-      <h2>EPF Contribution Snapshot</h2>
-      <p>The table below shows quick percentage-based estimates using 11% employee EPF and common employer rates of 13% for RM5,000 and below, and 12% for above RM5,000.</p>
-
-      <div class="breakdown-table-wrap">
-        <table class="snapshot-table">
-          <thead>
-            <tr>
-              <th>Monthly Salary</th>
-              <th>Employee EPF</th>
-              <th>Employer EPF</th>
-              <th>Total EPF</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>RM2,000</td>
-              <td>RM220.00</td>
-              <td>RM260.00</td>
-              <td><strong>RM480.00</strong></td>
-            </tr>
-            <tr>
-              <td>RM3,000</td>
-              <td>RM330.00</td>
-              <td>RM390.00</td>
-              <td><strong>RM720.00</strong></td>
-            </tr>
-            <tr>
-              <td>RM4,000</td>
-              <td>RM440.00</td>
-              <td>RM520.00</td>
-              <td><strong>RM960.00</strong></td>
-            </tr>
-            <tr>
-              <td>RM5,000</td>
-              <td>RM550.00</td>
-              <td>RM650.00</td>
-              <td><strong>RM1,200.00</strong></td>
-            </tr>
-            <tr>
-              <td>RM6,000</td>
-              <td>RM660.00</td>
-              <td>RM720.00</td>
-              <td><strong>RM1,380.00</strong></td>
-            </tr>
-            <tr>
-              <td>RM8,000</td>
-              <td>RM880.00</td>
-              <td>RM960.00</td>
-              <td><strong>RM1,840.00</strong></td>
-            </tr>
-            <tr>
-              <td>RM10,000</td>
-              <td>RM1,100.00</td>
-              <td>RM1,200.00</td>
-              <td><strong>RM2,300.00</strong></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p class="small-note">This snapshot is for quick reference only. Actual EPF contribution may differ based on the official KWSP contribution schedule.</p>
-    </section>
-
-    <section class="content-card">
-      <span class="section-label">Who It Helps</span>
       <h2>Who Should Use This EPF Calculator?</h2>
 
-      <div class="two-column">
-        <div class="info-panel">
-          <h3>Employees & Job Seekers</h3>
-          <ul>
-            <li>Check monthly EPF deduction from salary.</li>
-            <li>Estimate take-home pay after employee EPF.</li>
-            <li>Compare salary offers more clearly.</li>
-          </ul>
+      <ul>
+        <li>Employees checking monthly EPF deduction from salary</li>
+        <li>Job seekers comparing salary offers and take-home pay</li>
+        <li>Employers estimating employer EPF contribution</li>
+        <li>HR and payroll users preparing quick payroll estimates</li>
+        <li>Malaysians planning retirement savings and annual EPF contribution</li>
+      </ul>
+
+      <section class="official-box">
+
+        <h2>Official EPF / KWSP Resources</h2>
+
+        <p>
+          EPF rules, contribution rates and payroll requirements may change over time. For official confirmation, always refer to KWSP resources or consult a qualified payroll professional.
+        </p>
+
+        <div class="official-links">
+
+          <a href="https://www.kwsp.gov.my/en/employer/responsibilities/mandatory-contribution" target="_blank" rel="noopener">
+            <h3>KWSP Mandatory Contribution</h3>
+            <p>Official employer responsibility and contribution information.</p>
+          </a>
+
+          <a href="https://www.kwsp.gov.my/en/epf-act-1991-third-schedule" target="_blank" rel="noopener">
+            <h3>EPF Act Third Schedule</h3>
+            <p>Official schedule reference for EPF contribution rates.</p>
+          </a>
+
+          <a href="https://secure.kwsp.gov.my/KWSP_files/contributionCalculator/index_en.html" target="_blank" rel="noopener">
+            <h3>KWSP Contribution Calculator</h3>
+            <p>Official KWSP contribution calculator for reference.</p>
+          </a>
+
         </div>
 
-        <div class="info-panel">
-          <h3>Employers & Payroll Users</h3>
-          <ul>
-            <li>Estimate employer EPF contribution quickly.</li>
-            <li>Understand total monthly salary cost.</li>
-            <li>Prepare simple payroll planning estimates.</li>
-          </ul>
+        <div class="payroll-note">
+          <strong>Important:</strong>
+          This website provides simplified estimates for general information only. It should not be treated as professional tax, legal, payroll, accounting or financial advice.
         </div>
-      </div>
 
-      <div class="cta-box">
-        <h2>Need Full Take-Home Pay?</h2>
-        <p>EPF is only one part of salary deduction. Use our full salary calculator to estimate EPF, SOCSO, EIS, PCB and monthly take-home pay together.</p>
+      </section>
 
-        <div class="cta-actions">
-          <a class="cta-primary" href="index.html">Calculate Full Salary →</a>
-          <a class="cta-secondary" href="pcb-calculator.html">Try PCB Calculator →</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-card">
-      <span class="section-label">Official References</span>
-      <h2>Official EPF / KWSP Resources</h2>
-      <p>Salary rules, contribution rates and payroll requirements may change over time. For official confirmation, always refer to KWSP resources or consult a qualified payroll professional.</p>
-
-      <div class="official-links">
-        <a href="https://www.kwsp.gov.my/en/employer/responsibilities/mandatory-contribution" target="_blank" rel="noopener">
-          <strong>KWSP Mandatory Contribution</strong>
-          <span>Official employer responsibility and contribution rate information.</span>
-        </a>
-
-        <a href="https://www.kwsp.gov.my/en/epf-act-1991-third-schedule" target="_blank" rel="noopener">
-          <strong>EPF Act Third Schedule</strong>
-          <span>Official schedule reference for EPF contribution rates.</span>
-        </a>
-
-        <a href="https://secure.kwsp.gov.my/KWSP_files/contributionCalculator/index_en.html" target="_blank" rel="noopener">
-          <strong>KWSP Contribution Calculator</strong>
-          <span>Official KWSP contribution calculator for reference.</span>
-        </a>
-      </div>
-
-      <div class="disclaimer-box">
-        <strong>Important:</strong> This website provides simplified estimates for general information only. It should not be treated as professional tax, legal, payroll, accounting or financial advice.
-      </div>
-    </section>
-
-    <section class="content-card">
-      <span class="section-label">FAQ</span>
       <h2>Frequently Asked Questions</h2>
 
       <div class="faq-box">
+
         <details class="faq-item" open>
           <summary>How is EPF calculated in Malaysia?</summary>
-          <p>EPF is generally calculated based on monthly wages and applicable employee and employer contribution rates. This calculator uses percentage-based estimates for easier planning.</p>
+          <p>
+            EPF is generally calculated based on monthly wages and the applicable employee and employer contribution rates. This calculator uses percentage-based estimates for easier planning.
+          </p>
         </details>
 
         <details class="faq-item">
           <summary>Is employer EPF deducted from my salary?</summary>
-          <p>No. Employee EPF is deducted from your salary. Employer EPF is an additional contribution paid by your employer on top of your salary.</p>
+          <p>
+            No. Employee EPF is deducted from your salary. Employer EPF is an additional contribution paid by your employer on top of your salary.
+          </p>
         </details>
 
         <details class="faq-item">
           <summary>Why is my actual EPF different from this calculator?</summary>
-          <p>Actual EPF may follow the official KWSP contribution schedule, wage category and payroll rounding rules, so it may differ from a simple percentage calculation.</p>
+          <p>
+            Actual EPF may follow the official KWSP contribution schedule, wage category and payroll rounding rules, so it may differ from a simple percentage calculation.
+          </p>
         </details>
 
         <details class="faq-item">
           <summary>Does EPF affect take-home pay?</summary>
-          <p>Yes. Employee EPF reduces your monthly take-home pay, but it goes into your EPF retirement savings account.</p>
+          <p>
+            Yes. Employee EPF reduces your monthly take-home pay because it is deducted from your salary, but the amount goes into your EPF retirement savings account.
+          </p>
         </details>
 
         <details class="faq-item">
           <summary>Does this calculator include SOCSO, EIS and PCB?</summary>
-          <p>This page focuses on EPF only. To estimate EPF together with SOCSO, EIS and PCB, use the full Malaysia salary calculator.</p>
+          <p>
+            No. This page focuses on EPF only. To estimate EPF together with SOCSO, EIS and PCB, use the full Malaysia salary calculator.
+          </p>
         </details>
-      </div>
-    </section>
 
-    <section class="content-card">
-      <h2>📚 Related Payroll Guides</h2>
-      <p>Continue reading related Malaysia payroll guides to understand salary deductions and statutory contributions.</p>
+        <details class="faq-item">
+          <summary>What is the common employer EPF rate in Malaysia?</summary>
+          <p>
+            For Malaysian citizens and permanent residents below age 60, a common employer EPF rate is 13% for monthly wages of RM5,000 and below, and 12% for monthly wages above RM5,000.
+          </p>
+        </details>
 
-      <div class="guide-mini-grid">
-        <a href="epf-guide.html">💰 EPF Guide</a>
-        <a href="socso-guide.html">🛡️ SOCSO Guide</a>
-        <a href="eis-guide.html">🏢 EIS Guide</a>
-        <a href="salary-deduction-guide.html">📉 Salary Deduction Guide</a>
       </div>
 
-      <p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p>
-    </section>
+      <section class="salary-guides-box">
 
-    <section class="content-card">
-      <h2>🧮 Related Calculators</h2>
-      <p>Use these calculators to estimate payroll deductions and take-home pay in Malaysia.</p>
+        <h2>Malaysia Payroll Guides</h2>
 
-      <div class="guide-mini-grid">
-        <a href="index.html">Salary Calculator</a>
-        <a href="socso-calculator.html">SOCSO Calculator</a>
-        <a href="eis-calculator.html">EIS Calculator</a>
-        <a href="pcb-calculator.html">PCB Calculator</a>
-      </div>
+        <p>
+          Learn more about EPF, SOCSO, EIS, PCB and salary deductions in Malaysia.
+        </p>
 
-      <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
-    </section>
+        <div class="guide-mini-grid">
+          <a href="epf-guide.html">💰 EPF Guide</a>
+          <a href="socso-guide.html">🛡️ SOCSO Guide</a>
+          <a href="eis-guide.html">📋 EIS Guide</a>
+          <a href="pcb-guide.html">🏛️ PCB Guide</a>
+          <a href="salary-deduction-guide.html">📉 Salary Deduction Guide</a>
+          <a href="payslip-guide.html">🧾 Payslip Guide</a>
+        </div>
+
+        <p class="view-all-guides">
+          <a href="guides.html">View All Salary Guides →</a>
+        </p>
+
+      </section>
+
+      <section class="salary-guides-box">
+
+        <h2>Related Calculators</h2>
+
+        <p>
+          Explore more free Malaysia salary and payroll calculators.
+        </p>
+
+        <div class="guide-mini-grid">
+          <a href="index.html">Salary Calculator</a>
+          <a href="socso-calculator.html">SOCSO Calculator</a>
+          <a href="eis-calculator.html">EIS Calculator</a>
+          <a href="pcb-calculator.html">PCB Calculator</a>
+          <a href="income-tax-calculator.html">Income Tax Calculator</a>
+          <a href="payslip-generator.html">Payslip Generator</a>
+        </div>
+
+        <p class="view-all-guides">
+          <a href="calculators.html">View All Calculators →</a>
+        </p>
+
+      </section>
+
+    </div>
 
   </main>
 
-</div>
+  <footer class="footer">
+    <p>© 2026 Malaysia Salary Tools</p>
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="calculators.html">Calculators</a> |
+      <a href="guides.html">Guides</a> |
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact Us</a> |
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </p>
+  </footer>
 
-<hr style="margin-top:40px; border:none; border-top:1px solid #e5e7eb;">
+  <script>
+    function formatRM(amount) {
+      return Number(amount).toLocaleString('en-MY', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+    }
 
-<footer class="footer">
-  <p>© 2026 Malaysia Salary Tools</p>
-  <p>
-    <a href="index.html">Home</a> |
-    <a href="calculators.html">Calculators</a> |
-    <a href="guides.html">Guides</a> |
-    <a href="contact.html">Contact Us</a> |
-    <a href="privacy-policy.html">Privacy Policy</a>
-  </p>
-</footer>
+    function formatRate(rate) {
+      return Number(rate).toLocaleString('en-MY', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 2
+      }) + '%';
+    }
 
-<script>
-  function formatRM(amount) {
-    return 'RM' + Number(amount).toLocaleString('en-MY', {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
+    function setSalary(value) {
+      document.getElementById("salary").value = value;
+      document.getElementById("salaryRange").value = value;
+      calculateEPF();
+    }
+
+    function getAutoRates(category, salary) {
+      if (category === 'malaysianUnder60') {
+        return {
+          employeeRate: 11,
+          employerRate: salary <= 5000 ? 13 : 12,
+          explanation: salary <= 5000
+            ? 'Applied common rate: Employee 11%, Employer 13% because monthly wages are RM5,000 and below.'
+            : 'Applied common rate: Employee 11%, Employer 12% because monthly wages are above RM5,000.'
+        };
+      }
+
+      if (category === 'malaysian60') {
+        return {
+          employeeRate: 0,
+          employerRate: 4,
+          explanation: 'Applied simplified age 60 and above estimate: Employee 0%, Employer 4%. Please confirm with the official KWSP schedule.'
+        };
+      }
+
+      if (category === 'nonMalaysianNew') {
+        return {
+          employeeRate: 2,
+          employerRate: 2,
+          explanation: 'Applied simplified non-Malaysian estimate: Employee 2%, Employer 2%. Please confirm with the official KWSP schedule.'
+        };
+      }
+
+      const employeeRate = parseFloat(document.getElementById('employeeRate').value) || 0;
+      const employerRate = parseFloat(document.getElementById('employerRate').value) || 0;
+
+      return {
+        employeeRate: employeeRate,
+        employerRate: employerRate,
+        explanation: 'Applied manual custom rates: Employee ' + formatRate(employeeRate) + ', Employer ' + formatRate(employerRate) + '.'
+      };
+    }
+
+    function handleCategoryChange() {
+      const category = document.getElementById('employeeCategory').value;
+      const customRateGrid = document.getElementById('customRateGrid');
+
+      if (category === 'manual') {
+        customRateGrid.classList.add('show');
+      } else {
+        customRateGrid.classList.remove('show');
+      }
+
+      calculateEPF();
+    }
+
+    function calculateEPF() {
+      const salaryInput = document.getElementById("salary");
+      const rangeInput = document.getElementById("salaryRange");
+
+      let salary = parseFloat(salaryInput.value);
+
+      if (!salary || salary < 0) {
+        document.getElementById("totalEPF").textContent = "0.00";
+        document.getElementById("rateExplanation").textContent = "Please enter a salary.";
+        document.getElementById("epfBar").innerHTML = "";
+        document.getElementById("monthlyRows").innerHTML = "";
+        document.getElementById("annualRows").innerHTML = "";
+        return;
+      }
+
+      rangeInput.value = Math.min(salary, rangeInput.max);
+
+      const category = document.getElementById('employeeCategory').value;
+      const rates = getAutoRates(category, salary);
+
+      const employeeEPF = salary * (rates.employeeRate / 100);
+      const employerEPF = salary * (rates.employerRate / 100);
+      const totalEPF = employeeEPF + employerEPF;
+      const salaryAfterEPF = salary - employeeEPF;
+
+      const annualEmployeeEPF = employeeEPF * 12;
+      const annualEmployerEPF = employerEPF * 12;
+      const annualTotalEPF = totalEPF * 12;
+
+      const colors = {
+        employee: "#5aa783",
+        employer: "#c9a14e",
+        salaryAfter: "#f6f3ec",
+        total: "#2f7d5e"
+      };
+
+      document.getElementById("totalEPF").textContent = formatRM(totalEPF);
+      document.getElementById("rateExplanation").textContent = rates.explanation;
+
+      const barItems = [
+        ["Salary After Employee EPF", salaryAfterEPF, colors.salaryAfter],
+        ["Employee EPF", employeeEPF, colors.employee]
+      ];
+
+      document.getElementById("epfBar").innerHTML = barItems.map(function(item) {
+        let width = salary ? (item[1] / salary) * 100 : 0;
+        return '<i style="width:' + width + '%;background:' + item[2] + '"></i>';
+      }).join("");
+
+      const monthlyItems = [
+        ["Monthly Salary", salary, "#f6f3ec"],
+        ["Employee EPF / KWSP", employeeEPF, colors.employee],
+        ["Employer EPF / KWSP", employerEPF, colors.employer],
+        ["Total Monthly EPF", totalEPF, colors.total],
+        ["Salary After Employee EPF", salaryAfterEPF, colors.salaryAfter]
+      ];
+
+      document.getElementById("monthlyRows").innerHTML = monthlyItems.map(function(item) {
+        return '<div class="result-line"><span class="k"><span class="dot" style="background:' + item[2] + '"></span>' + item[0] + '</span><span class="v">RM ' + formatRM(item[1]) + '</span></div>';
+      }).join("");
+
+      document.getElementById("annualRows").innerHTML =
+        '<div><span>Annual Employee EPF</span><strong>RM ' + formatRM(annualEmployeeEPF) + '</strong></div>' +
+        '<div><span>Annual Employer EPF</span><strong>RM ' + formatRM(annualEmployerEPF) + '</strong></div>' +
+        '<div><span>Annual Total EPF</span><strong>RM ' + formatRM(annualTotalEPF) + '</strong></div>';
+    }
+
+    document.getElementById("salary").addEventListener("input", calculateEPF);
+
+    document.getElementById("salaryRange").addEventListener("input", function() {
+      document.getElementById("salary").value = this.value;
+      calculateEPF();
     });
-  }
 
-  function formatRate(rate) {
-    return Number(rate).toLocaleString('en-MY', {
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 2
-    }) + '%';
-  }
-
-  function getAutoRates(category, salary) {
-    if (category === 'malaysianUnder60') {
-      return {
-        employeeRate: 11,
-        employerRate: salary <= 5000 ? 13 : 12,
-        explanation: salary <= 5000
-          ? 'Applied common rate: Employee 11%, Employer 13% because monthly wages are RM5,000 and below.'
-          : 'Applied common rate: Employee 11%, Employer 12% because monthly wages are above RM5,000.'
-      };
-    }
-
-    if (category === 'malaysian60') {
-      return {
-        employeeRate: 0,
-        employerRate: 4,
-        explanation: 'Applied simplified age 60 and above estimate: Employee 0%, Employer 4%. Please confirm with the official KWSP schedule.'
-      };
-    }
-
-    if (category === 'nonMalaysianNew') {
-      return {
-        employeeRate: 2,
-        employerRate: 2,
-        explanation: 'Applied simplified non-Malaysian estimate: Employee 2%, Employer 2%. Please confirm with the official KWSP schedule.'
-      };
-    }
-
-    const employeeRate = parseFloat(document.getElementById('employeeRate').value) || 0;
-    const employerRate = parseFloat(document.getElementById('employerRate').value) || 0;
-
-    return {
-      employeeRate: employeeRate,
-      employerRate: employerRate,
-      explanation: 'Applied manual custom rates: Employee ' + formatRate(employeeRate) + ', Employer ' + formatRate(employerRate) + '.'
-    };
-  }
-
-  function handleCategoryChange() {
-    const category = document.getElementById('employeeCategory').value;
-    const customRateGrid = document.getElementById('customRateGrid');
-
-    if (category === 'manual') {
-      customRateGrid.classList.add('show');
-    } else {
-      customRateGrid.classList.remove('show');
-    }
+    document.getElementById("employeeRate").addEventListener("input", calculateEPF);
+    document.getElementById("employerRate").addEventListener("input", calculateEPF);
 
     calculateEPF();
-  }
-
-  function calculateEPF() {
-    const salary = parseFloat(document.getElementById('salary').value) || 0;
-    const category = document.getElementById('employeeCategory').value;
-    const rates = getAutoRates(category, salary);
-
-    const employeeRateDecimal = rates.employeeRate / 100;
-    const employerRateDecimal = rates.employerRate / 100;
-
-    const employeeEPF = salary * employeeRateDecimal;
-    const employerEPF = salary * employerRateDecimal;
-    const totalEPF = employeeEPF + employerEPF;
-    const salaryAfterEPF = salary - employeeEPF;
-
-    const annualEmployeeEPF = employeeEPF * 12;
-    const annualTotalEPF = totalEPF * 12;
-
-    document.getElementById('heroTotalEPF').textContent = formatRM(totalEPF);
-    document.getElementById('employeeEPF').textContent = formatRM(employeeEPF);
-    document.getElementById('employerEPF').textContent = formatRM(employerEPF);
-    document.getElementById('totalEPF').textContent = formatRM(totalEPF);
-    document.getElementById('salaryAfterEPF').textContent = formatRM(salaryAfterEPF);
-    document.getElementById('annualEmployeeEPF').textContent = formatRM(annualEmployeeEPF);
-    document.getElementById('annualTotalEPF').textContent = formatRM(annualTotalEPF);
-    document.getElementById('salaryUsed').textContent = formatRM(salary);
-
-    document.getElementById('employeeRateText').textContent = formatRate(rates.employeeRate);
-    document.getElementById('employerRateText').textContent = formatRate(rates.employerRate);
-    document.getElementById('employeeEPFTable').textContent = formatRM(employeeEPF);
-    document.getElementById('employerEPFTable').textContent = formatRM(employerEPF);
-    document.getElementById('totalEPFTable').textContent = formatRM(totalEPF);
-    document.getElementById('annualTotalEPFTable').textContent = formatRM(annualTotalEPF);
-    document.getElementById('rateExplanation').textContent = rates.explanation;
-  }
-
-  document.getElementById('salary').addEventListener('input', calculateEPF);
-  document.getElementById('employeeRate').addEventListener('input', calculateEPF);
-  document.getElementById('employerRate').addEventListener('input', calculateEPF);
-
-  calculateEPF();
-</script>
+  </script>
 
 </body>
 </html>
