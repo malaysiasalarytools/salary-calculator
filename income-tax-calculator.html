@@ -7,102 +7,797 @@
   <title>Malaysia Income Tax Calculator 2026 | Personal Tax Calculator</title>
 
   <link rel="canonical" href="https://malaysiasalarytools.com/income-tax-calculator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
 
-  <meta name="description" content="Free Malaysia Income Tax Calculator 2026. Estimate annual income tax, monthly tax and effective tax rate based on annual income and tax relief.">
+  <meta name="description" content="Free Malaysia Income Tax Calculator 2026. Estimate annual income tax, monthly tax, chargeable income and effective tax rate based on annual income and tax reliefs.">
+  <meta name="keywords" content="Malaysia income tax calculator, personal tax calculator Malaysia, income tax 2026 Malaysia, LHDN tax calculator, Malaysia tax relief calculator">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="robots" content="index, follow">
 
   <style>
+    :root {
+      --background:#f4f1ea;
+      --card:#fbfaf6;
+      --foreground:#302c26;
+      --muted:#7c766c;
+      --primary:#2f2b25;
+      --primary-foreground:#f6f3ec;
+      --accent:#2f7d5e;
+      --accent-soft:rgba(47,125,94,.10);
+      --accent-border:rgba(47,125,94,.22);
+      --border:#e2ddd2;
+      --white:#ffffff;
+      --radius:16px;
+      --shadow:0 18px 45px rgba(47,43,37,.08);
+    }
+
+    * { box-sizing:border-box; }
+
+    html {
+      overflow-x:hidden;
+      scroll-behavior:smooth;
+    }
+
     body {
-      font-family: Arial;
-      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
-      margin: 0;
-      padding: 20px;
+      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47,125,94,.08), transparent 34%),
+        linear-gradient(135deg, #f4f1ea, #efe9de);
+      margin:0;
+      padding:0;
+      color:var(--foreground);
+      line-height:1.6;
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
     }
 
-    .card,
+    a { color:inherit; }
+
+    .serif {
+      font-family:Georgia, "Times New Roman", serif;
+      font-weight:400;
+    }
+
+    .top-nav {
+      background:rgba(251,250,246,.84);
+      border-bottom:1px solid var(--border);
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(10px);
+    }
+
+    .nav-inner {
+      max-width:1120px;
+      margin:0 auto;
+      padding:14px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:25px;
+    }
+
+    .brand {
+      display:flex;
+      align-items:center;
+      text-decoration:none;
+      flex-shrink:0;
+    }
+
+    .brand img {
+      width:220px;
+      height:auto;
+      display:block;
+    }
+
+    .nav-links {
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:nowrap;
+      min-width:0;
+    }
+
+    .nav-links a {
+      display:block;
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:600;
+      font-size:15px;
+      padding:10px 14px;
+      border-radius:999px;
+      white-space:nowrap;
+      background:transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background:var(--primary);
+      color:var(--primary-foreground);
+    }
+
+    .hero {
+      text-align:center;
+      padding:56px 20px 18px;
+      max-width:900px;
+      margin:0 auto;
+    }
+
+    .pill {
+      display:inline-block;
+      font-size:12px;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      color:var(--accent);
+      background:var(--accent-soft);
+      border:1px solid var(--accent-border);
+      padding:7px 15px;
+      border-radius:999px;
+      margin-bottom:20px;
+      font-weight:700;
+    }
+
+    .hero h1 {
+      margin:0;
+      font-size:clamp(36px, 6vw, 62px);
+      line-height:1.05;
+      letter-spacing:-.03em;
+      color:var(--foreground);
+    }
+
+    .hero h1 em {
+      color:var(--accent);
+      font-style:italic;
+    }
+
+    .hero p {
+      max-width:760px;
+      margin:18px auto 0;
+      font-size:17px;
+      color:var(--muted);
+    }
+
+    .main-wrapper {
+      padding:16px 20px 44px;
+    }
+
+    .calculator-shell {
+      max-width:1120px;
+      margin:28px auto 32px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      align-items:stretch;
+    }
+
+    .panel,
     .seo {
-      background: white;
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
     }
 
-    .seo { line-height: 1.7; }
-
-    .layout {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
+    .panel {
+      padding:28px;
     }
 
-    .box {
-      flex: 1;
-      min-width: 320px;
-      background: #f8f9fc;
-      border: 1px solid #eee;
-      border-radius: 12px;
-      padding: 15px;
+    .panel h2 {
+      margin:0 0 4px;
+      font-size:22px;
+      color:var(--foreground);
     }
 
-    input, button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      font-size: 16px;
-      box-sizing: border-box;
+    .panel .sub {
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size:14px;
     }
 
-    input {
-      border-radius: 10px;
-      border: 1px solid #ddd;
+    label {
+      display:block;
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:8px;
+      color:var(--foreground);
     }
 
-    button {
-      background: #111;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
+    .form-group {
+      margin-bottom:18px;
     }
 
-    .result {
-      margin-top: 10px;
-      line-height: 1.6;
+    .field-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
     }
 
-    .seo-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
+    .input-row {
+      position:relative;
     }
 
-    .card-link {
-      display: block;
-      padding: 15px;
-      background: white;
-      border-radius: 12px;
-      text-decoration: none;
-      color: black;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    .input-row span {
+      position:absolute;
+      left:14px;
+      top:50%;
+      transform:translateY(-50%);
+      color:var(--muted);
+      font-size:16px;
+      font-weight:700;
     }
 
-    h1 { font-size: 26px; }
-    h2 { font-size: 20px; margin-top: 25px; }
-    h3 { font-size: 16px; margin-top: 18px; }
+    input,
+    select {
+      width:100%;
+      padding:14px;
+      font-size:15px;
+      font-weight:700;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:var(--white);
+      color:var(--foreground);
+      outline:none;
+    }
 
-    @media (max-width: 700px){
-      .layout { flex-direction: column; }
-      body { padding: 10px; }
-      .card, .seo {
-        margin: 15px auto;
-        padding: 18px;
+    .input-row input {
+      padding-left:46px;
+      font-size:20px;
+    }
+
+    input:focus,
+    select:focus {
+      border-color:var(--accent);
+      box-shadow:0 0 0 3px rgba(47,125,94,.14);
+    }
+
+    input[type="range"] {
+      width:100%;
+      margin-top:18px;
+      accent-color:var(--accent);
+    }
+
+    .preset-grid {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:16px;
+    }
+
+    .preset,
+    .calc-button {
+      border:none;
+      cursor:pointer;
+      font-family:inherit;
+    }
+
+    .preset {
+      background:var(--white);
+      border:1px solid var(--border);
+      color:var(--foreground);
+      padding:8px 13px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:13px;
+    }
+
+    .preset:hover {
+      color:var(--accent);
+      border-color:var(--accent);
+    }
+
+    .calc-button {
+      width:100%;
+      background:var(--accent);
+      color:#fff;
+      padding:14px 18px;
+      margin-top:6px;
+      border-radius:12px;
+      font-size:16px;
+      font-weight:800;
+    }
+
+    .calc-button:hover {
+      filter:brightness(.95);
+    }
+
+    .secondary-button {
+      display:block;
+      text-align:center;
+      width:100%;
+      background:var(--white);
+      color:var(--accent);
+      border:1px solid var(--accent-border);
+      padding:13px 18px;
+      margin-top:12px;
+      border-radius:12px;
+      font-size:15px;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .secondary-button:hover {
+      background:var(--accent-soft);
+    }
+
+    .input-note {
+      margin:16px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .results-panel {
+      background:var(--primary);
+      color:var(--primary-foreground);
+      border:1px solid var(--primary);
+      padding:28px;
+      border-radius:var(--radius);
+      box-shadow:0 24px 55px rgba(47,43,37,.20);
+    }
+
+    .results-panel h2 {
+      margin:0 0 4px;
+      font-size:22px;
+      color:var(--primary-foreground);
+    }
+
+    .results-panel .sub {
+      margin:0;
+      color:rgba(246,243,236,.62);
+      font-size:14px;
+    }
+
+    .net {
+      font-size:clamp(36px, 5vw, 48px);
+      font-weight:800;
+      letter-spacing:-.03em;
+      margin:16px 0 0;
+    }
+
+    .net-caption {
+      color:rgba(246,243,236,.62);
+      font-size:14px;
+      margin-top:0;
+    }
+
+    .bar {
+      height:9px;
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+      display:flex;
+      overflow:hidden;
+      margin:22px 0;
+    }
+
+    .bar i {
+      display:block;
+      height:100%;
+    }
+
+    .result-rows {
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+
+    .result-line {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      padding:11px 0;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      font-size:14px;
+    }
+
+    .result-line:last-child {
+      border-bottom:none;
+    }
+
+    .result-line .k {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:rgba(246,243,236,.86);
+    }
+
+    .result-line .v {
+      font-weight:800;
+      text-align:right;
+    }
+
+    .dot {
+      width:9px;
+      height:9px;
+      border-radius:3px;
+      flex:0 0 auto;
+    }
+
+    .annual-summary {
+      margin-top:18px;
+      padding-top:16px;
+      border-top:1px solid rgba(255,255,255,.18);
+      display:grid;
+      gap:8px;
+      font-size:14px;
+    }
+
+    .annual-summary div {
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      color:rgba(246,243,236,.82);
+    }
+
+    .annual-summary strong {
+      color:var(--primary-foreground);
+      text-align:right;
+    }
+
+    .seo {
+      max-width:1120px;
+      margin:30px auto;
+      padding:30px;
+      line-height:1.72;
+    }
+
+    .seo h2 {
+      font-size:clamp(25px, 4vw, 36px);
+      line-height:1.15;
+      margin:34px 0 12px;
+      color:var(--foreground);
+      letter-spacing:-.01em;
+      font-family:Georgia, "Times New Roman", serif;
+      font-weight:400;
+    }
+
+    .seo h2:first-child {
+      margin-top:0;
+    }
+
+    .seo h3 {
+      font-size:17px;
+      margin-top:18px;
+    }
+
+    .seo p,
+    .seo li {
+      color:var(--muted);
+    }
+
+    .formula-box,
+    .contribution-box,
+    .salary-guides-box,
+    .official-box {
+      background:#f8f5ef;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:24px;
+      margin:26px 0;
+    }
+
+    .formula-box {
+      text-align:center;
+    }
+
+    .formula-box strong {
+      display:block;
+      font-size:22px;
+      color:var(--foreground);
+      margin-bottom:8px;
+    }
+
+    .formula-box span {
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .component-grid,
+    .guide-mini-grid,
+    .rate-grid,
+    .official-links {
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+      grid-template-columns:repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .component-card,
+    .guide-mini-grid a,
+    .rate-card,
+    .official-links a,
+    .faq-item {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:14px;
+    }
+
+    .component-card,
+    .official-links a {
+      display:block;
+      padding:20px;
+      text-decoration:none;
+      color:inherit;
+      transition:.18s ease;
+    }
+
+    .component-card:hover,
+    .guide-mini-grid a:hover,
+    .official-links a:hover {
+      transform:translateY(-2px);
+      border-color:var(--accent);
+      box-shadow:0 12px 30px rgba(47,43,37,.08);
+    }
+
+    .component-icon {
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      background:var(--accent-soft);
+      display:grid;
+      place-items:center;
+      margin-bottom:10px;
+      font-size:21px;
+    }
+
+    .component-card h3,
+    .rate-card h3,
+    .official-links h3 {
+      margin:8px 0 4px;
+      color:var(--foreground);
+    }
+
+    .component-card p,
+    .rate-card p,
+    .official-links p {
+      margin:0;
+      font-size:14px;
+    }
+
+    .rate-card {
+      padding:20px;
+    }
+
+    .rate-card strong {
+      display:block;
+      color:var(--accent);
+      font-size:28px;
+      line-height:1.1;
+      margin-bottom:8px;
+    }
+
+    .contribution-table-wrap {
+      overflow-x:auto;
+      margin-top:18px;
+    }
+
+    .contribution-table {
+      width:100%;
+      border-collapse:collapse;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:12px;
+      overflow:hidden;
+      min-width:520px;
+    }
+
+    .contribution-table th {
+      background:#f1ece3;
+      color:var(--muted);
+      font-size:13px;
+      text-align:left;
+      letter-spacing:.03em;
+      padding:14px;
+      border-bottom:1px solid var(--border);
+    }
+
+    .contribution-table td {
+      padding:14px;
+      border-bottom:1px solid var(--border);
+      color:var(--foreground);
+      font-size:14px;
+    }
+
+    .contribution-table tr:last-child td {
+      border-bottom:none;
+    }
+
+    .payroll-note {
+      margin-top:20px;
+      background:var(--card);
+      border-left:4px solid var(--accent);
+      padding:14px;
+      border-radius:10px;
+      color:var(--muted);
+    }
+
+    .faq-box {
+      margin-top:18px;
+      max-width:780px;
+    }
+
+    .faq-item {
+      padding:4px 20px;
+      margin-bottom:12px;
+    }
+
+    .faq-item summary {
+      font-weight:800;
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      color:var(--foreground);
+      padding:16px 0;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display:none;
+    }
+
+    .faq-item summary::after {
+      content:"+";
+      color:var(--accent);
+      font-size:20px;
+      line-height:1;
+    }
+
+    .faq-item[open] summary::after {
+      content:"−";
+    }
+
+    .faq-item p {
+      padding-bottom:18px;
+      margin-top:0;
+      color:var(--muted);
+      line-height:1.55;
+      font-size:14px;
+    }
+
+    .guide-mini-grid a {
+      display:block;
+      padding:14px 16px;
+      text-decoration:none;
+      color:var(--foreground);
+      font-weight:800;
+      text-align:center;
+      transition:.18s ease;
+    }
+
+    .view-all-guides {
+      text-align:center;
+      margin:20px 0 0;
+    }
+
+    .view-all-guides a {
+      color:var(--accent);
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .footer {
+      border-top:1px solid var(--border);
+      padding:28px 20px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .footer a {
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    .footer a:hover {
+      color:var(--accent);
+    }
+
+    @media (max-width:900px) {
+      .calculator-shell,
+      .field-grid {
+        grid-template-columns:1fr;
+      }
+
+      .seo {
+        padding:24px;
+      }
+    }
+
+    @media (max-width:800px) {
+      .nav-inner {
+        flex-direction:row;
+        align-items:center;
+      }
+
+      .nav-links {
+        width:auto;
+        flex:1;
+        min-width:0;
+        justify-content:flex-start;
+        padding-bottom:5px;
+        overflow-x:auto;
+        overflow-y:hidden;
+        scrollbar-width:none;
+        -ms-overflow-style:none;
+        -webkit-overflow-scrolling:touch;
+        touch-action:pan-x;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display:none;
+      }
+    }
+
+    @media (max-width:700px) {
+      .hero {
+        padding:38px 14px 12px;
+      }
+
+      .main-wrapper {
+        padding:10px;
+      }
+
+      .panel,
+      .results-panel,
+      .seo {
+        padding:20px;
+      }
+
+      .nav-inner {
+        padding-top:8px;
+        padding-bottom:8px;
+        gap:8px;
+      }
+
+      .brand img {
+        width:150px;
+      }
+
+      .nav-links {
+        gap:6px;
+      }
+
+      .nav-links a {
+        font-size:14px;
+        padding:8px 10px;
+      }
+
+      .component-grid,
+      .rate-grid {
+        grid-template-columns:repeat(2, 1fr);
+        gap:10px;
+      }
+
+      .component-card,
+      .rate-card {
+        padding:14px;
+        text-align:center;
+      }
+
+      .component-icon {
+        margin-left:auto;
+        margin-right:auto;
+        width:36px;
+        height:36px;
+        font-size:18px;
+      }
+
+      .component-card h3,
+      .rate-card h3 {
+        font-size:15px;
+        margin:6px 0;
+      }
+
+      .component-card p,
+      .rate-card p {
+        font-size:12px;
+        line-height:1.35;
+      }
+
+      .net {
+        font-size:34px;
       }
     }
   </style>
@@ -110,235 +805,529 @@
 
 <body>
 
-<div class="card">
+<header class="top-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+    </a>
 
-  <h1>Malaysia Income Tax Calculator 2026</h1>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="calculators.html" class="active">Calculators</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
 
-  <p><b>Malaysia Income Tax Calculator:</b> Estimate your annual personal income tax, monthly tax and effective tax rate.</p>
+<section class="hero">
+  <span class="pill">Updated for Malaysia 2026 tax estimates</span>
+  <h1 class="serif">Calculate your <em>income tax</em> in Malaysia</h1>
+  <p>
+    Free Malaysia income tax calculator for employees, taxpayers and job seekers. Estimate annual tax, monthly tax, chargeable income, net annual income and effective tax rate.
+  </p>
+</section>
 
-  <p>This calculator gives a simple estimate based on annual income and tax relief. It is not an official LHDN calculation.</p>
+<main class="main-wrapper">
 
-  <input type="number" id="income" placeholder="Annual Income (RM)">
+  <section class="calculator-shell" id="calculator">
 
-  <input type="number" id="relief" placeholder="Tax Relief (RM) e.g. 9000">
+    <div class="panel">
+      <h2 class="serif">Calculate Income Tax</h2>
+      <p class="sub">Enter your annual income, tax relief and resident status for a simplified tax estimate.</p>
 
-  <button onclick="calculate()">Calculate Income Tax</button>
+      <div class="form-group">
+        <label for="income">Annual income</label>
+        <div class="input-row">
+          <span>RM</span>
+          <input type="number" id="income" value="60000" min="0" step="1000" placeholder="Example: 60000">
+        </div>
 
-  <div class="layout">
+        <input type="range" id="incomeRange" min="0" max="500000" step="1000" value="60000">
 
-    <div class="box">
-      <h3>Tax Estimate</h3>
-      <div class="result" id="monthly"></div>
+        <div class="preset-grid">
+          <button type="button" class="preset" onclick="setIncome(36000)">RM 36,000</button>
+          <button type="button" class="preset" onclick="setIncome(60000)">RM 60,000</button>
+          <button type="button" class="preset" onclick="setIncome(90000)">RM 90,000</button>
+          <button type="button" class="preset" onclick="setIncome(120000)">RM 120,000</button>
+          <button type="button" class="preset" onclick="setIncome(180000)">RM 180,000</button>
+        </div>
+      </div>
+
+      <div class="field-grid">
+        <div class="form-group">
+          <label for="relief">Tax relief / deductions</label>
+          <div class="input-row">
+            <span>RM</span>
+            <input type="number" id="relief" value="9000" min="0" step="100" placeholder="Example: 9000">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="rebate">Tax rebate / zakat</label>
+          <div class="input-row">
+            <span>RM</span>
+            <input type="number" id="rebate" value="0" min="0" step="100" placeholder="Example: 0">
+          </div>
+        </div>
+      </div>
+
+      <div class="field-grid">
+        <div class="form-group">
+          <label for="residentStatus">Tax resident status</label>
+          <select id="residentStatus" onchange="calculateIncomeTax()">
+            <option value="resident" selected>Resident - Progressive tax estimate</option>
+            <option value="nonresident">Non-resident - 30% estimate</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="months">Monthly tax spread</label>
+          <select id="months" onchange="calculateIncomeTax()">
+            <option value="12" selected>12 months</option>
+            <option value="11">11 months</option>
+            <option value="10">10 months</option>
+            <option value="9">9 months</option>
+            <option value="6">6 months</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="button" class="calc-button" onclick="calculateIncomeTax()">Calculate My Income Tax</button>
+
+      <a class="secondary-button" href="pcb-calculator.html">
+        Calculate Monthly PCB Instead →
+      </a>
+
+      <p class="input-note">
+        This is a simplified tax estimate. Actual tax may vary depending on official LHDN rules, reliefs, rebates, deductions, zakat, residence status and tax filing details.
+      </p>
     </div>
 
-    <div class="box">
-      <h3>Monthly Estimate</h3>
-      <div class="result" id="annual"></div>
+    <div class="results-panel">
+      <h2 class="serif">Your tax result</h2>
+      <p class="sub">Estimated annual income tax</p>
+
+      <div class="net">RM <span id="annualTax">0.00</span></div>
+      <p class="net-caption" id="taxExplanation">Resident progressive tax estimate applied.</p>
+
+      <div class="bar" id="taxBar"></div>
+
+      <div class="result-rows" id="resultRows"></div>
+
+      <div class="annual-summary" id="summaryRows"></div>
     </div>
+
+  </section>
+
+  <div class="seo">
+
+    <section>
+      <h2>How Income Tax Is Calculated in Malaysia</h2>
+
+      <p>
+        Income tax is tax charged on taxable income. For resident individuals in Malaysia, income tax is generally calculated using progressive tax rates. This means higher chargeable income may be taxed at higher tax brackets.
+      </p>
+
+      <div class="formula-box">
+        <strong>Chargeable Income = Annual Income − Tax Reliefs</strong>
+        <span>Estimated tax is then calculated using progressive resident individual tax brackets.</span>
+      </div>
+
+      <div class="rate-grid">
+        <div class="rate-card">
+          <strong>Annual</strong>
+          <h3>Annual Tax</h3>
+          <p>Estimated tax payable for the year after reliefs and rebates.</p>
+        </div>
+
+        <div class="rate-card">
+          <strong>Monthly</strong>
+          <h3>Monthly Tax</h3>
+          <p>Estimated annual tax divided by selected number of months.</p>
+        </div>
+
+        <div class="rate-card">
+          <strong>Relief</strong>
+          <h3>Tax Relief</h3>
+          <p>Reliefs can reduce chargeable income for resident taxpayers.</p>
+        </div>
+
+        <div class="rate-card">
+          <strong>Rate</strong>
+          <h3>Effective Rate</h3>
+          <p>Estimated tax as a percentage of annual income.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contribution-box">
+      <h2>Malaysia Resident Individual Tax Bracket Snapshot</h2>
+
+      <p>
+        The table below gives a simplified resident individual tax bracket snapshot for planning. Always refer to LHDN for official confirmation.
+      </p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead>
+            <tr>
+              <th>Chargeable Income Band</th>
+              <th>Rate Used</th>
+              <th>Simple Explanation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>First RM5,000</td>
+              <td>0%</td>
+              <td>No tax on this first band.</td>
+            </tr>
+            <tr>
+              <td>RM5,001 - RM20,000</td>
+              <td>1%</td>
+              <td>Low introductory tax band.</td>
+            </tr>
+            <tr>
+              <td>RM20,001 - RM35,000</td>
+              <td>3%</td>
+              <td>Applied progressively only to this band.</td>
+            </tr>
+            <tr>
+              <td>RM35,001 - RM50,000</td>
+              <td>6%</td>
+              <td>Middle lower-income tax band.</td>
+            </tr>
+            <tr>
+              <td>RM50,001 - RM70,000</td>
+              <td>11%</td>
+              <td>Applied only to income inside this band.</td>
+            </tr>
+            <tr>
+              <td>RM70,001 - RM100,000</td>
+              <td>19%</td>
+              <td>Higher middle-income tax band.</td>
+            </tr>
+            <tr>
+              <td>Above RM100,000</td>
+              <td>25% - 30%</td>
+              <td>Higher bands apply progressively.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="payroll-note">
+        <strong>Note:</strong>
+        This is a simplified planning table. Official tax computation may include detailed rates, rebates, deductions and special tax rules.
+      </p>
+    </section>
+
+    <section>
+      <h2>What This Income Tax Calculator Shows</h2>
+
+      <p>
+        This calculator helps estimate annual income tax, monthly tax, chargeable income, effective tax rate and net annual income. It is useful for salary planning, job offer comparison and annual tax preparation.
+      </p>
+
+      <div class="component-grid">
+        <a class="component-card" href="income-tax-guide.html">
+          <div class="component-icon">🏛️</div>
+          <h3>Annual Tax</h3>
+          <p>Estimate yearly tax payable based on income and reliefs.</p>
+        </a>
+
+        <a class="component-card" href="tax-relief-guide.html">
+          <div class="component-icon">💸</div>
+          <h3>Tax Reliefs</h3>
+          <p>Understand how reliefs may reduce chargeable income.</p>
+        </a>
+
+        <a class="component-card" href="pcb-calculator.html">
+          <div class="component-icon">🧾</div>
+          <h3>Monthly PCB</h3>
+          <p>Compare annual income tax with monthly PCB deduction.</p>
+        </a>
+
+        <a class="component-card" href="tax-refund-guide.html">
+          <div class="component-icon">🔁</div>
+          <h3>Tax Refund</h3>
+          <p>Understand overpaid PCB and possible tax refund situations.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="official-box">
+      <h2>Official Income Tax / LHDN Resources</h2>
+
+      <p>
+        Tax rules, rates and reliefs may change over time. For official confirmation, always refer to LHDN / HASiL resources or consult a qualified tax professional.
+      </p>
+
+      <div class="official-links">
+        <a href="https://www.hasil.gov.my/en/individual/individual-life-cycle/income-declaration/tax-rate/" target="_blank" rel="noopener">
+          <h3>LHDN Tax Rate</h3>
+          <p>Official individual income tax rate information.</p>
+        </a>
+
+        <a href="https://www.hasil.gov.my/en/individual/individual-life-cycle/income-declaration/tax-reliefs/" target="_blank" rel="noopener">
+          <h3>LHDN Tax Reliefs</h3>
+          <p>Official tax relief information for individual taxpayers.</p>
+        </a>
+
+        <a href="https://mytax.hasil.gov.my/" target="_blank" rel="noopener">
+          <h3>MyTax Portal</h3>
+          <p>Official tax services and e-Filing access.</p>
+        </a>
+      </div>
+
+      <div class="payroll-note">
+        <strong>Important:</strong>
+        This website provides simplified estimates for general information only. It should not be treated as professional tax, legal, payroll, accounting or financial advice.
+      </div>
+    </section>
+
+    <h2>Who Should Use This Income Tax Calculator?</h2>
+
+    <ul>
+      <li>Employees estimating annual income tax</li>
+      <li>Job seekers comparing salary offers after tax</li>
+      <li>Taxpayers preparing for annual e-Filing</li>
+      <li>Employees checking whether PCB may be enough</li>
+      <li>Malaysians estimating effective tax rate and net annual income</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-box">
+      <details class="faq-item" open>
+        <summary>Is this income tax calculator exact?</summary>
+        <p>
+          No. This calculator provides an estimate only. Actual tax may vary depending on reliefs, rebates, deductions, zakat and official LHDN calculation.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is chargeable income?</summary>
+        <p>
+          Chargeable income is the estimated taxable amount after deducting allowable reliefs and deductions from annual income.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is PCB the same as income tax?</summary>
+        <p>
+          No. PCB is monthly tax deduction through payroll. Final income tax is determined when annual tax return is submitted.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I use this for tax filing?</summary>
+        <p>
+          This tool is for estimation only. For official filing, refer to LHDN guidance, MyTax or a qualified tax professional.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can tax relief reduce my income tax?</summary>
+        <p>
+          Yes. For resident taxpayers, eligible tax reliefs may reduce chargeable income and lower final tax payable.
+        </p>
+      </details>
+    </div>
+
+    <section class="salary-guides-box">
+      <h2>Malaysia Tax Guides</h2>
+
+      <p>
+        Learn more about income tax, PCB, tax reliefs and tax filing in Malaysia.
+      </p>
+
+      <div class="guide-mini-grid">
+        <a href="income-tax-guide.html">🏛️ Income Tax Guide</a>
+        <a href="pcb-guide.html">🧾 PCB Guide</a>
+        <a href="tax-relief-guide.html">💸 Tax Relief Guide</a>
+        <a href="tax-filing-guide.html">📤 Tax Filing Guide</a>
+        <a href="tax-rebate-guide.html">💵 Tax Rebate Guide</a>
+        <a href="tax-refund-guide.html">🔁 Tax Refund Guide</a>
+      </div>
+
+      <p class="view-all-guides">
+        <a href="guides.html">View All Salary Guides →</a>
+      </p>
+    </section>
+
+    <section class="salary-guides-box">
+      <h2>Related Calculators</h2>
+
+      <p>
+        Explore more free Malaysia salary, tax and payroll calculators.
+      </p>
+
+      <div class="guide-mini-grid">
+        <a href="index.html">Salary Calculator</a>
+        <a href="pcb-calculator.html">PCB Calculator</a>
+        <a href="tax-refund-calculator.html">Tax Refund Calculator</a>
+        <a href="bonus-calculator.html">Bonus Calculator</a>
+        <a href="payslip-generator.html">Payslip Generator</a>
+        <a href="epf-calculator.html">EPF Calculator</a>
+      </div>
+
+      <p class="view-all-guides">
+        <a href="calculators.html">View All Calculators →</a>
+      </p>
+    </section>
 
   </div>
 
-</div>
+</main>
 
-<div class="seo">
-
-  <h2>Related Salary Guides</h2>
-
-  <div class="seo-cards">
-
-    <a class="card-link" href="epf-guide.html">
-      <h3>EPF Guide Malaysia</h3>
-      <p>EPF contribution rates and retirement savings</p>
-    </a>
-
-    <a class="card-link" href="socso-guide.html">
-      <h3>SOCSO Guide Malaysia</h3>
-      <p>Work injury protection and employee benefits</p>
-    </a>
-
-    <a class="card-link" href="eis-guide.html">
-      <h3>EIS Guide Malaysia</h3>
-      <p>Employment insurance and unemployment support</p>
-    </a>
-
-    <a class="card-link" href="pcb-guide.html">
-      <h3>PCB Tax Guide Malaysia</h3>
-      <p>Monthly tax deduction explained simply</p>
-    </a>
-
-  </div>
-
-  <h2>What Is Income Tax In Malaysia?</h2>
-
+<footer class="footer">
+  <p>© 2026 Malaysia Salary Tools</p>
   <p>
-    Income tax is tax charged on taxable income. For resident individuals in Malaysia, income tax is generally calculated using progressive tax rates.
+    <a href="index.html">Home</a> |
+    <a href="calculators.html">Calculators</a> |
+    <a href="guides.html">Guides</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact Us</a> |
+    <a href="privacy-policy.html">Privacy Policy</a>
   </p>
-
-  <p>
-    This means higher chargeable income may be taxed at higher tax brackets.
-  </p>
-
-  <h2>How Is Income Tax Calculated?</h2>
-
-  <p>
-    A simple way to estimate income tax is to subtract tax relief from annual income to get chargeable income.
-  </p>
-
-  <p>
-    Then, progressive tax rates are applied to the chargeable income.
-  </p>
-
-  <h2>Formula Used</h2>
-
-  <p>
-    Chargeable Income = Annual Income - Tax Relief
-  </p>
-
-  <p>
-    Estimated Tax = Tax calculated based on progressive tax brackets
-  </p>
-
-  <h2>Example Income Tax Calculation</h2>
-
-  <p>
-    If your annual income is RM60,000 and your tax relief is RM9,000, your estimated chargeable income is RM51,000.
-  </p>
-
-  <p>
-    The calculator then estimates tax based on progressive resident individual tax brackets.
-  </p>
-
-  <h2>Why Use This Income Tax Calculator?</h2>
-
-  <ul>
-    <li>Estimate annual income tax</li>
-    <li>Estimate monthly tax amount</li>
-    <li>Understand chargeable income</li>
-    <li>Estimate effective tax rate</li>
-    <li>Compare income before and after tax</li>
-  </ul>
-
-  <h2>Frequently Asked Questions</h2>
-
-  <h3>Is this income tax calculator exact?</h3>
-  <p>
-    No. This calculator provides an estimate only. Actual tax may vary depending on reliefs, rebates, deductions and official LHDN calculation.
-  </p>
-
-  <h3>What is chargeable income?</h3>
-  <p>
-    Chargeable income is income after deducting allowable reliefs and deductions.
-  </p>
-
-  <h3>Is PCB the same as income tax?</h3>
-  <p>
-    PCB is monthly tax deduction. Final income tax is determined when annual tax return is submitted.
-  </p>
-
-  <h3>Can I use this for tax filing?</h3>
-  <p>
-    This tool is for estimation only. For official filing, refer to LHDN guidance or a tax professional.
-  </p>
-
-  <h2>Related Calculators</h2>
-
-  <ul>
-    <li><a href="index.html">Salary Calculator</a></li>
-    <li><a href="pcb-calculator.html">PCB Tax Calculator</a></li>
-    <li><a href="bonus-calculator.html">Bonus Calculator</a></li>
-    <li><a href="tax-refund-calculator.html">Tax Refund Calculator</a></li>
-    <li><a href="payslip-generator.html">Payslip Generator</a></li>
-    <li><a href="hourly-rate-calculator.html">Hourly Rate Calculator</a></li>
-  </ul>
-
-</div>
+</footer>
 
 <script>
-function formatRM(v){
-  return v.toLocaleString('en-MY',{
-    minimumFractionDigits:2,
-    maximumFractionDigits:2
+  function formatRM(value) {
+    return Number(value).toLocaleString('en-MY', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+  }
+
+  function formatPercent(value) {
+    return Number(value).toLocaleString('en-MY', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }) + "%";
+  }
+
+  function setIncome(value) {
+    document.getElementById("income").value = value;
+    document.getElementById("incomeRange").value = value;
+    calculateIncomeTax();
+  }
+
+  function calculateResidentTax(chargeableIncome) {
+    const brackets = [
+      { limit: 5000, rate: 0.00 },
+      { limit: 15000, rate: 0.01 },
+      { limit: 15000, rate: 0.03 },
+      { limit: 15000, rate: 0.06 },
+      { limit: 20000, rate: 0.11 },
+      { limit: 30000, rate: 0.19 },
+      { limit: 300000, rate: 0.25 },
+      { limit: 200000, rate: 0.26 },
+      { limit: 1400000, rate: 0.28 },
+      { limit: Infinity, rate: 0.30 }
+    ];
+
+    let remaining = Math.max(0, chargeableIncome);
+    let tax = 0;
+    let bracketRate = 0;
+
+    for (const bracket of brackets) {
+      if (remaining <= 0) break;
+
+      const taxable = Math.min(remaining, bracket.limit);
+      tax += taxable * bracket.rate;
+      remaining -= taxable;
+      bracketRate = bracket.rate;
+    }
+
+    return {
+      tax: tax,
+      bracketRate: bracketRate
+    };
+  }
+
+  function calculateIncomeTax() {
+    const incomeInput = document.getElementById("income");
+    const incomeRange = document.getElementById("incomeRange");
+
+    const income = parseFloat(incomeInput.value) || 0;
+    const relief = parseFloat(document.getElementById("relief").value) || 0;
+    const rebate = parseFloat(document.getElementById("rebate").value) || 0;
+    const residentStatus = document.getElementById("residentStatus").value;
+    const months = parseFloat(document.getElementById("months").value) || 12;
+
+    if (!income || income < 0) {
+      document.getElementById("annualTax").textContent = "0.00";
+      document.getElementById("taxExplanation").textContent = "Please enter annual income.";
+      document.getElementById("taxBar").innerHTML = "";
+      document.getElementById("resultRows").innerHTML = "";
+      document.getElementById("summaryRows").innerHTML = "";
+      return;
+    }
+
+    incomeRange.value = Math.min(income, incomeRange.max);
+
+    let chargeableIncome = Math.max(0, income - relief);
+    let taxBeforeRebate = 0;
+    let finalTax = 0;
+    let bracketRate = 0;
+    let taxExplanation = "";
+
+    if (residentStatus === "nonresident") {
+      chargeableIncome = income;
+      taxBeforeRebate = chargeableIncome * 0.30;
+      finalTax = Math.max(0, taxBeforeRebate - rebate);
+      bracketRate = 0.30;
+      taxExplanation = "Non-resident simplified estimate applied at 30%. Reliefs are not deducted in this simplified estimate.";
+    } else {
+      const result = calculateResidentTax(chargeableIncome);
+      taxBeforeRebate = result.tax;
+      finalTax = Math.max(0, taxBeforeRebate - rebate);
+      bracketRate = result.bracketRate;
+      taxExplanation = "Resident progressive tax estimate applied. Chargeable income is estimated after reliefs entered.";
+    }
+
+    const monthlyTax = finalTax / months;
+    const netAnnualIncome = income - finalTax;
+    const effectiveRate = income > 0 ? (finalTax / income) * 100 : 0;
+    const taxPercent = income > 0 ? Math.min(100, (finalTax / income) * 100) : 0;
+
+    document.getElementById("annualTax").textContent = formatRM(finalTax);
+    document.getElementById("taxExplanation").textContent = taxExplanation;
+
+    document.getElementById("taxBar").innerHTML =
+      '<i style="width:' + (100 - taxPercent) + '%;background:#f6f3ec"></i>' +
+      '<i style="width:' + taxPercent + '%;background:#5aa783"></i>';
+
+    document.getElementById("resultRows").innerHTML =
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#f6f3ec"></span>Annual Income</span><span class="v">RM ' + formatRM(income) + '</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#5aa783"></span>Estimated Annual Tax</span><span class="v">RM ' + formatRM(finalTax) + '</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#c9a14e"></span>Estimated Monthly Tax</span><span class="v">RM ' + formatRM(monthlyTax) + '</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#2f7d5e"></span>Effective Tax Rate</span><span class="v">' + formatPercent(effectiveRate) + '</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#cf6f5b"></span>Current Tax Bracket</span><span class="v">' + formatPercent(bracketRate * 100) + '</span></div>';
+
+    document.getElementById("summaryRows").innerHTML =
+      '<div><span>Tax Relief Entered</span><strong>RM ' + formatRM(relief) + '</strong></div>' +
+      '<div><span>Estimated Chargeable Income</span><strong>RM ' + formatRM(chargeableIncome) + '</strong></div>' +
+      '<div><span>Tax Before Rebate / Zakat</span><strong>RM ' + formatRM(taxBeforeRebate) + '</strong></div>' +
+      '<div><span>Rebate / Zakat Entered</span><strong>RM ' + formatRM(rebate) + '</strong></div>' +
+      '<div><span>Estimated Net Annual Income</span><strong>RM ' + formatRM(netAnnualIncome) + '</strong></div>';
+  }
+
+  document.getElementById("income").addEventListener("input", calculateIncomeTax);
+  document.getElementById("incomeRange").addEventListener("input", function() {
+    document.getElementById("income").value = this.value;
+    calculateIncomeTax();
   });
-}
+  document.getElementById("relief").addEventListener("input", calculateIncomeTax);
+  document.getElementById("rebate").addEventListener("input", calculateIncomeTax);
+  document.getElementById("residentStatus").addEventListener("change", calculateIncomeTax);
+  document.getElementById("months").addEventListener("change", calculateIncomeTax);
 
-function calculateTax(chargeableIncome){
-
-  let tax = 0;
-  let income = chargeableIncome;
-
-  if(income <= 5000){
-    tax = 0;
-  } else if(income <= 20000){
-    tax = (income - 5000) * 0.01;
-  } else if(income <= 35000){
-    tax = 150 + (income - 20000) * 0.03;
-  } else if(income <= 50000){
-    tax = 600 + (income - 35000) * 0.08;
-  } else if(income <= 70000){
-    tax = 1800 + (income - 50000) * 0.14;
-  } else if(income <= 100000){
-    tax = 4600 + (income - 70000) * 0.21;
-  } else if(income <= 250000){
-    tax = 10900 + (income - 100000) * 0.24;
-  } else if(income <= 400000){
-    tax = 46900 + (income - 250000) * 0.245;
-  } else if(income <= 600000){
-    tax = 83650 + (income - 400000) * 0.25;
-  } else if(income <= 1000000){
-    tax = 133650 + (income - 600000) * 0.26;
-  } else {
-    tax = 237650 + (income - 1000000) * 0.28;
-  }
-
-  return Math.max(tax, 0);
-}
-
-function calculate(){
-
-  let income = parseFloat(document.getElementById("income").value);
-  let relief = parseFloat(document.getElementById("relief").value) || 0;
-
-  if(!income){
-    document.getElementById("monthly").innerHTML =
-      "Please enter annual income.";
-    document.getElementById("annual").innerHTML = "";
-    return;
-  }
-
-  let chargeableIncome = Math.max(income - relief, 0);
-  let tax = calculateTax(chargeableIncome);
-  let monthlyTax = tax / 12;
-  let netIncome = income - tax;
-  let effectiveRate = income > 0 ? (tax / income) * 100 : 0;
-
-  document.getElementById("monthly").innerHTML =
-    "Annual Income: RM " + formatRM(income) + "<br>" +
-    "Tax Relief: RM " + formatRM(relief) + "<br>" +
-    "Chargeable Income: RM " + formatRM(chargeableIncome) + "<br><br>" +
-    "<b>Estimated Annual Tax: RM " + formatRM(tax) + "</b>";
-
-  document.getElementById("annual").innerHTML =
-    "Estimated Monthly Tax: RM " + formatRM(monthlyTax) + "<br>" +
-    "Estimated Net Annual Income: RM " + formatRM(netIncome) + "<br>" +
-    "Effective Tax Rate: " + effectiveRate.toFixed(2) + "%";
-}
+  calculateIncomeTax();
 </script>
 
-<hr style="margin-top:40px;">
-
-<div style="text-align:center;padding:20px;">
-
-<p>
-© 2026 Malaysia Salary Tools
-</p>
-
-<p>
-<a href="about.html">About Us</a> |
-<a href="contact.html">Contact Us</a> |
-<a href="privacy-policy.html">Privacy Policy</a>
-</p>
-
-</div>
-  
 </body>
 </html>
