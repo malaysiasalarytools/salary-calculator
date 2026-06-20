@@ -7,103 +7,766 @@
   <title>Malaysia Resignation Notice Calculator 2026 | Last Working Day Calculator</title>
 
   <link rel="canonical" href="https://malaysiasalarytools.com/resignation-notice-calculator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <meta name="description" content="Free Malaysia Resignation Notice Calculator 2026. Calculate your estimated last working day based on resignation date and notice period.">
+  <meta name="keywords" content="Malaysia resignation notice calculator, last working day calculator Malaysia, notice period calculator, resignation calculator Malaysia">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="robots" content="index, follow">
 
   <style>
+    :root {
+      --background:#f4f1ea;
+      --card:#fbfaf6;
+      --foreground:#302c26;
+      --muted:#7c766c;
+      --primary:#2f2b25;
+      --primary-foreground:#f6f3ec;
+      --accent:#2f7d5e;
+      --accent-soft:rgba(47,125,94,.10);
+      --accent-border:rgba(47,125,94,.22);
+      --border:#e2ddd2;
+      --white:#ffffff;
+      --radius:16px;
+      --shadow:0 18px 45px rgba(47,43,37,.08);
+    }
+
+    * { box-sizing:border-box; }
+
+    html {
+      overflow-x:hidden;
+      scroll-behavior:smooth;
+    }
+
     body {
-      font-family: Arial;
-      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
-      margin: 0;
-      padding: 20px;
+      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47,125,94,.08), transparent 34%),
+        linear-gradient(135deg, #f4f1ea, #efe9de);
+      margin:0;
+      padding:0;
+      color:var(--foreground);
+      line-height:1.6;
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
     }
 
-    .card,
+    a { color:inherit; }
+
+    .serif {
+      font-family:Georgia, "Times New Roman", serif;
+      font-weight:400;
+    }
+
+    .top-nav {
+      background:rgba(251,250,246,.84);
+      border-bottom:1px solid var(--border);
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(10px);
+    }
+
+    .nav-inner {
+      max-width:1120px;
+      margin:0 auto;
+      padding:14px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:25px;
+    }
+
+    .brand {
+      display:flex;
+      align-items:center;
+      text-decoration:none;
+      flex-shrink:0;
+    }
+
+    .brand img {
+      width:220px;
+      height:auto;
+      display:block;
+    }
+
+    .nav-links {
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:nowrap;
+      min-width:0;
+    }
+
+    .nav-links a {
+      display:block;
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:600;
+      font-size:15px;
+      padding:10px 14px;
+      border-radius:999px;
+      white-space:nowrap;
+      background:transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background:var(--primary);
+      color:var(--primary-foreground);
+    }
+
+    .hero {
+      text-align:center;
+      padding:56px 20px 18px;
+      max-width:900px;
+      margin:0 auto;
+    }
+
+    .pill {
+      display:inline-block;
+      font-size:12px;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      color:var(--accent);
+      background:var(--accent-soft);
+      border:1px solid var(--accent-border);
+      padding:7px 15px;
+      border-radius:999px;
+      margin-bottom:20px;
+      font-weight:700;
+    }
+
+    .hero h1 {
+      margin:0;
+      font-size:clamp(36px, 6vw, 62px);
+      line-height:1.05;
+      letter-spacing:-.03em;
+      color:var(--foreground);
+    }
+
+    .hero h1 em {
+      color:var(--accent);
+      font-style:italic;
+    }
+
+    .hero p {
+      max-width:740px;
+      margin:18px auto 0;
+      font-size:17px;
+      color:var(--muted);
+    }
+
+    .main-wrapper {
+      padding:16px 20px 44px;
+    }
+
+    .calculator-shell {
+      max-width:1120px;
+      margin:28px auto 32px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      align-items:stretch;
+    }
+
+    .panel,
     .seo {
-      background: white;
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
     }
 
-    .seo { line-height: 1.7; }
-
-    .layout {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
+    .panel {
+      padding:28px;
     }
 
-    .box {
-      flex: 1;
-      min-width: 320px;
-      background: #f8f9fc;
-      border: 1px solid #eee;
-      border-radius: 12px;
-      padding: 15px;
+    .panel h2 {
+      margin:0 0 4px;
+      font-size:22px;
+      color:var(--foreground);
     }
 
-    input, select, button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      font-size: 16px;
-      box-sizing: border-box;
+    .panel .sub {
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size:14px;
     }
 
-    input, select {
-      border-radius: 10px;
-      border: 1px solid #ddd;
+    label {
+      display:block;
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:8px;
+      color:var(--foreground);
     }
 
-    button {
-      background: #111;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
+    .form-group {
+      margin-bottom:18px;
     }
 
-    .result {
-      margin-top: 10px;
-      line-height: 1.8;
+    .field-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
     }
 
-    .seo-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
+    input,
+    select {
+      width:100%;
+      padding:14px;
+      font-size:15px;
+      font-weight:700;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:var(--white);
+      color:var(--foreground);
+      outline:none;
     }
 
-    .card-link {
-      display: block;
-      padding: 15px;
-      background: white;
-      border-radius: 12px;
-      text-decoration: none;
-      color: black;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    input:focus,
+    select:focus {
+      border-color:var(--accent);
+      box-shadow:0 0 0 3px rgba(47,125,94,.14);
     }
 
-    h1 { font-size: 26px; }
-    h2 { font-size: 20px; margin-top: 25px; }
+    .preset-grid {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:16px;
+    }
 
-    @media (max-width:700px){
-      .layout { flex-direction: column; }
-      body { padding:10px; }
+    .preset,
+    .calc-button {
+      border:none;
+      cursor:pointer;
+      font-family:inherit;
+    }
 
-      .card,
-      .seo{
-        margin:15px auto;
-        padding:18px;
+    .preset {
+      background:var(--white);
+      border:1px solid var(--border);
+      color:var(--foreground);
+      padding:8px 13px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:13px;
+    }
+
+    .preset:hover {
+      color:var(--accent);
+      border-color:var(--accent);
+    }
+
+    .calc-button {
+      width:100%;
+      background:var(--accent);
+      color:#fff;
+      padding:14px 18px;
+      margin-top:6px;
+      border-radius:12px;
+      font-size:16px;
+      font-weight:800;
+    }
+
+    .calc-button:hover {
+      filter:brightness(.95);
+    }
+
+    .secondary-button {
+      display:block;
+      text-align:center;
+      width:100%;
+      background:var(--white);
+      color:var(--accent);
+      border:1px solid var(--accent-border);
+      padding:13px 18px;
+      margin-top:12px;
+      border-radius:12px;
+      font-size:15px;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .secondary-button:hover {
+      background:var(--accent-soft);
+    }
+
+    .input-note {
+      margin:16px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .results-panel {
+      background:var(--primary);
+      color:var(--primary-foreground);
+      border:1px solid var(--primary);
+      padding:28px;
+      border-radius:var(--radius);
+      box-shadow:0 24px 55px rgba(47,43,37,.20);
+    }
+
+    .results-panel h2 {
+      margin:0 0 4px;
+      font-size:22px;
+      color:var(--primary-foreground);
+    }
+
+    .results-panel .sub {
+      margin:0;
+      color:rgba(246,243,236,.62);
+      font-size:14px;
+    }
+
+    .net {
+      font-size:clamp(30px, 4.5vw, 44px);
+      font-weight:800;
+      letter-spacing:-.03em;
+      margin:16px 0 0;
+      line-height:1.1;
+    }
+
+    .net-caption {
+      color:rgba(246,243,236,.62);
+      font-size:14px;
+      margin-top:8px;
+    }
+
+    .bar {
+      height:9px;
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+      display:flex;
+      overflow:hidden;
+      margin:22px 0;
+    }
+
+    .bar i {
+      display:block;
+      height:100%;
+    }
+
+    .result-rows {
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+
+    .result-line {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      padding:11px 0;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      font-size:14px;
+    }
+
+    .result-line:last-child {
+      border-bottom:none;
+    }
+
+    .result-line .k {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:rgba(246,243,236,.86);
+    }
+
+    .result-line .v {
+      font-weight:800;
+      text-align:right;
+    }
+
+    .dot {
+      width:9px;
+      height:9px;
+      border-radius:3px;
+      flex:0 0 auto;
+    }
+
+    .annual-summary {
+      margin-top:18px;
+      padding-top:16px;
+      border-top:1px solid rgba(255,255,255,.18);
+      display:grid;
+      gap:8px;
+      font-size:14px;
+    }
+
+    .annual-summary div {
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      color:rgba(246,243,236,.82);
+    }
+
+    .annual-summary strong {
+      color:var(--primary-foreground);
+      text-align:right;
+    }
+
+    .seo {
+      max-width:1120px;
+      margin:30px auto;
+      padding:30px;
+      line-height:1.72;
+    }
+
+    .seo h2 {
+      font-size:clamp(25px, 4vw, 36px);
+      line-height:1.15;
+      margin:34px 0 12px;
+      color:var(--foreground);
+      letter-spacing:-.01em;
+      font-family:Georgia, "Times New Roman", serif;
+      font-weight:400;
+    }
+
+    .seo h2:first-child {
+      margin-top:0;
+    }
+
+    .seo h3 {
+      font-size:17px;
+      margin-top:18px;
+    }
+
+    .seo p,
+    .seo li {
+      color:var(--muted);
+    }
+
+    .formula-box,
+    .contribution-box,
+    .salary-guides-box {
+      background:#f8f5ef;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:24px;
+      margin:26px 0;
+    }
+
+    .formula-box {
+      text-align:center;
+    }
+
+    .formula-box strong {
+      display:block;
+      font-size:22px;
+      color:var(--foreground);
+      margin-bottom:8px;
+    }
+
+    .formula-box span {
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .component-grid,
+    .guide-mini-grid,
+    .rate-grid {
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+      grid-template-columns:repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .component-card,
+    .guide-mini-grid a,
+    .rate-card,
+    .faq-item {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:14px;
+    }
+
+    .component-card {
+      display:block;
+      padding:20px;
+      text-decoration:none;
+      color:inherit;
+      transition:.18s ease;
+    }
+
+    .component-card:hover,
+    .guide-mini-grid a:hover {
+      transform:translateY(-2px);
+      border-color:var(--accent);
+      box-shadow:0 12px 30px rgba(47,43,37,.08);
+    }
+
+    .component-icon {
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      background:var(--accent-soft);
+      display:grid;
+      place-items:center;
+      margin-bottom:10px;
+      font-size:21px;
+    }
+
+    .component-card h3,
+    .rate-card h3 {
+      margin:8px 0 4px;
+      color:var(--foreground);
+    }
+
+    .component-card p,
+    .rate-card p {
+      margin:0;
+      font-size:14px;
+    }
+
+    .rate-card {
+      padding:20px;
+    }
+
+    .rate-card strong {
+      display:block;
+      color:var(--accent);
+      font-size:28px;
+      line-height:1.1;
+      margin-bottom:8px;
+    }
+
+    .contribution-table-wrap {
+      overflow-x:auto;
+      margin-top:18px;
+    }
+
+    .contribution-table {
+      width:100%;
+      border-collapse:collapse;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:12px;
+      overflow:hidden;
+      min-width:520px;
+    }
+
+    .contribution-table th {
+      background:#f1ece3;
+      color:var(--muted);
+      font-size:13px;
+      text-align:left;
+      letter-spacing:.03em;
+      padding:14px;
+      border-bottom:1px solid var(--border);
+    }
+
+    .contribution-table td {
+      padding:14px;
+      border-bottom:1px solid var(--border);
+      color:var(--foreground);
+      font-size:14px;
+    }
+
+    .contribution-table tr:last-child td {
+      border-bottom:none;
+    }
+
+    .payroll-note {
+      margin-top:20px;
+      background:var(--card);
+      border-left:4px solid var(--accent);
+      padding:14px;
+      border-radius:10px;
+      color:var(--muted);
+    }
+
+    .faq-box {
+      margin-top:18px;
+      max-width:780px;
+    }
+
+    .faq-item {
+      padding:4px 20px;
+      margin-bottom:12px;
+    }
+
+    .faq-item summary {
+      font-weight:800;
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      color:var(--foreground);
+      padding:16px 0;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display:none;
+    }
+
+    .faq-item summary::after {
+      content:"+";
+      color:var(--accent);
+      font-size:20px;
+      line-height:1;
+    }
+
+    .faq-item[open] summary::after {
+      content:"−";
+    }
+
+    .faq-item p {
+      padding-bottom:18px;
+      margin-top:0;
+      color:var(--muted);
+      line-height:1.55;
+      font-size:14px;
+    }
+
+    .guide-mini-grid a {
+      display:block;
+      padding:14px 16px;
+      text-decoration:none;
+      color:var(--foreground);
+      font-weight:800;
+      text-align:center;
+      transition:.18s ease;
+    }
+
+    .view-all-guides {
+      text-align:center;
+      margin:20px 0 0;
+    }
+
+    .view-all-guides a {
+      color:var(--accent);
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .footer {
+      border-top:1px solid var(--border);
+      padding:28px 20px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .footer a {
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    .footer a:hover {
+      color:var(--accent);
+    }
+
+    @media (max-width:900px) {
+      .calculator-shell,
+      .field-grid {
+        grid-template-columns:1fr;
+      }
+
+      .seo {
+        padding:24px;
+      }
+    }
+
+    @media (max-width:800px) {
+      .nav-inner {
+        flex-direction:row;
+        align-items:center;
+      }
+
+      .nav-links {
+        width:auto;
+        flex:1;
+        min-width:0;
+        justify-content:flex-start;
+        padding-bottom:5px;
+        overflow-x:auto;
+        overflow-y:hidden;
+        scrollbar-width:none;
+        -ms-overflow-style:none;
+        -webkit-overflow-scrolling:touch;
+        touch-action:pan-x;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display:none;
+      }
+    }
+
+    @media (max-width:700px) {
+      .hero {
+        padding:38px 14px 12px;
+      }
+
+      .main-wrapper {
+        padding:10px;
+      }
+
+      .panel,
+      .results-panel,
+      .seo {
+        padding:20px;
+      }
+
+      .nav-inner {
+        padding-top:8px;
+        padding-bottom:8px;
+        gap:8px;
+      }
+
+      .brand img {
+        width:150px;
+      }
+
+      .nav-links {
+        gap:6px;
+      }
+
+      .nav-links a {
+        font-size:14px;
+        padding:8px 10px;
+      }
+
+      .component-grid,
+      .rate-grid {
+        grid-template-columns:repeat(2, 1fr);
+        gap:10px;
+      }
+
+      .component-card,
+      .rate-card {
+        padding:14px;
+        text-align:center;
+      }
+
+      .component-icon {
+        margin-left:auto;
+        margin-right:auto;
+        width:36px;
+        height:36px;
+        font-size:18px;
+      }
+
+      .component-card h3,
+      .rate-card h3 {
+        font-size:15px;
+        margin:6px 0;
+      }
+
+      .component-card p,
+      .rate-card p {
+        font-size:12px;
+        line-height:1.35;
+      }
+
+      .net {
+        font-size:31px;
       }
     }
   </style>
@@ -111,188 +774,415 @@
 
 <body>
 
-<div class="card">
+<header class="top-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+    </a>
 
-  <h1>Malaysia Resignation Notice Calculator 2026</h1>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="calculators.html" class="active">Calculators</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
 
-  <p><b>Resignation Notice Calculator:</b> Calculate your estimated last working day based on resignation date and notice period.</p>
+<section class="hero">
+  <span class="pill">Updated for Malaysia 2026 resignation estimates</span>
+  <h1 class="serif">Calculate your <em>last working day</em></h1>
+  <p>
+    Free Malaysia resignation notice calculator for employees and HR users. Estimate your last working day based on resignation date and notice period.
+  </p>
+</section>
 
-  <input type="date" id="resignDate">
+<main class="main-wrapper">
 
-  <select id="noticePeriod">
-    <option value="">Select Notice Period</option>
-    <option value="7">1 Week (7 Days)</option>
-    <option value="14">2 Weeks (14 Days)</option>
-    <option value="30">1 Month (30 Days)</option>
-    <option value="60">2 Months (60 Days)</option>
-    <option value="90">3 Months (90 Days)</option>
-  </select>
+  <section class="calculator-shell" id="calculator">
 
-  <button onclick="calculate()">Calculate Last Working Day</button>
+    <div class="panel">
+      <h2 class="serif">Calculate Resignation Notice</h2>
+      <p class="sub">Choose your resignation date and notice period to estimate your last working day.</p>
 
-  <div class="layout">
+      <div class="form-group">
+        <label for="resignDate">Resignation date</label>
+        <input type="date" id="resignDate">
+      </div>
 
-    <div class="box">
-      <h3>Resignation Summary</h3>
-      <div class="result" id="summary"></div>
+      <div class="form-group">
+        <label for="noticePeriod">Notice period</label>
+        <select id="noticePeriod" onchange="calculateNotice()">
+          <option value="">Select notice period</option>
+          <option value="7">1 week - 7 days</option>
+          <option value="14">2 weeks - 14 days</option>
+          <option value="30">1 month - 30 days estimate</option>
+          <option value="60">2 months - 60 days estimate</option>
+          <option value="90">3 months - 90 days estimate</option>
+          <option value="custom">Custom notice period</option>
+        </select>
+      </div>
+
+      <div class="form-group" id="customNoticeWrap" style="display:none;">
+        <label for="customNotice">Custom notice period in days</label>
+        <input type="number" id="customNotice" value="30" min="1" step="1">
+      </div>
+
+      <div class="preset-grid">
+        <button type="button" class="preset" onclick="setNoticePreset(7)">1 week</button>
+        <button type="button" class="preset" onclick="setNoticePreset(14)">2 weeks</button>
+        <button type="button" class="preset" onclick="setNoticePreset(30)">1 month</button>
+        <button type="button" class="preset" onclick="setNoticePreset(60)">2 months</button>
+        <button type="button" class="preset" onclick="setNoticePreset(90)">3 months</button>
+      </div>
+
+      <button type="button" class="calc-button" onclick="calculateNotice()">Calculate Last Working Day</button>
+
+      <a class="secondary-button" href="resignation-notice-guide.html">
+        Read Resignation Notice Guide →
+      </a>
+
+      <p class="input-note">
+        This calculator provides a simple calendar-day estimate. Actual last working day may depend on employment contract, company policy, HR confirmation, public holidays, annual leave and whether your notice period is counted by calendar days or calendar months.
+      </p>
     </div>
 
-    <div class="box">
-      <h3>Last Working Day</h3>
-      <div class="result" id="result"></div>
+    <div class="results-panel">
+      <h2 class="serif">Your resignation result</h2>
+      <p class="sub">Estimated last working day</p>
+
+      <div class="net" id="lastWorkingDay">-</div>
+      <p class="net-caption" id="noticeExplanation">Select resignation date and notice period.</p>
+
+      <div class="bar" id="noticeBar"></div>
+
+      <div class="result-rows" id="resultRows"></div>
+
+      <div class="annual-summary" id="summaryRows"></div>
     </div>
+
+  </section>
+
+  <div class="seo">
+
+    <section>
+      <h2>How Resignation Notice Is Calculated</h2>
+
+      <p>
+        A notice period is the amount of time an employee normally continues working after submitting a resignation. The required notice period is usually stated in the employment contract or company policy.
+      </p>
+
+      <div class="formula-box">
+        <strong>Estimated Last Working Day = Resignation Date + Notice Period</strong>
+        <span>Example: resign on 1 January + 30 days notice = estimated last working day around 31 January</span>
+      </div>
+
+      <div class="rate-grid">
+        <div class="rate-card">
+          <strong>7</strong>
+          <h3>1 Week</h3>
+          <p>Common short notice period for some roles or probation terms.</p>
+        </div>
+
+        <div class="rate-card">
+          <strong>30</strong>
+          <h3>1 Month</h3>
+          <p>Common notice estimate used by many employees.</p>
+        </div>
+
+        <div class="rate-card">
+          <strong>60</strong>
+          <h3>2 Months</h3>
+          <p>Common notice estimate for more senior or confirmed roles.</p>
+        </div>
+
+        <div class="rate-card">
+          <strong>90</strong>
+          <h3>3 Months</h3>
+          <p>Common notice estimate for senior, managerial or contract-based terms.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contribution-box">
+      <h2>Common Notice Period Examples</h2>
+
+      <p>
+        The table below shows simple last working day examples based on common notice periods. Exact calculation should follow your employment contract.
+      </p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead>
+            <tr>
+              <th>Resignation Date</th>
+              <th>Notice Period</th>
+              <th>Estimated Last Working Day</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1 January</td>
+              <td>7 days</td>
+              <td>8 January</td>
+            </tr>
+            <tr>
+              <td>1 January</td>
+              <td>30 days</td>
+              <td>31 January</td>
+            </tr>
+            <tr>
+              <td>1 January</td>
+              <td>60 days</td>
+              <td>2 March</td>
+            </tr>
+            <tr>
+              <td>1 January</td>
+              <td>90 days</td>
+              <td>1 April</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="payroll-note">
+        <strong>Note:</strong>
+        Some contracts use “one calendar month” instead of “30 days”. In that case, the actual last working day may differ from this simple day-count estimate.
+      </p>
+    </section>
+
+    <section>
+      <h2>What This Resignation Notice Calculator Shows</h2>
+
+      <p>
+        This calculator helps estimate resignation date, notice period, last working day, calendar notice length and remaining days from today. It is useful for employees planning resignation timing and HR users checking a simple notice period estimate.
+      </p>
+
+      <div class="component-grid">
+        <a class="component-card" href="resignation-notice-guide.html">
+          <div class="component-icon">🚪</div>
+          <h3>Notice Period</h3>
+          <p>Estimate last working day based on selected notice period.</p>
+        </a>
+
+        <a class="component-card" href="annual-leave-calculator.html">
+          <div class="component-icon">📅</div>
+          <h3>Annual Leave</h3>
+          <p>Check remaining annual leave before final working day.</p>
+        </a>
+
+        <a class="component-card" href="payslip-generator.html">
+          <div class="component-icon">🧾</div>
+          <h3>Final Salary</h3>
+          <p>Prepare a simple payslip estimate for final salary planning.</p>
+        </a>
+
+        <a class="component-card" href="employment-contract-guide.html">
+          <div class="component-icon">📄</div>
+          <h3>Employment Contract</h3>
+          <p>Confirm exact notice period from your contract terms.</p>
+        </a>
+      </div>
+    </section>
+
+    <h2>Who Should Use This Resignation Notice Calculator?</h2>
+
+    <ul>
+      <li>Employees planning resignation timing</li>
+      <li>Employees estimating last working day before changing jobs</li>
+      <li>HR users checking simple notice period dates</li>
+      <li>Employees comparing resignation date and final salary timing</li>
+      <li>Managers planning handover timeline</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-box">
+      <details class="faq-item" open>
+        <summary>Can I leave before my notice period ends?</summary>
+        <p>
+          It depends on your employment contract, employer approval and any agreement for early release, payment in lieu of notice or leave offset.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is this calculator legally binding?</summary>
+        <p>
+          No. This calculator provides a simple estimate only. Always refer to your employment contract, HR policy and official confirmation from your employer.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What if my contract uses calendar months?</summary>
+        <p>
+          If your contract says one calendar month, two calendar months or three calendar months, the exact last working day may differ from a 30 / 60 / 90-day estimate.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can annual leave be used during notice period?</summary>
+        <p>
+          It may be possible, but it usually depends on employer approval, company policy and employment contract terms.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does public holiday extend notice period?</summary>
+        <p>
+          This depends on contract wording and company practice. Some notice periods are counted by calendar days, while others may be handled differently.
+        </p>
+      </details>
+    </div>
+
+    <section class="salary-guides-box">
+      <h2>Malaysia Employment Guides</h2>
+
+      <p>
+        Learn more about resignation, leave, notice period and employment rules in Malaysia.
+      </p>
+
+      <div class="guide-mini-grid">
+        <a href="resignation-notice-guide.html">🚪 Resignation Notice Guide</a>
+        <a href="annual-leave-guide.html">📅 Annual Leave Guide</a>
+        <a href="employment-contract-guide.html">📄 Employment Contract Guide</a>
+        <a href="probation-period-guide.html">🧪 Probation Period Guide</a>
+        <a href="salary-deduction-guide.html">📉 Salary Deduction Guide</a>
+        <a href="payslip-guide.html">🧾 Payslip Guide</a>
+      </div>
+
+      <p class="view-all-guides">
+        <a href="guides.html">View All Salary Guides →</a>
+      </p>
+    </section>
+
+    <section class="salary-guides-box">
+      <h2>Related Calculators</h2>
+
+      <p>
+        Explore more free Malaysia employment and salary calculators.
+      </p>
+
+      <div class="guide-mini-grid">
+        <a href="salary-increment-calculator.html">Salary Increment Calculator</a>
+        <a href="annual-leave-calculator.html">Annual Leave Calculator</a>
+        <a href="mc-leave-calculator.html">MC Leave Calculator</a>
+        <a href="public-holiday-calculator.html">Public Holiday Calculator</a>
+        <a href="payslip-generator.html">Payslip Generator</a>
+        <a href="index.html">Salary Calculator</a>
+      </div>
+
+      <p class="view-all-guides">
+        <a href="calculators.html">View All Calculators →</a>
+      </p>
+    </section>
 
   </div>
 
-</div>
+</main>
 
-<div class="seo">
-
-  <h2>Related Salary Guides</h2>
-
-  <div class="seo-cards">
-
-    <a class="card-link" href="epf-guide.html">
-      <h3>EPF Guide Malaysia</h3>
-      <p>EPF contribution rates and retirement savings</p>
-    </a>
-
-    <a class="card-link" href="socso-guide.html">
-      <h3>SOCSO Guide Malaysia</h3>
-      <p>Work injury protection and employee benefits</p>
-    </a>
-
-    <a class="card-link" href="eis-guide.html">
-      <h3>EIS Guide Malaysia</h3>
-      <p>Employment insurance and unemployment support</p>
-    </a>
-
-    <a class="card-link" href="pcb-guide.html">
-      <h3>PCB Tax Guide Malaysia</h3>
-      <p>Monthly tax deduction explained simply</p>
-    </a>
-
-  </div>
-
-  <h2>What Is A Notice Period?</h2>
-
+<footer class="footer">
+  <p>© 2026 Malaysia Salary Tools</p>
   <p>
-    A notice period is the amount of time an employee must continue working after submitting a resignation before leaving the company.
+    <a href="index.html">Home</a> |
+    <a href="calculators.html">Calculators</a> |
+    <a href="guides.html">Guides</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact Us</a> |
+    <a href="privacy-policy.html">Privacy Policy</a>
   </p>
-
-  <p>
-    The required notice period is usually stated in the employment contract.
-  </p>
-
-  <h2>How Is Last Working Day Calculated?</h2>
-
-  <p>
-    The calculator adds the notice period to the resignation date to estimate the final working day.
-  </p>
-
-  <h2>Example</h2>
-
-  <p>
-    If you resign on 1 January and your notice period is 30 days, your estimated last working day would be 31 January.
-  </p>
-
-  <h2>Common Notice Periods In Malaysia</h2>
-
-  <ul>
-    <li>1 Week</li>
-    <li>2 Weeks</li>
-    <li>1 Month</li>
-    <li>2 Months</li>
-    <li>3 Months</li>
-  </ul>
-
-  <h2>Why Use This Calculator?</h2>
-
-  <ul>
-    <li>Estimate last working day</li>
-    <li>Plan resignation timing</li>
-    <li>Understand notice obligations</li>
-    <li>Useful for employees and HR staff</li>
-  </ul>
-
-  <h2>Frequently Asked Questions</h2>
-
-  <h3>Can I leave before my notice period ends?</h3>
-  <p>
-    It depends on your employment contract and employer approval.
-  </p>
-
-  <h3>Is this calculator legally binding?</h3>
-  <p>
-    No. This calculator provides an estimate only.
-  </p>
-
-  <h3>What if my contract uses calendar months?</h3>
-  <p>
-    You should always refer to your employment contract for the exact notice period calculation.
-  </p>
-
-  <h2>Related Calculators</h2>
-
-  <ul>
-    <li><a href="salary-increment-calculator.html">Salary Increment Calculator</a></li>
-    <li><a href="annual-leave-calculator.html">Annual Leave Calculator</a></li>
-    <li><a href="mc-leave-calculator.html">MC Leave Calculator</a></li>
-    <li><a href="public-holiday-calculator.html">Public Holiday Calculator</a></li>
-    <li><a href="payslip-generator.html">Payslip Generator</a></li>
-  </ul>
-
-</div>
+</footer>
 
 <script>
-function calculate(){
-
-  let resignDate =
-    document.getElementById("resignDate").value;
-
-  let notice =
-    parseInt(document.getElementById("noticePeriod").value);
-
-  if(!resignDate || !notice){
-
-    document.getElementById("summary").innerHTML =
-      "Please select resignation date and notice period.";
-
-    document.getElementById("result").innerHTML = "";
-    return;
+  function formatDate(date) {
+    return date.toLocaleDateString('en-MY', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
   }
 
-  let startDate = new Date(resignDate);
+  function getNoticeDays() {
+    const noticeValue = document.getElementById("noticePeriod").value;
 
-  let lastDay = new Date(startDate);
+    if (noticeValue === "custom") {
+      return parseInt(document.getElementById("customNotice").value) || 0;
+    }
 
-  lastDay.setDate(lastDay.getDate() + notice);
+    return parseInt(noticeValue) || 0;
+  }
 
-  document.getElementById("summary").innerHTML =
-    "Resignation Date: " + startDate.toLocaleDateString() + "<br>" +
-    "Notice Period: " + notice + " days";
+  function setNoticePreset(days) {
+    document.getElementById("noticePeriod").value = String(days);
+    document.getElementById("customNoticeWrap").style.display = "none";
+    calculateNotice();
+  }
 
-  document.getElementById("result").innerHTML =
-    "<b>Estimated Last Working Day:</b><br><br>" +
-    lastDay.toLocaleDateString();
-}
+  function calculateNotice() {
+    const resignDateValue = document.getElementById("resignDate").value;
+    const noticeValue = document.getElementById("noticePeriod").value;
+    const customWrap = document.getElementById("customNoticeWrap");
+
+    if (noticeValue === "custom") {
+      customWrap.style.display = "block";
+    } else {
+      customWrap.style.display = "none";
+    }
+
+    const noticeDays = getNoticeDays();
+
+    if (!resignDateValue || !noticeDays) {
+      document.getElementById("lastWorkingDay").textContent = "-";
+      document.getElementById("noticeExplanation").textContent = "Please select resignation date and notice period.";
+      document.getElementById("noticeBar").innerHTML = "";
+      document.getElementById("resultRows").innerHTML = "";
+      document.getElementById("summaryRows").innerHTML = "";
+      return;
+    }
+
+    const startDate = new Date(resignDateValue + "T00:00:00");
+    const lastDay = new Date(startDate);
+    lastDay.setDate(lastDay.getDate() + noticeDays);
+
+    const today = new Date();
+    today.setHours(0,0,0,0);
+
+    const daysFromToday = Math.ceil((lastDay - today) / (1000 * 60 * 60 * 24));
+    const noticeProgress = Math.max(0, Math.min(100, (noticeDays / 90) * 100));
+
+    document.getElementById("lastWorkingDay").textContent = formatDate(lastDay);
+    document.getElementById("noticeExplanation").textContent =
+      "Based on resignation date " + formatDate(startDate) + " and " + noticeDays + " days notice.";
+
+    document.getElementById("noticeBar").innerHTML =
+      '<i style="width:' + noticeProgress + '%;background:#5aa783"></i>' +
+      '<i style="width:' + (100 - noticeProgress) + '%;background:#c9a14e"></i>';
+
+    document.getElementById("resultRows").innerHTML =
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#f6f3ec"></span>Resignation Date</span><span class="v">' + formatDate(startDate) + '</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#5aa783"></span>Notice Period</span><span class="v">' + noticeDays + ' days</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#2f7d5e"></span>Estimated Last Working Day</span><span class="v">' + formatDate(lastDay) + '</span></div>';
+
+    document.getElementById("summaryRows").innerHTML =
+      '<div><span>Formula Used</span><strong>Resignation date + notice days</strong></div>' +
+      '<div><span>Notice Period</span><strong>' + noticeDays + ' days</strong></div>' +
+      '<div><span>Days From Today</span><strong>' + daysFromToday + ' days</strong></div>';
+  }
+
+  function setDefaultDate() {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, "0");
+    const dd = String(today.getDate()).padStart(2, "0");
+    document.getElementById("resignDate").value = yyyy + "-" + mm + "-" + dd;
+  }
+
+  document.getElementById("resignDate").addEventListener("input", calculateNotice);
+  document.getElementById("noticePeriod").addEventListener("change", calculateNotice);
+  document.getElementById("customNotice").addEventListener("input", calculateNotice);
+
+  setDefaultDate();
+  calculateNotice();
 </script>
 
-<hr style="margin-top:40px;">
-
-<div style="text-align:center;padding:20px;">
-
-<p>
-© 2026 Malaysia Salary Tools
-</p>
-
-<p>
-<a href="about.html">About Us</a> |
-<a href="contact.html">Contact Us</a> |
-<a href="privacy-policy.html">Privacy Policy</a>
-</p>
-
-</div>
-  
 </body>
 </html>
