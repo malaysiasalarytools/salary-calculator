@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
+
   <title>Malaysia Tax Refund Guide 2026 | LHDN Refund Timeline, Status & Overpaid Tax</title>
+
   <link rel="canonical" href="https://malaysiasalarytools.com/tax-refund-guide.html">
   <link rel="icon" type="image/png" href="favicon.png">
+
   <meta name="description" content="Malaysia Tax Refund Guide 2026. Learn how LHDN tax refunds work, refund timeline, overpaid PCB, e-Filing refund process, status checking and common refund delays.">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
 
@@ -14,25 +19,60 @@
   crossorigin="anonymous"></script>
 
   <style>
+    :root {
+      --background: #f4f1ea;
+      --card: #fbfaf6;
+      --foreground: #302c26;
+      --muted: #7c766c;
+      --primary: #2f2b25;
+      --primary-foreground: #f6f3ec;
+      --accent: #2f7d5e;
+      --accent-soft: rgba(47,125,94,.10);
+      --accent-border: rgba(47,125,94,.22);
+      --border: #e2ddd2;
+      --white: #ffffff;
+      --radius: 16px;
+      --shadow: 0 18px 45px rgba(47,43,37,.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #f8fafc, #f3f0ff);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47,125,94,.08), transparent 34%),
+        linear-gradient(135deg, #f4f1ea, #efe9de);
       margin: 0;
       padding: 0;
-      color: #111827;
+      color: var(--foreground);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .serif {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
     }
 
     .top-nav {
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
+      background: rgba(251,250,246,.84);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      backdrop-filter: blur(10px);
     }
 
     .nav-inner {
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 14px 20px;
       display: flex;
@@ -46,13 +86,13 @@
       align-items: center;
       text-decoration: none;
       flex-shrink: 0;
-      font-weight: bold;
-      color: #7c3aed;
+      font-weight: 800;
+      color: var(--foreground);
       font-size: 22px;
     }
 
     .brand img {
-      width: 180px;
+      width: 220px;
       height: auto;
       display: block;
     }
@@ -61,87 +101,125 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      overflow-x: auto;
       flex-wrap: nowrap;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
+      min-width: 0;
     }
 
-    .nav-links::-webkit-scrollbar { display: none; }
-
     .nav-links a {
+      display: block;
       text-decoration: none;
-      color: #4b5563;
+      color: var(--muted);
       font-weight: 600;
       font-size: 15px;
       padding: 10px 14px;
-      border-radius: 8px;
+      border-radius: 999px;
       white-space: nowrap;
-      flex-shrink: 0;
+      background: transparent;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      background: #7c3aed;
-      color: white;
-    }
-
-    .main-wrapper {
-      padding: 30px 20px;
+      background: var(--primary);
+      color: var(--primary-foreground);
     }
 
     .hero {
       text-align: center;
+      padding: 56px 20px 18px;
       max-width: 900px;
-      margin: 35px auto 20px;
+      margin: 0 auto;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      padding: 7px 15px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      font-weight: 700;
     }
 
     .hero h1 {
-      font-size: 32px;
-      color: #7c3aed;
-      margin-bottom: 10px;
+      margin: 0;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      color: var(--foreground);
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-style: italic;
     }
 
     .hero p {
+      max-width: 720px;
+      margin: 18px auto 0;
       font-size: 17px;
-      color: #64748b;
-      margin-top: 0;
-      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .main-wrapper {
+      padding: 16px 20px 44px;
     }
 
     .seo {
-      background: white;
-      max-width: 900px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      max-width: 1120px;
       margin: 30px auto;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      line-height: 1.7;
+      padding: 30px;
+      line-height: 1.72;
     }
 
-    h1 { font-size: 26px; }
-    h2 { font-size: 20px; margin-top: 25px; }
-    h3 { font-size: 16px; margin-top: 18px; }
+    .seo h2,
+    .section-title {
+      font-size: clamp(25px, 4vw, 36px);
+      line-height: 1.15;
+      margin: 34px 0 12px;
+      color: var(--foreground);
+      letter-spacing: -.01em;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
 
-    .tax-cta,
+    .seo h2:first-child { margin-top: 0; }
+
+    .seo h3 {
+      font-size: 17px;
+      margin-top: 18px;
+      color: var(--foreground);
+    }
+
+    .seo p,
+    .seo li {
+      color: var(--muted);
+    }
+
+    .calculator-cta,
     .summary-box,
     .guide-box,
     .example-box,
     .salary-guides-box {
-      background: #faf7ff;
-      border: 1px solid #ddd6fe;
-      border-radius: 16px;
+      background: #f8f5ef;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
       padding: 24px;
-      margin: 25px 0;
+      margin: 26px 0;
     }
 
-    .tax-cta {
+    .calculator-cta {
       text-align: center;
-      background: linear-gradient(135deg, #faf7ff, #fff7ed);
-      border: 1px solid #ddd6fe;
     }
 
-    .tax-cta h2,
+    .calculator-cta h2,
     .summary-box h2,
     .guide-box h2,
     .example-box h2,
@@ -149,8 +227,7 @@
       margin-top: 0;
     }
 
-    .tax-cta p {
-      color: #4b5563;
+    .calculator-cta p {
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
@@ -158,18 +235,16 @@
 
     .cta-button {
       display: inline-block;
-      background: #7c3aed;
-      color: white;
+      background: var(--accent);
+      color: #fff;
       text-decoration: none;
-      padding: 12px 24px;
-      border-radius: 10px;
-      font-weight: bold;
+      padding: 13px 24px;
+      border-radius: 12px;
+      font-weight: 800;
       margin-top: 8px;
     }
 
-    .cta-button:hover {
-      background: #6d28d9;
-    }
+    .cta-button:hover { filter: brightness(.95); }
 
     .summary-grid {
       display: grid;
@@ -179,110 +254,36 @@
     }
 
     .summary-card {
-      background: white;
-      border: 1px solid #ddd6fe;
-      border-radius: 12px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
       padding: 16px;
     }
 
     .summary-card strong {
       display: block;
-      color: #7c3aed;
-      font-size: 20px;
+      color: var(--accent);
+      font-size: 22px;
       margin-bottom: 6px;
     }
 
     .summary-card span {
-      color: #64748b;
+      color: var(--muted);
       font-size: 14px;
-    }
-
-    .tax-category-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .tax-category-card {
-      background: white;
-      border: 1px solid #e9d5ff;
-      border-radius: 14px;
-      padding: 18px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-    }
-
-    .tax-category-card .tag {
-      display: inline-block;
-      background: #f3e8ff;
-      color: #7c3aed;
-      font-size: 12px;
-      font-weight: bold;
-      padding: 4px 8px;
-      border-radius: 999px;
-      margin-bottom: 10px;
-    }
-
-    .tax-category-card h3 {
-      margin: 6px 0;
-      font-size: 16px;
-    }
-
-    .tax-category-card p {
-      color: #4b5563;
-      font-size: 14px;
-      line-height: 1.5;
-      margin-bottom: 0;
-    }
-
-    .contribution-table-wrap {
-      overflow-x: auto;
-    }
-
-    .contribution-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-      border: 1px solid #ddd6fe;
-      border-radius: 12px;
-      overflow: hidden;
-      min-width: 560px;
-    }
-
-    .contribution-table th {
-      background: #faf7ff;
-      color: #6b21a8;
-      font-size: 13px;
-      text-align: left;
-      letter-spacing: 0.4px;
-      padding: 14px;
-      border-bottom: 1px solid #ddd6fe;
-    }
-
-    .contribution-table td {
-      padding: 14px;
-      border-bottom: 1px solid #f3e8ff;
-      color: #334155;
-      font-size: 14px;
-      vertical-align: top;
-    }
-
-    .contribution-table tr:last-child td {
-      border-bottom: none;
     }
 
     .note-box {
       margin-top: 20px;
-      background: white;
-      border-left: 4px solid #7c3aed;
-      padding: 12px;
-      border-radius: 8px;
-      color: #4b5563;
+      background: var(--card);
+      border-left: 4px solid var(--accent);
+      padding: 14px;
+      border-radius: 10px;
+      color: var(--muted);
     }
 
     .formula-box {
-      background: #faf7ff;
-      border: 1px solid #ddd6fe;
+      background: var(--card);
+      border: 1px solid var(--border);
       border-radius: 14px;
       padding: 25px;
       text-align: center;
@@ -292,149 +293,322 @@
     .formula-box strong {
       display: block;
       font-size: 22px;
-      color: #111827;
+      color: var(--foreground);
       margin-bottom: 8px;
     }
 
     .formula-box span {
-      color: #64748b;
+      color: var(--muted);
       font-size: 15px;
     }
 
-    .checklist-box {
-      background: white;
-      border: 1px solid #e9d5ff;
-      border-radius: 14px;
-      padding: 18px;
+    .contribution-table-wrap {
+      overflow-x: auto;
       margin-top: 18px;
+    }
+
+    .contribution-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      min-width: 560px;
+    }
+
+    .contribution-table th {
+      background: #f1ece3;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: left;
+      letter-spacing: .03em;
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contribution-table td {
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--foreground);
+      font-size: 14px;
+      vertical-align: top;
+    }
+
+    .contribution-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .tax-category-grid,
+    .component-grid,
+    .guide-mini-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .tax-category-grid {
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    }
+
+    .component-grid {
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .guide-mini-grid {
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .tax-category-card,
+    .component-card,
+    .guide-mini-grid a,
+    .faq-item,
+    .checklist-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .tax-category-card,
+    .component-card {
+      padding: 18px;
+      transition: .18s ease;
+    }
+
+    .tax-category-card:hover,
+    .component-card:hover,
+    .guide-mini-grid a:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 30px rgba(47,43,37,.08);
+    }
+
+    .tax-category-card .tag {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      padding: 5px 9px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .tax-category-card h3,
+    .component-card h3 {
+      margin: 6px 0;
+      font-size: 16px;
+    }
+
+    .tax-category-card p,
+    .component-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+
+    .component-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      display: grid;
+      place-items: center;
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .checklist-box {
+      padding: 18px;
+      margin-top: 16px;
     }
 
     .checklist-box ul {
       margin-bottom: 0;
     }
 
-    .component-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
-      margin-top: 20px;
-    }
-
-    .component-card {
-      background: white;
-      border: 1px solid #e9d5ff;
-      border-radius: 14px;
-      padding: 18px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .component-icon {
-      font-size: 28px;
+    .checklist-box li {
       margin-bottom: 8px;
-    }
-
-    .component-card h3 {
-      margin: 8px 0;
-    }
-
-    .component-card p {
-      color: #4b5563;
-      font-size: 14px;
-      line-height: 1.5;
-      margin-bottom: 0;
+      color: var(--muted);
     }
 
     .faq-box {
-      margin-top: 25px;
+      margin-top: 18px;
+      max-width: 820px;
     }
 
     .faq-item {
-      background: #faf7ff;
-      border: 1px solid #ddd6fe;
-      border-radius: 10px;
-      padding: 14px;
+      padding: 4px 20px;
       margin-bottom: 12px;
     }
 
     .faq-item summary {
-      font-weight: bold;
+      font-weight: 800;
       cursor: pointer;
       list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--foreground);
+      padding: 16px 0;
     }
 
-    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
 
     .faq-item summary::after {
-      content: "▼";
-      float: right;
-      font-size: 12px;
+      content: "+";
+      color: var(--accent);
+      font-size: 20px;
+      line-height: 1;
     }
 
-    .faq-item[open] summary::after { content: "▲"; }
+    .faq-item[open] summary::after {
+      content: "−";
+    }
 
     .faq-item p {
-      margin-top: 12px;
-      margin-bottom: 0;
-      color: #4b5563;
-      line-height: 1.5;
-    }
-
-    .guide-mini-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 12px;
-      margin-top: 18px;
+      padding-bottom: 18px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
     }
 
     .guide-mini-grid a {
-      background: white;
-      border: 1px solid #e9d5ff;
-      padding: 12px 14px;
-      border-radius: 10px;
+      display: block;
+      padding: 14px 16px;
       text-decoration: none;
-      color: #7c3aed;
-      font-weight: bold;
+      color: var(--foreground);
+      font-weight: 800;
       text-align: center;
-    }
-
-    .guide-mini-grid a:hover {
-      background: #7c3aed;
-      color: white;
+      transition: .18s ease;
     }
 
     .view-all-guides {
       text-align: center;
-      margin-top: 20px;
+      margin: 20px 0 0;
     }
 
     .view-all-guides a {
-      color: #7c3aed;
-      font-weight: bold;
+      color: var(--accent);
+      font-weight: 800;
       text-decoration: none;
     }
 
     .footer {
-      text-align:center;
-      padding:20px;
+      border-top: 1px solid var(--border);
+      padding: 28px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
     }
 
-    @media (max-width: 700px){
-      .main-wrapper { padding: 15px 10px; }
-      .seo { margin: 15px auto; padding: 18px; }
-      .nav-inner { padding: 8px 10px; gap: 8px; }
-      .brand img { width: 120px; }
-      .brand { font-size: 18px; }
-      .nav-links { gap: 6px; }
-      .nav-links a { font-size: 14px; padding: 8px 10px; }
-      .hero h1 { font-size: 26px; }
-      .component-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-      .component-card { padding: 14px; text-align: center; }
-      .component-icon { font-size: 22px; }
-      .component-card h3 { font-size: 15px; margin: 6px 0; }
-      .component-card p { font-size: 12px; line-height: 1.35; margin: 0; }
-      .tax-category-grid { grid-template-columns: 1fr; }
+    .footer a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 800px) {
+      .nav-inner {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .nav-links {
+        width: auto;
+        flex: 1;
+        min-width: 0;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding: 38px 14px 12px;
+      }
+
+      .main-wrapper {
+        padding: 10px;
+      }
+
+      .seo {
+        padding: 20px;
+      }
+
+      .nav-inner {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        gap: 8px;
+      }
+
+      .brand img {
+        width: 150px;
+      }
+
+      .nav-links {
+        gap: 6px;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+
+      .summary-grid,
+      .tax-category-grid,
+      .component-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .summary-card,
+      .tax-category-card,
+      .component-card {
+        padding: 14px;
+      }
+
+      .tax-category-card h3,
+      .component-card h3 {
+        font-size: 15px;
+      }
+
+      .tax-category-card p,
+      .component-card p,
+      .summary-card span {
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .component-card {
+        text-align: center;
+      }
+
+      .component-icon {
+        margin-left: auto;
+        margin-right: auto;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+      }
     }
   </style>
 </head>
@@ -446,7 +620,8 @@
       <a href="index.html" class="brand">
         <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
       </a>
-      <nav class="nav-links">
+
+      <nav class="nav-links" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="calculators.html">Calculators</a>
         <a href="guides.html" class="active">Guides</a>
@@ -455,26 +630,28 @@
     </div>
   </header>
 
-  <div class="main-wrapper">
+  <section class="hero">
+    <span class="pill">Updated for Malaysia 2026 tax guide</span>
+    <h1 class="serif">Malaysia <em>Tax Refund</em> Guide 2026</h1>
+    <p>
+      Learn how tax refunds work in Malaysia, why overpaid tax happens, how long LHDN refunds may take and what to check if your refund is delayed.
+    </p>
+  </section>
 
-    <div class="hero">
-      <h1>Malaysia Tax Refund Guide 2026</h1>
-      <p>Learn how tax refunds work in Malaysia, why overpaid tax happens, how long LHDN refunds may take and what to check if your refund is delayed.</p>
-    </div>
+  <main class="main-wrapper">
 
     <div class="seo">
 
-      <section class="tax-cta">
-        <h2>🧾 Estimate Your Income Tax First</h2>
+      <section class="calculator-cta">
+        <h2 class="serif">Estimate Your Income Tax First</h2>
         <p>
-          A tax refund usually happens when the tax already paid is higher than your final income tax payable.
-          Use our Income Tax Calculator to estimate your tax before checking whether you may have overpaid.
+          A tax refund usually happens when the tax already paid is higher than your final income tax payable. Use our Income Tax Calculator to estimate your tax before checking whether you may have overpaid.
         </p>
-        <a href="income-tax-calculator.html" class="cta-button">Open Income Tax Calculator →</a>
+        <a href="income-tax-calculator.html" class="cta-button">Check My Income Tax →</a>
       </section>
 
       <section class="summary-box">
-        <h2>📌 Tax Refund Quick Summary</h2>
+        <h2 class="serif">Tax Refund Quick Summary</h2>
         <p>
           A Malaysia tax refund normally arises when your PCB/MTD deductions, tax instalments or other tax credits are more than your final tax payable after filing your income tax return.
         </p>
@@ -500,31 +677,37 @@
       </section>
 
       <h2>What Is a Tax Refund?</h2>
+
       <p>
         A tax refund is money returned to a taxpayer when the total tax paid during the year is higher than the final tax payable after assessment. For employees in Malaysia, this often happens when monthly PCB deductions are higher than the actual tax after reliefs, rebates and deductions are taken into account.
       </p>
+
       <p>
         A refund does not mean you are receiving extra income from LHDN. It usually means you paid too much tax earlier, and the excess amount is returned after your tax return is processed.
       </p>
 
       <section class="guide-box">
-        <h2>Common Reasons You May Get a Tax Refund</h2>
+        <h2 class="serif">Common Reasons You May Get a Tax Refund</h2>
+
         <div class="tax-category-grid">
           <div class="tax-category-card">
             <span class="tag">PCB / MTD</span>
             <h3>Monthly PCB Was Too High</h3>
             <p>Your employer may have deducted more PCB than your final tax payable.</p>
           </div>
+
           <div class="tax-category-card">
             <span class="tag">Reliefs</span>
             <h3>Tax Relief Claims</h3>
             <p>Reliefs such as EPF, insurance, lifestyle, medical or child relief may reduce final tax.</p>
           </div>
+
           <div class="tax-category-card">
             <span class="tag">Rebate</span>
             <h3>Tax Rebates</h3>
             <p>Eligible rebates may directly reduce the amount of tax payable.</p>
           </div>
+
           <div class="tax-category-card">
             <span class="tag">Income Change</span>
             <h3>Lower Final Tax</h3>
@@ -534,6 +717,7 @@
       </section>
 
       <h2>How Tax Refund Is Calculated</h2>
+
       <p>
         A tax refund is generally based on the difference between tax already paid and final tax payable. For employees, tax already paid is usually from monthly PCB deductions made by the employer.
       </p>
@@ -544,10 +728,12 @@
       </div>
 
       <section class="example-box">
-        <h2>Example Tax Refund Calculation</h2>
+        <h2 class="serif">Example Tax Refund Calculation</h2>
+
         <p>
           Assume your employer deducted RM3,000 PCB during the year. After filing your tax return and claiming eligible reliefs, your final tax payable is RM2,200.
         </p>
+
         <div class="contribution-table-wrap">
           <table class="contribution-table">
             <thead>
@@ -572,16 +758,19 @@
             </tbody>
           </table>
         </div>
+
         <p>
           The actual refund depends on LHDN processing, accuracy of your return and whether any supporting documents are requested.
         </p>
       </section>
 
       <section class="guide-box">
-        <h2>Tax Refund Timeline in Malaysia</h2>
+        <h2 class="serif">Tax Refund Timeline in Malaysia</h2>
+
         <p>
           Based on LHDN's tax refund guidance, refunds are generally processed within 30 working days for e-Filing submissions and within 90 working days for manual submissions, subject to complete information and supporting documents if required.
         </p>
+
         <div class="contribution-table-wrap">
           <table class="contribution-table">
             <thead>
@@ -605,27 +794,31 @@
             </tbody>
           </table>
         </div>
+
         <div class="note-box">
           <strong>Note:</strong> Refund timing may be delayed if LHDN is reviewing the tax return, bank details are incorrect, or supporting documents are requested.
         </div>
       </section>
 
-
       <section class="guide-box">
-        <h2>How to Check Tax Refund Status</h2>
+        <h2 class="serif">How to Check Tax Refund Status</h2>
+
         <p>
           Taxpayers can monitor their tax refund progress through LHDN online services and tax records. Refund status updates may vary depending on the processing stage, whether the return is selected for review and whether additional documents are required.
         </p>
+
         <p>
           If the refund takes longer than expected, check whether your personal information, bank account details and tax return details are correct. You should also watch for any request from LHDN for supporting documents or clarification.
         </p>
       </section>
 
       <section class="guide-box">
-        <h2>Documents Required for Tax Refund Review</h2>
+        <h2 class="serif">Documents Required for Tax Refund Review</h2>
+
         <p>
           If LHDN reviews your tax return before releasing a refund, you may need to provide documents that support your income, PCB deductions and tax relief claims. Keeping documents organised can make the review process easier.
         </p>
+
         <div class="checklist-box">
           <ul>
             <li>EA Form from employer</li>
@@ -639,37 +832,45 @@
         </div>
       </section>
 
-      <h2>How to Receive a Tax Refund</h2>
-      <p>
-        Tax refunds are commonly credited through electronic fund transfer to the bank account stated in your tax records or income tax return. To avoid delays, make sure your name, identification number and bank account details are correct.
-      </p>
-      <p>
-        You should also keep receipts and supporting documents for tax relief claims. LHDN may request documents if your tax return is selected for review.
-      </p>
+      <section class="guide-box">
+        <h2 class="serif">How to Receive a Tax Refund</h2>
 
+        <p>
+          Tax refunds are commonly credited through electronic fund transfer to the bank account stated in your tax records or income tax return. To avoid delays, make sure your name, identification number and bank account details are correct.
+        </p>
+
+        <p>
+          You should also keep receipts and supporting documents for tax relief claims. LHDN may request documents if your tax return is selected for review.
+        </p>
+      </section>
 
       <section class="guide-box">
-        <h2>Tax Refund for Salaried Employees</h2>
+        <h2 class="serif">Tax Refund for Salaried Employees</h2>
+
         <p>
           Salaried employees commonly receive tax refunds when monthly PCB deductions are higher than final tax payable after tax reliefs and rebates are claimed. The EA Form is usually the main document used to check employment income, benefits, EPF and PCB deducted during the year.
         </p>
+
         <p>
           Employees should compare their EA Form with payslips and make sure PCB amounts are entered correctly during e-Filing. If relief claims reduce final tax below PCB already paid, a refund may arise after LHDN processes the return.
         </p>
       </section>
 
       <section class="guide-box">
-        <h2>Tax Refund for Self-Employed Individuals</h2>
+        <h2 class="serif">Tax Refund for Self-Employed Individuals</h2>
+
         <p>
           Self-employed individuals may also receive a refund if instalments, tax credits or other tax paid are higher than final tax payable. However, the refund calculation may be more complex because business income, allowable expenses and tax instalments may need to be reviewed.
         </p>
+
         <p>
           Good record keeping is important for self-employed taxpayers. Business income records, expense documents, receipts and tax payment records should be kept properly in case LHDN requests verification.
         </p>
       </section>
 
       <section class="guide-box">
-        <h2>Tax Refund Checklist</h2>
+        <h2 class="serif">Tax Refund Checklist</h2>
+
         <div class="checklist-box">
           <ul>
             <li>File your income tax return correctly through e-Filing where possible</li>
@@ -681,36 +882,43 @@
         </div>
       </section>
 
-      <h2>Common Reasons Tax Refund Is Delayed</h2>
-      <div class="tax-category-grid">
-        <div class="tax-category-card">
-          <span class="tag">Review</span>
-          <h3>Tax Return Under Review</h3>
-          <p>LHDN may review your return before approving the refund.</p>
-        </div>
-        <div class="tax-category-card">
-          <span class="tag">Bank</span>
-          <h3>Incorrect Bank Details</h3>
-          <p>Wrong or inactive bank account details can delay payment.</p>
-        </div>
-        <div class="tax-category-card">
-          <span class="tag">Documents</span>
-          <h3>Supporting Documents Needed</h3>
-          <p>You may need to provide receipts or proof for relief claims.</p>
-        </div>
-        <div class="tax-category-card">
-          <span class="tag">Late Filing</span>
-          <h3>Late Tax Submission</h3>
-          <p>Late filing may cause refunds to be processed only after penalties or review are handled.</p>
-        </div>
-      </div>
+      <section class="guide-box">
+        <h2 class="serif">Common Reasons Tax Refund Is Delayed</h2>
 
+        <div class="tax-category-grid">
+          <div class="tax-category-card">
+            <span class="tag">Review</span>
+            <h3>Tax Return Under Review</h3>
+            <p>LHDN may review your return before approving the refund.</p>
+          </div>
+
+          <div class="tax-category-card">
+            <span class="tag">Bank</span>
+            <h3>Incorrect Bank Details</h3>
+            <p>Wrong or inactive bank account details can delay payment.</p>
+          </div>
+
+          <div class="tax-category-card">
+            <span class="tag">Documents</span>
+            <h3>Supporting Documents Needed</h3>
+            <p>You may need to provide receipts or proof for relief claims.</p>
+          </div>
+
+          <div class="tax-category-card">
+            <span class="tag">Late Filing</span>
+            <h3>Late Tax Submission</h3>
+            <p>Late filing may cause refunds to be processed only after penalties or review are handled.</p>
+          </div>
+        </div>
+      </section>
 
       <section class="guide-box">
-        <h2>Common Tax Refund Mistakes</h2>
+        <h2 class="serif">Common Tax Refund Mistakes</h2>
+
         <p>
           Refund delays often happen because the tax return is incomplete, bank details are wrong or relief claims are not supported by documents. Taxpayers should review their return carefully before submission.
         </p>
+
         <div class="checklist-box">
           <ul>
             <li>Entering incorrect bank account details</li>
@@ -724,7 +932,7 @@
       </section>
 
       <section class="guide-box">
-        <h2>Common Tax Refund Examples</h2>
+        <h2 class="serif">Common Tax Refund Examples</h2>
 
         <h3>Example 1: Overpaid PCB</h3>
         <p>
@@ -742,38 +950,46 @@
         </p>
       </section>
 
-      <h2>Tax Refund vs Tax Rebate vs Tax Relief</h2>
-      <div class="contribution-table-wrap">
-        <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th>Meaning</th>
-              <th>How It Affects Tax</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Tax Relief</td>
-              <td>Deduction from income before tax is calculated</td>
-              <td>Reduces chargeable income</td>
-            </tr>
-            <tr>
-              <td>Tax Rebate</td>
-              <td>Direct reduction from tax payable</td>
-              <td>Reduces final tax amount</td>
-            </tr>
-            <tr>
-              <td>Tax Refund</td>
-              <td>Return of excess tax already paid</td>
-              <td>Refunds overpaid amount</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <section class="guide-box">
+        <h2 class="serif">Tax Refund vs Tax Rebate vs Tax Relief</h2>
+
+        <p>
+          Tax refund, tax rebate and tax relief are related, but they happen at different stages of the tax calculation. Understanding the difference helps you avoid confusion during filing.
+        </p>
+
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Meaning</th>
+                <th>How It Affects Tax</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tax Relief</td>
+                <td>Deduction from income before tax is calculated</td>
+                <td>Reduces chargeable income</td>
+              </tr>
+              <tr>
+                <td>Tax Rebate</td>
+                <td>Direct reduction from tax payable</td>
+                <td>Reduces final tax amount</td>
+              </tr>
+              <tr>
+                <td>Tax Refund</td>
+                <td>Return of excess tax already paid</td>
+                <td>Refunds overpaid amount</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
       <section class="guide-box">
-        <h2>Who Should Read This Tax Refund Guide?</h2>
+        <h2 class="serif">Who Should Read This Tax Refund Guide?</h2>
+
         <ul>
           <li>Employees who had PCB deducted every month and want to know if they overpaid tax</li>
           <li>Taxpayers who filed e-Filing and are waiting for a refund</li>
@@ -871,22 +1087,28 @@
       </div>
 
       <section class="salary-guides-box">
-        <h2>📚 Related Tax Guides</h2>
-        <p>Continue reading related Malaysia tax guides to understand reliefs, rebates, filing and PCB deductions.</p>
+        <h2 class="serif">Related Tax Guides</h2>
+        <p>
+          Continue reading related Malaysia tax guides to understand reliefs, rebates, filing and PCB deductions.
+        </p>
 
         <div class="guide-mini-grid">
           <a href="tax-relief-guide.html">💸 Tax Relief Guide</a>
-          <a href="tax-rebate-guide.html">🧾 Tax Rebate Guide</a>
-          <a href="tax-filing-guide.html">📤 Tax Filing Guide</a>
-          <a href="pcb-guide.html">🏛️ PCB Guide</a>
+          <a href="tax-rebate-guide.html">✅ Tax Rebate Guide</a>
+          <a href="tax-filing-guide.html">🧾 Tax Filing Guide</a>
+          <a href="income-tax-guide.html">🏛️ Income Tax Guide</a>
         </div>
 
-        <p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p>
+        <p class="view-all-guides">
+          <a href="guides.html">View All Salary Guides →</a>
+        </p>
       </section>
 
       <section class="salary-guides-box">
-        <h2>🧮 Related Calculators</h2>
-        <p>Use these calculators to estimate tax, salary deductions and take-home pay in Malaysia.</p>
+        <h2 class="serif">Related Calculators</h2>
+        <p>
+          Use these calculators to estimate tax, salary deductions and take-home pay in Malaysia.
+        </p>
 
         <div class="guide-mini-grid">
           <a href="income-tax-calculator.html">Income Tax Calculator</a>
@@ -895,15 +1117,16 @@
           <a href="epf-calculator.html">EPF Calculator</a>
         </div>
 
-        <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
+        <p class="view-all-guides">
+          <a href="calculators.html">View All Calculators →</a>
+        </p>
       </section>
 
     </div>
-  </div>
 
-  <hr style="margin-top:40px;">
+  </main>
 
-  <div class="footer">
+  <footer class="footer">
     <p>© 2026 Malaysia Salary Tools</p>
     <p>
       <a href="about.html">About Us</a> |
@@ -911,7 +1134,7 @@
       <a href="guides.html">Guides</a> |
       <a href="privacy-policy.html">Privacy Policy</a>
     </p>
-  </div>
+  </footer>
 
 </body>
 </html>
