@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
 
   <title>Malaysia Payslip Generator 2026 | Free Salary Slip Generator</title>
+
   <link rel="canonical" href="https://malaysiasalarytools.com/payslip-generator.html">
   <link rel="icon" type="image/png" href="favicon.png">
 
   <meta name="description" content="Free Malaysia Payslip Generator 2026. Generate a simple salary slip with basic salary, allowance, EPF, SOCSO, EIS, PCB and net salary calculation.">
   <meta name="keywords" content="Malaysia payslip generator, salary slip generator Malaysia, free payslip generator, Malaysia payroll calculator, salary slip template, payslip calculator Malaysia">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
 
@@ -86,35 +88,65 @@
   </script>
 
   <style>
-    html {
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
-      margin: 0;
-      padding: 0;
-      color: #111827;
-      overflow-x: hidden;
+    :root {
+      --background: #f4f1ea;
+      --card: #fbfaf6;
+      --foreground: #302c26;
+      --muted: #7c766c;
+      --primary: #2f2b25;
+      --primary-soft: #403a32;
+      --primary-foreground: #f6f3ec;
+      --accent: #2f7d5e;
+      --accent-soft: rgba(47,125,94,.10);
+      --accent-border: rgba(47,125,94,.22);
+      --border: #e2ddd2;
+      --white: #ffffff;
+      --radius: 16px;
+      --shadow: 0 18px 45px rgba(47,43,37,.08);
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47,125,94,.08), transparent 34%),
+        linear-gradient(135deg, #f4f1ea, #efe9de);
+      margin: 0;
+      padding: 0;
+      color: var(--foreground);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .serif {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
     .top-nav {
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
+      background: rgba(251,250,246,.84);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      backdrop-filter: blur(10px);
     }
 
     .nav-inner {
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 14px 20px;
       display: flex;
@@ -128,13 +160,10 @@
       align-items: center;
       text-decoration: none;
       flex-shrink: 0;
-      font-weight: bold;
-      color: #2563eb;
-      font-size: 22px;
     }
 
     .brand img {
-      width: 180px;
+      width: 220px;
       height: auto;
       display: block;
     }
@@ -150,212 +179,175 @@
     .nav-links a {
       display: block;
       text-decoration: none;
-      color: #4b5563;
+      color: var(--muted);
       font-weight: 600;
       font-size: 15px;
       padding: 10px 14px;
-      border-radius: 8px;
+      border-radius: 999px;
       white-space: nowrap;
       background: transparent;
-      flex-shrink: 0;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      background: #2563eb;
-      color: white;
-    }
-
-    .main-wrapper {
-      padding: 30px 20px;
+      background: var(--primary);
+      color: var(--primary-foreground);
     }
 
     .hero {
       text-align: center;
+      padding: 56px 20px 18px;
       max-width: 900px;
-      margin: 35px auto 22px;
+      margin: 0 auto;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #eff6ff;
-      color: #2563eb;
-      border: 1px solid #bfdbfe;
-      padding: 8px 14px;
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      padding: 7px 15px;
       border-radius: 999px;
-      font-size: 13px;
-      font-weight: bold;
-      margin-bottom: 14px;
+      margin-bottom: 20px;
+      font-weight: 700;
     }
 
     .hero h1 {
-      font-size: 38px;
-      color: #2563eb;
-      margin: 0 0 12px;
-      line-height: 1.15;
+      margin: 0;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      color: var(--foreground);
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-style: italic;
     }
 
     .hero p {
+      max-width: 760px;
+      margin: 18px auto 0;
       font-size: 17px;
-      color: #64748b;
-      margin: 0 auto;
-      line-height: 1.7;
-      max-width: 780px;
+      color: var(--muted);
     }
 
-    .feature-strip {
-      max-width: 1000px;
-      margin: 24px auto 0;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
+    .main-wrapper {
+      padding: 16px 20px 44px;
     }
 
-    .feature-card {
-      background: white;
-      border: 1px solid #dbe3ef;
-      border-radius: 16px;
-      padding: 18px;
-      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
-    }
-
-    .feature-card span {
-      display: block;
-      color: #2563eb;
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
-
-    .feature-card strong {
-      display: block;
-      color: #111827;
-      font-size: 16px;
-      margin-bottom: 6px;
-    }
-
-    .feature-card p {
-      color: #64748b;
-      font-size: 13px;
-      line-height: 1.5;
-      margin: 0;
-    }
-
-    .generator-layout {
-      max-width: 1000px;
-      width: 100%;
-      margin: 28px auto;
+    .calculator-shell {
+      max-width: 1120px;
+      margin: 28px auto 32px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 22px;
+      gap: 20px;
       align-items: start;
     }
 
-    .form-card,
-    .preview-card,
-    .content-card {
-      background: white;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      border: 1px solid #e5e7eb;
-      padding: 26px;
+    .panel,
+    .seo {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
-    .form-card h2,
-    .preview-card h2,
-    .content-card h2 {
-      margin-top: 0;
-      color: #111827;
+    .panel {
+      padding: 28px;
+    }
+
+    .panel h2 {
+      margin: 0 0 4px;
       font-size: 22px;
-      line-height: 1.35;
+      color: var(--foreground);
     }
 
-    .calculator-intro {
-      color: #64748b;
-      line-height: 1.6;
-      margin-top: -5px;
-      margin-bottom: 20px;
+    .panel .sub {
+      margin: 0 0 22px;
+      color: var(--muted);
       font-size: 14px;
     }
 
-    .input-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      align-items: end;
-    }
-
-    .input-row .form-group {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--foreground);
     }
 
     .form-group {
       margin-bottom: 18px;
     }
 
-    label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 8px;
-      color: #374151;
+    .field-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
     }
 
     input,
     select {
       width: 100%;
-      padding: 13px 14px;
-      border: 1px solid #d1d5db;
-      border-radius: 10px;
-      font-size: 16px;
-      background: #fff;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+      color: var(--foreground);
+      outline: none;
+    }
+
+    input[type="number"] {
+      font-size: 17px;
     }
 
     input:focus,
     select:focus {
-      outline: none;
-      border-color: #2563eb;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(47,125,94,.14);
+    }
+
+    .btn,
+    .secondary-button {
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+      display: block;
     }
 
     .btn {
-      width: 100%;
-      border: none;
-      background: #2563eb;
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
+      background: var(--accent);
+      color: #fff;
       padding: 14px 18px;
-      border-radius: 10px;
-      cursor: pointer;
-      margin-top: 4px;
+      margin-top: 6px;
     }
 
     .btn:hover {
-      background: #1d4ed8;
+      filter: brightness(.95);
     }
 
-    .secondary-btn {
-      display: block;
-      text-align: center;
-      text-decoration: none;
-      width: 100%;
-      border: 1px solid #dbe3ef;
-      background: #f8fafc;
-      color: #2563eb;
-      font-size: 15px;
-      font-weight: bold;
+    .secondary-button {
+      background: var(--white);
+      color: var(--accent);
+      border: 1px solid var(--accent-border);
       padding: 13px 18px;
-      border-radius: 10px;
-      margin-top: 10px;
-      cursor: pointer;
+      margin-top: 12px;
     }
 
-    .secondary-btn:hover {
-      background: #eff6ff;
-      border-color: #bfdbfe;
+    .secondary-button:hover {
+      background: var(--accent-soft);
     }
 
     .button-row {
@@ -364,61 +356,70 @@
       gap: 12px;
     }
 
-    .small-note {
-      color: #64748b;
+    .input-note {
+      margin: 16px 0 0;
+      color: var(--muted);
       font-size: 13px;
-      line-height: 1.5;
-      margin: 14px 0 0;
     }
 
-    .input-help-card {
-      margin-top: 18px;
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 14px;
-      padding: 16px;
+    .results-panel {
+      background: var(--primary);
+      color: var(--primary-foreground);
+      border: 1px solid var(--primary);
+      padding: 28px;
+      border-radius: var(--radius);
+      box-shadow: 0 24px 55px rgba(47,43,37,.20);
     }
 
-    .input-help-card strong {
-      display: block;
-      color: #111827;
-      margin-bottom: 8px;
+    .results-panel h2 {
+      margin: 0 0 4px;
+      font-size: 22px;
+      color: var(--primary-foreground);
     }
 
-    .input-help-card ul {
-      margin: 8px 0 0;
-      padding-left: 18px;
-      color: #4b5563;
-      font-size: 13px;
-      line-height: 1.55;
+    .results-panel .sub {
+      margin: 0;
+      color: rgba(246,243,236,.62);
+      font-size: 14px;
     }
 
-    .input-help-card li {
-      margin-bottom: 6px;
+    .net {
+      font-size: clamp(36px, 5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      margin: 16px 0 0;
+    }
+
+    .net-caption {
+      color: rgba(246,243,236,.62);
+      font-size: 14px;
+      margin-top: 0;
     }
 
     .payslip-preview {
-      background: #ffffff;
-      border: 1px solid #dbe3ef;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.16);
       border-radius: 14px;
       overflow: hidden;
-      margin-top: 16px;
+      margin-top: 22px;
+      color: var(--foreground);
     }
 
     .payslip-header {
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
-      color: white;
+      background: #f8f5ef;
+      border-bottom: 1px solid var(--border);
       padding: 18px;
     }
 
     .payslip-header h3 {
       margin: 0 0 6px;
       font-size: 20px;
+      color: var(--foreground);
     }
 
     .payslip-header p {
       margin: 0;
-      color: #dbeafe;
+      color: var(--muted);
       font-size: 13px;
     }
 
@@ -429,13 +430,13 @@
     .payslip-meta {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 10px;
       margin-bottom: 16px;
     }
 
     .meta-box {
-      background: #f8fafc;
-      border: 1px solid #eef2f7;
+      background: #f8f5ef;
+      border: 1px solid var(--border);
       border-radius: 10px;
       padding: 12px;
     }
@@ -443,13 +444,13 @@
     .meta-box span {
       display: block;
       font-size: 12px;
-      color: #64748b;
+      color: var(--muted);
       margin-bottom: 5px;
     }
 
     .meta-box strong {
       display: block;
-      color: #111827;
+      color: var(--foreground);
       font-size: 14px;
       word-break: break-word;
     }
@@ -458,24 +459,25 @@
       width: 100%;
       border-collapse: collapse;
       margin-top: 12px;
-      border: 1px solid #dbe3ef;
+      border: 1px solid var(--border);
       border-radius: 12px;
       overflow: hidden;
+      background: var(--card);
     }
 
     .payslip-table th {
-      background: #f8fafc;
-      color: #64748b;
+      background: #f1ece3;
+      color: var(--muted);
       font-size: 13px;
       text-align: left;
       padding: 12px;
-      border-bottom: 1px solid #dbe3ef;
+      border-bottom: 1px solid var(--border);
     }
 
     .payslip-table td {
       padding: 12px;
-      border-bottom: 1px solid #eef2f7;
-      color: #334155;
+      border-bottom: 1px solid var(--border);
+      color: var(--foreground);
       font-size: 14px;
     }
 
@@ -489,8 +491,8 @@
     }
 
     .net-box {
-      background: linear-gradient(135deg, #eff6ff, #f8fafc);
-      border: 1px solid #bfdbfe;
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
       border-radius: 14px;
       padding: 16px;
       margin-top: 16px;
@@ -501,144 +503,197 @@
     }
 
     .net-box span {
-      color: #64748b;
+      color: var(--muted);
       font-size: 13px;
       display: block;
       margin-bottom: 5px;
     }
 
     .net-box strong {
-      color: #2563eb;
+      color: var(--accent);
       font-size: 24px;
       display: block;
       line-height: 1.2;
     }
 
-    .preview-placeholder {
-      background: #f8fafc;
-      border: 1px dashed #cbd5e1;
-      color: #64748b;
-      border-radius: 14px;
-      padding: 24px;
-      text-align: center;
-      line-height: 1.6;
-      margin-top: 16px;
+    .result-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-top: 18px;
+    }
+
+    .result-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      font-size: 14px;
+    }
+
+    .result-line:last-child {
+      border-bottom: none;
+    }
+
+    .result-line .k {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(246,243,236,.86);
+    }
+
+    .result-line .v {
+      font-weight: 800;
+      text-align: right;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 3px;
+      flex: 0 0 auto;
     }
 
     .seo {
-      max-width: 1000px;
-      width: 100%;
+      max-width: 1120px;
       margin: 30px auto;
-      line-height: 1.7;
+      padding: 30px;
+      line-height: 1.72;
     }
 
-    .content-card {
-      margin-bottom: 22px;
+    .seo h2,
+    .section-title {
+      font-size: clamp(25px, 4vw, 36px);
+      line-height: 1.15;
+      margin: 34px 0 12px;
+      color: var(--foreground);
+      letter-spacing: -.01em;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
     }
 
-    .content-card p {
-      color: #4b5563;
-      line-height: 1.75;
+    .seo h2:first-child {
+      margin-top: 0;
     }
 
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
+    .seo h3 {
+      font-size: 17px;
       margin-top: 18px;
     }
 
-    .summary-card {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
+    .seo p,
+    .seo li {
+      color: var(--muted);
+    }
+
+    .formula-box,
+    .salary-guides-box,
+    .official-box {
+      background: #f8f5ef;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 26px 0;
+    }
+
+    .component-grid,
+    .guide-mini-grid,
+    .rate-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .component-card,
+    .guide-mini-grid a,
+    .rate-card,
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 16px;
     }
 
-    .summary-card strong {
+    .component-card {
       display: block;
-      color: #2563eb;
-      font-size: 22px;
-      margin-bottom: 6px;
+      padding: 20px;
+      text-decoration: none;
+      color: inherit;
+      transition: .18s ease;
     }
 
-    .summary-card span {
-      color: #64748b;
-      font-size: 14px;
-      line-height: 1.45;
+    .component-card:hover,
+    .guide-mini-grid a:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 30px rgba(47,43,37,.08);
     }
 
-    .two-column {
+    .component-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--accent-soft);
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 18px;
+      place-items: center;
+      margin-bottom: 10px;
+      font-size: 21px;
     }
 
-    .info-panel {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 16px;
+    .component-card h3,
+    .rate-card h3 {
+      margin: 8px 0 4px;
+      color: var(--foreground);
+    }
+
+    .component-card p,
+    .rate-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .rate-card {
       padding: 20px;
     }
 
-    .info-panel h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      color: #111827;
-      font-size: 18px;
-    }
-
-    .info-panel ul {
-      margin: 10px 0 0;
-      padding-left: 20px;
-      color: #4b5563;
-    }
-
-    .info-panel li {
+    .rate-card strong {
+      display: block;
+      color: var(--accent);
+      font-size: 28px;
+      line-height: 1.1;
       margin-bottom: 8px;
     }
 
-    .guide-mini-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .guide-mini-grid a {
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
-      padding: 13px 14px;
+    .payroll-note {
+      margin-top: 20px;
+      background: var(--card);
+      border-left: 4px solid var(--accent);
+      padding: 14px;
       border-radius: 10px;
-      text-decoration: none;
-      color: #2563eb;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    .guide-mini-grid a:hover {
-      background: #2563eb;
-      color: white;
+      color: var(--muted);
     }
 
     .faq-box {
       margin-top: 18px;
+      max-width: 780px;
     }
 
     .faq-item {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 12px;
-      padding: 15px;
+      padding: 4px 20px;
       margin-bottom: 12px;
     }
 
     .faq-item summary {
-      font-weight: bold;
+      font-weight: 800;
       cursor: pointer;
       list-style: none;
-      color: #111827;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--foreground);
+      padding: 16px 0;
     }
 
     .faq-item summary::-webkit-details-marker {
@@ -646,55 +701,61 @@
     }
 
     .faq-item summary::after {
-      content: "▼";
-      float: right;
-      font-size: 12px;
-      color: #64748b;
+      content: "+";
+      color: var(--accent);
+      font-size: 20px;
+      line-height: 1;
     }
 
     .faq-item[open] summary::after {
-      content: "▲";
+      content: "−";
     }
 
     .faq-item p {
-      margin-top: 12px;
-      margin-bottom: 0;
-      color: #4b5563;
-      line-height: 1.6;
+      padding-bottom: 18px;
+      margin-top: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .guide-mini-grid a {
+      display: block;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: var(--foreground);
+      font-weight: 800;
+      text-align: center;
+      transition: .18s ease;
     }
 
     .view-all-guides {
       text-align: center;
-      margin-top: 20px;
+      margin: 20px 0 0;
     }
 
     .view-all-guides a {
-      color: #2563eb;
-      font-weight: bold;
+      color: var(--accent);
+      font-weight: 800;
       text-decoration: none;
-    }
-    
-    .disclaimer-box {
-      background: #fff7ed;
-      border: 1px solid #fed7aa;
-      border-left: 5px solid #f97316;
-      border-radius: 14px;
-      padding: 18px;
-      color: #7c2d12;
-      line-height: 1.65;
-      margin-top: 18px;
     }
 
     .footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 20px;
       text-align: center;
-      padding: 20px;
-      color: #4b5563;
+      color: var(--muted);
+      font-size: 13px;
     }
 
     .footer a {
-      color: #2563eb;
+      color: var(--muted);
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 700;
+    }
+
+    .footer a:hover {
+      color: var(--accent);
     }
 
     @media print {
@@ -705,13 +766,15 @@
 
       .top-nav,
       .hero,
-      .feature-strip,
-      .form-card,
+      .panel,
       .seo,
       .footer,
-      hr,
-      .preview-card h2,
-      .secondary-btn,
+      .results-panel h2,
+      .results-panel .sub,
+      .net,
+      .net-caption,
+      .result-rows,
+      .secondary-button,
       .btn {
         display: none !important;
       }
@@ -720,13 +783,15 @@
         padding: 0;
       }
 
-      .generator-layout {
+      .calculator-shell {
         display: block;
         max-width: 100%;
         margin: 0;
       }
 
-      .preview-card {
+      .results-panel {
+        background: white;
+        color: #111827;
         box-shadow: none;
         border: none;
         padding: 0;
@@ -738,13 +803,13 @@
     }
 
     @media (max-width: 900px) {
-      .generator-layout,
-      .two-column {
+      .calculator-shell,
+      .field-grid {
         grid-template-columns: 1fr;
       }
 
-      .feature-strip {
-        grid-template-columns: 1fr 1fr;
+      .seo {
+        padding: 24px;
       }
     }
 
@@ -774,21 +839,28 @@
     }
 
     @media (max-width: 700px) {
+      .hero {
+        padding: 38px 14px 12px;
+      }
+
       .main-wrapper {
-        padding: 15px 10px;
+        padding: 10px;
+      }
+
+      .panel,
+      .results-panel,
+      .seo {
+        padding: 20px;
       }
 
       .nav-inner {
-        padding: 8px 10px;
+        padding-top: 8px;
+        padding-bottom: 8px;
         gap: 8px;
       }
 
       .brand img {
-        width: 120px;
-      }
-
-      .brand {
-        font-size: 18px;
+        width: 150px;
       }
 
       .nav-links {
@@ -800,388 +872,415 @@
         padding: 8px 10px;
       }
 
-      .hero {
-        margin: 25px auto 18px;
+      .payslip-meta,
+      .button-row {
+        grid-template-columns: 1fr;
       }
 
-      .hero h1 {
-        font-size: 29px;
+      .net {
+        font-size: 34px;
       }
 
-      .hero p {
+      .component-grid,
+      .rate-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .component-card,
+      .rate-card {
+        padding: 14px;
+        text-align: center;
+      }
+
+      .component-icon {
+        margin-left: auto;
+        margin-right: auto;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+      }
+
+      .component-card h3,
+      .rate-card h3 {
         font-size: 15px;
+        margin: 6px 0;
       }
 
-      .feature-strip {
-        grid-template-columns: 1fr;
-      }
-
-      .form-card,
-      .preview-card,
-      .content-card {
-        padding: 18px;
-      }
-
-      .input-row,
-      .button-row,
-      .payslip-meta {
-        grid-template-columns: 1fr;
-      }
-
-      .net-box {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .payslip-table th,
-      .payslip-table td {
-        padding: 10px;
-        font-size: 13px;
+      .component-card p,
+      .rate-card p {
+        font-size: 12px;
+        line-height: 1.35;
       }
     }
   </style>
-
 </head>
 
 <body>
 
   <header class="top-nav">
     <div class="nav-inner">
+
       <a href="index.html" class="brand">
         <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
       </a>
-      <nav class="nav-links">
+
+      <nav class="nav-links" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="calculators.html" class="active">Calculators</a>
         <a href="guides.html">Guides</a>
         <a href="about.html">About</a>
       </nav>
+
     </div>
   </header>
 
-  <div class="main-wrapper">
+  <section class="hero">
+    <span class="pill">Updated for Malaysia 2026 salary slip estimates</span>
+    <h1 class="serif">Generate a clean <em>Malaysia payslip</em> instantly</h1>
+    <p>
+      Free Malaysia payslip generator for employees, HR users and small business owners. Create a simple salary slip preview with earnings, EPF, SOCSO, EIS, PCB and estimated net salary.
+    </p>
+  </section>
 
-<section class="hero">
-  <div class="eyebrow">Salary Slip Tool</div>
-  <h1>Malaysia Payslip Generator 2026</h1>
-  <p>Generate a simple salary slip preview with basic salary, allowances, EPF, SOCSO, EIS, PCB and estimated net salary.</p>
-</section>
+  <main class="main-wrapper">
 
-<section class="feature-strip" aria-label="Payslip generator highlights">
-  <div class="feature-card">
-    <span>🧾</span>
-    <strong>Payslip Preview</strong>
-    <p>Create a clean monthly salary slip layout for quick reference.</p>
-  </div>
-  <div class="feature-card">
-    <span>🧮</span>
-    <strong>Auto Deductions</strong>
-    <p>Estimate EPF, SOCSO, EIS and PCB using simplified calculations.</p>
-  </div>
-  <div class="feature-card">
-    <span>💰</span>
-    <strong>Net Salary</strong>
-    <p>See estimated take-home salary after selected deductions.</p>
-  </div>
-  <div class="feature-card">
-    <span>🖨️</span>
-    <strong>Print Ready</strong>
-    <p>Print the generated payslip or save it as PDF using your browser.</p>
-  </div>
-</section>
+    <section class="calculator-shell" id="generator">
 
-<div class="generator-layout">
+      <div class="panel">
+        <h2 class="serif">Enter Payslip Details</h2>
+        <p class="sub">Fill in employee details, earnings and deduction settings to generate a salary slip preview.</p>
 
-  <section class="form-card">
-    <h2>🧮 Payslip Details</h2>
-    <p class="calculator-intro">Enter employee details, salary and deduction settings to generate a simple monthly payslip preview.</p>
+        <div class="field-grid">
+          <div class="form-group">
+            <label for="employeeName">Employee name</label>
+            <input type="text" id="employeeName" placeholder="Example: Ahmad Tan" value="Ahmad Tan">
+          </div>
 
+          <div class="form-group">
+            <label for="employeeNo">Employee No. / ID</label>
+            <input type="text" id="employeeNo" placeholder="Example: EMP001" value="EMP001">
+          </div>
+        </div>
 
-<div class="input-row">
-  <div class="form-group">
-    <label for="employeeName">Employee Name</label>
-    <input type="text" id="employeeName" placeholder="Example: Ahmad Tan" value="Ahmad Tan">
-  </div>
+        <div class="form-group">
+          <label for="companyName">Company name</label>
+          <input type="text" id="companyName" placeholder="Example: ABC Sdn Bhd" value="ABC Sdn Bhd">
+        </div>
 
-  <div class="form-group">
-    <label for="employeeNo">Employee No. / ID</label>
-    <input type="text" id="employeeNo" placeholder="Example: EMP001" value="EMP001">
-  </div>
-</div>
+        <div class="field-grid">
+          <div class="form-group">
+            <label for="month">Payslip month</label>
+            <input type="text" id="month" placeholder="Example: January 2026" value="January 2026">
+          </div>
 
-<div class="form-group">
-  <label for="companyName">Company Name</label>
-  <input type="text" id="companyName" placeholder="Example: ABC Sdn Bhd" value="ABC Sdn Bhd">
-</div>
+          <div class="form-group">
+            <label for="paymentDate">Payment date</label>
+            <input type="date" id="paymentDate" value="2026-01-31">
+          </div>
+        </div>
 
-<div class="input-row">
-  <div class="form-group">
-    <label for="month">Payslip Month</label>
-    <input type="text" id="month" placeholder="Example: January 2026" value="January 2026">
-  </div>
+        <div class="field-grid">
+          <div class="form-group">
+            <label for="salary">Basic salary (RM)</label>
+            <input type="number" id="salary" placeholder="Example: 4000" value="4000" min="0" step="0.01">
+          </div>
 
-  <div class="form-group">
-    <label for="paymentDate">Payment Date</label>
-    <input type="date" id="paymentDate" value="2026-01-31">
-  </div>
-</div>
+          <div class="form-group">
+            <label for="allowance">Allowance / other earnings (RM)</label>
+            <input type="number" id="allowance" placeholder="Example: 300" value="300" min="0" step="0.01">
+          </div>
+        </div>
 
-<div class="input-row">
-  <div class="form-group">
-    <label for="salary">Basic Salary (RM)</label>
-    <input type="number" id="salary" placeholder="Example: 4000" value="4000" min="0" step="0.01">
-  </div>
+        <div class="field-grid">
+          <div class="form-group">
+            <label for="overtime">Overtime / commission (RM)</label>
+            <input type="number" id="overtime" placeholder="Example: 200" value="150" min="0" step="0.01">
+          </div>
 
-  <div class="form-group">
-    <label for="allowance">Allowance / Other Earnings (RM)</label>
-    <input type="number" id="allowance" placeholder="Example: 300" value="300" min="0" step="0.01">
-  </div>
-</div>
+          <div class="form-group">
+            <label for="unpaidLeave">Unpaid leave / other deduction (RM)</label>
+            <input type="number" id="unpaidLeave" placeholder="Example: 0" value="0" min="0" step="0.01">
+          </div>
+        </div>
 
-<div class="input-row">
-  <div class="form-group">
-    <label for="overtime">Overtime / Commission (RM)</label>
-    <input type="number" id="overtime" placeholder="Example: 200" value="150" min="0" step="0.01">
-  </div>
+        <div class="field-grid">
+          <div class="form-group">
+            <label for="deductionMode">Deduction mode</label>
+            <select id="deductionMode" onchange="handleDeductionMode()">
+              <option value="auto" selected>Auto estimate deductions</option>
+              <option value="manual">Manual enter deductions</option>
+            </select>
+          </div>
 
-  <div class="form-group">
-    <label for="unpaidLeave">Unpaid Leave / Other Deduction (RM)</label>
-    <input type="number" id="unpaidLeave" placeholder="Example: 0" value="0" min="0" step="0.01">
-  </div>
-</div>
+          <div class="form-group">
+            <label for="epfRate">Employee EPF rate</label>
+            <select id="epfRate" onchange="generatePayslip()">
+              <option value="0.11" selected>11% - Standard employee EPF</option>
+              <option value="0.09">9% - Reduced employee EPF</option>
+              <option value="0.00">0% - No EPF estimate</option>
+            </select>
+          </div>
+        </div>
 
-<div class="input-row">
-  <div class="form-group">
-    <label for="deductionMode">Deduction Mode</label>
-    <select id="deductionMode" onchange="handleDeductionMode()">
-      <option value="auto" selected>Auto estimate deductions</option>
-      <option value="manual">Manual enter deductions</option>
-    </select>
-  </div>
+        <div id="manualDeductions" style="display:none;">
+          <div class="field-grid">
+            <div class="form-group">
+              <label for="manualEPF">EPF deduction (RM)</label>
+              <input type="number" id="manualEPF" value="0" min="0" step="0.01">
+            </div>
 
-  <div class="form-group">
-    <label for="epfRate">Employee EPF Rate</label>
-    <select id="epfRate" onchange="generatePayslip()">
-      <option value="0.11" selected>11% - Standard employee EPF</option>
-      <option value="0.09">9% - Reduced employee EPF</option>
-      <option value="0.00">0% - No EPF estimate</option>
-    </select>
-  </div>
-</div>
+            <div class="form-group">
+              <label for="manualSOCSO">SOCSO deduction (RM)</label>
+              <input type="number" id="manualSOCSO" value="0" min="0" step="0.01">
+            </div>
+          </div>
 
-<div id="manualDeductions" style="display:none;">
-  <div class="input-row">
-    <div class="form-group">
-      <label for="manualEPF">EPF Deduction (RM)</label>
-      <input type="number" id="manualEPF" placeholder="Example: 440" value="0" min="0" step="0.01">
+          <div class="field-grid">
+            <div class="form-group">
+              <label for="manualEIS">EIS deduction (RM)</label>
+              <input type="number" id="manualEIS" value="0" min="0" step="0.01">
+            </div>
+
+            <div class="form-group">
+              <label for="manualPCB">PCB tax deduction (RM)</label>
+              <input type="number" id="manualPCB" value="0" min="0" step="0.01">
+            </div>
+          </div>
+        </div>
+
+        <div class="field-grid" id="autoTaxInputs">
+          <div class="form-group">
+            <label for="taxReliefs">Estimated annual tax reliefs (RM)</label>
+            <input type="number" id="taxReliefs" value="9000" min="0" step="0.01">
+          </div>
+
+          <div class="form-group">
+            <label for="includePCB">PCB estimate</label>
+            <select id="includePCB" onchange="generatePayslip()">
+              <option value="yes" selected>Include simplified PCB estimate</option>
+              <option value="no">Do not include PCB estimate</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <button class="btn" type="button" onclick="generatePayslip()">Generate Payslip</button>
+          <button class="secondary-button" type="button" onclick="resetForm()">Reset</button>
+        </div>
+
+        <button class="secondary-button" type="button" onclick="printPayslip()">Print / Save as PDF</button>
+
+        <p class="input-note">
+          This generator provides a simple salary slip preview only. Actual payroll may differ due to official EPF, SOCSO, EIS, PCB schedules, company payroll policy and employment terms.
+        </p>
+      </div>
+
+      <div class="results-panel">
+        <h2 class="serif">Payslip Preview</h2>
+        <p class="sub">Estimated net salary from the generated payslip</p>
+
+        <div class="net">RM <span id="netSalaryTop">0.00</span></div>
+        <p class="net-caption" id="previewCaption">Generated using auto deduction estimate.</p>
+
+        <div class="result-rows" id="summaryRows"></div>
+
+        <div id="payslipOutput" class="payslip-preview"></div>
+      </div>
+
+    </section>
+
+    <div class="seo">
+
+      <section>
+
+        <h2>What Is a Payslip?</h2>
+
+        <p>
+          A payslip is a salary document that shows an employee's earnings, deductions and net salary for a specific pay period. In Malaysia, a payslip commonly includes basic salary, allowance, overtime, EPF, SOCSO, EIS, PCB and net pay.
+        </p>
+
+        <div class="rate-grid">
+          <div class="rate-card">
+            <strong>Gross</strong>
+            <h3>Gross Pay</h3>
+            <p>Basic salary plus allowance, overtime, commission or other earnings.</p>
+          </div>
+
+          <div class="rate-card">
+            <strong>Deduct</strong>
+            <h3>Deductions</h3>
+            <p>Employee EPF, SOCSO, EIS, PCB and other salary deductions.</p>
+          </div>
+
+          <div class="rate-card">
+            <strong>Net</strong>
+            <h3>Net Salary</h3>
+            <p>Estimated take-home salary after employee deductions.</p>
+          </div>
+
+          <div class="rate-card">
+            <strong>Print</strong>
+            <h3>Print Ready</h3>
+            <p>Print the generated payslip or save it as PDF using your browser.</p>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="formula-box">
+
+        <h2>How to Use This Payslip Generator</h2>
+
+        <p>
+          Enter employee details, company name, pay period, salary amount and deduction settings. You can choose auto estimate mode for quick planning, or manual mode if you already know the exact EPF, SOCSO, EIS and PCB amounts from payroll.
+        </p>
+
+        <div class="payroll-note">
+          <strong>Important:</strong>
+          This tool is for simple payslip preview and general information only. It should not be treated as professional payroll, tax, legal, accounting or HR advice.
+        </div>
+
+      </section>
+
+      <section>
+
+        <h2>What This Payslip Generator Shows</h2>
+
+        <p>
+          This tool is designed to help users understand the common structure of a Malaysia salary slip. It shows earnings, employee deductions, total deductions and estimated net salary in a clean preview format.
+        </p>
+
+        <div class="component-grid">
+
+          <a class="component-card" href="payslip-guide.html">
+            <div class="component-icon">🧾</div>
+            <h3>Payslip Layout</h3>
+            <p>Generate a simple salary slip layout with employee and company details.</p>
+          </a>
+
+          <a class="component-card" href="epf-calculator.html">
+            <div class="component-icon">💰</div>
+            <h3>EPF Estimate</h3>
+            <p>Estimate employee EPF deduction for basic payslip preview.</p>
+          </a>
+
+          <a class="component-card" href="socso-calculator.html">
+            <div class="component-icon">🛡️</div>
+            <h3>SOCSO & EIS</h3>
+            <p>Include simplified SOCSO and EIS employee deduction estimates.</p>
+          </a>
+
+          <a class="component-card" href="pcb-calculator.html">
+            <div class="component-icon">🏛️</div>
+            <h3>PCB Estimate</h3>
+            <p>Include a simplified monthly PCB estimate for salary slip planning.</p>
+          </a>
+
+        </div>
+
+      </section>
+
+      <h2>Who Should Use This Payslip Generator?</h2>
+
+      <ul>
+        <li>Employees who want to understand a payslip structure</li>
+        <li>Small business owners preparing a simple salary slip preview</li>
+        <li>HR or payroll users explaining salary components</li>
+        <li>Job seekers comparing gross salary and estimated net salary</li>
+        <li>Freelancers or part-time workers preparing simple salary records</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-box">
+
+        <details class="faq-item" open>
+          <summary>Is this payslip generator free?</summary>
+          <p>
+            Yes. This simple Malaysia payslip generator is free to use for salary slip preview and planning.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can I print the generated payslip?</summary>
+          <p>
+            Yes. After generating the payslip, click the print button. You can print it or save it as PDF using your browser's print function.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is this payslip suitable for official payroll?</summary>
+          <p>
+            This tool provides a simple payslip format. Employers should follow proper payroll, statutory and record-keeping requirements.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Does this calculate EPF, SOCSO, EIS and PCB automatically?</summary>
+          <p>
+            It can estimate them using simplified calculations. Actual payroll may differ based on official schedules, contribution tables and payroll settings.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can I enter my own deduction amounts?</summary>
+          <p>
+            Yes. Choose manual deduction mode if you want to enter EPF, SOCSO, EIS and PCB amounts yourself.
+          </p>
+        </details>
+
+      </div>
+
+      <section class="salary-guides-box">
+
+        <h2>Malaysia Payroll Guides</h2>
+
+        <p>
+          Learn more about payslips, salary deductions and statutory contributions in Malaysia.
+        </p>
+
+        <div class="guide-mini-grid">
+          <a href="payslip-guide.html">🧾 Payslip Guide</a>
+          <a href="epf-guide.html">💰 EPF Guide</a>
+          <a href="socso-guide.html">🛡️ SOCSO Guide</a>
+          <a href="eis-guide.html">📋 EIS Guide</a>
+          <a href="pcb-guide.html">🏛️ PCB Guide</a>
+          <a href="salary-deduction-guide.html">📉 Salary Deduction Guide</a>
+        </div>
+
+        <p class="view-all-guides">
+          <a href="guides.html">View All Salary Guides →</a>
+        </p>
+
+      </section>
+
+      <section class="salary-guides-box">
+
+        <h2>Related Calculators</h2>
+
+        <p>
+          Explore more free Malaysia salary and payroll calculators.
+        </p>
+
+        <div class="guide-mini-grid">
+          <a href="index.html">Salary Calculator</a>
+          <a href="epf-calculator.html">EPF Calculator</a>
+          <a href="socso-calculator.html">SOCSO Calculator</a>
+          <a href="eis-calculator.html">EIS Calculator</a>
+          <a href="pcb-calculator.html">PCB Calculator</a>
+          <a href="income-tax-calculator.html">Income Tax Calculator</a>
+        </div>
+
+        <p class="view-all-guides">
+          <a href="calculators.html">View All Calculators →</a>
+        </p>
+
+      </section>
+
     </div>
 
-    <div class="form-group">
-      <label for="manualSOCSO">SOCSO Deduction (RM)</label>
-      <input type="number" id="manualSOCSO" placeholder="Example: 19.75" value="0" min="0" step="0.01">
-    </div>
-  </div>
-
-  <div class="input-row">
-    <div class="form-group">
-      <label for="manualEIS">EIS Deduction (RM)</label>
-      <input type="number" id="manualEIS" placeholder="Example: 8" value="0" min="0" step="0.01">
-    </div>
-
-    <div class="form-group">
-      <label for="manualPCB">PCB Tax Deduction (RM)</label>
-      <input type="number" id="manualPCB" placeholder="Example: 0" value="0" min="0" step="0.01">
-    </div>
-  </div>
-</div>
-
-<div class="input-row" id="autoTaxInputs">
-  <div class="form-group">
-    <label for="taxReliefs">Estimated Annual Tax Reliefs (RM)</label>
-    <input type="number" id="taxReliefs" value="9000" min="0" step="0.01">
-  </div>
-
-  <div class="form-group">
-    <label for="includePCB">PCB Estimate</label>
-    <select id="includePCB" onchange="generatePayslip()">
-      <option value="yes" selected>Include simplified PCB estimate</option>
-      <option value="no">Do not include PCB estimate</option>
-    </select>
-  </div>
-</div>
-
-<div class="button-row">
-  <button class="btn" onclick="generatePayslip()">Generate Payslip</button>
-  <button class="secondary-btn" type="button" onclick="resetForm()">Reset</button>
-</div>
-
-<button class="secondary-btn" type="button" onclick="printPayslip()">Print / Save as PDF</button>
-
-<p class="small-note">
-  This generator provides a simple salary slip preview only. Actual payroll may differ due to official EPF, SOCSO, EIS, PCB schedules, company payroll policy and employment terms.
-</p>
-
-<div class="input-help-card">
-  <strong>Quick payslip notes:</strong>
-  <ul>
-    <li>Gross pay usually includes basic salary, allowance and overtime.</li>
-    <li>Net salary is gross pay less employee deductions.</li>
-    <li>Employer contributions are usually not deducted from employee salary.</li>
-  </ul>
-</div>
-
-
-  </section>
-
-  <section class="preview-card">
-    <h2>📄 Payslip Preview</h2>
-
-
-<div id="payslipOutput" class="payslip-preview"></div>
-
-
-  </section>
-
-</div>
-
-<main class="seo">
-
-  <section class="content-card">
-    <h2>📌 Payslip Generator Quick Summary</h2>
-    <p>This Malaysia payslip generator helps employees, freelancers, HR users and small business owners create a simple salary slip preview with earnings, deductions and net salary.</p>
-
-
-<div class="summary-grid">
-  <div class="summary-card">
-    <strong>Gross Pay</strong>
-    <span>Basic salary plus allowance, overtime or other earnings.</span>
-  </div>
-  <div class="summary-card">
-    <strong>Deductions</strong>
-    <span>EPF, SOCSO, EIS, PCB and other salary deductions.</span>
-  </div>
-  <div class="summary-card">
-    <strong>Net Salary</strong>
-    <span>Estimated take-home pay after employee deductions.</span>
-  </div>
-  <div class="summary-card">
-    <strong>Preview</strong>
-    <span>Generate a clean payslip preview for simple reference.</span>
-  </div>
-</div>
-
-
-  </section>
-
-  <section class="content-card">
-    <h2>What Is a Payslip?</h2>
-    <p>A payslip is a salary document that shows an employee's earnings, deductions and net salary for a specific pay period. In Malaysia, a payslip commonly includes basic salary, allowance, EPF, SOCSO, EIS, PCB and net pay.</p>
-
-
-<div class="two-column">
-  <div class="info-panel">
-    <h3>Common Earnings</h3>
-    <ul>
-      <li>Basic salary</li>
-      <li>Fixed allowance</li>
-      <li>Overtime pay</li>
-      <li>Commission or bonus</li>
-    </ul>
-  </div>
-
-  <div class="info-panel">
-    <h3>Common Deductions</h3>
-    <ul>
-      <li>Employee EPF</li>
-      <li>Employee SOCSO</li>
-      <li>Employee EIS</li>
-      <li>PCB monthly tax deduction</li>
-    </ul>
-  </div>
-</div>
-
-
-  </section>
-
-  <section class="content-card">
-    <h2>How to Use This Payslip Generator</h2>
-    <p>Enter employee details, company name, pay period, salary amount and deduction settings. You can choose auto estimate mode for quick planning, or manual mode if you already know the exact EPF, SOCSO, EIS and PCB amounts from payroll.</p>
-
-
-<div class="disclaimer-box">
-  <strong>Important:</strong> This tool is for simple payslip preview and general information only. It should not be treated as professional payroll, tax, legal, accounting or HR advice.
-</div>
-
-
-  </section>
-
-  <section class="content-card">
-    <h2>Frequently Asked Questions</h2>
-
-
-<div class="faq-box">
-  <details class="faq-item" open>
-    <summary>Is this payslip generator free?</summary>
-    <p>Yes. This simple Malaysia payslip generator is free to use.</p>
-  </details>
-
-  <details class="faq-item">
-    <summary>Can I print the generated payslip?</summary>
-    <p>Yes. After generating the payslip, click the print button. You can print it or save it as PDF using your browser's print function.</p>
-  </details>
-
-  <details class="faq-item">
-    <summary>Is this payslip suitable for official payroll?</summary>
-    <p>This tool provides a simple payslip format. Employers should follow proper payroll, statutory and record-keeping requirements.</p>
-  </details>
-
-  <details class="faq-item">
-    <summary>Does this calculate EPF, SOCSO, EIS and PCB automatically?</summary>
-    <p>It can estimate them using simplified calculations. Actual payroll may differ based on official schedules, contribution tables and payroll settings.</p>
-  </details>
-
-  <details class="faq-item">
-    <summary>Can I enter my own deduction amounts?</summary>
-    <p>Yes. Choose manual deduction mode if you want to enter EPF, SOCSO, EIS and PCB amounts yourself.</p>
-  </details>
-</div>
-
-
-  </section>
-
-  <section class="content-card">
-    <h2>📚 Related Payroll Guides</h2>
-    <p>Continue reading related Malaysia payroll guides to understand salary deductions and statutory contributions.</p>
-
-    <div class="guide-mini-grid">
-      <a href="payslip-guide.html">🧾 Payslip Guide</a>
-      <a href="epf-guide.html">💰 EPF Guide</a>
-      <a href="socso-guide.html">🛡️ SOCSO Guide</a>
-      <a href="pcb-guide.html">🏛️ PCB Guide</a>
-    </div>
-
-    <p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p>
-  </section>
-
-  <section class="content-card">
-    <h2>🧮 Related Calculators</h2>
-    <p>Use these calculators to estimate payroll deductions and take-home pay in Malaysia.</p>
-
-    <div class="guide-mini-grid">
-      <a href="index.html">Salary Calculator</a>
-      <a href="epf-calculator.html">EPF Calculator</a>
-      <a href="socso-calculator.html">SOCSO Calculator</a>
-      <a href="pcb-calculator.html">PCB Calculator</a>
-    </div>
-
-    <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
-  </section>
-
-</main>
-
-  </div>
-
-  <hr style="margin-top:40px; border:none; border-top:1px solid #e5e7eb;">
+  </main>
 
   <footer class="footer">
     <p>© 2026 Malaysia Salary Tools</p>
@@ -1189,6 +1288,7 @@
       <a href="index.html">Home</a> |
       <a href="calculators.html">Calculators</a> |
       <a href="guides.html">Guides</a> |
+      <a href="about.html">About</a> |
       <a href="contact.html">Contact Us</a> |
       <a href="privacy-policy.html">Privacy Policy</a>
     </p>
@@ -1196,7 +1296,7 @@
 
   <script>
     function formatRM(amount) {
-      return 'RM' + Number(amount).toLocaleString('en-MY', {
+      return Number(amount).toLocaleString('en-MY', {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2
       });
@@ -1249,7 +1349,7 @@
       return cappedSalary * 0.002;
     }
 
-    function estimatePCB(monthlySalary, grossPay, epf, reliefs) {
+    function estimatePCB(grossPay, epf, reliefs) {
       const includePCB = document.getElementById('includePCB').value;
 
       if (includePCB === 'no') {
@@ -1291,6 +1391,7 @@
       const allowance = parseFloat(document.getElementById('allowance').value) || 0;
       const overtime = parseFloat(document.getElementById('overtime').value) || 0;
       const unpaidLeave = parseFloat(document.getElementById('unpaidLeave').value) || 0;
+
       const grossPay = salary + allowance + overtime;
 
       const deductionMode = document.getElementById('deductionMode').value;
@@ -1311,7 +1412,7 @@
         epf = grossPay * epfRate;
         socso = estimateSOCSO(grossPay);
         eis = estimateEIS(grossPay);
-        pcb = estimatePCB(salary, grossPay, epf, reliefs);
+        pcb = estimatePCB(grossPay, epf, reliefs);
       }
 
       const totalEarnings = grossPay;
@@ -1324,7 +1425,26 @@
       const safeMonth = escapeHTML(month || 'Payslip Month');
       const safePaymentDate = escapeHTML(paymentDate || '-');
 
-      document.getElementById('payslipOutput').className = 'payslip-preview';
+      const deductionModeText = deductionMode === 'auto' ? 'Auto Estimate' : 'Manual';
+
+      document.getElementById('netSalaryTop').textContent = formatRM(netSalary);
+      document.getElementById('previewCaption').textContent = deductionMode === 'auto'
+        ? 'Generated using simplified auto deduction estimate.'
+        : 'Generated using manual deduction amounts.';
+
+      const colors = {
+        earnings: '#f6f3ec',
+        deductions: '#c9a14e',
+        net: '#5aa783',
+        pcb: '#cf6f5b'
+      };
+
+      document.getElementById('summaryRows').innerHTML =
+        '<div class="result-line"><span class="k"><span class="dot" style="background:' + colors.earnings + '"></span>Total Earnings</span><span class="v">RM ' + formatRM(totalEarnings) + '</span></div>' +
+        '<div class="result-line"><span class="k"><span class="dot" style="background:' + colors.deductions + '"></span>Total Deductions</span><span class="v">RM ' + formatRM(totalDeductions) + '</span></div>' +
+        '<div class="result-line"><span class="k"><span class="dot" style="background:' + colors.net + '"></span>Estimated Net Salary</span><span class="v">RM ' + formatRM(netSalary) + '</span></div>' +
+        '<div class="result-line"><span class="k"><span class="dot" style="background:' + colors.pcb + '"></span>Deduction Mode</span><span class="v">' + deductionModeText + '</span></div>';
+
       document.getElementById('payslipOutput').innerHTML =
         "<div class='payslip-header'>" +
           "<h3>Monthly Payslip</h3>" +
@@ -1338,37 +1458,37 @@
             "<div class='meta-box'><span>Employee</span><strong>" + safeEmployee + "</strong></div>" +
             "<div class='meta-box'><span>Employee No.</span><strong>" + safeEmployeeNo + "</strong></div>" +
             "<div class='meta-box'><span>Payment Date</span><strong>" + safePaymentDate + "</strong></div>" +
-            "<div class='meta-box'><span>Deduction Mode</span><strong>" + (deductionMode === 'auto' ? 'Auto Estimate' : 'Manual') + "</strong></div>" +
+            "<div class='meta-box'><span>Deduction Mode</span><strong>" + deductionModeText + "</strong></div>" +
           "</div>" +
 
           "<table class='payslip-table'>" +
             "<thead><tr><th>Earnings</th><th class='amount'>Amount</th></tr></thead>" +
             "<tbody>" +
-              "<tr><td>Basic Salary</td><td class='amount'>" + formatRM(salary) + "</td></tr>" +
-              "<tr><td>Allowance / Other Earnings</td><td class='amount'>" + formatRM(allowance) + "</td></tr>" +
-              "<tr><td>Overtime / Commission</td><td class='amount'>" + formatRM(overtime) + "</td></tr>" +
-              "<tr><td><strong>Total Earnings</strong></td><td class='amount'><strong>" + formatRM(totalEarnings) + "</strong></td></tr>" +
+              "<tr><td>Basic Salary</td><td class='amount'>RM " + formatRM(salary) + "</td></tr>" +
+              "<tr><td>Allowance / Other Earnings</td><td class='amount'>RM " + formatRM(allowance) + "</td></tr>" +
+              "<tr><td>Overtime / Commission</td><td class='amount'>RM " + formatRM(overtime) + "</td></tr>" +
+              "<tr><td><strong>Total Earnings</strong></td><td class='amount'><strong>RM " + formatRM(totalEarnings) + "</strong></td></tr>" +
             "</tbody>" +
           "</table>" +
 
           "<table class='payslip-table'>" +
             "<thead><tr><th>Deductions</th><th class='amount'>Amount</th></tr></thead>" +
             "<tbody>" +
-              "<tr><td>Employee EPF</td><td class='amount'>" + formatRM(epf) + "</td></tr>" +
-              "<tr><td>Employee SOCSO</td><td class='amount'>" + formatRM(socso) + "</td></tr>" +
-              "<tr><td>Employee EIS</td><td class='amount'>" + formatRM(eis) + "</td></tr>" +
-              "<tr><td>PCB Tax Deduction</td><td class='amount'>" + formatRM(pcb) + "</td></tr>" +
-              "<tr><td>Unpaid Leave / Other Deduction</td><td class='amount'>" + formatRM(unpaidLeave) + "</td></tr>" +
-              "<tr><td><strong>Total Deductions</strong></td><td class='amount'><strong>" + formatRM(totalDeductions) + "</strong></td></tr>" +
+              "<tr><td>Employee EPF</td><td class='amount'>RM " + formatRM(epf) + "</td></tr>" +
+              "<tr><td>Employee SOCSO</td><td class='amount'>RM " + formatRM(socso) + "</td></tr>" +
+              "<tr><td>Employee EIS</td><td class='amount'>RM " + formatRM(eis) + "</td></tr>" +
+              "<tr><td>PCB Tax Deduction</td><td class='amount'>RM " + formatRM(pcb) + "</td></tr>" +
+              "<tr><td>Unpaid Leave / Other Deduction</td><td class='amount'>RM " + formatRM(unpaidLeave) + "</td></tr>" +
+              "<tr><td><strong>Total Deductions</strong></td><td class='amount'><strong>RM " + formatRM(totalDeductions) + "</strong></td></tr>" +
             "</tbody>" +
           "</table>" +
 
           "<div class='net-box'>" +
-            "<div><span>Estimated Net Salary</span><strong>" + formatRM(netSalary) + "</strong></div>" +
-            "<div><span>Gross Pay</span><strong>" + formatRM(grossPay) + "</strong></div>" +
+            "<div><span>Estimated Net Salary</span><strong>RM " + formatRM(netSalary) + "</strong></div>" +
+            "<div><span>Gross Pay</span><strong>RM " + formatRM(grossPay) + "</strong></div>" +
           "</div>" +
 
-          "<p class='small-note'>This payslip is generated for simple reference only. Actual payroll should follow company policy and statutory requirements.</p>" +
+          "<p class='input-note'>This payslip is generated for simple reference only. Actual payroll should follow company policy and statutory requirements.</p>" +
         "</div>";
     }
 
@@ -1413,12 +1533,16 @@
     document.getElementById('allowance').addEventListener('input', generatePayslip);
     document.getElementById('overtime').addEventListener('input', generatePayslip);
     document.getElementById('unpaidLeave').addEventListener('input', generatePayslip);
+    document.getElementById('epfRate').addEventListener('change', generatePayslip);
     document.getElementById('taxReliefs').addEventListener('input', generatePayslip);
+    document.getElementById('includePCB').addEventListener('change', generatePayslip);
+
     document.getElementById('manualEPF').addEventListener('input', generatePayslip);
     document.getElementById('manualSOCSO').addEventListener('input', generatePayslip);
     document.getElementById('manualEIS').addEventListener('input', generatePayslip);
     document.getElementById('manualPCB').addEventListener('input', generatePayslip);
 
+    handleDeductionMode();
     generatePayslip();
   </script>
 
