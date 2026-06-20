@@ -2,46 +2,82 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <title>Contact Malaysia Salary Tools | Feedback, Questions & Suggestions</title>
+
   <link rel="canonical" href="https://malaysiasalarytools.com/contact.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+
   <meta name="description" content="Contact Malaysia Salary Tools for questions, suggestions, feedback, calculator issues or content updates about Malaysian salary, payroll, tax and employment resources.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
+    :root {
+      --background: #f4f1ea;
+      --card: #fbfaf6;
+      --foreground: #302c26;
+      --muted: #7c766c;
+      --primary: #2f2b25;
+      --primary-soft: #403a32;
+      --primary-foreground: #f6f3ec;
+      --accent: #2f7d5e;
+      --accent-soft: rgba(47,125,94,.10);
+      --accent-border: rgba(47,125,94,.22);
+      --border: #e2ddd2;
+      --white: #ffffff;
+      --radius: 16px;
+      --shadow: 0 18px 45px rgba(47,43,37,.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     html {
       overflow-x: hidden;
       scroll-behavior: smooth;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47,125,94,.08), transparent 34%),
+        linear-gradient(135deg, #f4f1ea, #efe9de);
       margin: 0;
       padding: 0;
-      color: #111827;
+      color: var(--foreground);
+      line-height: 1.6;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .serif {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
     }
 
     .top-nav {
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
+      background: rgba(251,250,246,.84);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      backdrop-filter: blur(10px);
     }
 
     .nav-inner {
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 14px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 25px;
-      overflow: visible;
     }
 
     .brand {
@@ -52,7 +88,7 @@
     }
 
     .brand img {
-      width: 180px;
+      width: 220px;
       height: auto;
       display: block;
     }
@@ -63,63 +99,82 @@
       gap: 8px;
       flex-wrap: nowrap;
       min-width: 0;
-      overflow: visible;
     }
 
     .nav-links a {
+      display: block;
       text-decoration: none;
-      color: #4b5563;
+      color: var(--muted);
       font-weight: 600;
       font-size: 15px;
       padding: 10px 14px;
-      border-radius: 8px;
+      border-radius: 999px;
       white-space: nowrap;
-      flex-shrink: 0;
+      background: transparent;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      background: #2563eb;
-      color: white;
+      background: var(--primary);
+      color: var(--primary-foreground);
     }
 
     .main-wrapper {
-      padding: 30px 20px;
+      padding: 46px 20px 54px;
     }
 
     .hero {
-      max-width: 950px;
-      margin: 35px auto 25px;
       text-align: center;
-      padding: 10px 10px 0;
+      max-width: 940px;
+      margin: 0 auto 32px;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      padding: 7px 15px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      font-weight: 700;
     }
 
     .hero h1 {
-      font-size: 38px;
-      color: #2563eb;
-      margin-bottom: 14px;
-      line-height: 1.2;
+      margin: 0;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      color: var(--foreground);
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-style: italic;
     }
 
     .hero p {
-      font-size: 18px;
-      color: #64748b;
-      line-height: 1.7;
-      max-width: 830px;
-      margin: 0 auto;
+      max-width: 820px;
+      margin: 18px auto 0;
+      font-size: 17px;
+      color: var(--muted);
     }
 
     .content-card {
-      background: white;
-      max-width: 950px;
+      background: var(--card);
+      max-width: 1120px;
       margin: 30px auto;
       padding: 34px;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
     .section {
-      margin-bottom: 38px;
+      margin-bottom: 34px;
     }
 
     .section:last-child {
@@ -127,30 +182,41 @@
     }
 
     h2 {
-      font-size: 24px;
+      font-size: clamp(25px, 4vw, 36px);
+      line-height: 1.15;
       margin: 0 0 14px;
-      color: #111827;
+      color: var(--foreground);
+      letter-spacing: -.01em;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
     }
 
     h3 {
       font-size: 18px;
       margin: 0 0 10px;
-      color: #111827;
+      color: var(--foreground);
     }
 
-    p {
-      color: #4b5563;
-      line-height: 1.75;
-      font-size: 16px;
+    p,
+    li {
+      color: var(--muted);
+    }
+
+    .email-box,
+    .tips-box,
+    .disclaimer-box,
+    .resource-box {
+      background: #f8f5ef;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-top: 18px;
     }
 
     .email-box {
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-left: 5px solid #2563eb;
-      border-radius: 14px;
-      padding: 22px;
-      margin-top: 18px;
+      text-align: center;
+      border-color: var(--accent-border);
+      background: var(--accent-soft);
     }
 
     .email-box p {
@@ -161,66 +227,72 @@
       margin-bottom: 0;
     }
 
-    .email-link {
+    .email-link,
+    .cta-button {
       display: inline-block;
-      background: #2563eb;
-      color: white;
+      background: var(--accent);
+      color: #fff;
       text-decoration: none;
-      padding: 13px 24px;
-      border-radius: 10px;
-      font-weight: bold;
-      margin-top: 6px;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 800;
+      margin-top: 8px;
+      transition: .18s ease;
     }
 
-    .email-link:hover {
-      background: #1d4ed8;
+    .email-link:hover,
+    .cta-button:hover {
+      filter: brightness(.95);
+      transform: translateY(-2px);
     }
 
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
+      gap: 14px;
       margin-top: 18px;
     }
 
     .contact-card {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
       padding: 20px;
+      transition: .18s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 30px rgba(47,43,37,.08);
     }
 
     .card-icon {
-      font-size: 28px;
-      margin-bottom: 8px;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      display: grid;
+      place-items: center;
+      margin-bottom: 10px;
+      font-size: 21px;
     }
 
     .contact-card p {
       margin-bottom: 0;
-    }
-
-    .tips-box {
-      background: #f8fafc;
-      border: 1px solid #dbe3ef;
-      border-radius: 16px;
-      padding: 22px;
-      margin-top: 18px;
+      font-size: 14px;
+      line-height: 1.55;
     }
 
     .tips-box ul {
       margin: 12px 0 0;
-      padding-left: 18px;
-      color: #4b5563;
+      padding-left: 20px;
       line-height: 1.8;
     }
 
     .disclaimer-box {
+      border-left: 4px solid #c47b35;
       background: #fff7ed;
-      border: 1px solid #fed7aa;
-      border-left: 5px solid #f97316;
-      border-radius: 14px;
-      padding: 20px;
-      margin-top: 18px;
     }
 
     .disclaimer-box p {
@@ -234,46 +306,34 @@
       margin-top: 20px;
     }
 
-    .cta-button {
-      display: inline-block;
-      background: #2563eb;
-      color: white;
-      text-decoration: none;
-      padding: 14px 34px;
-      min-width: 220px;
-      text-align: center;
-      border-radius: 10px;
-      font-weight: bold;
-      box-sizing: border-box;
-      transition: all 0.2s ease;
-    }
-
-    .cta-button:hover {
-      background: #1d4ed8;
-      transform: translateY(-2px);
-    }
-
     .cta-button.secondary {
-      background: white;
-      color: #2563eb;
-      border: 1px solid #dbe3ef;
+      background: var(--card);
+      color: var(--foreground);
+      border: 1px solid var(--border);
     }
 
     .cta-button.secondary:hover {
-      background: #f8fafc;
-      color: #1d4ed8;
+      color: var(--accent);
+      border-color: var(--accent);
+      background: var(--white);
     }
 
-    footer {
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 20px;
       text-align: center;
-      padding: 25px 20px;
-      color: #64748b;
+      color: var(--muted);
+      font-size: 13px;
     }
 
-    footer a {
-      color: #2563eb;
+    .footer a {
+      color: var(--muted);
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
+    }
+
+    .footer a:hover {
+      color: var(--accent);
     }
 
     @media (max-width: 800px) {
@@ -303,21 +363,21 @@
 
     @media (max-width: 700px) {
       .main-wrapper {
-        padding: 15px 10px;
+        padding: 34px 10px 40px;
       }
 
       .content-card {
-        margin: 18px auto;
         padding: 22px;
       }
 
       .nav-inner {
-        padding: 8px 10px;
+        padding-top: 8px;
+        padding-bottom: 8px;
         gap: 8px;
       }
 
       .brand img {
-        width: 120px;
+        width: 150px;
       }
 
       .nav-links {
@@ -330,18 +390,50 @@
       }
 
       .hero h1 {
-        font-size: 28px;
+        font-size: 36px;
       }
 
       .hero p {
-        font-size: 16px;
+        font-size: 15px;
       }
 
-      .cta-button,
-      .email-link {
+      .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .contact-card {
+        padding: 14px;
+        text-align: center;
+      }
+
+      .card-icon {
+        margin-left: auto;
+        margin-right: auto;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+      }
+
+      .contact-card h3 {
+        font-size: 15px;
+        margin: 6px 0;
+      }
+
+      .contact-card p {
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .email-link,
+      .cta-button {
         width: 100%;
         text-align: center;
-        box-sizing: border-box;
+      }
+
+      .cta-row {
+        display: grid;
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -369,7 +461,8 @@
   <main class="main-wrapper">
 
     <section class="hero">
-      <h1>Contact Malaysia Salary Tools</h1>
+      <span class="pill">Feedback and suggestions</span>
+      <h1 class="serif">Contact <em>Malaysia Salary Tools</em></h1>
       <p>
         Have a question, suggestion or feedback about our salary calculators, payroll guides, tax resources or employment content? We would be happy to hear from you.
       </p>
@@ -471,7 +564,7 @@
 
   </main>
 
-  <footer>
+  <footer class="footer">
     <p>© 2026 Malaysia Salary Tools</p>
     <p>
       <a href="index.html">Home</a> |
