@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Malaysia Personal Loan Calculator 2026 | Monthly Repayment Calculator</title>
+
+  <link rel="canonical" href="https://malaysiasalarytools.com/personal-loan-calculator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <meta name="description" content="Free Malaysia Personal Loan Calculator 2026. Estimate monthly personal loan installment, total interest, total repayment and loan affordability.">
+  <meta name="keywords" content="Malaysia personal loan calculator, personal loan repayment calculator, monthly installment calculator Malaysia, personal loan interest calculator, loan affordability calculator">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+
+  <style>
+    :root {
+      --background:#f4f1ea;
+      --card:#fbfaf6;
+      --foreground:#302c26;
+      --muted:#7c766c;
+      --primary:#2f2b25;
+      --primary-foreground:#f6f3ec;
+      --accent:#2f7d5e;
+      --accent-soft:rgba(47,125,94,.10);
+      --accent-border:rgba(47,125,94,.22);
+      --border:#e2ddd2;
+      --white:#ffffff;
+      --radius:16px;
+      --shadow:0 18px 45px rgba(47,43,37,.08);
+    }
+
+    * { box-sizing:border-box; }
+
+    html {
+      overflow-x:hidden;
+      scroll-behavior:smooth;
+    }
+
+    body {
+      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47,125,94,.08), transparent 34%),
+        linear-gradient(135deg, #f4f1ea, #efe9de);
+      margin:0;
+      padding:0;
+      color:var(--foreground);
+      line-height:1.6;
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    a { color:inherit; }
+
+    .serif {
+      font-family:Georgia, "Times New Roman", serif;
+      font-weight:400;
+    }
+
+    .top-nav {
+      background:rgba(251,250,246,.84);
+      border-bottom:1px solid var(--border);
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(10px);
+    }
+
+    .nav-inner {
+      max-width:1120px;
+      margin:0 auto;
+      padding:14px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:25px;
+    }
+
+    .brand {
+      display:flex;
+      align-items:center;
+      text-decoration:none;
+      flex-shrink:0;
+    }
+
+    .brand img {
+      width:220px;
+      height:auto;
+      display:block;
+    }
+
+    .nav-links {
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:nowrap;
+      min-width:0;
+    }
+
+    .nav-links a {
+      display:block;
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:600;
+      font-size:15px;
+      padding:10px 14px;
+      border-radius:999px;
+      white-space:nowrap;
+      background:transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background:var(--primary);
+      color:var(--primary-foreground);
+    }
+
+    .hero {
+      text-align:center;
+      padding:56px 20px 18px;
+      max-width:900px;
+      margin:0 auto;
+    }
+
+    .pill {
+      display:inline-block;
+      font-size:12px;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      color:var(--accent);
+      background:var(--accent-soft);
+      border:1px solid var(--accent-border);
+      padding:7px 15px;
+      border-radius:999px;
+      margin-bottom:20px;
+      font-weight:700;
+    }
+
+    .hero h1 {
+      margin:0;
+      font-size:clamp(36px, 6vw, 62px);
+      line-height:1.05;
+      letter-spacing:-.03em;
+      color:var(--foreground);
+    }
+
+    .hero h1 em {
+      color:var(--accent);
+      font-style:italic;
+    }
+
+    .hero p {
+      max-width:760px;
+      margin:18px auto 0;
+      font-size:17px;
+      color:var(--muted);
+    }
+
+    .main-wrapper {
+      padding:16px 20px 44px;
+    }
+
+    .calculator-shell {
+      max-width:1120px;
+      margin:28px auto 32px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      align-items:stretch;
+    }
+
+    .panel,
+    .seo {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+
+    .panel {
+      padding:28px;
+    }
+
+    .panel h2 {
+      margin:0 0 4px;
+      font-size:22px;
+      color:var(--foreground);
+    }
+
+    .panel .sub {
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    label {
+      display:block;
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:8px;
+      color:var(--foreground);
+    }
+
+    .form-group {
+      margin-bottom:18px;
+    }
+
+    .field-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .input-row {
+      position:relative;
+    }
+
+    .input-row span {
+      position:absolute;
+      left:14px;
+      top:50%;
+      transform:translateY(-50%);
+      color:var(--muted);
+      font-size:16px;
+      font-weight:700;
+    }
+
+    input,
+    select {
+      width:100%;
+      padding:14px;
+      font-size:15px;
+      font-weight:700;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:var(--white);
+      color:var(--foreground);
+      outline:none;
+    }
+
+    .input-row input {
+      padding-left:46px;
+      font-size:20px;
+    }
+
+    input:focus,
+    select:focus {
+      border-color:var(--accent);
+      box-shadow:0 0 0 3px rgba(47,125,94,.14);
+    }
+
+    input[type="range"] {
+      width:100%;
+      margin-top:18px;
+      padding:0;
+      accent-color:var(--accent);
+    }
+
+    .preset-grid {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:16px;
+    }
+
+    .preset,
+    .calc-button {
+      border:none;
+      cursor:pointer;
+      font-family:inherit;
+    }
+
+    .preset {
+      background:var(--white);
+      border:1px solid var(--border);
+      color:var(--foreground);
+      padding:8px 13px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:13px;
+    }
+
+    .preset:hover {
+      color:var(--accent);
+      border-color:var(--accent);
+    }
+
+    .calc-button {
+      width:100%;
+      background:var(--accent);
+      color:#fff;
+      padding:14px 18px;
+      margin-top:6px;
+      border-radius:12px;
+      font-size:16px;
+      font-weight:800;
+    }
+
+    .secondary-button {
+      display:block;
+      text-align:center;
+      width:100%;
+      background:var(--white);
+      color:var(--accent);
+      border:1px solid var(--accent-border);
+      padding:13px 18px;
+      margin-top:12px;
+      border-radius:12px;
+      font-size:15px;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .secondary-button:hover {
+      background:var(--accent-soft);
+    }
+
+    .input-note {
+      margin:16px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .results-panel {
+      background:var(--primary);
+      color:var(--primary-foreground);
+      border:1px solid var(--primary);
+      padding:28px;
+      border-radius:var(--radius);
+      box-shadow:0 24px 55px rgba(47,43,37,.20);
+    }
+
+    .results-panel h2 {
+      margin:0 0 4px;
+      font-size:22px;
+      color:var(--primary-foreground);
+    }
+
+    .results-panel .sub {
+      margin:0;
+      color:rgba(246,243,236,.62);
+      font-size:14px;
+    }
+
+    .net {
+      font-size:clamp(36px, 5vw, 48px);
+      font-weight:800;
+      letter-spacing:-.03em;
+      margin:16px 0 0;
+    }
+
+    .net-caption {
+      color:rgba(246,243,236,.62);
+      font-size:14px;
+      margin-top:0;
+    }
+
+    .bar {
+      height:9px;
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+      display:flex;
+      overflow:hidden;
+      margin:22px 0;
+    }
+
+    .bar i {
+      display:block;
+      height:100%;
+    }
+
+    .result-rows {
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+
+    .result-line {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      padding:11px 0;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      font-size:14px;
+    }
+
+    .result-line .k {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:rgba(246,243,236,.86);
+    }
+
+    .result-line .v {
+      font-weight:800;
+      text-align:right;
+    }
+
+    .dot {
+      width:9px;
+      height:9px;
+      border-radius:3px;
+      flex:0 0 auto;
+    }
+
+    .annual-summary {
+      margin-top:18px;
+      padding-top:16px;
+      border-top:1px solid rgba(255,255,255,.18);
+      display:grid;
+      gap:8px;
+      font-size:14px;
+    }
+
+    .annual-summary div {
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      color:rgba(246,243,236,.82);
+    }
+
+    .annual-summary strong {
+      color:var(--primary-foreground);
+      text-align:right;
+    }
+
+    .seo {
+      max-width:1120px;
+      margin:30px auto;
+      padding:30px;
+      line-height:1.72;
+    }
+
+    .seo h2 {
+      font-size:clamp(25px, 4vw, 36px);
+      line-height:1.15;
+      margin:34px 0 12px;
+      color:var(--foreground);
+      letter-spacing:-.01em;
+      font-family:Georgia, "Times New Roman", serif;
+      font-weight:400;
+    }
+
+    .seo h2:first-child {
+      margin-top:0;
+    }
+
+    .seo h3 {
+      font-size:17px;
+      margin-top:18px;
+    }
+
+    .seo p,
+    .seo li {
+      color:var(--muted);
+    }
+
+    .formula-box,
+    .contribution-box,
+    .salary-guides-box {
+      background:#f8f5ef;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:24px;
+      margin:26px 0;
+    }
+
+    .formula-box {
+      text-align:center;
+    }
+
+    .formula-box strong {
+      display:block;
+      font-size:22px;
+      color:var(--foreground);
+      margin-bottom:8px;
+    }
+
+    .formula-box span {
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .component-grid,
+    .guide-mini-grid,
+    .rate-grid {
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+      grid-template-columns:repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .component-card,
+    .guide-mini-grid a,
+    .rate-card,
+    .faq-item {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:14px;
+    }
+
+    .component-card {
+      display:block;
+      padding:20px;
+      text-decoration:none;
+      color:inherit;
+      transition:.18s ease;
+    }
+
+    .component-card:hover,
+    .guide-mini-grid a:hover {
+      transform:translateY(-2px);
+      border-color:var(--accent);
+      box-shadow:0 12px 30px rgba(47,43,37,.08);
+    }
+
+    .component-icon {
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      background:var(--accent-soft);
+      display:grid;
+      place-items:center;
+      margin-bottom:10px;
+      font-size:21px;
+    }
+
+    .component-card h3,
+    .rate-card h3 {
+      margin:8px 0 4px;
+      color:var(--foreground);
+    }
+
+    .component-card p,
+    .rate-card p {
+      margin:0;
+      font-size:14px;
+    }
+
+    .rate-card {
+      padding:20px;
+    }
+
+    .rate-card strong {
+      display:block;
+      color:var(--accent);
+      font-size:28px;
+      line-height:1.1;
+      margin-bottom:8px;
+    }
+
+    .contribution-table-wrap {
+      overflow-x:auto;
+      margin-top:18px;
+    }
+
+    .contribution-table {
+      width:100%;
+      border-collapse:collapse;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:12px;
+      overflow:hidden;
+      min-width:520px;
+    }
+
+    .contribution-table th {
+      background:#f1ece3;
+      color:var(--muted);
+      font-size:13px;
+      text-align:left;
+      letter-spacing:.03em;
+      padding:14px;
+      border-bottom:1px solid var(--border);
+    }
+
+    .contribution-table td {
+      padding:14px;
+      border-bottom:1px solid var(--border);
+      color:var(--foreground);
+      font-size:14px;
+    }
+
+    .payroll-note {
+      margin-top:20px;
+      background:var(--card);
+      border-left:4px solid var(--accent);
+      padding:14px;
+      border-radius:10px;
+      color:var(--muted);
+    }
+
+    .faq-box {
+      margin-top:18px;
+      max-width:780px;
+    }
+
+    .faq-item {
+      padding:4px 20px;
+      margin-bottom:12px;
+    }
+
+    .faq-item summary {
+      font-weight:800;
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      color:var(--foreground);
+      padding:16px 0;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display:none;
+    }
+
+    .faq-item summary::after {
+      content:"+";
+      color:var(--accent);
+      font-size:20px;
+      line-height:1;
+    }
+
+    .faq-item[open] summary::after {
+      content:"−";
+    }
+
+    .faq-item p {
+      padding-bottom:18px;
+      margin-top:0;
+      color:var(--muted);
+      line-height:1.55;
+      font-size:14px;
+    }
+
+    .guide-mini-grid a {
+      display:block;
+      padding:14px 16px;
+      text-decoration:none;
+      color:var(--foreground);
+      font-weight:800;
+      text-align:center;
+      transition:.18s ease;
+    }
+
+    .view-all-guides {
+      text-align:center;
+      margin:20px 0 0;
+    }
+
+    .view-all-guides a {
+      color:var(--accent);
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .footer {
+      border-top:1px solid var(--border);
+      padding:28px 20px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .footer a {
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    .footer a:hover {
+      color:var(--accent);
+    }
+
+    @media (max-width:900px) {
+      .calculator-shell,
+      .field-grid {
+        grid-template-columns:1fr;
+      }
+
+      .seo {
+        padding:24px;
+      }
+    }
+
+    @media (max-width:800px) {
+      .nav-inner {
+        flex-direction:row;
+        align-items:center;
+      }
+
+      .nav-links {
+        width:auto;
+        flex:1;
+        min-width:0;
+        justify-content:flex-start;
+        padding-bottom:5px;
+        overflow-x:auto;
+        overflow-y:hidden;
+        scrollbar-width:none;
+        -ms-overflow-style:none;
+        -webkit-overflow-scrolling:touch;
+        touch-action:pan-x;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display:none;
+      }
+    }
+
+    @media (max-width:700px) {
+      .hero {
+        padding:38px 14px 12px;
+      }
+
+      .main-wrapper {
+        padding:10px;
+      }
+
+      .panel,
+      .results-panel,
+      .seo {
+        padding:20px;
+      }
+
+      .nav-inner {
+        padding-top:8px;
+        padding-bottom:8px;
+        gap:8px;
+      }
+
+      .brand img {
+        width:150px;
+      }
+
+      .nav-links {
+        gap:6px;
+      }
+
+      .nav-links a {
+        font-size:14px;
+        padding:8px 10px;
+      }
+
+      .component-grid,
+      .rate-grid {
+        grid-template-columns:repeat(2, 1fr);
+        gap:10px;
+      }
+
+      .component-card,
+      .rate-card {
+        padding:14px;
+        text-align:center;
+      }
+
+      .component-icon {
+        margin-left:auto;
+        margin-right:auto;
+        width:36px;
+        height:36px;
+        font-size:18px;
+      }
+
+      .component-card h3,
+      .rate-card h3 {
+        font-size:15px;
+        margin:6px 0;
+      }
+
+      .component-card p,
+      .rate-card p {
+        font-size:12px;
+        line-height:1.35;
+      }
+
+      .net {
+        font-size:34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="top-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="calculators.html" class="active">Calculators</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="pill">Updated for Malaysia 2026 personal loan estimates</span>
+  <h1 class="serif">Calculate your <em>personal loan repayment</em></h1>
+  <p>
+    Free Malaysia personal loan calculator for borrowers. Estimate monthly installment, total interest, total repayment, fees and cash received.
+  </p>
+</section>
+
+<main class="main-wrapper">
+
+  <section class="calculator-shell" id="calculator">
+
+    <div class="panel">
+      <h2 class="serif">Calculate Personal Loan</h2>
+      <p class="sub">Enter loan amount, interest rate, tenure and optional fee.</p>
+
+      <div class="form-group">
+        <label for="amount">Personal loan amount</label>
+        <div class="input-row">
+          <span>RM</span>
+          <input type="number" id="amount" value="50000" min="0" step="1000" placeholder="Example: 50000">
+        </div>
+
+        <input type="range" id="amountRange" min="0" max="300000" step="1000" value="50000">
+
+        <div class="preset-grid">
+          <button type="button" class="preset" onclick="setAmount(10000)">RM 10k</button>
+          <button type="button" class="preset" onclick="setAmount(30000)">RM 30k</button>
+          <button type="button" class="preset" onclick="setAmount(50000)">RM 50k</button>
+          <button type="button" class="preset" onclick="setAmount(100000)">RM 100k</button>
+        </div>
+      </div>
+
+      <div class="field-grid">
+        <div class="form-group">
+          <label for="rate">Annual interest rate</label>
+          <div class="input-row">
+            <span>%</span>
+            <input type="number" id="rate" value="8" min="0" step="0.01">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="years">Loan tenure</label>
+          <div class="input-row">
+            <span>Y</span>
+            <input type="number" id="years" value="5" min="1" max="10" step="1">
+          </div>
+        </div>
+      </div>
+
+      <div class="field-grid">
+        <div class="form-group">
+          <label for="method">Calculation method</label>
+          <select id="method" onchange="calculatePersonalLoan()">
+            <option value="reducing" selected>Reducing balance estimate</option>
+            <option value="flat">Flat rate estimate</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="fee">Processing fee / upfront cost</label>
+          <div class="input-row">
+            <span>RM</span>
+            <input type="number" id="fee" value="0" min="0" step="50" placeholder="Optional">
+          </div>
+        </div>
+      </div>
+
+      <div class="preset-grid">
+        <button type="button" class="preset" onclick="setLoanBasis(6, 3)">6% / 3Y</button>
+        <button type="button" class="preset" onclick="setLoanBasis(8, 5)">8% / 5Y</button>
+        <button type="button" class="preset" onclick="setLoanBasis(10, 7)">10% / 7Y</button>
+        <button type="button" class="preset" onclick="setLoanBasis(12, 10)">12% / 10Y</button>
+      </div>
+
+      <button type="button" class="calc-button" onclick="calculatePersonalLoan()">Calculate Personal Loan</button>
+
+      <a class="secondary-button" href="debt-service-ratio-calculator.html">
+        Check Debt Service Ratio →
+      </a>
+
+      <a class="secondary-button" href="personal-loan-guide.html">
+        Read Personal Loan Guide →
+      </a>
+
+      <p class="input-note">
+        This calculator gives a simplified estimate. Actual personal loan repayment may vary depending on bank rate, flat/effective rate, fees, insurance, credit profile and approval terms.
+      </p>
+    </div>
+
+    <div class="results-panel">
+      <h2 class="serif">Your personal loan result</h2>
+      <p class="sub">Estimated monthly installment</p>
+
+      <div class="net">RM <span id="monthlyPayment">0.00</span></div>
+      <p class="net-caption" id="loanExplanation">Based on loan amount, rate, tenure and method.</p>
+
+      <div class="bar" id="loanBar"></div>
+
+      <div class="result-rows" id="resultRows"></div>
+
+      <div class="annual-summary" id="summaryRows"></div>
+    </div>
+
+  </section>
+
+  <div class="seo">
+
+    <section>
+      <h2>How Personal Loan Repayment Is Calculated</h2>
+
+      <p>
+        A personal loan calculator estimates monthly repayment based on loan amount, interest rate and loan tenure. It helps you compare repayment affordability before applying for financing.
+      </p>
+
+      <div class="formula-box">
+        <strong>Monthly Installment = Loan Repayment ÷ Total Months</strong>
+        <span>This page supports both reducing balance estimate and flat rate estimate.</span>
+      </div>
+
+      <div class="rate-grid">
+        <div class="rate-card">
+          <strong>Loan</strong>
+          <h3>Loan Amount</h3>
+          <p>The amount you plan to borrow before fees.</p>
+        </div>
+
+        <div class="rate-card">
+          <strong>Rate</strong>
+          <h3>Interest Rate</h3>
+          <p>The annual interest rate used for the estimate.</p>
+        </div>
+
+        <div class="rate-card">
+          <strong>Tenure</strong>
+          <h3>Repayment Period</h3>
+          <p>Longer tenure may reduce monthly payment but increase total interest.</p>
+        </div>
+
+        <div class="rate-card">
+          <strong>DSR</strong>
+          <h3>Affordability</h3>
+          <p>Compare installment with your monthly income and commitments.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contribution-box">
+      <h2>Personal Loan Example</h2>
+
+      <p>
+        If you borrow RM50,000 at 8% annual interest for 5 years, this calculator estimates the monthly installment, total interest and total repayment based on the selected calculation method.
+      </p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead>
+            <tr>
+              <th>Loan Amount</th>
+              <th>Rate</th>
+              <th>Tenure</th>
+              <th>Estimated Monthly Installment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>RM10,000</td>
+              <td>8%</td>
+              <td>3 years</td>
+              <td>Approx. RM313</td>
+            </tr>
+            <tr>
+              <td>RM50,000</td>
+              <td>8%</td>
+              <td>5 years</td>
+              <td>Approx. RM1,014</td>
+            </tr>
+            <tr>
+              <td>RM100,000</td>
+              <td>8%</td>
+              <td>7 years</td>
+              <td>Approx. RM1,559</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="payroll-note">
+        <strong>Note:</strong>
+        Some Malaysian personal loans may quote flat rates, while the actual cost may be better compared using effective interest rate.
+      </p>
+    </section>
+
+    <section>
+      <h2>What This Personal Loan Calculator Shows</h2>
+
+      <p>
+        This calculator shows estimated monthly installment, total repayment, total interest, fee estimate, net cash received and repayment months. It can help you compare different personal loan amounts and tenures.
+      </p>
+
+      <div class="component-grid">
+        <a class="component-card" href="debt-service-ratio-calculator.html">
+          <div class="component-icon">📊</div>
+          <h3>DSR Check</h3>
+          <p>Check whether monthly installment fits your income.</p>
+        </a>
+
+        <a class="component-card" href="loan-calculator.html">
+          <div class="component-icon">💳</div>
+          <h3>Loan Calculator</h3>
+          <p>Compare personal loan with general loan repayment.</p>
+        </a>
+
+        <a class="component-card" href="personal-loan-guide.html">
+          <div class="component-icon">🧾</div>
+          <h3>Personal Loan</h3>
+          <p>Understand personal loan terms, fees and approval factors.</p>
+        </a>
+
+        <a class="component-card" href="index.html">
+          <div class="component-icon">💰</div>
+          <h3>Salary</h3>
+          <p>Estimate take-home pay before taking new debt.</p>
+        </a>
+      </div>
+    </section>
+
+    <h2>Who Should Use This Personal Loan Calculator?</h2>
+
+    <ul>
+      <li>Borrowers checking personal loan monthly repayment</li>
+      <li>Employees comparing loan amount and tenure options</li>
+      <li>Applicants checking affordability before applying</li>
+      <li>People comparing reducing balance and flat rate estimates</li>
+      <li>Anyone planning cash flow before taking a personal loan</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-box">
+      <details class="faq-item" open>
+        <summary>Is this personal loan calculator exact?</summary>
+        <p>
+          No. This calculator provides an estimate only. Actual repayment may vary depending on bank rate, fees, insurance, loan method and approval terms.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is the difference between flat rate and reducing balance?</summary>
+        <p>
+          Flat rate calculates interest based on the original loan amount. Reducing balance estimates interest based on outstanding balance over time.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does longer tenure reduce monthly installment?</summary>
+        <p>
+          Usually yes. Longer tenure may reduce monthly repayment, but total interest paid may be higher.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Should I check DSR before applying for a personal loan?</summary>
+        <p>
+          Yes. DSR helps estimate whether your monthly commitments are reasonable compared with your income.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does this calculator include processing fee?</summary>
+        <p>
+          You can enter an optional processing fee or upfront cost estimate. Actual fees depend on the lender and loan package.
+        </p>
+      </details>
+    </div>
+
+    <section class="salary-guides-box">
+      <h2>Malaysia Financial Planning Guides</h2>
+
+      <p>
+        Learn more about personal loan, debt service ratio and loan repayment planning in Malaysia.
+      </p>
+
+      <div class="guide-mini-grid">
+        <a href="personal-loan-guide.html">🧾 Personal Loan Guide</a>
+        <a href="debt-service-ratio-guide.html">📊 Debt Service Ratio Guide</a>
+        <a href="loan-guide.html">💳 Loan Guide</a>
+        <a href="home-loan-guide.html">🏠 Home Loan Guide</a>
+        <a href="salary-increment-guide.html">📈 Salary Increment Guide</a>
+        <a href="bonus-guide.html">🎁 Bonus Guide</a>
+      </div>
+
+      <p class="view-all-guides">
+        <a href="guides.html">View All Salary Guides →</a>
+      </p>
+    </section>
+
+    <section class="salary-guides-box">
+      <h2>Related Calculators</h2>
+
+      <p>
+        Explore more free Malaysia loan and salary calculators.
+      </p>
+
+      <div class="guide-mini-grid">
+        <a href="loan-calculator.html">Loan Calculator</a>
+        <a href="debt-service-ratio-calculator.html">Debt Service Ratio Calculator</a>
+        <a href="home-loan-calculator.html">Home Loan Calculator</a>
+        <a href="index.html">Salary Calculator</a>
+        <a href="bonus-calculator.html">Bonus Calculator</a>
+        <a href="salary-increment-calculator.html">Salary Increment Calculator</a>
+      </div>
+
+      <p class="view-all-guides">
+        <a href="calculators.html">View All Calculators →</a>
+      </p>
+    </section>
+
+  </div>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 Malaysia Salary Tools</p>
+  <p>
+    <a href="index.html">Home</a> |
+    <a href="calculators.html">Calculators</a> |
+    <a href="guides.html">Guides</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact Us</a> |
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </p>
+</footer>
+
+<script>
+  function formatRM(value) {
+    return Number(value).toLocaleString('en-MY', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+  }
+
+  function setAmount(value) {
+    document.getElementById("amount").value = value;
+    document.getElementById("amountRange").value = value;
+    calculatePersonalLoan();
+  }
+
+  function setLoanBasis(rate, years) {
+    document.getElementById("rate").value = rate;
+    document.getElementById("years").value = years;
+    calculatePersonalLoan();
+  }
+
+  function calculatePersonalLoan() {
+    const amountInput = document.getElementById("amount");
+    const amountRange = document.getElementById("amountRange");
+
+    const amount = parseFloat(amountInput.value) || 0;
+    const rate = parseFloat(document.getElementById("rate").value) || 0;
+    const years = parseFloat(document.getElementById("years").value) || 0;
+    const method = document.getElementById("method").value;
+    const fee = parseFloat(document.getElementById("fee").value) || 0;
+
+    if (!amount || amount < 0 || rate < 0 || !years || years <= 0 || fee < 0) {
+      document.getElementById("monthlyPayment").textContent = "0.00";
+      document.getElementById("loanExplanation").textContent = "Please enter valid loan amount, rate, tenure and fee.";
+      document.getElementById("loanBar").innerHTML = "";
+      document.getElementById("resultRows").innerHTML = "";
+      document.getElementById("summaryRows").innerHTML = "";
+      return;
+    }
+
+    amountRange.value = Math.min(amount, amountRange.max);
+
+    const months = years * 12;
+    let monthlyPayment = 0;
+    let totalRepayment = 0;
+    let totalInterest = 0;
+
+    if (method === "flat") {
+      totalInterest = amount * (rate / 100) * years;
+      totalRepayment = amount + totalInterest;
+      monthlyPayment = totalRepayment / months;
+    } else {
+      const monthlyRate = rate / 100 / 12;
+
+      if (monthlyRate === 0) {
+        monthlyPayment = amount / months;
+      } else {
+        monthlyPayment =
+          amount * monthlyRate * Math.pow(1 + monthlyRate, months) /
+          (Math.pow(1 + monthlyRate, months) - 1);
+      }
+
+      totalRepayment = monthlyPayment * months;
+      totalInterest = totalRepayment - amount;
+    }
+
+    const netCashReceived = Math.max(0, amount - fee);
+    const annualRepayment = monthlyPayment * 12;
+
+    const principalPercent = totalRepayment > 0 ? (amount / totalRepayment) * 100 : 0;
+    const interestPercent = totalRepayment > 0 ? (totalInterest / totalRepayment) * 100 : 0;
+
+    const methodText = method === "flat" ? "flat rate estimate" : "reducing balance estimate";
+
+    document.getElementById("monthlyPayment").textContent = formatRM(monthlyPayment);
+    document.getElementById("loanExplanation").textContent =
+      "Based on RM " + formatRM(amount) + " loan, " + rate + "% annual interest, " + years + " years tenure and " + methodText + ".";
+
+    document.getElementById("loanBar").innerHTML =
+      '<i style="width:' + principalPercent + '%;background:#5aa783"></i>' +
+      '<i style="width:' + interestPercent + '%;background:#c9a14e"></i>';
+
+    document.getElementById("resultRows").innerHTML =
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#f6f3ec"></span>Loan Amount</span><span class="v">RM ' + formatRM(amount) + '</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#5aa783"></span>Estimated Monthly Installment</span><span class="v">RM ' + formatRM(monthlyPayment) + '</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#c9a14e"></span>Total Interest</span><span class="v">RM ' + formatRM(totalInterest) + '</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#2f7d5e"></span>Total Repayment</span><span class="v">RM ' + formatRM(totalRepayment) + '</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#cf6f5b"></span>Method</span><span class="v">' + methodText + '</span></div>';
+
+    document.getElementById("summaryRows").innerHTML =
+      '<div><span>Annual Repayment</span><strong>RM ' + formatRM(annualRepayment) + '</strong></div>' +
+      '<div><span>Processing Fee / Upfront Cost</span><strong>RM ' + formatRM(fee) + '</strong></div>' +
+      '<div><span>Estimated Net Cash Received</span><strong>RM ' + formatRM(netCashReceived) + '</strong></div>' +
+      '<div><span>Loan Tenure</span><strong>' + years + ' years / ' + months + ' months</strong></div>';
+  }
+
+  document.getElementById("amount").addEventListener("input", calculatePersonalLoan);
+  document.getElementById("amountRange").addEventListener("input", function() {
+    document.getElementById("amount").value = this.value;
+    calculatePersonalLoan();
+  });
+  document.getElementById("rate").addEventListener("input", calculatePersonalLoan);
+  document.getElementById("years").addEventListener("input", calculatePersonalLoan);
+  document.getElementById("method").addEventListener("change", calculatePersonalLoan);
+  document.getElementById("fee").addEventListener("input", calculatePersonalLoan);
+
+  calculatePersonalLoan();
+</script>
+
+</body>
+</html>
