@@ -7,102 +7,768 @@
   <title>Malaysia Public Holiday Calculator 2026 | Paid Leave Calculator</title>
 
   <link rel="canonical" href="https://malaysiasalarytools.com/public-holiday-calculator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <meta name="description" content="Free Malaysia Public Holiday Calculator 2026. Calculate total paid days off by combining annual leave, public holidays and other paid leave days.">
+  <meta name="keywords" content="Malaysia public holiday calculator, paid leave calculator Malaysia, annual leave and public holiday calculator, working days calculator Malaysia">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="robots" content="index, follow">
 
   <style>
+    :root {
+      --background:#f4f1ea;
+      --card:#fbfaf6;
+      --foreground:#302c26;
+      --muted:#7c766c;
+      --primary:#2f2b25;
+      --primary-foreground:#f6f3ec;
+      --accent:#2f7d5e;
+      --accent-soft:rgba(47,125,94,.10);
+      --accent-border:rgba(47,125,94,.22);
+      --border:#e2ddd2;
+      --white:#ffffff;
+      --radius:16px;
+      --shadow:0 18px 45px rgba(47,43,37,.08);
+    }
+
+    * { box-sizing:border-box; }
+
+    html {
+      overflow-x:hidden;
+      scroll-behavior:smooth;
+    }
+
     body {
-      font-family: Arial;
-      background: linear-gradient(135deg, #f6f7fb, #eef1f7);
-      margin: 0;
-      padding: 20px;
+      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47,125,94,.08), transparent 34%),
+        linear-gradient(135deg, #f4f1ea, #efe9de);
+      margin:0;
+      padding:0;
+      color:var(--foreground);
+      line-height:1.6;
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
     }
 
-    .card,
+    a { color:inherit; }
+
+    .serif {
+      font-family:Georgia, "Times New Roman", serif;
+      font-weight:400;
+    }
+
+    .top-nav {
+      background:rgba(251,250,246,.84);
+      border-bottom:1px solid var(--border);
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(10px);
+    }
+
+    .nav-inner {
+      max-width:1120px;
+      margin:0 auto;
+      padding:14px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:25px;
+    }
+
+    .brand {
+      display:flex;
+      align-items:center;
+      text-decoration:none;
+      flex-shrink:0;
+    }
+
+    .brand img {
+      width:220px;
+      height:auto;
+      display:block;
+    }
+
+    .nav-links {
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:nowrap;
+      min-width:0;
+    }
+
+    .nav-links a {
+      display:block;
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:600;
+      font-size:15px;
+      padding:10px 14px;
+      border-radius:999px;
+      white-space:nowrap;
+      background:transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background:var(--primary);
+      color:var(--primary-foreground);
+    }
+
+    .hero {
+      text-align:center;
+      padding:56px 20px 18px;
+      max-width:900px;
+      margin:0 auto;
+    }
+
+    .pill {
+      display:inline-block;
+      font-size:12px;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      color:var(--accent);
+      background:var(--accent-soft);
+      border:1px solid var(--accent-border);
+      padding:7px 15px;
+      border-radius:999px;
+      margin-bottom:20px;
+      font-weight:700;
+    }
+
+    .hero h1 {
+      margin:0;
+      font-size:clamp(36px, 6vw, 62px);
+      line-height:1.05;
+      letter-spacing:-.03em;
+      color:var(--foreground);
+    }
+
+    .hero h1 em {
+      color:var(--accent);
+      font-style:italic;
+    }
+
+    .hero p {
+      max-width:740px;
+      margin:18px auto 0;
+      font-size:17px;
+      color:var(--muted);
+    }
+
+    .main-wrapper {
+      padding:16px 20px 44px;
+    }
+
+    .calculator-shell {
+      max-width:1120px;
+      margin:28px auto 32px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      align-items:stretch;
+    }
+
+    .panel,
     .seo {
-      background: white;
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
     }
 
-    .seo { line-height: 1.7; }
-
-    .layout {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
+    .panel {
+      padding:28px;
     }
 
-    .box {
-      flex: 1;
-      min-width: 320px;
-      background: #f8f9fc;
-      border: 1px solid #eee;
-      border-radius: 12px;
-      padding: 15px;
+    .panel h2 {
+      margin:0 0 4px;
+      font-size:22px;
+      color:var(--foreground);
     }
 
-    input, button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      font-size: 16px;
-      box-sizing: border-box;
+    .panel .sub {
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    label {
+      display:block;
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:8px;
+      color:var(--foreground);
+    }
+
+    .form-group {
+      margin-bottom:18px;
+    }
+
+    .field-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
     }
 
     input {
-      border-radius: 10px;
-      border: 1px solid #ddd;
+      width:100%;
+      padding:14px;
+      font-size:20px;
+      font-weight:700;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:var(--white);
+      color:var(--foreground);
+      outline:none;
     }
 
-    button {
-      background: #111;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
+    input:focus {
+      border-color:var(--accent);
+      box-shadow:0 0 0 3px rgba(47,125,94,.14);
     }
 
-    .result {
-      margin-top: 10px;
-      line-height: 1.6;
+    input[type="range"] {
+      width:100%;
+      margin-top:18px;
+      accent-color:var(--accent);
     }
 
-    .seo-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
+    .preset-grid {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:16px;
     }
 
-    .card-link {
-      display: block;
-      padding: 15px;
-      background: white;
-      border-radius: 12px;
-      text-decoration: none;
-      color: black;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    .preset,
+    .calc-button {
+      border:none;
+      cursor:pointer;
+      font-family:inherit;
     }
 
-    h1 { font-size: 26px; }
-    h2 { font-size: 20px; margin-top: 25px; }
-    h3 { font-size: 16px; margin-top: 18px; }
+    .preset {
+      background:var(--white);
+      border:1px solid var(--border);
+      color:var(--foreground);
+      padding:8px 13px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:13px;
+    }
 
-    @media (max-width: 700px){
-      .layout { flex-direction: column; }
-      body { padding: 10px; }
-      .card, .seo {
-        margin: 15px auto;
-        padding: 18px;
+    .preset:hover {
+      color:var(--accent);
+      border-color:var(--accent);
+    }
+
+    .calc-button {
+      width:100%;
+      background:var(--accent);
+      color:#fff;
+      padding:14px 18px;
+      margin-top:6px;
+      border-radius:12px;
+      font-size:16px;
+      font-weight:800;
+    }
+
+    .calc-button:hover {
+      filter:brightness(.95);
+    }
+
+    .secondary-button {
+      display:block;
+      text-align:center;
+      width:100%;
+      background:var(--white);
+      color:var(--accent);
+      border:1px solid var(--accent-border);
+      padding:13px 18px;
+      margin-top:12px;
+      border-radius:12px;
+      font-size:15px;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .secondary-button:hover {
+      background:var(--accent-soft);
+    }
+
+    .input-note {
+      margin:16px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .results-panel {
+      background:var(--primary);
+      color:var(--primary-foreground);
+      border:1px solid var(--primary);
+      padding:28px;
+      border-radius:var(--radius);
+      box-shadow:0 24px 55px rgba(47,43,37,.20);
+    }
+
+    .results-panel h2 {
+      margin:0 0 4px;
+      font-size:22px;
+      color:var(--primary-foreground);
+    }
+
+    .results-panel .sub {
+      margin:0;
+      color:rgba(246,243,236,.62);
+      font-size:14px;
+    }
+
+    .net {
+      font-size:clamp(36px, 5vw, 48px);
+      font-weight:800;
+      letter-spacing:-.03em;
+      margin:16px 0 0;
+    }
+
+    .net-caption {
+      color:rgba(246,243,236,.62);
+      font-size:14px;
+      margin-top:0;
+    }
+
+    .bar {
+      height:9px;
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+      display:flex;
+      overflow:hidden;
+      margin:22px 0;
+    }
+
+    .bar i {
+      display:block;
+      height:100%;
+    }
+
+    .result-rows {
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+
+    .result-line {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      padding:11px 0;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      font-size:14px;
+    }
+
+    .result-line:last-child {
+      border-bottom:none;
+    }
+
+    .result-line .k {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:rgba(246,243,236,.86);
+    }
+
+    .result-line .v {
+      font-weight:800;
+      text-align:right;
+    }
+
+    .dot {
+      width:9px;
+      height:9px;
+      border-radius:3px;
+      flex:0 0 auto;
+    }
+
+    .annual-summary {
+      margin-top:18px;
+      padding-top:16px;
+      border-top:1px solid rgba(255,255,255,.18);
+      display:grid;
+      gap:8px;
+      font-size:14px;
+    }
+
+    .annual-summary div {
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      color:rgba(246,243,236,.82);
+    }
+
+    .annual-summary strong {
+      color:var(--primary-foreground);
+    }
+
+    .seo {
+      max-width:1120px;
+      margin:30px auto;
+      padding:30px;
+      line-height:1.72;
+    }
+
+    .seo h2 {
+      font-size:clamp(25px, 4vw, 36px);
+      line-height:1.15;
+      margin:34px 0 12px;
+      color:var(--foreground);
+      letter-spacing:-.01em;
+      font-family:Georgia, "Times New Roman", serif;
+      font-weight:400;
+    }
+
+    .seo h2:first-child {
+      margin-top:0;
+    }
+
+    .seo h3 {
+      font-size:17px;
+      margin-top:18px;
+    }
+
+    .seo p,
+    .seo li {
+      color:var(--muted);
+    }
+
+    .formula-box,
+    .contribution-box,
+    .salary-guides-box {
+      background:#f8f5ef;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:24px;
+      margin:26px 0;
+    }
+
+    .formula-box {
+      text-align:center;
+    }
+
+    .formula-box strong {
+      display:block;
+      font-size:22px;
+      color:var(--foreground);
+      margin-bottom:8px;
+    }
+
+    .formula-box span {
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .component-grid,
+    .guide-mini-grid,
+    .rate-grid {
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+      grid-template-columns:repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .component-card,
+    .guide-mini-grid a,
+    .rate-card,
+    .faq-item {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:14px;
+    }
+
+    .component-card {
+      display:block;
+      padding:20px;
+      text-decoration:none;
+      color:inherit;
+      transition:.18s ease;
+    }
+
+    .component-card:hover,
+    .guide-mini-grid a:hover {
+      transform:translateY(-2px);
+      border-color:var(--accent);
+      box-shadow:0 12px 30px rgba(47,43,37,.08);
+    }
+
+    .component-icon {
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      background:var(--accent-soft);
+      display:grid;
+      place-items:center;
+      margin-bottom:10px;
+      font-size:21px;
+    }
+
+    .component-card h3,
+    .rate-card h3 {
+      margin:8px 0 4px;
+      color:var(--foreground);
+    }
+
+    .component-card p,
+    .rate-card p {
+      margin:0;
+      font-size:14px;
+    }
+
+    .rate-card {
+      padding:20px;
+    }
+
+    .rate-card strong {
+      display:block;
+      color:var(--accent);
+      font-size:28px;
+      line-height:1.1;
+      margin-bottom:8px;
+    }
+
+    .contribution-table-wrap {
+      overflow-x:auto;
+      margin-top:18px;
+    }
+
+    .contribution-table {
+      width:100%;
+      border-collapse:collapse;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:12px;
+      overflow:hidden;
+      min-width:520px;
+    }
+
+    .contribution-table th {
+      background:#f1ece3;
+      color:var(--muted);
+      font-size:13px;
+      text-align:left;
+      letter-spacing:.03em;
+      padding:14px;
+      border-bottom:1px solid var(--border);
+    }
+
+    .contribution-table td {
+      padding:14px;
+      border-bottom:1px solid var(--border);
+      color:var(--foreground);
+      font-size:14px;
+    }
+
+    .contribution-table tr:last-child td {
+      border-bottom:none;
+    }
+
+    .payroll-note {
+      margin-top:20px;
+      background:var(--card);
+      border-left:4px solid var(--accent);
+      padding:14px;
+      border-radius:10px;
+      color:var(--muted);
+    }
+
+    .faq-box {
+      margin-top:18px;
+      max-width:780px;
+    }
+
+    .faq-item {
+      padding:4px 20px;
+      margin-bottom:12px;
+    }
+
+    .faq-item summary {
+      font-weight:800;
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      color:var(--foreground);
+      padding:16px 0;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display:none;
+    }
+
+    .faq-item summary::after {
+      content:"+";
+      color:var(--accent);
+      font-size:20px;
+      line-height:1;
+    }
+
+    .faq-item[open] summary::after {
+      content:"−";
+    }
+
+    .faq-item p {
+      padding-bottom:18px;
+      margin-top:0;
+      color:var(--muted);
+      line-height:1.55;
+      font-size:14px;
+    }
+
+    .guide-mini-grid a {
+      display:block;
+      padding:14px 16px;
+      text-decoration:none;
+      color:var(--foreground);
+      font-weight:800;
+      text-align:center;
+      transition:.18s ease;
+    }
+
+    .view-all-guides {
+      text-align:center;
+      margin:20px 0 0;
+    }
+
+    .view-all-guides a {
+      color:var(--accent);
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .footer {
+      border-top:1px solid var(--border);
+      padding:28px 20px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .footer a {
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    .footer a:hover {
+      color:var(--accent);
+    }
+
+    @media (max-width:900px) {
+      .calculator-shell,
+      .field-grid {
+        grid-template-columns:1fr;
+      }
+
+      .seo {
+        padding:24px;
+      }
+    }
+
+    @media (max-width:800px) {
+      .nav-inner {
+        flex-direction:row;
+        align-items:center;
+      }
+
+      .nav-links {
+        width:auto;
+        flex:1;
+        min-width:0;
+        justify-content:flex-start;
+        padding-bottom:5px;
+        overflow-x:auto;
+        overflow-y:hidden;
+        scrollbar-width:none;
+        -ms-overflow-style:none;
+        -webkit-overflow-scrolling:touch;
+        touch-action:pan-x;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display:none;
+      }
+    }
+
+    @media (max-width:700px) {
+      .hero {
+        padding:38px 14px 12px;
+      }
+
+      .main-wrapper {
+        padding:10px;
+      }
+
+      .panel,
+      .results-panel,
+      .seo {
+        padding:20px;
+      }
+
+      .nav-inner {
+        padding-top:8px;
+        padding-bottom:8px;
+        gap:8px;
+      }
+
+      .brand img {
+        width:150px;
+      }
+
+      .nav-links {
+        gap:6px;
+      }
+
+      .nav-links a {
+        font-size:14px;
+        padding:8px 10px;
+      }
+
+      .component-grid,
+      .rate-grid {
+        grid-template-columns:repeat(2, 1fr);
+        gap:10px;
+      }
+
+      .component-card,
+      .rate-card {
+        padding:14px;
+        text-align:center;
+      }
+
+      .component-icon {
+        margin-left:auto;
+        margin-right:auto;
+        width:36px;
+        height:36px;
+        font-size:18px;
+      }
+
+      .component-card h3,
+      .rate-card h3 {
+        font-size:15px;
+        margin:6px 0;
+      }
+
+      .component-card p,
+      .rate-card p {
+        font-size:12px;
+        line-height:1.35;
+      }
+
+      .net {
+        font-size:34px;
       }
     }
   </style>
@@ -110,180 +776,383 @@
 
 <body>
 
-<div class="card">
+<header class="top-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+    </a>
 
-  <h1>Malaysia Public Holiday Calculator 2026</h1>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="calculators.html" class="active">Calculators</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
 
-  <p><b>Malaysia Public Holiday Calculator:</b> Estimate total paid days off by combining annual leave, public holidays and other paid leave.</p>
+<section class="hero">
+  <span class="pill">Updated for Malaysia 2026 paid leave estimates</span>
+  <h1 class="serif">Calculate your <em>paid days off</em> in Malaysia</h1>
+  <p>
+    Free Malaysia public holiday calculator for employees and employers. Estimate total paid days off by combining annual leave, public holidays and other paid leave days.
+  </p>
+</section>
 
-  <p>Enter your annual leave, public holidays and other paid leave days to estimate your total paid days off.</p>
+<main class="main-wrapper">
 
-  <input type="number" id="annualLeave" placeholder="Annual Leave Days">
+  <section class="calculator-shell" id="calculator">
 
-  <input type="number" id="publicHoliday" placeholder="Public Holiday Days">
+    <div class="panel">
+      <h2 class="serif">Calculate Paid Days Off</h2>
+      <p class="sub">Enter annual leave, public holidays and other paid leave days.</p>
 
-  <input type="number" id="otherLeave" placeholder="Other Paid Leave Days">
+      <div class="field-grid">
+        <div class="form-group">
+          <label for="annualLeave">Annual leave days</label>
+          <input type="number" id="annualLeave" value="12" min="0" step="0.5" placeholder="Example: 12">
+        </div>
 
-  <button onclick="calculate()">Calculate Paid Days Off</button>
+        <div class="form-group">
+          <label for="publicHoliday">Public holiday days</label>
+          <input type="number" id="publicHoliday" value="18" min="0" step="0.5" placeholder="Example: 18">
+        </div>
+      </div>
 
-  <div class="layout">
+      <div class="field-grid">
+        <div class="form-group">
+          <label for="otherLeave">Other paid leave days</label>
+          <input type="number" id="otherLeave" value="2" min="0" step="0.5" placeholder="Example: 2">
+        </div>
 
-    <div class="box">
-      <h3>Total Paid Days Off</h3>
-      <div class="result" id="monthly"></div>
+        <div class="form-group">
+          <label for="weekends">Estimated weekend days</label>
+          <input type="number" id="weekends" value="104" min="0" max="120" step="1">
+        </div>
+      </div>
+
+      <div class="preset-grid">
+        <button type="button" class="preset" onclick="setLeavePreset(8, 18, 0)">8 + 18 days</button>
+        <button type="button" class="preset" onclick="setLeavePreset(12, 18, 2)">12 + 18 + 2</button>
+        <button type="button" class="preset" onclick="setLeavePreset(16, 18, 2)">16 + 18 + 2</button>
+        <button type="button" class="preset" onclick="setLeavePreset(0, 18, 0)">Public holidays only</button>
+      </div>
+
+      <button type="button" class="calc-button" onclick="calculatePaidDays()">Calculate Paid Days Off</button>
+
+      <a class="secondary-button" href="public-holiday-guide.html">
+        Read Public Holiday Guide →
+      </a>
+
+      <p class="input-note">
+        This calculator provides a simple paid days off and working days estimate. Actual entitlement may depend on state holidays, company policy, employment contract and applicable rules.
+      </p>
     </div>
 
-    <div class="box">
-      <h3>Working Days Estimate</h3>
-      <div class="result" id="annual"></div>
+    <div class="results-panel">
+      <h2 class="serif">Your paid leave result</h2>
+      <p class="sub">Estimated total paid days off</p>
+
+      <div class="net"><span id="totalPaidDays">0.00</span> days</div>
+      <p class="net-caption" id="holidayExplanation">Annual leave + public holidays + other paid leave.</p>
+
+      <div class="bar" id="holidayBar"></div>
+
+      <div class="result-rows" id="resultRows"></div>
+
+      <div class="annual-summary" id="summaryRows"></div>
     </div>
+
+  </section>
+
+  <div class="seo">
+
+    <section>
+      <h2>How Paid Days Off Are Calculated</h2>
+
+      <p>
+        A public holiday calculator helps estimate total paid days off by combining annual leave, public holidays and other paid leave days. It can also give a simple estimate of working days in the year.
+      </p>
+
+      <div class="formula-box">
+        <strong>Total Paid Days Off = Annual Leave + Public Holidays + Other Paid Leave</strong>
+        <span>Example: 12 annual leave days + 18 public holidays + 2 other paid leave days = 32 paid days off</span>
+      </div>
+
+      <div class="rate-grid">
+        <div class="rate-card">
+          <strong>Annual</strong>
+          <h3>Annual Leave</h3>
+          <p>Paid leave entitlement based on service length, contract and policy.</p>
+        </div>
+
+        <div class="rate-card">
+          <strong>Holiday</strong>
+          <h3>Public Holidays</h3>
+          <p>Paid public holidays may vary by state and company holiday list.</p>
+        </div>
+
+        <div class="rate-card">
+          <strong>Other</strong>
+          <h3>Other Paid Leave</h3>
+          <p>Optional paid leave such as special leave or company-granted leave.</p>
+        </div>
+
+        <div class="rate-card">
+          <strong>Working</strong>
+          <h3>Working Days</h3>
+          <p>Estimated working days after weekends and paid days off.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contribution-box">
+      <h2>Paid Days Off Example</h2>
+
+      <p>
+        The table below shows simple examples of total paid days off based on common annual leave and public holiday assumptions.
+      </p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead>
+            <tr>
+              <th>Annual Leave</th>
+              <th>Public Holidays</th>
+              <th>Other Paid Leave</th>
+              <th>Total Paid Days Off</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>8 days</td>
+              <td>18 days</td>
+              <td>0 days</td>
+              <td>26 days</td>
+            </tr>
+            <tr>
+              <td>12 days</td>
+              <td>18 days</td>
+              <td>2 days</td>
+              <td>32 days</td>
+            </tr>
+            <tr>
+              <td>16 days</td>
+              <td>18 days</td>
+              <td>2 days</td>
+              <td>36 days</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="payroll-note">
+        <strong>Note:</strong>
+        Malaysia public holidays may differ by state, employer and year. Always check your company's holiday list.
+      </p>
+    </section>
+
+    <section>
+      <h2>What This Public Holiday Calculator Shows</h2>
+
+      <p>
+        This calculator helps you estimate total paid days off, public holidays, annual leave, other paid leave and estimated working days in the year.
+      </p>
+
+      <div class="component-grid">
+        <a class="component-card" href="annual-leave-calculator.html">
+          <div class="component-icon">📅</div>
+          <h3>Annual Leave</h3>
+          <p>Add paid annual leave entitlement into the total.</p>
+        </a>
+
+        <a class="component-card" href="public-holiday-guide.html">
+          <div class="component-icon">🎉</div>
+          <h3>Public Holidays</h3>
+          <p>Include paid public holidays based on your holiday list.</p>
+        </a>
+
+        <a class="component-card" href="mc-leave-calculator.html">
+          <div class="component-icon">🏥</div>
+          <h3>Other Leave</h3>
+          <p>Add other paid leave days for a more complete estimate.</p>
+        </a>
+
+        <a class="component-card" href="overtime-calculator.html">
+          <div class="component-icon">⏰</div>
+          <h3>Working Days</h3>
+          <p>Estimate working days and plan leave around work periods.</p>
+        </a>
+      </div>
+    </section>
+
+    <h2>Who Should Use This Public Holiday Calculator?</h2>
+
+    <ul>
+      <li>Employees planning annual leave and paid holidays</li>
+      <li>HR users preparing a simple paid leave summary</li>
+      <li>Small businesses estimating yearly working days</li>
+      <li>Employees comparing leave benefits between employers</li>
+      <li>Anyone planning yearly rest days and paid days off</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-box">
+      <details class="faq-item" open>
+        <summary>Are public holidays paid in Malaysia?</summary>
+        <p>
+          Many employees are entitled to paid public holidays, subject to employment terms, company policy and applicable rules.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is this calculator exact?</summary>
+        <p>
+          No. This calculator provides a simple estimate only. Actual entitlement may depend on state holidays, company policy and employment terms.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I include annual leave?</summary>
+        <p>
+          Yes. You can enter annual leave days, public holidays and other paid leave days.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Why do public holiday days differ by company?</summary>
+        <p>
+          Public holidays may depend on federal holidays, state holidays, company policy and the employer's selected holiday list.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does this calculate exact working days?</summary>
+        <p>
+          It gives a simple estimate using 365 days minus weekends and paid days off. Actual working days may differ based on schedule, state holidays and company calendar.
+        </p>
+      </details>
+    </div>
+
+    <section class="salary-guides-box">
+      <h2>Malaysia Employment Guides</h2>
+
+      <p>
+        Learn more about public holidays, leave and employment rules in Malaysia.
+      </p>
+
+      <div class="guide-mini-grid">
+        <a href="public-holiday-guide.html">🎉 Public Holiday Guide</a>
+        <a href="annual-leave-guide.html">📅 Annual Leave Guide</a>
+        <a href="mc-leave-guide.html">🏥 MC Leave Guide</a>
+        <a href="overtime-guide.html">⏰ Overtime Guide</a>
+        <a href="rest-day-guide.html">🛌 Rest Day Guide</a>
+        <a href="employment-contract-guide.html">📄 Employment Contract Guide</a>
+      </div>
+
+      <p class="view-all-guides">
+        <a href="guides.html">View All Salary Guides →</a>
+      </p>
+    </section>
+
+    <section class="salary-guides-box">
+      <h2>Related Calculators</h2>
+
+      <p>
+        Explore more free Malaysia leave and salary calculators.
+      </p>
+
+      <div class="guide-mini-grid">
+        <a href="index.html">Salary Calculator</a>
+        <a href="annual-leave-calculator.html">Annual Leave Calculator</a>
+        <a href="mc-leave-calculator.html">MC Leave Calculator</a>
+        <a href="overtime-calculator.html">Overtime Calculator</a>
+        <a href="bonus-calculator.html">Bonus Calculator</a>
+        <a href="payslip-generator.html">Payslip Generator</a>
+      </div>
+
+      <p class="view-all-guides">
+        <a href="calculators.html">View All Calculators →</a>
+      </p>
+    </section>
 
   </div>
 
-</div>
+</main>
 
-<div class="seo">
-
-  <h2>Related Salary Guides</h2>
-
-  <div class="seo-cards">
-
-    <a class="card-link" href="epf-guide.html">
-      <h3>EPF Guide Malaysia</h3>
-      <p>EPF contribution rates and retirement savings</p>
-    </a>
-
-    <a class="card-link" href="socso-guide.html">
-      <h3>SOCSO Guide Malaysia</h3>
-      <p>Work injury protection and employee benefits</p>
-    </a>
-
-    <a class="card-link" href="eis-guide.html">
-      <h3>EIS Guide Malaysia</h3>
-      <p>Employment insurance and unemployment support</p>
-    </a>
-
-    <a class="card-link" href="pcb-guide.html">
-      <h3>PCB Tax Guide Malaysia</h3>
-      <p>Monthly tax deduction explained simply</p>
-    </a>
-
-  </div>
-
-  <h2>What Is A Public Holiday Calculator?</h2>
-
+<footer class="footer">
+  <p>© 2026 Malaysia Salary Tools</p>
   <p>
-    A public holiday calculator helps estimate total paid days off by combining annual leave, public holidays and other paid leave days.
+    <a href="index.html">Home</a> |
+    <a href="calculators.html">Calculators</a> |
+    <a href="guides.html">Guides</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact Us</a> |
+    <a href="privacy-policy.html">Privacy Policy</a>
   </p>
-
-  <p>
-    In Malaysia, employees may receive paid annual leave and paid public holidays depending on employment terms, company policy and applicable regulations.
-  </p>
-
-  <h2>How Is Total Paid Leave Calculated?</h2>
-
-  <p>
-    This calculator adds annual leave days, public holiday days and other paid leave days together.
-  </p>
-
-  <p>
-    The formula used is:
-  </p>
-
-  <p>
-    Total Paid Days Off = Annual Leave + Public Holidays + Other Paid Leave
-  </p>
-
-  <h2>Example Public Holiday Calculation</h2>
-
-  <p>
-    If an employee has 12 annual leave days, 18 public holidays and 2 other paid leave days, the total paid days off is 32 days.
-  </p>
-
-  <h2>Why Use This Public Holiday Calculator?</h2>
-
-  <ul>
-    <li>Estimate total paid days off</li>
-    <li>Combine annual leave and public holidays</li>
-    <li>Plan yearly leave more easily</li>
-    <li>Useful for employees and small businesses</li>
-  </ul>
-
-  <h2>Frequently Asked Questions</h2>
-
-  <h3>Are public holidays paid in Malaysia?</h3>
-  <p>
-    Many employees are entitled to paid public holidays, subject to employment terms and applicable law.
-  </p>
-
-  <h3>Is this calculator exact?</h3>
-  <p>
-    This calculator provides a simple estimate. Actual entitlement may depend on company policy and employment terms.
-  </p>
-
-  <h3>Can I include annual leave?</h3>
-  <p>
-    Yes. You can enter annual leave days, public holidays and other paid leave days.
-  </p>
-
-  <h2>Related Calculators</h2>
-
-  <ul>
-    <li><a href="index.html">Salary Calculator</a></li>
-    <li><a href="annual-leave-calculator.html">Annual Leave Calculator</a></li>
-    <li><a href="overtime-calculator.html">Overtime Calculator</a></li>
-    <li><a href="bonus-calculator.html">Bonus Calculator</a></li>
-    <li><a href="salary-increment-calculator.html">Salary Increment Calculator</a></li>
-    <li><a href="loan-calculator.html">Loan Calculator</a></li>
-    <li><a href="payslip-generator.html">Payslip Generator</a></li>
-  </ul>
-
-</div>
+</footer>
 
 <script>
-function calculate(){
-
-  let annualLeave = parseFloat(document.getElementById("annualLeave").value) || 0;
-  let publicHoliday = parseFloat(document.getElementById("publicHoliday").value) || 0;
-  let otherLeave = parseFloat(document.getElementById("otherLeave").value) || 0;
-
-  if(annualLeave < 0 || publicHoliday < 0 || otherLeave < 0){
-    document.getElementById("monthly").innerHTML = "Please enter valid leave days.";
-    document.getElementById("annual").innerHTML = "";
-    return;
+  function setLeavePreset(annualLeave, publicHoliday, otherLeave) {
+    document.getElementById("annualLeave").value = annualLeave;
+    document.getElementById("publicHoliday").value = publicHoliday;
+    document.getElementById("otherLeave").value = otherLeave;
+    calculatePaidDays();
   }
 
-  let totalPaidDays = annualLeave + publicHoliday + otherLeave;
-  let estimatedWorkingDays = 365 - 104 - totalPaidDays;
+  function calculatePaidDays() {
+    const annualLeave = parseFloat(document.getElementById("annualLeave").value) || 0;
+    const publicHoliday = parseFloat(document.getElementById("publicHoliday").value) || 0;
+    const otherLeave = parseFloat(document.getElementById("otherLeave").value) || 0;
+    const weekends = parseFloat(document.getElementById("weekends").value) || 0;
 
-  document.getElementById("monthly").innerHTML =
-    "Annual Leave: " + annualLeave + " days<br>" +
-    "Public Holidays: " + publicHoliday + " days<br>" +
-    "Other Paid Leave: " + otherLeave + " days<br><br>" +
-    "<b>Total Paid Days Off: " + totalPaidDays + " days</b>";
+    if (annualLeave < 0 || publicHoliday < 0 || otherLeave < 0 || weekends < 0) {
+      document.getElementById("totalPaidDays").textContent = "0.00";
+      document.getElementById("holidayExplanation").textContent = "Please enter valid leave and weekend days.";
+      document.getElementById("holidayBar").innerHTML = "";
+      document.getElementById("resultRows").innerHTML = "";
+      document.getElementById("summaryRows").innerHTML = "";
+      return;
+    }
 
-  document.getElementById("annual").innerHTML =
-    "Estimated Weekends: 104 days<br>" +
-    "Total Paid Days Off: " + totalPaidDays + " days<br><br>" +
-    "<b>Estimated Working Days: " + estimatedWorkingDays + " days</b>";
-}
+    const totalPaidDays = annualLeave + publicHoliday + otherLeave;
+    const estimatedWorkingDays = Math.max(0, 365 - weekends - totalPaidDays);
+    const nonWorkingDays = weekends + totalPaidDays;
+
+    const paidPercent = Math.min(100, (totalPaidDays / 365) * 100);
+    const weekendPercent = Math.min(100, (weekends / 365) * 100);
+    const workingPercent = Math.max(0, 100 - paidPercent - weekendPercent);
+
+    document.getElementById("totalPaidDays").textContent = totalPaidDays.toFixed(2);
+    document.getElementById("holidayExplanation").textContent =
+      "Annual leave + public holidays + other paid leave.";
+
+    document.getElementById("holidayBar").innerHTML =
+      '<i style="width:' + workingPercent + '%;background:#f6f3ec"></i>' +
+      '<i style="width:' + weekendPercent + '%;background:#c9a14e"></i>' +
+      '<i style="width:' + paidPercent + '%;background:#5aa783"></i>';
+
+    document.getElementById("resultRows").innerHTML =
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#5aa783"></span>Annual Leave</span><span class="v">' + annualLeave.toFixed(2) + ' days</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#2f7d5e"></span>Public Holidays</span><span class="v">' + publicHoliday.toFixed(2) + ' days</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#cf6f5b"></span>Other Paid Leave</span><span class="v">' + otherLeave.toFixed(2) + ' days</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#c9a14e"></span>Estimated Weekends</span><span class="v">' + weekends.toFixed(0) + ' days</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#f6f3ec"></span>Estimated Working Days</span><span class="v">' + estimatedWorkingDays.toFixed(2) + ' days</span></div>';
+
+    document.getElementById("summaryRows").innerHTML =
+      '<div><span>Total Paid Days Off</span><strong>' + totalPaidDays.toFixed(2) + ' days</strong></div>' +
+      '<div><span>Total Non-Working Days Estimate</span><strong>' + nonWorkingDays.toFixed(2) + ' days</strong></div>' +
+      '<div><span>Estimated Working Days</span><strong>' + estimatedWorkingDays.toFixed(2) + ' days</strong></div>';
+  }
+
+  document.getElementById("annualLeave").addEventListener("input", calculatePaidDays);
+  document.getElementById("publicHoliday").addEventListener("input", calculatePaidDays);
+  document.getElementById("otherLeave").addEventListener("input", calculatePaidDays);
+  document.getElementById("weekends").addEventListener("input", calculatePaidDays);
+
+  calculatePaidDays();
 </script>
 
-<hr style="margin-top:40px;">
-
-<div style="text-align:center;padding:20px;">
-
-<p>
-© 2026 Malaysia Salary Tools
-</p>
-
-<p>
-<a href="about.html">About Us</a> |
-<a href="contact.html">Contact Us</a> |
-<a href="privacy-policy.html">Privacy Policy</a>
-</p>
-
-</div>
-  
 </body>
 </html>
