@@ -9,7 +9,7 @@
   <link rel="canonical" href="https://malaysiasalarytools.com/resignation-notice-calculator.html">
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <meta name="description" content="Free Malaysia Resignation Notice Calculator 2026. Calculate your estimated last working day based on resignation date and notice period.">
+  <meta name="description" content="Free Malaysia Resignation Notice Calculator 2026. Calculate your estimated last working day based on resignation date, notice days or calendar months.">
   <meta name="keywords" content="Malaysia resignation notice calculator, last working day calculator Malaysia, notice period calculator, resignation calculator Malaysia">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -207,12 +207,6 @@
       margin-bottom:18px;
     }
 
-    .field-grid {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-    }
-
     input,
     select {
       width:100%;
@@ -230,6 +224,31 @@
     select:focus {
       border-color:var(--accent);
       box-shadow:0 0 0 3px rgba(47,125,94,.14);
+    }
+
+    .toggle-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-bottom:18px;
+    }
+
+    .toggle-option {
+      background:var(--white);
+      border:1px solid var(--border);
+      padding:13px;
+      border-radius:12px;
+      cursor:pointer;
+      font-weight:800;
+      text-align:center;
+      color:var(--muted);
+      user-select:none;
+    }
+
+    .toggle-option.active {
+      background:var(--accent);
+      color:#fff;
+      border-color:var(--accent);
     }
 
     .preset-grid {
@@ -336,24 +355,47 @@
       margin-top:8px;
     }
 
-    .bar {
-      height:9px;
-      border-radius:999px;
-      background:rgba(255,255,255,.12);
-      display:flex;
-      overflow:hidden;
-      margin:22px 0;
+    .timeline-box {
+      margin:22px 0 8px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:14px;
+      padding:16px;
     }
 
-    .bar i {
-      display:block;
-      height:100%;
+    .timeline-row {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      font-size:13px;
+      color:rgba(246,243,236,.78);
+    }
+
+    .timeline-line {
+      flex:1;
+      height:2px;
+      background:rgba(255,255,255,.20);
+      position:relative;
+    }
+
+    .timeline-line::after {
+      content:"";
+      position:absolute;
+      right:0;
+      top:50%;
+      transform:translateY(-50%);
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#5aa783;
     }
 
     .result-rows {
       display:flex;
       flex-direction:column;
       gap:2px;
+      margin-top:10px;
     }
 
     .result-line {
@@ -664,8 +706,7 @@
     }
 
     @media (max-width:900px) {
-      .calculator-shell,
-      .field-grid {
+      .calculator-shell {
         grid-template-columns:1fr;
       }
 
@@ -768,8 +809,104 @@
       .net {
         font-size:31px;
       }
+
+      .toggle-grid {
+        grid-template-columns:1fr;
+      }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"Malaysia Resignation Notice Calculator",
+    "applicationCategory":"BusinessApplication",
+    "operatingSystem":"Web",
+    "offers":{
+      "@type":"Offer",
+      "price":"0",
+      "priceCurrency":"MYR"
+    },
+    "description":"Free Malaysia resignation notice calculator to estimate last working day based on resignation date, notice days or calendar months."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {
+        "@type":"ListItem",
+        "position":1,
+        "name":"Home",
+        "item":"https://malaysiasalarytools.com/"
+      },
+      {
+        "@type":"ListItem",
+        "position":2,
+        "name":"Calculators",
+        "item":"https://malaysiasalarytools.com/calculators.html"
+      },
+      {
+        "@type":"ListItem",
+        "position":3,
+        "name":"Resignation Notice Calculator",
+        "item":"https://malaysiasalarytools.com/resignation-notice-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Can I leave before my notice period ends?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"It depends on your employment contract, employer approval and any agreement for early release, payment in lieu of notice or leave offset."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Is this resignation notice calculator legally binding?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"No. This calculator provides a simple estimate only. Always refer to your employment contract, HR policy and official confirmation from your employer."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What if my contract uses calendar months?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"If your contract says one calendar month, two calendar months or three calendar months, use the calendar month option instead of the day-count estimate."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can annual leave be used during notice period?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"It may be possible, but it usually depends on employer approval, company policy and employment contract terms."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Does public holiday extend notice period?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"This depends on contract wording and company practice. Some notice periods are counted by calendar days, while others may be handled differently."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -793,7 +930,7 @@
   <span class="pill">Updated for Malaysia 2026 resignation estimates</span>
   <h1 class="serif">Calculate your <em>last working day</em></h1>
   <p>
-    Free Malaysia resignation notice calculator for employees and HR users. Estimate your last working day based on resignation date and notice period.
+    Free Malaysia resignation notice calculator for employees and HR users. Estimate your last working day using calendar days or calendar months.
   </p>
 </section>
 
@@ -811,14 +948,21 @@
       </div>
 
       <div class="form-group">
-        <label for="noticePeriod">Notice period</label>
-        <select id="noticePeriod" onchange="calculateNotice()">
-          <option value="">Select notice period</option>
+        <label>Notice calculation type</label>
+        <div class="toggle-grid">
+          <div class="toggle-option active" id="daysToggle" onclick="setNoticeType('days')">Calendar Days</div>
+          <div class="toggle-option" id="monthsToggle" onclick="setNoticeType('months')">Calendar Months</div>
+        </div>
+      </div>
+
+      <div class="form-group" id="noticeDaysWrap">
+        <label for="noticeDays">Notice period</label>
+        <select id="noticeDays" onchange="calculateNotice()">
           <option value="7">1 week - 7 days</option>
           <option value="14">2 weeks - 14 days</option>
-          <option value="30">1 month - 30 days estimate</option>
-          <option value="60">2 months - 60 days estimate</option>
-          <option value="90">3 months - 90 days estimate</option>
+          <option value="30" selected>1 month estimate - 30 days</option>
+          <option value="60">2 months estimate - 60 days</option>
+          <option value="90">3 months estimate - 90 days</option>
           <option value="custom">Custom notice period</option>
         </select>
       </div>
@@ -828,12 +972,33 @@
         <input type="number" id="customNotice" value="30" min="1" step="1">
       </div>
 
-      <div class="preset-grid">
-        <button type="button" class="preset" onclick="setNoticePreset(7)">1 week</button>
-        <button type="button" class="preset" onclick="setNoticePreset(14)">2 weeks</button>
-        <button type="button" class="preset" onclick="setNoticePreset(30)">1 month</button>
-        <button type="button" class="preset" onclick="setNoticePreset(60)">2 months</button>
-        <button type="button" class="preset" onclick="setNoticePreset(90)">3 months</button>
+      <div class="form-group" id="noticeMonthsWrap" style="display:none;">
+        <label for="noticeMonths">Calendar month notice</label>
+        <select id="noticeMonths" onchange="calculateNotice()">
+          <option value="1">1 calendar month</option>
+          <option value="2">2 calendar months</option>
+          <option value="3">3 calendar months</option>
+          <option value="custom">Custom calendar months</option>
+        </select>
+      </div>
+
+      <div class="form-group" id="customMonthsWrap" style="display:none;">
+        <label for="customMonths">Custom notice period in calendar months</label>
+        <input type="number" id="customMonths" value="1" min="1" step="1">
+      </div>
+
+      <div class="preset-grid" id="daysPresetGrid">
+        <button type="button" class="preset" onclick="setDaysPreset(7)">1 week</button>
+        <button type="button" class="preset" onclick="setDaysPreset(14)">2 weeks</button>
+        <button type="button" class="preset" onclick="setDaysPreset(30)">30 days</button>
+        <button type="button" class="preset" onclick="setDaysPreset(60)">60 days</button>
+        <button type="button" class="preset" onclick="setDaysPreset(90)">90 days</button>
+      </div>
+
+      <div class="preset-grid" id="monthsPresetGrid" style="display:none;">
+        <button type="button" class="preset" onclick="setMonthsPreset(1)">1 month</button>
+        <button type="button" class="preset" onclick="setMonthsPreset(2)">2 months</button>
+        <button type="button" class="preset" onclick="setMonthsPreset(3)">3 months</button>
       </div>
 
       <button type="button" class="calc-button" onclick="calculateNotice()">Calculate Last Working Day</button>
@@ -843,7 +1008,7 @@
       </a>
 
       <p class="input-note">
-        This calculator provides a simple calendar-day estimate. Actual last working day may depend on employment contract, company policy, HR confirmation, public holidays, annual leave and whether your notice period is counted by calendar days or calendar months.
+        This calculator provides an estimate only. Actual last working day may depend on your employment contract, company policy, HR confirmation, public holidays, annual leave and whether your notice period is counted by calendar days or calendar months.
       </p>
     </div>
 
@@ -854,7 +1019,13 @@
       <div class="net" id="lastWorkingDay">-</div>
       <p class="net-caption" id="noticeExplanation">Select resignation date and notice period.</p>
 
-      <div class="bar" id="noticeBar"></div>
+      <div class="timeline-box">
+        <div class="timeline-row">
+          <span>Resignation submitted</span>
+          <span class="timeline-line"></span>
+          <span>Last working day</span>
+        </div>
+      </div>
 
       <div class="result-rows" id="resultRows"></div>
 
@@ -874,7 +1045,7 @@
 
       <div class="formula-box">
         <strong>Estimated Last Working Day = Resignation Date + Notice Period</strong>
-        <span>Example: resign on 1 January + 30 days notice = estimated last working day around 31 January</span>
+        <span>Use calendar days for day-count notice, or calendar months if your contract says one month, two months or three months notice.</span>
       </div>
 
       <div class="rate-grid">
@@ -886,14 +1057,14 @@
 
         <div class="rate-card">
           <strong>30</strong>
-          <h3>1 Month</h3>
-          <p>Common notice estimate used by many employees.</p>
+          <h3>30 Days</h3>
+          <p>A simple day-count estimate commonly used for one-month notice.</p>
         </div>
 
         <div class="rate-card">
-          <strong>60</strong>
-          <h3>2 Months</h3>
-          <p>Common notice estimate for more senior or confirmed roles.</p>
+          <strong>1M</strong>
+          <h3>Calendar Month</h3>
+          <p>Useful if your employment contract says one calendar month notice.</p>
         </div>
 
         <div class="rate-card">
@@ -905,10 +1076,10 @@
     </section>
 
     <section class="contribution-box">
-      <h2>Common Notice Period Examples</h2>
+      <h2>Calendar Days vs Calendar Months</h2>
 
       <p>
-        The table below shows simple last working day examples based on common notice periods. Exact calculation should follow your employment contract.
+        Some employment contracts mention a fixed number of days, while others mention calendar months. This difference can affect the final working day.
       </p>
 
       <div class="contribution-table-wrap">
@@ -916,7 +1087,7 @@
           <thead>
             <tr>
               <th>Resignation Date</th>
-              <th>Notice Period</th>
+              <th>Notice Wording</th>
               <th>Estimated Last Working Day</th>
             </tr>
           </thead>
@@ -932,14 +1103,14 @@
               <td>31 January</td>
             </tr>
             <tr>
-              <td>1 January</td>
-              <td>60 days</td>
-              <td>2 March</td>
+              <td>15 January</td>
+              <td>1 calendar month</td>
+              <td>15 February</td>
             </tr>
             <tr>
-              <td>1 January</td>
-              <td>90 days</td>
-              <td>1 April</td>
+              <td>15 January</td>
+              <td>3 calendar months</td>
+              <td>15 April</td>
             </tr>
           </tbody>
         </table>
@@ -947,7 +1118,7 @@
 
       <p class="payroll-note">
         <strong>Note:</strong>
-        Some contracts use “one calendar month” instead of “30 days”. In that case, the actual last working day may differ from this simple day-count estimate.
+        If your contract says “one calendar month”, it may not be the same as 30 days. Always check your employment contract and confirm with HR.
       </p>
     </section>
 
@@ -955,14 +1126,14 @@
       <h2>What This Resignation Notice Calculator Shows</h2>
 
       <p>
-        This calculator helps estimate resignation date, notice period, last working day, calendar notice length and remaining days from today. It is useful for employees planning resignation timing and HR users checking a simple notice period estimate.
+        This calculator helps estimate resignation date, notice period, last working day, day of week, final salary month and remaining days from today. It is useful for employees planning resignation timing and HR users checking a simple notice period estimate.
       </p>
 
       <div class="component-grid">
         <a class="component-card" href="resignation-notice-guide.html">
           <div class="component-icon">🚪</div>
           <h3>Notice Period</h3>
-          <p>Estimate last working day based on selected notice period.</p>
+          <p>Estimate last working day based on notice days or calendar months.</p>
         </a>
 
         <a class="component-card" href="annual-leave-calculator.html">
@@ -1015,7 +1186,7 @@
       <details class="faq-item">
         <summary>What if my contract uses calendar months?</summary>
         <p>
-          If your contract says one calendar month, two calendar months or three calendar months, the exact last working day may differ from a 30 / 60 / 90-day estimate.
+          If your contract says one calendar month, two calendar months or three calendar months, use the calendar month option instead of the 30 / 60 / 90-day estimate.
         </p>
       </details>
 
@@ -1063,10 +1234,8 @@
       </p>
 
       <div class="guide-mini-grid">
-        <a href="salary-increment-calculator.html">Salary Increment Calculator</a>
         <a href="annual-leave-calculator.html">Annual Leave Calculator</a>
         <a href="mc-leave-calculator.html">MC Leave Calculator</a>
-        <a href="public-holiday-calculator.html">Public Holiday Calculator</a>
         <a href="payslip-generator.html">Payslip Generator</a>
         <a href="index.html">Salary Calculator</a>
       </div>
@@ -1093,6 +1262,8 @@
 </footer>
 
 <script>
+  let noticeType = "days";
+
   function formatDate(date) {
     return date.toLocaleDateString('en-MY', {
       day: 'numeric',
@@ -1101,8 +1272,54 @@
     });
   }
 
+  function formatDay(date) {
+    return date.toLocaleDateString('en-MY', {
+      weekday: 'long'
+    });
+  }
+
+  function formatMonthYear(date) {
+    return date.toLocaleDateString('en-MY', {
+      month: 'long',
+      year: 'numeric'
+    });
+  }
+
+  function setNoticeType(type) {
+    noticeType = type;
+
+    const daysToggle = document.getElementById("daysToggle");
+    const monthsToggle = document.getElementById("monthsToggle");
+
+    const daysWrap = document.getElementById("noticeDaysWrap");
+    const monthsWrap = document.getElementById("noticeMonthsWrap");
+
+    const daysPresetGrid = document.getElementById("daysPresetGrid");
+    const monthsPresetGrid = document.getElementById("monthsPresetGrid");
+
+    if (type === "days") {
+      daysToggle.classList.add("active");
+      monthsToggle.classList.remove("active");
+
+      daysWrap.style.display = "block";
+      monthsWrap.style.display = "none";
+      daysPresetGrid.style.display = "flex";
+      monthsPresetGrid.style.display = "none";
+    } else {
+      monthsToggle.classList.add("active");
+      daysToggle.classList.remove("active");
+
+      monthsWrap.style.display = "block";
+      daysWrap.style.display = "none";
+      monthsPresetGrid.style.display = "flex";
+      daysPresetGrid.style.display = "none";
+    }
+
+    calculateNotice();
+  }
+
   function getNoticeDays() {
-    const noticeValue = document.getElementById("noticePeriod").value;
+    const noticeValue = document.getElementById("noticeDays").value;
 
     if (noticeValue === "custom") {
       return parseInt(document.getElementById("customNotice").value) || 0;
@@ -1111,29 +1328,51 @@
     return parseInt(noticeValue) || 0;
   }
 
-  function setNoticePreset(days) {
-    document.getElementById("noticePeriod").value = String(days);
+  function getNoticeMonths() {
+    const monthValue = document.getElementById("noticeMonths").value;
+
+    if (monthValue === "custom") {
+      return parseInt(document.getElementById("customMonths").value) || 0;
+    }
+
+    return parseInt(monthValue) || 0;
+  }
+
+  function setDaysPreset(days) {
+    noticeType = "days";
+    setNoticeType("days");
+
+    document.getElementById("noticeDays").value = String(days);
     document.getElementById("customNoticeWrap").style.display = "none";
+
+    calculateNotice();
+  }
+
+  function setMonthsPreset(months) {
+    noticeType = "months";
+    setNoticeType("months");
+
+    document.getElementById("noticeMonths").value = String(months);
+    document.getElementById("customMonthsWrap").style.display = "none";
+
     calculateNotice();
   }
 
   function calculateNotice() {
     const resignDateValue = document.getElementById("resignDate").value;
-    const noticeValue = document.getElementById("noticePeriod").value;
-    const customWrap = document.getElementById("customNoticeWrap");
 
-    if (noticeValue === "custom") {
-      customWrap.style.display = "block";
-    } else {
-      customWrap.style.display = "none";
-    }
+    const noticeDaysValue = document.getElementById("noticeDays").value;
+    const noticeMonthsValue = document.getElementById("noticeMonths").value;
 
-    const noticeDays = getNoticeDays();
+    const customNoticeWrap = document.getElementById("customNoticeWrap");
+    const customMonthsWrap = document.getElementById("customMonthsWrap");
 
-    if (!resignDateValue || !noticeDays) {
+    customNoticeWrap.style.display = noticeDaysValue === "custom" && noticeType === "days" ? "block" : "none";
+    customMonthsWrap.style.display = noticeMonthsValue === "custom" && noticeType === "months" ? "block" : "none";
+
+    if (!resignDateValue) {
       document.getElementById("lastWorkingDay").textContent = "-";
-      document.getElementById("noticeExplanation").textContent = "Please select resignation date and notice period.";
-      document.getElementById("noticeBar").innerHTML = "";
+      document.getElementById("noticeExplanation").textContent = "Please select resignation date.";
       document.getElementById("resultRows").innerHTML = "";
       document.getElementById("summaryRows").innerHTML = "";
       return;
@@ -1141,31 +1380,68 @@
 
     const startDate = new Date(resignDateValue + "T00:00:00");
     const lastDay = new Date(startDate);
-    lastDay.setDate(lastDay.getDate() + noticeDays);
+
+    let noticeLabel = "";
+    let formulaLabel = "";
+
+    if (noticeType === "days") {
+      const noticeDays = getNoticeDays();
+
+      if (!noticeDays) {
+        document.getElementById("lastWorkingDay").textContent = "-";
+        document.getElementById("noticeExplanation").textContent = "Please enter a valid notice period.";
+        document.getElementById("resultRows").innerHTML = "";
+        document.getElementById("summaryRows").innerHTML = "";
+        return;
+      }
+
+      lastDay.setDate(lastDay.getDate() + noticeDays);
+      noticeLabel = noticeDays + " calendar days";
+      formulaLabel = "Resignation date + " + noticeDays + " days";
+    }
+
+    if (noticeType === "months") {
+      const noticeMonths = getNoticeMonths();
+
+      if (!noticeMonths) {
+        document.getElementById("lastWorkingDay").textContent = "-";
+        document.getElementById("noticeExplanation").textContent = "Please enter a valid calendar month period.";
+        document.getElementById("resultRows").innerHTML = "";
+        document.getElementById("summaryRows").innerHTML = "";
+        return;
+      }
+
+      lastDay.setMonth(lastDay.getMonth() + noticeMonths);
+      noticeLabel = noticeMonths + (noticeMonths === 1 ? " calendar month" : " calendar months");
+      formulaLabel = "Resignation date + " + noticeMonths + (noticeMonths === 1 ? " calendar month" : " calendar months");
+    }
 
     const today = new Date();
     today.setHours(0,0,0,0);
 
     const daysFromToday = Math.ceil((lastDay - today) / (1000 * 60 * 60 * 24));
-    const noticeProgress = Math.max(0, Math.min(100, (noticeDays / 90) * 100));
+
+    let daysFromTodayText = daysFromToday + " days";
+    if (daysFromToday === 0) {
+      daysFromTodayText = "Today";
+    } else if (daysFromToday < 0) {
+      daysFromTodayText = Math.abs(daysFromToday) + " days ago";
+    }
 
     document.getElementById("lastWorkingDay").textContent = formatDate(lastDay);
     document.getElementById("noticeExplanation").textContent =
-      "Based on resignation date " + formatDate(startDate) + " and " + noticeDays + " days notice.";
-
-    document.getElementById("noticeBar").innerHTML =
-      '<i style="width:' + noticeProgress + '%;background:#5aa783"></i>' +
-      '<i style="width:' + (100 - noticeProgress) + '%;background:#c9a14e"></i>';
+      "Based on resignation date " + formatDate(startDate) + " and " + noticeLabel + ".";
 
     document.getElementById("resultRows").innerHTML =
       '<div class="result-line"><span class="k"><span class="dot" style="background:#f6f3ec"></span>Resignation Date</span><span class="v">' + formatDate(startDate) + '</span></div>' +
-      '<div class="result-line"><span class="k"><span class="dot" style="background:#5aa783"></span>Notice Period</span><span class="v">' + noticeDays + ' days</span></div>' +
-      '<div class="result-line"><span class="k"><span class="dot" style="background:#2f7d5e"></span>Estimated Last Working Day</span><span class="v">' + formatDate(lastDay) + '</span></div>';
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#5aa783"></span>Notice Period</span><span class="v">' + noticeLabel + '</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#2f7d5e"></span>Estimated Last Working Day</span><span class="v">' + formatDate(lastDay) + '</span></div>' +
+      '<div class="result-line"><span class="k"><span class="dot" style="background:#c9a14e"></span>Day of Week</span><span class="v">' + formatDay(lastDay) + '</span></div>';
 
     document.getElementById("summaryRows").innerHTML =
-      '<div><span>Formula Used</span><strong>Resignation date + notice days</strong></div>' +
-      '<div><span>Notice Period</span><strong>' + noticeDays + ' days</strong></div>' +
-      '<div><span>Days From Today</span><strong>' + daysFromToday + ' days</strong></div>';
+      '<div><span>Formula Used</span><strong>' + formulaLabel + '</strong></div>' +
+      '<div><span>Final Salary Month</span><strong>' + formatMonthYear(lastDay) + '</strong></div>' +
+      '<div><span>Days From Today</span><strong>' + daysFromTodayText + '</strong></div>';
   }
 
   function setDefaultDate() {
@@ -1177,10 +1453,13 @@
   }
 
   document.getElementById("resignDate").addEventListener("input", calculateNotice);
-  document.getElementById("noticePeriod").addEventListener("change", calculateNotice);
+  document.getElementById("noticeDays").addEventListener("change", calculateNotice);
   document.getElementById("customNotice").addEventListener("input", calculateNotice);
+  document.getElementById("noticeMonths").addEventListener("change", calculateNotice);
+  document.getElementById("customMonths").addEventListener("input", calculateNotice);
 
   setDefaultDate();
+  setNoticeType("days");
   calculateNotice();
 </script>
 
