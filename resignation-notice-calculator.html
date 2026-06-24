@@ -9,7 +9,7 @@
   <link rel="canonical" href="https://malaysiasalarytools.com/resignation-notice-calculator.html">
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <meta name="description" content="Free Malaysia Resignation Notice Calculator 2026. Calculate your estimated last working day based on resignation date, notice days or calendar months.">
+  <meta name="description" content="Free Malaysia Resignation Notice Calculator 2026. Calculate your estimated last working day and final salary based on resignation date, notice period and unused annual leave.">
   <meta name="keywords" content="Malaysia resignation notice calculator, last working day calculator Malaysia, notice period calculator, resignation calculator Malaysia">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -205,6 +205,54 @@
 
     .form-group {
       margin-bottom:18px;
+    }
+
+    .field-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .final-salary-box {
+      margin-top:24px;
+      padding:20px;
+      background:#f8f5ef;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+    }
+
+    .final-salary-box h3 {
+      margin:0 0 6px;
+      font-size:18px;
+      color:var(--foreground);
+    }
+
+    .final-salary-box p {
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .salary-highlight {
+      margin-top:16px;
+      padding:16px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:14px;
+    }
+
+    .salary-highlight span {
+      display:block;
+      color:rgba(246,243,236,.65);
+      font-size:13px;
+      margin-bottom:4px;
+    }
+
+    .salary-highlight strong {
+      display:block;
+      font-size:28px;
+      line-height:1.15;
+      color:var(--primary-foreground);
     }
 
     input,
@@ -810,7 +858,8 @@
         font-size:31px;
       }
 
-      .toggle-grid {
+      .toggle-grid,
+      .field-grid {
         grid-template-columns:1fr;
       }
     }
@@ -828,7 +877,7 @@
       "price":"0",
       "priceCurrency":"MYR"
     },
-    "description":"Free Malaysia resignation notice calculator to estimate last working day based on resignation date, notice days or calendar months."
+    "description":"Free Malaysia resignation notice calculator to estimate last working day and final salary based on resignation date, notice period, prorated salary and unused annual leave."
   }
   </script>
 
@@ -930,7 +979,7 @@
   <span class="pill">Updated for Malaysia 2026 resignation estimates</span>
   <h1 class="serif">Calculate your <em>last working day</em></h1>
   <p>
-    Free Malaysia resignation notice calculator for employees and HR users. Estimate your last working day using calendar days or calendar months.
+    Free Malaysia resignation notice calculator for employees and HR users. Estimate your last working day using calendar days or calendar months, then calculate prorated final salary and annual leave encashment.
   </p>
 </section>
 
@@ -1010,6 +1059,45 @@
       <p class="input-note">
         This calculator provides an estimate only. Actual last working day may depend on your employment contract, company policy, HR confirmation, public holidays, annual leave and whether your notice period is counted by calendar days or calendar months.
       </p>
+
+      <div class="final-salary-box">
+        <h3 class="serif">Final Salary Estimate</h3>
+        <p>Optional: estimate your final month salary based on your last working day and unused annual leave.</p>
+
+        <div class="field-grid">
+          <div class="form-group">
+            <label for="monthlySalary">Monthly basic salary (RM)</label>
+            <input type="number" id="monthlySalary" value="3000" min="0" step="50">
+          </div>
+
+          <div class="form-group">
+            <label for="prorationBasis">Salary proration basis</label>
+            <select id="prorationBasis" onchange="calculateNotice()">
+              <option value="calendar" selected>Calendar days in month</option>
+              <option value="working26">26 working days estimate</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-grid">
+          <div class="form-group">
+            <label for="unusedLeaveDays">Unused annual leave days</label>
+            <input type="number" id="unusedLeaveDays" value="0" min="0" step="0.5">
+          </div>
+
+          <div class="form-group">
+            <label for="leaveEncashment">Annual leave encashment</label>
+            <select id="leaveEncashment" onchange="calculateNotice()">
+              <option value="yes" selected>Include in final salary</option>
+              <option value="no">Do not include</option>
+            </select>
+          </div>
+        </div>
+
+        <p class="input-note">
+          For 26 working days basis, this calculator estimates working days from the 1st of the month until your last working day, excluding Sundays.
+        </p>
+      </div>
     </div>
 
     <div class="results-panel">
@@ -1030,6 +1118,13 @@
       <div class="result-rows" id="resultRows"></div>
 
       <div class="annual-summary" id="summaryRows"></div>
+
+      <div class="salary-highlight">
+        <span>Estimated Final Salary</span>
+        <strong id="estimatedFinalSalary">RM 0.00</strong>
+      </div>
+
+      <div class="annual-summary" id="finalSalaryRows"></div>
     </div>
 
   </section>
@@ -1126,7 +1221,7 @@
       <h2>What This Resignation Notice Calculator Shows</h2>
 
       <p>
-        This calculator helps estimate resignation date, notice period, last working day, day of week, final salary month and remaining days from today. It is useful for employees planning resignation timing and HR users checking a simple notice period estimate.
+        This calculator helps estimate resignation date, notice period, last working day, day of week, final salary month, prorated salary, annual leave encashment and remaining days from today. It is useful for employees planning resignation timing and HR users checking a simple notice period estimate.
       </p>
 
       <div class="component-grid">
@@ -1154,6 +1249,24 @@
           <p>Confirm exact notice period from your contract terms.</p>
         </a>
       </div>
+    </section>
+
+    <section class="contribution-box">
+      <h2>How Final Salary Is Estimated</h2>
+
+      <p>
+        If you leave before the end of the month, your final month salary may be prorated based on the number of days worked. If unused annual leave is allowed to be encashed, it may be added to your final salary.
+      </p>
+
+      <div class="formula-box">
+        <strong>Estimated Final Salary = Prorated Salary + Annual Leave Encashment</strong>
+        <span>Example: RM3,000 monthly salary ÷ 30 days × 25 days worked + unused leave encashment.</span>
+      </div>
+
+      <p class="payroll-note">
+        <strong>Note:</strong>
+        Final salary treatment can differ depending on employment contract, company policy, payroll cut-off, unpaid leave, deductions, allowances, claims, bonuses and HR approval.
+      </p>
     </section>
 
     <h2>Who Should Use This Resignation Notice Calculator?</h2>
@@ -1358,6 +1471,66 @@
     calculateNotice();
   }
 
+
+  function formatMoney(amount) {
+    return "RM " + amount.toLocaleString('en-MY', {
+      minimumFractionDigits:2,
+      maximumFractionDigits:2
+    });
+  }
+
+  function getDaysInMonth(date) {
+    return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+  }
+
+  function countWorkingDaysUntil(date) {
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const lastDate = date.getDate();
+    let count = 0;
+
+    for (let day = 1; day <= lastDate; day++) {
+      const d = new Date(year, month, day);
+      if (d.getDay() !== 0) {
+        count++;
+      }
+    }
+
+    return count;
+  }
+
+  function calculateFinalSalary(lastDay) {
+    const monthlySalary = parseFloat(document.getElementById("monthlySalary").value) || 0;
+    const prorationBasis = document.getElementById("prorationBasis").value;
+    const unusedLeaveDays = parseFloat(document.getElementById("unusedLeaveDays").value) || 0;
+    const includeLeave = document.getElementById("leaveEncashment").value === "yes";
+
+    const daysInMonth = getDaysInMonth(lastDay);
+    let daysWorked = lastDay.getDate();
+    let dailyRate = daysInMonth ? monthlySalary / daysInMonth : 0;
+    let basisLabel = daysInMonth + " calendar days";
+
+    if (prorationBasis === "working26") {
+      daysWorked = countWorkingDaysUntil(lastDay);
+      dailyRate = monthlySalary / 26;
+      basisLabel = "26 working days estimate";
+    }
+
+    const proratedSalary = dailyRate * daysWorked;
+    const leaveEncashmentAmount = includeLeave ? dailyRate * unusedLeaveDays : 0;
+    const estimatedFinalSalary = proratedSalary + leaveEncashmentAmount;
+
+    document.getElementById("estimatedFinalSalary").textContent = formatMoney(estimatedFinalSalary);
+
+    document.getElementById("finalSalaryRows").innerHTML =
+      '<div><span>Monthly Basic Salary</span><strong>' + formatMoney(monthlySalary) + '</strong></div>' +
+      '<div><span>Proration Basis</span><strong>' + basisLabel + '</strong></div>' +
+      '<div><span>Days Worked in Final Month</span><strong>' + daysWorked + ' days</strong></div>' +
+      '<div><span>Daily Rate Estimate</span><strong>' + formatMoney(dailyRate) + '</strong></div>' +
+      '<div><span>Prorated Salary</span><strong>' + formatMoney(proratedSalary) + '</strong></div>' +
+      '<div><span>Annual Leave Encashment</span><strong>' + formatMoney(leaveEncashmentAmount) + '</strong></div>';
+  }
+
   function calculateNotice() {
     const resignDateValue = document.getElementById("resignDate").value;
 
@@ -1375,6 +1548,8 @@
       document.getElementById("noticeExplanation").textContent = "Please select resignation date.";
       document.getElementById("resultRows").innerHTML = "";
       document.getElementById("summaryRows").innerHTML = "";
+      document.getElementById("estimatedFinalSalary").textContent = "RM 0.00";
+      document.getElementById("finalSalaryRows").innerHTML = "";
       return;
     }
 
@@ -1442,6 +1617,8 @@
       '<div><span>Formula Used</span><strong>' + formulaLabel + '</strong></div>' +
       '<div><span>Final Salary Month</span><strong>' + formatMonthYear(lastDay) + '</strong></div>' +
       '<div><span>Days From Today</span><strong>' + daysFromTodayText + '</strong></div>';
+
+    calculateFinalSalary(lastDay);
   }
 
   function setDefaultDate() {
@@ -1457,6 +1634,10 @@
   document.getElementById("customNotice").addEventListener("input", calculateNotice);
   document.getElementById("noticeMonths").addEventListener("change", calculateNotice);
   document.getElementById("customMonths").addEventListener("input", calculateNotice);
+  document.getElementById("monthlySalary").addEventListener("input", calculateNotice);
+  document.getElementById("prorationBasis").addEventListener("change", calculateNotice);
+  document.getElementById("unusedLeaveDays").addEventListener("input", calculateNotice);
+  document.getElementById("leaveEncashment").addEventListener("change", calculateNotice);
 
   setDefaultDate();
   setNoticeType("days");
