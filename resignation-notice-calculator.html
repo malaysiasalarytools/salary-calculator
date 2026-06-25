@@ -215,144 +215,206 @@
 
     .final-salary-box {
       max-width:1120px;
-      margin:22px auto 32px;
+      margin:26px auto 36px;
       padding:0;
-      background:#f8f5ef;
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
+      background:linear-gradient(135deg, #fbfaf6, #f3eee5);
+      border:1px solid rgba(226,221,210,.92);
+      border-radius:28px;
+      box-shadow:0 26px 70px rgba(47,43,37,.11);
       overflow:hidden;
+      position:relative;
     }
 
-.final-salary-box summary{
-    list-style:none;
-    cursor:pointer;
-    padding:42px 38px;
-    margin:0;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:18px;
-    color:var(--foreground);
-    font-weight:800;
-    background:#f8f5ef;
-    border:none;
-    outline:none;
-    transition:.25s ease;
-}
+    .final-salary-box::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 16% 18%, rgba(47,125,94,.10), transparent 26%),
+        radial-gradient(circle at 86% 20%, rgba(201,161,78,.10), transparent 28%);
+      pointer-events:none;
+    }
 
-    .final-salary-box summary:hover{
-    background:#f3eee5;
-}
+    .final-salary-box summary {
+      list-style:none;
+      cursor:pointer;
+      padding:46px 42px;
+      margin:0;
+      color:var(--foreground);
+      background:transparent;
+      border:none;
+      outline:none;
+      position:relative;
+      z-index:1;
+      -webkit-tap-highlight-color:transparent;
+    }
 
-    .final-salary-box summary:focus,
-.final-salary-box summary:focus-visible{
-    outline:none;
-}
-
-.final-salary-box summary{
-    -webkit-tap-highlight-color:transparent;
-}
-    
     .final-salary-box summary::-webkit-details-marker {
       display:none;
     }
 
-    .salary-left {
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      min-width:0;
+    .paycheck-teaser {
+      min-height:280px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:30px;
+      align-items:center;
     }
 
-    .salary-badge {
-      display:inline-flex;
-      width:max-content;
-      font-size:10px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:var(--accent);
-      background:var(--accent-soft);
-      border:1px solid var(--accent-border);
-      padding:6px 12px;
-      border-radius:999px;
-      font-weight:800;
-      margin-bottom:2px;
+    .paycheck-copy {
+      max-width:720px;
     }
 
-    .salary-left strong {
+    .paycheck-line {
       display:block;
-      font-size:21px;
-      line-height:1.25;
-      color:var(--foreground);
+      width:min(320px, 72vw);
+      height:1px;
+      background:linear-gradient(90deg, var(--primary), transparent);
+      opacity:.65;
+      margin-bottom:34px;
     }
 
-    .salary-left small {
+    .paycheck-kicker {
       display:block;
-      color:var(--muted);
+      margin-bottom:28px;
+      color:var(--primary);
+      font-family:"SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
       font-size:14px;
-      font-weight:700;
-      line-height:1.45;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-weight:800;
     }
 
-    .salary-right {
+    .paycheck-copy h2 {
+      margin:0;
+      max-width:560px;
+      font-size:clamp(30px, 5vw, 50px);
+      line-height:1.05;
+      letter-spacing:-.035em;
+      color:var(--foreground);
+      font-family:Georgia, "Times New Roman", serif;
+      font-weight:400;
+    }
+
+    .paycheck-copy p {
+      max-width:540px;
+      margin:24px 0 0;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.72;
+    }
+
+    .paycheck-action {
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:8px;
-      padding:14px 20px;
+      gap:10px;
+      margin-top:34px;
+      min-width:260px;
+      padding:15px 22px;
       border-radius:999px;
-      background:var(--accent);
-      color:#fff;
+      background:var(--primary);
+      color:var(--primary-foreground);
       font-size:15px;
       font-weight:900;
-      white-space:nowrap;
-      flex:0 0 auto;
-      transition:.2s ease;
-      box-shadow:0 12px 26px rgba(47,125,94,.16);
+      text-decoration:none;
+      box-shadow:0 18px 36px rgba(47,43,37,.16);
+      transition:.22s ease;
+      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
-    .salary-summary:hover .salary-right {
-      transform:translateX(3px);
-      filter:brightness(.96);
+    .paycheck-action .hide-label {
+      display:none;
     }
 
-    .salary-right .arrow {
+    .paycheck-arrow {
       display:inline-block;
-      transition:.2s ease;
+      transition:.22s ease;
     }
 
-    .salary-right .hide-label {
+    .salary-summary:hover .paycheck-action {
+      transform:translateY(-2px);
+      background:var(--accent);
+      box-shadow:0 20px 40px rgba(47,125,94,.18);
+    }
+
+    .salary-summary:hover .paycheck-arrow {
+      transform:translateX(4px);
+    }
+
+    .paycheck-note-card {
+      width:270px;
+      padding:22px;
+      border-radius:22px;
+      background:rgba(255,255,255,.60);
+      border:1px solid rgba(226,221,210,.80);
+      box-shadow:0 18px 45px rgba(47,43,37,.08);
+    }
+
+    .paycheck-note-card span {
+      display:block;
+      color:var(--accent);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+
+    .paycheck-note-card strong {
+      display:block;
+      color:var(--foreground);
+      font-size:22px;
+      line-height:1.18;
+      letter-spacing:-.02em;
+      margin-bottom:10px;
+    }
+
+    .paycheck-note-card small {
+      display:block;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.55;
+      font-weight:700;
+    }
+
+    .final-salary-box[open] .paycheck-action .estimate-label {
       display:none;
     }
 
-    .final-salary-box[open] .salary-right .estimate-label {
-      display:none;
-    }
-
-    .final-salary-box[open] .salary-right .hide-label {
+    .final-salary-box[open] .paycheck-action .hide-label {
       display:inline;
     }
 
-    .final-salary-box[open] .salary-right .arrow {
+    .final-salary-box[open] .paycheck-arrow {
       transform:rotate(-90deg);
     }
 
-.final-salary-content {
-    padding:0 24px 24px;
-    border-top:1px solid var(--border);
-}
+    .final-salary-content {
+      padding:34px 38px 38px;
+      border-top:1px solid var(--border);
+      background:rgba(251,250,246,.78);
+      position:relative;
+      z-index:1;
+    }
+
+    .final-salary-header {
+      max-width:760px;
+      margin-bottom:24px;
+    }
 
     .final-salary-box h3 {
-      margin:0 0 6px;
-      font-size:18px;
+      margin:0 0 8px;
+      font-size:28px;
+      line-height:1.16;
       color:var(--foreground);
     }
 
     .final-salary-box p {
-      margin:0 0 16px;
+      margin:0 0 18px;
       color:var(--muted);
-      font-size:13px;
+      font-size:14px;
+      line-height:1.65;
     }
 
     .basis-extra {
@@ -360,39 +422,44 @@
     }
 
     .salary-highlight {
-      margin-top:16px;
-      padding:16px;
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:14px;
+      margin-top:22px;
+      padding:24px;
+      border-radius:22px;
+      background:var(--primary);
+      border:1px solid var(--primary);
+      box-shadow:0 22px 50px rgba(47,43,37,.16);
     }
 
     .salary-highlight span {
       display:block;
-      color:rgba(246,243,236,.65);
+      color:rgba(246,243,236,.68);
       font-size:13px;
-      margin-bottom:4px;
+      font-weight:800;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      margin-bottom:8px;
     }
 
     .salary-highlight strong {
       display:block;
-      font-size:28px;
-      line-height:1.15;
+      font-size:clamp(32px, 5vw, 46px);
+      line-height:1.05;
+      letter-spacing:-.035em;
       color:var(--primary-foreground);
     }
 
-    .final-salary-box .salary-highlight {
-      background:var(--primary);
-      border-color:var(--primary);
-      box-shadow:0 18px 40px rgba(47,43,37,.12);
-    }
-
     .final-salary-box .final-salary-summary {
+      margin-top:18px;
+      padding-top:18px;
       border-top:1px solid var(--border);
     }
 
     .final-salary-box .final-salary-summary div {
       color:var(--muted);
+      background:rgba(255,255,255,.45);
+      border:1px solid rgba(226,221,210,.70);
+      border-radius:12px;
+      padding:11px 13px;
     }
 
     .final-salary-box .final-salary-summary strong {
@@ -969,35 +1036,56 @@ input[type="date"]::-webkit-date-and-time-value {
 
       .final-salary-box {
         margin:18px 10px 28px;
+        border-radius:24px;
       }
 
       .final-salary-box summary {
-        padding:20px;
-        flex-direction:column;
-        align-items:flex-start;
-        gap:16px;
+        padding:28px 20px;
       }
 
-      .salary-left strong {
-        font-size:19px;
+      .paycheck-teaser {
+        min-height:auto;
+        grid-template-columns:1fr;
+        gap:22px;
       }
 
-      .salary-left small {
-        font-size:13px;
+      .paycheck-line {
+        margin-bottom:24px;
       }
 
-      .salary-right {
+      .paycheck-kicker {
+        margin-bottom:18px;
+        font-size:12px;
+      }
+
+      .paycheck-copy p {
+        font-size:15px;
+        line-height:1.65;
+        margin-top:18px;
+      }
+
+      .paycheck-action {
         width:100%;
-        border-radius:12px;
-        padding:13px 16px;
+        min-width:0;
+        border-radius:14px;
+        margin-top:24px;
       }
 
-      .salary-summary:hover .salary-right {
+      .paycheck-note-card {
+        width:100%;
+      }
+
+      .salary-summary:hover .paycheck-action,
+      .salary-summary:hover .paycheck-arrow {
         transform:none;
       }
 
       .final-salary-content {
-        padding:0 20px 20px;
+        padding:24px 20px 22px;
+      }
+
+      .final-salary-box h3 {
+        font-size:24px;
       }
 
       .nav-inner {
@@ -1284,22 +1372,33 @@ input[type="date"]::-webkit-date-and-time-value {
 
   <details class="final-salary-box optional-salary" id="finalSalaryBox">
     <summary class="salary-summary">
-      <div class="salary-left">
-        <span class="salary-badge">💵 FINAL PAYCHECK</span>
-        <strong>💰 Check Your Final Salary Before You Resign</strong>
-        <small>Find out how much you'll receive on your final payday.</small>
-      </div>
+      <div class="paycheck-teaser">
+        <div class="paycheck-copy">
+          <span class="paycheck-line"></span>
+          <span class="paycheck-kicker">FINAL PAYCHECK</span>
+          <h2>How Much Will You Get?</h2>
+          <p>See your estimated final salary, annual leave payout and final paycheck before you leave your company.</p>
 
-      <div class="salary-right" aria-hidden="true">
-        <span class="estimate-label">Calculate Final Salary</span>
-        <span class="hide-label">Hide Calculator</span>
-        <span class="arrow">→</span>
+          <span class="paycheck-action" aria-hidden="true">
+            <span class="estimate-label">Calculate My Final Salary</span>
+            <span class="hide-label">Hide Final Salary Calculator</span>
+            <span class="paycheck-arrow">→</span>
+          </span>
+        </div>
+
+        <div class="paycheck-note-card" aria-hidden="true">
+          <span>Includes</span>
+          <strong>Prorated salary + leave encashment</strong>
+          <small>Useful when your last working day falls before month end.</small>
+        </div>
       </div>
     </summary>
 
     <div class="final-salary-content">
-      <h3 class="serif">Final Salary Estimate</h3>
-      <p>Optional: estimate your final month salary based on your last working day, salary proration basis and unused annual leave.</p>
+      <div class="final-salary-header">
+        <h3 class="serif">Final Salary Estimate</h3>
+        <p>Optional: estimate your final month salary based on your last working day, salary proration basis and unused annual leave.</p>
+      </div>
 
 <div class="field-grid">
   <div class="form-group">
