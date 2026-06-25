@@ -227,11 +227,11 @@
     .final-salary-box summary {
       list-style:none;
       cursor:pointer;
-      padding:22px 24px;
+      padding:24px;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      gap:16px;
+      gap:18px;
       color:var(--foreground);
       font-weight:800;
     }
@@ -240,34 +240,84 @@
       display:none;
     }
 
-    .final-salary-box summary::after {
-      content:"+";
-      width:34px;
-      height:34px;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      background:var(--accent-soft);
+    .salary-left {
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      min-width:0;
+    }
+
+    .salary-badge {
+      display:inline-flex;
+      width:max-content;
+      font-size:11px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
       color:var(--accent);
-      font-size:22px;
-      flex:0 0 auto;
+      background:var(--accent-soft);
+      border:1px solid var(--accent-border);
+      padding:5px 10px;
+      border-radius:999px;
+      font-weight:800;
+      margin-bottom:2px;
     }
 
-    .final-salary-box[open] summary::after {
-      content:"−";
-    }
-
-    .final-salary-box summary span,
-    .final-salary-box summary small {
+    .salary-left strong {
       display:block;
+      font-size:21px;
+      line-height:1.25;
+      color:var(--foreground);
     }
 
-    .final-salary-box summary small {
-      margin-top:4px;
+    .salary-left small {
+      display:block;
       color:var(--muted);
-      font-size:13px;
+      font-size:14px;
       font-weight:700;
       line-height:1.45;
+    }
+
+    .salary-right {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:12px 16px;
+      border-radius:999px;
+      background:var(--accent);
+      color:#fff;
+      font-size:14px;
+      font-weight:900;
+      white-space:nowrap;
+      flex:0 0 auto;
+      transition:.2s ease;
+      box-shadow:0 12px 26px rgba(47,125,94,.16);
+    }
+
+    .salary-summary:hover .salary-right {
+      transform:translateX(3px);
+      filter:brightness(.96);
+    }
+
+    .salary-right .arrow {
+      display:inline-block;
+      transition:.2s ease;
+    }
+
+    .salary-right .hide-label {
+      display:none;
+    }
+
+    .final-salary-box[open] .salary-right .estimate-label {
+      display:none;
+    }
+
+    .final-salary-box[open] .salary-right .hide-label {
+      display:inline;
+    }
+
+    .final-salary-box[open] .salary-right .arrow {
+      transform:rotate(-90deg);
     }
 
     .final-salary-content {
@@ -903,8 +953,28 @@ input[type="date"]::-webkit-date-and-time-value {
       }
 
       .final-salary-box summary {
-        padding:18px 20px;
+        padding:20px;
+        flex-direction:column;
         align-items:flex-start;
+        gap:16px;
+      }
+
+      .salary-left strong {
+        font-size:19px;
+      }
+
+      .salary-left small {
+        font-size:13px;
+      }
+
+      .salary-right {
+        width:100%;
+        border-radius:12px;
+        padding:13px 16px;
+      }
+
+      .salary-summary:hover .salary-right {
+        transform:none;
       }
 
       .final-salary-content {
@@ -1194,9 +1264,18 @@ input[type="date"]::-webkit-date-and-time-value {
   </section>
 
   <details class="final-salary-box optional-salary" id="finalSalaryBox">
-    <summary>
-      <span>Need final salary estimate?</span>
-      <small>Open optional prorated salary and annual leave encashment calculator</small>
+    <summary class="salary-summary">
+      <div class="salary-left">
+        <span class="salary-badge">Bonus Tool</span>
+        <strong>💰 Resigning? Don't Forget Your Final Salary</strong>
+        <small>Estimate your final salary, annual leave payout and final paycheck.</small>
+      </div>
+
+      <div class="salary-right" aria-hidden="true">
+        <span class="estimate-label">Estimate Now</span>
+        <span class="hide-label">Hide Calculator</span>
+        <span class="arrow">→</span>
+      </div>
     </summary>
 
     <div class="final-salary-content">
