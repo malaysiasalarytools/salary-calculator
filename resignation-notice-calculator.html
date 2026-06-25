@@ -1199,9 +1199,6 @@ input[type="date"]::-webkit-date-and-time-value {
     ]
   }
   </script>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  
 </head>
 
 <body>
@@ -1239,11 +1236,8 @@ input[type="date"]::-webkit-date-and-time-value {
 
       <div class="form-group">
         <label for="resignDate">Resignation date</label>
-      <input
-        type="text"
-        id="resignDate"
-        placeholder="Select resignation date">
-       </div>
+        <input type="date" id="resignDate">
+      </div>
 
       <div class="form-group">
         <label>Notice calculation type</label>
@@ -1677,8 +1671,6 @@ input[type="date"]::-webkit-date-and-time-value {
   </p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  
 <script>
   let noticeType = "days";
 
@@ -2002,18 +1994,15 @@ input[type="date"]::-webkit-date-and-time-value {
     }
   }
 
-flatpickr("#resignDate", {
-    dateFormat: "Y-m-d",
-    altInput: true,
-    altFormat: "d/m/Y",
-    defaultDate: new Date(),
-    disableMobile: true,
-    position: "below left",
-    onChange: function () {
-        calculateNotice();
-    }
-});
+  function setDefaultDate() {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, "0");
+    const dd = String(today.getDate()).padStart(2, "0");
+    document.getElementById("resignDate").value = yyyy + "-" + mm + "-" + dd;
+  }
 
+  document.getElementById("resignDate").addEventListener("input", calculateNotice);
   document.getElementById("noticeDays").addEventListener("change", calculateNotice);
   document.getElementById("customNotice").addEventListener("input", calculateNotice);
   document.getElementById("noticeMonths").addEventListener("change", calculateNotice);
@@ -2028,6 +2017,7 @@ flatpickr("#resignDate", {
   document.getElementById("finalSalaryBox").addEventListener("toggle", calculateNotice);
   document.getElementById("leaveWorkingDays").addEventListener("input", calculateNotice);
 
+  setDefaultDate();
   setNoticeType("days");
   calculateNotice();
 </script>
