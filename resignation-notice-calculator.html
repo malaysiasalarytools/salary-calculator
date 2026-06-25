@@ -233,6 +233,10 @@
       font-size:13px;
     }
 
+    .basis-extra {
+      display:none;
+    }
+
     .salary-highlight {
       margin-top:16px;
       padding:16px;
@@ -1082,7 +1086,7 @@ input[type="date"]::-webkit-date-and-time-value {
 
       <div class="final-salary-box">
         <h3 class="serif">Final Salary Estimate</h3>
-        <p>Optional: estimate your final month salary based on your last working day and unused annual leave.</p>
+        <p>Optional: estimate your final month salary based on your last working day, salary proration basis and unused annual leave.</p>
 
         <div class="field-grid">
           <div class="form-group">
@@ -1094,8 +1098,21 @@ input[type="date"]::-webkit-date-and-time-value {
             <label for="prorationBasis">Salary proration basis</label>
             <select id="prorationBasis" onchange="calculateNotice()">
               <option value="calendar" selected>Calendar days in month</option>
-              <option value="working26">26 working days estimate</option>
+              <option value="working">Actual working days</option>
+              <option value="fixed26">Fixed 26 days</option>
             </select>
+          </div>
+        </div>
+
+        <div class="field-grid basis-extra" id="workingDaysWrap">
+          <div class="form-group">
+            <label for="workingDaysInMonth">Working days in final month</label>
+            <input type="number" id="workingDaysInMonth" value="22" min="1" step="1">
+          </div>
+
+          <div class="form-group">
+            <label for="workingDaysWorked">Working days worked</label>
+            <input type="number" id="workingDaysWorked" value="18" min="0" step="0.5">
           </div>
         </div>
 
@@ -1114,8 +1131,25 @@ input[type="date"]::-webkit-date-and-time-value {
           </div>
         </div>
 
+        <div class="field-grid" id="leaveBasisWrap">
+          <div class="form-group">
+            <label for="leaveBasis">Leave encashment basis</label>
+            <select id="leaveBasis" onchange="calculateNotice()">
+              <option value="same" selected>Same as salary proration basis</option>
+              <option value="calendar">Calendar days in month</option>
+              <option value="working">Actual working days</option>
+              <option value="fixed26">Fixed 26 days</option>
+            </select>
+          </div>
+
+          <div class="form-group basis-extra" id="leaveWorkingDaysWrap">
+            <label for="leaveWorkingDays">Working days for leave rate</label>
+            <input type="number" id="leaveWorkingDays" value="22" min="1" step="1">
+          </div>
+        </div>
+
         <p class="input-note">
-          For 26 working days basis, this calculator estimates working days from the 1st of the month until your last working day, excluding Sundays.
+          Calendar days uses the number of days in the final salary month. Actual working days lets users enter the company payroll basis manually. Fixed 26 days is commonly used by some payroll practices, but the correct method depends on contract and company policy.
         </p>
       </div>
     </div>
@@ -1280,12 +1314,12 @@ input[type="date"]::-webkit-date-and-time-value {
 
       <div class="formula-box">
         <strong>Estimated Final Salary = Prorated Salary + Annual Leave Encashment</strong>
-        <span>Example: RM3,000 monthly salary ÷ 30 days × 25 days worked + unused leave encashment.</span>
+        <span>Choose calendar days, actual working days or fixed 26 days depending on how your company prorates final salary.</span>
       </div>
 
       <p class="payroll-note">
         <strong>Note:</strong>
-        Final salary treatment can differ depending on employment contract, company policy, payroll cut-off, unpaid leave, deductions, allowances, claims, bonuses and HR approval.
+        Final salary treatment can differ depending on employment contract, company policy, payroll cut-off, unpaid leave, deductions, allowances, claims, bonuses, annual leave encashment basis and HR approval.
       </p>
     </section>
 
@@ -1519,35 +1553,104 @@ input[type="date"]::-webkit-date-and-time-value {
     return count;
   }
 
-  function calculateFinalSalary(lastDay) {
+  function getProrationDetails(lastDay) {
     const monthlySalary = parseFloat(document.getElementById("monthlySalary").value) || 0;
-    const prorationBasis = document.getElementById("prorationBasis").value;
-    const unusedLeaveDays = parseFloat(document.getElementById("unusedLeaveDays").value) || 0;
-    const includeLeave = document.getElementById("leaveEncashment").value === "yes";
-
+    const basis = document.getElementById("prorationBasis").value;
     const daysInMonth = getDaysInMonth(lastDay);
-    let daysWorked = lastDay.getDate();
-    let dailyRate = daysInMonth ? monthlySalary / daysInMonth : 0;
-    let basisLabel = daysInMonth + " calendar days";
 
-    if (prorationBasis === "working26") {
-      daysWorked = countWorkingDaysUntil(lastDay);
-      dailyRate = monthlySalary / 26;
-      basisLabel = "26 working days estimate";
+    let divisor = daysInMonth;
+    let daysWorked = lastDay.getDate();
+    let basisLabel = daysInMonth + " calendar days";
+    let daysWorkedLabel = daysWorked + " calendar days";
+
+    if (basis === "working") {
+      divisor = parseFloat(document.getElementById("workingDaysInMonth").value) || 1;
+      daysWorked = parseFloat(document.getElementById("workingDaysWorked").value) || 0;
+      basisLabel = divisor + " actual working days";
+      daysWorkedLabel = daysWorked + " working days";
     }
 
-    const proratedSalary = dailyRate * daysWorked;
-    const leaveEncashmentAmount = includeLeave ? dailyRate * unusedLeaveDays : 0;
+    if (basis === "fixed26") {
+      divisor = 26;
+      daysWorked = countWorkingDaysUntil(lastDay);
+      basisLabel = "Fixed 26 days";
+      daysWorkedLabel = daysWorked + " estimated working days";
+    }
+
+    const dailyRate = divisor ? monthlySalary / divisor : 0;
+
+    return {
+      monthlySalary,
+      basis,
+      divisor,
+      daysWorked,
+      dailyRate,
+      basisLabel,
+      daysWorkedLabel
+    };
+  }
+
+  function getLeaveDailyRate(lastDay, monthlySalary, salaryBasis) {
+    const selectedLeaveBasis = document.getElementById("leaveBasis").value;
+    const finalLeaveBasis = selectedLeaveBasis === "same" ? salaryBasis : selectedLeaveBasis;
+    const daysInMonth = getDaysInMonth(lastDay);
+
+    let divisor = daysInMonth;
+    let label = daysInMonth + " calendar days";
+
+    if (finalLeaveBasis === "working") {
+      divisor = parseFloat(document.getElementById("leaveWorkingDays").value) || 1;
+      label = divisor + " actual working days";
+    }
+
+    if (finalLeaveBasis === "fixed26") {
+      divisor = 26;
+      label = "Fixed 26 days";
+    }
+
+    return {
+      leaveDailyRate: divisor ? monthlySalary / divisor : 0,
+      leaveBasisLabel: label
+    };
+  }
+
+  function updateFinalSalaryInputs() {
+    const prorationBasis = document.getElementById("prorationBasis").value;
+    const leaveEncashment = document.getElementById("leaveEncashment").value;
+    const leaveBasis = document.getElementById("leaveBasis").value;
+
+    document.getElementById("workingDaysWrap").style.display = prorationBasis === "working" ? "grid" : "none";
+
+    const showLeaveBasis = leaveEncashment === "yes";
+    document.getElementById("leaveBasisWrap").style.display = showLeaveBasis ? "grid" : "none";
+
+    const resolvedLeaveBasis = leaveBasis === "same" ? prorationBasis : leaveBasis;
+    document.getElementById("leaveWorkingDaysWrap").style.display =
+      showLeaveBasis && resolvedLeaveBasis === "working" ? "block" : "none";
+  }
+
+  function calculateFinalSalary(lastDay) {
+    updateFinalSalaryInputs();
+
+    const proration = getProrationDetails(lastDay);
+    const unusedLeaveDays = parseFloat(document.getElementById("unusedLeaveDays").value) || 0;
+    const includeLeave = document.getElementById("leaveEncashment").value === "yes";
+    const leaveRate = getLeaveDailyRate(lastDay, proration.monthlySalary, proration.basis);
+
+    const proratedSalary = proration.dailyRate * proration.daysWorked;
+    const leaveEncashmentAmount = includeLeave ? leaveRate.leaveDailyRate * unusedLeaveDays : 0;
     const estimatedFinalSalary = proratedSalary + leaveEncashmentAmount;
 
     document.getElementById("estimatedFinalSalary").textContent = formatMoney(estimatedFinalSalary);
 
     document.getElementById("finalSalaryRows").innerHTML =
-      '<div><span>Monthly Basic Salary</span><strong>' + formatMoney(monthlySalary) + '</strong></div>' +
-      '<div><span>Proration Basis</span><strong>' + basisLabel + '</strong></div>' +
-      '<div><span>Days Worked in Final Month</span><strong>' + daysWorked + ' days</strong></div>' +
-      '<div><span>Daily Rate Estimate</span><strong>' + formatMoney(dailyRate) + '</strong></div>' +
+      '<div><span>Monthly Basic Salary</span><strong>' + formatMoney(proration.monthlySalary) + '</strong></div>' +
+      '<div><span>Salary Proration Basis</span><strong>' + proration.basisLabel + '</strong></div>' +
+      '<div><span>Days Worked in Final Month</span><strong>' + proration.daysWorkedLabel + '</strong></div>' +
+      '<div><span>Salary Daily Rate</span><strong>' + formatMoney(proration.dailyRate) + '</strong></div>' +
       '<div><span>Prorated Salary</span><strong>' + formatMoney(proratedSalary) + '</strong></div>' +
+      '<div><span>Leave Encashment Basis</span><strong>' + (includeLeave ? leaveRate.leaveBasisLabel : 'Not included') + '</strong></div>' +
+      '<div><span>Leave Daily Rate</span><strong>' + (includeLeave ? formatMoney(leaveRate.leaveDailyRate) : 'RM 0.00') + '</strong></div>' +
       '<div><span>Annual Leave Encashment</span><strong>' + formatMoney(leaveEncashmentAmount) + '</strong></div>';
   }
 
@@ -1656,8 +1759,12 @@ input[type="date"]::-webkit-date-and-time-value {
   document.getElementById("customMonths").addEventListener("input", calculateNotice);
   document.getElementById("monthlySalary").addEventListener("input", calculateNotice);
   document.getElementById("prorationBasis").addEventListener("change", calculateNotice);
+  document.getElementById("workingDaysInMonth").addEventListener("input", calculateNotice);
+  document.getElementById("workingDaysWorked").addEventListener("input", calculateNotice);
   document.getElementById("unusedLeaveDays").addEventListener("input", calculateNotice);
   document.getElementById("leaveEncashment").addEventListener("change", calculateNotice);
+  document.getElementById("leaveBasis").addEventListener("change", calculateNotice);
+  document.getElementById("leaveWorkingDays").addEventListener("input", calculateNotice);
 
   setDefaultDate();
   setNoticeType("days");
