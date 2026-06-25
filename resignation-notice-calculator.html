@@ -441,9 +441,11 @@ select {
   color:var(--foreground);
   outline:none;
   line-height:56px;
+  appearance:none;
+  -webkit-appearance:none;
 }
 
-input[type="date"] {
+ input[type="date"] {
   display:block;
   width:100%;
   min-width:0;
@@ -451,8 +453,6 @@ input[type="date"] {
   line-height:56px;
   padding:0 14px;
   text-align:center;
-  appearance:auto;
-  -webkit-appearance:auto;
 }
 
 input[type="date"]::-webkit-date-and-time-value {
