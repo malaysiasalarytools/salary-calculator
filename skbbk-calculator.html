@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Malaysia SKBBK Calculator 2026 | LINDUNG 24 Jam Deduction</title>
+
+  <link rel="canonical" href="https://malaysiasalarytools.com/skbbk-calculator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <meta name="description" content="Free Malaysia SKBBK Calculator 2026. Calculate your PERKESO LINDUNG 24 Jam employee deduction using the official Phase 1 contribution schedule, annual contribution and salary after SKBBK.">
+
+  <meta name="keywords" content="Malaysia SKBBK calculator, LINDUNG 24 Jam calculator, PERKESO SKBBK deduction, non-employment injury scheme, SKBBK contribution 2026">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+
+  <script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6819619632324210"
+  crossorigin="anonymous"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://malaysiasalarytools.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://malaysiasalarytools.com/calculators.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "SKBBK Calculator",
+        "item": "https://malaysiasalarytools.com/skbbk-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is SKBBK calculated in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SKBBK is calculated according to the official PERKESO wage contribution schedule. The Phase 1 rate is 0.75%, but the statutory payroll amount is determined by salary bands rather than a simple percentage applied to every exact salary."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who pays the SKBBK contribution?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The SKBBK contribution is fully borne by the employee. The employer deducts and pays it to PERKESO on the employee's behalf."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is SKBBK compulsory for Malaysian employees?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Participation is voluntary for local employees under the latest PERKESO position. It remains mandatory for eligible foreign workers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the maximum Phase 1 SKBBK contribution?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Under the official Phase 1 schedule, the employee SKBBK contribution is RM44.65 for monthly wages above RM5,900, including wages above RM6,000."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this calculator include normal SOCSO, EIS, EPF and PCB?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. This calculator focuses only on the SKBBK or LINDUNG 24 Jam deduction. Use the full Malaysia salary calculator for other payroll deductions."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --background: #f4f1ea;
+      --card: #fbfaf6;
+      --foreground: #302c26;
+      --muted: #7c766c;
+      --primary: #2f2b25;
+      --primary-soft: #403a32;
+      --primary-foreground: #f6f3ec;
+      --accent: #2f7d5e;
+      --accent-soft: rgba(47,125,94,.10);
+      --accent-border: rgba(47,125,94,.22);
+      --border: #e2ddd2;
+      --white: #ffffff;
+      --radius: 16px;
+      --shadow: 0 18px 45px rgba(47,43,37,.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47,125,94,.08), transparent 34%),
+        linear-gradient(135deg, #f4f1ea, #efe9de);
+      margin: 0;
+      padding: 0;
+      color: var(--foreground);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .serif {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    .top-nav {
+      background: rgba(251,250,246,.84);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      width: 220px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: nowrap;
+      min-width: 0;
+    }
+
+    .nav-links a {
+      display: block;
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 15px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      white-space: nowrap;
+      background: transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: var(--primary);
+      color: var(--primary-foreground);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 56px 20px 18px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      padding: 7px 15px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      color: var(--foreground);
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 18px auto 0;
+      font-size: 17px;
+      color: var(--muted);
+    }
+
+    .main-wrapper {
+      padding: 16px 20px 44px;
+    }
+
+    .calculator-shell {
+      max-width: 1120px;
+      margin: 28px auto 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .panel,
+    .seo {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .panel {
+      padding: 28px;
+    }
+
+    .panel h2 {
+      margin: 0 0 4px;
+      font-size: 22px;
+      color: var(--foreground);
+    }
+
+    .panel .sub {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--foreground);
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .input-row {
+      position: relative;
+    }
+
+    .input-row span {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 15px 14px 15px 46px;
+      font-size: 20px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+      color: var(--foreground);
+      outline: none;
+    }
+
+    select {
+      width: 100%;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+      color: var(--foreground);
+      outline: none;
+    }
+
+    input[type="number"]:focus,
+    select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(47,125,94,.14);
+    }
+
+    input[type="range"] {
+      width: 100%;
+      margin-top: 18px;
+      accent-color: var(--accent);
+    }
+
+    .preset-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .preset,
+    .calc-button {
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .preset {
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--foreground);
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .preset:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .custom-rate-grid {
+      display: none;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .custom-rate-grid.show {
+      display: grid;
+    }
+
+    .custom-rate-grid input[type="number"] {
+      padding-left: 14px;
+      font-size: 16px;
+    }
+
+    .calc-button {
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 18px;
+      margin-top: 6px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .calc-button:hover {
+      filter: brightness(.95);
+    }
+
+    .secondary-button {
+      display: block;
+      text-align: center;
+      width: 100%;
+      background: var(--white);
+      color: var(--accent);
+      border: 1px solid var(--accent-border);
+      padding: 13px 18px;
+      margin-top: 12px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .secondary-button:hover {
+      background: var(--accent-soft);
+    }
+
+    .input-note {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .results-panel {
+      background: var(--primary);
+      color: var(--primary-foreground);
+      border: 1px solid var(--primary);
+      padding: 28px;
+      border-radius: var(--radius);
+      box-shadow: 0 24px 55px rgba(47,43,37,.20);
+    }
+
+    .results-panel h2 {
+      margin: 0 0 4px;
+      font-size: 22px;
+      color: var(--primary-foreground);
+    }
+
+    .results-panel .sub {
+      margin: 0;
+      color: rgba(246,243,236,.62);
+      font-size: 14px;
+    }
+
+    .net {
+      font-size: clamp(36px, 5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      margin: 16px 0 0;
+    }
+
+    .net-caption {
+      color: rgba(246,243,236,.62);
+      font-size: 14px;
+      margin-top: 0;
+    }
+
+    .bar {
+      height: 9px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      display: flex;
+      overflow: hidden;
+      margin: 22px 0;
+    }
+
+    .bar i {
+      display: block;
+      height: 100%;
+    }
+
+    .result-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .result-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      font-size: 14px;
+    }
+
+    .result-line:last-child {
+      border-bottom: none;
+    }
+
+    .result-line .k {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(246,243,236,.86);
+    }
+
+    .result-line .v {
+      font-weight: 800;
+      text-align: right;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 3px;
+      flex: 0 0 auto;
+    }
+
+    .annual-summary {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,.18);
+      display: grid;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .annual-summary div {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: rgba(246,243,236,.82);
+    }
+
+    .annual-summary strong {
+      color: var(--primary-foreground);
+    }
+
+    .seo {
+      max-width: 1120px;
+      margin: 30px auto;
+      padding: 30px;
+      line-height: 1.72;
+    }
+
+    .seo h2,
+    .section-title {
+      font-size: clamp(25px, 4vw, 36px);
+      line-height: 1.15;
+      margin: 34px 0 12px;
+      color: var(--foreground);
+      letter-spacing: -.01em;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    .seo h2:first-child {
+      margin-top: 0;
+    }
+
+    .seo h3 {
+      font-size: 17px;
+      margin-top: 18px;
+    }
+
+    .seo p,
+    .seo li {
+      color: var(--muted);
+    }
+
+    .formula-box,
+    .contribution-box,
+    .salary-guides-box,
+    .official-box {
+      background: #f8f5ef;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 26px 0;
+    }
+
+    .formula-box {
+      text-align: center;
+    }
+
+    .formula-box strong {
+      display: block;
+      font-size: 22px;
+      color: var(--foreground);
+      margin-bottom: 8px;
+    }
+
+    .formula-box span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .component-grid,
+    .guide-mini-grid,
+    .rate-grid,
+    .official-links {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .component-grid,
+    .rate-grid,
+    .guide-mini-grid,
+    .official-links {
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .component-card,
+    .guide-mini-grid a,
+    .rate-card,
+    .official-links a,
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .component-card,
+    .official-links a {
+      display: block;
+      padding: 20px;
+      text-decoration: none;
+      color: inherit;
+      transition: .18s ease;
+    }
+
+    .component-card:hover,
+    .guide-mini-grid a:hover,
+    .official-links a:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 30px rgba(47,43,37,.08);
+    }
+
+    .component-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      display: grid;
+      place-items: center;
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .component-card h3,
+    .rate-card h3,
+    .official-links h3 {
+      margin: 8px 0 4px;
+      color: var(--foreground);
+    }
+
+    .component-card p,
+    .rate-card p,
+    .official-links p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .rate-card {
+      padding: 20px;
+    }
+
+    .rate-card strong {
+      display: block;
+      color: var(--accent);
+      font-size: 28px;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .contribution-table-wrap {
+      overflow-x: auto;
+      margin-top: 18px;
+    }
+
+    .contribution-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      min-width: 520px;
+    }
+
+    .contribution-table th {
+      background: #f1ece3;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: left;
+      letter-spacing: .03em;
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contribution-table td {
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--foreground);
+      font-size: 14px;
+    }
+
+    .contribution-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .contribution-note {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .payroll-note {
+      margin-top: 20px;
+      background: var(--card);
+      border-left: 4px solid var(--accent);
+      padding: 14px;
+      border-radius: 10px;
+      color: var(--muted);
+    }
+
+    .faq-box {
+      margin-top: 18px;
+      max-width: 780px;
+    }
+
+    .faq-item {
+      padding: 4px 20px;
+      margin-bottom: 12px;
+    }
+
+    .faq-item summary {
+      font-weight: 800;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--foreground);
+      padding: 16px 0;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      color: var(--accent);
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .faq-item[open] summary::after {
+      content: "−";
+    }
+
+    .faq-item p {
+      padding-bottom: 18px;
+      margin-top: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .guide-mini-grid a {
+      display: block;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: var(--foreground);
+      font-weight: 800;
+      text-align: center;
+      transition: .18s ease;
+    }
+
+    .view-all-guides {
+      text-align: center;
+      margin: 20px 0 0;
+    }
+
+    .view-all-guides a {
+      color: var(--accent);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 900px) {
+      .calculator-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .seo {
+        padding: 24px;
+      }
+
+      .custom-rate-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .nav-inner {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .nav-links {
+        width: auto;
+        flex: 1;
+        min-width: 0;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding: 38px 14px 12px;
+      }
+
+      .main-wrapper {
+        padding: 10px;
+      }
+
+      .panel,
+      .results-panel,
+      .seo {
+        padding: 20px;
+      }
+
+      .nav-inner {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        gap: 8px;
+      }
+
+      .brand img {
+        width: 150px;
+      }
+
+      .nav-links {
+        gap: 6px;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+
+      .component-grid,
+      .rate-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .component-card,
+      .rate-card {
+        padding: 14px;
+        text-align: center;
+      }
+
+      .component-icon {
+        margin-left: auto;
+        margin-right: auto;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+      }
+
+      .component-card h3,
+      .rate-card h3 {
+        font-size: 15px;
+        margin: 6px 0;
+      }
+
+      .component-card p,
+      .rate-card p {
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .net {
+        font-size: 34px;
+      }
+    }
+  
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.10);
+      color: rgba(246,243,236,.88);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .status-badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #75c69d;
+    }
+
+    .small-link {
+      color: var(--accent);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .small-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="top-nav">
+    <div class="nav-inner">
+
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="calculators.html" class="active">Calculators</a>
+        <a href="guides.html">Guides</a>
+        <a href="about.html">About</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <section class="hero">
+    <span class="pill">Uses the official Malaysia 2026 Phase 1 schedule</span>
+    <h1 class="serif">Calculate your <em>SKBBK deduction</em> in Malaysia</h1>
+    <p>
+      Free Malaysia SKBBK calculator for employees and payroll users. Estimate your monthly
+      PERKESO LINDUNG 24 Jam deduction, annual contribution and salary after SKBBK using the
+      official Phase 1 wage contribution bands.
+    </p>
+  </section>
+
+  <main class="main-wrapper">
+
+    <section class="calculator-shell" id="calculator">
+
+      <div class="panel">
+        <h2 class="serif">Calculate Your SKBBK</h2>
+        <p class="sub">Enter your monthly wages and select your participation category.</p>
+
+        <div class="form-group">
+          <label for="salary">Monthly salary / wages</label>
+          <div class="input-row">
+            <span>RM</span>
+            <input type="number" id="salary" value="3000" min="0" step="100" placeholder="Enter monthly salary">
+          </div>
+
+          <input type="range" id="salaryRange" min="0" max="12000" step="100" value="3000">
+
+          <div class="preset-grid">
+            <button type="button" class="preset" onclick="setSalary(2000)">RM 2,000</button>
+            <button type="button" class="preset" onclick="setSalary(3000)">RM 3,000</button>
+            <button type="button" class="preset" onclick="setSalary(4000)">RM 4,000</button>
+            <button type="button" class="preset" onclick="setSalary(5000)">RM 5,000</button>
+            <button type="button" class="preset" onclick="setSalary(6000)">RM 6,000</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="employeeCategory">Employee participation</label>
+          <select id="employeeCategory" onchange="calculateSKBBK()">
+            <option value="localParticipating" selected>Local employee — participating voluntarily</option>
+            <option value="localOptedOut">Local employee — opted out</option>
+            <option value="foreignWorker">Foreign worker — mandatory participation</option>
+          </select>
+        </div>
+
+        <button type="button" class="calc-button" onclick="calculateSKBBK()">Calculate My SKBBK</button>
+
+        <a class="secondary-button" href="index.html">
+          Calculate Full Salary After EPF, SOCSO, EIS & PCB →
+        </a>
+
+        <p class="input-note">
+          This calculator uses PERKESO's official Phase 1 salary-band amounts for SKBBK.
+          Local employees participate voluntarily, while eligible foreign workers remain subject
+          to mandatory participation.
+        </p>
+      </div>
+
+      <div class="results-panel">
+        <h2 class="serif">Your SKBBK result</h2>
+        <p class="sub">Estimated employee deduction for the selected month</p>
+
+        <div class="net">RM <span id="monthlySKBBK">0.00</span></div>
+        <p class="net-caption" id="rateExplanation">Official Phase 1 contribution schedule.</p>
+
+        <div class="status-badge" id="participationStatus">Local employee — voluntary participation</div>
+
+        <div class="bar" id="skbbkBar"></div>
+
+        <div class="result-rows" id="monthlyRows"></div>
+
+        <div class="annual-summary" id="annualRows"></div>
+      </div>
+
+    </section>
+
+    <div class="seo">
+
+      <section>
+
+        <h2>How SKBBK Is Calculated in Malaysia</h2>
+
+        <p>
+          SKBBK, also known as PERKESO LINDUNG 24 Jam, protects eligible employees against
+          qualifying accidents outside working hours that are not directly related to employment.
+          The Phase 1 employee rate is 0.75%, and the contribution is fully borne by the employee.
+        </p>
+
+        <p>
+          For statutory payroll, PERKESO uses salary bands. This means the exact contribution is
+          selected from the official table instead of multiplying every exact salary by 0.75%.
+          For example, wages above RM2,900 but not exceeding RM3,000 produce an SKBBK contribution
+          of RM22.15, not RM22.50.
+        </p>
+
+        <div class="formula-box">
+          <strong>SKBBK Deduction = Official Amount for Your Monthly Wage Band</strong>
+          <span>Example: wages above RM2,900 up to RM3,000 → RM22.15</span>
+        </div>
+
+        <div class="rate-grid">
+          <div class="rate-card">
+            <strong>0.75%</strong>
+            <h3>Phase 1 Rate</h3>
+            <p>Applies during the first two years of the scheme from its implementation.</p>
+          </div>
+
+          <div class="rate-card">
+            <strong>Employee</strong>
+            <h3>Who Pays?</h3>
+            <p>The full SKBBK contribution is borne by the employee.</p>
+          </div>
+
+          <div class="rate-card">
+            <strong>Voluntary</strong>
+            <h3>Local Employees</h3>
+            <p>Local employees may participate or follow the official opt-out process.</p>
+          </div>
+
+          <div class="rate-card">
+            <strong>Mandatory</strong>
+            <h3>Foreign Workers</h3>
+            <p>Participation remains mandatory for eligible foreign workers.</p>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="contribution-box">
+
+        <h2>SKBBK Contribution Snapshot 2026</h2>
+
+        <p>
+          The table below shows common Phase 1 contribution amounts from the official PERKESO
+          salary schedule.
+        </p>
+
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead>
+              <tr>
+                <th>Monthly Wages</th>
+                <th>Employee SKBBK</th>
+                <th>Simple 0.75% Estimate</th>
+                <th>Official Method</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Above RM1,900 to RM2,000</td>
+                <td>RM14.65</td>
+                <td>Up to RM15.00</td>
+                <td>Salary band</td>
+              </tr>
+              <tr>
+                <td>Above RM2,900 to RM3,000</td>
+                <td>RM22.15</td>
+                <td>Up to RM22.50</td>
+                <td>Salary band</td>
+              </tr>
+              <tr>
+                <td>Above RM3,900 to RM4,000</td>
+                <td>RM29.65</td>
+                <td>Up to RM30.00</td>
+                <td>Salary band</td>
+              </tr>
+              <tr>
+                <td>Above RM4,900 to RM5,000</td>
+                <td>RM37.15</td>
+                <td>Up to RM37.50</td>
+                <td>Salary band</td>
+              </tr>
+              <tr>
+                <td>Above RM5,900 to RM6,000</td>
+                <td>RM44.65</td>
+                <td>Up to RM45.00</td>
+                <td>Salary band</td>
+              </tr>
+              <tr>
+                <td>Above RM6,000</td>
+                <td>RM44.65</td>
+                <td>Would exceed RM45.00</td>
+                <td>Official maximum band</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="contribution-note">
+          The calculator uses the complete official table from wages up to RM30 through wages above RM6,000.
+        </p>
+
+      </section>
+
+      <section>
+
+        <h2>What This SKBBK Calculator Shows</h2>
+
+        <p>
+          This calculator is designed to help employees understand the new payslip deduction,
+          check whether payroll is using the correct salary band and see the annual cost of participation.
+        </p>
+
+        <div class="component-grid">
+
+          <a class="component-card" href="skbbk-guide.html">
+            <div class="component-icon">🛡️</div>
+            <h3>Monthly SKBBK</h3>
+            <p>The employee contribution selected from the official Phase 1 wage schedule.</p>
+          </a>
+
+          <a class="component-card" href="skbbk-guide.html">
+            <div class="component-icon">📅</div>
+            <h3>Annual Contribution</h3>
+            <p>Your estimated yearly SKBBK cost based on 12 equal monthly deductions.</p>
+          </a>
+
+          <a class="component-card" href="index.html">
+            <div class="component-icon">💵</div>
+            <h3>Salary After SKBBK</h3>
+            <p>Monthly salary remaining after this deduction only.</p>
+          </a>
+
+          <a class="component-card" href="skbbk-guide.html">
+            <div class="component-icon">📋</div>
+            <h3>Participation Status</h3>
+            <p>Shows whether participation is voluntary, opted out or mandatory.</p>
+          </a>
+
+        </div>
+
+      </section>
+
+      <h2>Who Should Use This SKBBK Calculator?</h2>
+
+      <ul>
+        <li>Employees checking a new SKBBK deduction on their payslip</li>
+        <li>Local employees comparing the cost of participating or opting out</li>
+        <li>Foreign workers checking the mandatory contribution amount</li>
+        <li>Employers and payroll users verifying the correct wage band</li>
+        <li>HR staff explaining LINDUNG 24 Jam deductions to employees</li>
+      </ul>
+
+      <section class="official-box">
+
+        <h2>Official PERKESO Resources</h2>
+
+        <p>
+          Contribution rates, participation procedures and claim rules may change.
+          Refer to PERKESO for official confirmation and payroll compliance.
+        </p>
+
+        <div class="official-links">
+
+          <a href="https://www.perkeso.gov.my/en/skim-kemalangan-bukan-bencana-kerja-lindung-24-jam.html" target="_blank" rel="noopener">
+            <h3>LINDUNG 24 Jam</h3>
+            <p>Official scheme coverage, contribution phases, exclusions and participation information.</p>
+          </a>
+
+          <a href="https://perkeso.gov.my/images/lindung/lindung-24-jam/NewContributionRateIncludingSKBBK.pdf" target="_blank" rel="noopener">
+            <h3>Official Contribution Schedule</h3>
+            <p>PERKESO salary-band table including the Phase 1 SKBBK amounts used by this calculator.</p>
+          </a>
+
+          <a href="https://www.perkeso.gov.my/perkhidmatan-kami/majikan-pekerja/kalkulator-caruman.html" target="_blank" rel="noopener">
+            <h3>PERKESO Contribution Calculator</h3>
+            <p>Official calculator for contribution verification.</p>
+          </a>
+
+        </div>
+
+        <div class="payroll-note">
+          <strong>Important:</strong>
+          This website provides payroll estimates for general information only. Verify unusual wage
+          components, arrears, multiple payments or special employee cases with PERKESO or a qualified
+          payroll professional.
+        </div>
+
+      </section>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-box">
+
+        <details class="faq-item" open>
+          <summary>How is SKBBK calculated in Malaysia?</summary>
+          <p>
+            SKBBK follows the official PERKESO wage contribution schedule. Although the Phase 1
+            rate is 0.75%, the payroll deduction is selected from a salary band rather than calculated
+            as exactly 0.75% of every salary.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Why is RM3,000 SKBBK RM22.15 instead of RM22.50?</summary>
+          <p>
+            PERKESO uses a statutory salary-band table. Wages above RM2,900 but not exceeding RM3,000
+            have an official SKBBK contribution of RM22.15.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Who pays the SKBBK contribution?</summary>
+          <p>
+            The contribution is fully borne by the employee. The employer deducts it through payroll
+            and pays it to PERKESO on the employee's behalf.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is SKBBK compulsory for Malaysian employees?</summary>
+          <p>
+            Participation is voluntary for local employees under the latest PERKESO position.
+            Employees who do not wish to participate should follow the official opt-out procedure.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is SKBBK compulsory for foreign workers?</summary>
+          <p>
+            Yes. Participation remains mandatory for eligible foreign workers.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What happens if a local employee selects opted out?</summary>
+          <p>
+            The calculator shows a zero SKBBK deduction. This assumes the employee has properly
+            completed the official opt-out or release-of-liability process.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What is the maximum Phase 1 SKBBK deduction?</summary>
+          <p>
+            The official schedule shows RM44.65 for wages above RM5,900, including wages above RM6,000.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Does the employer contribute an additional SKBBK amount?</summary>
+          <p>
+            No. There is no separate employer SKBBK share. The employee bears the full contribution.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Does this calculator include normal SOCSO?</summary>
+          <p>
+            No. It calculates only the SKBBK portion. Normal SOCSO contributions under the Employment
+            Injury and Invalidity Schemes are separate.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Does SKBBK cover illnesses such as fever or diabetes?</summary>
+          <p>
+            No. SKBBK focuses on qualifying accidental injuries outside work. PERKESO lists conditions
+            caused by illnesses such as fever, diabetes and high blood pressure as excluded.
+          </p>
+        </details>
+
+      </div>
+
+      <section class="salary-guides-box">
+
+        <h2>Malaysia Payroll Guides</h2>
+
+        <p>
+          Learn more about SKBBK, SOCSO, EIS, EPF and salary deductions in Malaysia.
+        </p>
+
+        <div class="guide-mini-grid">
+          <a href="skbbk-guide.html">🛡️ SKBBK Guide</a>
+          <a href="socso-guide.html">🏥 SOCSO Guide</a>
+          <a href="eis-guide.html">📋 EIS Guide</a>
+          <a href="epf-guide.html">💰 EPF Guide</a>
+          <a href="salary-deduction-guide.html">📉 Salary Deduction Guide</a>
+          <a href="payslip-guide.html">🧾 Payslip Guide</a>
+        </div>
+
+        <p class="view-all-guides">
+          <a href="guides.html">View All Salary Guides →</a>
+        </p>
+
+      </section>
+
+      <section class="salary-guides-box">
+
+        <h2>Related Calculators</h2>
+
+        <p>
+          Explore more free Malaysia salary and payroll calculators.
+        </p>
+
+        <div class="guide-mini-grid">
+          <a href="index.html">Salary Calculator</a>
+          <a href="socso-calculator.html">SOCSO Calculator</a>
+          <a href="eis-calculator.html">EIS Calculator</a>
+          <a href="epf-calculator.html">EPF Calculator</a>
+          <a href="pcb-calculator.html">PCB Calculator</a>
+          <a href="payslip-generator.html">Payslip Generator</a>
+        </div>
+
+        <p class="view-all-guides">
+          <a href="calculators.html">View All Calculators →</a>
+        </p>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Malaysia Salary Tools</p>
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="calculators.html">Calculators</a> |
+      <a href="guides.html">Guides</a> |
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact Us</a> |
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </p>
+  </footer>
+
+  <script>
+    const skbbkBands = [
+        { max: 30, amount: 0.20 },
+        { max: 50, amount: 0.30 },
+        { max: 70, amount: 0.50 },
+        { max: 100, amount: 0.65 },
+        { max: 140, amount: 0.90 },
+        { max: 200, amount: 1.25 },
+        { max: 300, amount: 1.85 },
+        { max: 400, amount: 2.65 },
+        { max: 500, amount: 3.35 },
+        { max: 600, amount: 4.15 },
+        { max: 700, amount: 4.85 },
+        { max: 800, amount: 5.65 },
+        { max: 900, amount: 6.35 },
+        { max: 1000, amount: 7.15 },
+        { max: 1100, amount: 7.85 },
+        { max: 1200, amount: 8.65 },
+        { max: 1300, amount: 9.35 },
+        { max: 1400, amount: 10.15 },
+        { max: 1500, amount: 10.85 },
+        { max: 1600, amount: 11.65 },
+        { max: 1700, amount: 12.35 },
+        { max: 1800, amount: 13.15 },
+        { max: 1900, amount: 13.85 },
+        { max: 2000, amount: 14.65 },
+        { max: 2100, amount: 15.35 },
+        { max: 2200, amount: 16.15 },
+        { max: 2300, amount: 16.85 },
+        { max: 2400, amount: 17.65 },
+        { max: 2500, amount: 18.35 },
+        { max: 2600, amount: 19.15 },
+        { max: 2700, amount: 19.85 },
+        { max: 2800, amount: 20.65 },
+        { max: 2900, amount: 21.35 },
+        { max: 3000, amount: 22.15 },
+        { max: 3100, amount: 22.85 },
+        { max: 3200, amount: 23.65 },
+        { max: 3300, amount: 24.35 },
+        { max: 3400, amount: 25.15 },
+        { max: 3500, amount: 25.85 },
+        { max: 3600, amount: 26.65 },
+        { max: 3700, amount: 27.35 },
+        { max: 3800, amount: 28.15 },
+        { max: 3900, amount: 28.85 },
+        { max: 4000, amount: 29.65 },
+        { max: 4100, amount: 30.35 },
+        { max: 4200, amount: 31.15 },
+        { max: 4300, amount: 31.85 },
+        { max: 4400, amount: 32.65 },
+        { max: 4500, amount: 33.35 },
+        { max: 4600, amount: 34.15 },
+        { max: 4700, amount: 34.85 },
+        { max: 4800, amount: 35.65 },
+        { max: 4900, amount: 36.35 },
+        { max: 5000, amount: 37.15 },
+        { max: 5100, amount: 37.85 },
+        { max: 5200, amount: 38.65 },
+        { max: 5300, amount: 39.35 },
+        { max: 5400, amount: 40.15 },
+        { max: 5500, amount: 40.85 },
+        { max: 5600, amount: 41.65 },
+        { max: 5700, amount: 42.35 },
+        { max: 5800, amount: 43.15 },
+        { max: 5900, amount: 43.85 },
+        { max: 6000, amount: 44.65 },
+        { max: Infinity, amount: 44.65 }
+    ];
+
+    function formatRM(amount) {
+      return Number(amount).toLocaleString('en-MY', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+    }
+
+    function setSalary(value) {
+      document.getElementById("salary").value = value;
+      document.getElementById("salaryRange").value = value;
+      calculateSKBBK();
+    }
+
+    function getSKBBKFromTable(salary) {
+      for (let i = 0; i < skbbkBands.length; i++) {
+        if (salary <= skbbkBands[i].max) {
+          const previousMax = i === 0 ? 0 : skbbkBands[i - 1].max;
+          return {
+            amount: skbbkBands[i].amount,
+            lower: previousMax,
+            upper: skbbkBands[i].max
+          };
+        }
+      }
+
+      return {
+        amount: 44.65,
+        lower: 6000,
+        upper: Infinity
+      };
+    }
+
+    function describeBand(band) {
+      if (band.upper === Infinity) {
+        return "Wages above RM6,000";
+      }
+
+      if (band.lower === 0) {
+        return "Wages up to RM" + formatRM(band.upper);
+      }
+
+      return "Wages above RM" + formatRM(band.lower) +
+        " up to RM" + formatRM(band.upper);
+    }
+
+    function calculateSKBBK() {
+      const salaryInput = document.getElementById("salary");
+      const rangeInput = document.getElementById("salaryRange");
+      const category = document.getElementById("employeeCategory").value;
+
+      let salary = parseFloat(salaryInput.value);
+
+      if (!salary || salary < 0) {
+        document.getElementById("monthlySKBBK").textContent = "0.00";
+        document.getElementById("rateExplanation").textContent = "Please enter a salary.";
+        document.getElementById("participationStatus").textContent = "Waiting for salary input";
+        document.getElementById("skbbkBar").innerHTML = "";
+        document.getElementById("monthlyRows").innerHTML = "";
+        document.getElementById("annualRows").innerHTML = "";
+        return;
+      }
+
+      rangeInput.value = Math.min(salary, rangeInput.max);
+
+      const tableResult = getSKBBKFromTable(salary);
+      let monthlySKBBK = tableResult.amount;
+      let participationText = "";
+      let explanation = "";
+
+      if (category === "localOptedOut") {
+        monthlySKBBK = 0;
+        participationText = "Local employee — opted out";
+        explanation = "No SKBBK deduction applied after a valid opt-out.";
+      } else if (category === "foreignWorker") {
+        participationText = "Foreign worker — mandatory participation";
+        explanation = describeBand(tableResult) + " under the official Phase 1 schedule.";
+      } else {
+        participationText = "Local employee — voluntary participation";
+        explanation = describeBand(tableResult) + " under the official Phase 1 schedule.";
+      }
+
+      const salaryAfterSKBBK = Math.max(0, salary - monthlySKBBK);
+      const annualSKBBK = monthlySKBBK * 12;
+      const effectiveRate = salary > 0 ? (monthlySKBBK / salary) * 100 : 0;
+
+      const colors = {
+        deduction: "#5aa783",
+        salaryAfter: "#f6f3ec",
+        annual: "#c9a14e"
+      };
+
+      document.getElementById("monthlySKBBK").textContent = formatRM(monthlySKBBK);
+      document.getElementById("rateExplanation").textContent = explanation;
+      document.getElementById("participationStatus").textContent = participationText;
+
+      const barItems = [
+        ["Salary After SKBBK", salaryAfterSKBBK, colors.salaryAfter],
+        ["SKBBK Deduction", monthlySKBBK, colors.deduction]
+      ];
+
+      document.getElementById("skbbkBar").innerHTML = barItems.map(function(item) {
+        let width = salary ? (item[1] / salary) * 100 : 0;
+        return '<i style="width:' + width + '%;background:' + item[2] + '"></i>';
+      }).join("");
+
+      const monthlyItems = [
+        ["Monthly Salary / Wages", salary, "#f6f3ec"],
+        ["Employee SKBBK", monthlySKBBK, colors.deduction],
+        ["Employer SKBBK", 0, colors.annual],
+        ["Salary After SKBBK", salaryAfterSKBBK, colors.salaryAfter]
+      ];
+
+      document.getElementById("monthlyRows").innerHTML = monthlyItems.map(function(item) {
+        return '<div class="result-line"><span class="k"><span class="dot" style="background:' +
+          item[2] + '"></span>' + item[0] + '</span><span class="v">RM ' +
+          formatRM(item[1]) + '</span></div>';
+      }).join("");
+
+      document.getElementById("annualRows").innerHTML =
+        '<div><span>Official Wage Band</span><strong>' + describeBand(tableResult) + '</strong></div>' +
+        '<div><span>Effective Deduction Rate</span><strong>' + effectiveRate.toFixed(2) + '%</strong></div>' +
+        '<div><span>Annual Employee SKBBK</span><strong>RM ' + formatRM(annualSKBBK) + '</strong></div>';
+    }
+
+    document.getElementById("salary").addEventListener("input", calculateSKBBK);
+
+    document.getElementById("salaryRange").addEventListener("input", function() {
+      document.getElementById("salary").value = this.value;
+      calculateSKBBK();
+    });
+
+    calculateSKBBK();
+  </script>
+
+</body>
+</html>
