@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
 
-  <title>Malaysia Salary Tools 2026 | Salary, EPF, SOCSO, EIS & PCB Calculator</title>
+  <title>Malaysia Salary Calculator 2026 | EPF, SOCSO, EIS, SKBBK & PCB</title>
 
   <link rel="canonical" href="https://malaysiasalarytools.com/">
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <meta name="description" content="Free Malaysia Salary Calculator 2026. Calculate net take-home pay after EPF, SOCSO, EIS and PCB tax deductions. Estimate monthly and annual salary breakdown instantly.">
+  <meta name="description" content="Free Malaysia Salary Calculator 2026. Estimate take-home pay after EPF, SOCSO, EIS, LINDUNG 24 Jam (SKBBK) and PCB deductions.">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
@@ -282,6 +282,103 @@
     .preset:hover {
       color: var(--accent);
       border-color: var(--accent);
+    }
+
+    .skbbk-option {
+      margin-top: 20px;
+      padding: 15px 16px;
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      border-radius: 12px;
+    }
+
+    .skbbk-option-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .skbbk-option-copy {
+      min-width: 0;
+    }
+
+    .skbbk-option-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--foreground);
+    }
+
+    .new-badge {
+      display: inline-block;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 10px;
+      line-height: 1.2;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .skbbk-option p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 46px;
+      height: 26px;
+      flex: 0 0 auto;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .switch-slider {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+      background: #cfc8bc;
+      border-radius: 999px;
+      transition: .2s ease;
+    }
+
+    .switch-slider::before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 3px;
+      top: 3px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(47,43,37,.22);
+      transition: .2s ease;
+    }
+
+    .switch input:checked + .switch-slider {
+      background: var(--accent);
+    }
+
+    .switch input:checked + .switch-slider::before {
+      transform: translateX(20px);
+    }
+
+    .switch input:focus-visible + .switch-slider {
+      box-shadow: 0 0 0 3px rgba(47,125,94,.18);
     }
 
     .calc-button {
@@ -1084,7 +1181,7 @@
     <span class="pill">Updated for Malaysia 2026 payroll estimates</span>
     <h1 class="serif">Know your real <em>take-home pay</em> in Malaysia</h1>
     <p>
-      Free Malaysia salary calculator for employees, job seekers and payroll users. Estimate EPF, SOCSO, EIS, PCB, monthly net salary and annual salary breakdown instantly.
+      Free Malaysia salary calculator for employees, job seekers and payroll users. Estimate EPF, SOCSO, EIS, LINDUNG 24 Jam (SKBBK), PCB, monthly net salary and annual salary breakdown instantly.
     </p>
   </section>
 
@@ -1094,7 +1191,7 @@
 
       <div class="panel">
         <h2 class="serif">Calculate Your Take-Home Pay</h2>
-        <p class="sub">Enter your gross monthly salary before EPF, SOCSO, EIS and PCB deductions.</p>
+        <p class="sub">Enter your gross monthly salary before EPF, SOCSO, EIS, SKBBK and PCB deductions.</p>
 
         <label for="salary">Gross monthly salary</label>
         <div class="input-row">
@@ -1110,6 +1207,23 @@
           <button type="button" class="preset" onclick="setSalary(7500)">RM 7,500</button>
           <button type="button" class="preset" onclick="setSalary(10000)">RM 10,000</button>
           <button type="button" class="preset" onclick="setSalary(15000)">RM 15,000</button>
+        </div>
+
+        <div class="skbbk-option">
+          <div class="skbbk-option-row">
+            <div class="skbbk-option-copy">
+              <p class="skbbk-option-title">
+                Include LINDUNG 24 Jam (SKBBK)
+                <span class="new-badge">New</span>
+              </p>
+              <p>Turn this on if SKBBK appears on your payslip. Estimated at 0.75% of wages, capped at RM6,000.</p>
+            </div>
+
+            <label class="switch" aria-label="Include LINDUNG 24 Jam SKBBK contribution">
+              <input type="checkbox" id="includeSkbbk">
+              <span class="switch-slider"></span>
+            </label>
+          </div>
         </div>
 
         <button type="button" class="calc-button" onclick="calculate()">Calculate My Net Salary</button>
@@ -1142,12 +1256,12 @@
 
         <p>
           Calculating your take-home pay means subtracting statutory deductions from your gross monthly salary.
-          In Malaysia, the main deductions are usually EPF, SOCSO, EIS and PCB.
+          In Malaysia, the main deductions are usually EPF, SOCSO, EIS, LINDUNG 24 Jam (SKBBK) and PCB.
         </p>
 
         <div class="formula-box">
           <strong>Net Salary = Gross Salary − Total Deductions</strong>
-          <span>Total Deductions = EPF + SOCSO + EIS + PCB</span>
+          <span>Total Deductions = EPF + SOCSO + EIS + SKBBK + PCB</span>
         </div>
 
         <section class="contribution-box">
@@ -1155,13 +1269,14 @@
           <h2>Contribution Tables 2026</h2>
 
           <p>
-            Quick reference for common EPF, SOCSO and EIS contribution rates in Malaysia.
+            Quick reference for common EPF, SOCSO, EIS and SKBBK contribution rates in Malaysia.
           </p>
 
           <div class="contribution-tabs">
             <button type="button" class="active" onclick="showContributionTable('epf', this)">EPF (KWSP)</button>
             <button type="button" onclick="showContributionTable('socso', this)">SOCSO (PERKESO)</button>
             <button type="button" onclick="showContributionTable('eis', this)">EIS</button>
+            <button type="button" onclick="showContributionTable('skbbk', this)">SKBBK</button>
           </div>
 
           <div class="contribution-table-wrap" id="epf-table">
@@ -1278,8 +1393,44 @@
             </table>
           </div>
 
+          <div class="contribution-table-wrap" id="skbbk-table" style="display:none;">
+            <table class="contribution-table">
+              <thead>
+                <tr>
+                  <th>Implementation Period</th>
+                  <th>Employee Rate</th>
+                  <th>Employer Rate</th>
+                  <th>Maximum Monthly Estimate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>First 2 years</td>
+                  <td>0.75%</td>
+                  <td>0%</td>
+                  <td>RM45.00</td>
+                </tr>
+                <tr>
+                  <td>Years 3–5</td>
+                  <td>1.00%</td>
+                  <td>0%</td>
+                  <td>RM60.00</td>
+                </tr>
+                <tr>
+                  <td>Year 6 onwards</td>
+                  <td>1.25%</td>
+                  <td>0%</td>
+                  <td>RM75.00</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="contribution-note">
+              SKBBK (LINDUNG 24 Jam) is fully borne by the employee. The estimates above use a maximum monthly wage of RM6,000. Actual payroll deductions may follow PERKESO's statutory wage-band table.
+            </p>
+          </div>
+
           <p class="contribution-note">
-            Note: These tables are simplified quick references. For full statutory tables, refer to the detailed EPF, SOCSO and EIS guides.
+            Note: These tables are simplified quick references. For full statutory tables, refer to the detailed EPF, SOCSO, EIS and SKBBK guidance.
           </p>
 
         </section>
@@ -1488,6 +1639,7 @@
       document.getElementById("epf-table").style.display = "none";
       document.getElementById("socso-table").style.display = "none";
       document.getElementById("eis-table").style.display = "none";
+      document.getElementById("skbbk-table").style.display = "none";
 
       document.getElementById(type + "-table").style.display = "block";
 
@@ -1532,6 +1684,11 @@
       }
 
       return Math.round(socso * 100) / 100;
+    }
+
+    function getSkbbk(salary){
+      let contributionSalary = Math.min(salary, 6000);
+      return Math.round((contributionSalary * 0.0075) * 100) / 100;
     }
 
     function getPcb(salary, epf){
@@ -1579,8 +1736,10 @@
       let epf = salary * 0.11;
       let socso = getSocso(salary);
       let eis = salary * 0.002;
+      let includeSkbbk = document.getElementById("includeSkbbk").checked;
+      let skbbk = includeSkbbk ? getSkbbk(salary) : 0;
       let tax = getPcb(salary, epf);
-      let totalDeduction = epf + socso + eis + tax;
+      let totalDeduction = epf + socso + eis + skbbk + tax;
       let net = salary - totalDeduction;
       let annual = salary * 12;
 
@@ -1589,6 +1748,7 @@
         epf: "#5aa783",
         socso: "#c9a14e",
         eis: "#7d97c4",
+        skbbk: "#9d7cc1",
         pcb: "#cf6f5b"
       };
 
@@ -1600,6 +1760,7 @@
         ["EPF", epf, colors.epf],
         ["SOCSO", socso, colors.socso],
         ["EIS", eis, colors.eis],
+        ["SKBBK", skbbk, colors.skbbk],
         ["PCB", tax, colors.pcb]
       ];
 
@@ -1613,6 +1774,7 @@
         ["EPF / KWSP", epf, colors.epf],
         ["SOCSO", socso, colors.socso],
         ["EIS", eis, colors.eis],
+        ["LINDUNG 24 Jam (SKBBK)", skbbk, colors.skbbk],
         ["Estimated PCB", tax, colors.pcb],
         ["Total Deductions", totalDeduction, "#d7cec0"]
       ];
@@ -1626,11 +1788,14 @@
         '<div><span>Annual EPF</span><strong>RM ' + formatRM(epf * 12) + '</strong></div>' +
         '<div><span>Annual SOCSO</span><strong>RM ' + formatRM(socso * 12) + '</strong></div>' +
         '<div><span>Annual EIS</span><strong>RM ' + formatRM(eis * 12) + '</strong></div>' +
+        '<div><span>Annual SKBBK</span><strong>RM ' + formatRM(skbbk * 12) + '</strong></div>' +
         '<div><span>Annual PCB</span><strong>RM ' + formatRM(tax * 12) + '</strong></div>' +
         '<div><span>Annual Net Salary</span><strong>RM ' + formatRM(net * 12) + '</strong></div>';
     }
 
     document.getElementById("salary").addEventListener("input", calculate);
+    document.getElementById("includeSkbbk").addEventListener("change", calculate);
+
     document.getElementById("salaryRange").addEventListener("input", function(){
       document.getElementById("salary").value = this.value;
       calculate();
