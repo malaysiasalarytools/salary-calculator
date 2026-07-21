@@ -695,16 +695,12 @@
     }
 
     /* Redesigned content below the contribution tables */
-    .content-section {
-      margin: 34px 0;
+    .topic-section {
+      margin: 42px 0;
     }
 
-    .boxed-section {
-      background: #f8f5ef;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      margin: 26px 0;
+    .topic-section + .topic-section {
+      margin-top: 50px;
     }
 
     .section-heading {
@@ -712,7 +708,7 @@
       align-items: flex-end;
       justify-content: space-between;
       gap: 20px;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     .section-heading h2 {
@@ -720,7 +716,7 @@
     }
 
     .section-heading p {
-      margin: 6px 0 0;
+      margin: 7px 0 0;
       max-width: 680px;
     }
 
@@ -731,6 +727,102 @@
       white-space: nowrap;
     }
 
+    .section-link:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .component-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 0;
+    }
+
+    .component-card {
+      min-height: 205px;
+      padding: 22px;
+      background: linear-gradient(180deg, #fffdfa 0%, var(--card) 100%);
+    }
+
+    .component-icon {
+      width: 46px;
+      height: 46px;
+      margin-bottom: 14px;
+      font-size: 23px;
+    }
+
+    .component-card h3 {
+      margin: 8px 0 8px;
+      font-size: 18px;
+    }
+
+    .component-card p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .audience-strip {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+      padding: 26px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .audience-strip h2 {
+      margin: 0 0 10px;
+    }
+
+    .audience-strip p {
+      margin: 0;
+    }
+
+    .audience-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 16px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .audience-list li {
+      position: relative;
+      padding-left: 22px;
+      color: var(--foreground);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .audience-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .faq-section {
+      max-width: 860px;
+    }
+
+    .faq-section h2 {
+      margin-bottom: 8px;
+    }
+
+    .faq-box {
+      max-width: none;
+    }
+
+    .popular-calculators {
+      padding: 26px;
+      background: #f8f5ef;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
     .calculator-link-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -739,7 +831,7 @@
 
     .calculator-link-grid a {
       display: block;
-      padding: 14px 16px;
+      padding: 15px 16px;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 12px;
@@ -754,28 +846,31 @@
       color: var(--accent);
       border-color: var(--accent);
       transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(47,43,37,.07);
     }
 
     .resource-columns {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 28px;
+      gap: 22px;
       margin-top: 18px;
     }
 
     .resource-column {
-      border-top: 1px solid var(--border);
-      padding-top: 18px;
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(248,245,239,.82), rgba(251,250,246,.72));
+      border: 1px solid var(--border);
+      border-radius: 14px;
     }
 
     .resource-column h3 {
       margin: 0 0 6px;
-      font-size: 19px;
+      font-size: 20px;
       color: var(--foreground);
     }
 
     .resource-column > p {
-      margin: 0 0 14px;
+      margin: 0 0 16px;
       font-size: 14px;
     }
 
@@ -789,13 +884,15 @@
       display: flex;
       align-items: center;
       gap: 9px;
-      padding: 13px 14px;
+      min-height: 52px;
+      padding: 12px 13px;
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 11px;
       text-decoration: none;
       color: var(--foreground);
       font-weight: 800;
+      font-size: 14px;
       transition: .18s ease;
     }
 
@@ -833,6 +930,10 @@
       }
 
       .calculator-link-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .component-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
@@ -926,6 +1027,11 @@
 
       .section-heading {
         display: block;
+      }
+
+      .audience-strip {
+        grid-template-columns: 1fr;
+        gap: 18px;
       }
 
       .section-link {
@@ -1180,7 +1286,7 @@
 
       </section>
 
-      <section class="tax-relief-box">
+      <section class="topic-section">
 
         <div class="section-heading">
           <div>
@@ -1232,22 +1338,28 @@
 
       </section>
 
-      <section class="content-section">
+      <section class="topic-section audience-strip">
 
-        <h2>Who Should Use This Calculator?</h2>
+        <div>
+          <h2>Who Should Use This Calculator?</h2>
+          <p>
+            A practical salary estimate for employees, job seekers, payroll users and anyone planning income in Malaysia.
+          </p>
+        </div>
 
-        <ul>
-          <li>Employees checking monthly take-home pay after deductions</li>
-          <li>Job seekers comparing salary packages and job offers</li>
-          <li>HR and payroll staff estimating employee deductions</li>
-          <li>Malaysians planning personal finances and income tax</li>
+        <ul class="audience-list">
+          <li>Employees checking monthly take-home pay</li>
+          <li>Job seekers comparing salary packages</li>
+          <li>HR and payroll users estimating deductions</li>
+          <li>Malaysians planning tax and personal finances</li>
         </ul>
 
       </section>
 
-      <section class="content-section">
+      <section class="topic-section faq-section">
 
         <h2>Frequently Asked Questions</h2>
+        <p>Common questions about salary deductions, PCB and take-home pay estimates.</p>
 
         <div class="faq-box">
 
@@ -1297,7 +1409,7 @@
 
       </section>
 
-      <section class="boxed-section">
+      <section class="topic-section popular-calculators">
 
         <div class="section-heading">
           <div>
@@ -1320,10 +1432,14 @@
 
       </section>
 
-      <section class="content-section">
+      <section class="topic-section">
 
-        <h2>More Salary Resources</h2>
-        <p>Explore practical employment guidance and useful tools for planning your salary and personal finances.</p>
+        <div class="section-heading">
+          <div>
+            <h2>More Salary Resources</h2>
+            <p>Explore practical employment guidance and tools for planning salary and personal finances.</p>
+          </div>
+        </div>
 
         <div class="resource-columns">
 
