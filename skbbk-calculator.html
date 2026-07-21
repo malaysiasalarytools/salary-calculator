@@ -727,7 +727,8 @@
 
     .faq-box {
       margin-top: 18px;
-      max-width: 780px;
+      width: 100%;
+      max-width: none;
     }
 
     .faq-item {
@@ -997,6 +998,8 @@
 
           <input type="range" id="salaryRange" min="0" max="12000" step="100" value="3000">
 
+          <p class="input-note">For wages above RM6,000, the Phase 1 SKBBK contribution remains capped at RM44.65.</p>
+
           <div class="preset-grid">
             <button type="button" class="preset" onclick="setSalary(2000)">RM 2,000</button>
             <button type="button" class="preset" onclick="setSalary(3000)">RM 3,000</button>
@@ -1024,7 +1027,8 @@
         <p class="input-note">
           This calculator uses PERKESO's official Phase 1 salary-band amounts for SKBBK.
           Local employees participate voluntarily, while eligible foreign workers remain subject
-          to mandatory participation.
+          to mandatory participation. Actual payslip amounts may differ for arrears, multiple wage
+          payments or special contribution treatment.
         </p>
       </div>
 
@@ -1189,7 +1193,7 @@
 
           <a class="component-card" href="index.html">
             <div class="component-icon">💵</div>
-            <h3>Salary After SKBBK</h3>
+            <h3>Salary After SKBBK Only</h3>
             <p>Monthly salary remaining after this deduction only.</p>
           </a>
 
@@ -1517,9 +1521,9 @@
 
       let salary = parseFloat(salaryInput.value);
 
-      if (!salary || salary < 0) {
+      if (Number.isNaN(salary) || salary <= 0) {
         document.getElementById("monthlySKBBK").textContent = "0.00";
-        document.getElementById("rateExplanation").textContent = "Please enter a salary.";
+        document.getElementById("rateExplanation").textContent = "Please enter a monthly salary above RM0.";
         document.getElementById("participationStatus").textContent = "Waiting for salary input";
         document.getElementById("skbbkBar").innerHTML = "";
         document.getElementById("monthlyRows").innerHTML = "";
@@ -1573,8 +1577,8 @@
       const monthlyItems = [
         ["Monthly Salary / Wages", salary, "#f6f3ec"],
         ["Employee SKBBK", monthlySKBBK, colors.deduction],
-        ["Employer SKBBK", 0, colors.annual],
-        ["Salary After SKBBK", salaryAfterSKBBK, colors.salaryAfter]
+        ["Employer SKBBK Share", 0, colors.annual],
+        ["Salary After SKBBK Only", salaryAfterSKBBK, colors.salaryAfter]
       ];
 
       document.getElementById("monthlyRows").innerHTML = monthlyItems.map(function(item) {
@@ -1583,8 +1587,12 @@
           formatRM(item[1]) + '</span></div>';
       }).join("");
 
+      const wageBandLabel = category === "localOptedOut"
+        ? "Not applied — employee opted out"
+        : describeBand(tableResult);
+
       document.getElementById("annualRows").innerHTML =
-        '<div><span>Official Wage Band</span><strong>' + describeBand(tableResult) + '</strong></div>' +
+        '<div><span>Applicable Wage Band</span><strong>' + wageBandLabel + '</strong></div>' +
         '<div><span>Effective Deduction Rate</span><strong>' + effectiveRate.toFixed(2) + '%</strong></div>' +
         '<div><span>Annual Employee SKBBK</span><strong>RM ' + formatRM(annualSKBBK) + '</strong></div>';
     }
