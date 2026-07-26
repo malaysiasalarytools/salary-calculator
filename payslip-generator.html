@@ -598,72 +598,6 @@
       line-height: 1.2;
     }
 
-    .payslip-preview.compact-mode .payslip-header {
-      padding: 13px 15px;
-    }
-
-    .payslip-preview.compact-mode .company-logo {
-      width: 54px;
-      height: 54px;
-      padding: 4px;
-    }
-
-    .payslip-preview.compact-mode .payslip-header h3 {
-      font-size: 17px;
-      margin-bottom: 2px;
-    }
-
-    .payslip-preview.compact-mode .payslip-body {
-      padding: 13px 15px;
-    }
-
-    .payslip-preview.compact-mode .payslip-meta {
-      gap: 7px;
-      margin-bottom: 10px;
-    }
-
-    .payslip-preview.compact-mode .meta-box {
-      padding: 8px 10px;
-    }
-
-    .payslip-preview.compact-mode .meta-box span {
-      font-size: 10px;
-      margin-bottom: 2px;
-    }
-
-    .payslip-preview.compact-mode .meta-box strong {
-      font-size: 12px;
-    }
-
-    .payslip-preview.compact-mode .payslip-table {
-      margin-top: 8px;
-    }
-
-    .payslip-preview.compact-mode .payslip-table th,
-    .payslip-preview.compact-mode .payslip-table td {
-      padding: 7px 9px;
-      font-size: 11px;
-    }
-
-    .payslip-preview.compact-mode .net-box {
-      padding: 10px 12px;
-      margin-top: 10px;
-    }
-
-    .payslip-preview.compact-mode .net-box span {
-      font-size: 10px;
-      margin-bottom: 2px;
-    }
-
-    .payslip-preview.compact-mode .net-box strong {
-      font-size: 18px;
-    }
-
-    .payslip-preview.compact-mode .input-note {
-      margin-top: 9px;
-      font-size: 10px;
-      line-height: 1.35;
-    }
 
     .result-rows {
       display: flex;
@@ -941,8 +875,9 @@
     .premium-company-address { margin:7px 0 0; font-size:11.5px; line-height:1.45; color:#777064; white-space:pre-line; }
 
     .premium-doc { text-align:right; flex:0 0 auto; }
-    .premium-doc-label { font-size:11px; font-weight:900; letter-spacing:.16em; color:#2f7d5e; }
     .premium-doc h3 { margin:3px 0 8px; font-size:29px; line-height:1; letter-spacing:-.03em; }
+    .premium-doc-number { margin:0 0 8px; font-size:10px; line-height:1.35; color:#676d69; font-weight:800; letter-spacing:.04em; }
+    .premium-doc-number strong { color:#292720; font-weight:900; }
     .premium-chip { display:inline-block; padding:5px 10px; border-radius:999px; background:rgba(47,125,94,.10); border:1px solid rgba(47,125,94,.22); color:#2f7d5e; font-size:10px; font-weight:900; letter-spacing:.04em; text-transform:uppercase; }
 
     .premium-content { padding:20px 24px 22px; }
@@ -984,12 +919,6 @@
     .premium-contribution { background:#f7f3eb; border:1px solid #e5ded2; border-radius:12px; padding:11px 12px; }
     .premium-contribution span { display:block; font-size:9px; color:#857d72; text-transform:uppercase; letter-spacing:.06em; font-weight:800; }
     .premium-contribution strong { display:block; margin-top:4px; font-size:13px; color:#2f7d5e; }
-
-    .premium-ytd { margin-top:14px; border-top:1px solid #e8e1d5; padding-top:12px; }
-    .premium-ytd-title { margin:0 0 8px; font-size:11px; text-transform:uppercase; letter-spacing:.10em; color:#6f685e; }
-    .premium-ytd-grid { display:grid; grid-template-columns:1fr 1fr; gap:5px 18px; }
-    .premium-ytd-line { display:flex; justify-content:space-between; gap:12px; font-size:10.5px; padding:4px 0; }
-    .premium-ytd-line strong { white-space:nowrap; }
 
     .premium-footer { margin-top:15px; padding-top:11px; border-top:1px solid #e8e1d5; text-align:center; color:#8b8377; font-size:9.5px; line-height:1.45; }
     .premium-footer strong { color:#575147; }
@@ -1117,15 +1046,6 @@
     .premium-contribution span { color: #7b817d; }
     .premium-contribution strong { color: #242825; }
 
-    .premium-ytd {
-      margin-top: 16px;
-      border-top: 1px solid #dfe2e0;
-      padding-top: 13px;
-    }
-
-    .premium-ytd-title { color: #4f5651; }
-    .premium-ytd-line { border-bottom: 1px solid #eff1f0; }
-
     .premium-footer {
       margin-top: 17px;
       padding-top: 12px;
@@ -1232,7 +1152,7 @@
       .premium-payslip .premium-top { display:grid; }
       .premium-doc { text-align:left; }
       .premium-contribution-grid { grid-template-columns:1fr; }
-      .premium-ytd-grid, .customize-options, .premium-signature-grid { grid-template-columns:1fr; }
+      .customize-options, .premium-signature-grid { grid-template-columns:1fr; }
     }
 
     @media print {
@@ -1303,89 +1223,6 @@
         page-break-inside: avoid;
       }
 
-      .payslip-preview.compact-mode .payslip-header {
-        padding: 8px 12px;
-      }
-
-      .payslip-preview.compact-mode .company-logo {
-        width: 44px;
-        height: 44px;
-        padding: 3px;
-        border-radius: 6px;
-      }
-
-      .payslip-preview.compact-mode .payslip-header-content {
-        gap: 10px;
-      }
-
-      .payslip-preview.compact-mode .payslip-header h3 {
-        font-size: 15px;
-        line-height: 1.15;
-        margin: 0 0 1px;
-      }
-
-      .payslip-preview.compact-mode .payslip-header p {
-        font-size: 9px;
-        line-height: 1.2;
-      }
-
-      .payslip-preview.compact-mode .payslip-body {
-        padding: 8px 12px;
-      }
-
-      .payslip-preview.compact-mode .payslip-meta {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 5px;
-        margin-bottom: 6px;
-      }
-
-      .payslip-preview.compact-mode .meta-box {
-        padding: 5px 7px;
-        border-radius: 5px;
-      }
-
-      .payslip-preview.compact-mode .meta-box span {
-        font-size: 8px;
-        margin-bottom: 1px;
-        line-height: 1.1;
-      }
-
-      .payslip-preview.compact-mode .meta-box strong {
-        font-size: 9px;
-        line-height: 1.2;
-      }
-
-      .payslip-preview.compact-mode .payslip-table {
-        margin-top: 5px;
-      }
-
-      .payslip-preview.compact-mode .payslip-table th,
-      .payslip-preview.compact-mode .payslip-table td {
-        padding: 4px 7px;
-        font-size: 9px;
-        line-height: 1.15;
-      }
-
-      .payslip-preview.compact-mode .net-box {
-        padding: 6px 8px;
-        margin-top: 6px;
-        border-radius: 7px;
-      }
-
-      .payslip-preview.compact-mode .net-box span {
-        font-size: 8px;
-        margin-bottom: 1px;
-      }
-
-      .payslip-preview.compact-mode .net-box strong {
-        font-size: 14px;
-      }
-
-      .payslip-preview.compact-mode .input-note {
-        margin: 5px 0 0;
-        font-size: 7.5px;
-        line-height: 1.2;
-      }
 
 
       .premium-payslip {
@@ -1398,8 +1235,7 @@
       .premium-employee-card,
       .premium-money-card,
       .premium-net-card,
-      .premium-contribution,
-      .premium-ytd {
+      .premium-contribution {
         background: #ffffff !important;
         box-shadow: none !important;
       }
@@ -1577,23 +1413,13 @@
 50000 Kuala Lumpur, Malaysia</textarea>
         </div>
 
-        <div class="field-grid">
-          <div class="form-group">
-            <label for="companyLogo">Company logo (optional)</label>
-            <div class="logo-upload-wrap">
-              <input type="file" id="companyLogo" accept="image/png,image/jpeg,image/webp">
-            </div>
-            <div class="logo-actions">
-              <button class="small-button" type="button" id="removeLogoButton" onclick="removeCompanyLogo()" style="display:none;">Remove Logo</button>
-            </div>
+        <div class="form-group">
+          <label for="companyLogo">Company logo (optional)</label>
+          <div class="logo-upload-wrap">
+            <input type="file" id="companyLogo" accept="image/png,image/jpeg,image/webp">
           </div>
-
-          <div class="form-group">
-            <label for="printLayout">Payslip layout</label>
-            <select id="printLayout" onchange="generatePayslip()">
-              <option value="compact" selected>Compact - fit on one A4 page</option>
-              <option value="standard">Standard</option>
-            </select>
+          <div class="logo-actions">
+            <button class="small-button" type="button" id="removeLogoButton" onclick="removeCompanyLogo()" style="display:none;">Remove Logo</button>
           </div>
         </div>
 
@@ -1646,27 +1472,14 @@
               <div class="customize-options">
                 <label class="check-option"><input type="checkbox" id="showCompanyAddress" checked><span>Show company address</span></label>
                 <label class="check-option"><input type="checkbox" id="showEmployerContributions" checked><span>Show employer contributions</span></label>
-                <label class="check-option"><input type="checkbox" id="showYTD"><span>Show year-to-date summary</span></label>
                 <label class="check-option"><input type="checkbox" id="showNotes" checked><span>Show notes</span></label>
                 <label class="check-option"><input type="checkbox" id="showSignatures"><span>Show prepared / approved by</span></label>
               </div>
             </div>
-
-            <div id="ytdInputs" class="customize-dependent">
-              <div class="field-grid">
-                <div class="form-group"><label for="ytdGross">YTD Gross Pay (RM)</label><input type="number" id="ytdGross" value="0" min="0" step="0.01"></div>
-                <div class="form-group"><label for="ytdNet">YTD Net Pay (RM)</label><input type="number" id="ytdNet" value="0" min="0" step="0.01"></div>
-              </div>
-              <div class="field-grid">
-                <div class="form-group"><label for="ytdEmployeeEPF">YTD Employee EPF (RM)</label><input type="number" id="ytdEmployeeEPF" value="0" min="0" step="0.01"></div>
-                <div class="form-group"><label for="ytdEmployerEPF">YTD Employer EPF (RM)</label><input type="number" id="ytdEmployerEPF" value="0" min="0" step="0.01"></div>
-              </div>
-            </div>
-
             <div id="notesInputs" class="customize-dependent">
               <div class="form-group">
                 <label for="payslipNotes">Notes</label>
-                <textarea id="payslipNotes">Salary paid via the selected payment mode.
+                <textarea id="payslipNotes">This payslip is issued for salary payment purposes only.
 Please contact your employer if any information on this payslip is incorrect.</textarea>
               </div>
             </div>
@@ -1756,11 +1569,6 @@ Please contact your employer if any information on this payslip is incorrect.</t
 
         <div class="field-grid" id="autoTaxInputs">
           <div class="form-group">
-            <label for="taxReliefs">Estimated annual tax reliefs (RM)</label>
-            <input type="number" id="taxReliefs" value="9000" min="0" step="0.01">
-          </div>
-
-          <div class="form-group">
             <label for="includePCB">PCB estimate</label>
             <select id="includePCB" onchange="generatePayslip()">
               <option value="yes" selected>Include simplified PCB estimate</option>
@@ -1777,6 +1585,19 @@ Please contact your employer if any information on this payslip is incorrect.</t
             </select>
           </div>
         </div>
+
+        <details class="advanced-fields" id="advancedPCBSettings">
+          <summary>Advanced PCB Settings</summary>
+          <div class="advanced-fields-inner">
+            <div class="form-group">
+              <label for="taxReliefs">Estimated annual tax reliefs (RM)</label>
+              <input type="number" id="taxReliefs" value="9000" min="0" step="0.01">
+              <p class="input-note" style="margin-top:8px;">
+                RM9,000 is used by default for the basic individual relief. Change this only if you know your estimated total annual tax reliefs.
+              </p>
+            </div>
+          </div>
+        </details>
 
         <div class="button-row">
           <button class="btn" type="button" onclick="generatePayslip()">Generate Payslip</button>
@@ -2445,14 +2266,22 @@ Please contact your employer if any information on this payslip is incorrect.</t
       }
       const showCompanyAddress = checked('showCompanyAddress');
       const showEmployerContributions = checked('showEmployerContributions');
-      const showYTD = checked('showYTD');
       const showNotes = checked('showNotes');
       const showSignatures = checked('showSignatures');
 
       const safe = value => escapeHTML(value || '-');
-      const printLayout = val('printLayout');
+
+      const payslipDateCode = paymentDate
+        ? paymentDate.slice(0, 7).replace('-', '')
+        : String(month || '000000').replace(/[^a-zA-Z0-9]/g, '').slice(0, 6).toUpperCase();
+
+      const employeeCode = String(employeeNo || '001')
+        .replace(/[^a-zA-Z0-9]/g, '')
+        .toUpperCase() || '001';
+
+      const payslipNumber = 'PS-' + (payslipDateCode || '000000') + '-' + employeeCode;
+
       const payslipOutput = document.getElementById('payslipOutput');
-      payslipOutput.classList.toggle('compact-mode', printLayout === 'compact');
 
       const logoHTML = companyLogoData
         ? "<img class='company-logo' src='" + companyLogoData + "' alt='Company logo'>"
@@ -2478,14 +2307,6 @@ Please contact your employer if any information on this payslip is incorrect.</t
             "<div class='premium-contribution'><span>Employer EIS</span><strong>RM " + formatRM(employerEIS) + "</strong></div>" +
           "</div>" : '';
 
-      const ytdHTML = showYTD
-        ? "<div class='premium-ytd'><h4 class='premium-ytd-title'>Year-to-Date Summary</h4><div class='premium-ytd-grid'>" +
-            "<div class='premium-ytd-line'><span>YTD Gross Pay</span><strong>RM " + formatRM(num('ytdGross')) + "</strong></div>" +
-            "<div class='premium-ytd-line'><span>YTD Net Pay</span><strong>RM " + formatRM(num('ytdNet')) + "</strong></div>" +
-            "<div class='premium-ytd-line'><span>YTD Employee EPF</span><strong>RM " + formatRM(num('ytdEmployeeEPF')) + "</strong></div>" +
-            "<div class='premium-ytd-line'><span>YTD Employer EPF</span><strong>RM " + formatRM(num('ytdEmployerEPF')) + "</strong></div>" +
-          "</div></div>" : '';
-
       const notesText = escapeHTML(val('payslipNotes').trim()).replace(/\n/g, '<br>');
       const notesHTML = showNotes
         ? "<div class='premium-section-block'><h4 class='premium-block-title'>Notes</h4><div class='premium-notes'>" + (notesText || 'Please contact your employer if any information on this payslip is incorrect.') + "</div></div>"
@@ -2502,7 +2323,7 @@ Please contact your employer if any information on this payslip is incorrect.</t
         "<div class='premium-payslip'>" +
           "<div class='premium-top'>" +
             "<div class='premium-brand'>" + logoHTML + "<div><h3 class='premium-company-name'>" + safe(companyName || 'Company Name') + "</h3><p class='premium-company-address'>" + (showCompanyAddress ? safe(companyAddress || 'Company address') : '') + "</p></div></div>" +
-            "<div class='premium-doc'><div class='premium-doc-label'>SALARY ADVICE</div><h3>PAYSLIP</h3><span class='premium-chip'>Private & Confidential</span></div>" +
+            "<div class='premium-doc'><h3>PAYSLIP</h3><div class='premium-doc-number'>No. <strong>" + safe(payslipNumber) + "</strong></div><span class='premium-chip'>Private & Confidential</span></div>" +
           "</div>" +
           "<div class='premium-content'>" +
             "<div class='premium-employee-card'>" +
@@ -2532,7 +2353,7 @@ Please contact your employer if any information on this payslip is incorrect.</t
                 "<div class='premium-total'><span>Total Deductions</span><span>RM " + formatRM(totalDeductions) + "</span></div></section>" +
             "</div>" +
             "<div class='premium-net-card'><div><div class='premium-net-label'>Net Pay</div><strong class='premium-net-value'>RM " + formatRM(netSalary) + "</strong></div><div class='premium-net-side'><div class='premium-mini'><span>Gross Pay</span><strong>RM " + formatRM(grossPay) + "</strong></div><div class='premium-mini'><span>Deductions</span><strong>RM " + formatRM(totalDeductions) + "</strong></div></div></div>" +
-            contributionHTML + ytdHTML + notesHTML + signaturesHTML +
+            contributionHTML + notesHTML + signaturesHTML +
             "<div class='premium-footer'><strong>This is a computer-generated payslip. No signature is required.</strong><br>Generated with Malaysia Salary Tools. Employers should verify all payroll and statutory amounts before official use.</div>" +
           "</div>" +
         "</div>";
@@ -2593,7 +2414,6 @@ Please contact your employer if any information on this payslip is incorrect.</t
     }
 
     function updateCustomizeVisibility() {
-      document.getElementById('ytdInputs').style.display = document.getElementById('showYTD').checked ? 'block' : 'none';
       document.getElementById('notesInputs').style.display = document.getElementById('showNotes').checked ? 'block' : 'none';
       document.getElementById('signatureInputs').style.display = document.getElementById('showSignatures').checked ? 'block' : 'none';
     }
@@ -2619,16 +2439,11 @@ Please contact your employer if any information on this payslip is incorrect.</t
       document.getElementById('employerEIS').value = 0;
       document.getElementById('showCompanyAddress').checked = true;
       document.getElementById('showEmployerContributions').checked = true;
-      document.getElementById('showYTD').checked = false;
       document.getElementById('showNotes').checked = true;
       document.getElementById('showSignatures').checked = false;
       document.getElementById('payslipNotes').value = 'Salary paid via the selected payment mode.\nPlease contact your employer if any information on this payslip is incorrect.';
       document.getElementById('preparedBy').value = '';
       document.getElementById('approvedBy').value = '';
-      document.getElementById('ytdGross').value = 0;
-      document.getElementById('ytdNet').value = 0;
-      document.getElementById('ytdEmployeeEPF').value = 0;
-      document.getElementById('ytdEmployerEPF').value = 0;
       document.getElementById('month').value = 'January 2026';
       document.getElementById('paymentDate').value = '2026-01-31';
 
@@ -2642,7 +2457,6 @@ Please contact your employer if any information on this payslip is incorrect.</t
       document.getElementById('taxReliefs').value = 9000;
       document.getElementById('includePCB').value = 'yes';
       document.getElementById('skbbkStatus').value = 'none';
-      document.getElementById('printLayout').value = 'compact';
 
       document.getElementById('manualEPF').value = 0;
       document.getElementById('manualSOCSO').value = 0;
@@ -2658,7 +2472,7 @@ Please contact your employer if any information on this payslip is incorrect.</t
     document.getElementById('employeeName').addEventListener('input', generatePayslip);
     document.getElementById('employeeNo').addEventListener('input', generatePayslip);
     document.getElementById('companyName').addEventListener('input', generatePayslip);
-    ['companyAddress','employeeAddress','department','payMode','periodFrom','periodTo','employerContributionMode','employerEPF','employerSOCSO','employerEIS','showCompanyAddress','showEmployerContributions','showYTD','showNotes','showSignatures','ytdGross','ytdNet','ytdEmployeeEPF','ytdEmployerEPF','payslipNotes','preparedBy','approvedBy'].forEach(function(id) {
+    ['companyAddress','employeeAddress','department','payMode','periodFrom','periodTo','employerContributionMode','employerEPF','employerSOCSO','employerEIS','showCompanyAddress','showEmployerContributions','showNotes','showSignatures','payslipNotes','preparedBy','approvedBy'].forEach(function(id) {
       const element = document.getElementById(id);
       const eventName = (element.tagName === 'SELECT' || element.type === 'checkbox') ? 'change' : 'input';
       element.addEventListener(eventName, function() {
@@ -2684,7 +2498,6 @@ Please contact your employer if any information on this payslip is incorrect.</t
     document.getElementById('manualPCB').addEventListener('input', generatePayslip);
     document.getElementById('manualSKBBK').addEventListener('input', generatePayslip);
     document.getElementById('companyLogo').addEventListener('change', handleCompanyLogo);
-    document.getElementById('printLayout').addEventListener('change', generatePayslip);
 
     loadSavedCompanyLogo();
     updateCustomizeVisibility();
