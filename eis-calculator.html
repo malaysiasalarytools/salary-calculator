@@ -89,7 +89,7 @@
         "name": "Why is my actual EIS different from this calculator?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Actual EIS may follow the official PERKESO contribution schedule, wage class, wage ceiling and payroll rounding rules, so it may differ from a simple percentage estimate."
+          "text": "EIS contributions follow the official PERKESO Act 800 wage-class schedule and RM6,000 wage ceiling. Actual payroll treatment may differ if an employee is exempt from coverage."
         }
       }
     ]
@@ -970,7 +970,7 @@
         <div class="form-group">
           <label for="eisStatus">EIS contribution status</label>
           <select id="eisStatus" onchange="handleEISStatusChange()">
-            <option value="standard" selected>Standard EIS - 0.2% employee + 0.2% employer</option>
+            <option value="standard" selected>Standard EIS - Official PERKESO schedule</option>
             <option value="manual">Manual custom rate</option>
             <option value="none">No EIS estimate</option>
           </select>
@@ -995,16 +995,16 @@
         </a>
 
         <p class="input-note">
-          This tool gives a simplified EIS estimate. Actual PERKESO / SIP contribution may follow the official contribution schedule, wage class, wage ceiling and payroll rounding rules.
+          This calculator applies the official PERKESO Act 800 wage-class schedule and the RM6,000 monthly wage ceiling. Manual custom rates remain available for non-standard estimates.
         </p>
       </div>
 
       <div class="results-panel">
         <h2 class="serif">Your EIS result</h2>
-        <p class="sub">Estimated total monthly EIS contribution</p>
+        <p class="sub">Calculated total monthly EIS contribution</p>
 
         <div class="net">RM <span id="totalEIS">0.00</span></div>
-        <p class="net-caption" id="rateExplanation">Applied standard EIS estimate.</p>
+        <p class="net-caption" id="rateExplanation">Applied the official PERKESO EIS contribution schedule.</p>
 
         <div class="bar" id="eisBar"></div>
 
@@ -1026,21 +1026,21 @@
         </p>
 
         <div class="formula-box">
-          <strong>EIS Contribution = Monthly Wage × EIS Rate</strong>
-          <span>Example: RM4,000 × 0.2% = RM8 employee EIS deduction</span>
+          <strong>EIS Contribution = Official PERKESO Wage-Class Amount</strong>
+          <span>Example: Wages above RM3,900 but not exceeding RM4,000 contribute RM7.90 each by the employee and employer.</span>
         </div>
 
         <div class="rate-grid">
           <div class="rate-card">
             <strong>0.2%</strong>
             <h3>Employee EIS</h3>
-            <p>Common employee EIS contribution rate used for simplified estimates.</p>
+            <p>Employee share is determined from the official PERKESO wage-class schedule.</p>
           </div>
 
           <div class="rate-card">
             <strong>0.2%</strong>
             <h3>Employer EIS</h3>
-            <p>Common employer EIS contribution rate used for simplified estimates.</p>
+            <p>Employer share is determined from the official PERKESO wage-class schedule.</p>
           </div>
 
           <div class="rate-card">
@@ -1063,7 +1063,7 @@
         <h2>EIS Contribution Snapshot 2026</h2>
 
         <p>
-          The table below shows quick simplified estimates using 0.2% employee EIS and 0.2% employer EIS.
+          The table below shows official EIS contribution amounts from the PERKESO Act 800 wage-class schedule.
         </p>
 
         <div class="contribution-table-wrap">
@@ -1079,52 +1079,52 @@
             <tbody>
               <tr>
                 <td>RM2,000</td>
-                <td>RM4.00</td>
-                <td>RM4.00</td>
-                <td>RM8.00</td>
+                <td>RM3.90</td>
+                <td>RM3.90</td>
+                <td>RM7.80</td>
               </tr>
               <tr>
                 <td>RM3,000</td>
-                <td>RM6.00</td>
-                <td>RM6.00</td>
-                <td>RM12.00</td>
+                <td>RM5.90</td>
+                <td>RM5.90</td>
+                <td>RM11.80</td>
               </tr>
               <tr>
                 <td>RM4,000</td>
-                <td>RM8.00</td>
-                <td>RM8.00</td>
-                <td>RM16.00</td>
+                <td>RM7.90</td>
+                <td>RM7.90</td>
+                <td>RM15.80</td>
               </tr>
               <tr>
                 <td>RM5,000</td>
-                <td>RM10.00</td>
-                <td>RM10.00</td>
-                <td>RM20.00</td>
+                <td>RM9.90</td>
+                <td>RM9.90</td>
+                <td>RM19.80</td>
               </tr>
               <tr>
                 <td>RM6,000</td>
-                <td>RM12.00</td>
-                <td>RM12.00</td>
-                <td>RM24.00</td>
+                <td>RM11.90</td>
+                <td>RM11.90</td>
+                <td>RM23.80</td>
               </tr>
               <tr>
                 <td>RM8,000</td>
-                <td>RM12.00</td>
-                <td>RM12.00</td>
-                <td>RM24.00</td>
+                <td>RM11.90</td>
+                <td>RM11.90</td>
+                <td>RM23.80</td>
               </tr>
               <tr>
                 <td>RM10,000</td>
-                <td>RM12.00</td>
-                <td>RM12.00</td>
-                <td>RM24.00</td>
+                <td>RM11.90</td>
+                <td>RM11.90</td>
+                <td>RM23.80</td>
               </tr>
-            </tbody>
+</tbody>
           </table>
         </div>
 
         <p class="contribution-note">
-          Note: This table is a simplified quick reference. Actual EIS contribution may differ based on the official PERKESO contribution schedule.
+          Note: Wages exceeding RM6,000 use the maximum contribution amount under the RM6,000 wage ceiling.
         </p>
 
       </section>
@@ -1261,7 +1261,7 @@
         <details class="faq-item" open>
           <summary>How is EIS calculated in Malaysia?</summary>
           <p>
-            EIS is generally calculated based on monthly wages, with both employee and employer portions. This calculator uses a simplified 0.2% employee and 0.2% employer estimate.
+            EIS is calculated based on monthly wages using the official PERKESO Act 800 wage-class schedule, with employee and employer portions.
           </p>
         </details>
 
@@ -1296,7 +1296,7 @@
         <details class="faq-item">
           <summary>Why is my actual EIS different from this calculator?</summary>
           <p>
-            Actual EIS may follow the official PERKESO contribution schedule, wage class, wage ceiling and payroll rounding rules, so it may differ from a simplified percentage estimate.
+            Actual payroll treatment may differ if the employee is exempt from EIS coverage or the contribution status selected does not match the employee's eligibility.
           </p>
         </details>
 
@@ -1385,32 +1385,133 @@
       calculateEIS();
     }
 
-    function getEISRates() {
+    /*
+      Official PERKESO Employment Insurance System Act 800 schedule:
+      [upper monthly wage limit, employer contribution, employee contribution]
+
+      Monthly wages exceeding RM6,000 use the maximum RM6,000 contribution row.
+    */
+    const eisSchedule = [
+        [30, 0.05, 0.05],
+        [50, 0.10, 0.10],
+        [70, 0.15, 0.15],
+        [100, 0.20, 0.20],
+        [140, 0.25, 0.25],
+        [200, 0.35, 0.35],
+        [300, 0.50, 0.50],
+        [400, 0.70, 0.70],
+        [500, 0.90, 0.90],
+        [600, 1.10, 1.10],
+        [700, 1.30, 1.30],
+        [800, 1.50, 1.50],
+        [900, 1.70, 1.70],
+        [1000, 1.90, 1.90],
+        [1100, 2.10, 2.10],
+        [1200, 2.30, 2.30],
+        [1300, 2.50, 2.50],
+        [1400, 2.70, 2.70],
+        [1500, 2.90, 2.90],
+        [1600, 3.10, 3.10],
+        [1700, 3.30, 3.30],
+        [1800, 3.50, 3.50],
+        [1900, 3.70, 3.70],
+        [2000, 3.90, 3.90],
+        [2100, 4.10, 4.10],
+        [2200, 4.30, 4.30],
+        [2300, 4.50, 4.50],
+        [2400, 4.70, 4.70],
+        [2500, 4.90, 4.90],
+        [2600, 5.10, 5.10],
+        [2700, 5.30, 5.30],
+        [2800, 5.50, 5.50],
+        [2900, 5.70, 5.70],
+        [3000, 5.90, 5.90],
+        [3100, 6.10, 6.10],
+        [3200, 6.30, 6.30],
+        [3300, 6.50, 6.50],
+        [3400, 6.70, 6.70],
+        [3500, 6.90, 6.90],
+        [3600, 7.10, 7.10],
+        [3700, 7.30, 7.30],
+        [3800, 7.50, 7.50],
+        [3900, 7.70, 7.70],
+        [4000, 7.90, 7.90],
+        [4100, 8.10, 8.10],
+        [4200, 8.30, 8.30],
+        [4300, 8.50, 8.50],
+        [4400, 8.70, 8.70],
+        [4500, 8.90, 8.90],
+        [4600, 9.10, 9.10],
+        [4700, 9.30, 9.30],
+        [4800, 9.50, 9.50],
+        [4900, 9.70, 9.70],
+        [5000, 9.90, 9.90],
+        [5100, 10.10, 10.10],
+        [5200, 10.30, 10.30],
+        [5300, 10.50, 10.50],
+        [5400, 10.70, 10.70],
+        [5500, 10.90, 10.90],
+        [5600, 11.10, 11.10],
+        [5700, 11.30, 11.30],
+        [5800, 11.50, 11.50],
+        [5900, 11.70, 11.70],
+        [6000, 11.90, 11.90]
+    ];
+
+    function getOfficialEISRow(monthlyWages) {
+      const cappedWages = Math.min(monthlyWages, 6000);
+
+      for (let i = 0; i < eisSchedule.length; i++) {
+        if (cappedWages <= eisSchedule[i][0]) {
+          return eisSchedule[i];
+        }
+      }
+
+      return eisSchedule[eisSchedule.length - 1];
+    }
+
+    function getEISContribution(salary) {
       const status = document.getElementById("eisStatus").value;
 
       if (status === "standard") {
+        const row = getOfficialEISRow(salary);
+        const wageBandUpper = row[0];
+
         return {
-          employeeRate: 0.2,
-          employerRate: 0.2,
-          explanation: "Applied standard EIS estimate: Employee 0.2%, Employer 0.2%, subject to estimated wage cap."
+          employeeEIS: row[2],
+          employerEIS: row[1],
+          explanation:
+            "Official PERKESO Act 800 wage-class amount applied" +
+            (salary > 6000
+              ? " using the RM6,000 wage ceiling."
+              : " for wages up to RM " + formatRM(wageBandUpper) + ".")
         };
       }
 
       if (status === "manual") {
-        const employeeRate = parseFloat(document.getElementById("employeeRate").value) || 0;
-        const employerRate = parseFloat(document.getElementById("employerRate").value) || 0;
+        const employeeRate =
+          parseFloat(document.getElementById("employeeRate").value) || 0;
+        const employerRate =
+          parseFloat(document.getElementById("employerRate").value) || 0;
+        const cappedSalary = Math.min(salary, 6000);
 
         return {
-          employeeRate: employeeRate,
-          employerRate: employerRate,
-          explanation: "Applied manual EIS estimate: Employee " + formatRate(employeeRate) + ", Employer " + formatRate(employerRate) + ", subject to estimated wage cap."
+          employeeEIS:
+            Math.round(cappedSalary * employeeRate) / 100,
+          employerEIS:
+            Math.round(cappedSalary * employerRate) / 100,
+          explanation:
+            "Applied manual EIS estimate: Employee " +
+            formatRate(employeeRate) + ", Employer " +
+            formatRate(employerRate) +
+            ", using a maximum wage basis of RM6,000."
         };
       }
 
       return {
-        employeeRate: 0,
-        employerRate: 0,
-        explanation: "No EIS estimate selected."
+        employeeEIS: 0,
+        employerEIS: 0,
+        explanation: "No EIS contribution selected."
       };
     }
 
@@ -1435,7 +1536,8 @@
 
       if (!salary || salary < 0) {
         document.getElementById("totalEIS").textContent = "0.00";
-        document.getElementById("rateExplanation").textContent = "Please enter a salary.";
+        document.getElementById("rateExplanation").textContent =
+          "Please enter a salary.";
         document.getElementById("eisBar").innerHTML = "";
         document.getElementById("monthlyRows").innerHTML = "";
         document.getElementById("annualRows").innerHTML = "";
@@ -1444,17 +1546,23 @@
 
       rangeInput.value = Math.min(salary, rangeInput.max);
 
-      const rates = getEISRates();
-      const cappedSalary = Math.min(salary, 6000);
+      const contribution = getEISContribution(salary);
 
-      const employeeEIS = cappedSalary * (rates.employeeRate / 100);
-      const employerEIS = cappedSalary * (rates.employerRate / 100);
-      const totalEIS = employeeEIS + employerEIS;
-      const salaryAfterEIS = salary - employeeEIS;
+      const employeeEIS =
+        Math.round(contribution.employeeEIS * 100) / 100;
+      const employerEIS =
+        Math.round(contribution.employerEIS * 100) / 100;
+      const totalEIS =
+        Math.round((employeeEIS + employerEIS) * 100) / 100;
+      const salaryAfterEIS =
+        Math.round((salary - employeeEIS) * 100) / 100;
 
-      const annualEmployeeEIS = employeeEIS * 12;
-      const annualEmployerEIS = employerEIS * 12;
-      const annualTotalEIS = totalEIS * 12;
+      const annualEmployeeEIS =
+        Math.round(employeeEIS * 12 * 100) / 100;
+      const annualEmployerEIS =
+        Math.round(employerEIS * 12 * 100) / 100;
+      const annualTotalEIS =
+        Math.round(totalEIS * 12 * 100) / 100;
 
       const colors = {
         employee: "#5aa783",
@@ -1463,18 +1571,22 @@
         total: "#2f7d5e"
       };
 
-      document.getElementById("totalEIS").textContent = formatRM(totalEIS);
-      document.getElementById("rateExplanation").textContent = rates.explanation;
+      document.getElementById("totalEIS").textContent =
+        formatRM(totalEIS);
+      document.getElementById("rateExplanation").textContent =
+        contribution.explanation;
 
       const barItems = [
         ["Salary After Employee EIS", salaryAfterEIS, colors.salaryAfter],
         ["Employee EIS", employeeEIS, colors.employee]
       ];
 
-      document.getElementById("eisBar").innerHTML = barItems.map(function(item) {
-        let width = salary ? (item[1] / salary) * 100 : 0;
-        return '<i style="width:' + width + '%;background:' + item[2] + '"></i>';
-      }).join("");
+      document.getElementById("eisBar").innerHTML =
+        barItems.map(function(item) {
+          let width = salary ? (item[1] / salary) * 100 : 0;
+          return '<i style="width:' + width +
+            '%;background:' + item[2] + '"></i>';
+        }).join("");
 
       const monthlyItems = [
         ["Monthly Salary", salary, "#f6f3ec"],
@@ -1484,25 +1596,36 @@
         ["Salary After Employee EIS", salaryAfterEIS, colors.salaryAfter]
       ];
 
-      document.getElementById("monthlyRows").innerHTML = monthlyItems.map(function(item) {
-        return '<div class="result-line"><span class="k"><span class="dot" style="background:' + item[2] + '"></span>' + item[0] + '</span><span class="v">RM ' + formatRM(item[1]) + '</span></div>';
-      }).join("");
+      document.getElementById("monthlyRows").innerHTML =
+        monthlyItems.map(function(item) {
+          return '<div class="result-line"><span class="k"><span class="dot" style="background:' +
+            item[2] + '"></span>' + item[0] +
+            '</span><span class="v">RM ' + formatRM(item[1]) +
+            '</span></div>';
+        }).join("");
 
       document.getElementById("annualRows").innerHTML =
-        '<div><span>Annual Employee EIS</span><strong>RM ' + formatRM(annualEmployeeEIS) + '</strong></div>' +
-        '<div><span>Annual Employer EIS</span><strong>RM ' + formatRM(annualEmployerEIS) + '</strong></div>' +
-        '<div><span>Annual Total EIS</span><strong>RM ' + formatRM(annualTotalEIS) + '</strong></div>';
+        '<div><span>Annual Employee EIS</span><strong>RM ' +
+        formatRM(annualEmployeeEIS) + '</strong></div>' +
+        '<div><span>Annual Employer EIS</span><strong>RM ' +
+        formatRM(annualEmployerEIS) + '</strong></div>' +
+        '<div><span>Annual Total EIS</span><strong>RM ' +
+        formatRM(annualTotalEIS) + '</strong></div>';
     }
 
-    document.getElementById("salary").addEventListener("input", calculateEIS);
+    document.getElementById("salary")
+      .addEventListener("input", calculateEIS);
 
-    document.getElementById("salaryRange").addEventListener("input", function() {
-      document.getElementById("salary").value = this.value;
-      calculateEIS();
-    });
+    document.getElementById("salaryRange")
+      .addEventListener("input", function() {
+        document.getElementById("salary").value = this.value;
+        calculateEIS();
+      });
 
-    document.getElementById("employeeRate").addEventListener("input", calculateEIS);
-    document.getElementById("employerRate").addEventListener("input", calculateEIS);
+    document.getElementById("employeeRate")
+      .addEventListener("input", calculateEIS);
+    document.getElementById("employerRate")
+      .addEventListener("input", calculateEIS);
 
     calculateEIS();
   </script>
