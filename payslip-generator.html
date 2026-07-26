@@ -421,6 +421,72 @@
       color: var(--foreground);
     }
 
+    .logo-upload-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-upload-wrap input[type="file"] {
+      padding: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      background: var(--white);
+    }
+
+    .logo-upload-wrap input[type="file"]::file-selector-button {
+      border: none;
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin-right: 10px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .logo-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .small-button {
+      border: 1px solid var(--accent-border);
+      background: var(--white);
+      color: var(--accent);
+      border-radius: 9px;
+      padding: 8px 11px;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .small-button:hover {
+      background: var(--accent-soft);
+    }
+
+    .payslip-header-content {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .company-logo {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      flex: 0 0 auto;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 6px;
+    }
+
+    .payslip-title-block {
+      min-width: 0;
+    }
+
     .payslip-header {
       background: #f8f5ef;
       border-bottom: 1px solid var(--border);
@@ -530,6 +596,73 @@
       font-size: 24px;
       display: block;
       line-height: 1.2;
+    }
+
+    .payslip-preview.compact-mode .payslip-header {
+      padding: 13px 15px;
+    }
+
+    .payslip-preview.compact-mode .company-logo {
+      width: 54px;
+      height: 54px;
+      padding: 4px;
+    }
+
+    .payslip-preview.compact-mode .payslip-header h3 {
+      font-size: 17px;
+      margin-bottom: 2px;
+    }
+
+    .payslip-preview.compact-mode .payslip-body {
+      padding: 13px 15px;
+    }
+
+    .payslip-preview.compact-mode .payslip-meta {
+      gap: 7px;
+      margin-bottom: 10px;
+    }
+
+    .payslip-preview.compact-mode .meta-box {
+      padding: 8px 10px;
+    }
+
+    .payslip-preview.compact-mode .meta-box span {
+      font-size: 10px;
+      margin-bottom: 2px;
+    }
+
+    .payslip-preview.compact-mode .meta-box strong {
+      font-size: 12px;
+    }
+
+    .payslip-preview.compact-mode .payslip-table {
+      margin-top: 8px;
+    }
+
+    .payslip-preview.compact-mode .payslip-table th,
+    .payslip-preview.compact-mode .payslip-table td {
+      padding: 7px 9px;
+      font-size: 11px;
+    }
+
+    .payslip-preview.compact-mode .net-box {
+      padding: 10px 12px;
+      margin-top: 10px;
+    }
+
+    .payslip-preview.compact-mode .net-box span {
+      font-size: 10px;
+      margin-bottom: 2px;
+    }
+
+    .payslip-preview.compact-mode .net-box strong {
+      font-size: 18px;
+    }
+
+    .payslip-preview.compact-mode .input-note {
+      margin-top: 9px;
+      font-size: 10px;
+      line-height: 1.35;
     }
 
     .result-rows {
@@ -774,10 +907,347 @@
       color: var(--accent);
     }
 
+    @page {
+      size: A4 portrait;
+      margin: 8mm;
+    }
+
+
+    /* Modern premium payslip */
+    .premium-payslip {
+      background: #fffdf8;
+      color: #292720;
+      border: 1px solid #e5ded1;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 18px 44px rgba(28,35,31,.10);
+    }
+
+    .premium-payslip .premium-top {
+      padding: 24px 24px 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      align-items: flex-start;
+      background:
+        radial-gradient(circle at 88% 20%, rgba(47,125,94,.13), transparent 34%),
+        linear-gradient(135deg, #fffdf8, #f6f1e7);
+      border-bottom: 1px solid #e6dfd3;
+    }
+
+    .premium-brand { display:flex; gap:14px; align-items:flex-start; min-width:0; }
+    .premium-brand .company-logo { width:58px; height:58px; object-fit:contain; border-radius:13px; background:white; border:1px solid #e4ddd0; padding:6px; flex:0 0 auto; }
+    .premium-company-name { margin:0; font-size:20px; line-height:1.15; color:#292720; }
+    .premium-company-address { margin:7px 0 0; font-size:11.5px; line-height:1.45; color:#777064; white-space:pre-line; }
+
+    .premium-doc { text-align:right; flex:0 0 auto; }
+    .premium-doc-label { font-size:11px; font-weight:900; letter-spacing:.16em; color:#2f7d5e; }
+    .premium-doc h3 { margin:3px 0 8px; font-size:29px; line-height:1; letter-spacing:-.03em; }
+    .premium-chip { display:inline-block; padding:5px 10px; border-radius:999px; background:rgba(47,125,94,.10); border:1px solid rgba(47,125,94,.22); color:#2f7d5e; font-size:10px; font-weight:900; letter-spacing:.04em; text-transform:uppercase; }
+
+    .premium-content { padding:20px 24px 22px; }
+    .premium-employee-card {
+      display:grid; grid-template-columns:1.35fr 1fr; gap:16px;
+      background:#f7f3eb; border:1px solid #e5ded2; border-radius:15px; padding:16px;
+    }
+    .premium-eyebrow { font-size:10px; font-weight:900; color:#2f7d5e; text-transform:uppercase; letter-spacing:.12em; margin-bottom:5px; }
+    .premium-employee-name { margin:0; font-size:18px; line-height:1.2; }
+    .premium-employee-address { margin:6px 0 0; font-size:11.5px; color:#756e63; white-space:pre-line; line-height:1.4; }
+    .premium-info-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px 14px; }
+    .premium-info-item span { display:block; font-size:9.5px; text-transform:uppercase; letter-spacing:.07em; color:#8a8276; font-weight:800; }
+    .premium-info-item strong { display:block; margin-top:2px; font-size:12px; color:#2e2b25; overflow-wrap:anywhere; }
+
+    .premium-money-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px; }
+    .premium-money-card { background:white; border:1px solid #e6dfd3; border-radius:15px; padding:15px; }
+    .premium-section-title { display:flex; justify-content:space-between; align-items:center; gap:10px; padding-bottom:9px; margin-bottom:5px; border-bottom:1px solid #ece6dc; }
+    .premium-section-title strong { font-size:13px; }
+    .premium-section-title span { font-size:9.5px; color:#8a8276; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
+    .premium-line { display:flex; justify-content:space-between; gap:16px; padding:7px 0; font-size:11.5px; border-bottom:1px dashed #ece6dc; }
+    .premium-line:last-of-type { border-bottom:0; }
+    .premium-line .premium-amount { font-weight:800; white-space:nowrap; }
+    .premium-total { display:flex; justify-content:space-between; gap:16px; padding-top:10px; margin-top:3px; border-top:1px solid #ddd5c8; font-size:12px; font-weight:900; }
+
+    .premium-net-card {
+      margin-top:16px; padding:18px 20px; border-radius:17px;
+      display:grid; grid-template-columns:1.25fr 1fr; gap:18px; align-items:center;
+      background:linear-gradient(135deg, #2f342e, #243b31); color:#fbfaf6;
+      box-shadow:0 14px 28px rgba(29,47,38,.18);
+    }
+    .premium-net-label { font-size:10px; text-transform:uppercase; letter-spacing:.14em; color:rgba(255,255,255,.67); font-weight:900; }
+    .premium-net-value { display:block; margin-top:4px; font-size:29px; line-height:1; letter-spacing:-.04em; }
+    .premium-net-side { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+    .premium-mini { padding-left:11px; border-left:1px solid rgba(255,255,255,.16); }
+    .premium-mini span { display:block; font-size:9px; color:rgba(255,255,255,.58); text-transform:uppercase; letter-spacing:.07em; }
+    .premium-mini strong { display:block; margin-top:3px; font-size:12px; }
+
+    .premium-contribution-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:14px; }
+    .premium-contribution { background:#f7f3eb; border:1px solid #e5ded2; border-radius:12px; padding:11px 12px; }
+    .premium-contribution span { display:block; font-size:9px; color:#857d72; text-transform:uppercase; letter-spacing:.06em; font-weight:800; }
+    .premium-contribution strong { display:block; margin-top:4px; font-size:13px; color:#2f7d5e; }
+
+    .premium-ytd { margin-top:14px; border-top:1px solid #e8e1d5; padding-top:12px; }
+    .premium-ytd-title { margin:0 0 8px; font-size:11px; text-transform:uppercase; letter-spacing:.10em; color:#6f685e; }
+    .premium-ytd-grid { display:grid; grid-template-columns:1fr 1fr; gap:5px 18px; }
+    .premium-ytd-line { display:flex; justify-content:space-between; gap:12px; font-size:10.5px; padding:4px 0; }
+    .premium-ytd-line strong { white-space:nowrap; }
+
+    .premium-footer { margin-top:15px; padding-top:11px; border-top:1px solid #e8e1d5; text-align:center; color:#8b8377; font-size:9.5px; line-height:1.45; }
+    .premium-footer strong { color:#575147; }
+
+
+    /* Premium printable PDF payslip — white document, minimal ink */
+    .premium-payslip {
+      background: #ffffff;
+      color: #1f2321;
+      border: 1px solid #d9ddda;
+      border-radius: 10px;
+      box-shadow: 0 12px 34px rgba(28,35,31,.08);
+    }
+
+    .premium-payslip .premium-top {
+      padding: 25px 26px 20px;
+      background: #ffffff;
+      border-bottom: 2px solid #252a27;
+    }
+
+    .premium-brand .company-logo {
+      width: 58px;
+      height: 58px;
+      border-radius: 8px;
+      background: #ffffff;
+      border: 1px solid #d9ddda;
+      padding: 5px;
+    }
+
+    .premium-company-name { color: #171a18; }
+    .premium-company-address { color: #666c68; }
+    .premium-doc-label { color: #2f7d5e; }
+    .premium-doc h3 { color: #171a18; }
+
+    .premium-chip {
+      padding: 4px 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: #676d69;
+      letter-spacing: .08em;
+    }
+
+    .premium-content { padding: 21px 26px 23px; }
+
+    .premium-employee-card {
+      background: #ffffff;
+      border: 0;
+      border-radius: 0;
+      padding: 0 0 17px;
+      border-bottom: 1px solid #dfe2e0;
+    }
+
+    .premium-eyebrow { color: #2f7d5e; }
+    .premium-employee-name { color: #171a18; }
+    .premium-employee-address { color: #666c68; }
+    .premium-info-item span { color: #7b817d; }
+    .premium-info-item strong { color: #242825; }
+
+    .premium-money-grid { gap: 24px; margin-top: 18px; }
+
+    .premium-money-card {
+      background: #ffffff;
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+    }
+
+    .premium-section-title {
+      padding-bottom: 8px;
+      margin-bottom: 3px;
+      border-bottom: 1.5px solid #252a27;
+    }
+
+    .premium-section-title strong {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .premium-section-title span { color: #7b817d; }
+
+    .premium-line {
+      padding: 7px 0;
+      border-bottom: 1px solid #eceeed;
+    }
+
+    .premium-total {
+      padding-top: 9px;
+      margin-top: 1px;
+      border-top: 1.5px solid #252a27;
+    }
+
+    .premium-net-card {
+      margin-top: 18px;
+      padding: 15px 0;
+      border-radius: 0;
+      background: #ffffff;
+      color: #171a18;
+      border-top: 2px solid #252a27;
+      border-bottom: 2px solid #252a27;
+      box-shadow: none;
+    }
+
+    .premium-net-label { color: #5e6560; }
+    .premium-net-value { color: #171a18; font-size: 31px; }
+    .premium-mini { border-left: 1px solid #d9ddda; }
+    .premium-mini span { color: #747b76; }
+    .premium-mini strong { color: #242825; }
+
+    .premium-contribution-grid {
+      gap: 18px;
+      margin-top: 17px;
+      padding-top: 13px;
+      border-top: 1px solid #dfe2e0;
+    }
+
+    .premium-contribution {
+      background: #ffffff;
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+    }
+
+    .premium-contribution span { color: #7b817d; }
+    .premium-contribution strong { color: #242825; }
+
+    .premium-ytd {
+      margin-top: 16px;
+      border-top: 1px solid #dfe2e0;
+      padding-top: 13px;
+    }
+
+    .premium-ytd-title { color: #4f5651; }
+    .premium-ytd-line { border-bottom: 1px solid #eff1f0; }
+
+    .premium-footer {
+      margin-top: 17px;
+      padding-top: 12px;
+      border-top: 1px solid #dfe2e0;
+      color: #7a817c;
+    }
+
+    .premium-footer strong { color: #4d544f; }
+
+    .customize-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 4px 0 14px;
+    }
+
+    .check-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      padding: 11px 12px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      background: rgba(255,255,255,.52);
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .check-option input {
+      width: 16px;
+      height: 16px;
+      margin: 1px 0 0;
+      padding: 0;
+      flex: 0 0 auto;
+      accent-color: var(--accent);
+    }
+
+    .customize-dependent {
+      padding-top: 2px;
+    }
+
+    .premium-section-block {
+      margin-top: 16px;
+      padding-top: 13px;
+      border-top: 1px solid #dfe2e0;
+    }
+
+    .premium-block-title {
+      margin: 0 0 9px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .11em;
+      color: #4f5651;
+      font-weight: 900;
+    }
+
+    .premium-notes {
+      font-size: 10.5px;
+      line-height: 1.55;
+      color: #555c57;
+      white-space: pre-line;
+    }
+
+    .premium-signature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+      margin-top: 6px;
+    }
+
+    .premium-signature {
+      padding-top: 24px;
+      border-bottom: 1px solid #646a66;
+      min-height: 46px;
+    }
+
+    .premium-signature-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 5px;
+      font-size: 9.5px;
+      color: #717873;
+    }
+
+    .premium-signature-label strong {
+      color: #3e4540;
+      font-weight: 800;
+    }
+
+    details.advanced-fields { margin: 4px 0 18px; border:1px solid var(--border); border-radius:12px; background:rgba(255,255,255,.45); overflow:hidden; }
+    details.advanced-fields summary { cursor:pointer; padding:13px 14px; font-size:13px; font-weight:800; color:var(--accent); list-style:none; }
+    details.advanced-fields summary::-webkit-details-marker { display:none; }
+    details.advanced-fields summary::after { content:'+'; float:right; }
+    details.advanced-fields[open] summary::after { content:'−'; }
+    .advanced-fields-inner { padding:2px 14px 1px; border-top:1px solid var(--border); }
+    textarea { width:100%; min-height:82px; resize:vertical; padding:14px; font:700 15px/1.45 inherit; border:1px solid var(--border); border-radius:12px; background:var(--white); color:var(--foreground); outline:none; }
+    textarea:focus { border-color:var(--accent); box-shadow:0 0 0 3px rgba(47,125,94,.14); }
+
+    @media (max-width: 620px) {
+      .premium-payslip .premium-top, .premium-employee-card, .premium-money-grid, .premium-net-card { grid-template-columns:1fr; }
+      .premium-payslip .premium-top { display:grid; }
+      .premium-doc { text-align:left; }
+      .premium-contribution-grid { grid-template-columns:1fr; }
+      .premium-ytd-grid, .customize-options, .premium-signature-grid { grid-template-columns:1fr; }
+    }
+
     @media print {
+      html,
       body {
+        width: 210mm;
+        min-height: 297mm;
         background: white;
         padding: 0;
+        margin: 0;
+      }
+
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
       }
 
       .top-nav,
@@ -801,6 +1271,7 @@
 
       .calculator-shell {
         display: block;
+        width: 100%;
         max-width: 100%;
         margin: 0;
       }
@@ -814,7 +1285,123 @@
       }
 
       .payslip-preview {
-        border: none;
+        width: 100%;
+        margin: 0;
+        border: 1px solid #d9d9d9;
+        border-radius: 0;
+        overflow: visible;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .payslip-header,
+      .payslip-body,
+      .meta-box,
+      .payslip-table,
+      .net-box {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .payslip-preview.compact-mode .payslip-header {
+        padding: 8px 12px;
+      }
+
+      .payslip-preview.compact-mode .company-logo {
+        width: 44px;
+        height: 44px;
+        padding: 3px;
+        border-radius: 6px;
+      }
+
+      .payslip-preview.compact-mode .payslip-header-content {
+        gap: 10px;
+      }
+
+      .payslip-preview.compact-mode .payslip-header h3 {
+        font-size: 15px;
+        line-height: 1.15;
+        margin: 0 0 1px;
+      }
+
+      .payslip-preview.compact-mode .payslip-header p {
+        font-size: 9px;
+        line-height: 1.2;
+      }
+
+      .payslip-preview.compact-mode .payslip-body {
+        padding: 8px 12px;
+      }
+
+      .payslip-preview.compact-mode .payslip-meta {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+        margin-bottom: 6px;
+      }
+
+      .payslip-preview.compact-mode .meta-box {
+        padding: 5px 7px;
+        border-radius: 5px;
+      }
+
+      .payslip-preview.compact-mode .meta-box span {
+        font-size: 8px;
+        margin-bottom: 1px;
+        line-height: 1.1;
+      }
+
+      .payslip-preview.compact-mode .meta-box strong {
+        font-size: 9px;
+        line-height: 1.2;
+      }
+
+      .payslip-preview.compact-mode .payslip-table {
+        margin-top: 5px;
+      }
+
+      .payslip-preview.compact-mode .payslip-table th,
+      .payslip-preview.compact-mode .payslip-table td {
+        padding: 4px 7px;
+        font-size: 9px;
+        line-height: 1.15;
+      }
+
+      .payslip-preview.compact-mode .net-box {
+        padding: 6px 8px;
+        margin-top: 6px;
+        border-radius: 7px;
+      }
+
+      .payslip-preview.compact-mode .net-box span {
+        font-size: 8px;
+        margin-bottom: 1px;
+      }
+
+      .payslip-preview.compact-mode .net-box strong {
+        font-size: 14px;
+      }
+
+      .payslip-preview.compact-mode .input-note {
+        margin: 5px 0 0;
+        font-size: 7.5px;
+        line-height: 1.2;
+      }
+
+
+      .premium-payslip {
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .premium-payslip .premium-top,
+      .premium-employee-card,
+      .premium-money-card,
+      .premium-net-card,
+      .premium-contribution,
+      .premium-ytd {
+        background: #ffffff !important;
+        box-shadow: none !important;
       }
     }
 
@@ -984,6 +1571,32 @@
           <input type="text" id="companyName" placeholder="Example: ABC Sdn Bhd" value="ABC Sdn Bhd">
         </div>
 
+        <div class="form-group">
+          <label for="companyAddress">Company address (optional)</label>
+          <textarea id="companyAddress" placeholder="Example: Suite 10, Jalan Example, 50000 Kuala Lumpur">Suite 10, Jalan Example
+50000 Kuala Lumpur, Malaysia</textarea>
+        </div>
+
+        <div class="field-grid">
+          <div class="form-group">
+            <label for="companyLogo">Company logo (optional)</label>
+            <div class="logo-upload-wrap">
+              <input type="file" id="companyLogo" accept="image/png,image/jpeg,image/webp">
+            </div>
+            <div class="logo-actions">
+              <button class="small-button" type="button" id="removeLogoButton" onclick="removeCompanyLogo()" style="display:none;">Remove Logo</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="printLayout">Payslip layout</label>
+            <select id="printLayout" onchange="generatePayslip()">
+              <option value="compact" selected>Compact - fit on one A4 page</option>
+              <option value="standard">Standard</option>
+            </select>
+          </div>
+        </div>
+
         <div class="field-grid">
           <div class="form-group">
             <label for="month">Payslip month</label>
@@ -995,6 +1608,77 @@
             <input type="date" id="paymentDate" value="2026-01-31">
           </div>
         </div>
+
+        <details class="advanced-fields">
+          <summary>Professional payslip details</summary>
+          <div class="advanced-fields-inner">
+            <div class="field-grid">
+              <div class="form-group"><label for="department">Department</label><input type="text" id="department" value="Finance & Administration"></div>
+              <div class="form-group"><label for="payMode">Pay mode</label><select id="payMode"><option selected>Bank Transfer</option><option>Cheque</option><option>Cash</option></select></div>
+            </div>
+            <div class="field-grid">
+              <div class="form-group"><label for="periodFrom">Pay period from</label><input type="date" id="periodFrom" value="2026-01-01"></div>
+              <div class="form-group"><label for="periodTo">Pay period to</label><input type="date" id="periodTo" value="2026-01-31"></div>
+            </div>
+            <div class="form-group"><label for="employeeAddress">Employee address (optional)</label><textarea id="employeeAddress" placeholder="Employee address"></textarea></div>
+            <div class="form-group">
+              <label for="employerContributionMode">Employer contribution mode</label>
+              <select id="employerContributionMode" onchange="handleEmployerContributionMode()">
+                <option value="auto" selected>Auto estimate standard employer contributions</option>
+                <option value="manual">Manual enter employer contributions</option>
+              </select>
+            </div>
+
+            <div id="employerContributionInputs">
+              <div class="field-grid">
+                <div class="form-group"><label for="employerEPF">Employer EPF (RM)</label><input type="number" id="employerEPF" value="0" min="0" step="0.01" readonly></div>
+                <div class="form-group"><label for="employerSOCSO">Employer SOCSO (RM)</label><input type="number" id="employerSOCSO" value="0" min="0" step="0.01" readonly></div>
+              </div>
+              <div class="form-group"><label for="employerEIS">Employer EIS (RM)</label><input type="number" id="employerEIS" value="0" min="0" step="0.01" readonly></div>
+            </div>
+
+            <p class="input-note" style="margin-top:-4px;">
+              Auto mode uses the same wage-band and rounding logic as the related EPF, SOCSO, EIS, PCB and SKBBK calculators for a Malaysian employee below age 60.
+            </p>
+
+            <div class="form-group">
+              <label>Customize payslip sections</label>
+              <div class="customize-options">
+                <label class="check-option"><input type="checkbox" id="showCompanyAddress" checked><span>Show company address</span></label>
+                <label class="check-option"><input type="checkbox" id="showEmployerContributions" checked><span>Show employer contributions</span></label>
+                <label class="check-option"><input type="checkbox" id="showYTD"><span>Show year-to-date summary</span></label>
+                <label class="check-option"><input type="checkbox" id="showNotes" checked><span>Show notes</span></label>
+                <label class="check-option"><input type="checkbox" id="showSignatures"><span>Show prepared / approved by</span></label>
+              </div>
+            </div>
+
+            <div id="ytdInputs" class="customize-dependent">
+              <div class="field-grid">
+                <div class="form-group"><label for="ytdGross">YTD Gross Pay (RM)</label><input type="number" id="ytdGross" value="0" min="0" step="0.01"></div>
+                <div class="form-group"><label for="ytdNet">YTD Net Pay (RM)</label><input type="number" id="ytdNet" value="0" min="0" step="0.01"></div>
+              </div>
+              <div class="field-grid">
+                <div class="form-group"><label for="ytdEmployeeEPF">YTD Employee EPF (RM)</label><input type="number" id="ytdEmployeeEPF" value="0" min="0" step="0.01"></div>
+                <div class="form-group"><label for="ytdEmployerEPF">YTD Employer EPF (RM)</label><input type="number" id="ytdEmployerEPF" value="0" min="0" step="0.01"></div>
+              </div>
+            </div>
+
+            <div id="notesInputs" class="customize-dependent">
+              <div class="form-group">
+                <label for="payslipNotes">Notes</label>
+                <textarea id="payslipNotes">Salary paid via the selected payment mode.
+Please contact your employer if any information on this payslip is incorrect.</textarea>
+              </div>
+            </div>
+
+            <div id="signatureInputs" class="customize-dependent">
+              <div class="field-grid">
+                <div class="form-group"><label for="preparedBy">Prepared by</label><input type="text" id="preparedBy" placeholder="Name or designation"></div>
+                <div class="form-group"><label for="approvedBy">Approved by</label><input type="text" id="approvedBy" placeholder="Name or designation"></div>
+              </div>
+            </div>
+          </div>
+        </details>
 
         <div class="field-grid">
           <div class="form-group">
@@ -1063,6 +1747,11 @@
               <input type="number" id="manualPCB" value="0" min="0" step="0.01">
             </div>
           </div>
+
+          <div class="form-group">
+            <label for="manualSKBBK">SKBBK / LINDUNG 24 Jam deduction (RM)</label>
+            <input type="number" id="manualSKBBK" value="0" min="0" step="0.01">
+          </div>
         </div>
 
         <div class="field-grid" id="autoTaxInputs">
@@ -1076,6 +1765,15 @@
             <select id="includePCB" onchange="generatePayslip()">
               <option value="yes" selected>Include simplified PCB estimate</option>
               <option value="no">Do not include PCB estimate</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="skbbkStatus">SKBBK / LINDUNG 24 Jam</label>
+            <select id="skbbkStatus" onchange="generatePayslip()">
+              <option value="none" selected>Do not include SKBBK</option>
+              <option value="localParticipating">Local employee — participating voluntarily</option>
+              <option value="foreignWorker">Foreign worker — mandatory participation</option>
             </select>
           </div>
         </div>
@@ -1311,6 +2009,8 @@
   </footer>
 
   <script>
+    let companyLogoData = '';
+
     function formatRM(amount) {
       return Number(amount).toLocaleString('en-MY', {
         minimumFractionDigits: 2,
@@ -1346,38 +2046,326 @@
 
       for (const bracket of brackets) {
         if (remaining <= 0) break;
-
         const taxable = Math.min(remaining, bracket.limit);
         tax += taxable * bracket.rate;
         remaining -= taxable;
       }
 
-      return tax;
+      return Math.round(tax * 100) / 100;
+    }
+
+    function roundUpRinggit(value) {
+      return Math.ceil((Number(value) || 0) - 1e-9);
+    }
+
+    function getEPFBandUpperLimit(wages) {
+      if (wages <= 10) return 10;
+      if (wages <= 5000) return Math.ceil((wages - 1e-9) / 20) * 20;
+      if (wages <= 20000) return Math.ceil((wages - 1e-9) / 100) * 100;
+      return wages;
+    }
+
+    function calculateEPFScheduledShare(wages, ratePercent) {
+      if (wages <= 10 || ratePercent <= 0) return 0;
+      if (wages <= 20000) {
+        return roundUpRinggit(
+          getEPFBandUpperLimit(wages) * ratePercent / 100
+        );
+      }
+      return Math.round(wages * ratePercent) / 100;
+    }
+
+    function estimateEmployeeEPF(grossPay, selectedRate) {
+      const ratePercent = (Number(selectedRate) || 0) * 100;
+      return calculateEPFScheduledShare(grossPay, ratePercent);
+    }
+
+    function estimateEmployerEPF(grossPay) {
+      const ratePercent = grossPay <= 5000 ? 13 : 12;
+      return calculateEPFScheduledShare(grossPay, ratePercent);
+    }
+
+    const socsoSchedule = [
+      [30, 0.40, 0.10, 0.30],
+      [50, 0.70, 0.20, 0.50],
+      [70, 1.10, 0.30, 0.80],
+      [100, 1.50, 0.40, 1.10],
+      [140, 2.10, 0.60, 1.50],
+      [200, 2.95, 0.85, 2.10],
+      [300, 4.35, 1.25, 3.10],
+      [400, 6.15, 1.75, 4.40],
+      [500, 7.85, 2.25, 5.60],
+      [600, 9.65, 2.75, 6.90],
+      [700, 11.35, 3.25, 8.10],
+      [800, 13.15, 3.75, 9.40],
+      [900, 14.85, 4.25, 10.60],
+      [1000, 16.65, 4.75, 11.90],
+      [1100, 18.35, 5.25, 13.10],
+      [1200, 20.15, 5.75, 14.40],
+      [1300, 21.85, 6.25, 15.60],
+      [1400, 23.65, 6.75, 16.90],
+      [1500, 25.35, 7.25, 18.10],
+      [1600, 27.15, 7.75, 19.40],
+      [1700, 28.85, 8.25, 20.60],
+      [1800, 30.65, 8.75, 21.90],
+      [1900, 32.35, 9.25, 23.10],
+      [2000, 34.15, 9.75, 24.40],
+      [2100, 35.90, 10.25, 25.65],
+      [2200, 37.65, 10.75, 26.90],
+      [2300, 39.40, 11.25, 28.15],
+      [2400, 41.15, 11.75, 29.40],
+      [2500, 42.90, 12.25, 30.65],
+      [2600, 44.65, 12.75, 31.90],
+      [2700, 46.40, 13.25, 33.15],
+      [2800, 48.15, 13.75, 34.40],
+      [2900, 49.90, 14.25, 35.65],
+      [3000, 51.65, 14.75, 36.90],
+      [3100, 53.40, 15.25, 38.15],
+      [3200, 55.15, 15.75, 39.40],
+      [3300, 56.90, 16.25, 40.65],
+      [3400, 58.65, 16.75, 41.90],
+      [3500, 60.40, 17.25, 43.15],
+      [3600, 62.15, 17.75, 44.40],
+      [3700, 63.90, 18.25, 45.65],
+      [3800, 65.65, 18.75, 46.90],
+      [3900, 67.40, 19.25, 48.15],
+      [4000, 69.15, 19.75, 49.40],
+      [4100, 70.90, 20.25, 50.65],
+      [4200, 72.65, 20.75, 51.90],
+      [4300, 74.40, 21.25, 53.15],
+      [4400, 76.15, 21.75, 54.40],
+      [4500, 77.90, 22.25, 55.65],
+      [4600, 79.65, 22.75, 56.90],
+      [4700, 81.40, 23.25, 58.15],
+      [4800, 83.15, 23.75, 59.40],
+      [4900, 84.90, 24.25, 60.65],
+      [5000, 86.65, 24.75, 61.90],
+      [5100, 88.40, 25.25, 63.15],
+      [5200, 90.15, 25.75, 64.40],
+      [5300, 91.90, 26.25, 65.65],
+      [5400, 93.65, 26.75, 66.90],
+      [5500, 95.40, 27.25, 68.15],
+      [5600, 97.15, 27.75, 69.40],
+      [5700, 98.90, 28.25, 70.65],
+      [5800, 100.65, 28.75, 71.90],
+      [5900, 102.40, 29.25, 73.15],
+      [6000, 104.15, 29.75, 74.40]
+    ];
+
+    function getSOCSORow(grossPay) {
+      const cappedWages = Math.min(Math.max(0, grossPay), 6000);
+      for (let i = 0; i < socsoSchedule.length; i++) {
+        if (cappedWages <= socsoSchedule[i][0]) {
+          return socsoSchedule[i];
+        }
+      }
+      return socsoSchedule[socsoSchedule.length - 1];
     }
 
     function estimateSOCSO(grossPay) {
-      const cappedSalary = Math.min(grossPay, 5000);
-      return Math.min(cappedSalary * 0.005, 24.75);
+      return getSOCSORow(grossPay)[2];
+    }
+
+    function estimateEmployerSOCSO(grossPay) {
+      return getSOCSORow(grossPay)[1];
+    }
+
+    const eisSchedule = [
+      [30, 0.05],
+      [50, 0.10],
+      [70, 0.15],
+      [100, 0.20],
+      [140, 0.25],
+      [200, 0.35],
+      [300, 0.50],
+      [400, 0.70],
+      [500, 0.90],
+      [600, 1.10],
+      [700, 1.30],
+      [800, 1.50],
+      [900, 1.70],
+      [1000, 1.90],
+      [1100, 2.10],
+      [1200, 2.30],
+      [1300, 2.50],
+      [1400, 2.70],
+      [1500, 2.90],
+      [1600, 3.10],
+      [1700, 3.30],
+      [1800, 3.50],
+      [1900, 3.70],
+      [2000, 3.90],
+      [2100, 4.10],
+      [2200, 4.30],
+      [2300, 4.50],
+      [2400, 4.70],
+      [2500, 4.90],
+      [2600, 5.10],
+      [2700, 5.30],
+      [2800, 5.50],
+      [2900, 5.70],
+      [3000, 5.90],
+      [3100, 6.10],
+      [3200, 6.30],
+      [3300, 6.50],
+      [3400, 6.70],
+      [3500, 6.90],
+      [3600, 7.10],
+      [3700, 7.30],
+      [3800, 7.50],
+      [3900, 7.70],
+      [4000, 7.90],
+      [4100, 8.10],
+      [4200, 8.30],
+      [4300, 8.50],
+      [4400, 8.70],
+      [4500, 8.90],
+      [4600, 9.10],
+      [4700, 9.30],
+      [4800, 9.50],
+      [4900, 9.70],
+      [5000, 9.90],
+      [5100, 10.10],
+      [5200, 10.30],
+      [5300, 10.50],
+      [5400, 10.70],
+      [5500, 10.90],
+      [5600, 11.10],
+      [5700, 11.30],
+      [5800, 11.50],
+      [5900, 11.70],
+      [6000, 11.90]
+    ];
+
+    function getEISRow(grossPay) {
+      const cappedWages = Math.min(Math.max(0, grossPay), 6000);
+      for (let i = 0; i < eisSchedule.length; i++) {
+        if (cappedWages <= eisSchedule[i][0]) {
+          return eisSchedule[i];
+        }
+      }
+      return eisSchedule[eisSchedule.length - 1];
     }
 
     function estimateEIS(grossPay) {
-      const cappedSalary = Math.min(grossPay, 6000);
-      return cappedSalary * 0.002;
+      return getEISRow(grossPay)[1];
+    }
+
+    function estimateEmployerEIS(grossPay) {
+      return getEISRow(grossPay)[1];
+    }
+
+    function roundPCBUpToFiveSen(amount) {
+      if (amount < 10) return 0;
+      return Math.ceil((amount - 1e-9) * 20) / 20;
     }
 
     function estimatePCB(grossPay, epf, reliefs) {
-      const includePCB = document.getElementById('includePCB').value;
-
-      if (includePCB === 'no') {
+      if (document.getElementById('includePCB').value === 'no') {
         return 0;
       }
 
-      const annualIncome = grossPay * 12;
-      const annualEPF = epf * 12;
-      const chargeable = Math.max(0, annualIncome - annualEPF - reliefs);
-      const annualTax = calculateResidentTax(chargeable);
+      const annualIncome = Math.max(0, grossPay) * 12;
+      const epfTaxRelief = Math.min(Math.max(0, epf) * 12, 4000);
+      const chargeable = Math.max(
+        0,
+        annualIncome - epfTaxRelief - Math.max(0, reliefs)
+      );
+      const taxBeforeRebate = calculateResidentTax(chargeable);
+      const individualRebate = chargeable <= 35000 ? 400 : 0;
+      const annualTax = Math.max(0, taxBeforeRebate - individualRebate);
+      return roundPCBUpToFiveSen(annualTax / 12);
+    }
 
-      return annualTax / 12;
+    const skbbkBands = [
+      { max: 30, amount: 0.20 },
+      { max: 50, amount: 0.30 },
+      { max: 70, amount: 0.50 },
+      { max: 100, amount: 0.65 },
+      { max: 140, amount: 0.90 },
+      { max: 200, amount: 1.25 },
+      { max: 300, amount: 1.85 },
+      { max: 400, amount: 2.65 },
+      { max: 500, amount: 3.35 },
+      { max: 600, amount: 4.15 },
+      { max: 700, amount: 4.85 },
+      { max: 800, amount: 5.65 },
+      { max: 900, amount: 6.35 },
+      { max: 1000, amount: 7.15 },
+      { max: 1100, amount: 7.85 },
+      { max: 1200, amount: 8.65 },
+      { max: 1300, amount: 9.35 },
+      { max: 1400, amount: 10.15 },
+      { max: 1500, amount: 10.85 },
+      { max: 1600, amount: 11.65 },
+      { max: 1700, amount: 12.35 },
+      { max: 1800, amount: 13.15 },
+      { max: 1900, amount: 13.85 },
+      { max: 2000, amount: 14.65 },
+      { max: 2100, amount: 15.35 },
+      { max: 2200, amount: 16.15 },
+      { max: 2300, amount: 16.85 },
+      { max: 2400, amount: 17.65 },
+      { max: 2500, amount: 18.35 },
+      { max: 2600, amount: 19.15 },
+      { max: 2700, amount: 19.85 },
+      { max: 2800, amount: 20.65 },
+      { max: 2900, amount: 21.35 },
+      { max: 3000, amount: 22.15 },
+      { max: 3100, amount: 22.85 },
+      { max: 3200, amount: 23.65 },
+      { max: 3300, amount: 24.35 },
+      { max: 3400, amount: 25.15 },
+      { max: 3500, amount: 25.85 },
+      { max: 3600, amount: 26.65 },
+      { max: 3700, amount: 27.35 },
+      { max: 3800, amount: 28.15 },
+      { max: 3900, amount: 28.85 },
+      { max: 4000, amount: 29.65 },
+      { max: 4100, amount: 30.35 },
+      { max: 4200, amount: 31.15 },
+      { max: 4300, amount: 31.85 },
+      { max: 4400, amount: 32.65 },
+      { max: 4500, amount: 33.35 },
+      { max: 4600, amount: 34.15 },
+      { max: 4700, amount: 34.85 },
+      { max: 4800, amount: 35.65 },
+      { max: 4900, amount: 36.35 },
+      { max: 5000, amount: 37.15 },
+      { max: 5100, amount: 37.85 },
+      { max: 5200, amount: 38.65 },
+      { max: 5300, amount: 39.35 },
+      { max: 5400, amount: 40.15 },
+      { max: 5500, amount: 40.85 },
+      { max: 5600, amount: 41.65 },
+      { max: 5700, amount: 42.35 },
+      { max: 5800, amount: 43.15 },
+      { max: 5900, amount: 43.85 },
+      { max: 6000, amount: 44.65 }
+    ];
+
+    function estimateSKBBK(grossPay) {
+      const status = document.getElementById('skbbkStatus').value;
+      if (status === 'none') return 0;
+
+      const wages = Math.max(0, Number(grossPay) || 0);
+      for (let i = 0; i < skbbkBands.length; i++) {
+        if (wages <= skbbkBands[i].max) {
+          return skbbkBands[i].amount;
+        }
+      }
+      return 44.65;
+    }
+
+    function handleEmployerContributionMode() {
+      const mode = document.getElementById('employerContributionMode').value;
+      ['employerEPF', 'employerSOCSO', 'employerEIS'].forEach(function(id) {
+        const input = document.getElementById(id);
+        input.readOnly = mode === 'auto';
+        input.style.background = mode === 'auto' ? '#f5f3ee' : '#ffffff';
+        input.style.cursor = mode === 'auto' ? 'not-allowed' : 'text';
+      });
+      generatePayslip();
     }
 
     function handleDeductionMode() {
@@ -1397,115 +2385,217 @@
     }
 
     function generatePayslip() {
-      const employeeName = document.getElementById('employeeName').value.trim();
-      const employeeNo = document.getElementById('employeeNo').value.trim();
-      const companyName = document.getElementById('companyName').value.trim();
-      const month = document.getElementById('month').value.trim();
-      const paymentDate = document.getElementById('paymentDate').value;
+      const val = id => document.getElementById(id).value;
+      const num = id => parseFloat(val(id)) || 0;
+      const checked = id => document.getElementById(id).checked;
 
-      const salary = parseFloat(document.getElementById('salary').value) || 0;
-      const allowance = parseFloat(document.getElementById('allowance').value) || 0;
-      const overtime = parseFloat(document.getElementById('overtime').value) || 0;
-      const unpaidLeave = parseFloat(document.getElementById('unpaidLeave').value) || 0;
+      const employeeName = val('employeeName').trim();
+      const employeeNo = val('employeeNo').trim();
+      const companyName = val('companyName').trim();
+      const companyAddress = val('companyAddress').trim();
+      const employeeAddress = val('employeeAddress').trim();
+      const department = val('department').trim();
+      const payMode = val('payMode');
+      const month = val('month').trim();
+      const paymentDate = val('paymentDate');
+      const periodFrom = val('periodFrom');
+      const periodTo = val('periodTo');
 
+      const salary = num('salary');
+      const allowance = num('allowance');
+      const overtime = num('overtime');
+      const unpaidLeave = num('unpaidLeave');
       const grossPay = salary + allowance + overtime;
 
-      const deductionMode = document.getElementById('deductionMode').value;
-      const epfRate = parseFloat(document.getElementById('epfRate').value) || 0;
-      const reliefs = parseFloat(document.getElementById('taxReliefs').value) || 0;
-
-      let epf = 0;
-      let socso = 0;
-      let eis = 0;
-      let pcb = 0;
+      const deductionMode = val('deductionMode');
+      const epfRate = parseFloat(val('epfRate')) || 0;
+      const reliefs = num('taxReliefs');
+      let epf = 0, socso = 0, eis = 0, pcb = 0, skbbk = 0;
 
       if (deductionMode === 'manual') {
-        epf = parseFloat(document.getElementById('manualEPF').value) || 0;
-        socso = parseFloat(document.getElementById('manualSOCSO').value) || 0;
-        eis = parseFloat(document.getElementById('manualEIS').value) || 0;
-        pcb = parseFloat(document.getElementById('manualPCB').value) || 0;
+        epf = num('manualEPF');
+        socso = num('manualSOCSO');
+        eis = num('manualEIS');
+        pcb = num('manualPCB');
+        skbbk = num('manualSKBBK');
       } else {
-        epf = grossPay * epfRate;
+        epf = estimateEmployeeEPF(grossPay, epfRate);
         socso = estimateSOCSO(grossPay);
         eis = estimateEIS(grossPay);
         pcb = estimatePCB(grossPay, epf, reliefs);
+        skbbk = estimateSKBBK(grossPay);
       }
 
       const totalEarnings = grossPay;
-      const totalDeductions = epf + socso + eis + pcb + unpaidLeave;
+      const totalDeductions = epf + socso + eis + pcb + skbbk + unpaidLeave;
       const netSalary = totalEarnings - totalDeductions;
 
-      const safeEmployee = escapeHTML(employeeName || 'Employee Name');
-      const safeEmployeeNo = escapeHTML(employeeNo || '-');
-      const safeCompany = escapeHTML(companyName || 'Company Name');
-      const safeMonth = escapeHTML(month || 'Payslip Month');
-      const safePaymentDate = escapeHTML(paymentDate || '-');
+      const employerContributionMode = val('employerContributionMode');
+      let employerEPF = num('employerEPF');
+      let employerSOCSO = num('employerSOCSO');
+      let employerEIS = num('employerEIS');
+
+      if (employerContributionMode === 'auto') {
+        employerEPF = estimateEmployerEPF(grossPay);
+        employerSOCSO = estimateEmployerSOCSO(grossPay);
+        employerEIS = estimateEmployerEIS(grossPay);
+        document.getElementById('employerEPF').value = employerEPF.toFixed(2);
+        document.getElementById('employerSOCSO').value = employerSOCSO.toFixed(2);
+        document.getElementById('employerEIS').value = employerEIS.toFixed(2);
+      }
+      const showCompanyAddress = checked('showCompanyAddress');
+      const showEmployerContributions = checked('showEmployerContributions');
+      const showYTD = checked('showYTD');
+      const showNotes = checked('showNotes');
+      const showSignatures = checked('showSignatures');
+
+      const safe = value => escapeHTML(value || '-');
+      const printLayout = val('printLayout');
+      const payslipOutput = document.getElementById('payslipOutput');
+      payslipOutput.classList.toggle('compact-mode', printLayout === 'compact');
+
+      const logoHTML = companyLogoData
+        ? "<img class='company-logo' src='" + companyLogoData + "' alt='Company logo'>"
+        : "<div class='company-logo' style='display:grid;place-items:center;font-weight:900;color:#2f7d5e'>" + safe((companyName || 'C').charAt(0).toUpperCase()) + "</div>";
 
       const deductionModeText = deductionMode === 'auto' ? 'Auto Estimate' : 'Manual';
-
       document.getElementById('netSalaryTop').textContent = formatRM(netSalary);
       document.getElementById('previewCaption').textContent = deductionMode === 'auto'
         ? 'Generated using simplified auto deduction estimate.'
         : 'Generated using manual deduction amounts.';
 
-      const colors = {
-        earnings: '#f6f3ec',
-        deductions: '#c9a14e',
-        net: '#5aa783',
-        pcb: '#cf6f5b'
-      };
-
+      const colors = { earnings:'#f6f3ec', deductions:'#c9a14e', net:'#5aa783', pcb:'#cf6f5b' };
       document.getElementById('summaryRows').innerHTML =
         '<div class="result-line"><span class="k"><span class="dot" style="background:' + colors.earnings + '"></span>Total Earnings</span><span class="v">RM ' + formatRM(totalEarnings) + '</span></div>' +
         '<div class="result-line"><span class="k"><span class="dot" style="background:' + colors.deductions + '"></span>Total Deductions</span><span class="v">RM ' + formatRM(totalDeductions) + '</span></div>' +
         '<div class="result-line"><span class="k"><span class="dot" style="background:' + colors.net + '"></span>Estimated Net Salary</span><span class="v">RM ' + formatRM(netSalary) + '</span></div>' +
         '<div class="result-line"><span class="k"><span class="dot" style="background:' + colors.pcb + '"></span>Deduction Mode</span><span class="v">' + deductionModeText + '</span></div>';
 
-      document.getElementById('payslipOutput').innerHTML =
-        "<div class='payslip-header'>" +
-          "<h3>Monthly Payslip</h3>" +
-          "<p>Generated by Malaysia Salary Tools</p>" +
-        "</div>" +
+      const contributionHTML = showEmployerContributions
+        ? "<div class='premium-contribution-grid'>" +
+            "<div class='premium-contribution'><span>Employer EPF</span><strong>RM " + formatRM(employerEPF) + "</strong></div>" +
+            "<div class='premium-contribution'><span>Employer SOCSO</span><strong>RM " + formatRM(employerSOCSO) + "</strong></div>" +
+            "<div class='premium-contribution'><span>Employer EIS</span><strong>RM " + formatRM(employerEIS) + "</strong></div>" +
+          "</div>" : '';
 
-        "<div class='payslip-body'>" +
-          "<div class='payslip-meta'>" +
-            "<div class='meta-box'><span>Company</span><strong>" + safeCompany + "</strong></div>" +
-            "<div class='meta-box'><span>Payslip Month</span><strong>" + safeMonth + "</strong></div>" +
-            "<div class='meta-box'><span>Employee</span><strong>" + safeEmployee + "</strong></div>" +
-            "<div class='meta-box'><span>Employee No.</span><strong>" + safeEmployeeNo + "</strong></div>" +
-            "<div class='meta-box'><span>Payment Date</span><strong>" + safePaymentDate + "</strong></div>" +
-            "<div class='meta-box'><span>Deduction Mode</span><strong>" + deductionModeText + "</strong></div>" +
+      const ytdHTML = showYTD
+        ? "<div class='premium-ytd'><h4 class='premium-ytd-title'>Year-to-Date Summary</h4><div class='premium-ytd-grid'>" +
+            "<div class='premium-ytd-line'><span>YTD Gross Pay</span><strong>RM " + formatRM(num('ytdGross')) + "</strong></div>" +
+            "<div class='premium-ytd-line'><span>YTD Net Pay</span><strong>RM " + formatRM(num('ytdNet')) + "</strong></div>" +
+            "<div class='premium-ytd-line'><span>YTD Employee EPF</span><strong>RM " + formatRM(num('ytdEmployeeEPF')) + "</strong></div>" +
+            "<div class='premium-ytd-line'><span>YTD Employer EPF</span><strong>RM " + formatRM(num('ytdEmployerEPF')) + "</strong></div>" +
+          "</div></div>" : '';
+
+      const notesText = escapeHTML(val('payslipNotes').trim()).replace(/\n/g, '<br>');
+      const notesHTML = showNotes
+        ? "<div class='premium-section-block'><h4 class='premium-block-title'>Notes</h4><div class='premium-notes'>" + (notesText || 'Please contact your employer if any information on this payslip is incorrect.') + "</div></div>"
+        : '';
+
+      const signaturesHTML = showSignatures
+        ? "<div class='premium-section-block'><h4 class='premium-block-title'>Authorization</h4><div class='premium-signature-grid'>" +
+            "<div><div class='premium-signature'></div><div class='premium-signature-label'><span>Prepared by</span><strong>" + safe(val('preparedBy').trim() || 'Name / Signature') + "</strong></div></div>" +
+            "<div><div class='premium-signature'></div><div class='premium-signature-label'><span>Approved by</span><strong>" + safe(val('approvedBy').trim() || 'Name / Signature') + "</strong></div></div>" +
+          "</div></div>"
+        : '';
+
+      payslipOutput.innerHTML =
+        "<div class='premium-payslip'>" +
+          "<div class='premium-top'>" +
+            "<div class='premium-brand'>" + logoHTML + "<div><h3 class='premium-company-name'>" + safe(companyName || 'Company Name') + "</h3><p class='premium-company-address'>" + (showCompanyAddress ? safe(companyAddress || 'Company address') : '') + "</p></div></div>" +
+            "<div class='premium-doc'><div class='premium-doc-label'>SALARY ADVICE</div><h3>PAYSLIP</h3><span class='premium-chip'>Private & Confidential</span></div>" +
           "</div>" +
-
-          "<table class='payslip-table'>" +
-            "<thead><tr><th>Earnings</th><th class='amount'>Amount</th></tr></thead>" +
-            "<tbody>" +
-              "<tr><td>Basic Salary</td><td class='amount'>RM " + formatRM(salary) + "</td></tr>" +
-              "<tr><td>Allowance / Other Earnings</td><td class='amount'>RM " + formatRM(allowance) + "</td></tr>" +
-              "<tr><td>Overtime / Commission</td><td class='amount'>RM " + formatRM(overtime) + "</td></tr>" +
-              "<tr><td><strong>Total Earnings</strong></td><td class='amount'><strong>RM " + formatRM(totalEarnings) + "</strong></td></tr>" +
-            "</tbody>" +
-          "</table>" +
-
-          "<table class='payslip-table'>" +
-            "<thead><tr><th>Deductions</th><th class='amount'>Amount</th></tr></thead>" +
-            "<tbody>" +
-              "<tr><td>Employee EPF</td><td class='amount'>RM " + formatRM(epf) + "</td></tr>" +
-              "<tr><td>Employee SOCSO</td><td class='amount'>RM " + formatRM(socso) + "</td></tr>" +
-              "<tr><td>Employee EIS</td><td class='amount'>RM " + formatRM(eis) + "</td></tr>" +
-              "<tr><td>PCB Tax Deduction</td><td class='amount'>RM " + formatRM(pcb) + "</td></tr>" +
-              "<tr><td>Unpaid Leave / Other Deduction</td><td class='amount'>RM " + formatRM(unpaidLeave) + "</td></tr>" +
-              "<tr><td><strong>Total Deductions</strong></td><td class='amount'><strong>RM " + formatRM(totalDeductions) + "</strong></td></tr>" +
-            "</tbody>" +
-          "</table>" +
-
-          "<div class='net-box'>" +
-            "<div><span>Estimated Net Salary</span><strong>RM " + formatRM(netSalary) + "</strong></div>" +
-            "<div><span>Gross Pay</span><strong>RM " + formatRM(grossPay) + "</strong></div>" +
+          "<div class='premium-content'>" +
+            "<div class='premium-employee-card'>" +
+              "<div><div class='premium-eyebrow'>Employee</div><h4 class='premium-employee-name'>" + safe(employeeName || 'Employee Name') + "</h4><p class='premium-employee-address'>" + safe(employeeAddress || 'Employee address not provided') + "</p></div>" +
+              "<div class='premium-info-grid'>" +
+                "<div class='premium-info-item'><span>Employee ID</span><strong>" + safe(employeeNo) + "</strong></div>" +
+                "<div class='premium-info-item'><span>Department</span><strong>" + safe(department || 'General') + "</strong></div>" +
+                "<div class='premium-info-item'><span>Pay Period</span><strong>" + safe(periodFrom || month) + " – " + safe(periodTo || month) + "</strong></div>" +
+                "<div class='premium-info-item'><span>Payment Date</span><strong>" + safe(paymentDate) + "</strong></div>" +
+                "<div class='premium-info-item'><span>Pay Basis</span><strong>Monthly</strong></div>" +
+                "<div class='premium-info-item'><span>Pay Mode</span><strong>" + safe(payMode) + "</strong></div>" +
+              "</div>" +
+            "</div>" +
+            "<div class='premium-money-grid'>" +
+              "<section class='premium-money-card'><div class='premium-section-title'><strong>Earnings</strong><span>Amount</span></div>" +
+                "<div class='premium-line'><span>Basic Salary</span><span class='premium-amount'>RM " + formatRM(salary) + "</span></div>" +
+                "<div class='premium-line'><span>Allowance / Other Earnings</span><span class='premium-amount'>RM " + formatRM(allowance) + "</span></div>" +
+                "<div class='premium-line'><span>Overtime / Commission</span><span class='premium-amount'>RM " + formatRM(overtime) + "</span></div>" +
+                "<div class='premium-total'><span>Total Earnings</span><span>RM " + formatRM(totalEarnings) + "</span></div></section>" +
+              "<section class='premium-money-card'><div class='premium-section-title'><strong>Deductions</strong><span>Amount</span></div>" +
+                "<div class='premium-line'><span>Employee EPF</span><span class='premium-amount'>RM " + formatRM(epf) + "</span></div>" +
+                "<div class='premium-line'><span>Employee SOCSO</span><span class='premium-amount'>RM " + formatRM(socso) + "</span></div>" +
+                "<div class='premium-line'><span>Employee EIS</span><span class='premium-amount'>RM " + formatRM(eis) + "</span></div>" +
+                "<div class='premium-line'><span>SKBBK / LINDUNG 24 Jam</span><span class='premium-amount'>RM " + formatRM(skbbk) + "</span></div>" +
+                "<div class='premium-line'><span>PCB Tax Deduction</span><span class='premium-amount'>RM " + formatRM(pcb) + "</span></div>" +
+                "<div class='premium-line'><span>Other Deduction</span><span class='premium-amount'>RM " + formatRM(unpaidLeave) + "</span></div>" +
+                "<div class='premium-total'><span>Total Deductions</span><span>RM " + formatRM(totalDeductions) + "</span></div></section>" +
+            "</div>" +
+            "<div class='premium-net-card'><div><div class='premium-net-label'>Net Pay</div><strong class='premium-net-value'>RM " + formatRM(netSalary) + "</strong></div><div class='premium-net-side'><div class='premium-mini'><span>Gross Pay</span><strong>RM " + formatRM(grossPay) + "</strong></div><div class='premium-mini'><span>Deductions</span><strong>RM " + formatRM(totalDeductions) + "</strong></div></div></div>" +
+            contributionHTML + ytdHTML + notesHTML + signaturesHTML +
+            "<div class='premium-footer'><strong>This is a computer-generated payslip. No signature is required.</strong><br>Generated with Malaysia Salary Tools. Employers should verify all payroll and statutory amounts before official use.</div>" +
           "</div>" +
-
-          "<p class='input-note'>This payslip is generated for simple reference only. Actual payroll should follow company policy and statutory requirements.</p>" +
         "</div>";
+    }
+
+    function handleCompanyLogo(event) {
+      const file = event.target.files && event.target.files[0];
+
+      if (!file) {
+        return;
+      }
+
+      if (!file.type.startsWith('image/')) {
+        alert('Please upload a valid image file.');
+        event.target.value = '';
+        return;
+      }
+
+      if (file.size > 2 * 1024 * 1024) {
+        alert('Please upload a logo smaller than 2 MB.');
+        event.target.value = '';
+        return;
+      }
+
+      const reader = new FileReader();
+
+      reader.onload = function(loadEvent) {
+        companyLogoData = loadEvent.target.result;
+
+        try {
+          localStorage.setItem('malaysiaPayslipCompanyLogo', companyLogoData);
+        } catch (error) {
+          console.warn('The logo could not be saved in this browser.', error);
+        }
+
+        document.getElementById('removeLogoButton').style.display = 'inline-block';
+        generatePayslip();
+      };
+
+      reader.readAsDataURL(file);
+    }
+
+    function removeCompanyLogo() {
+      companyLogoData = '';
+      document.getElementById('companyLogo').value = '';
+      document.getElementById('removeLogoButton').style.display = 'none';
+      localStorage.removeItem('malaysiaPayslipCompanyLogo');
+      generatePayslip();
+    }
+
+    function loadSavedCompanyLogo() {
+      const savedLogo = localStorage.getItem('malaysiaPayslipCompanyLogo');
+
+      if (savedLogo) {
+        companyLogoData = savedLogo;
+        document.getElementById('removeLogoButton').style.display = 'inline-block';
+      }
+    }
+
+    function updateCustomizeVisibility() {
+      document.getElementById('ytdInputs').style.display = document.getElementById('showYTD').checked ? 'block' : 'none';
+      document.getElementById('notesInputs').style.display = document.getElementById('showNotes').checked ? 'block' : 'none';
+      document.getElementById('signatureInputs').style.display = document.getElementById('showSignatures').checked ? 'block' : 'none';
     }
 
     function printPayslip() {
@@ -1517,6 +2607,28 @@
       document.getElementById('employeeName').value = 'Ahmad Tan';
       document.getElementById('employeeNo').value = 'EMP001';
       document.getElementById('companyName').value = 'ABC Sdn Bhd';
+      document.getElementById('companyAddress').value = 'Suite 10, Jalan Example\n50000 Kuala Lumpur, Malaysia';
+      document.getElementById('employeeAddress').value = '';
+      document.getElementById('department').value = 'Finance & Administration';
+      document.getElementById('payMode').value = 'Bank Transfer';
+      document.getElementById('periodFrom').value = '2026-01-01';
+      document.getElementById('periodTo').value = '2026-01-31';
+      document.getElementById('employerContributionMode').value = 'auto';
+      document.getElementById('employerEPF').value = 0;
+      document.getElementById('employerSOCSO').value = 0;
+      document.getElementById('employerEIS').value = 0;
+      document.getElementById('showCompanyAddress').checked = true;
+      document.getElementById('showEmployerContributions').checked = true;
+      document.getElementById('showYTD').checked = false;
+      document.getElementById('showNotes').checked = true;
+      document.getElementById('showSignatures').checked = false;
+      document.getElementById('payslipNotes').value = 'Salary paid via the selected payment mode.\nPlease contact your employer if any information on this payslip is incorrect.';
+      document.getElementById('preparedBy').value = '';
+      document.getElementById('approvedBy').value = '';
+      document.getElementById('ytdGross').value = 0;
+      document.getElementById('ytdNet').value = 0;
+      document.getElementById('ytdEmployeeEPF').value = 0;
+      document.getElementById('ytdEmployerEPF').value = 0;
       document.getElementById('month').value = 'January 2026';
       document.getElementById('paymentDate').value = '2026-01-31';
 
@@ -1529,19 +2641,31 @@
       document.getElementById('epfRate').value = '0.11';
       document.getElementById('taxReliefs').value = 9000;
       document.getElementById('includePCB').value = 'yes';
+      document.getElementById('skbbkStatus').value = 'none';
+      document.getElementById('printLayout').value = 'compact';
 
       document.getElementById('manualEPF').value = 0;
       document.getElementById('manualSOCSO').value = 0;
       document.getElementById('manualEIS').value = 0;
       document.getElementById('manualPCB').value = 0;
+      document.getElementById('manualSKBBK').value = 0;
 
       handleDeductionMode();
+      handleEmployerContributionMode();
       generatePayslip();
     }
 
     document.getElementById('employeeName').addEventListener('input', generatePayslip);
     document.getElementById('employeeNo').addEventListener('input', generatePayslip);
     document.getElementById('companyName').addEventListener('input', generatePayslip);
+    ['companyAddress','employeeAddress','department','payMode','periodFrom','periodTo','employerContributionMode','employerEPF','employerSOCSO','employerEIS','showCompanyAddress','showEmployerContributions','showYTD','showNotes','showSignatures','ytdGross','ytdNet','ytdEmployeeEPF','ytdEmployerEPF','payslipNotes','preparedBy','approvedBy'].forEach(function(id) {
+      const element = document.getElementById(id);
+      const eventName = (element.tagName === 'SELECT' || element.type === 'checkbox') ? 'change' : 'input';
+      element.addEventListener(eventName, function() {
+        updateCustomizeVisibility();
+        generatePayslip();
+      });
+    });
     document.getElementById('month').addEventListener('input', generatePayslip);
     document.getElementById('paymentDate').addEventListener('input', generatePayslip);
 
@@ -1552,13 +2676,20 @@
     document.getElementById('epfRate').addEventListener('change', generatePayslip);
     document.getElementById('taxReliefs').addEventListener('input', generatePayslip);
     document.getElementById('includePCB').addEventListener('change', generatePayslip);
+    document.getElementById('skbbkStatus').addEventListener('change', generatePayslip);
 
     document.getElementById('manualEPF').addEventListener('input', generatePayslip);
     document.getElementById('manualSOCSO').addEventListener('input', generatePayslip);
     document.getElementById('manualEIS').addEventListener('input', generatePayslip);
     document.getElementById('manualPCB').addEventListener('input', generatePayslip);
+    document.getElementById('manualSKBBK').addEventListener('input', generatePayslip);
+    document.getElementById('companyLogo').addEventListener('change', handleCompanyLogo);
+    document.getElementById('printLayout').addEventListener('change', generatePayslip);
 
+    loadSavedCompanyLogo();
+    updateCustomizeVisibility();
     handleDeductionMode();
+    handleEmployerContributionMode();
     generatePayslip();
   </script>
 
