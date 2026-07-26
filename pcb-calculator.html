@@ -65,7 +65,7 @@
         "name": "Why is my actual PCB different from this calculator?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Actual PCB may use LHDN's official PCB formula, TP1 relief updates, marital status, child relief, rebates, zakat, bonus treatment and payroll settings."
+          "text": "Actual PCB may use cumulative payroll information, TP1 or TP3 details, marital status, child relief, previous PCB, rebates, zakat and additional remuneration treatment."
         }
       },
       {
@@ -966,8 +966,8 @@
           <div class="form-group">
             <label for="residentStatus">Tax resident status</label>
             <select id="residentStatus" onchange="calculatePCB()">
-              <option value="resident" selected>Resident - Progressive tax estimate</option>
-              <option value="nonresident">Non-resident - 30% estimate</option>
+              <option value="resident" selected>Resident - LHDN progressive tax method</option>
+              <option value="nonresident">Non-resident - 30% tax method</option>
             </select>
           </div>
         </div>
@@ -1021,16 +1021,16 @@
         </a>
 
         <p class="input-note">
-          This is a simplified PCB estimate for planning. Actual PCB may differ due to LHDN formula, TP1 / TP3 details, spouse or child status, bonus treatment, rebates and payroll settings.
+          This calculator applies the current resident tax bands, the RM4,000 mandatory EPF relief limit, eligible RM400 individual rebate, RM10 minimum PCB rule and upward rounding to the nearest 5 sen. Actual payroll PCB may still differ due to TP1 / TP3 details, spouse or child status and prior-month payroll records.
         </p>
       </div>
 
       <div class="results-panel">
         <h2 class="serif">Your PCB result</h2>
-        <p class="sub">Estimated monthly PCB deduction</p>
+        <p class="sub">Calculated monthly PCB deduction</p>
 
         <div class="net">RM <span id="monthlyPCB">0.00</span></div>
-        <p class="net-caption" id="taxExplanation">Resident progressive tax estimate applied.</p>
+        <p class="net-caption" id="taxExplanation">Resident progressive tax method applied.</p>
 
         <div class="bar" id="pcbBar"></div>
 
@@ -1052,8 +1052,8 @@
         </p>
 
         <div class="formula-box">
-          <strong>Monthly PCB Estimate = Estimated Annual Tax Payable ÷ Selected Months</strong>
-          <span>Actual PCB may differ depending on LHDN formula, TP1 / TP3 details, rebates, bonus treatment and payroll settings.</span>
+          <strong>Monthly PCB = Annualised Tax ÷ Selected Months, Rounded Up to RM0.05</strong>
+          <span>PCB below RM10 is treated as nil, while payable PCB is rounded upward to the nearest 5 sen.</span>
         </div>
 
         <div class="rate-grid">
@@ -1089,7 +1089,7 @@
         <h2>Malaysia Resident Individual Tax Bracket Snapshot</h2>
 
         <p>
-          The table below gives a simplified resident individual tax bracket snapshot used by this calculator. Always refer to LHDN for official confirmation.
+          The table below shows the resident individual tax bands used by this calculator based on the latest published LHDN rates.
         </p>
 
         <div class="contribution-table-wrap">
@@ -1142,7 +1142,7 @@
         </div>
 
         <p class="contribution-note">
-          Note: This is a simplified planning table. Official tax computation may include detailed rates, rebates, deductions and special tax rules.
+          Note: Actual payroll PCB may also depend on cumulative remuneration, previous PCB, TP1 / TP3 details and additional remuneration treatment.
         </p>
 
       </section>
@@ -1160,13 +1160,13 @@
           <a class="component-card" href="pcb-guide.html">
             <div class="component-icon">🧾</div>
             <h3>Monthly PCB</h3>
-            <p>Estimated monthly tax deduction from salary through payroll.</p>
+            <p>Calculated monthly tax deduction after applying the available inputs and PCB rounding rules.</p>
           </a>
 
           <a class="component-card" href="income-tax-guide.html">
             <div class="component-icon">🏛️</div>
             <h3>Annual Tax</h3>
-            <p>Estimated annual tax payable before comparing with PCB already paid.</p>
+            <p>Annualised tax payable after the available reliefs and rebates are applied.</p>
           </a>
 
           <a class="component-card" href="tax-relief-guide.html">
@@ -1292,7 +1292,7 @@
         <details class="faq-item">
           <summary>Why is my actual PCB different from this calculator?</summary>
           <p>
-            Actual PCB may use LHDN's official formula, TP1 / TP3 details, spouse or child status, rebates, zakat, bonus treatment and payroll settings.
+            Actual PCB may still differ because official payroll calculation can use cumulative salary, previous PCB, TP1 / TP3 details, spouse or child status and the exact month of bonus payment.
           </p>
         </details>
 
@@ -1433,13 +1433,25 @@
         const taxable = Math.min(remaining, bracket.limit);
         tax += taxable * bracket.rate;
         remaining -= taxable;
-        bracketRate = bracket.rate;
+
+        if (taxable > 0) {
+          bracketRate = bracket.rate;
+        }
       }
 
       return {
-        tax: tax,
+        tax: Math.round(tax * 100) / 100,
         bracketRate: bracketRate
       };
+    }
+
+    /*
+      LHDN payroll output rounds payable PCB upward to the nearest 5 sen.
+      Monthly PCB below RM10 is not deducted.
+    */
+    function roundPCBUpToFiveSen(amount) {
+      if (amount < 10) return 0;
+      return Math.ceil((amount - 1e-9) * 20) / 20;
     }
 
     function calculatePCB() {
@@ -1447,16 +1459,29 @@
       const rangeInput = document.getElementById("salaryRange");
 
       const salary = parseFloat(salaryInput.value) || 0;
-      const bonus = parseFloat(document.getElementById("bonus").value) || 0;
-      const reliefs = parseFloat(document.getElementById("reliefs").value) || 0;
-      const rebate = parseFloat(document.getElementById("rebate").value) || 0;
-      const epfRate = parseFloat(document.getElementById("epfRate").value) || 0;
-      const months = parseFloat(document.getElementById("months").value) || 12;
-      const residentStatus = document.getElementById("residentStatus").value;
+      const bonus = Math.max(
+        0,
+        parseFloat(document.getElementById("bonus").value) || 0
+      );
+      const reliefs = Math.max(
+        0,
+        parseFloat(document.getElementById("reliefs").value) || 0
+      );
+      const enteredRebate = Math.max(
+        0,
+        parseFloat(document.getElementById("rebate").value) || 0
+      );
+      const epfRate =
+        parseFloat(document.getElementById("epfRate").value) || 0;
+      const months =
+        parseFloat(document.getElementById("months").value) || 12;
+      const residentStatus =
+        document.getElementById("residentStatus").value;
 
       if (!salary || salary < 0) {
         document.getElementById("monthlyPCB").textContent = "0.00";
-        document.getElementById("taxExplanation").textContent = "Please enter a salary.";
+        document.getElementById("taxExplanation").textContent =
+          "Please enter a salary.";
         document.getElementById("pcbBar").innerHTML = "";
         document.getElementById("monthlyRows").innerHTML = "";
         document.getElementById("annualRows").innerHTML = "";
@@ -1466,31 +1491,75 @@
       rangeInput.value = Math.min(salary, rangeInput.max);
 
       const annualIncome = salary * 12 + bonus;
-      const estimatedEPF = salary * 12 * epfRate;
+      const estimatedGrossEPF = annualIncome * epfRate;
 
-      let chargeable = Math.max(0, annualIncome - estimatedEPF - reliefs);
+      let epfTaxRelief = 0;
+      let chargeable = 0;
       let taxBeforeRebate = 0;
+      let automaticIndividualRebate = 0;
+      let totalRebate = 0;
       let annualTax = 0;
       let taxBracket = 0;
       let taxExplanation = "";
 
       if (residentStatus === "nonresident") {
-        chargeable = Math.max(0, annualIncome);
+        chargeable = annualIncome;
         taxBeforeRebate = chargeable * 0.30;
-        annualTax = Math.max(0, taxBeforeRebate - rebate);
+        annualTax = taxBeforeRebate;
         taxBracket = 0.30;
-        taxExplanation = "Non-resident simplified estimate applied at 30% of annual employment income. Reliefs are not deducted in this simplified estimate.";
+
+        taxExplanation =
+          "Non-resident tax method applied at 30% of annual employment income. Resident reliefs and rebates are not deducted.";
       } else {
+        /*
+          Mandatory EPF / approved scheme relief is restricted to RM4,000.
+          The amount entered under annual reliefs is treated as other eligible
+          reliefs, including the RM9,000 individual relief where applicable.
+        */
+        epfTaxRelief = Math.min(estimatedGrossEPF, 4000);
+        chargeable = Math.max(
+          0,
+          annualIncome - epfTaxRelief - reliefs
+        );
+
         const taxResult = calculateResidentTax(chargeable);
         taxBeforeRebate = taxResult.tax;
-        annualTax = Math.max(0, taxBeforeRebate - rebate);
         taxBracket = taxResult.bracketRate;
-        taxExplanation = "Resident progressive tax estimate applied. Chargeable income is estimated after EPF deduction and reliefs entered.";
+
+        automaticIndividualRebate =
+          chargeable <= 35000 ? 400 : 0;
+
+        totalRebate =
+          automaticIndividualRebate + enteredRebate;
+
+        annualTax = Math.max(
+          0,
+          taxBeforeRebate - totalRebate
+        );
+
+        taxExplanation =
+          "Resident progressive tax method applied with EPF relief capped at RM4,000" +
+          (automaticIndividualRebate > 0
+            ? " and the RM400 individual rebate."
+            : ".") +
+          " PCB is rounded upward to the nearest 5 sen and is nil when below RM10.";
       }
 
-      const monthlyPCB = months > 0 ? annualTax / months : annualTax / 12;
-      const salaryAfterPCB = salary - monthlyPCB;
-      const effectiveRate = annualIncome > 0 ? (annualTax / annualIncome) * 100 : 0;
+      taxBeforeRebate =
+        Math.round(taxBeforeRebate * 100) / 100;
+      annualTax = Math.round(annualTax * 100) / 100;
+      chargeable = Math.round(chargeable * 100) / 100;
+
+      const rawMonthlyPCB =
+        months > 0 ? annualTax / months : annualTax / 12;
+      const monthlyPCB =
+        roundPCBUpToFiveSen(rawMonthlyPCB);
+      const salaryAfterPCB =
+        Math.max(0, salary - monthlyPCB);
+      const effectiveRate =
+        annualIncome > 0
+          ? (annualTax / annualIncome) * 100
+          : 0;
 
       const colors = {
         salaryAfter: "#f6f3ec",
@@ -1499,51 +1568,109 @@
         chargeable: "#2f7d5e"
       };
 
-      document.getElementById("monthlyPCB").textContent = formatRM(monthlyPCB);
-      document.getElementById("taxExplanation").textContent = taxExplanation;
+      document.getElementById("monthlyPCB").textContent =
+        formatRM(monthlyPCB);
+      document.getElementById("taxExplanation").textContent =
+        taxExplanation;
 
       const barItems = [
         ["Salary After PCB", salaryAfterPCB, colors.salaryAfter],
         ["Monthly PCB", monthlyPCB, colors.pcb]
       ];
 
-      document.getElementById("pcbBar").innerHTML = barItems.map(function(item) {
-        let width = salary ? Math.max(0, (item[1] / salary) * 100) : 0;
-        return '<i style="width:' + width + '%;background:' + item[2] + '"></i>';
-      }).join("");
+      document.getElementById("pcbBar").innerHTML =
+        barItems.map(function(item) {
+          let width = salary
+            ? Math.max(0, (item[1] / salary) * 100)
+            : 0;
+
+          return '<i style="width:' + width +
+            '%;background:' + item[2] + '"></i>';
+        }).join("");
 
       const monthlyItems = [
         ["Monthly Salary", salary, "#f6f3ec"],
-        ["Estimated Monthly PCB", monthlyPCB, colors.pcb],
+        ["Calculated Monthly PCB", monthlyPCB, colors.pcb],
         ["Salary After PCB Only", salaryAfterPCB, colors.salaryAfter],
         ["Effective Tax Rate", effectiveRate, colors.tax],
         ["Current Tax Bracket", taxBracket * 100, colors.chargeable]
       ];
 
       document.getElementById("monthlyRows").innerHTML =
-        '<div class="result-line"><span class="k"><span class="dot" style="background:' + monthlyItems[0][2] + '"></span>' + monthlyItems[0][0] + '</span><span class="v">RM ' + formatRM(monthlyItems[0][1]) + '</span></div>' +
-        '<div class="result-line"><span class="k"><span class="dot" style="background:' + monthlyItems[1][2] + '"></span>' + monthlyItems[1][0] + '</span><span class="v">RM ' + formatRM(monthlyItems[1][1]) + '</span></div>' +
-        '<div class="result-line"><span class="k"><span class="dot" style="background:' + monthlyItems[2][2] + '"></span>' + monthlyItems[2][0] + '</span><span class="v">RM ' + formatRM(monthlyItems[2][1]) + '</span></div>' +
-        '<div class="result-line"><span class="k"><span class="dot" style="background:' + monthlyItems[3][2] + '"></span>' + monthlyItems[3][0] + '</span><span class="v">' + formatPercent(monthlyItems[3][1]) + '</span></div>' +
-        '<div class="result-line"><span class="k"><span class="dot" style="background:' + monthlyItems[4][2] + '"></span>' + monthlyItems[4][0] + '</span><span class="v">' + formatPercent(monthlyItems[4][1]) + '</span></div>';
+        '<div class="result-line"><span class="k"><span class="dot" style="background:' +
+        monthlyItems[0][2] + '"></span>' + monthlyItems[0][0] +
+        '</span><span class="v">RM ' + formatRM(monthlyItems[0][1]) +
+        '</span></div>' +
+
+        '<div class="result-line"><span class="k"><span class="dot" style="background:' +
+        monthlyItems[1][2] + '"></span>' + monthlyItems[1][0] +
+        '</span><span class="v">RM ' + formatRM(monthlyItems[1][1]) +
+        '</span></div>' +
+
+        '<div class="result-line"><span class="k"><span class="dot" style="background:' +
+        monthlyItems[2][2] + '"></span>' + monthlyItems[2][0] +
+        '</span><span class="v">RM ' + formatRM(monthlyItems[2][1]) +
+        '</span></div>' +
+
+        '<div class="result-line"><span class="k"><span class="dot" style="background:' +
+        monthlyItems[3][2] + '"></span>' + monthlyItems[3][0] +
+        '</span><span class="v">' +
+        formatPercent(monthlyItems[3][1]) +
+        '</span></div>' +
+
+        '<div class="result-line"><span class="k"><span class="dot" style="background:' +
+        monthlyItems[4][2] + '"></span>' + monthlyItems[4][0] +
+        '</span><span class="v">' +
+        formatPercent(monthlyItems[4][1]) +
+        '</span></div>';
 
       document.getElementById("annualRows").innerHTML =
-        '<div><span>Annual Employment Income</span><strong>RM ' + formatRM(annualIncome) + '</strong></div>' +
-        '<div><span>Estimated EPF Deduction</span><strong>' + (residentStatus === "nonresident" ? "Not deducted" : "RM " + formatRM(estimatedEPF)) + '</strong></div>' +
-        '<div><span>Estimated Chargeable Income</span><strong>RM ' + formatRM(chargeable) + '</strong></div>' +
-        '<div><span>Tax Before Rebate / Zakat</span><strong>RM ' + formatRM(taxBeforeRebate) + '</strong></div>' +
-        '<div><span>Rebate / Zakat Entered</span><strong>RM ' + formatRM(rebate) + '</strong></div>' +
-        '<div><span>Estimated Annual Tax Payable</span><strong>RM ' + formatRM(annualTax) + '</strong></div>';
+        '<div><span>Annual Employment Income</span><strong>RM ' +
+        formatRM(annualIncome) + '</strong></div>' +
+
+        '<div><span>EPF Tax Relief Applied</span><strong>' +
+        (residentStatus === "nonresident"
+          ? "Not deducted"
+          : "RM " + formatRM(epfTaxRelief)) +
+        '</strong></div>' +
+
+        '<div><span>Estimated Chargeable Income</span><strong>RM ' +
+        formatRM(chargeable) + '</strong></div>' +
+
+        '<div><span>Tax Before Rebates</span><strong>RM ' +
+        formatRM(taxBeforeRebate) + '</strong></div>' +
+
+        '<div><span>Automatic Individual Rebate</span><strong>' +
+        (residentStatus === "nonresident"
+          ? "Not applicable"
+          : "RM " + formatRM(automaticIndividualRebate)) +
+        '</strong></div>' +
+
+        '<div><span>Other Rebate / Zakat Entered</span><strong>' +
+        (residentStatus === "nonresident"
+          ? "Not deducted"
+          : "RM " + formatRM(enteredRebate)) +
+        '</strong></div>' +
+
+        '<div><span>Calculated Annual Tax Payable</span><strong>RM ' +
+        formatRM(annualTax) + '</strong></div>';
     }
 
-    document.getElementById("salary").addEventListener("input", calculatePCB);
-    document.getElementById("salaryRange").addEventListener("input", function() {
-      document.getElementById("salary").value = this.value;
-      calculatePCB();
-    });
-    document.getElementById("bonus").addEventListener("input", calculatePCB);
-    document.getElementById("reliefs").addEventListener("input", calculatePCB);
-    document.getElementById("rebate").addEventListener("input", calculatePCB);
+    document.getElementById("salary")
+      .addEventListener("input", calculatePCB);
+
+    document.getElementById("salaryRange")
+      .addEventListener("input", function() {
+        document.getElementById("salary").value = this.value;
+        calculatePCB();
+      });
+
+    document.getElementById("bonus")
+      .addEventListener("input", calculatePCB);
+    document.getElementById("reliefs")
+      .addEventListener("input", calculatePCB);
+    document.getElementById("rebate")
+      .addEventListener("input", calculatePCB);
 
     calculatePCB();
   </script>
