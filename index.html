@@ -1663,7 +1663,7 @@
     }
 
     function formatRM(v){
-      return v.toLocaleString('en-MY', {
+      return Number(v).toLocaleString('en-MY', {
         minimumFractionDigits:2,
         maximumFractionDigits:2
       });
@@ -1675,57 +1675,341 @@
       calculate();
     }
 
-    function getSocso(salary){
-      let socsoSalary = Math.min(salary, 6000);
-      let socso = 0;
+    function roundUpRinggit(value){
+      return Math.ceil((Number(value) || 0) - 1e-9);
+    }
 
-      if (socsoSalary <= 30) {
-        socso = 0.10;
-      } else if (socsoSalary <= 50) {
-        socso = 0.20;
-      } else if (socsoSalary <= 70) {
-        socso = 0.30;
-      } else if (socsoSalary <= 100) {
-        socso = 0.40;
-      } else {
-        let bracketUpper = Math.ceil(socsoSalary / 100) * 100;
-        let bracketLower = bracketUpper - 100;
-        let bracketMid = (bracketLower + bracketUpper) / 2;
-        socso = bracketMid * 0.005;
+    function roundMoney(value){
+      return Math.round((Number(value) + Number.EPSILON) * 100) / 100;
+    }
+
+    function getOfficialEPFBandUpper(salary){
+      if (salary <= 10) return 10;
+
+      if (salary <= 5000){
+        return Math.ceil((salary - 1e-9) / 20) * 20;
       }
 
-      return Math.round(socso * 100) / 100;
+      if (salary <= 20000){
+        return Math.ceil((salary - 1e-9) / 100) * 100;
+      }
+
+      return salary;
     }
 
-    function getSkbbk(salary){
-      let contributionSalary = Math.min(salary, 6000);
-      return Math.round((contributionSalary * 0.0075) * 100) / 100;
+    function getEmployeeEPF(salary){
+      if (salary <= 10) return 0;
+
+      if (salary <= 20000){
+        return roundUpRinggit(
+          getOfficialEPFBandUpper(salary) * 0.11
+        );
+      }
+
+      return roundMoney(salary * 0.11);
     }
 
-    function getPcb(salary, epf){
-      let annual = salary * 12;
-      let taxableAnnualIncome = annual - (epf * 12) - 9000;
-      let annualTax = 0;
+    const socsoSchedule = [
+      [30, 0.40, 0.10],
+      [50, 0.70, 0.20],
+      [70, 1.10, 0.30],
+      [100, 1.50, 0.40],
+      [140, 2.10, 0.60],
+      [200, 2.95, 0.85],
+      [300, 4.35, 1.25],
+      [400, 6.15, 1.75],
+      [500, 7.85, 2.25],
+      [600, 9.65, 2.75],
+      [700, 11.35, 3.25],
+      [800, 13.15, 3.75],
+      [900, 14.85, 4.25],
+      [1000, 16.65, 4.75],
+      [1100, 18.35, 5.25],
+      [1200, 20.15, 5.75],
+      [1300, 21.85, 6.25],
+      [1400, 23.65, 6.75],
+      [1500, 25.35, 7.25],
+      [1600, 27.15, 7.75],
+      [1700, 28.85, 8.25],
+      [1800, 30.65, 8.75],
+      [1900, 32.35, 9.25],
+      [2000, 34.15, 9.75],
+      [2100, 35.85, 10.25],
+      [2200, 37.65, 10.75],
+      [2300, 39.35, 11.25],
+      [2400, 41.15, 11.75],
+      [2500, 42.85, 12.25],
+      [2600, 44.65, 12.75],
+      [2700, 46.35, 13.25],
+      [2800, 48.15, 13.75],
+      [2900, 49.85, 14.25],
+      [3000, 51.65, 14.75],
+      [3100, 53.35, 15.25],
+      [3200, 55.15, 15.75],
+      [3300, 56.85, 16.25],
+      [3400, 58.65, 16.75],
+      [3500, 60.35, 17.25],
+      [3600, 62.15, 17.75],
+      [3700, 63.85, 18.25],
+      [3800, 65.65, 18.75],
+      [3900, 67.35, 19.25],
+      [4000, 69.15, 19.75],
+      [4100, 70.85, 20.25],
+      [4200, 72.65, 20.75],
+      [4300, 74.35, 21.25],
+      [4400, 76.15, 21.75],
+      [4500, 77.85, 22.25],
+      [4600, 79.65, 22.75],
+      [4700, 81.35, 23.25],
+      [4800, 83.15, 23.75],
+      [4900, 84.85, 24.25],
+      [5000, 86.65, 24.75],
+      [5100, 88.35, 25.25],
+      [5200, 90.15, 25.75],
+      [5300, 91.85, 26.25],
+      [5400, 93.65, 26.75],
+      [5500, 95.35, 27.25],
+      [5600, 97.15, 27.75],
+      [5700, 98.85, 28.25],
+      [5800, 100.65, 28.75],
+      [5900, 102.35, 29.25],
+      [6000, 104.15, 29.75]
+    ];
 
-      if (taxableAnnualIncome > 35000) {
-        if (taxableAnnualIncome <= 50000) {
-          annualTax = (taxableAnnualIncome - 35000) * 0.06;
-        } else if (taxableAnnualIncome <= 70000) {
-          annualTax = 900 + (taxableAnnualIncome - 50000) * 0.11;
-        } else if (taxableAnnualIncome <= 100000) {
-          annualTax = 3100 + (taxableAnnualIncome - 70000) * 0.19;
-        } else if (taxableAnnualIncome <= 400000) {
-          annualTax = 8800 + (taxableAnnualIncome - 100000) * 0.25;
-        } else if (taxableAnnualIncome <= 600000) {
-          annualTax = 83800 + (taxableAnnualIncome - 400000) * 0.26;
-        } else if (taxableAnnualIncome <= 2000000) {
-          annualTax = 135800 + (taxableAnnualIncome - 600000) * 0.28;
-        } else {
-          annualTax = 527800 + (taxableAnnualIncome - 2000000) * 0.30;
+    function getSocso(salary){
+      const cappedSalary = Math.min(salary, 6000);
+
+      for (let i = 0; i < socsoSchedule.length; i++){
+        if (cappedSalary <= socsoSchedule[i][0]){
+          return socsoSchedule[i][2];
         }
       }
 
-      return Math.max(0, annualTax / 12);
+      return 29.75;
+    }
+
+    const eisSchedule = [
+      [30, 0.05],
+      [50, 0.10],
+      [70, 0.15],
+      [100, 0.20],
+      [140, 0.25],
+      [200, 0.35],
+      [300, 0.50],
+      [400, 0.70],
+      [500, 0.90],
+      [600, 1.10],
+      [700, 1.30],
+      [800, 1.50],
+      [900, 1.70],
+      [1000, 1.90],
+      [1100, 2.10],
+      [1200, 2.30],
+      [1300, 2.50],
+      [1400, 2.70],
+      [1500, 2.90],
+      [1600, 3.10],
+      [1700, 3.30],
+      [1800, 3.50],
+      [1900, 3.70],
+      [2000, 3.90],
+      [2100, 4.10],
+      [2200, 4.30],
+      [2300, 4.50],
+      [2400, 4.70],
+      [2500, 4.90],
+      [2600, 5.10],
+      [2700, 5.30],
+      [2800, 5.50],
+      [2900, 5.70],
+      [3000, 5.90],
+      [3100, 6.10],
+      [3200, 6.30],
+      [3300, 6.50],
+      [3400, 6.70],
+      [3500, 6.90],
+      [3600, 7.10],
+      [3700, 7.30],
+      [3800, 7.50],
+      [3900, 7.70],
+      [4000, 7.90],
+      [4100, 8.10],
+      [4200, 8.30],
+      [4300, 8.50],
+      [4400, 8.70],
+      [4500, 8.90],
+      [4600, 9.10],
+      [4700, 9.30],
+      [4800, 9.50],
+      [4900, 9.70],
+      [5000, 9.90],
+      [5100, 10.10],
+      [5200, 10.30],
+      [5300, 10.50],
+      [5400, 10.70],
+      [5500, 10.90],
+      [5600, 11.10],
+      [5700, 11.30],
+      [5800, 11.50],
+      [5900, 11.70],
+      [6000, 11.90]
+    ];
+
+    function getEis(salary){
+      const cappedSalary = Math.min(salary, 6000);
+
+      for (let i = 0; i < eisSchedule.length; i++){
+        if (cappedSalary <= eisSchedule[i][0]){
+          return eisSchedule[i][1];
+        }
+      }
+
+      return 11.90;
+    }
+
+    const skbbkBands = [
+      [30, 0.20],
+      [50, 0.30],
+      [70, 0.50],
+      [100, 0.65],
+      [140, 0.90],
+      [200, 1.25],
+      [300, 1.85],
+      [400, 2.65],
+      [500, 3.35],
+      [600, 4.15],
+      [700, 4.85],
+      [800, 5.65],
+      [900, 6.35],
+      [1000, 7.15],
+      [1100, 7.85],
+      [1200, 8.65],
+      [1300, 9.35],
+      [1400, 10.15],
+      [1500, 10.85],
+      [1600, 11.65],
+      [1700, 12.35],
+      [1800, 13.15],
+      [1900, 13.85],
+      [2000, 14.65],
+      [2100, 15.35],
+      [2200, 16.15],
+      [2300, 16.85],
+      [2400, 17.65],
+      [2500, 18.35],
+      [2600, 19.15],
+      [2700, 19.85],
+      [2800, 20.65],
+      [2900, 21.35],
+      [3000, 22.15],
+      [3100, 22.85],
+      [3200, 23.65],
+      [3300, 24.35],
+      [3400, 25.15],
+      [3500, 25.85],
+      [3600, 26.65],
+      [3700, 27.35],
+      [3800, 28.15],
+      [3900, 28.85],
+      [4000, 29.65],
+      [4100, 30.35],
+      [4200, 31.15],
+      [4300, 31.85],
+      [4400, 32.65],
+      [4500, 33.35],
+      [4600, 34.15],
+      [4700, 34.85],
+      [4800, 35.65],
+      [4900, 36.35],
+      [5000, 37.15],
+      [5100, 37.85],
+      [5200, 38.65],
+      [5300, 39.35],
+      [5400, 40.15],
+      [5500, 40.85],
+      [5600, 41.65],
+      [5700, 42.35],
+      [5800, 43.15],
+      [5900, 43.85],
+      [6000, 44.65]
+    ];
+
+    function getSkbbk(salary){
+      const wages = Math.max(0, Number(salary) || 0);
+
+      for (let i = 0; i < skbbkBands.length; i++){
+        if (wages <= skbbkBands[i][0]){
+          return skbbkBands[i][1];
+        }
+      }
+
+      return 44.65;
+    }
+
+    function calculateResidentTax(chargeableIncome){
+      const brackets = [
+        { limit: 5000, rate: 0.00 },
+        { limit: 15000, rate: 0.01 },
+        { limit: 15000, rate: 0.03 },
+        { limit: 15000, rate: 0.06 },
+        { limit: 20000, rate: 0.11 },
+        { limit: 30000, rate: 0.19 },
+        { limit: 300000, rate: 0.25 },
+        { limit: 200000, rate: 0.26 },
+        { limit: 1400000, rate: 0.28 },
+        { limit: Infinity, rate: 0.30 }
+      ];
+
+      let remaining = Math.max(0, chargeableIncome);
+      let tax = 0;
+
+      for (let i = 0; i < brackets.length; i++){
+        if (remaining <= 0) break;
+
+        const taxable = Math.min(
+          remaining,
+          brackets[i].limit
+        );
+
+        tax += taxable * brackets[i].rate;
+        remaining -= taxable;
+      }
+
+      return roundMoney(tax);
+    }
+
+    function roundPCBUpToFiveSen(amount){
+      if (amount < 10) return 0;
+      return Math.ceil((amount - 1e-9) * 20) / 20;
+    }
+
+    function getPcb(salary){
+      const annualIncome = salary * 12;
+      const estimatedAnnualEPF = annualIncome * 0.11;
+      const epfTaxRelief = Math.min(
+        estimatedAnnualEPF,
+        4000
+      );
+
+      const chargeableIncome = Math.max(
+        0,
+        annualIncome - epfTaxRelief - 9000
+      );
+
+      const taxBeforeRebate =
+        calculateResidentTax(chargeableIncome);
+
+      const individualRebate =
+        chargeableIncome <= 35000 ? 400 : 0;
+
+      const annualTax = Math.max(
+        0,
+        taxBeforeRebate - individualRebate
+      );
+
+      return roundPCBUpToFiveSen(
+        annualTax / 12
+      );
     }
 
     function calculate(){
@@ -1744,12 +2028,12 @@
 
       rangeInput.value = Math.min(salary, rangeInput.max);
 
-      let epf = salary * 0.11;
+      let epf = getEmployeeEPF(salary);
       let socso = getSocso(salary);
-      let eis = salary * 0.002;
+      let eis = getEis(salary);
       let includeSkbbk = document.getElementById("includeSkbbk").checked;
       let skbbk = includeSkbbk ? getSkbbk(salary) : 0;
-      let tax = getPcb(salary, epf);
+      let tax = getPcb(salary);
       let totalDeduction = epf + socso + eis + skbbk + tax;
       let net = salary - totalDeduction;
       let annual = salary * 12;
@@ -1760,14 +2044,15 @@
         socso: "#c9a14e",
         eis: "#7d97c4",
         skbbk: "#9d7cc1",
-        pcb: "#cf6f5b"
+        pcb: "#cf6e6e"
       };
 
       document.getElementById("netSalary").textContent = formatRM(net);
-      document.getElementById("netPercent").textContent = Math.round((net / salary) * 100) + "% of gross salary";
+      document.getElementById("netPercent").textContent =
+        ((net / salary) * 100).toFixed(1) + "% of gross salary";
 
-      let barItems = [
-        ["Net", net, colors.net],
+      let parts = [
+        ["Net Salary", net, colors.net],
         ["EPF", epf, colors.epf],
         ["SOCSO", socso, colors.socso],
         ["EIS", eis, colors.eis],
@@ -1775,42 +2060,56 @@
         ["PCB", tax, colors.pcb]
       ];
 
-      document.getElementById("deductionBar").innerHTML = barItems.map(function(item){
-        let width = salary ? (item[1] / salary) * 100 : 0;
-        return '<i style="width:' + width + '%;background:' + item[2] + '"></i>';
-      }).join("");
+      document.getElementById("deductionBar").innerHTML =
+        parts.map(function(item){
+          let width = salary ? (item[1] / salary) * 100 : 0;
+          return '<i style="width:' + width + '%;background:' + item[2] + '"></i>';
+        }).join("");
 
       let monthlyItems = [
         ["Gross Salary", salary, "#f6f3ec"],
-        ["EPF / KWSP", epf, colors.epf],
-        ["SOCSO", socso, colors.socso],
-        ["EIS", eis, colors.eis],
-        ["LINDUNG 24 Jam (SKBBK)", skbbk, colors.skbbk],
+        ["Employee EPF / KWSP", epf, colors.epf],
+        ["Employee SOCSO / PERKESO", socso, colors.socso],
+        ["Employee EIS", eis, colors.eis],
+        ["Employee SKBBK", skbbk, colors.skbbk],
         ["Estimated PCB", tax, colors.pcb],
-        ["Total Deductions", totalDeduction, "#d7cec0"]
+        ["Total Deductions", totalDeduction, "#b98555"],
+        ["Estimated Net Salary", net, colors.net]
       ];
 
-      document.getElementById("monthlyRows").innerHTML = monthlyItems.map(function(item){
-        return '<div class="result-line"><span class="k"><span class="dot" style="background:' + item[2] + '"></span>' + item[0] + '</span><span class="v">RM ' + formatRM(item[1]) + '</span></div>';
-      }).join("");
+      document.getElementById("monthlyRows").innerHTML =
+        monthlyItems.map(function(item){
+          return '<div class="result-line"><span class="k"><span class="dot" style="background:' +
+            item[2] + '"></span>' + item[0] +
+            '</span><span class="v">RM ' + formatRM(item[1]) +
+            '</span></div>';
+        }).join("");
 
       document.getElementById("annualRows").innerHTML =
-        '<div><span>Annual Gross Salary</span><strong>RM ' + formatRM(annual) + '</strong></div>' +
-        '<div><span>Annual EPF</span><strong>RM ' + formatRM(epf * 12) + '</strong></div>' +
-        '<div><span>Annual SOCSO</span><strong>RM ' + formatRM(socso * 12) + '</strong></div>' +
-        '<div><span>Annual EIS</span><strong>RM ' + formatRM(eis * 12) + '</strong></div>' +
-        '<div><span>Annual SKBBK</span><strong>RM ' + formatRM(skbbk * 12) + '</strong></div>' +
-        '<div><span>Annual PCB</span><strong>RM ' + formatRM(tax * 12) + '</strong></div>' +
-        '<div><span>Annual Net Salary</span><strong>RM ' + formatRM(net * 12) + '</strong></div>';
+        '<div><span>Annual Gross Salary</span><strong>RM ' +
+        formatRM(annual) + '</strong></div>' +
+        '<div><span>Annual EPF</span><strong>RM ' +
+        formatRM(epf * 12) + '</strong></div>' +
+        '<div><span>Annual SOCSO</span><strong>RM ' +
+        formatRM(socso * 12) + '</strong></div>' +
+        '<div><span>Annual EIS</span><strong>RM ' +
+        formatRM(eis * 12) + '</strong></div>' +
+        '<div><span>Annual SKBBK</span><strong>RM ' +
+        formatRM(skbbk * 12) + '</strong></div>' +
+        '<div><span>Annual PCB</span><strong>RM ' +
+        formatRM(tax * 12) + '</strong></div>' +
+        '<div><span>Annual Net Salary</span><strong>RM ' +
+        formatRM(net * 12) + '</strong></div>';
     }
 
     document.getElementById("salary").addEventListener("input", calculate);
-    document.getElementById("includeSkbbk").addEventListener("change", calculate);
 
     document.getElementById("salaryRange").addEventListener("input", function(){
       document.getElementById("salary").value = this.value;
       calculate();
     });
+
+    document.getElementById("includeSkbbk").addEventListener("change", calculate);
 
     calculate();
   </script>
