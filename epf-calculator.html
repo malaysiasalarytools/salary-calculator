@@ -976,9 +976,10 @@
         <div class="form-group">
           <label for="employeeCategory">Employee category</label>
           <select id="employeeCategory" onchange="handleCategoryChange()">
-            <option value="malaysianUnder60" selected>Malaysian / PR below age 60 - Auto rate</option>
-            <option value="malaysian60">Malaysian / PR age 60 and above - Auto rate</option>
-            <option value="nonMalaysianNew">Non-Malaysian registered from 1 Aug 1998 - Auto rate</option>
+            <option value="malaysianUnder60" selected>Malaysian / PR below age 60 - Official schedule</option>
+            <option value="malaysian60">Malaysian citizen age 60 and above - Official schedule</option>
+             <option value="pr60">Permanent resident age 60 and above - Official schedule</option>
+            <option value="nonMalaysianNew">Non-Malaysian citizen - Official 2% rate</option>
             <option value="manual">Manual custom rates</option>
           </select>
         </div>
@@ -1002,16 +1003,16 @@
         </a>
 
         <p class="input-note">
-          This tool gives a simplified EPF estimate. Actual KWSP contribution may follow the official contribution schedule, wage category and payroll rounding rules.
+          This calculator applies the official KWSP wage-range method for wages up to RM20,000 and the applicable percentage method for wages above RM20,000. Final payroll treatment remains subject to KWSP rules and the employee’s actual membership status.
         </p>
       </div>
 
       <div class="results-panel">
         <h2 class="serif">Your EPF result</h2>
-        <p class="sub">Estimated total monthly EPF contribution</p>
+        <p class="sub">Calculated monthly EPF contribution</p>
 
         <div class="net">RM <span id="totalEPF">0.00</span></div>
-        <p class="net-caption" id="rateExplanation">Applied common EPF rates.</p>
+        <p class="net-caption" id="rateExplanation">Applied the official KWSP contribution method.</p>
 
         <div class="bar" id="epfBar"></div>
 
@@ -1349,40 +1350,203 @@
       calculateEPF();
     }
 
-    function getAutoRates(category, salary) {
+    /*
+      KWSP Third Schedule method effective for October 2025 wages:
+      - Up to RM5,000: use RM20 wage bands.
+      - RM5,000.01 to RM20,000: use RM100 wage bands.
+      - Above RM20,000: calculate by percentage.
+      - Statutory contributions are payable in whole ringgit.
+    */
+
+    function roundUpRinggit(value) {
+      return Math.ceil((Number(value) || 0) - 1e-9);
+    }
+
+    function getOfficialBandUpperLimit(salary) {
+      if (salary <= 10) return 10;
+
+      if (salary <= 5000) {
+        return Math.ceil((salary - 1e-9) / 20) * 20;
+      }
+
+      if (salary <= 20000) {
+        return Math.ceil((salary - 1e-9) / 100) * 100;
+      }
+
+      return salary;
+    }
+
+    function calculateScheduledShare(salary, rate) {
+      if (salary <= 10 || rate <= 0) return 0;
+
+      if (salary <= 20000) {
+        const bandUpper = getOfficialBandUpperLimit(salary);
+        return roundUpRinggit(bandUpper * rate / 100);
+      }
+
+      return salary * rate / 100;
+    }
+
+    function calculatePercentageSharesAbove20000(salary, employeeRate, employerRate) {
+      const rawEmployee = salary * employeeRate / 100;
+      const rawEmployer = salary * employerRate / 100;
+      const roundedTotal = roundUpRinggit(rawEmployee + rawEmployer);
+
+      /*
+        For wages above RM20,000, KWSP illustrates the employee and employer
+        shares at their exact percentage amounts, while the combined payable
+        contribution is rounded up to the next ringgit.
+      */
+      return {
+        employeeEPF: Math.round(rawEmployee * 100) / 100,
+        employerEPF: Math.round(rawEmployer * 100) / 100,
+        totalEPF: roundedTotal
+      };
+    }
+
+    function getOfficialEPF(category, salary) {
       if (category === 'malaysianUnder60') {
+        const employeeRate = 11;
+        const employerRate = salary <= 5000 ? 13 : 12;
+
+        if (salary > 20000) {
+          const shares = calculatePercentageSharesAbove20000(
+            salary,
+            employeeRate,
+            employerRate
+          );
+
+          return {
+            ...shares,
+            employeeRate,
+            employerRate,
+            explanation:
+              'Official percentage method applied because wages exceed RM20,000: Employee ' +
+              formatRate(employeeRate) + ', Employer ' + formatRate(employerRate) +
+              ', with total contribution rounded up to the next ringgit.'
+          };
+        }
+
+        const employeeEPF = calculateScheduledShare(salary, employeeRate);
+        const employerEPF = calculateScheduledShare(salary, employerRate);
+
         return {
-          employeeRate: 11,
-          employerRate: salary <= 5000 ? 13 : 12,
-          explanation: salary <= 5000
-            ? 'Applied common rate: Employee 11%, Employer 13% because monthly wages are RM5,000 and below.'
-            : 'Applied common rate: Employee 11%, Employer 12% because monthly wages are above RM5,000.'
+          employeeEPF,
+          employerEPF,
+          totalEPF: employeeEPF + employerEPF,
+          employeeRate,
+          employerRate,
+          explanation:
+            'Official KWSP Third Schedule Part A wage range applied: Employee ' +
+            formatRate(employeeRate) + ', Employer ' + formatRate(employerRate) + '.'
         };
       }
 
       if (category === 'malaysian60') {
+        const employeeRate = 0;
+        const employerRate = 4;
+
+        if (salary > 20000) {
+          const shares = calculatePercentageSharesAbove20000(
+            salary,
+            employeeRate,
+            employerRate
+          );
+
+          return {
+            ...shares,
+            employeeRate,
+            employerRate,
+            explanation:
+              'Official KWSP Part E percentage method applied for a Malaysian citizen aged 60 or above, with total contribution rounded up to the next ringgit.'
+          };
+        }
+
+        const employeeEPF = 0;
+        const employerEPF = calculateScheduledShare(salary, employerRate);
+
         return {
-          employeeRate: 0,
-          employerRate: 4,
-          explanation: 'Applied simplified age 60 and above estimate: Employee 0%, Employer 4%. Please confirm with the official KWSP schedule.'
+          employeeEPF,
+          employerEPF,
+          totalEPF: employerEPF,
+          employeeRate,
+          employerRate,
+          explanation:
+            'Official KWSP Third Schedule Part E wage range applied: Employee 0%, Employer 4%.'
+        };
+      }
+
+      if (category === 'pr60') {
+        const employeeRate = 5.5;
+        const employerRate = salary <= 5000 ? 6.5 : 6;
+
+        if (salary > 20000) {
+          const shares = calculatePercentageSharesAbove20000(
+            salary,
+            employeeRate,
+            employerRate
+          );
+
+          return {
+            ...shares,
+            employeeRate,
+            employerRate,
+            explanation:
+              'Official percentage method applied for a permanent resident aged 60 or above: Employee ' +
+              formatRate(employeeRate) + ', Employer ' + formatRate(employerRate) +
+              ', with total contribution rounded up to the next ringgit.'
+          };
+        }
+
+        const employeeEPF = calculateScheduledShare(salary, employeeRate);
+        const employerEPF = calculateScheduledShare(salary, employerRate);
+
+        return {
+          employeeEPF,
+          employerEPF,
+          totalEPF: employeeEPF + employerEPF,
+          employeeRate,
+          employerRate,
+          explanation:
+            'Official KWSP Third Schedule Part C wage range applied: Employee ' +
+            formatRate(employeeRate) + ', Employer ' + formatRate(employerRate) + '.'
         };
       }
 
       if (category === 'nonMalaysianNew') {
+        const employeeRate = 2;
+        const employerRate = 2;
+        const employeeEPF = roundUpRinggit(salary * employeeRate / 100);
+        const employerEPF = roundUpRinggit(salary * employerRate / 100);
+
         return {
-          employeeRate: 2,
-          employerRate: 2,
-          explanation: 'Applied simplified non-Malaysian estimate: Employee 2%, Employer 2%. Please confirm with the official KWSP schedule.'
+          employeeEPF,
+          employerEPF,
+          totalEPF: employeeEPF + employerEPF,
+          employeeRate,
+          employerRate,
+          explanation:
+            'Official KWSP Third Schedule Part F direct calculation applied: Employee 2% and Employer 2%, each rounded up to the next ringgit.'
         };
       }
 
-      const employeeRate = parseFloat(document.getElementById('employeeRate').value) || 0;
-      const employerRate = parseFloat(document.getElementById('employerRate').value) || 0;
+      const employeeRate =
+        parseFloat(document.getElementById('employeeRate').value) || 0;
+      const employerRate =
+        parseFloat(document.getElementById('employerRate').value) || 0;
+      const employeeEPF = salary * employeeRate / 100;
+      const employerEPF = salary * employerRate / 100;
 
       return {
-        employeeRate: employeeRate,
-        employerRate: employerRate,
-        explanation: 'Applied manual custom rates: Employee ' + formatRate(employeeRate) + ', Employer ' + formatRate(employerRate) + '.'
+        employeeEPF,
+        employerEPF,
+        totalEPF: employeeEPF + employerEPF,
+        employeeRate,
+        employerRate,
+        explanation:
+          'Applied manual custom rates: Employee ' +
+          formatRate(employeeRate) + ', Employer ' +
+          formatRate(employerRate) + '.'
       };
     }
 
@@ -1407,7 +1571,8 @@
 
       if (!salary || salary < 0) {
         document.getElementById("totalEPF").textContent = "0.00";
-        document.getElementById("rateExplanation").textContent = "Please enter a salary.";
+        document.getElementById("rateExplanation").textContent =
+          "Please enter a salary.";
         document.getElementById("epfBar").innerHTML = "";
         document.getElementById("monthlyRows").innerHTML = "";
         document.getElementById("annualRows").innerHTML = "";
@@ -1416,12 +1581,13 @@
 
       rangeInput.value = Math.min(salary, rangeInput.max);
 
-      const category = document.getElementById('employeeCategory').value;
-      const rates = getAutoRates(category, salary);
+      const category =
+        document.getElementById('employeeCategory').value;
+      const contribution = getOfficialEPF(category, salary);
 
-      const employeeEPF = salary * (rates.employeeRate / 100);
-      const employerEPF = salary * (rates.employerRate / 100);
-      const totalEPF = employeeEPF + employerEPF;
+      const employeeEPF = contribution.employeeEPF;
+      const employerEPF = contribution.employerEPF;
+      const totalEPF = contribution.totalEPF;
       const salaryAfterEPF = salary - employeeEPF;
 
       const annualEmployeeEPF = employeeEPF * 12;
@@ -1435,18 +1601,22 @@
         total: "#2f7d5e"
       };
 
-      document.getElementById("totalEPF").textContent = formatRM(totalEPF);
-      document.getElementById("rateExplanation").textContent = rates.explanation;
+      document.getElementById("totalEPF").textContent =
+        formatRM(totalEPF);
+      document.getElementById("rateExplanation").textContent =
+        contribution.explanation;
 
       const barItems = [
         ["Salary After Employee EPF", salaryAfterEPF, colors.salaryAfter],
         ["Employee EPF", employeeEPF, colors.employee]
       ];
 
-      document.getElementById("epfBar").innerHTML = barItems.map(function(item) {
-        let width = salary ? (item[1] / salary) * 100 : 0;
-        return '<i style="width:' + width + '%;background:' + item[2] + '"></i>';
-      }).join("");
+      document.getElementById("epfBar").innerHTML =
+        barItems.map(function(item) {
+          let width = salary ? (item[1] / salary) * 100 : 0;
+          return '<i style="width:' + width +
+            '%;background:' + item[2] + '"></i>';
+        }).join("");
 
       const monthlyItems = [
         ["Monthly Salary", salary, "#f6f3ec"],
@@ -1456,25 +1626,36 @@
         ["Salary After Employee EPF", salaryAfterEPF, colors.salaryAfter]
       ];
 
-      document.getElementById("monthlyRows").innerHTML = monthlyItems.map(function(item) {
-        return '<div class="result-line"><span class="k"><span class="dot" style="background:' + item[2] + '"></span>' + item[0] + '</span><span class="v">RM ' + formatRM(item[1]) + '</span></div>';
-      }).join("");
+      document.getElementById("monthlyRows").innerHTML =
+        monthlyItems.map(function(item) {
+          return '<div class="result-line"><span class="k"><span class="dot" style="background:' +
+            item[2] + '"></span>' + item[0] +
+            '</span><span class="v">RM ' + formatRM(item[1]) +
+            '</span></div>';
+        }).join("");
 
       document.getElementById("annualRows").innerHTML =
-        '<div><span>Annual Employee EPF</span><strong>RM ' + formatRM(annualEmployeeEPF) + '</strong></div>' +
-        '<div><span>Annual Employer EPF</span><strong>RM ' + formatRM(annualEmployerEPF) + '</strong></div>' +
-        '<div><span>Annual Total EPF</span><strong>RM ' + formatRM(annualTotalEPF) + '</strong></div>';
+        '<div><span>Annual Employee EPF</span><strong>RM ' +
+        formatRM(annualEmployeeEPF) + '</strong></div>' +
+        '<div><span>Annual Employer EPF</span><strong>RM ' +
+        formatRM(annualEmployerEPF) + '</strong></div>' +
+        '<div><span>Annual Total EPF</span><strong>RM ' +
+        formatRM(annualTotalEPF) + '</strong></div>';
     }
 
-    document.getElementById("salary").addEventListener("input", calculateEPF);
+    document.getElementById("salary")
+      .addEventListener("input", calculateEPF);
 
-    document.getElementById("salaryRange").addEventListener("input", function() {
-      document.getElementById("salary").value = this.value;
-      calculateEPF();
-    });
+    document.getElementById("salaryRange")
+      .addEventListener("input", function() {
+        document.getElementById("salary").value = this.value;
+        calculateEPF();
+      });
 
-    document.getElementById("employeeRate").addEventListener("input", calculateEPF);
-    document.getElementById("employerRate").addEventListener("input", calculateEPF);
+    document.getElementById("employeeRate")
+      .addEventListener("input", calculateEPF);
+    document.getElementById("employerRate")
+      .addEventListener("input", calculateEPF);
 
     calculateEPF();
   </script>
