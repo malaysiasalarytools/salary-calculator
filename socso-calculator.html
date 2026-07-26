@@ -57,7 +57,7 @@
         "name": "How is SOCSO calculated in Malaysia?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SOCSO is normally calculated based on monthly wages, employee category and the official PERKESO contribution schedule. This calculator uses a simplified estimate for quick planning."
+          "text": "SOCSO is calculated based on monthly wages, employee category and the official PERKESO contribution schedule. This calculator applies the official wage-class amounts and RM6,000 wage ceiling."
         }
       },
       {
@@ -370,6 +370,37 @@
     .preset:hover {
       color: var(--accent);
       border-color: var(--accent);
+    }
+
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 13px 14px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .checkbox-row input {
+      width: 18px;
+      height: 18px;
+      margin: 2px 0 0;
+      accent-color: var(--accent);
+      flex: 0 0 auto;
+    }
+
+    .checkbox-row label {
+      margin: 0;
+      cursor: pointer;
+      line-height: 1.45;
+    }
+
+    .checkbox-row small {
+      display: block;
+      color: var(--muted);
+      font-weight: 500;
+      margin-top: 3px;
     }
 
     .calc-button {
@@ -955,6 +986,16 @@
           </select>
         </div>
 
+        <div class="form-group">
+          <div class="checkbox-row">
+            <input type="checkbox" id="includeSKBBK" onchange="calculateSOCSO()">
+            <label for="includeSKBBK">
+              Include optional LINDUNG 24 Jam contribution
+              <small>Adds the employee-paid Non-Employment Injury contribution under the 2026 schedule.</small>
+            </label>
+          </div>
+        </div>
+
         <button type="button" class="calc-button" onclick="calculateSOCSO()">Calculate My SOCSO</button>
 
         <a class="secondary-button" href="index.html">
@@ -962,16 +1003,16 @@
         </a>
 
         <p class="input-note">
-          This tool gives a simplified SOCSO estimate. Actual PERKESO contribution may follow the official contribution schedule, wage class, category and payroll rounding rules.
+          This calculator applies the official PERKESO wage-class schedule and the RM6,000 monthly wage ceiling. The optional LINDUNG 24 Jam amount is included only when selected.
         </p>
       </div>
 
       <div class="results-panel">
         <h2 class="serif">Your SOCSO result</h2>
-        <p class="sub">Estimated total monthly SOCSO contribution</p>
+        <p class="sub">Calculated total monthly SOCSO contribution</p>
 
         <div class="net">RM <span id="totalSOCSO">0.00</span></div>
-        <p class="net-caption" id="categoryExplanation">Applied First Category simplified estimate.</p>
+        <p class="net-caption" id="categoryExplanation">Applied the official PERKESO contribution schedule.</p>
 
         <div class="bar" id="socsoBar"></div>
 
@@ -993,8 +1034,8 @@
         </p>
 
         <div class="formula-box">
-          <strong>SOCSO Estimate = Monthly Salary × Contribution Basis</strong>
-          <span>Example: RM4,000 salary gives an estimated employee SOCSO deduction of about RM20.00 under this simplified calculation.</span>
+          <strong>SOCSO Contribution = Official PERKESO Wage-Class Amount</strong>
+          <span>Example: Monthly wages above RM3,900 but not exceeding RM4,000 use the corresponding official contribution row.</span>
         </div>
 
         <div class="rate-grid">
@@ -1030,7 +1071,7 @@
         <h2>SOCSO Contribution Snapshot 2026</h2>
 
         <p>
-          The table below shows quick simplified estimates for First Category SOCSO contribution using the same calculation logic as this page.
+          The table below shows official First Category SOCSO amounts under the RM6,000 wage ceiling, excluding the optional LINDUNG 24 Jam contribution.
         </p>
 
         <div class="contribution-table-wrap">
@@ -1046,21 +1087,21 @@
             <tbody>
               <tr>
                 <td>RM2,000</td>
-                <td>RM10.00</td>
-                <td>RM35.00</td>
-                <td>RM45.00</td>
+                <td>RM9.75</td>
+                <td>RM34.15</td>
+                <td>RM43.90</td>
               </tr>
               <tr>
                 <td>RM3,000</td>
-                <td>RM15.00</td>
-                <td>RM52.50</td>
-                <td>RM67.50</td>
+                <td>RM14.75</td>
+                <td>RM51.65</td>
+                <td>RM66.40</td>
               </tr>
               <tr>
                 <td>RM4,000</td>
-                <td>RM20.00</td>
-                <td>RM70.00</td>
-                <td>RM90.00</td>
+                <td>RM19.75</td>
+                <td>RM69.15</td>
+                <td>RM88.90</td>
               </tr>
               <tr>
                 <td>RM5,000</td>
@@ -1070,28 +1111,28 @@
               </tr>
               <tr>
                 <td>RM6,000</td>
-                <td>RM24.75</td>
-                <td>RM86.65</td>
-                <td>RM111.40</td>
+                <td>RM29.75</td>
+                <td>RM104.15</td>
+                <td>RM133.90</td>
               </tr>
               <tr>
                 <td>RM8,000</td>
-                <td>RM24.75</td>
-                <td>RM86.65</td>
-                <td>RM111.40</td>
+                <td>RM29.75</td>
+                <td>RM104.15</td>
+                <td>RM133.90</td>
               </tr>
               <tr>
                 <td>RM10,000</td>
-                <td>RM24.75</td>
-                <td>RM86.65</td>
-                <td>RM111.40</td>
+                <td>RM29.75</td>
+                <td>RM104.15</td>
+                <td>RM133.90</td>
               </tr>
-            </tbody>
+</tbody>
           </table>
         </div>
 
         <p class="contribution-note">
-          Note: This table is a simplified quick reference. Actual SOCSO contribution may differ based on the official PERKESO contribution schedule.
+          Note: These amounts follow the official wage-class schedule. The optional LINDUNG 24 Jam employee contribution is not included in this snapshot.
         </p>
 
       </section>
@@ -1226,7 +1267,7 @@
         <details class="faq-item" open>
           <summary>How is SOCSO calculated in Malaysia?</summary>
           <p>
-            SOCSO is normally calculated based on monthly wages, wage class and contribution category. This calculator uses a simplified estimate for easier planning.
+            SOCSO is calculated based on monthly wages, wage class and contribution category. This calculator follows the official PERKESO contribution schedule.
           </p>
         </details>
 
@@ -1254,7 +1295,7 @@
         <details class="faq-item">
           <summary>Why is my actual SOCSO different from this calculator?</summary>
           <p>
-            Actual SOCSO may follow the official PERKESO wage table, wage ceiling, category rules and rounding rules, so it may differ from a simplified percentage estimate.
+            Actual payroll treatment may still differ if the employee's coverage eligibility, contribution category or LINDUNG 24 Jam participation status is different.
           </p>
         </details>
 
@@ -1343,16 +1384,105 @@
       calculateSOCSO();
     }
 
+    /*
+      Official PERKESO Act 4 wage-class schedule:
+      [upper wage limit, First Category employer, First Category employee,
+       optional LINDUNG 24 Jam employee, Second Category employer]
+
+      Wages exceeding RM6,000 use the RM6,000 ceiling row.
+    */
+    const socsoSchedule = [
+        [30, 0.40, 0.10, 0.20, 0.30],
+        [50, 0.70, 0.20, 0.30, 0.50],
+        [70, 1.10, 0.30, 0.50, 0.80],
+        [100, 1.50, 0.40, 0.65, 1.10],
+        [140, 2.10, 0.60, 0.90, 1.50],
+        [200, 2.95, 0.85, 1.25, 2.10],
+        [300, 4.35, 1.25, 1.85, 3.10],
+        [400, 6.15, 1.75, 2.65, 4.40],
+        [500, 7.85, 2.25, 3.35, 5.60],
+        [600, 9.65, 2.75, 4.15, 6.90],
+        [700, 11.35, 3.25, 4.85, 8.10],
+        [800, 13.15, 3.75, 5.65, 9.40],
+        [900, 14.85, 4.25, 6.35, 10.60],
+        [1000, 16.65, 4.75, 7.15, 11.90],
+        [1100, 18.35, 5.25, 7.85, 13.10],
+        [1200, 20.15, 5.75, 8.65, 14.40],
+        [1300, 21.85, 6.25, 9.35, 15.60],
+        [1400, 23.65, 6.75, 10.15, 16.90],
+        [1500, 25.35, 7.25, 10.85, 18.10],
+        [1600, 27.15, 7.75, 11.65, 19.40],
+        [1700, 28.85, 8.25, 12.35, 20.60],
+        [1800, 30.65, 8.75, 13.15, 21.90],
+        [1900, 32.35, 9.25, 13.85, 23.10],
+        [2000, 34.15, 9.75, 14.65, 24.40],
+        [2100, 35.85, 10.25, 15.35, 25.60],
+        [2200, 37.65, 10.75, 16.15, 26.90],
+        [2300, 39.35, 11.25, 16.85, 28.10],
+        [2400, 41.15, 11.75, 17.65, 29.40],
+        [2500, 42.85, 12.25, 18.35, 30.60],
+        [2600, 44.65, 12.75, 19.15, 31.90],
+        [2700, 46.35, 13.25, 19.85, 33.10],
+        [2800, 48.15, 13.75, 20.65, 34.40],
+        [2900, 49.85, 14.25, 21.35, 35.60],
+        [3000, 51.65, 14.75, 22.15, 36.90],
+        [3100, 53.35, 15.25, 22.85, 38.10],
+        [3200, 55.15, 15.75, 23.65, 39.40],
+        [3300, 56.85, 16.25, 24.35, 40.60],
+        [3400, 58.65, 16.75, 25.15, 41.90],
+        [3500, 60.35, 17.25, 25.85, 43.10],
+        [3600, 62.15, 17.75, 26.65, 44.40],
+        [3700, 63.85, 18.25, 27.35, 45.60],
+        [3800, 65.65, 18.75, 28.15, 46.90],
+        [3900, 67.35, 19.25, 28.85, 48.10],
+        [4000, 69.15, 19.75, 29.65, 49.40],
+        [4100, 70.85, 20.25, 30.35, 50.60],
+        [4200, 72.65, 20.75, 31.15, 51.90],
+        [4300, 74.35, 21.25, 31.85, 53.10],
+        [4400, 76.15, 21.75, 32.65, 54.40],
+        [4500, 77.85, 22.25, 33.35, 55.60],
+        [4600, 79.65, 22.75, 34.15, 56.90],
+        [4700, 81.35, 23.25, 34.85, 58.10],
+        [4800, 83.15, 23.75, 35.65, 59.40],
+        [4900, 84.85, 24.25, 36.35, 60.60],
+        [5000, 86.65, 24.75, 37.15, 61.90],
+        [5100, 88.35, 25.25, 37.85, 63.10],
+        [5200, 90.15, 25.75, 38.65, 64.40],
+        [5300, 91.85, 26.25, 39.35, 65.60],
+        [5400, 93.65, 26.75, 40.15, 66.90],
+        [5500, 95.35, 27.25, 40.85, 68.10],
+        [5600, 97.15, 27.75, 41.65, 69.40],
+        [5700, 98.85, 28.25, 42.35, 70.60],
+        [5800, 100.65, 28.75, 43.15, 71.90],
+        [5900, 102.35, 29.25, 43.85, 73.10],
+        [6000, 104.15, 29.75, 44.65, 74.40]
+    ];
+
+    function getSOCSORow(monthlyWages) {
+      const cappedWages = Math.min(monthlyWages, 6000);
+
+      for (let i = 0; i < socsoSchedule.length; i++) {
+        if (cappedWages <= socsoSchedule[i][0]) {
+          return socsoSchedule[i];
+        }
+      }
+
+      return socsoSchedule[socsoSchedule.length - 1];
+    }
+
     function calculateSOCSO() {
       const salaryInput = document.getElementById("salary");
       const rangeInput = document.getElementById("salaryRange");
 
       let salary = parseFloat(salaryInput.value);
       const category = document.getElementById("category").value;
+      const includeSKBBK =
+        document.getElementById("includeSKBBK").checked;
 
       if (!salary || salary < 0) {
         document.getElementById("totalSOCSO").textContent = "0.00";
-        document.getElementById("categoryExplanation").textContent = "Please enter a salary.";
+        document.getElementById("categoryExplanation").textContent =
+          "Please enter a salary.";
         document.getElementById("socsoBar").innerHTML = "";
         document.getElementById("monthlyRows").innerHTML = "";
         document.getElementById("annualRows").innerHTML = "";
@@ -1361,35 +1491,55 @@
 
       rangeInput.value = Math.min(salary, rangeInput.max);
 
-      const cappedSalary = Math.min(salary, 5000);
+      const row = getSOCSORow(salary);
+      const wageBandUpper = row[0];
 
       let employeeSOCSO = 0;
       let employerSOCSO = 0;
       let categoryExplanation = "";
 
       if (category === "first") {
-        employeeSOCSO = cappedSalary * 0.005;
-        employerSOCSO = cappedSalary * 0.0175;
+        employerSOCSO = row[1];
+        employeeSOCSO = row[2];
 
-        employeeSOCSO = Math.min(employeeSOCSO, 24.75);
-        employerSOCSO = Math.min(employerSOCSO, 86.65);
+        if (includeSKBBK) {
+          employeeSOCSO += row[3];
+        }
 
-        categoryExplanation = "Applied First Category simplified estimate: Employee approx. 0.5%, Employer approx. 1.75%, subject to estimated cap.";
+        categoryExplanation =
+          "Official First Category wage-class amount applied" +
+          (salary > 6000 ? " using the RM6,000 wage ceiling" :
+            " for wages up to RM " + formatRM(wageBandUpper)) +
+          (includeSKBBK
+            ? ", including optional LINDUNG 24 Jam."
+            : ", excluding optional LINDUNG 24 Jam.");
       } else {
-        employeeSOCSO = 0;
-        employerSOCSO = cappedSalary * 0.0125;
+        employerSOCSO = row[4];
+        employeeSOCSO = includeSKBBK ? row[3] : 0;
 
-        employerSOCSO = Math.min(employerSOCSO, 61.90);
-
-        categoryExplanation = "Applied Second Category simplified estimate: Employee contribution not applicable, Employer approx. 1.25%, subject to estimated cap.";
+        categoryExplanation =
+          "Official Second Category wage-class amount applied" +
+          (salary > 6000 ? " using the RM6,000 wage ceiling" :
+            " for wages up to RM " + formatRM(wageBandUpper)) +
+          (includeSKBBK
+            ? ", including optional employee-paid LINDUNG 24 Jam."
+            : ", with no employee deduction.");
       }
 
-      const totalSOCSO = employeeSOCSO + employerSOCSO;
-      const salaryAfterSOCSO = salary - employeeSOCSO;
+      employeeSOCSO = Math.round(employeeSOCSO * 100) / 100;
+      employerSOCSO = Math.round(employerSOCSO * 100) / 100;
 
-      const annualEmployeeSOCSO = employeeSOCSO * 12;
-      const annualEmployerSOCSO = employerSOCSO * 12;
-      const annualTotalSOCSO = totalSOCSO * 12;
+      const totalSOCSO =
+        Math.round((employeeSOCSO + employerSOCSO) * 100) / 100;
+      const salaryAfterSOCSO =
+        Math.round((salary - employeeSOCSO) * 100) / 100;
+
+      const annualEmployeeSOCSO =
+        Math.round(employeeSOCSO * 12 * 100) / 100;
+      const annualEmployerSOCSO =
+        Math.round(employerSOCSO * 12 * 100) / 100;
+      const annualTotalSOCSO =
+        Math.round(totalSOCSO * 12 * 100) / 100;
 
       const colors = {
         employee: "#5aa783",
@@ -1398,18 +1548,22 @@
         total: "#2f7d5e"
       };
 
-      document.getElementById("totalSOCSO").textContent = formatRM(totalSOCSO);
-      document.getElementById("categoryExplanation").textContent = categoryExplanation;
+      document.getElementById("totalSOCSO").textContent =
+        formatRM(totalSOCSO);
+      document.getElementById("categoryExplanation").textContent =
+        categoryExplanation;
 
       const barItems = [
         ["Salary After Employee SOCSO", salaryAfterSOCSO, colors.salaryAfter],
         ["Employee SOCSO", employeeSOCSO, colors.employee]
       ];
 
-      document.getElementById("socsoBar").innerHTML = barItems.map(function(item) {
-        let width = salary ? (item[1] / salary) * 100 : 0;
-        return '<i style="width:' + width + '%;background:' + item[2] + '"></i>';
-      }).join("");
+      document.getElementById("socsoBar").innerHTML =
+        barItems.map(function(item) {
+          let width = salary ? (item[1] / salary) * 100 : 0;
+          return '<i style="width:' + width +
+            '%;background:' + item[2] + '"></i>';
+        }).join("");
 
       const monthlyItems = [
         ["Monthly Salary", salary, "#f6f3ec"],
@@ -1419,22 +1573,31 @@
         ["Salary After Employee SOCSO", salaryAfterSOCSO, colors.salaryAfter]
       ];
 
-      document.getElementById("monthlyRows").innerHTML = monthlyItems.map(function(item) {
-        return '<div class="result-line"><span class="k"><span class="dot" style="background:' + item[2] + '"></span>' + item[0] + '</span><span class="v">RM ' + formatRM(item[1]) + '</span></div>';
-      }).join("");
+      document.getElementById("monthlyRows").innerHTML =
+        monthlyItems.map(function(item) {
+          return '<div class="result-line"><span class="k"><span class="dot" style="background:' +
+            item[2] + '"></span>' + item[0] +
+            '</span><span class="v">RM ' + formatRM(item[1]) +
+            '</span></div>';
+        }).join("");
 
       document.getElementById("annualRows").innerHTML =
-        '<div><span>Annual Employee SOCSO</span><strong>RM ' + formatRM(annualEmployeeSOCSO) + '</strong></div>' +
-        '<div><span>Annual Employer SOCSO</span><strong>RM ' + formatRM(annualEmployerSOCSO) + '</strong></div>' +
-        '<div><span>Annual Total SOCSO</span><strong>RM ' + formatRM(annualTotalSOCSO) + '</strong></div>';
+        '<div><span>Annual Employee SOCSO</span><strong>RM ' +
+        formatRM(annualEmployeeSOCSO) + '</strong></div>' +
+        '<div><span>Annual Employer SOCSO</span><strong>RM ' +
+        formatRM(annualEmployerSOCSO) + '</strong></div>' +
+        '<div><span>Annual Total SOCSO</span><strong>RM ' +
+        formatRM(annualTotalSOCSO) + '</strong></div>';
     }
 
-    document.getElementById("salary").addEventListener("input", calculateSOCSO);
+    document.getElementById("salary")
+      .addEventListener("input", calculateSOCSO);
 
-    document.getElementById("salaryRange").addEventListener("input", function() {
-      document.getElementById("salary").value = this.value;
-      calculateSOCSO();
-    });
+    document.getElementById("salaryRange")
+      .addEventListener("input", function() {
+        document.getElementById("salary").value = this.value;
+        calculateSOCSO();
+      });
 
     calculateSOCSO();
   </script>
