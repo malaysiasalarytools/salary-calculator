@@ -1034,7 +1034,7 @@
 
       <div class="results-panel">
         <h2 class="serif">Your SKBBK result</h2>
-        <p class="sub">Estimated employee deduction for the selected month</p>
+        <p class="sub">Calculated employee deduction for the selected month</p>
 
         <div class="net">RM <span id="monthlySKBBK">0.00</span></div>
         <p class="net-caption" id="rateExplanation">Official Phase 1 contribution schedule.</p>
@@ -1401,72 +1401,80 @@
   </footer>
 
   <script>
+    /*
+      Official PERKESO LINDUNG 24 Jam Phase 1 contribution schedule.
+
+      Each row stores:
+      - max: upper monthly-wage limit for the statutory band
+      - amount: employee-borne SKBBK contribution
+
+      Wages above RM6,000 use the maximum Phase 1 amount of RM44.65.
+    */
     const skbbkBands = [
-        { max: 30, amount: 0.20 },
-        { max: 50, amount: 0.30 },
-        { max: 70, amount: 0.50 },
-        { max: 100, amount: 0.65 },
-        { max: 140, amount: 0.90 },
-        { max: 200, amount: 1.25 },
-        { max: 300, amount: 1.85 },
-        { max: 400, amount: 2.65 },
-        { max: 500, amount: 3.35 },
-        { max: 600, amount: 4.15 },
-        { max: 700, amount: 4.85 },
-        { max: 800, amount: 5.65 },
-        { max: 900, amount: 6.35 },
-        { max: 1000, amount: 7.15 },
-        { max: 1100, amount: 7.85 },
-        { max: 1200, amount: 8.65 },
-        { max: 1300, amount: 9.35 },
-        { max: 1400, amount: 10.15 },
-        { max: 1500, amount: 10.85 },
-        { max: 1600, amount: 11.65 },
-        { max: 1700, amount: 12.35 },
-        { max: 1800, amount: 13.15 },
-        { max: 1900, amount: 13.85 },
-        { max: 2000, amount: 14.65 },
-        { max: 2100, amount: 15.35 },
-        { max: 2200, amount: 16.15 },
-        { max: 2300, amount: 16.85 },
-        { max: 2400, amount: 17.65 },
-        { max: 2500, amount: 18.35 },
-        { max: 2600, amount: 19.15 },
-        { max: 2700, amount: 19.85 },
-        { max: 2800, amount: 20.65 },
-        { max: 2900, amount: 21.35 },
-        { max: 3000, amount: 22.15 },
-        { max: 3100, amount: 22.85 },
-        { max: 3200, amount: 23.65 },
-        { max: 3300, amount: 24.35 },
-        { max: 3400, amount: 25.15 },
-        { max: 3500, amount: 25.85 },
-        { max: 3600, amount: 26.65 },
-        { max: 3700, amount: 27.35 },
-        { max: 3800, amount: 28.15 },
-        { max: 3900, amount: 28.85 },
-        { max: 4000, amount: 29.65 },
-        { max: 4100, amount: 30.35 },
-        { max: 4200, amount: 31.15 },
-        { max: 4300, amount: 31.85 },
-        { max: 4400, amount: 32.65 },
-        { max: 4500, amount: 33.35 },
-        { max: 4600, amount: 34.15 },
-        { max: 4700, amount: 34.85 },
-        { max: 4800, amount: 35.65 },
-        { max: 4900, amount: 36.35 },
-        { max: 5000, amount: 37.15 },
-        { max: 5100, amount: 37.85 },
-        { max: 5200, amount: 38.65 },
-        { max: 5300, amount: 39.35 },
-        { max: 5400, amount: 40.15 },
-        { max: 5500, amount: 40.85 },
-        { max: 5600, amount: 41.65 },
-        { max: 5700, amount: 42.35 },
-        { max: 5800, amount: 43.15 },
-        { max: 5900, amount: 43.85 },
-        { max: 6000, amount: 44.65 },
-        { max: Infinity, amount: 44.65 }
+      { max: 30, amount: 0.20 },
+      { max: 50, amount: 0.30 },
+      { max: 70, amount: 0.50 },
+      { max: 100, amount: 0.65 },
+      { max: 140, amount: 0.90 },
+      { max: 200, amount: 1.25 },
+      { max: 300, amount: 1.85 },
+      { max: 400, amount: 2.65 },
+      { max: 500, amount: 3.35 },
+      { max: 600, amount: 4.15 },
+      { max: 700, amount: 4.85 },
+      { max: 800, amount: 5.65 },
+      { max: 900, amount: 6.35 },
+      { max: 1000, amount: 7.15 },
+      { max: 1100, amount: 7.85 },
+      { max: 1200, amount: 8.65 },
+      { max: 1300, amount: 9.35 },
+      { max: 1400, amount: 10.15 },
+      { max: 1500, amount: 10.85 },
+      { max: 1600, amount: 11.65 },
+      { max: 1700, amount: 12.35 },
+      { max: 1800, amount: 13.15 },
+      { max: 1900, amount: 13.85 },
+      { max: 2000, amount: 14.65 },
+      { max: 2100, amount: 15.35 },
+      { max: 2200, amount: 16.15 },
+      { max: 2300, amount: 16.85 },
+      { max: 2400, amount: 17.65 },
+      { max: 2500, amount: 18.35 },
+      { max: 2600, amount: 19.15 },
+      { max: 2700, amount: 19.85 },
+      { max: 2800, amount: 20.65 },
+      { max: 2900, amount: 21.35 },
+      { max: 3000, amount: 22.15 },
+      { max: 3100, amount: 22.85 },
+      { max: 3200, amount: 23.65 },
+      { max: 3300, amount: 24.35 },
+      { max: 3400, amount: 25.15 },
+      { max: 3500, amount: 25.85 },
+      { max: 3600, amount: 26.65 },
+      { max: 3700, amount: 27.35 },
+      { max: 3800, amount: 28.15 },
+      { max: 3900, amount: 28.85 },
+      { max: 4000, amount: 29.65 },
+      { max: 4100, amount: 30.35 },
+      { max: 4200, amount: 31.15 },
+      { max: 4300, amount: 31.85 },
+      { max: 4400, amount: 32.65 },
+      { max: 4500, amount: 33.35 },
+      { max: 4600, amount: 34.15 },
+      { max: 4700, amount: 34.85 },
+      { max: 4800, amount: 35.65 },
+      { max: 4900, amount: 36.35 },
+      { max: 5000, amount: 37.15 },
+      { max: 5100, amount: 37.85 },
+      { max: 5200, amount: 38.65 },
+      { max: 5300, amount: 39.35 },
+      { max: 5400, amount: 40.15 },
+      { max: 5500, amount: 40.85 },
+      { max: 5600, amount: 41.65 },
+      { max: 5700, amount: 42.35 },
+      { max: 5800, amount: 43.15 },
+      { max: 5900, amount: 43.85 },
+      { max: 6000, amount: 44.65 }
     ];
 
     function formatRM(amount) {
@@ -1476,20 +1484,26 @@
       });
     }
 
+    function roundMoney(amount) {
+      return Math.round((Number(amount) + Number.EPSILON) * 100) / 100;
+    }
+
     function setSalary(value) {
       document.getElementById("salary").value = value;
       document.getElementById("salaryRange").value = value;
       calculateSKBBK();
     }
 
-    function getSKBBKFromTable(salary) {
+    function getSKBBKFromTable(monthlyWages) {
+      const wages = Math.max(0, Number(monthlyWages) || 0);
+
       for (let i = 0; i < skbbkBands.length; i++) {
-        if (salary <= skbbkBands[i].max) {
-          const previousMax = i === 0 ? 0 : skbbkBands[i - 1].max;
+        if (wages <= skbbkBands[i].max) {
           return {
             amount: skbbkBands[i].amount,
-            lower: previousMax,
-            upper: skbbkBands[i].max
+            lower: i === 0 ? 0 : skbbkBands[i - 1].max,
+            upper: skbbkBands[i].max,
+            capped: false
           };
         }
       }
@@ -1497,7 +1511,8 @@
       return {
         amount: 44.65,
         lower: 6000,
-        upper: Infinity
+        upper: Infinity,
+        capped: true
       };
     }
 
@@ -1514,45 +1529,79 @@
         " up to RM" + formatRM(band.upper);
     }
 
+    function getParticipationResult(category, tableResult) {
+      if (category === "localOptedOut") {
+        return {
+          monthlySKBBK: 0,
+          participationText: "Local employee — opted out",
+          explanation:
+            "No SKBBK deduction applied because the local employee is recorded as opted out."
+        };
+      }
+
+      if (category === "foreignWorker") {
+        return {
+          monthlySKBBK: tableResult.amount,
+          participationText:
+            "Foreign worker — mandatory participation",
+          explanation:
+            describeBand(tableResult) +
+            " under the official Phase 1 schedule. Participation is mandatory for eligible foreign workers."
+        };
+      }
+
+      return {
+        monthlySKBBK: tableResult.amount,
+        participationText:
+          "Local employee — voluntary participation",
+        explanation:
+          describeBand(tableResult) +
+          " under the official Phase 1 schedule. The local employee is treated as voluntarily participating."
+      };
+    }
+
+    function resetResults(message) {
+      document.getElementById("monthlySKBBK").textContent = "0.00";
+      document.getElementById("rateExplanation").textContent = message;
+      document.getElementById("participationStatus").textContent =
+        "Waiting for salary input";
+      document.getElementById("skbbkBar").innerHTML = "";
+      document.getElementById("monthlyRows").innerHTML = "";
+      document.getElementById("annualRows").innerHTML = "";
+    }
+
     function calculateSKBBK() {
       const salaryInput = document.getElementById("salary");
       const rangeInput = document.getElementById("salaryRange");
-      const category = document.getElementById("employeeCategory").value;
+      const category =
+        document.getElementById("employeeCategory").value;
 
-      let salary = parseFloat(salaryInput.value);
+      const salary = Number.parseFloat(salaryInput.value);
 
-      if (Number.isNaN(salary) || salary <= 0) {
-        document.getElementById("monthlySKBBK").textContent = "0.00";
-        document.getElementById("rateExplanation").textContent = "Please enter a monthly salary above RM0.";
-        document.getElementById("participationStatus").textContent = "Waiting for salary input";
-        document.getElementById("skbbkBar").innerHTML = "";
-        document.getElementById("monthlyRows").innerHTML = "";
-        document.getElementById("annualRows").innerHTML = "";
+      if (!Number.isFinite(salary) || salary <= 0) {
+        resetResults("Please enter a monthly salary above RM0.");
         return;
       }
 
-      rangeInput.value = Math.min(salary, rangeInput.max);
+      rangeInput.value = Math.min(
+        salary,
+        Number(rangeInput.max)
+      );
 
       const tableResult = getSKBBKFromTable(salary);
-      let monthlySKBBK = tableResult.amount;
-      let participationText = "";
-      let explanation = "";
+      const participation =
+        getParticipationResult(category, tableResult);
 
-      if (category === "localOptedOut") {
-        monthlySKBBK = 0;
-        participationText = "Local employee — opted out";
-        explanation = "No SKBBK deduction applied after a valid opt-out.";
-      } else if (category === "foreignWorker") {
-        participationText = "Foreign worker — mandatory participation";
-        explanation = describeBand(tableResult) + " under the official Phase 1 schedule.";
-      } else {
-        participationText = "Local employee — voluntary participation";
-        explanation = describeBand(tableResult) + " under the official Phase 1 schedule.";
-      }
-
-      const salaryAfterSKBBK = Math.max(0, salary - monthlySKBBK);
-      const annualSKBBK = monthlySKBBK * 12;
-      const effectiveRate = salary > 0 ? (monthlySKBBK / salary) * 100 : 0;
+      const monthlySKBBK =
+        roundMoney(participation.monthlySKBBK);
+      const salaryAfterSKBBK =
+        roundMoney(Math.max(0, salary - monthlySKBBK));
+      const annualSKBBK =
+        roundMoney(monthlySKBBK * 12);
+      const effectiveRate =
+        salary > 0
+          ? (monthlySKBBK / salary) * 100
+          : 0;
 
       const colors = {
         deduction: "#5aa783",
@@ -1560,19 +1609,27 @@
         annual: "#c9a14e"
       };
 
-      document.getElementById("monthlySKBBK").textContent = formatRM(monthlySKBBK);
-      document.getElementById("rateExplanation").textContent = explanation;
-      document.getElementById("participationStatus").textContent = participationText;
+      document.getElementById("monthlySKBBK").textContent =
+        formatRM(monthlySKBBK);
+      document.getElementById("rateExplanation").textContent =
+        participation.explanation;
+      document.getElementById("participationStatus").textContent =
+        participation.participationText;
 
       const barItems = [
         ["Salary After SKBBK", salaryAfterSKBBK, colors.salaryAfter],
         ["SKBBK Deduction", monthlySKBBK, colors.deduction]
       ];
 
-      document.getElementById("skbbkBar").innerHTML = barItems.map(function(item) {
-        let width = salary ? (item[1] / salary) * 100 : 0;
-        return '<i style="width:' + width + '%;background:' + item[2] + '"></i>';
-      }).join("");
+      document.getElementById("skbbkBar").innerHTML =
+        barItems.map(function(item) {
+          const width = salary
+            ? Math.max(0, Math.min(100, (item[1] / salary) * 100))
+            : 0;
+
+          return '<i style="width:' + width +
+            '%;background:' + item[2] + '"></i>';
+        }).join("");
 
       const monthlyItems = [
         ["Monthly Salary / Wages", salary, "#f6f3ec"],
@@ -1581,28 +1638,40 @@
         ["Salary After SKBBK Only", salaryAfterSKBBK, colors.salaryAfter]
       ];
 
-      document.getElementById("monthlyRows").innerHTML = monthlyItems.map(function(item) {
-        return '<div class="result-line"><span class="k"><span class="dot" style="background:' +
-          item[2] + '"></span>' + item[0] + '</span><span class="v">RM ' +
-          formatRM(item[1]) + '</span></div>';
-      }).join("");
+      document.getElementById("monthlyRows").innerHTML =
+        monthlyItems.map(function(item) {
+          return '<div class="result-line"><span class="k"><span class="dot" style="background:' +
+            item[2] + '"></span>' + item[0] +
+            '</span><span class="v">RM ' +
+            formatRM(item[1]) + '</span></div>';
+        }).join("");
 
-      const wageBandLabel = category === "localOptedOut"
-        ? "Not applied — employee opted out"
-        : describeBand(tableResult);
+      const wageBandLabel =
+        category === "localOptedOut"
+          ? "Not applied — employee opted out"
+          : describeBand(tableResult);
 
       document.getElementById("annualRows").innerHTML =
-        '<div><span>Applicable Wage Band</span><strong>' + wageBandLabel + '</strong></div>' +
-        '<div><span>Effective Deduction Rate</span><strong>' + effectiveRate.toFixed(2) + '%</strong></div>' +
-        '<div><span>Annual Employee SKBBK</span><strong>RM ' + formatRM(annualSKBBK) + '</strong></div>';
+        '<div><span>Applicable Wage Band</span><strong>' +
+        wageBandLabel + '</strong></div>' +
+
+        '<div><span>Phase 1 Contribution Rate</span><strong>0.75%</strong></div>' +
+
+        '<div><span>Effective Deduction Rate</span><strong>' +
+        effectiveRate.toFixed(2) + '%</strong></div>' +
+
+        '<div><span>Annual Employee SKBBK</span><strong>RM ' +
+        formatRM(annualSKBBK) + '</strong></div>';
     }
 
-    document.getElementById("salary").addEventListener("input", calculateSKBBK);
+    document.getElementById("salary")
+      .addEventListener("input", calculateSKBBK);
 
-    document.getElementById("salaryRange").addEventListener("input", function() {
-      document.getElementById("salary").value = this.value;
-      calculateSKBBK();
-    });
+    document.getElementById("salaryRange")
+      .addEventListener("input", function() {
+        document.getElementById("salary").value = this.value;
+        calculateSKBBK();
+      });
 
     calculateSKBBK();
   </script>
