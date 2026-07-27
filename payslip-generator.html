@@ -760,7 +760,7 @@
 
     .faq-box {
       margin-top: 18px;
-      max-width: 780px;
+      max-width: 100%;
     }
 
     .faq-item {
@@ -1393,18 +1393,18 @@
         <div class="field-grid">
           <div class="form-group">
             <label for="employeeName">Employee name</label>
-            <input type="text" id="employeeName" placeholder="Example: Ahmad Tan" value="Ahmad Tan">
+            <input type="text" id="employeeName" placeholder="Example: Ahmad Tan" value="Ahmad Tan" onfocus="selectDefaultText(this, 'Ahmad Tan')">
           </div>
 
           <div class="form-group">
             <label for="employeeNo">Employee No. / ID</label>
-            <input type="text" id="employeeNo" placeholder="Example: EMP001" value="EMP001">
+            <input type="text" id="employeeNo" placeholder="Example: EMP001" value="EMP001" onfocus="selectDefaultText(this, 'EMP001')">
           </div>
         </div>
 
         <div class="form-group">
           <label for="companyName">Company name</label>
-          <input type="text" id="companyName" placeholder="Example: ABC Sdn Bhd" value="ABC Sdn Bhd">
+          <input type="text" id="companyName" placeholder="Example: ABC Sdn Bhd" value="ABC Sdn Bhd" onfocus="selectDefaultText(this, 'ABC Sdn Bhd')">
         </div>
 
         <div class="form-group">
@@ -1426,7 +1426,7 @@
         <div class="field-grid">
           <div class="form-group">
             <label for="month">Payslip month</label>
-            <input type="text" id="month" placeholder="Example: January 2026" value="January 2026">
+            <input type="text" id="month" placeholder="Example: January 2026" value="January 2026" onfocus="selectDefaultText(this, 'January 2026')">
           </div>
 
           <div class="form-group">
@@ -1831,6 +1831,12 @@ Please contact your employer if any information on this payslip is incorrect.</t
 
   <script>
     let companyLogoData = '';
+
+    function selectDefaultText(input, defaultText) {
+      if (input.value.trim() === defaultText) {
+        input.select();
+      }
+    }
 
     function formatRM(amount) {
       return Number(amount).toLocaleString('en-MY', {
