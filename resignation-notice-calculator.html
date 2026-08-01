@@ -601,35 +601,73 @@ input[type="date"]::-webkit-date-and-time-value {
       background:rgba(255,255,255,.08);
       border:1px solid rgba(255,255,255,.12);
       border-radius:14px;
-      padding:16px;
+      padding:18px;
     }
 
-    .timeline-row {
+    .timeline-visual {
+      display:grid;
+      grid-template-columns:minmax(0, 1fr) auto minmax(0, 1fr);
+      align-items:center;
+      gap:14px;
+    }
+
+    .timeline-point {
+      min-width:0;
+    }
+
+    .timeline-point:last-child {
+      text-align:right;
+    }
+
+    .timeline-label {
+      display:block;
+      color:rgba(246,243,236,.58);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      margin-bottom:4px;
+    }
+
+    .timeline-date {
+      display:block;
+      color:var(--primary-foreground);
+      font-size:14px;
+      font-weight:800;
+      line-height:1.35;
+    }
+
+    .timeline-track {
       display:flex;
       align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      font-size:13px;
-      color:rgba(246,243,236,.78);
+      width:100%;
+      min-width:100px;
+    }
+
+    .timeline-dot {
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#f6f3ec;
+      flex:0 0 auto;
+    }
+
+    .timeline-dot.end {
+      background:#5aa783;
     }
 
     .timeline-line {
       flex:1;
       height:2px;
-      background:rgba(255,255,255,.20);
-      position:relative;
+      background:linear-gradient(90deg, rgba(246,243,236,.38), #5aa783);
     }
 
-    .timeline-line::after {
-      content:"";
-      position:absolute;
-      right:0;
-      top:50%;
-      transform:translateY(-50%);
-      width:9px;
-      height:9px;
-      border-radius:50%;
-      background:#5aa783;
+    .timeline-period {
+      margin-top:13px;
+      text-align:center;
+      color:rgba(246,243,236,.68);
+      font-size:12px;
+      font-weight:700;
     }
 
     .result-rows {
@@ -1101,6 +1139,24 @@ input[type="date"]::-webkit-date-and-time-value {
         font-size:31px;
       }
 
+      .timeline-visual {
+        grid-template-columns:1fr;
+        gap:10px;
+      }
+
+      .timeline-point:last-child {
+        text-align:left;
+      }
+
+      .timeline-track {
+        min-width:0;
+      }
+
+      .timeline-period {
+        text-align:left;
+      }
+
+
       .toggle-grid,
       .field-grid {
         grid-template-columns:1fr;
@@ -1313,11 +1369,24 @@ input[type="date"]::-webkit-date-and-time-value {
       <p class="net-caption" id="noticeExplanation">Select resignation date and notice period.</p>
 
       <div class="timeline-box">
-        <div class="timeline-row">
-          <span>Resignation submitted</span>
-          <span class="timeline-line"></span>
-          <span>Last working day</span>
+        <div class="timeline-visual">
+          <div class="timeline-point">
+            <span class="timeline-label">Resignation submitted</span>
+            <strong class="timeline-date" id="timelineStartDate">-</strong>
+          </div>
+
+          <div class="timeline-track" aria-hidden="true">
+            <span class="timeline-dot"></span>
+            <span class="timeline-line"></span>
+            <span class="timeline-dot end"></span>
+          </div>
+
+          <div class="timeline-point">
+            <span class="timeline-label">Last working day</span>
+            <strong class="timeline-date" id="timelineEndDate">-</strong>
+          </div>
         </div>
+        <div class="timeline-period" id="timelinePeriod">Select resignation date and notice period.</div>
       </div>
 
       <div class="result-rows" id="resultRows"></div>
@@ -1916,6 +1985,9 @@ input[type="date"]::-webkit-date-and-time-value {
       document.getElementById("summaryRows").innerHTML = "";
       document.getElementById("estimatedFinalSalary").textContent = "RM 0.00";
       document.getElementById("finalSalaryRows").innerHTML = "";
+      document.getElementById("timelineStartDate").textContent = "-";
+      document.getElementById("timelineEndDate").textContent = "-";
+      document.getElementById("timelinePeriod").textContent = "Select resignation date and notice period.";
       return;
     }
 
@@ -1972,6 +2044,10 @@ input[type="date"]::-webkit-date-and-time-value {
     document.getElementById("lastWorkingDay").textContent = formatDate(lastDay);
     document.getElementById("noticeExplanation").textContent =
       "Based on resignation date " + formatDate(startDate) + " and " + noticeLabel + ".";
+
+    document.getElementById("timelineStartDate").textContent = formatDate(startDate);
+    document.getElementById("timelineEndDate").textContent = formatDate(lastDay);
+    document.getElementById("timelinePeriod").textContent = noticeLabel + " notice period";
 
     document.getElementById("resultRows").innerHTML =
       '<div class="result-line"><span class="k"><span class="dot" style="background:#f6f3ec"></span>Resignation Date</span><span class="v">' + formatDate(startDate) + '</span></div>' +
