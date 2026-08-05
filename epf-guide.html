@@ -488,6 +488,98 @@
       color: var(--accent);
     }
 
+
+    .status-yes {
+      color: var(--accent);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .status-no {
+      color: #9a5a45;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .step-card {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .step-number {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .step-card h3 {
+      margin: 0 0 6px;
+    }
+
+    .step-card p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .deadline-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .deadline-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .deadline-card strong {
+      display: block;
+      color: var(--accent);
+      font-size: 20px;
+      margin-bottom: 8px;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .responsibility-list {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+    }
+
+    .responsibility-list li {
+      position: relative;
+      padding-left: 24px;
+      margin: 8px 0;
+    }
+
+    .responsibility-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
     @media (max-width: 800px) {
       .nav-inner {
         flex-direction: row;
@@ -669,6 +761,81 @@
       This is why employees should not only look at the headline EPF rate, but also check whether their salary components are subject to EPF. Fixed wages are commonly included, while some irregular reimbursements or excluded payments may be treated differently depending on KWSP rules.
     </p>
 
+
+    <section class="guide-box">
+      <h2>Salary Components Subject to EPF</h2>
+      <p>
+        Not every payment received from an employer is treated in the same way for EPF purposes.
+        Payments that form part of an employee's wages are generally subject to EPF contribution,
+        while genuine reimbursements of business expenses are generally excluded.
+      </p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead>
+            <tr>
+              <th>Salary Component</th>
+              <th>EPF Treatment</th>
+              <th>Practical Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Basic Salary</td>
+              <td><span class="status-yes">Yes</span></td>
+              <td>Regular basic wages are generally subject to EPF.</td>
+            </tr>
+            <tr>
+              <td>Fixed Allowance</td>
+              <td><span class="status-yes">Generally Yes</span></td>
+              <td>Regular fixed payments may form part of wages depending on their nature.</td>
+            </tr>
+            <tr>
+              <td>Bonus</td>
+              <td><span class="status-yes">Generally Yes</span></td>
+              <td>Bonus payments are commonly treated as wages for EPF purposes.</td>
+            </tr>
+            <tr>
+              <td>Commission</td>
+              <td><span class="status-yes">Generally Yes</span></td>
+              <td>Sales or performance commission is commonly subject to EPF.</td>
+            </tr>
+            <tr>
+              <td>Overtime Pay</td>
+              <td><span class="status-yes">Generally Yes</span></td>
+              <td>Overtime wages are commonly included in EPF-contributable wages.</td>
+            </tr>
+            <tr>
+              <td>Shift Allowance</td>
+              <td><span class="status-yes">Generally Yes</span></td>
+              <td>Regular shift-related payments may be treated as part of wages.</td>
+            </tr>
+            <tr>
+              <td>Travelling Reimbursement</td>
+              <td><span class="status-no">Generally No</span></td>
+              <td>Genuine reimbursement of actual business travel expenses is usually excluded.</td>
+            </tr>
+            <tr>
+              <td>Medical Claim Reimbursement</td>
+              <td><span class="status-no">Generally No</span></td>
+              <td>Repayment of actual medical expenses is usually treated as reimbursement.</td>
+            </tr>
+            <tr>
+              <td>Mileage Claim</td>
+              <td><span class="status-no">Generally No</span></td>
+              <td>Actual business mileage reimbursement is generally not treated as wages.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box">
+        <strong>Important:</strong> The EPF treatment depends on the nature of the payment, not only its label.
+        A fixed monthly allowance may be treated differently from a genuine reimbursement supported by receipts or claims.
+        Employers should refer to the latest KWSP definition of wages when processing payroll.
+      </div>
+    </section>
+
     <section class="contribution-box">
       <h2>EPF Contribution Rates 2026</h2>
       <p>
@@ -796,6 +963,47 @@
         <p>Some savings may be available for approved flexible usage.</p>
       </div>
     </div>
+
+
+    <section class="guide-box">
+      <h2>How to Check Your EPF Balance</h2>
+      <p>
+        Members can review their EPF savings, monthly contributions and annual dividends through KWSP's online services.
+        The exact menu names may change, but the general process is straightforward.
+      </p>
+
+      <div class="step-grid">
+        <div class="step-card">
+          <span class="step-number">1</span>
+          <h3>Open KWSP i-Akaun</h3>
+          <p>Visit the official KWSP website or open the official KWSP mobile application.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-number">2</span>
+          <h3>Log In Securely</h3>
+          <p>Sign in using your registered member credentials and complete any security verification required.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-number">3</span>
+          <h3>View Your Account</h3>
+          <p>Open the account balance, contribution history or statement section in your member dashboard.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-number">4</span>
+          <h3>Review Contributions</h3>
+          <p>Check whether both employee and employer contributions have been credited for each payroll month.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-number">5</span>
+          <h3>Download a Statement</h3>
+          <p>Save or download the latest EPF statement for tax filing, loan applications or personal records.</p>
+        </div>
+      </div>
+
+      <div class="note-box">
+        <strong>Tip:</strong> Compare your EPF statement with your payslip regularly. If an amount was deducted from salary but does not appear in your EPF account after a reasonable processing period, contact your employer or KWSP for clarification.
+      </div>
+    </section>
 
     <h2>EPF Dividends and Long-Term Retirement Growth</h2>
     <p>
@@ -962,6 +1170,37 @@
         <li>Business owners who want to understand basic EPF contribution obligations</li>
         <li>Fresh graduates learning how salary deductions work in Malaysia</li>
       </ul>
+    </section>
+
+
+    <section class="guide-box">
+      <h2>EPF Contribution Deadline</h2>
+      <p>
+        Employers are responsible for deducting the employee portion, adding the employer portion and remitting both amounts to KWSP for each payroll month.
+        Contributions should be paid within the statutory deadline applicable to the relevant contribution month.
+      </p>
+
+      <div class="deadline-grid">
+        <div class="deadline-card">
+          <strong>Monthly Payroll Flow</strong>
+          <p>Salary is processed, the employee portion is deducted, the employer portion is added and the combined contribution is submitted to KWSP.</p>
+        </div>
+        <div class="deadline-card">
+          <strong>Employer Responsibilities</strong>
+          <ul class="responsibility-list">
+            <li>Deduct the correct employee contribution</li>
+            <li>Add the employer contribution</li>
+            <li>Submit payment within the required deadline</li>
+            <li>Keep payroll and contribution records</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note-box">
+        <strong>Late payment:</strong> Late or missing EPF payments may result in charges, penalties or enforcement action.
+        Employees should review their EPF account periodically to confirm that payroll deductions have been properly credited.
+        For the exact current due date and compliance requirements, refer to the latest official KWSP guidance.
+      </div>
     </section>
 
     <section class="guide-box">
