@@ -580,6 +580,41 @@
       font-weight: 800;
     }
 
+
+    .toc-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      margin: 26px 0;
+    }
+
+    .toc-box h2 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .toc-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .toc-links a {
+      text-decoration: none;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .toc-links a:hover {
+      background: var(--white);
+    }
+
     @media (max-width: 800px) {
       .nav-inner {
         flex-direction: row;
@@ -696,7 +731,7 @@
 <main class="main-wrapper">
 
   <section class="hero">
-    <span class="pill">Updated for Malaysia 2026 payroll estimates</span>
+    <span class="pill">Last verified: August 2026 · Based on current KWSP contribution rules</span>
     <h1 class="serif">Malaysia <em>EPF contribution</em> guide 2026</h1>
     <p>
       Learn how EPF contributions work in Malaysia, including employee and employer rates,
@@ -744,7 +779,25 @@
     </section>
 
 
-    <h2>What Is EPF?</h2>
+    <section class="toc-box">
+      <h2>On This Page</h2>
+      <div class="toc-links">
+        <a href="#what-is-epf">What Is EPF?</a>
+        <a href="#epf-rates">Contribution Rates</a>
+        <a href="#epf-calculation">How EPF Is Calculated</a>
+        <a href="#salary-examples">Salary Examples</a>
+        <a href="#salary-components">Salary Components</a>
+        <a href="#who-contributes">Who Must Contribute</a>
+        <a href="#account-structure">Account Structure</a>
+        <a href="#payment-deadline">Payment Deadline</a>
+        <a href="#tax-relief">Tax Relief</a>
+        <a href="#withdrawals">Withdrawals</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </section>
+
+
+    <h2 id="what-is-epf">What Is EPF?</h2>
     <p>
       The Employees Provident Fund (EPF), commonly known as KWSP, is a retirement savings scheme in Malaysia. It helps employees build long-term savings by requiring monthly contributions from both employees and employers.
     </p>
@@ -752,7 +805,7 @@
       EPF savings are mainly intended for retirement, but members may also be allowed to withdraw for approved purposes such as housing, education, medical needs and specific age-based withdrawals.
     </p>
 
-    <h2>Who Needs to Contribute EPF?</h2>
+    <h2 id="who-contributes">Who Needs to Contribute EPF?</h2>
     <p>
       EPF contributions generally apply to employees in Malaysia who work under a contract of service and receive wages from an employer. In a normal payroll arrangement, the employee contribution is deducted from monthly salary and the employer contribution is paid by the employer on top of the employee's wages.
     </p>
@@ -765,7 +818,7 @@
 
 
     <section class="guide-box">
-      <h2>Which Salary Components Are Subject to EPF?</h2>
+      <h2 id="salary-components">Which Salary Components Are Subject to EPF?</h2>
       <p>
         Not every payment received from an employer is treated in the same way for EPF purposes.
         Payments that form part of an employee's wages are generally subject to EPF contribution,
@@ -839,7 +892,7 @@
     </section>
 
     <section class="contribution-box">
-      <h2>EPF Contribution Rates 2026</h2>
+      <h2 id="epf-rates">EPF Contribution Rates 2026</h2>
       <p>
         Below is a simplified quick reference for common EPF contribution rates in Malaysia for many employees below age 60. It is useful for quick salary estimation, but the actual statutory contribution should still follow the latest KWSP contribution schedule.
       </p>
@@ -869,11 +922,40 @@
       </div>
 
       <div class="note-box">
-        <strong>Note:</strong> EPF rates may differ depending on age, citizenship status and specific employee categories. The table above is designed as a practical salary guide. For payroll submission or compliance decisions, always refer to the latest official KWSP contribution rules.
+        <strong>Important:</strong> The table above is a quick reference for many Malaysian and permanent resident employees below age 60. Different contribution rules may apply if you are aged 60 or above, a non-Malaysian employee, or contributing above the statutory rate.
+      </div>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead>
+            <tr>
+              <th>Employee Category</th>
+              <th>General 2026 Treatment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Malaysian / PR below age 60</td>
+              <td>Common statutory rates are 11% employee and 12%–13% employer, subject to the KWSP Third Schedule.</td>
+            </tr>
+            <tr>
+              <td>Malaysian age 60 and above</td>
+              <td>Different rates apply under the relevant part of the KWSP Third Schedule.</td>
+            </tr>
+            <tr>
+              <td>Non-Malaysian employee</td>
+              <td>Mandatory EPF contribution generally applies at 2% employee and 2% employer from wages for October 2025, subject to KWSP rules and exemptions.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box">
+        <strong>Payroll reminder:</strong> For wages below RM20,000.01, employers should generally determine the statutory amount using the wage ranges in the latest KWSP Third Schedule rather than relying only on a simple percentage calculation.
       </div>
     </section>
 
-    <h2>How EPF Contributions Are Calculated</h2>
+    <h2 id="epf-calculation">How EPF Contributions Are Calculated</h2>
     <p>
       EPF contribution is based on the employee's monthly wages that are liable for EPF contribution. For most employees, the employee portion is deducted from salary, while the employer contributes an additional amount on top of the employee's wages.
     </p>
@@ -899,7 +981,7 @@
     </div>
 
     <section class="guide-box">
-      <h2>EPF Calculation Examples by Salary Level</h2>
+      <h2 id="salary-examples">EPF Calculation Examples by Salary Level</h2>
       <p>
         The examples below are simplified percentage-based estimates to show how EPF can affect different salary levels. The employee rate is shown as 11%. Employer contribution is shown as 13% for salary of RM5,000 and below, and 12% for salary above RM5,000.
       </p>
@@ -942,7 +1024,46 @@
       </div>
     </section>
 
-    <h2>EPF Account Structure 2026</h2>
+
+    <section class="guide-box">
+      <h2>Example: RM5,000 Monthly Salary</h2>
+      <p>
+        This simplified example shows how employee and employer EPF contributions affect a RM5,000 monthly salary.
+      </p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <tbody>
+            <tr>
+              <td><strong>Gross monthly salary</strong></td>
+              <td>RM5,000</td>
+            </tr>
+            <tr>
+              <td><strong>Employee EPF estimate</strong></td>
+              <td>RM550</td>
+            </tr>
+            <tr>
+              <td><strong>Salary after employee EPF only</strong></td>
+              <td>RM4,450</td>
+            </tr>
+            <tr>
+              <td><strong>Employer EPF estimate</strong></td>
+              <td>RM650</td>
+            </tr>
+            <tr>
+              <td><strong>Total EPF contribution estimate</strong></td>
+              <td>RM1,200</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box">
+        <strong>Key point:</strong> The employer's EPF contribution is paid by the employer on top of your salary. It is not deducted from your RM5,000 gross salary. This example is a simplified estimate; actual statutory contributions should follow the KWSP Third Schedule.
+      </div>
+    </section>
+
+    <h2 id="account-structure">EPF Account Structure 2026</h2>
     <p>
       For EPF members below age 55, new contributions are currently distributed across three accounts: Akaun Persaraan, Akaun Sejahtera and Akaun Fleksibel. The structure is designed to balance long-term retirement savings with medium-term and short-term financial needs.
     </p>
@@ -1022,7 +1143,7 @@
     </p>
 
     <section class="guide-box">
-      <h2>EPF Tax Relief in Malaysia</h2>
+      <h2 id="tax-relief">EPF Tax Relief in Malaysia</h2>
       <p>
         Employee EPF contributions may qualify for personal income tax relief, subject to the applicable LHDN limit and rules for the relevant year of assessment. This means EPF can help employees save for retirement and may also reduce chargeable income when filing income tax.
       </p>
@@ -1106,7 +1227,7 @@
       Another limitation is that EPF dividends are not guaranteed at a fixed rate. Although EPF has historically been an important savings vehicle for many Malaysians, future returns can still vary. Employees should treat EPF as one part of retirement planning, not the only source of future financial security.
     </p>
 
-    <h2>Common EPF Withdrawal Options</h2>
+    <h2 id="withdrawals">Common EPF Withdrawal Options</h2>
     <p>
       EPF members may be allowed to withdraw savings under specific situations. Common examples include age-based withdrawals, housing withdrawals, education withdrawals and medical-related withdrawals. Each withdrawal type normally has its own eligibility conditions, documentation requirements and available balance rules.
     </p>
@@ -1167,7 +1288,7 @@
     </div>
 
     <section class="guide-box">
-      <h2>EPF Contribution Deadline</h2>
+      <h2 id="payment-deadline">EPF Contribution Deadline</h2>
       <p>
         Employers must remit both the employee and employer EPF contributions no later than the <strong>15th of the following month</strong>. If the 15th falls on a weekend or public holiday, payment on the next working day will not be subject to a late payment charge under KWSP's current guidance.
       </p>
@@ -1216,18 +1337,22 @@
     </section>
 
     <section class="guide-box">
-      <h2>Official References</h2>
+      <h2>Sources & Verification</h2>
       <p>
-        EPF rules and contribution rates can change. This guide is written as a practical explanation for salary planning and payroll understanding. For official contribution schedules, employer obligations and withdrawal conditions, users should always refer to KWSP / EPF and relevant Malaysian government sources.
+        This guide was last verified in August 2026 against current official KWSP guidance. EPF rules, contribution schedules and withdrawal conditions may change, so payroll and compliance decisions should always be checked against the latest official source.
       </p>
+
       <div class="source-note">
-        Official references:
-        <a href="https://www.kwsp.gov.my/" target="_blank" rel="noopener">KWSP Official Website</a> ·
-        <a href="https://www.kwsp.gov.my/en/epf-act-1991-third-schedule" target="_blank" rel="noopener">EPF Third Schedule</a>
+        <strong>Official sources used for verification:</strong><br>
+        <a href="https://www.kwsp.gov.my/en/epf-act-1991-third-schedule" target="_blank" rel="noopener">KWSP — EPF Act 1991 Third Schedule</a><br>
+        <a href="https://www.kwsp.gov.my/en/employer/responsibilities/mandatory-contribution" target="_blank" rel="noopener">KWSP — Mandatory Contribution for Employers</a><br>
+        <a href="https://www.kwsp.gov.my/en/member/account-centre/account-restructuring" target="_blank" rel="noopener">KWSP — Account Restructuring</a><br>
+        <a href="https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees" target="_blank" rel="noopener">KWSP — Non-Malaysian Citizen Employee Contributions</a><br>
+        <a href="https://www.hasil.gov.my/" target="_blank" rel="noopener">LHDN — Official Tax Information</a>
       </div>
     </section>
 
-    <h2>Frequently Asked Questions</h2>
+    <h2 id="faq">Frequently Asked Questions</h2>
 
     <div class="faq-box">
       <details class="faq-item" open>
