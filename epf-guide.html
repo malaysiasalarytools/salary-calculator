@@ -585,34 +585,63 @@
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 22px;
+      padding: 24px;
       margin: 26px 0;
     }
 
     .toc-box h2 {
       margin-top: 0;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
 
     .toc-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 34px;
     }
 
     .toc-links a {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
       text-decoration: none;
-      color: var(--accent);
-      background: var(--accent-soft);
-      border: 1px solid var(--accent-border);
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 700;
+      color: var(--foreground);
+      padding: 12px 2px;
+      border-bottom: 1px solid var(--border);
+      transition: .18s ease;
     }
 
     .toc-links a:hover {
-      background: var(--white);
+      color: var(--accent);
+      padding-left: 4px;
+    }
+
+    .toc-number {
+      width: 28px;
+      flex: 0 0 28px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+
+    .toc-label {
+      flex: 1;
+      min-width: 0;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .toc-arrow {
+      color: var(--muted);
+      font-size: 15px;
+      transition: .18s ease;
+    }
+
+    .toc-links a:hover .toc-arrow {
+      color: var(--accent);
+      transform: translateX(2px);
     }
 
     @media (max-width: 800px) {
@@ -707,6 +736,19 @@
       .cta-button {
         width: 100%;
       }
+
+      .toc-box {
+        padding: 20px;
+      }
+
+      .toc-links {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+      }
+
+      .toc-links a {
+        padding: 11px 0;
+      }
     }
   </style>
 </head>
@@ -782,17 +824,17 @@
     <section class="toc-box">
       <h2>On This Page</h2>
       <div class="toc-links">
-        <a href="#what-is-epf">What Is EPF?</a>
-        <a href="#epf-rates">Contribution Rates</a>
-        <a href="#epf-calculation">How EPF Is Calculated</a>
-        <a href="#salary-examples">Salary Examples</a>
-        <a href="#salary-components">Salary Components</a>
-        <a href="#who-contributes">Who Must Contribute</a>
-        <a href="#account-structure">Account Structure</a>
-        <a href="#payment-deadline">Payment Deadline</a>
-        <a href="#tax-relief">Tax Relief</a>
-        <a href="#withdrawals">Withdrawals</a>
-        <a href="#faq">FAQ</a>
+        <a href="#what-is-epf"><span class="toc-number">01</span><span class="toc-label">What Is EPF?</span><span class="toc-arrow">→</span></a>
+        <a href="#epf-rates"><span class="toc-number">02</span><span class="toc-label">Contribution Rates</span><span class="toc-arrow">→</span></a>
+        <a href="#epf-calculation"><span class="toc-number">03</span><span class="toc-label">How EPF Is Calculated</span><span class="toc-arrow">→</span></a>
+        <a href="#salary-examples"><span class="toc-number">04</span><span class="toc-label">Salary Examples</span><span class="toc-arrow">→</span></a>
+        <a href="#salary-components"><span class="toc-number">05</span><span class="toc-label">Salary Components</span><span class="toc-arrow">→</span></a>
+        <a href="#who-contributes"><span class="toc-number">06</span><span class="toc-label">Who Must Contribute</span><span class="toc-arrow">→</span></a>
+        <a href="#account-structure"><span class="toc-number">07</span><span class="toc-label">Account Structure</span><span class="toc-arrow">→</span></a>
+        <a href="#payment-deadline"><span class="toc-number">08</span><span class="toc-label">Payment Deadline</span><span class="toc-arrow">→</span></a>
+        <a href="#tax-relief"><span class="toc-number">09</span><span class="toc-label">Tax Relief</span><span class="toc-arrow">→</span></a>
+        <a href="#withdrawals"><span class="toc-number">10</span><span class="toc-label">Withdrawals</span><span class="toc-arrow">→</span></a>
+        <a href="#faq"><span class="toc-number">11</span><span class="toc-label">FAQ</span><span class="toc-arrow">→</span></a>
       </div>
     </section>
 
