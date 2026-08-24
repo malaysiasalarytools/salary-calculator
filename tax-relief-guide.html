@@ -517,6 +517,50 @@
       color: var(--accent);
     }
 
+
+    .toc-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:26px 0}
+    .toc-box h2{margin-top:0;margin-bottom:16px}
+    .toc-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px}
+    .toc-links a{display:flex;align-items:center;gap:14px;min-width:0;text-decoration:none;color:var(--foreground);padding:12px 2px;border-bottom:1px solid var(--border);transition:.18s ease}
+    .toc-links a:hover{color:var(--accent);padding-left:4px}
+    .toc-number{width:28px;flex:0 0 28px;color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.04em}
+    .toc-label{flex:1;min-width:0;font-weight:700;font-size:15px}
+    .toc-arrow{color:var(--muted);font-size:15px}
+
+    .source-note{margin-top:18px;background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);padding:14px;border-radius:10px;color:var(--muted);font-size:13px}
+    .source-note a{color:var(--accent);font-weight:800;text-decoration:none}
+
+    .related-tools-section{margin:34px 0}
+    .related-tools-section h2{margin-bottom:8px}
+    .related-tools-intro{margin-top:0;max-width:760px}
+    .featured-calculator{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:22px;align-items:center;margin-top:20px;padding:24px 26px;background:radial-gradient(circle at top right,rgba(47,125,94,.14),transparent 34%),linear-gradient(135deg,#f8f5ef 0%,#fbfaf6 100%);border:1px solid var(--accent-border);border-radius:18px;text-decoration:none;color:var(--foreground);overflow:hidden;transition:.18s ease}
+    .featured-calculator:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 16px 34px rgba(47,43,37,.09)}
+    .featured-calculator-copy{min-width:0}
+    .featured-kicker{display:inline-block;margin-bottom:7px;color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .featured-calculator h3{margin:0 0 6px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,3vw,32px);font-weight:400;line-height:1.1}
+    .featured-calculator p{margin:0;max-width:640px;font-size:15px}
+    .feature-link{display:inline-flex;align-items:center;justify-content:center;min-width:160px;padding:12px 16px;border-radius:12px;background:var(--accent);color:#fff;font-weight:900;white-space:nowrap}
+    .featured-calculator-icon{width:66px;height:66px;display:grid;place-items:center;border-radius:18px;background:var(--accent-soft);border:1px solid var(--accent-border);font-size:30px}
+
+    .quick-calculators{margin-top:18px}
+    .quick-calculators-title{margin:0 0 10px;font-size:14px;font-weight:800;color:var(--foreground)}
+    .quick-calculators-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .quick-calculators-grid a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;background:var(--card);border:1px solid var(--border);border-radius:11px;text-decoration:none;color:var(--foreground);font-size:14px;font-weight:800;transition:.18s ease}
+    .quick-calculators-grid a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .quick-arrow{color:var(--muted)}
+
+    .explore-section{margin-top:30px;padding-top:28px;border-top:1px solid var(--border)}
+    .explore-heading h2{margin:0}
+    .explore-heading p{margin:7px 0 14px}
+    .explore-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+    .explore-column h3{margin:0 0 8px;font-size:16px;color:var(--foreground)}
+    .editorial-link{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .editorial-link:hover{color:var(--accent);padding-left:4px}
+    .editorial-link span:first-child{flex:1;min-width:0;font-weight:800;font-size:15px}
+    .editorial-arrow{color:var(--muted)}
+    .resource-actions{display:flex;justify-content:space-between;gap:16px;margin-top:18px;flex-wrap:wrap}
+    .resource-actions a{color:var(--accent);font-weight:800;text-decoration:none}
+
     @media (max-width: 800px) {
       .nav-inner {
         flex-direction: row;
@@ -581,6 +625,18 @@
         gap: 10px;
       }
 
+      .toc-box{padding:20px}
+      .toc-links{grid-template-columns:1fr;column-gap:0}
+      .toc-links a{padding:11px 0}
+      .featured-calculator{grid-template-columns:1fr;padding:22px;gap:16px}
+      .feature-link{width:100%}
+      .featured-calculator-icon{display:none}
+      .quick-calculators-grid{grid-template-columns:1fr}
+      .explore-grid{grid-template-columns:1fr;gap:26px}
+      .resource-actions{display:block}
+      .resource-actions a{display:block;margin-top:8px}
+
+
       .summary-card,
       .tax-category-card,
       .component-card {
@@ -632,7 +688,7 @@
   </header>
 
   <section class="hero">
-    <span class="pill">Updated for Malaysia 2026 tax guide</span>
+    <span class="pill">Last verified: August 2026 · Tax reliefs for YA 2025</span>
     <h1 class="serif">Malaysia <em>Tax Relief</em> Guide 2026</h1>
     <p>
       Learn common Malaysia personal tax relief categories, claim limits, tax filing examples and documents to keep before submitting your income tax return.
@@ -643,570 +699,348 @@
 
     <div class="seo">
 
-      <section class="calculator-cta">
-        <h2 class="serif">Estimate Your Tax After Reliefs</h2>
-        <p>
-          Want to see how tax reliefs may affect your monthly PCB or yearly income tax? Use our free Income Tax Calculator to estimate your tax position after deductions and reliefs.
-        </p>
-        <a href="income-tax-calculator.html" class="cta-button">Check My Income Tax →</a>
-      </section>
-
       <section class="summary-box">
         <h2 class="serif">Tax Relief Quick Summary</h2>
         <p>
-          Tax reliefs reduce your chargeable income when you file your personal income tax. The lower your chargeable income, the lower your tax may be, depending on your tax bracket.
+          Tax reliefs reduce chargeable income for eligible resident individual taxpayers.
+          The relief limits below mainly refer to <strong>Year of Assessment 2025</strong>, which is filed during 2026.
         </p>
 
         <div class="summary-grid">
-          <div class="summary-card">
-            <strong>RM9,000</strong>
-            <span>Individual and dependent relatives relief</span>
-          </div>
-          <div class="summary-card">
-            <strong>RM2,500</strong>
-            <span>Common lifestyle relief limit</span>
-          </div>
-          <div class="summary-card">
-            <strong>RM7,000</strong>
-            <span>Common education fees relief limit</span>
-          </div>
-          <div class="summary-card">
-            <strong>Receipts</strong>
-            <span>Keep documents for eligible claims</span>
-          </div>
+          <div class="summary-card"><strong>RM9,000</strong><span>Individual & dependent relatives relief</span></div>
+          <div class="summary-card"><strong>RM2,500</strong><span>Main lifestyle relief limit</span></div>
+          <div class="summary-card"><strong>RM7,000</strong><span>Education fees relief limit</span></div>
+          <div class="summary-card"><strong>RM10,000</strong><span>Medical expenses relief limit for self / spouse / child</span></div>
+        </div>
+
+        <div class="note-box">
+          <strong>Record-keeping reminder:</strong> Keep receipts and supporting documents for relief claims for 7 years from the year the claim is made.
         </div>
       </section>
 
-      <h2>What Is Tax Relief?</h2>
+      <section class="calculator-cta">
+        <h2 class="serif">Estimate Your Tax After Reliefs</h2>
+        <p>Want to see how tax reliefs affect your annual tax position? Use our free Income Tax Calculator to estimate tax payable after common deductions and reliefs.</p>
+        <a href="income-tax-calculator.html" class="cta-button">Check My Income Tax →</a>
+      </section>
 
-      <p>
-        Tax relief is an amount that can be deducted from your income before calculating taxable income. In Malaysia, individual taxpayers may claim eligible reliefs such as personal relief, EPF and insurance relief, lifestyle expenses, education fees, medical expenses and child-related reliefs.
-      </p>
+      <section class="toc-box">
+        <h2>On This Page</h2>
+        <div class="toc-links">
+          <a href="#what-is-tax-relief"><span class="toc-number">01</span><span class="toc-label">What Is Tax Relief?</span><span class="toc-arrow">→</span></a>
+          <a href="#relief-table"><span class="toc-number">02</span><span class="toc-label">YA 2025 Relief Table</span><span class="toc-arrow">→</span></a>
+          <a href="#lifestyle-relief"><span class="toc-number">03</span><span class="toc-label">Lifestyle Relief</span><span class="toc-arrow">→</span></a>
+          <a href="#medical-relief"><span class="toc-number">04</span><span class="toc-label">Medical Expenses Relief</span><span class="toc-arrow">→</span></a>
+          <a href="#education-relief"><span class="toc-number">05</span><span class="toc-label">Education Fees Relief</span><span class="toc-arrow">→</span></a>
+          <a href="#contribution-reliefs"><span class="toc-number">06</span><span class="toc-label">EPF, Insurance, PRS & SOCSO</span><span class="toc-arrow">→</span></a>
+          <a href="#family-reliefs"><span class="toc-number">07</span><span class="toc-label">Child & Family Reliefs</span><span class="toc-arrow">→</span></a>
+          <a href="#tax-saving"><span class="toc-number">08</span><span class="toc-label">How Relief Saves Tax</span><span class="toc-arrow">→</span></a>
+          <a href="#pcb-tp1"><span class="toc-number">09</span><span class="toc-label">Tax Relief & PCB / TP1</span><span class="toc-arrow">→</span></a>
+          <a href="#documents"><span class="toc-number">10</span><span class="toc-label">Documents & Checklist</span><span class="toc-arrow">→</span></a>
+          <a href="#mistakes"><span class="toc-number">11</span><span class="toc-label">Common Mistakes</span><span class="toc-arrow">→</span></a>
+          <a href="#faq"><span class="toc-number">12</span><span class="toc-label">FAQ</span><span class="toc-arrow">→</span></a>
+        </div>
+      </section>
 
-      <p>
-        Tax relief is not the same as a tax rebate. A relief reduces chargeable income, while a rebate directly reduces tax payable. This guide focuses mainly on personal tax relief categories commonly claimed by employees and individual taxpayers.
-      </p>
+      <h2 id="what-is-tax-relief">What Is Tax Relief?</h2>
+      <p>Tax relief is an amount that can be deducted when determining chargeable income. In Malaysia, eligible resident individuals may claim reliefs such as personal relief, EPF and insurance relief, lifestyle expenses, education fees, medical expenses and child-related reliefs.</p>
+      <p>Tax relief is not the same as a tax rebate. A relief reduces chargeable income before tax is calculated, while a rebate directly reduces tax payable.</p>
 
       <section class="guide-box">
-        <h2 class="serif">Tax Relief Categories in Malaysia</h2>
-
-        <p>
-          The table below gives a simplified overview of common personal tax relief categories. Always check the latest LHDN rules before filing because limits and qualifying conditions may change.
-        </p>
+        <h2 id="relief-table" class="serif">Malaysia Tax Relief Reference Table — YA 2025</h2>
+        <p>The table below highlights common relief categories for YA 2025. Some categories contain sub-limits and detailed qualifying conditions.</p>
 
         <div class="contribution-table-wrap">
           <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Tax Relief Category</th>
-                <th>Common Limit</th>
-                <th>Examples of Qualifying Items</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Tax Relief Category</th><th>YA 2025 Limit</th><th>Practical Note</th></tr></thead>
             <tbody>
-              <tr>
-                <td>Individual & dependent relatives</td>
-                <td>RM9,000</td>
-                <td>Basic personal relief for resident individual taxpayers</td>
-              </tr>
-              <tr>
-                <td>Lifestyle relief</td>
-                <td>RM2,500</td>
-                <td>Books, personal computer, smartphone, tablet, internet subscription and approved self-development items</td>
-              </tr>
-              <tr>
-                <td>Medical expenses</td>
-                <td>Up to RM10,000</td>
-                <td>Serious illness, fertility treatment, vaccination, dental treatment, medical check-up and selected health screenings</td>
-              </tr>
-              <tr>
-                <td>Education fees</td>
-                <td>RM7,000</td>
-                <td>Approved self-education fees and selected upskilling or professional courses</td>
-              </tr>
-              <tr>
-                <td>Insurance, EPF & contributions</td>
-                <td>Varies by category</td>
-                <td>Life insurance, EPF, PRS, education or medical insurance and SOCSO contributions</td>
-              </tr>
-              <tr>
-                <td>Child relief</td>
-                <td>Varies by child status</td>
-                <td>Child below 18, child studying full time, disabled child and childcare-related claims</td>
-              </tr>
+              <tr><td>Individual & dependent relatives</td><td><strong>RM9,000</strong></td><td>Basic personal relief for resident individual taxpayers.</td></tr>
+              <tr><td>Parents & grandparents — medical, dental, special needs and care</td><td><strong>RM8,000</strong></td><td>Subject to qualifying conditions and medical certification where required.</td></tr>
+              <tr><td>Education fees (self)</td><td><strong>RM7,000</strong></td><td>Includes qualifying academic and professional study; upskilling / self-enhancement has a RM2,000 sub-limit.</td></tr>
+              <tr><td>Medical expenses — self / spouse / child</td><td><strong>RM10,000</strong></td><td>Includes specified serious illness, fertility, vaccination, dental and medical examination categories, subject to sub-limits.</td></tr>
+              <tr><td>Lifestyle</td><td><strong>RM2,500</strong></td><td>Qualifying books, devices, internet and approved lifestyle expenditure.</td></tr>
+              <tr><td>Additional sports lifestyle relief</td><td><strong>RM1,000</strong></td><td>For qualifying sports equipment, facilities, competition fees and gym / sports training.</td></tr>
+              <tr><td>Life insurance & EPF</td><td><strong>RM7,000</strong></td><td>Combined structure with separate sub-categories for approved contributions and life insurance / family takaful.</td></tr>
+              <tr><td>Education & medical insurance</td><td><strong>RM4,000</strong></td><td>For qualifying premiums for self, spouse or child.</td></tr>
+              <tr><td>PRS & deferred annuity</td><td><strong>RM3,000</strong></td><td>For qualifying Private Retirement Scheme and deferred annuity contributions.</td></tr>
+              <tr><td>SOCSO contributions</td><td><strong>RM350</strong></td><td>Restricted relief for qualifying SOCSO contributions.</td></tr>
+              <tr><td>SSPN net savings</td><td><strong>RM8,000</strong></td><td>Based on qualifying net savings for the year.</td></tr>
+              <tr><td>Registered childcare / kindergarten fees</td><td><strong>RM3,000</strong></td><td>For qualifying fees for a child aged 6 years and below.</td></tr>
+              <tr><td>Child below 18</td><td><strong>RM2,000</strong></td><td>Per qualifying unmarried child.</td></tr>
+              <tr><td>Child in qualifying higher education</td><td><strong>RM8,000</strong></td><td>Subject to age, marital status, level of study and institution conditions.</td></tr>
+              <tr><td>First-home housing loan interest</td><td><strong>RM5,000–RM7,000</strong></td><td>For qualifying first-home purchases with SPA dated from 1 Jan 2025 to 31 Dec 2027; limit depends on house price.</td></tr>
             </tbody>
           </table>
         </div>
 
-        <div class="note-box">
-          <strong>Note:</strong> This page is a simplified guide for easy reading. Always refer to LHDN/HASiL or your tax adviser for the latest official tax relief rules.
-        </div>
+        <div class="note-box"><strong>Important:</strong> This is a practical reference table. Always check the official HASiL relief schedule for detailed conditions, sub-limits and less common categories before filing.</div>
       </section>
 
       <section class="guide-box">
         <h2 class="serif">Popular Tax Reliefs Employees Commonly Check</h2>
-
         <div class="tax-category-grid">
-          <div class="tax-category-card">
-            <span class="tag">Lifestyle</span>
-            <h3>Books, Devices & Internet</h3>
-            <p>Common lifestyle claims may include books, smartphone, computer, tablet and internet subscription, subject to the claim limit and qualifying rules.</p>
-          </div>
-
-          <div class="tax-category-card">
-            <span class="tag">Health</span>
-            <h3>Medical Expenses</h3>
-            <p>Medical-related relief may cover selected treatment, screening, vaccination, dental treatment and serious illness expenses, depending on eligibility.</p>
-          </div>
-
-          <div class="tax-category-card">
-            <span class="tag">Savings</span>
-            <h3>EPF, PRS & SOCSO</h3>
-            <p>Contributions such as EPF, PRS and SOCSO may qualify for relief, subject to separate limits and conditions.</p>
-          </div>
-
-          <div class="tax-category-card">
-            <span class="tag">Family</span>
-            <h3>Child & Education Relief</h3>
-            <p>Parents may be able to claim child relief, childcare-related relief, SSPN savings and education-related claims if the conditions are met.</p>
-          </div>
+          <div class="tax-category-card"><span class="tag">Lifestyle</span><h3>Books, Devices & Internet</h3><p>Common lifestyle claims include qualifying books, devices, internet subscriptions and approved self-development expenditure.</p></div>
+          <div class="tax-category-card"><span class="tag">Health</span><h3>Medical Expenses</h3><p>Selected serious illness, fertility, vaccination, dental and health examination costs may qualify subject to conditions.</p></div>
+          <div class="tax-category-card"><span class="tag">Savings</span><h3>EPF, PRS & SOCSO</h3><p>EPF, approved PRS, SOCSO and selected insurance contributions may qualify under their respective relief categories.</p></div>
+          <div class="tax-category-card"><span class="tag">Family</span><h3>Child & Education Relief</h3><p>Child, childcare, SSPN and education-related reliefs may apply where the relevant conditions are met.</p></div>
         </div>
       </section>
 
       <section class="guide-box">
         <h2 class="serif">Detailed Tax Relief Breakdown</h2>
-
-        <p>
-          The sections below explain common Malaysia tax relief categories in a more practical way. For each category, check what normally qualifies, common examples, mistakes to avoid and documents that should be kept for your own tax records.
-        </p>
+        <p>The sections below explain common Malaysia tax relief categories in a practical way. For each category, check what normally qualifies, common examples, mistakes to avoid and documents to keep.</p>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Lifestyle Relief</h2>
-
-        <p>
-          Lifestyle relief is one of the most commonly claimed personal tax reliefs because many employees already spend money on books, digital devices, internet subscription and selected lifestyle-related items.
-        </p>
-
-        <p>
-          The key point is that the expense must fall within the approved relief category and must be supported by proper documents.
-        </p>
+        <h2 id="lifestyle-relief" class="serif">Lifestyle Relief</h2>
+        <p>Lifestyle relief is one of the most commonly claimed personal tax reliefs because many employees already spend money on books, digital devices, internet subscriptions and other qualifying items.</p>
+        <p>The key point is that the expense must fall within the approved category and be supported by proper documents.</p>
 
         <div class="contribution-table-wrap">
           <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Area</th>
-                <th>Details</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Area</th><th>Details</th></tr></thead>
             <tbody>
-              <tr>
-                <td>What qualifies</td>
-                <td>Qualifying lifestyle expenses may include books, journals, magazines, printed newspapers, personal computers, smartphones, tablets, internet subscription and selected approved lifestyle or self-development items, subject to the latest LHDN rules.</td>
-              </tr>
-              <tr>
-                <td>Common examples</td>
-                <td>A laptop bought for personal use, monthly home internet subscription, a smartphone purchase, books for self-study or selected educational reading materials may fall under lifestyle relief if they meet the conditions.</td>
-              </tr>
-              <tr>
-                <td>Common mistakes</td>
-                <td>Common mistakes include claiming items bought for someone else, claiming company-reimbursed expenses, claiming items outside the approved category or claiming without keeping the receipt.</td>
-              </tr>
-              <tr>
-                <td>Documents required</td>
-                <td>Keep tax invoices, receipts, online order confirmations, payment records and subscription bills showing the item purchased, date, amount and purchaser details where available.</td>
-              </tr>
+              <tr><td>What qualifies</td><td>Qualifying lifestyle expenses may include books, journals, magazines, printed newspapers, personal computers, smartphones, tablets, internet subscriptions and approved self-development items, subject to current HASiL rules.</td></tr>
+              <tr><td>Common examples</td><td>A personal laptop, smartphone, home internet subscription or books for self-study may qualify when the conditions are met.</td></tr>
+              <tr><td>Common mistakes</td><td>Claiming items for someone outside the permitted group, company-reimbursed expenses, non-qualifying items or expenses without proper evidence.</td></tr>
+              <tr><td>Documents required</td><td>Keep tax invoices, receipts, online order confirmations, payment records and subscription bills showing the item, date and amount.</td></tr>
             </tbody>
           </table>
         </div>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Medical Expenses Relief</h2>
-
-        <p>
-          Medical relief can be valuable for taxpayers who incur healthcare costs during the year. However, not every medical bill automatically qualifies.
-        </p>
-
-        <p>
-          The claim normally depends on the type of treatment, who the treatment is for, and whether the expense falls within the approved medical relief category.
-        </p>
+        <h2 id="medical-relief" class="serif">Medical Expenses Relief</h2>
+        <p>Medical relief can be valuable for taxpayers who incur healthcare costs during the year, but not every medical bill automatically qualifies.</p>
+        <p>The claim depends on the type of treatment, who the treatment is for and whether the expense falls within an approved category or sub-limit.</p>
 
         <div class="contribution-table-wrap">
           <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Area</th>
-                <th>Details</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Area</th><th>Details</th></tr></thead>
             <tbody>
-              <tr>
-                <td>What qualifies</td>
-                <td>Selected medical expenses may qualify, including serious illness treatment, medical examination, vaccination, fertility treatment, dental treatment and approved health screening, subject to the applicable relief limits and conditions.</td>
-              </tr>
-              <tr>
-                <td>Common examples</td>
-                <td>Examples may include hospital bills for approved treatment, medical check-up packages, vaccination receipts, fertility treatment bills and selected dental treatment expenses.</td>
-              </tr>
-              <tr>
-                <td>Common mistakes</td>
-                <td>Taxpayers may wrongly claim general wellness products, supplements, cosmetic treatment or expenses that are not supported by a proper medical receipt.</td>
-              </tr>
-              <tr>
-                <td>Documents required</td>
-                <td>Keep hospital invoices, clinic receipts, medical reports where relevant, payment slips, health screening reports and documents showing the patient name and treatment date.</td>
-              </tr>
+              <tr><td>What qualifies</td><td>Specified medical expenses may include serious illness treatment, fertility treatment, vaccination, dental examination / treatment and qualifying medical examinations, subject to the relevant limits and conditions.</td></tr>
+              <tr><td>Common examples</td><td>Hospital bills for approved serious illness treatment, fertility treatment bills, vaccination receipts, dental treatment and qualifying health examinations.</td></tr>
+              <tr><td>Common mistakes</td><td>Claiming general wellness products, supplements, cosmetic treatment or unsupported medical spending that does not fall within the approved category.</td></tr>
+              <tr><td>Documents required</td><td>Keep hospital invoices, clinic receipts, medical reports where relevant, payment records and documents showing the patient and treatment date.</td></tr>
             </tbody>
           </table>
         </div>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Education Fees Relief</h2>
-
-        <p>
-          Education fees relief is useful for taxpayers who continue studying, upgrading skills or taking approved professional courses. The relief is generally meant for eligible self-education expenses, so the course type and institution details matter.
-        </p>
+        <h2 id="education-relief" class="serif">Education Fees Relief</h2>
+        <p>Education fees relief is useful for taxpayers who continue studying, upgrading skills or taking approved professional courses. The course type and institution details matter.</p>
 
         <div class="contribution-table-wrap">
           <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Area</th>
-                <th>Details</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Area</th><th>Details</th></tr></thead>
             <tbody>
-              <tr>
-                <td>What qualifies</td>
-                <td>Approved self-education fees may qualify if the course is within the categories allowed by LHDN, such as selected academic, technical, professional, vocational or upskilling courses.</td>
-              </tr>
-              <tr>
-                <td>Common examples</td>
-                <td>Examples may include professional qualification fees, approved degree or postgraduate study fees, selected technical training fees and recognised upskilling courses.</td>
-              </tr>
-              <tr>
-                <td>Common mistakes</td>
-                <td>Common mistakes include claiming casual classes that do not qualify, claiming someone else's education fee, claiming non-approved courses or claiming registration fees without checking whether they are allowable.</td>
-              </tr>
-              <tr>
-                <td>Documents required</td>
-                <td>Keep official receipts, course invoices, enrolment confirmation, institution details, payment records and documents showing your name, course name and year of payment.</td>
-              </tr>
+              <tr><td>What qualifies</td><td>Approved self-education fees may qualify for specified academic, technical, professional, vocational, industrial, scientific or technology studies. Master's and PhD courses can qualify more broadly, and upskilling / self-enhancement is subject to its sub-limit.</td></tr>
+              <tr><td>Common examples</td><td>Approved degree, postgraduate, professional qualification, technical training and qualifying upskilling courses.</td></tr>
+              <tr><td>Common mistakes</td><td>Claiming casual classes that do not qualify, another person's education fees, non-approved courses or expenses outside the permitted scope.</td></tr>
+              <tr><td>Documents required</td><td>Keep official receipts, invoices, enrolment confirmations, institution details and payment records showing your name, course and payment year.</td></tr>
             </tbody>
           </table>
         </div>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">EPF, PRS, SOCSO and Insurance Relief</h2>
-
-        <p>
-          Contributions and insurance-related reliefs are important because they often appear directly in payroll or annual statements. These claims may include EPF contributions, PRS contributions, SOCSO contributions and selected insurance premiums, depending on the specific category and annual limit.
-        </p>
+        <h2 id="contribution-reliefs" class="serif">EPF, PRS, SOCSO and Insurance Relief</h2>
+        <p>Contribution and insurance-related reliefs are important because they often appear directly in payroll records or annual statements.</p>
 
         <div class="contribution-table-wrap">
           <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Area</th>
-                <th>Details</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Area</th><th>Details</th></tr></thead>
             <tbody>
-              <tr>
-                <td>What qualifies</td>
-                <td>Employee EPF contributions, approved PRS contributions, SOCSO contributions and selected life, education or medical insurance premiums may qualify under their respective relief categories.</td>
-              </tr>
-              <tr>
-                <td>Common examples</td>
-                <td>Examples include EPF shown in the EA Form, SOCSO contributions from payroll, annual insurance premium statements and PRS contribution statements from the provider.</td>
-              </tr>
-              <tr>
-                <td>Common mistakes</td>
-                <td>Common mistakes include mixing up life insurance and medical insurance limits, claiming employer-paid premiums, claiming family members' policies incorrectly or entering the wrong amount from statements.</td>
-              </tr>
-              <tr>
-                <td>Documents required</td>
-                <td>Keep EA Form, EPF annual statement, SOCSO contribution record, PRS statement, insurance premium statement and payment receipts from insurers or providers.</td>
-              </tr>
+              <tr><td>What qualifies</td><td>Employee EPF contributions, approved PRS contributions, SOCSO contributions and selected life, family takaful, education or medical insurance premiums may qualify under their respective categories.</td></tr>
+              <tr><td>Common examples</td><td>EPF shown in payroll / statements, SOCSO payroll contributions, PRS statements and annual insurance premium statements.</td></tr>
+              <tr><td>Common mistakes</td><td>Mixing up insurance sub-limits, claiming employer-paid amounts incorrectly, double-claiming contributions or entering the wrong figures from statements.</td></tr>
+              <tr><td>Documents required</td><td>Keep EA Form, EPF statement, SOCSO records, PRS statement, insurer statements and relevant payment receipts.</td></tr>
             </tbody>
           </table>
         </div>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Child Relief and Family-Related Reliefs</h2>
-
-        <p>
-          Child relief can reduce chargeable income for taxpayers with children, but the claim depends on the child's age, education status, disability status and whether the relief is claimed by one parent or shared between parents.
-        </p>
-
-        <p>
-          This is an area where taxpayers should be careful because the wrong claim may create problems during review.
-        </p>
+        <h2 id="family-reliefs" class="serif">Child Relief and Family-Related Reliefs</h2>
+        <p>Child and family reliefs depend on the child's age, education status, disability status, childcare arrangements and which spouse is claiming the relief.</p>
 
         <div class="contribution-table-wrap">
           <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Area</th>
-                <th>Details</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Area</th><th>Details</th></tr></thead>
             <tbody>
-              <tr>
-                <td>What qualifies</td>
-                <td>Child relief may apply for children below 18, children in full-time education, disabled children and certain childcare or education-related situations, subject to the relevant conditions.</td>
-              </tr>
-              <tr>
-                <td>Common examples</td>
-                <td>Examples include child relief for a school-going child, relief for a child studying at university, childcare-related claims and selected education savings claims such as SSPN where applicable.</td>
-              </tr>
-              <tr>
-                <td>Common mistakes</td>
-                <td>Common mistakes include both parents claiming the same full relief incorrectly, claiming a child who does not meet the education condition or claiming without keeping school, university or childcare documents.</td>
-              </tr>
-              <tr>
-                <td>Documents required</td>
-                <td>Keep birth certificates, education confirmation letters, university invoices, childcare receipts, SSPN statements and any documents supporting the child's status for the relevant year.</td>
-              </tr>
+              <tr><td>What qualifies</td><td>Reliefs may apply for qualifying children below 18, children in full-time education, disabled children, registered childcare / kindergarten fees and SSPN net savings.</td></tr>
+              <tr><td>Common examples</td><td>RM2,000 for a qualifying child below 18, RM8,000 for a qualifying child in higher education, childcare fees and SSPN net savings subject to conditions.</td></tr>
+              <tr><td>Common mistakes</td><td>Both parents claiming the same full relief incorrectly, using the wrong education category, or claiming childcare / education items without supporting documents.</td></tr>
+              <tr><td>Documents required</td><td>Keep birth certificates, education confirmation, university invoices, childcare receipts, SSPN statements and documents supporting the child's status.</td></tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      <section class="guide-box">
-        <h2 class="serif">How to Organise Tax Relief Documents</h2>
-
-        <p>
-          A simple way to avoid tax filing stress is to organise documents by category before the filing season. For example, keep one folder for lifestyle receipts, one for medical expenses, one for insurance and contributions, and one for child or education-related documents.
-        </p>
-
-        <p>
-          Digital copies are useful, but the file should be clear enough to show the date, amount, supplier and purpose of payment. If you are unsure whether an item qualifies, check the latest LHDN guidance, review the receipt description and keep supporting documents.
-        </p>
-      </section>
-
-      <h2>How Tax Relief Reduces Taxable Income</h2>
-
-      <p>
-        Tax relief reduces chargeable income before income tax is calculated. This means a tax relief does not always reduce your tax by the full relief amount. The actual tax saving depends on your tax bracket and total chargeable income.
-      </p>
+      <h2 id="tax-saving">How Tax Relief Reduces Your Tax</h2>
+      <p>Tax relief reduces chargeable income before income tax is calculated. This means claiming RM2,500 of relief does <strong>not</strong> mean you automatically save RM2,500 of tax.</p>
 
       <div class="formula-box">
-        <strong>Chargeable Income = Total Income − Allowable Reliefs</strong>
-        <span>Your tax is then calculated based on the remaining chargeable income.</span>
+        <strong>Approximate Tax Saving = Relief Amount × Marginal Tax Rate</strong>
+        <span>This is a simplified way to understand the effect when the entire relief falls within the same tax band.</span>
       </div>
 
       <section class="example-box">
-        <h2 class="serif">Example Tax Relief Calculation</h2>
+        <h2 class="serif">Example: RM2,500 Lifestyle Relief</h2>
+        <p>Assume a taxpayer's relevant marginal tax rate is 6% and the full RM2,500 lifestyle relief reduces income within that band.</p>
 
-        <p>
-          If a taxpayer has RM60,000 annual income and RM15,000 allowable reliefs, the simplified chargeable income may be:
-        </p>
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <tbody>
+              <tr><td><strong>Lifestyle relief claimed</strong></td><td>RM2,500</td></tr>
+              <tr><td><strong>Illustrative marginal tax rate</strong></td><td>6%</td></tr>
+              <tr><td><strong>Approximate tax saving</strong></td><td>RM150</td></tr>
+            </tbody>
+          </table>
+        </div>
 
-        <ul>
-          <li>Annual income: RM60,000</li>
-          <li>Allowable reliefs: RM15,000</li>
-          <li>Estimated chargeable income: RM45,000</li>
-        </ul>
-
-        <p>
-          The tax payable is then calculated using Malaysia's individual income tax rates. Actual tax may differ depending on deductions, rebates, PCB already paid and the latest LHDN rules.
-        </p>
+        <div class="note-box"><strong>Key point:</strong> Relief reduces taxable / chargeable income; a rebate reduces tax payable directly. Actual savings depend on the taxpayer's full tax calculation and the bands affected.</div>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Tax Relief Checklist Before Filing</h2>
+        <h2 id="pcb-tp1" class="serif">Can Tax Relief Reduce Monthly PCB?</h2>
+        <p>Some eligible deductions and rebates can be taken into account for Monthly Tax Deduction when an employee submits <strong>Form TP1</strong> to the employer.</p>
+        <p>TP1 can be submitted more than once in the current year where relevant. The employee normally submits the form to the employer without attaching the receipts, but must still keep the supporting receipts and documents.</p>
 
-        <p>
-          Before submitting your income tax return, it is useful to prepare a checklist of possible reliefs and supporting documents.
-        </p>
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Situation</th><th>How It Works</th></tr></thead>
+            <tbody>
+              <tr><td>Claim through TP1</td><td>Eligible deduction / rebate information may be reflected in the employer's PCB calculation.</td></tr>
+              <tr><td>No TP1 submitted</td><td>Qualifying relief may still be claimed in the annual tax return, subject to the tax rules.</td></tr>
+              <tr><td>Supporting documents</td><td>Employees should keep receipts and supporting documents for 7 years from the year the claim is made.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note-box"><strong>Important:</strong> A lower PCB deduction does not itself prove that a relief is ultimately allowable. The taxpayer should still ensure the claim satisfies the tax rules and supporting evidence requirements.</div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="documents" class="serif">How to Organise Tax Relief Documents</h2>
+        <p>A simple way to reduce filing stress is to organise documents by category before filing season—for example, separate folders for lifestyle, medical, insurance / contributions and child / education claims.</p>
+        <p>Digital copies can be useful, but they should clearly show the date, amount, supplier and purpose of payment.</p>
 
         <div class="checklist-box">
           <ul>
-            <li>Check your EA Form and total annual employment income</li>
-            <li>Review EPF, SOCSO and insurance contributions</li>
+            <li>Check your EA Form and annual employment income</li>
+            <li>Review EPF, SOCSO, PRS and insurance statements</li>
             <li>Collect receipts for lifestyle, medical and education claims</li>
-            <li>Check child relief, SSPN and childcare-related eligibility</li>
-            <li>Keep documents safely in case LHDN requests supporting proof</li>
+            <li>Check child relief, SSPN and childcare eligibility</li>
+            <li>Keep supporting documents for 7 years from the year of claim</li>
+            <li>Separate receipts by Year of Assessment to avoid claiming the wrong tax year</li>
           </ul>
         </div>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Common Tax Relief Mistakes</h2>
-
-        <p>
-          Some taxpayers overclaim tax relief because they assume every expense is deductible. In practice, reliefs must fall within the approved category, meet the qualifying conditions and stay within the relevant claim limit.
-        </p>
+        <h2 id="mistakes" class="serif">Common Tax Relief Mistakes</h2>
+        <p>Some taxpayers overclaim tax relief because they assume every expense is deductible. Reliefs must fall within the approved category, meet the qualifying conditions and stay within the relevant limit.</p>
 
         <div class="component-grid">
-          <div class="component-card">
-            <div class="component-icon">🧾</div>
-            <h3>Missing Receipts</h3>
-            <p>Claims should be supported by receipts, statements or relevant documents.</p>
-          </div>
-
-          <div class="component-card">
-            <div class="component-icon">📱</div>
-            <h3>Wrong Category</h3>
-            <p>Some purchases may not qualify even if they look similar to lifestyle items.</p>
-          </div>
-
-          <div class="component-card">
-            <div class="component-icon">👨‍👩‍👧</div>
-            <h3>Shared Claims</h3>
-            <p>Some family-related reliefs may need to be claimed by one spouse only.</p>
-          </div>
-
-          <div class="component-card">
-            <div class="component-icon">📅</div>
-            <h3>Wrong Tax Year</h3>
-            <p>Expenses are usually claimed based on the year they were paid.</p>
-          </div>
+          <div class="component-card"><div class="component-icon">🧾</div><h3>Missing Receipts</h3><p>Claims should be supported by receipts, statements or other relevant evidence.</p></div>
+          <div class="component-card"><div class="component-icon">📱</div><h3>Wrong Category</h3><p>An expense may look similar to a relief item but still fall outside the official qualifying rules.</p></div>
+          <div class="component-card"><div class="component-icon">👨‍👩‍👧</div><h3>Shared Claims</h3><p>Some family-related reliefs cannot simply be claimed in full by both spouses.</p></div>
+          <div class="component-card"><div class="component-icon">📅</div><h3>Wrong Tax Year</h3><p>Expenses are generally claimed based on the relevant Year of Assessment and payment period.</p></div>
         </div>
       </section>
 
       <section class="guide-box">
         <h2 class="serif">Tax Relief vs Tax Rebate vs Tax Deduction</h2>
-
-        <p>
-          Tax relief, tax rebate and tax deduction are related, but they do not work in the same way. Understanding the difference can help you read tax guides and e-Filing forms more confidently.
-        </p>
+        <p>These terms are related, but they do not work in the same way.</p>
 
         <div class="contribution-table-wrap">
           <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>How It Works</th>
-                <th>Simple Example</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Item</th><th>How It Works</th><th>Simple Example</th></tr></thead>
             <tbody>
-              <tr>
-                <td>Tax Relief</td>
-                <td>Reduces chargeable income before tax is calculated</td>
-                <td>Lifestyle relief, medical relief, EPF relief</td>
-              </tr>
-              <tr>
-                <td>Tax Rebate</td>
-                <td>Reduces tax payable directly</td>
-                <td>Specific rebates allowed under tax rules</td>
-              </tr>
-              <tr>
-                <td>Tax Deduction</td>
-                <td>Usually reduces income based on approved deduction rules</td>
-                <td>Approved donations or certain allowable deductions</td>
-              </tr>
+              <tr><td>Tax Relief</td><td>Reduces chargeable income before tax is calculated</td><td>Lifestyle, medical, EPF relief</td></tr>
+              <tr><td>Tax Rebate</td><td>Reduces tax payable directly</td><td>Specific rebates allowed under tax rules</td></tr>
+              <tr><td>Tax Deduction</td><td>Reduces income based on approved deduction rules</td><td>Approved donations or other statutory deductions where applicable</td></tr>
             </tbody>
           </table>
         </div>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Who Should Read This Tax Relief Guide?</h2>
+        <h2>Sources &amp; Verification</h2>
+        <p>This guide was last verified in August 2026 against current HASiL materials for Year of Assessment 2025 tax reliefs and the 2026 TP1 explanatory notes.</p>
 
-        <ul>
-          <li>Employees preparing to file personal income tax in Malaysia</li>
-          <li>Taxpayers checking which receipts and expenses may be claimable</li>
-          <li>Job seekers comparing salary, PCB and tax impact</li>
-          <li>HR and payroll staff helping employees understand PCB and TP1 claims</li>
-          <li>Individuals organising tax documents before e-Filing</li>
-        </ul>
+        <div class="source-note">
+          <strong>Official sources used for verification:</strong><br>
+          <a href="https://www.hasil.gov.my/en/individual/individual-life-cycle/income-declaration/tax-reliefs/" target="_blank" rel="noopener">HASiL — Tax Reliefs (YA 2025)</a><br>
+          <a href="https://www.hasil.gov.my/media/muob0jyz/tax-relief-ya-2025.pdf" target="_blank" rel="noopener">HASiL — Tax Relief Summary YA 2025</a><br>
+          <a href="https://www.hasil.gov.my/media/i1lcd0wn/bi-explanatory-notes-for-from-tp1-2026.pdf" target="_blank" rel="noopener">HASiL — TP1 2026 Explanatory Notes</a><br>
+          <a href="https://www.hasil.gov.my/" target="_blank" rel="noopener">HASiL — Official Website</a>
+        </div>
       </section>
 
-      <h2>Frequently Asked Questions</h2>
+      <h2 id="faq">Frequently Asked Questions</h2>
 
       <div class="faq-box">
-        <details class="faq-item" open>
-          <summary>What is tax relief in Malaysia?</summary>
-          <p>
-            Tax relief is an amount that can reduce your chargeable income when you file personal income tax. Lower chargeable income may reduce tax payable depending on your tax bracket.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is tax relief the same as a tax rebate?</summary>
-          <p>
-            No. Tax relief reduces chargeable income before tax is calculated, while a tax rebate directly reduces the amount of tax payable.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can I claim lifestyle relief without receipts?</summary>
-          <p>
-            You should keep receipts or supporting documents for any relief claimed. LHDN may request proof if your tax return is reviewed.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can EPF contributions reduce taxable income?</summary>
-          <p>
-            Employee EPF contributions may qualify for tax relief, subject to the applicable annual limit and latest LHDN rules.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can medical expenses be claimed as tax relief?</summary>
-          <p>
-            Certain medical expenses may be claimable, subject to qualifying conditions, approved categories and claim limits. Examples may include selected treatment, medical screening and vaccination.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Do tax relief limits change every year?</summary>
-          <p>
-            Yes, some relief categories and limits may change depending on government announcements and LHDN updates. Always check the latest official guidance before filing.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can tax relief reduce monthly PCB?</summary>
-          <p>
-            Tax relief can affect PCB if the employee submits the relevant relief information through the proper payroll process, such as TP1 where applicable. Otherwise, reliefs are normally reflected when filing the annual tax return.
-          </p>
-        </details>
+        <details class="faq-item" open><summary>What is tax relief in Malaysia?</summary><p>Tax relief is an amount that can reduce chargeable income for eligible taxpayers. Lower chargeable income may reduce the tax charged depending on the taxpayer's tax bands.</p></details>
+        <details class="faq-item"><summary>Is tax relief the same as a tax rebate?</summary><p>No. Tax relief reduces chargeable income before tax is calculated, while a tax rebate reduces tax payable directly.</p></details>
+        <details class="faq-item"><summary>What is the individual relief for YA 2025?</summary><p>The individual and dependent relatives relief is RM9,000 for YA 2025.</p></details>
+        <details class="faq-item"><summary>How much is the lifestyle relief for YA 2025?</summary><p>The main lifestyle relief is restricted to RM2,500 for qualifying expenditure. A separate additional sports lifestyle relief of up to RM1,000 also applies to qualifying sports-related expenditure.</p></details>
+        <details class="faq-item"><summary>Can EPF contributions reduce chargeable income?</summary><p>Qualifying EPF contributions may form part of the life insurance and EPF relief structure, subject to the relevant annual sub-limits and conditions.</p></details>
+        <details class="faq-item"><summary>Can medical expenses be claimed as tax relief?</summary><p>Specified medical expenses may qualify, including certain serious illness treatment, fertility treatment, vaccination, dental treatment and medical examinations, subject to the applicable conditions and sub-limits.</p></details>
+        <details class="faq-item"><summary>Can tax relief reduce monthly PCB?</summary><p>Eligible deductions and rebates may be reflected in PCB when the employee submits the relevant TP1 information to the employer. Qualifying relief can also be claimed during annual filing where applicable.</p></details>
+        <details class="faq-item"><summary>How long should I keep tax relief receipts?</summary><p>Employees should keep receipts and supporting documents related to TP1 deductions for 7 years from the year the claim is made. Keeping tax filing support for the required retention period is important in case HASiL requests verification.</p></details>
+        <details class="faq-item"><summary>Does a RM2,500 tax relief save RM2,500 of tax?</summary><p>No. A relief reduces chargeable income. The actual tax saving depends on the tax rate that applies to the income reduced by the relief.</p></details>
+        <details class="faq-item"><summary>Do tax relief limits change every year?</summary><p>They can. Tax relief categories, limits and conditions may change by Year of Assessment, so always check the latest official HASiL guidance before filing.</p></details>
       </div>
 
-      <section class="salary-guides-box">
-        <h2 class="serif">Related Tax Guides</h2>
-        <p>
-          Continue reading related Malaysia tax and payroll guides to understand tax, PCB and salary deductions.
-        </p>
+      <section class="related-tools-section">
+        <h2>Related Tools</h2>
+        <p class="related-tools-intro">Estimate the effect of your relief claims, then explore the tax and payroll topics most closely related to your annual tax return.</p>
 
-        <div class="guide-mini-grid">
-          <a href="income-tax-guide.html">🏛️ Income Tax Guide</a>
-          <a href="tax-filing-guide.html">🧾 Tax Filing Guide</a>
-          <a href="tax-rebate-guide.html">✅ Tax Rebate Guide</a>
-          <a href="tax-refund-guide.html">💵 Tax Refund Guide</a>
+        <a class="featured-calculator" href="income-tax-calculator.html">
+          <div class="featured-calculator-copy">
+            <span class="featured-kicker">Income Tax Calculator</span>
+            <h3>Estimate Your Tax After Reliefs</h3>
+            <p>See how common tax reliefs may change your chargeable income and estimated annual tax.</p>
+          </div>
+          <span class="feature-link">Calculate Tax →</span>
+          <div class="featured-calculator-icon" aria-hidden="true">💸</div>
+        </a>
+
+        <div class="quick-calculators">
+          <p class="quick-calculators-title">Quick Calculators</p>
+          <div class="quick-calculators-grid">
+            <a href="pcb-calculator.html"><span>PCB Calculator</span><span class="quick-arrow">→</span></a>
+            <a href="index.html"><span>Salary Calculator</span><span class="quick-arrow">→</span></a>
+            <a href="epf-calculator.html"><span>EPF Calculator</span><span class="quick-arrow">→</span></a>
+          </div>
         </div>
 
-        <p class="view-all-guides">
-          <a href="guides.html">View All Salary Guides →</a>
-        </p>
-      </section>
+        <div class="explore-section">
+          <div class="explore-heading"><h2>Continue Exploring</h2><p>Useful next steps for understanding annual tax, filing, rebates and payroll deductions.</p></div>
 
-      <section class="salary-guides-box">
-        <h2 class="serif">Related Calculators</h2>
-        <p>
-          Use these calculators to estimate tax, PCB and monthly take-home pay in Malaysia.
-        </p>
+          <div class="explore-grid">
+            <div class="explore-column">
+              <h3>Tax &amp; Filing</h3>
+              <a class="editorial-link" href="income-tax-guide.html"><span>Income Tax Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="tax-filing-guide.html"><span>Tax Filing Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="tax-rebate-guide.html"><span>Tax Rebate Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="tax-refund-guide.html"><span>Tax Refund Guide</span><span class="editorial-arrow">→</span></a>
+            </div>
 
-        <div class="guide-mini-grid">
-          <a href="income-tax-calculator.html">Income Tax Calculator</a>
-          <a href="pcb-calculator.html">PCB Calculator</a>
-          <a href="index.html">Salary Calculator</a>
-          <a href="epf-calculator.html">EPF Calculator</a>
+            <div class="explore-column">
+              <h3>Payroll &amp; Contributions</h3>
+              <a class="editorial-link" href="pcb-guide.html"><span>PCB Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="epf-guide.html"><span>EPF Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="socso-guide.html"><span>SOCSO Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="salary-deduction-guide.html"><span>Salary Deduction Guide</span><span class="editorial-arrow">→</span></a>
+            </div>
+          </div>
+
+          <div class="resource-actions"><a href="guides.html">Explore All Guides →</a><a href="calculators.html">View All Calculators →</a></div>
         </div>
-
-        <p class="view-all-guides">
-          <a href="calculators.html">View All Calculators →</a>
-        </p>
       </section>
 
     </div>
