@@ -459,6 +459,43 @@
 
     .footer a:hover { color: var(--accent); }
 
+
+    .toc-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:26px 0}
+    .toc-box h2{margin-top:0;margin-bottom:16px}
+    .toc-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px}
+    .toc-links a{display:flex;align-items:center;gap:14px;min-width:0;text-decoration:none;color:var(--foreground);padding:12px 2px;border-bottom:1px solid var(--border);transition:.18s ease}
+    .toc-links a:hover{color:var(--accent);padding-left:4px}
+    .toc-number{width:28px;flex:0 0 28px;color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.04em}
+    .toc-label{flex:1;min-width:0;font-weight:700;font-size:15px}
+    .toc-arrow{color:var(--muted);font-size:15px}
+
+    .source-note{margin-top:18px;background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);padding:14px;border-radius:10px;color:var(--muted);font-size:13px}
+    .source-note a{color:var(--accent);font-weight:800;text-decoration:none}
+
+    .related-tools-section{margin:34px 0}
+    .related-tools-intro{margin-top:0;max-width:760px}
+    .featured-calculator{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:22px;align-items:center;margin-top:20px;padding:24px 26px;background:radial-gradient(circle at top right,rgba(47,125,94,.14),transparent 34%),linear-gradient(135deg,#f8f5ef 0%,#fbfaf6 100%);border:1px solid var(--accent-border);border-radius:18px;text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .featured-calculator:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 16px 34px rgba(47,43,37,.09)}
+    .featured-kicker{display:inline-block;margin-bottom:7px;color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .featured-calculator h3{margin:0 0 6px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,3vw,32px);font-weight:400;line-height:1.1}
+    .featured-calculator p{margin:0;max-width:640px;font-size:15px}
+    .feature-link{display:inline-flex;align-items:center;justify-content:center;min-width:160px;padding:12px 16px;border-radius:12px;background:var(--accent);color:#fff;font-weight:900;white-space:nowrap}
+    .featured-calculator-icon{width:66px;height:66px;display:grid;place-items:center;border-radius:18px;background:var(--accent-soft);border:1px solid var(--accent-border);font-size:30px}
+    .quick-calculators{margin-top:18px}.quick-calculators-title{margin:0 0 10px;font-size:14px;font-weight:800}
+    .quick-calculators-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .quick-calculators-grid a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;background:var(--card);border:1px solid var(--border);border-radius:11px;text-decoration:none;color:var(--foreground);font-size:14px;font-weight:800;transition:.18s ease}
+    .quick-calculators-grid a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .quick-arrow,.editorial-arrow{color:var(--muted)}
+    .explore-section{margin-top:30px;padding-top:28px;border-top:1px solid var(--border)}
+    .explore-heading h2{margin:0}.explore-heading p{margin:7px 0 14px}
+    .explore-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+    .explore-column h3{margin:0 0 8px;font-size:16px}
+    .editorial-link{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .editorial-link:hover{color:var(--accent);padding-left:4px}
+    .editorial-link span:first-child{flex:1;min-width:0;font-weight:800;font-size:15px}
+    .resource-actions{display:flex;justify-content:space-between;gap:16px;margin-top:18px;flex-wrap:wrap}
+    .resource-actions a{color:var(--accent);font-weight:800;text-decoration:none}
+
     @media (max-width: 800px) {
       .nav-inner {
         flex-direction: row;
@@ -549,6 +586,15 @@
       .cta-button {
         width: 100%;
       }
+      .toc-box{padding:20px}
+      .toc-links{grid-template-columns:1fr;column-gap:0}
+      .featured-calculator{grid-template-columns:1fr;padding:22px;gap:16px}
+      .feature-link{width:100%}
+      .featured-calculator-icon{display:none}
+      .quick-calculators-grid{grid-template-columns:1fr}
+      .explore-grid{grid-template-columns:1fr;gap:26px}
+      .resource-actions{display:block}
+      .resource-actions a{display:block;margin-top:8px}
     }
   </style>
 </head>
@@ -573,7 +619,7 @@
 <main class="main-wrapper">
 
   <section class="hero">
-    <span class="pill">Updated for Malaysia employment rules 2026</span>
+    <span class="pill">Last verified: August 2026 · Employment Act 1955 public holiday rules</span>
     <h1 class="serif">Malaysia <em>public holiday</em> guide 2026</h1>
     <p>
       Learn how public holidays work in Malaysia, including paid holiday entitlement,
@@ -583,388 +629,320 @@
 
   <section class="seo">
 
-    <section class="calculator-cta">
-      <h2>Check Malaysia Public Holiday Rules</h2>
-      <p>
-        Want to understand how public holidays affect work, salary and overtime?
-        This guide explains public holiday entitlement, replacement holidays and common payroll situations.
-      </p>
-      <a href="public-holiday-guide.html" class="cta-button">Read Public Holiday Rules →</a>
-    </section>
-
     <section class="summary-box">
       <h2>Public Holiday Quick Summary</h2>
-      <p>
-        Public holidays are gazetted holidays observed in Malaysia. Employees may be entitled to paid holidays or additional pay depending on whether they are required to work.
-      </p>
+      <p>Section 60D of the Employment Act 1955 gives employees paid public-holiday entitlement and sets specific rules for substitution, absence and work performed on a paid holiday.</p>
 
       <div class="summary-grid">
-        <div class="summary-card">
-          <strong>Paid Holiday</strong>
-          <span>Eligible employees usually receive paid public holidays</span>
-        </div>
-        <div class="summary-card">
-          <strong>Gazetted</strong>
-          <span>Public holidays may be national or state-specific</span>
-        </div>
-        <div class="summary-card">
-          <strong>Replacement</strong>
-          <span>Substitute holidays may apply in certain situations</span>
-        </div>
-        <div class="summary-card">
-          <strong>Overtime</strong>
-          <span>Working on holidays may affect overtime pay</span>
-        </div>
+        <div class="summary-card"><strong>11 Days</strong><span>Minimum gazetted paid public holidays in each calendar year</span></div>
+        <div class="summary-card"><strong>5 Mandatory</strong><span>Five specified holidays must form part of the 11</span></div>
+        <div class="summary-card"><strong>+2 Days' Wages</strong><span>Additional statutory pay for qualifying employees who work within normal hours on a paid holiday</span></div>
+        <div class="summary-card"><strong>3×</strong><span>Minimum hourly rate for overtime beyond normal hours on a paid public holiday</span></div>
+      </div>
+
+      <div class="note-box"><strong>Important:</strong> The enhanced 2-day holiday-work payment and 3× overtime rules under section 60D(3) generally do not apply to employees earning above RM4,000 per month unless they fall within a protected First Schedule category such as certain manual employees.</div>
+    </section>
+
+    <section class="calculator-cta">
+      <h2>Calculate Public Holiday Work Pay</h2>
+      <p>Use the Overtime Calculator to estimate statutory holiday-work and overtime amounts based on your salary and hours worked.</p>
+      <a href="overtime-calculator.html" class="cta-button">Calculate Holiday Work Pay →</a>
+    </section>
+
+    <section class="toc-box">
+      <h2>On This Page</h2>
+      <div class="toc-links">
+        <a href="#what-is-public-holiday"><span class="toc-number">01</span><span class="toc-label">What Is a Public Holiday?</span><span class="toc-arrow">→</span></a>
+        <a href="#entitlement"><span class="toc-number">02</span><span class="toc-label">11-Day Entitlement</span><span class="toc-arrow">→</span></a>
+        <a href="#mandatory-holidays"><span class="toc-number">03</span><span class="toc-label">5 Mandatory Holidays</span><span class="toc-arrow">→</span></a>
+        <a href="#national-state"><span class="toc-number">04</span><span class="toc-label">National vs State Holidays</span><span class="toc-arrow">→</span></a>
+        <a href="#replacement"><span class="toc-number">05</span><span class="toc-label">Replacement Holidays</span><span class="toc-arrow">→</span></a>
+        <a href="#working"><span class="toc-number">06</span><span class="toc-label">Working on Public Holiday</span><span class="toc-arrow">→</span></a>
+        <a href="#eligibility"><span class="toc-number">07</span><span class="toc-label">Who Gets Enhanced Holiday Pay?</span><span class="toc-arrow">→</span></a>
+        <a href="#overlap"><span class="toc-number">08</span><span class="toc-label">Annual Leave / MC Overlap</span><span class="toc-arrow">→</span></a>
+        <a href="#absence"><span class="toc-number">09</span><span class="toc-label">Absence Before / After Holiday</span><span class="toc-arrow">→</span></a>
+        <a href="#examples"><span class="toc-number">10</span><span class="toc-label">Public Holiday Examples</span><span class="toc-arrow">→</span></a>
+        <a href="#mistakes"><span class="toc-number">11</span><span class="toc-label">Common Mistakes</span><span class="toc-arrow">→</span></a>
+        <a href="#faq"><span class="toc-number">12</span><span class="toc-label">FAQ</span><span class="toc-arrow">→</span></a>
       </div>
     </section>
 
-    <h2>What Are Public Holidays?</h2>
-    <p>
-      Public holidays are official holidays declared at national or state level. In Malaysia, some public holidays apply nationwide while others apply only in certain states.
-    </p>
-    <p>
-      Public holidays are important for payroll because they may affect paid leave, work schedules, replacement holidays and overtime calculations.
-    </p>
+    <h2 id="what-is-public-holiday">What Is a Public Holiday?</h2>
+    <p>A public holiday is an official gazetted holiday recognised under the applicable Malaysian holiday laws. For employees covered by the Employment Act, section 60D provides a minimum paid-holiday entitlement at the ordinary rate of pay.</p>
+    <p>Public holidays are separate from annual leave and weekly rest days. Some holidays apply nationally, while others depend on the state or Federal Territory in which the employee wholly or mainly works.</p>
 
     <section class="guide-box">
-      <h2>Types of Public Holidays in Malaysia</h2>
-      <p>
-        Public holidays in Malaysia can generally be grouped into national holidays and state holidays.
-      </p>
+      <h2 id="entitlement">How Many Paid Public Holidays Do Employees Get?</h2>
+      <p>Every employee is entitled to paid holiday at the ordinary rate of pay on <strong>11 gazetted public holidays</strong> in each calendar year, together with any additional day specifically appointed as a public holiday for that particular year under section 8 of the Holidays Act 1951.</p>
+      <div class="note-box"><strong>Statutory minimum:</strong> Employers may provide more paid public holidays through the employment contract or company calendar, but the statutory minimum should still be met.</div>
+    </section>
+
+    <section class="guide-box">
+      <h2 id="mandatory-holidays">Which 5 Public Holidays Are Mandatory?</h2>
+      <p>Five of the 11 gazetted paid public holidays are specifically prescribed by section 60D and must form part of the employee's paid-holiday entitlement.</p>
 
       <div class="contribution-table-wrap">
         <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Holiday Type</th>
-              <th>Applies To</th>
-              <th>Simple Explanation</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Mandatory Holiday</th><th>General Rule</th></tr></thead>
           <tbody>
-            <tr>
-              <td>National Public Holiday</td>
-              <td>Usually all Malaysia</td>
-              <td>Examples include major nationwide holidays.</td>
-            </tr>
-            <tr>
-              <td>State Public Holiday</td>
-              <td>Specific states only</td>
-              <td>Examples include state ruler birthdays or state-specific holidays.</td>
-            </tr>
-            <tr>
-              <td>Replacement Holiday</td>
-              <td>Depends on situation</td>
-              <td>May apply when a holiday falls on a rest day or under company policy.</td>
-            </tr>
+            <tr><td><strong>National Day</strong></td><td>Mandatory paid public holiday.</td></tr>
+            <tr><td><strong>Birthday of the Yang di-Pertuan Agong</strong></td><td>Mandatory paid public holiday.</td></tr>
+            <tr><td><strong>Birthday of State Ruler / Yang di-Pertua Negeri</strong></td><td>Applies according to the state in which the employee wholly or mainly works; Federal Territory Day applies where relevant.</td></tr>
+            <tr><td><strong>Workers' Day</strong></td><td>Mandatory paid public holiday.</td></tr>
+            <tr><td><strong>Malaysia Day</strong></td><td>Mandatory paid public holiday.</td></tr>
           </tbody>
         </table>
       </div>
 
-      <div class="note-box">
-        <strong>Note:</strong> This is a simplified guide. Actual public holiday entitlement depends on gazetted holidays, state rules, employment terms and company policy.
+      <p>The employer selects the remaining six gazetted public holidays and must display a notice at the workplace before the start of each calendar year specifying those holidays.</p>
+    </section>
+
+    <section class="guide-box">
+      <h2 id="national-state">National vs State Public Holidays</h2>
+      <p>Not every gazetted holiday applies in the same way throughout Malaysia. Some holidays are nationwide, while others arise from the state or Federal Territory in which the employee wholly or mainly works.</p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Holiday Type</th><th>Who It Commonly Applies To</th><th>Practical Point</th></tr></thead>
+          <tbody>
+            <tr><td>Nationwide / federal holiday</td><td>Employees throughout Malaysia where gazetted accordingly</td><td>Usually appears across company holiday calendars nationally.</td></tr>
+            <tr><td>State holiday</td><td>Employees wholly or mainly working in the relevant state</td><td>Different branches may observe different holiday calendars.</td></tr>
+            <tr><td>Federal Territory holiday</td><td>Employees wholly or mainly working in the relevant Federal Territory</td><td>Location of work matters.</td></tr>
+            <tr><td>One-off holiday under section 8</td><td>As stated in the official appointment for that particular year</td><td>Can create an additional statutory paid holiday beyond the selected 11.</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
     <section class="guide-box">
-      <h2>Replacement Public Holidays</h2>
-      <p>
-        A replacement public holiday may apply when a public holiday falls on a rest day, non-working day or another day that is not normally worked by the employee. This is one of the most common public holiday questions for employees and HR teams in Malaysia.
-      </p>
-      <p>
-        The exact treatment may depend on the gazetted holiday, the employee's work schedule, the relevant state, employment contract and company policy. Employees should check the official company holiday calendar instead of assuming every replacement holiday applies automatically.
-      </p>
+      <h2 id="replacement">When Is a Replacement Public Holiday Required?</h2>
+      <p>Section 60D contains several specific substitution rules. These are more precise than simply saying replacement holidays “depend on company policy”.</p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Situation</th><th>Statutory Treatment</th></tr></thead>
+          <tbody>
+            <tr><td>Public holiday falls on a rest day</td><td>The immediately following working day becomes a paid holiday in substitution.</td></tr>
+            <tr><td>Public holiday falls on another statutory public holiday</td><td>The immediately following working day becomes a paid substitute holiday for the first holiday.</td></tr>
+            <tr><td>One of the employer-selected six holidays</td><td>Employer and employee may agree to substitute another day.</td></tr>
+            <tr><td>Additional holiday appointed under section 8 of the Holidays Act</td><td>The employer may grant another day as a paid public holiday in substitution.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box"><strong>Do not confuse rest day with a normal non-working day:</strong> The automatic statutory substitute rule specifically refers to a public holiday falling on a <em>rest day</em> or another public holiday. A normal off-day in a five-day workweek is not automatically the same thing as the statutory rest day.</div>
     </section>
 
     <section class="guide-box">
-      <h2>Working on a Public Holiday</h2>
-      <p>
-        Employees who are required to work on an applicable public holiday may be entitled to additional compensation depending on eligibility, employment terms and payroll rules. Public holiday work is usually treated differently from work on an ordinary day because it involves working on a gazetted holiday.
-      </p>
-      <p>
-        In practice, employers usually need to track whether the employee worked full day, half day or additional overtime hours during the public holiday. Payroll teams should record the date, hours worked and applicable holiday rate clearly to avoid disputes.
-      </p>
+      <h2 id="working">What Happens If You Work on a Paid Public Holiday?</h2>
+      <p>An employer may require an employee to work on a paid public holiday. For an employee entitled to the enhanced payment provisions of section 60D(3), the pay structure is different from ordinary-day overtime.</p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Work Performed</th><th>Statutory Payment</th></tr></thead>
+          <tbody>
+            <tr><td>Employee does not work on applicable paid holiday</td><td>Paid holiday at ordinary rate of pay.</td></tr>
+            <tr><td>Employee works within normal hours on paid holiday</td><td>In addition to holiday pay, <strong>two days' wages at the ordinary rate of pay</strong>, regardless of whether work performed is less than normal hours.</td></tr>
+            <tr><td>Employee works beyond normal hours</td><td>Each overtime hour is paid at not less than <strong>3× the hourly rate of pay</strong>.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="formula-box">
+        <strong>Public-Holiday OT = HRP × 3 × OT Hours</strong>
+        <span>The 3× rate applies to overtime hours beyond normal daily hours, not to every hour worked on the holiday.</span>
+      </div>
     </section>
-
-    <h2>Public Holiday Pay and Work</h2>
-    <p>
-      If an employee is not required to work on an applicable public holiday, the holiday is usually treated as paid time off for eligible employees. If the employee is required to work, additional pay or holiday work rates may apply.
-    </p>
-
-    <div class="formula-box">
-      <strong>Holiday Work Pay = Daily / Hourly Rate × Applicable Holiday Rate</strong>
-      <span>Example: Public holiday work may use a higher rate than normal work.</span>
-    </div>
 
     <section class="example-box">
-      <h2>Example Public Holiday Situation</h2>
-      <p>
-        If an employee is scheduled to work on a public holiday, payroll may need to consider:
-      </p>
-      <ul>
-        <li>Whether the holiday applies to the employee's state or workplace</li>
-        <li>Whether the employee is required to work</li>
-        <li>Whether additional pay, overtime or replacement holiday applies</li>
-      </ul>
-      <p>
-        The actual calculation should follow employment terms, payroll policy and applicable legal requirements.
-      </p>
+      <h2>Example: Monthly Employee Works on a Public Holiday</h2>
+      <p>Assume an eligible monthly-rated employee has an ordinary rate of pay of RM120 per day and works normal hours on an applicable paid public holiday.</p>
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <tbody>
+            <tr><td><strong>Holiday pay</strong></td><td>Already included / payable for the holiday</td></tr>
+            <tr><td><strong>Additional statutory holiday-work pay</strong></td><td>RM120 × 2 = <strong>RM240</strong></td></tr>
+            <tr><td><strong>If employee also works overtime</strong></td><td>Each excess hour is calculated separately at 3× HRP</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note-box"><strong>Common misconception:</strong> Saying “public holiday pay is 3×” is incomplete. Normal holiday work and overtime beyond normal hours are treated differently.</div>
     </section>
 
-    <h2>National vs State Public Holidays</h2>
-    <p>
-      Not every public holiday applies to every employee in Malaysia. Some holidays are national, while others are state-specific. This means employees in different states may have different holiday calendars.
-    </p>
-    <p>
-      Businesses operating in multiple states should be careful when setting holiday schedules and payroll rules.
-    </p>
+    <section class="guide-box">
+      <h2 id="eligibility">Who Is Entitled to the Enhanced Public-Holiday Work Pay?</h2>
+      <p>The Employment Act generally covers employees, but the First Schedule excludes employees earning above RM4,000 per month from section 60D(3) and 60D(4), unless they fall within protected categories that remain covered irrespective of wage level.</p>
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Employee Category</th><th>General Position</th></tr></thead>
+          <tbody>
+            <tr><td>Employee earning RM4,000 or less</td><td>Generally entitled to statutory enhanced public-holiday work pay under section 60D(3).</td></tr>
+            <tr><td>Employee earning above RM4,000</td><td>Generally excluded from section 60D(3) / 60D(4), unless within a protected First Schedule category.</td></tr>
+            <tr><td>Certain manual employees and specified categories</td><td>May remain covered regardless of wage level.</td></tr>
+            <tr><td>Employee outside statutory enhanced-pay provisions</td><td>Holiday-work compensation may still arise under the employment contract, collective agreement or company policy.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note-box"><strong>Important distinction:</strong> An employee above RM4,000 is not automatically stripped of the basic 11-day paid public-holiday entitlement. The wage-based First Schedule exclusion specifically affects provisions such as the enhanced work-on-holiday payment under section 60D(3).</div>
+    </section>
 
     <section class="guide-box">
-      <h2>Common Public Holiday Situations</h2>
-      <div class="component-grid">
-        <div class="component-card">
-          <div class="component-icon">🇲🇾</div>
-          <h3>National Holiday</h3>
-          <p>Applies broadly across Malaysia, depending on the gazetted holiday.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">📍</div>
-          <h3>State Holiday</h3>
-          <p>Applies only to employees in the relevant state or workplace location.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">🔁</div>
-          <h3>Replacement Holiday</h3>
-          <p>May apply when holidays overlap with rest days or company policy.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">⏰</div>
-          <h3>Holiday Work</h3>
-          <p>Working on a public holiday may affect pay and overtime treatment.</p>
-        </div>
+      <h2 id="overlap">Public Holiday During Annual Leave or Sick Leave</h2>
+      <p>Section 60D expressly protects public holidays that fall inside certain statutory leave periods.</p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Overlap</th><th>Statutory Treatment</th></tr></thead>
+          <tbody>
+            <tr><td>Public holiday falls during statutory annual leave</td><td>Employer must grant another day as a paid holiday in substitution.</td></tr>
+            <tr><td>Public holiday falls during statutory sick leave</td><td>Employer must grant another day as a paid holiday in substitution.</td></tr>
+            <tr><td>Public holiday falls during qualifying temporary disablement</td><td>A substitute paid holiday is also required under section 60D(1B).</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box"><strong>This is not merely company policy:</strong> The statutory overlap rule means an applicable paid public holiday should not simply disappear because the employee is already on annual leave or sick leave.</div>
+    </section>
+
+    <section class="guide-box">
+      <h2 id="absence">Absence Before or After a Public Holiday</h2>
+      <p>An employee who is absent without prior employer consent on the working day immediately before or immediately after a public holiday — or consecutive public holidays / substitute days — may lose holiday pay for the relevant holiday period unless the employee has a reasonable excuse.</p>
+      <div class="note-box"><strong>Practical point:</strong> This is why unauthorised absence next to a long public-holiday weekend can have a payroll consequence beyond the unpaid absence day itself.</div>
+    </section>
+
+    <section class="guide-box">
+      <h2>Monthly-Rated Employees and Holiday Pay</h2>
+      <p>A monthly-rated employee is generally deemed to have received holiday pay if the employee receives the normal monthly wages without deduction for the public holiday, subject to the statutory absence rule.</p>
+      <p>This is why an employee who does not work on a normal applicable public holiday does not normally see a separate “public holiday pay” line on the payslip — it is already part of the monthly salary.</p>
+    </section>
+
+    <section class="guide-box">
+      <h2 id="examples">Common Public Holiday Examples</h2>
+
+      <h3>Example 1: Holiday Falls on the Employee's Rest Day</h3>
+      <p>If an applicable statutory public holiday falls on the employee's rest day, the immediately following working day becomes a paid holiday in substitution.</p>
+
+      <h3>Example 2: Employee Works Normal Hours on Hari Raya</h3>
+      <p>If Hari Raya is an applicable paid public holiday and the employee is covered by section 60D(3), working within normal hours gives the employee holiday pay plus an additional two days' wages at the ordinary rate of pay.</p>
+
+      <h3>Example 3: Employee Works Two Extra Hours on Public Holiday</h3>
+      <p>After completing normal hours on the holiday, the two overtime hours are paid at not less than three times the hourly rate of pay for an employee entitled to the statutory enhanced rate.</p>
+
+      <h3>Example 4: Holiday Falls During Annual Leave</h3>
+      <p>An applicable paid public holiday falling within statutory annual leave must be replaced by another paid holiday under section 60D(1B).</p>
+    </section>
+
+    <section class="guide-box">
+      <h2>Public Holiday vs Annual Leave vs MC Leave vs Rest Day</h2>
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Type</th><th>Main Purpose</th><th>Separate Statutory Entitlement?</th></tr></thead>
+          <tbody>
+            <tr><td>Public Holiday</td><td>Gazetted paid holiday</td><td>Yes — minimum statutory holiday entitlement</td></tr>
+            <tr><td>Annual Leave</td><td>Paid personal leave</td><td>Yes — separate from public holidays</td></tr>
+            <tr><td>Medical Leave</td><td>Paid leave for certified illness</td><td>Yes — separate entitlement</td></tr>
+            <tr><td>Rest Day</td><td>Weekly statutory rest day</td><td>Yes — separate from a public holiday</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
     <section class="guide-box">
-      <h2>Public Holiday During Annual Leave</h2>
-      <p>
-        If a public holiday falls during a period of approved annual leave, employees commonly ask whether that day should still be deducted from their annual leave balance. The treatment may depend on company policy, the holiday calendar and whether the holiday applies to the employee's workplace location.
-      </p>
-      <p>
-        As a general payroll practice, HR should clearly distinguish between annual leave days and applicable public holidays when updating leave records. Employees should also check their leave balance after returning from leave to ensure the correct number of days was deducted.
-      </p>
-    </section>
-
-    <section class="guide-box">
-      <h2>Public Holiday During Medical Leave</h2>
-      <p>
-        Public holidays may also overlap with medical leave. For example, an employee may be on MC during a week that includes a public holiday. In this situation, HR may need to review whether the absence should be recorded as medical leave, public holiday or another leave category.
-      </p>
-      <p>
-        The correct treatment may depend on the medical certificate, company policy, payroll system and applicable employment rules. Employees should submit medical certificates on time so HR can record the absence correctly.
-      </p>
-    </section>
-
-    <section class="guide-box">
-      <h2>Common Public Holiday Mistakes</h2>
-      <p>
-        Public holiday payroll mistakes usually happen because employees and employers assume every public holiday works the same way. In Malaysia, state holidays, replacement holidays and holiday work rules can create different outcomes.
-      </p>
+      <h2 id="mistakes">Common Public Holiday Mistakes</h2>
       <ul>
-        <li>Assuming all public holidays apply nationwide</li>
-        <li>Ignoring state-specific public holidays</li>
-        <li>Misunderstanding replacement holiday rules</li>
-        <li>Confusing public holidays with rest days</li>
-        <li>Applying the wrong payroll treatment for holiday work</li>
-        <li>Not checking whether the holiday applies to the employee's workplace location</li>
+        <li>Thinking employees are entitled to every gazetted holiday instead of understanding the statutory 11-day framework plus additional section 8 holidays.</li>
+        <li>Forgetting that five specified holidays are mandatory.</li>
+        <li>Failing to publish the employer-selected remaining six holidays before the calendar year begins.</li>
+        <li>Assuming a normal non-working day is always the same as the statutory rest day.</li>
+        <li>Thinking every public-holiday work hour is paid at 3×.</li>
+        <li>Forgetting the extra two days' wages for qualifying employees who work within normal hours on a paid holiday.</li>
+        <li>Ignoring the RM4,000 / First Schedule rules for enhanced holiday-work pay.</li>
+        <li>Deducting annual leave when a statutory public holiday falls during annual leave.</li>
+        <li>Failing to give a substitute holiday when a public holiday falls during statutory sick leave.</li>
+        <li>Ignoring the holiday-pay consequence of unauthorised absence immediately before or after the holiday.</li>
       </ul>
     </section>
 
     <section class="guide-box">
-      <h2>Common Public Holiday Examples</h2>
-
-      <h3>Example 1: Public Holiday Falls on a Sunday</h3>
-      <p>
-        If a public holiday falls on a Sunday or rest day, a replacement holiday may apply depending on the holiday, state and employment arrangement.
-      </p>
-
-      <h3>Example 2: Employee Works During Hari Raya</h3>
-      <p>
-        If an employee is required to work during an applicable Hari Raya public holiday, payroll may need to calculate holiday work pay or overtime based on the relevant rules.
-      </p>
-
-      <h3>Example 3: Public Holiday During Annual Leave</h3>
-      <p>
-        If an employee is on annual leave and an applicable public holiday falls within the leave period, HR may need to check whether that day should be treated as annual leave or public holiday.
-      </p>
-    </section>
-
-    <h2>Public Holiday vs Annual Leave vs MC Leave vs Rest Day</h2>
-    <div class="contribution-table-wrap">
-      <table class="contribution-table">
-        <thead>
-          <tr>
-            <th>Type</th>
-            <th>Main Purpose</th>
-            <th>Usually Paid?</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Public Holiday</td>
-            <td>Official gazetted holiday</td>
-            <td>Yes, if applicable</td>
-          </tr>
-          <tr>
-            <td>Annual Leave</td>
-            <td>Employee's planned paid leave</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <td>Medical Leave</td>
-            <td>Illness or medical reasons with valid medical certificate</td>
-            <td>Yes, if eligible</td>
-          </tr>
-          <tr>
-            <td>Rest Day</td>
-            <td>Weekly rest day or non-working day</td>
-            <td>Depends on employment arrangement</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <section class="guide-box">
-      <h2>Official Reference</h2>
-      <p>
-        Public holiday requirements may change from time to time. Employees and employers should refer to official government announcements, the latest public holiday calendar and applicable employment regulations for the most up-to-date information.
-      </p>
-    </section>
-
-    <section class="guide-box">
-      <h2>Who Should Read This Public Holiday Guide?</h2>
+      <h2>Employee Public Holiday Checklist</h2>
       <ul>
-        <li>Employees checking whether a public holiday applies to them</li>
-        <li>Job seekers comparing work schedules and holiday benefits</li>
-        <li>HR and payroll staff planning public holiday calendars</li>
-        <li>Business owners managing staffing, payroll and holiday work</li>
+        <li>Check the employer's annual public-holiday notice or holiday calendar.</li>
+        <li>Confirm the state / Federal Territory where you wholly or mainly work.</li>
+        <li>Identify your statutory rest day separately from other non-working days.</li>
+        <li>If working on a holiday, confirm whether section 60D(3) applies to your employee category.</li>
+        <li>Keep attendance and overtime records for holiday work.</li>
+        <li>Check whether a substitute day is required because of a rest day, another holiday, annual leave or sick leave.</li>
+        <li>Review the payslip if holiday-work pay appears incorrect.</li>
       </ul>
     </section>
 
-    <h2>Frequently Asked Questions</h2>
+    <section class="guide-box">
+      <h2>Sources &amp; Verification</h2>
+      <p>This guide was last verified in August 2026 against section 60D and the First Schedule of the Employment Act 1955 as published by JTKSM.</p>
+      <div class="source-note">
+        <strong>Official sources used for verification:</strong><br>
+        <a href="https://jtksm.mohr.gov.my/sites/default/files/2023-11/Akta%20Kerja%201955%20%28Akta%20265%29.pdf" target="_blank" rel="noopener">JTKSM — Employment Act 1955, Section 60D</a><br>
+        <a href="https://jtksm.mohr.gov.my/en/services/labour-permits/acts-guidelines" target="_blank" rel="noopener">JTKSM — Acts &amp; Guidelines</a>
+      </div>
+    </section>
 
+    <h2 id="faq">Frequently Asked Questions</h2>
     <div class="faq-box">
-      <details class="faq-item" open>
-        <summary>Are public holidays paid in Malaysia?</summary>
-        <p>
-          Applicable public holidays are normally paid for eligible employees. The exact entitlement may depend on employment terms, location, holiday type and company policy.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Do all public holidays apply to every employee?</summary>
-        <p>
-          No. Some public holidays are national while others are state-specific. Employees should check whether the holiday applies to their workplace location.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>What happens if an employee works on a public holiday?</summary>
-        <p>
-          Working on a public holiday may result in additional pay, overtime or other compensation depending on eligibility and applicable employment rules.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Is a replacement holiday required if a public holiday falls on a rest day?</summary>
-        <p>
-          Replacement holiday treatment may depend on the holiday, rest day arrangement, state rules, employment terms and company policy.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can employers choose which public holidays to observe?</summary>
-        <p>
-          Employers must follow applicable legal requirements and employment terms. Some holidays may be mandatory while others may depend on the workplace calendar and policy.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Does public holiday work affect overtime calculation?</summary>
-        <p>
-          Yes. Work performed on a public holiday may use different rates compared with normal overtime, depending on eligibility and payroll rules.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can employers require employees to work on public holidays?</summary>
-        <p>
-          Employers may require employees to work on public holidays depending on business needs, employment terms and applicable rules. If the public holiday applies to the employee, additional pay or another form of compensation may apply depending on eligibility.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can public holidays be replaced with another day?</summary>
-        <p>
-          Public holidays may sometimes be replaced with another day depending on the holiday, rest day arrangement, state rules and company policy. Employees should check the official company holiday calendar.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>What happens if a public holiday falls during annual leave?</summary>
-        <p>
-          If an applicable public holiday falls during annual leave, HR may need to check whether the day should be treated as public holiday instead of deducting annual leave. The actual treatment may depend on company policy and employment terms.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>What happens if a public holiday falls during medical leave?</summary>
-        <p>
-          If a public holiday overlaps with medical leave, the treatment may depend on the medical certificate, HR policy and payroll rules. Employees should submit their MC properly so the absence can be recorded correctly.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Are state public holidays paid?</summary>
-        <p>
-          State public holidays may be paid for eligible employees if the holiday applies to their workplace location or employment arrangement. Employees working in different states may follow different holiday calendars.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Do part-time employees receive public holiday benefits?</summary>
-        <p>
-          Public holiday benefits for part-time employees may depend on employment terms, work schedule and applicable employment rules. Part-time employees should review their employment contract or check with HR.
-        </p>
-      </details>
+      <details class="faq-item" open><summary>How many paid public holidays do employees get in Malaysia?</summary><p>Section 60D provides a minimum of 11 gazetted paid public holidays per calendar year, together with any additional day appointed as a public holiday for that particular year under section 8 of the Holidays Act 1951.</p></details>
+      <details class="faq-item"><summary>Which five public holidays are mandatory?</summary><p>The mandatory five are National Day, the Yang di-Pertuan Agong's Birthday, the relevant State Ruler / Yang di-Pertua Negeri Birthday or Federal Territory Day, Workers' Day and Malaysia Day.</p></details>
+      <details class="faq-item"><summary>Can an employer choose the other six holidays?</summary><p>Yes. The employer selects the remaining six gazetted holidays and must display a notice before the start of each calendar year. Certain substitutions can be made in accordance with section 60D.</p></details>
+      <details class="faq-item"><summary>What happens if a public holiday falls on my rest day?</summary><p>The immediately following working day becomes a paid substitute holiday under section 60D.</p></details>
+      <details class="faq-item"><summary>What if the holiday falls on my normal off-day but not my statutory rest day?</summary><p>The automatic substitute-day provision specifically refers to a rest day or another public holiday. A normal non-working day should not automatically be treated as the statutory rest day without checking the work arrangement.</p></details>
+      <details class="faq-item"><summary>How much am I paid if I work on a public holiday?</summary><p>For an employee entitled to section 60D(3) payments, work within normal hours attracts holiday pay plus an additional two days' wages at the ordinary rate of pay. Overtime beyond normal hours is paid at not less than 3× the hourly rate.</p></details>
+      <details class="faq-item"><summary>Are employees earning above RM4,000 entitled to 3× public-holiday overtime?</summary><p>Employees earning above RM4,000 are generally excluded from section 60D(3) unless they fall within a protected First Schedule category. Their contract or company policy may still provide holiday-work compensation.</p></details>
+      <details class="faq-item"><summary>Does a public holiday during annual leave reduce my annual leave?</summary><p>An applicable public holiday falling during statutory annual leave must be replaced with another paid holiday under section 60D(1B).</p></details>
+      <details class="faq-item"><summary>What happens if a public holiday falls during MC?</summary><p>An applicable public holiday falling during statutory sick leave must be replaced by another paid holiday.</p></details>
+      <details class="faq-item"><summary>Can I lose holiday pay if I am absent before or after the holiday?</summary><p>Yes. Unauthorised absence on the working day immediately before or after the holiday can cause loss of holiday pay unless there is prior consent or a reasonable excuse.</p></details>
     </div>
 
-    <section class="salary-guides-box">
-      <h2>Related Employment Guides</h2>
-      <p>Continue reading related Malaysia employment guides to understand leave, holidays and payroll rules.</p>
+    <section class="related-tools-section">
+      <h2>Related Tools</h2>
+      <p class="related-tools-intro">Calculate holiday work pay first, then explore the working-time and leave rules most closely connected to public holidays.</p>
 
-      <div class="guide-mini-grid">
-        <a href="annual-leave-guide.html">Annual Leave Guide</a>
-        <a href="mc-leave-guide.html">MC Leave Guide</a>
-        <a href="overtime-guide.html">Overtime Guide</a>
-        <a href="rest-day-guide.html">Rest Day Guide</a>
+      <a class="featured-calculator" href="overtime-calculator.html">
+        <div>
+          <span class="featured-kicker">Overtime Calculator</span>
+          <h3>Calculate Public Holiday Work Pay</h3>
+          <p>Estimate holiday-work and overtime amounts using your salary, working hours and applicable rate.</p>
+        </div>
+        <span class="feature-link">Calculate Holiday Pay →</span>
+        <div class="featured-calculator-icon" aria-hidden="true">🎉</div>
+      </a>
+
+      <div class="quick-calculators">
+        <p class="quick-calculators-title">Quick Calculators</p>
+        <div class="quick-calculators-grid">
+          <a href="overtime-calculator.html"><span>Overtime Calculator</span><span class="quick-arrow">→</span></a>
+          <a href="annual-leave-calculator.html"><span>Annual Leave Calculator</span><span class="quick-arrow">→</span></a>
+          <a href="index.html"><span>Salary Calculator</span><span class="quick-arrow">→</span></a>
+        </div>
       </div>
 
-      <p class="view-all-guides"><a href="guides.html">View All Guides →</a></p>
-    </section>
-
-    <section class="salary-guides-box">
-      <h2>Related Calculators</h2>
-      <p>Use these calculators to estimate overtime, leave and monthly take-home pay in Malaysia.</p>
-
-      <div class="guide-mini-grid">
-        <a href="overtime-calculator.html">Overtime Calculator</a>
-        <a href="annual-leave-calculator.html">Annual Leave Calculator</a>
-        <a href="mc-leave-calculator.html">MC Leave Calculator</a>
-        <a href="index.html">Salary Calculator</a>
+      <div class="explore-section">
+        <div class="explore-heading"><h2>Continue Exploring</h2><p>Useful next steps for understanding holidays, rest days, leave and salary treatment.</p></div>
+        <div class="explore-grid">
+          <div class="explore-column">
+            <h3>Leave &amp; Working Time</h3>
+            <a class="editorial-link" href="rest-day-guide.html"><span>Rest Day Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="overtime-guide.html"><span>Overtime Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="annual-leave-guide.html"><span>Annual Leave Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="mc-leave-guide.html"><span>Medical Leave Guide</span><span class="editorial-arrow">→</span></a>
+          </div>
+          <div class="explore-column">
+            <h3>Employment &amp; Payroll</h3>
+            <a class="editorial-link" href="salary-deduction-guide.html"><span>Salary Deduction Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="payslip-guide.html"><span>Payslip Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="employment-contract-guide.html"><span>Employment Contract Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="resignation-notice-guide.html"><span>Resignation Notice Guide</span><span class="editorial-arrow">→</span></a>
+          </div>
+        </div>
+        <div class="resource-actions"><a href="guides.html">Explore All Guides →</a><a href="calculators.html">View All Calculators →</a></div>
       </div>
-
-      <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
     </section>
 
   </section>
