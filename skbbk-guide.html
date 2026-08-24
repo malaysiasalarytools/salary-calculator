@@ -488,6 +488,57 @@
       color: var(--accent);
     }
 
+
+    .toc-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:26px 0}
+    .toc-box h2{margin-top:0;margin-bottom:16px}
+    .toc-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px}
+    .toc-links a{display:flex;align-items:center;gap:14px;min-width:0;text-decoration:none;color:var(--foreground);padding:12px 2px;border-bottom:1px solid var(--border);transition:.18s ease}
+    .toc-links a:hover{color:var(--accent);padding-left:4px}
+    .toc-number{width:28px;flex:0 0 28px;color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.04em}
+    .toc-label{flex:1;min-width:0;font-weight:700;font-size:15px}
+    .toc-arrow{color:var(--muted);font-size:15px}
+
+    .status-yes{color:var(--accent);font-weight:800;white-space:nowrap}
+    .status-no{color:#9a5a45;font-weight:800;white-space:nowrap}
+
+    .deadline-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:20px}
+    .deadline-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}
+    .deadline-card strong{display:block;color:var(--accent);font-size:20px;margin-bottom:8px;font-family:Georgia,"Times New Roman",serif}
+    .responsibility-list{list-style:none;padding:0;margin:12px 0 0}
+    .responsibility-list li{position:relative;padding-left:24px;margin:8px 0}
+    .responsibility-list li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:800}
+
+    .related-tools-section{margin:34px 0}
+    .related-tools-section h2{margin-bottom:8px}
+    .related-tools-intro{margin-top:0;max-width:760px}
+    .featured-calculator{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:22px;align-items:center;margin-top:20px;padding:24px 26px;background:radial-gradient(circle at top right,rgba(47,125,94,.14),transparent 34%),linear-gradient(135deg,#f8f5ef 0%,#fbfaf6 100%);border:1px solid var(--accent-border);border-radius:18px;text-decoration:none;color:var(--foreground);overflow:hidden;transition:.18s ease}
+    .featured-calculator:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 16px 34px rgba(47,43,37,.09)}
+    .featured-calculator-copy{min-width:0}
+    .featured-kicker{display:inline-block;margin-bottom:7px;color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .featured-calculator h3{margin:0 0 6px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,3vw,32px);font-weight:400;line-height:1.1}
+    .featured-calculator p{margin:0;max-width:640px;font-size:15px}
+    .feature-link{display:inline-flex;align-items:center;justify-content:center;min-width:160px;padding:12px 16px;border-radius:12px;background:var(--accent);color:#fff;font-weight:900;white-space:nowrap}
+    .featured-calculator-icon{width:66px;height:66px;display:grid;place-items:center;border-radius:18px;background:var(--accent-soft);border:1px solid var(--accent-border);font-size:30px}
+
+    .quick-calculators{margin-top:18px}
+    .quick-calculators-title{margin:0 0 10px;font-size:14px;font-weight:800;color:var(--foreground)}
+    .quick-calculators-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .quick-calculators-grid a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;background:var(--card);border:1px solid var(--border);border-radius:11px;text-decoration:none;color:var(--foreground);font-size:14px;font-weight:800;transition:.18s ease}
+    .quick-calculators-grid a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .quick-arrow{color:var(--muted)}
+
+    .explore-section{margin-top:30px;padding-top:28px;border-top:1px solid var(--border)}
+    .explore-heading h2{margin:0}
+    .explore-heading p{margin:7px 0 14px}
+    .explore-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+    .explore-column h3{margin:0 0 8px;font-size:16px;color:var(--foreground)}
+    .editorial-link{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .editorial-link:hover{color:var(--accent);padding-left:4px}
+    .editorial-link span:first-child{flex:1;min-width:0;font-weight:800;font-size:15px}
+    .editorial-arrow{color:var(--muted)}
+    .resource-actions{display:flex;justify-content:space-between;gap:16px;margin-top:18px;flex-wrap:wrap}
+    .resource-actions a{color:var(--accent);font-weight:800;text-decoration:none}
+
     @media (max-width: 800px) {
       .nav-inner {
         flex-direction: row;
@@ -577,9 +628,17 @@
         line-height: 1.35;
       }
 
-      .cta-button {
-        width: 100%;
-      }
+      .cta-button{width:100%}
+      .toc-box{padding:20px}
+      .toc-links{grid-template-columns:1fr;column-gap:0}
+      .toc-links a{padding:11px 0}
+      .featured-calculator{grid-template-columns:1fr;padding:22px;gap:16px}
+      .feature-link{width:100%}
+      .featured-calculator-icon{display:none}
+      .quick-calculators-grid{grid-template-columns:1fr}
+      .explore-grid{grid-template-columns:1fr;gap:26px}
+      .resource-actions{display:block}
+      .resource-actions a{display:block;margin-top:8px}
     }
   </style>
 
@@ -597,7 +656,7 @@
       "@type": "Organization",
       "name": "Malaysia Salary Tools"
     },
-    "dateModified": "2026-07-19",
+    "dateModified": "2026-08-24",
     "mainEntityOfPage": "https://malaysiasalarytools.com/skbbk-guide.html"
   }
   </script>
@@ -672,7 +731,7 @@
 <main class="main-wrapper">
 
   <section class="hero">
-    <span class="pill">Updated for Malaysia payroll rules in July 2026</span>
+    <span class="pill">Last verified: August 2026 · Based on current PERKESO LINDUNG 24 Jam guidance</span>
     <h1 class="serif">Malaysia <em>SKBBK</em> guide 2026</h1>
     <p>
       SKBBK, also known as PERKESO LINDUNG 24 Jam, is Malaysia’s new protection scheme for
@@ -683,637 +742,302 @@
 
   <section class="seo">
 
-    <section class="calculator-cta">
-      <h2>Not Sure How Much SKBBK Is Deducted?</h2>
-      <p>
-        Estimate the amount taken from your salary and see how SKBBK may affect your monthly
-        take-home pay. The exact payroll deduction should still follow the applicable PERKESO
-        contribution schedule and wage ceiling.
-      </p>
-      <a href="skbbk-calculator.html" class="cta-button">
-        Calculate My SKBBK →
-      </a>
-    </section>
-
     <section class="intro-box">
       <h2>SKBBK Quick Summary</h2>
       <p>
-        SKBBK provides accident protection outside working hours. It complements the normal
-        PERKESO Employment Injury Scheme, which mainly covers accidents and occupational diseases
-        connected with employment.
+        SKBBK, commonly presented by PERKESO as <strong>LINDUNG 24 Jam</strong>, extends accident protection to qualifying non-work-related accidents during an employee's period of employment.
       </p>
 
       <div class="summary-grid">
-        <div class="summary-card">
-          <strong>0.75%</strong>
-          <span>Phase 1 employee contribution rate</span>
-        </div>
-        <div class="summary-card">
-          <strong>24 Hours</strong>
-          <span>Accident protection during employment</span>
-        </div>
-        <div class="summary-card">
-          <strong>Employee</strong>
-          <span>Contribution is fully borne by the employee</span>
-        </div>
-        <div class="summary-card">
-          <strong>Voluntary</strong>
-          <span>Current participation basis for local employees</span>
-        </div>
+        <div class="summary-card"><strong>1 Jun 2026</strong><span>Scheme effective date</span></div>
+        <div class="summary-card"><strong>0.75%</strong><span>Phase 1 employee contribution rate</span></div>
+        <div class="summary-card"><strong>Employee</strong><span>Contribution is fully employee-funded</span></div>
+        <div class="summary-card"><strong>24 Hours</strong><span>Non-work accident protection during employment</span></div>
+      </div>
+
+      <div class="note-box">
+        <strong>Current participation position:</strong> Local employees may participate voluntarily, while eligible foreign workers remain mandatorily covered under the current PERKESO position.
       </div>
     </section>
 
-    <h2>What Is SKBBK?</h2>
+    <section class="calculator-cta">
+      <h2>Calculate Your SKBBK Contribution</h2>
+      <p>Estimate how much LINDUNG 24 Jam may be deducted from your salary and how it affects monthly take-home pay.</p>
+      <a href="skbbk-calculator.html" class="cta-button">Calculate My SKBBK →</a>
+    </section>
+
+    <section class="toc-box">
+      <h2>On This Page</h2>
+      <div class="toc-links">
+        <a href="#what-is-skbbk"><span class="toc-number">01</span><span class="toc-label">What Is LINDUNG 24 Jam?</span><span class="toc-arrow">→</span></a>
+        <a href="#who-is-covered"><span class="toc-number">02</span><span class="toc-label">Who Is Covered?</span><span class="toc-arrow">→</span></a>
+        <a href="#contribution-rates"><span class="toc-number">03</span><span class="toc-label">Contribution Rates</span><span class="toc-arrow">→</span></a>
+        <a href="#salary-components"><span class="toc-number">04</span><span class="toc-label">Wages Subject to SKBBK</span><span class="toc-arrow">→</span></a>
+        <a href="#coverage"><span class="toc-number">05</span><span class="toc-label">What Is Covered?</span><span class="toc-arrow">→</span></a>
+        <a href="#exclusions"><span class="toc-number">06</span><span class="toc-label">What Is Not Covered?</span><span class="toc-arrow">→</span></a>
+        <a href="#benefits"><span class="toc-number">07</span><span class="toc-label">Benefits</span><span class="toc-arrow">→</span></a>
+        <a href="#opt-out"><span class="toc-number">08</span><span class="toc-label">Voluntary / Opt-Out Rules</span><span class="toc-arrow">→</span></a>
+        <a href="#employer-responsibilities"><span class="toc-number">09</span><span class="toc-label">Employer Responsibilities</span><span class="toc-arrow">→</span></a>
+        <a href="#faq"><span class="toc-number">10</span><span class="toc-label">FAQ</span><span class="toc-arrow">→</span></a>
+      </div>
+    </section>
+
+    <h2 id="what-is-skbbk">What Is SKBBK / LINDUNG 24 Jam?</h2>
     <p>
-      SKBBK is commonly used to refer to PERKESO protection for accidents that are not employment
-      injuries. The scheme is promoted as <strong>LINDUNG 24 Jam</strong> and is intended to protect
-      eligible employees when an accidental injury occurs outside working hours and is not directly
-      related to their job.
+      SKBBK refers to PERKESO's Non-Employment Injury Scheme, commonly promoted as <strong>LINDUNG 24 Jam</strong>.
+      It protects eligible employees against personal injuries caused by accidents that do not arise out of and in the course of employment.
     </p>
     <p>
-      Before this scheme, normal PERKESO employment injury protection mainly focused on accidents
-      arising out of work, accidents during qualifying journeys, workplace emergencies and
-      occupational diseases. SKBBK extends accident protection beyond those employment-related situations.
-    </p>
-    <p>
-      The scheme took effect from 1 June 2026. Under the latest PERKESO position announced in July 2026,
-      participation is voluntary for local employees but remains mandatory for eligible foreign workers.
+      Normal PERKESO Employment Injury protection mainly deals with work-related accidents, qualifying commuting accidents, workplace emergencies and occupational diseases.
+      LINDUNG 24 Jam extends protection to qualifying accidents outside that employment context.
     </p>
 
     <section class="guide-box">
       <h2>SKBBK Timeline</h2>
       <div class="component-grid">
-        <div class="component-card">
-          <div class="component-icon">📅</div>
-          <h3>1 June 2026</h3>
-          <p>SKBBK or LINDUNG 24 Jam took effect as a new PERKESO protection scheme for non-work accidents.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">📢</div>
-          <h3>July 2026</h3>
-          <p>The Government announced that participation would be voluntary for local employees.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">🌏</div>
-          <h3>Foreign Workers</h3>
-          <p>Participation remains mandatory for eligible foreign employees under the current position.</p>
-        </div>
+        <div class="component-card"><div class="component-icon">📅</div><h3>1 June 2026</h3><p>LINDUNG 24 Jam took effect as PERKESO's new non-employment injury protection scheme.</p></div>
+        <div class="component-card"><div class="component-icon">📢</div><h3>2026 Policy Update</h3><p>Participation for local employees is now voluntary under PERKESO's current position.</p></div>
+        <div class="component-card"><div class="component-icon">🌏</div><h3>Foreign Workers</h3><p>Participation remains mandatory for eligible foreign workers.</p></div>
+      </div>
+    </section>
+
+    <section class="guide-box">
+      <h2 id="who-is-covered">Who Is Covered by SKBBK?</h2>
+      <p>The scheme applies to eligible employees during their period of employment, but participation treatment differs between local and foreign employees.</p>
+
+      <div class="component-grid">
+        <div class="component-card"><div class="component-icon">🇲🇾</div><h3>Local Employees</h3><p>Participation is voluntary under the current PERKESO position.</p></div>
+        <div class="component-card"><div class="component-icon">🌏</div><h3>Foreign Employees</h3><p>Participation remains mandatory for eligible foreign workers with valid employment documentation.</p></div>
+        <div class="component-card"><div class="component-icon">🏢</div><h3>Employer Administration</h3><p>The employer handles registration, payroll deduction and remittance while the employee remains employed.</p></div>
+        <div class="component-card"><div class="component-icon">🧑‍💼</div><h3>Employee-Funded</h3><p>No separate employer contribution applies to the LINDUNG 24 Jam portion.</p></div>
       </div>
     </section>
 
     <section class="contribution-box">
-      <h2>SKBBK Contribution Rates</h2>
-      <p>
-        The contribution is fully borne by the employee and is introduced in phases. The employer
-        deducts the employee contribution and pays it to PERKESO on the employee's behalf.
-      </p>
+      <h2 id="contribution-rates">SKBBK Contribution Rates</h2>
+      <p>The contribution is fully borne by the employee and is being introduced in phases starting from 1 June 2026.</p>
 
       <div class="contribution-table-wrap">
         <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Implementation Period</th>
-              <th>Employee Rate</th>
-              <th>Employer Rate</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Implementation Period</th><th>Employee Rate</th><th>Employer Rate</th></tr></thead>
           <tbody>
-            <tr>
-              <td>Years 1–2</td>
-              <td>0.75%</td>
-              <td>Nil</td>
-            </tr>
-            <tr>
-              <td>Years 3–5</td>
-              <td>1.00%</td>
-              <td>Nil</td>
-            </tr>
-            <tr>
-              <td>Year 6 onwards</td>
-              <td>1.25%</td>
-              <td>Nil</td>
-            </tr>
+            <tr><td>Years 1–2 (Phase 1)</td><td><strong>0.75%</strong></td><td>Nil</td></tr>
+            <tr><td>Years 3–5 (Phase 2)</td><td><strong>1.00%</strong></td><td>Nil</td></tr>
+            <tr><td>Year 6 onwards (Phase 3)</td><td><strong>1.25%</strong></td><td>Nil</td></tr>
           </tbody>
         </table>
       </div>
 
-      <div class="note-box">
-        <strong>Important:</strong> The actual deduction follows the applicable PERKESO contribution
-        schedule and wage ceiling. Payroll amounts may therefore differ slightly from a direct
-        salary-times-percentage calculation.
-      </div>
+      <div class="note-box"><strong>Important:</strong> Actual payroll deduction should follow the applicable PERKESO contribution schedule and wage ceiling. A direct salary × rate calculation is useful only as a quick estimate.</div>
     </section>
 
     <h2>How SKBBK Is Calculated</h2>
-    <p>
-      For a quick estimate, an employee can multiply wages by the applicable phase rate. In 2026,
-      the Phase 1 rate is 0.75%. However, the final payroll deduction should follow the official
-      PERKESO contribution table and applicable wage ceiling.
-    </p>
-    <p>
-      Unlike ordinary SOCSO contribution under the first category, SKBBK does not include a separate
-      employer share. The employee bears the full SKBBK cost, while the employer handles payroll
-      deduction and remittance.
-    </p>
+    <p>For a quick estimate in Phase 1, multiply monthly contributable wages by 0.75%. The final payroll amount should still follow the official PERKESO schedule.</p>
 
     <div class="formula-box">
-      <strong>Estimated SKBBK = Monthly Wages × Applicable Employee Rate</strong>
-      <span>Example: RM3,000 × 0.75% = approximately RM22.50</span>
+      <strong>Quick Estimate: SKBBK ≈ Monthly Contributable Wages × 0.75%</strong>
+      <span>Example estimate: RM3,000 × 0.75% = RM22.50</span>
     </div>
-
-
-    <h2>Why Is SKBBK Deducted From My Salary?</h2>
-    <p>
-      SKBBK may appear as a new deduction because the contribution is fully borne by the employee.
-      The employer does not pay a separate share but is responsible for deducting the amount through
-      payroll and remitting it to PERKESO while the employee remains covered.
-    </p>
-
-    <h2>Why Did My Employer Deduct SKBBK?</h2>
-    <p>
-      An employer may deduct SKBBK because the employee was enrolled under the scheme and payroll was
-      updated to collect the required contribution. A local employee who does not wish to participate
-      should follow the official opt-out process instead of asking payroll to stop the deduction informally.
-    </p>
 
     <section class="guide-box">
       <h2>SKBBK Salary Examples</h2>
-      <p>
-        The examples below use a simple 0.75% calculation for illustration. They are not a substitute
-        for the official PERKESO contribution schedule.
-      </p>
+      <p>The examples below use a simple Phase 1 rate of 0.75% for illustration only.</p>
 
       <div class="contribution-table-wrap">
         <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Monthly Salary</th>
-              <th>Estimated SKBBK</th>
-              <th>Estimated Annual Cost</th>
-              <th>Who Bears the Cost?</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Monthly Salary</th><th>Estimated SKBBK</th><th>Estimated Annual Cost</th><th>Who Bears the Cost?</th></tr></thead>
           <tbody>
-            <tr>
-              <td>RM2,000</td>
-              <td>RM15.00</td>
-              <td>RM180.00</td>
-              <td>Employee</td>
-            </tr>
-            <tr>
-              <td>RM3,000</td>
-              <td>RM22.50</td>
-              <td>RM270.00</td>
-              <td>Employee</td>
-            </tr>
-            <tr>
-              <td>RM5,000</td>
-              <td>RM37.50</td>
-              <td>RM450.00</td>
-              <td>Employee</td>
-            </tr>
-            <tr>
-              <td>RM6,000</td>
-              <td>RM45.00</td>
-              <td>RM540.00</td>
-              <td>Employee</td>
-            </tr>
+            <tr><td>RM2,000</td><td>RM15.00</td><td>RM180.00</td><td>Employee</td></tr>
+            <tr><td>RM3,000</td><td>RM22.50</td><td>RM270.00</td><td>Employee</td></tr>
+            <tr><td>RM5,000</td><td>RM37.50</td><td>RM450.00</td><td>Employee</td></tr>
+            <tr><td>RM6,000</td><td>RM45.00</td><td>RM540.00</td><td>Employee</td></tr>
           </tbody>
         </table>
       </div>
 
-      <div class="note-box">
-        Salaries above the applicable wage ceiling do not necessarily produce a higher statutory
-        deduction. Check the current PERKESO schedule for exact payroll processing.
+      <div class="note-box">These are quick percentage estimates, not a substitute for PERKESO's statutory contribution schedule.</div>
+    </section>
+
+    <section class="guide-box">
+      <h2 id="salary-components">Which Payments Are Subject to SKBBK?</h2>
+      <p>PERKESO applies the Act 4 definition of wages for LINDUNG 24 Jam contribution purposes. This means many cash remuneration items are included, while certain specified payments are excluded.</p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Payment Type</th><th>SKBBK Treatment</th><th>Practical Note</th></tr></thead>
+          <tbody>
+            <tr><td>Basic Salary / Wages</td><td><span class="status-yes">Yes</span></td><td>Regular wages are contributable.</td></tr>
+            <tr><td>Overtime Payment</td><td><span class="status-yes">Yes</span></td><td>Overtime forms part of wages under the Act 4 definition.</td></tr>
+            <tr><td>Leave / Holiday Pay</td><td><span class="status-yes">Yes</span></td><td>Payments for leave and holidays may form part of wages.</td></tr>
+            <tr><td>Commission / Service Charge / Allowances</td><td><span class="status-yes">Generally Yes</span></td><td>Cash remuneration of this nature is generally included.</td></tr>
+            <tr><td>Travelling Allowance / Mileage Claims</td><td><span class="status-no">No</span></td><td>Genuine travelling allowance or travelling concession is excluded.</td></tr>
+            <tr><td>Special Employment Expense Reimbursement</td><td><span class="status-no">No</span></td><td>Amounts paid to cover special expenses incurred because of employment are excluded.</td></tr>
+            <tr><td>Retirement / Discharge Gratuity</td><td><span class="status-no">No</span></td><td>Specified gratuity payments are excluded.</td></tr>
+            <tr><td>Annual Bonus</td><td><span class="status-no">No</span></td><td>Annual bonus is excluded from the Act 4 wage definition.</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
-    <h2>Who Is Covered by SKBBK?</h2>
-    <p>
-      The scheme is designed for eligible employees covered during their period of employment.
-      It applies differently to local and foreign employees under the latest implementation rules.
-    </p>
-
-    <div class="component-grid">
-      <div class="component-card">
-        <div class="component-icon">🇲🇾</div>
-        <h3>Local Employees</h3>
-        <p>Participation is voluntary under the latest July 2026 policy position.</p>
-      </div>
-      <div class="component-card">
-        <div class="component-icon">🌏</div>
-        <h3>Foreign Employees</h3>
-        <p>Participation remains mandatory for eligible foreign workers.</p>
-      </div>
-      <div class="component-card">
-        <div class="component-icon">🏢</div>
-        <h3>Employer Administration</h3>
-        <p>The employer deducts and remits the contribution while the employee remains employed.</p>
-      </div>
-      <div class="component-card">
-        <div class="component-icon">🧑‍💼</div>
-        <h3>Employee-Funded</h3>
-        <p>The employee bears the full contribution without a separate employer share.</p>
-      </div>
-    </div>
-
-    <h2>What Does SKBBK Cover?</h2>
-    <p>
-      SKBBK focuses on personal injuries caused by accidents that do not arise out of and in the
-      course of employment. In practical terms, it may cover qualifying accidents during personal
-      time, subject to PERKESO's claim conditions and exclusions.
-    </p>
-    <p>
-      The scheme is intended to provide broader accident protection around the clock. PERKESO states
-      that medical treatment costs may be financed for qualifying cases, together with applicable
-      statutory benefits based on the nature and severity of the injury.
-    </p>
-
     <section class="guide-box">
+      <h2 id="coverage">What Does SKBBK Cover?</h2>
+      <p>SKBBK focuses on qualifying personal injuries caused by accidents outside work. It is intended to complement existing employment-injury protection rather than replace it.</p>
+
       <div class="component-grid">
-        <div class="component-card">
-          <div class="component-icon">🏠</div>
-          <h3>Accident at Home</h3>
-          <p>A qualifying accidental injury during personal time may fall within the scheme.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">🏃</div>
-          <h3>Leisure Accident</h3>
-          <p>Accidents during non-work leisure activities may be considered, subject to exclusions.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">🛵</div>
-          <h3>Personal Travel</h3>
-          <p>A non-work road accident in Malaysia may qualify depending on the facts of the case.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">🏥</div>
-          <h3>Medical Treatment</h3>
-          <p>Qualifying treatment costs may be financed through PERKESO arrangements.</p>
-        </div>
+        <div class="component-card"><div class="component-icon">🏠</div><h3>Accident at Home</h3><p>A qualifying accidental injury at home may potentially fall within the scheme.</p></div>
+        <div class="component-card"><div class="component-icon">🏃</div><h3>Leisure Accident</h3><p>Accidents during non-work leisure activities may be considered, subject to statutory exclusions.</p></div>
+        <div class="component-card"><div class="component-icon">🛵</div><h3>Personal Travel</h3><p>A qualifying non-work road accident in Malaysia may potentially be covered.</p></div>
+        <div class="component-card"><div class="component-icon">🏥</div><h3>Medical Treatment</h3><p>Qualifying medical treatment may be financed under PERKESO arrangements.</p></div>
       </div>
     </section>
 
     <section class="guide-box">
       <h2>Real-Life SKBBK Examples</h2>
       <div class="component-grid">
-        <div class="component-card">
-          <div class="component-icon">🏸</div>
-          <h3>Badminton Injury</h3>
-          <p>An employee who is injured while playing badminton during personal time may be considered for coverage, subject to PERKESO’s exclusions and claim assessment.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">🪜</div>
-          <h3>Fall at Home</h3>
-          <p>A qualifying accidental fall at home may fall within the scheme if it is not work-related and the claim conditions are met.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">🤒</div>
-          <h3>Fever or Illness</h3>
-          <p>Fever, diabetes, high blood pressure and other illnesses are not accidents and are generally not covered by SKBBK.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">🛵</div>
-          <h3>Personal Road Accident</h3>
-          <p>A non-work road accident in Malaysia may potentially qualify, depending on the facts, medical evidence and statutory exclusions.</p>
-        </div>
+        <div class="component-card"><div class="component-icon">🏸</div><h3>Badminton Injury</h3><p>An accidental injury while playing badminton during personal time may potentially qualify, subject to PERKESO assessment.</p></div>
+        <div class="component-card"><div class="component-icon">🪜</div><h3>Fall at Home</h3><p>A qualifying accidental fall at home may fall within the scheme when the statutory conditions are met.</p></div>
+        <div class="component-card"><div class="component-icon">🤒</div><h3>Fever or Illness</h3><p>Illnesses such as fever, diabetes or high blood pressure are not non-employment accidents and are excluded.</p></div>
+        <div class="component-card"><div class="component-icon">🛵</div><h3>Personal Road Accident</h3><p>A non-work road accident in Malaysia may potentially qualify depending on the facts and exclusions.</p></div>
       </div>
     </section>
 
-    <h2>What Is Not Covered?</h2>
-    <p>
-      SKBBK is not a general medical insurance plan. It protects against qualifying accidental
-      injuries, not every illness, health condition or loss experienced outside work.
-    </p>
-
     <section class="guide-box">
+      <h2 id="exclusions">What Is Not Covered?</h2>
+      <p>SKBBK is not general medical insurance. It is designed for qualifying accidental injuries, not every illness or event outside work.</p>
+
       <div class="contribution-table-wrap">
         <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Excluded Situation</th>
-              <th>General Treatment</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Excluded Situation</th><th>General Treatment</th></tr></thead>
           <tbody>
-            <tr>
-              <td>Accident outside Malaysia</td>
-              <td>Not covered under the stated scheme exclusion</td>
-            </tr>
-            <tr>
-              <td>Illness such as fever, diabetes or high blood pressure</td>
-              <td>Not treated as a non-work accident</td>
-            </tr>
-            <tr>
-              <td>Employment injury already covered under the Employment Injury Scheme</td>
-              <td>Handled under the relevant employment injury protection</td>
-            </tr>
-            <tr>
-              <td>Self-employment injury under Act 789</td>
-              <td>Falls under the relevant self-employment scheme</td>
-            </tr>
-            <tr>
-              <td>Domestic injury under the Housewives' Social Security Act 2022</td>
-              <td>Falls under the relevant housewives' protection scheme</td>
-            </tr>
-            <tr>
-              <td>Certain immigration permit violations by foreign workers</td>
-              <td>May be excluded based on statutory conditions</td>
-            </tr>
+            <tr><td>Accident outside Malaysia</td><td>Excluded under the stated scheme rules.</td></tr>
+            <tr><td>Illness such as fever, diabetes or high blood pressure</td><td>Not treated as a non-employment accident.</td></tr>
+            <tr><td>Employment injury already covered under the Employment Injury Scheme</td><td>Handled under the relevant employment-injury protection.</td></tr>
+            <tr><td>Self-employment injury under Act 789</td><td>Falls under the relevant self-employment social security scheme.</td></tr>
+            <tr><td>Domestic injury under Act 838</td><td>Falls under the relevant housewives' social security protection.</td></tr>
+            <tr><td>Certain immigration permit violations by foreign workers</td><td>May be excluded based on statutory conditions.</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <h2>SKBBK Benefits</h2>
-    <p>
-      The exact benefit depends on the accepted claim, medical assessment and applicable statutory
-      rules. Employees should not assume that every accident automatically produces a large cash payout.
-    </p>
-    <p>
-      In general, the scheme may support qualifying medical treatment and accident-related benefits
-      where an injury results in temporary disablement, permanent disablement or death. Claim documents
-      and medical evidence remain important.
-    </p>
-
-    <div class="component-grid">
-      <div class="component-card">
-        <div class="component-icon">🩺</div>
-        <h3>Medical Benefit</h3>
-        <p>Support for qualifying medical treatment arising from a covered accident.</p>
-      </div>
-      <div class="component-card">
-        <div class="component-icon">🛌</div>
-        <h3>Temporary Disablement</h3>
-        <p>Possible income-related support during certified temporary disablement.</p>
-      </div>
-      <div class="component-card">
-        <div class="component-icon">♿</div>
-        <h3>Permanent Disablement</h3>
-        <p>Benefits may apply where a covered accident causes permanent loss of ability.</p>
-      </div>
-      <div class="component-card">
-        <div class="component-icon">👨‍👩‍👧</div>
-        <h3>Dependants' Support</h3>
-        <p>Applicable benefits may be available when a covered accident results in death.</p>
-      </div>
-    </div>
-
     <section class="guide-box">
-      <h2>Is SKBBK Mandatory or Voluntary?</h2>
-      <p>
-        This is the most important point for payroll in July 2026. SKBBK was introduced on 1 June 2026,
-        but the Government subsequently decided that participation would no longer be compulsory for
-        local employees. It is now voluntary for local employees and remains mandatory for foreign workers.
-      </p>
-      <p>
-        A local employee who does not wish to continue should follow the official opt-out or release-of-liability
-        procedure communicated by PERKESO and the employer. Employees should not simply ask payroll to stop
-        deducting without completing the required process.
-      </p>
-      <div class="note-box">
-        Employers should retain proper employee instructions and supporting records before changing payroll
-        treatment. Always use the latest PERKESO forms and guidance because implementation procedures can change.
-      </div>
-    </section>
-
-    <h2>Can You Opt Out of SKBBK?</h2>
-    <p>
-      Local employees may choose not to participate under the voluntary arrangement. PERKESO provides
-      an opt-out or release-of-liability process. The employee should complete the required documentation
-      and submit it through the channel communicated by the employer or PERKESO.
-    </p>
-    <p>
-      Opting out means the employee saves the monthly deduction but gives up protection under this particular
-      non-work accident scheme. Existing SOCSO, EIS and EPF deductions are separate and are not automatically
-      cancelled by opting out of SKBBK.
-    </p>
-
-    <section class="contribution-box">
-      <h2>SKBBK vs SOCSO vs EIS vs EPF</h2>
-      <p>
-        These deductions may appear together on a payslip, but they serve different purposes.
-      </p>
+      <h2 id="benefits">SKBBK Benefits</h2>
+      <p>The exact benefit depends on the accepted claim, medical assessment and applicable statutory rules. A contribution does not mean an automatic fixed cash payout after every accident.</p>
 
       <div class="component-grid">
-        <div class="component-card">
-          <div class="component-icon">🛡️</div>
-          <h3>SKBBK</h3>
-          <p>Protection for qualifying accidents occurring outside work.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">🏭</div>
-          <h3>SOCSO</h3>
-          <p>Employment injury and invalidity protection for covered employees.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">💼</div>
-          <h3>EIS</h3>
-          <p>Income support and re-employment assistance after qualifying job loss.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">🏦</div>
-          <h3>EPF</h3>
-          <p>Retirement savings funded through employee and employer contributions.</p>
-        </div>
+        <div class="component-card"><div class="component-icon">🩺</div><h3>Medical Benefit</h3><p>Support for qualifying medical treatment arising from a covered accident.</p></div>
+        <div class="component-card"><div class="component-icon">🛌</div><h3>Temporary Disablement</h3><p>Possible income-related support during certified temporary disablement.</p></div>
+        <div class="component-card"><div class="component-icon">♿</div><h3>Permanent Disablement</h3><p>Benefits may apply when a covered accident causes permanent disablement.</p></div>
+        <div class="component-card"><div class="component-icon">👨‍👩‍👧</div><h3>Dependants' Support</h3><p>Applicable dependant benefits may be available when a covered accident results in death.</p></div>
       </div>
+    </section>
 
-      <div class="contribution-table-wrap">
-        <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Scheme</th>
-              <th>Main Purpose</th>
-              <th>Employee Cost</th>
-              <th>Can Local Employee Opt Out?</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>SKBBK / LINDUNG 24 Jam</td>
-              <td>Accidents outside work</td>
-              <td>Fully employee-funded</td>
-              <td>Yes, subject to official process</td>
-            </tr>
-            <tr>
-              <td>SOCSO / Employment Injury & Invalidity</td>
-              <td>Employment injury and invalidity protection</td>
-              <td>Employee and employer contribution depending on category</td>
-              <td>Generally no for covered employees</td>
-            </tr>
-            <tr>
-              <td>EIS</td>
-              <td>Job-loss income support and re-employment assistance</td>
-              <td>Employee and employer contribution</td>
-              <td>Generally no for covered employees</td>
-            </tr>
-            <tr>
-              <td>EPF / KWSP</td>
-              <td>Retirement savings</td>
-              <td>Employee deduction plus employer contribution</td>
-              <td>Generally no for covered employees</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <section class="guide-box">
+      <h2 id="opt-out">Is SKBBK Mandatory or Voluntary?</h2>
+      <p>Under PERKESO's current position, participation is <strong>voluntary for local employees</strong> and remains <strong>mandatory for eligible foreign workers</strong>.</p>
+      <p>Local employees who do not wish to participate should follow the official participation-status or opt-out process communicated through PERKESO and the employer rather than simply asking payroll to stop the deduction informally.</p>
+
+      <div class="note-box"><strong>Important:</strong> PERKESO implementation procedures can change because the scheme is new. Employers and employees should use the latest official forms and guidance when changing participation status.</div>
     </section>
 
     <h2>How SKBBK Affects Take-Home Pay</h2>
-    <p>
-      SKBBK reduces monthly take-home pay because the whole contribution is borne by the employee.
-      For example, a simple 0.75% estimate on RM3,000 produces a deduction of approximately RM22.50.
-      The exact payroll amount should still follow the PERKESO contribution schedule.
-    </p>
-    <p>
-      The deduction is separate from existing employee SOCSO, EIS, EPF and PCB amounts. Therefore,
-      an employee may see a new line on the payslip even though ordinary SOCSO was already being deducted.
-    </p>
+    <p>Because the LINDUNG 24 Jam contribution is fully employee-funded, the deduction directly reduces take-home pay. A simple Phase 1 estimate on RM3,000 wages is RM22.50 per month.</p>
+    <div class="formula-box"><strong>Take-Home Pay After SKBBK = Existing Net Pay − SKBBK Deduction</strong><span>There is no separate employer-funded LINDUNG 24 Jam contribution.</span></div>
 
-    <div class="formula-box">
-      <strong>Take-Home Pay After SKBBK = Existing Net Pay − SKBBK Deduction</strong>
-      <span>The scheme does not create an additional employer contribution to the employee's account.</span>
-    </div>
-
-    <h2>Should You Keep or Cancel SKBBK?</h2>
-    <p>
-      There is no single answer for every employee. The decision depends on your monthly budget,
-      existing personal accident insurance and whether you value an additional layer of protection
-      for qualifying accidents outside work.
-    </p>
-
-    <div class="component-grid">
-      <div class="component-card">
-        <div class="component-icon">✅</div>
-        <h3>Reasons to Keep It</h3>
-        <p>You want low-cost accident protection outside work and do not already have similar coverage.</p>
+    <section class="contribution-box">
+      <h2>SKBBK vs SOCSO vs EIS vs EPF</h2>
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Scheme</th><th>Main Purpose</th><th>Employee Cost</th><th>Can Local Employee Opt Out?</th></tr></thead>
+          <tbody>
+            <tr><td>SKBBK / LINDUNG 24 Jam</td><td>Qualifying non-work accidents</td><td>Fully employee-funded</td><td>Yes, subject to current participation process</td></tr>
+            <tr><td>SOCSO</td><td>Employment injury and invalidity protection</td><td>Employee and employer contribution depending on category</td><td>Generally no for covered employees</td></tr>
+            <tr><td>EIS</td><td>Job-loss support and re-employment assistance</td><td>Employee and employer contribution</td><td>Generally no for covered employees</td></tr>
+            <tr><td>EPF / KWSP</td><td>Retirement savings</td><td>Employee deduction plus employer contribution</td><td>Generally no for covered employees</td></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="component-card">
-        <div class="component-icon">📄</div>
-        <h3>Check Existing Insurance</h3>
-        <p>Compare your current policy’s exclusions, benefits and overlapping personal accident protection.</p>
-      </div>
-      <div class="component-card">
-        <div class="component-icon">💵</div>
-        <h3>Reasons to Opt Out</h3>
-        <p>You already have sufficient accident coverage or prefer to reduce recurring salary deductions.</p>
-      </div>
-      <div class="component-card">
-        <div class="component-icon">⚠️</div>
-        <h3>Before You Cancel</h3>
-        <p>Understand that opting out removes this particular protection and must follow the official process.</p>
-      </div>
-    </div>
+    </section>
 
     <section class="guide-box">
-      <h2>Who Should Read This Guide?</h2>
-      <ul>
-        <li>Employees who see SKBBK or LINDUNG 24 Jam on their payslip</li>
-        <li>Local employees deciding whether to remain in or opt out of the scheme</li>
-        <li>Foreign employees checking why the deduction is mandatory</li>
-        <li>HR and payroll staff explaining the new deduction to employees</li>
-        <li>Employers updating payroll after the July 2026 policy change</li>
+      <h2 id="employer-responsibilities">Employer Responsibilities</h2>
+      <ul class="responsibility-list">
+        <li>Identify which employees are subject to mandatory or voluntary participation rules.</li>
+        <li>Use the latest PERKESO contribution schedule and wage ceiling.</li>
+        <li>Deduct the employee contribution correctly through payroll.</li>
+        <li>Remit contributions on behalf of participating employees while they remain employed.</li>
+        <li>Keep employee participation instructions and supporting records.</li>
+        <li>Use the latest PERKESO forms and procedures when participation status changes.</li>
       </ul>
     </section>
 
     <section class="guide-box">
-      <h2>Official References</h2>
-      <p>
-        SKBBK implementation, participation procedures, contribution schedules and claim rules may
-        be updated. This page is a practical salary and payroll guide, not an official legal determination.
-        Employees and employers should confirm current requirements directly with PERKESO.
-      </p>
+      <h2>Sources &amp; Verification</h2>
+      <p>This guide was last verified in August 2026 against current PERKESO LINDUNG 24 Jam guidance, including the effective date, phased rates, employee-funded contribution structure, local voluntary participation, foreign-worker mandatory participation and stated exclusions.</p>
       <div class="source-note">
-        Official reference:
-        <a href="https://www.perkeso.gov.my/skim-kemalangan-bukan-bencana-kerja-lindung-24-jam.html"
-           target="_blank" rel="noopener">PERKESO LINDUNG 24 Jam</a>
+        <strong>Official sources used for verification:</strong><br>
+        <a href="https://www.perkeso.gov.my/en/skim-kemalangan-bukan-bencana-kerja-lindung-24-jam.html" target="_blank" rel="noopener">PERKESO — LINDUNG 24 Jam</a><br>
+        <a href="https://perkeso.gov.my/en/our-services/protection/foreign-worker/" target="_blank" rel="noopener">PERKESO — Foreign Worker Protection</a><br>
+        <a href="https://perkeso.gov.my/en/our-services/employer-employee/kadar-caruman.html" target="_blank" rel="noopener">PERKESO — Contribution Rate</a>
       </div>
     </section>
 
-    <h2>Frequently Asked Questions</h2>
-
+    <h2 id="faq">Frequently Asked Questions</h2>
     <div class="faq-box">
-      <details class="faq-item" open>
-        <summary>What does SKBBK mean on my payslip?</summary>
-        <p>SKBBK refers to PERKESO protection for accidents that occur outside work, commonly known as LINDUNG 24 Jam. The payslip amount is the employee-funded contribution deducted and remitted by the employer.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Is SKBBK compulsory for Malaysian employees?</summary>
-        <p>Under the latest July 2026 position, participation is voluntary for local employees. An employee who wishes to stop participating should follow PERKESO's official opt-out or release-of-liability procedure.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Is SKBBK compulsory for foreign workers?</summary>
-        <p>Yes. PERKESO states that participation remains mandatory for eligible foreign workers even though it is voluntary for local employees.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>How much is the SKBBK contribution in 2026?</summary>
-        <p>The Phase 1 rate is 0.75% and is fully borne by the employee. The exact deduction follows the official PERKESO contribution schedule and applicable wage ceiling.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Does my employer contribute to SKBBK?</summary>
-        <p>No separate employer share applies. The employee bears the contribution, while the employer deducts it through payroll and pays it to PERKESO on the employee's behalf.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Does SKBBK cover accidents at home?</summary>
-        <p>A qualifying accidental injury at home may potentially be covered because the scheme applies to non-work-related accidents. Approval still depends on the facts, exclusions, medical evidence and PERKESO's claim assessment.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Does SKBBK cover sickness or hospitalisation?</summary>
-        <p>It is not general medical insurance. Illnesses such as fever, diabetes or high blood pressure are excluded. Hospital treatment may be supported only when it arises from a qualifying covered accident.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Does SKBBK cover accidents outside Malaysia?</summary>
-        <p>No. PERKESO lists accidents occurring outside Malaysia as excluded from this scheme.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>If I opt out, will my normal SOCSO also stop?</summary>
-        <p>No. SKBBK is separate from normal SOCSO employment injury and invalidity protection. Opting out of SKBBK does not automatically cancel EPF, SOCSO, EIS or PCB deductions.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can I claim RM100,000 immediately after joining?</summary>
-        <p>No fixed lump sum is automatically payable merely because a person has started contributing. Any benefit depends on a qualifying accident, the type and severity of injury, medical assessment, contribution eligibility and the statutory benefit rules.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Where can I check my exact SKBBK deduction?</summary>
-        <p>Use the official PERKESO contribution calculator or contribution schedule and compare it with your payslip. Ask your HR or payroll department if the deducted amount appears inconsistent.</p>
-      </details>
+      <details class="faq-item" open><summary>What does SKBBK mean on my payslip?</summary><p>SKBBK refers to PERKESO's non-employment injury protection, commonly known as LINDUNG 24 Jam. The payslip amount represents the employee-funded contribution deducted and remitted by the employer.</p></details>
+      <details class="faq-item"><summary>When did LINDUNG 24 Jam start?</summary><p>The scheme took effect from 1 June 2026.</p></details>
+      <details class="faq-item"><summary>Is SKBBK compulsory for Malaysian employees?</summary><p>Under the current PERKESO position, participation is voluntary for local employees.</p></details>
+      <details class="faq-item"><summary>Is SKBBK compulsory for foreign workers?</summary><p>Yes. Participation remains mandatory for eligible foreign workers under the current rules.</p></details>
+      <details class="faq-item"><summary>How much is the SKBBK contribution in 2026?</summary><p>The Phase 1 employee contribution rate is 0.75%, subject to the official PERKESO contribution schedule and applicable wage ceiling.</p></details>
+      <details class="faq-item"><summary>Does my employer contribute to SKBBK?</summary><p>No separate employer share applies. The contribution is fully borne by the employee, while the employer handles deduction and remittance.</p></details>
+      <details class="faq-item"><summary>Is overtime subject to SKBBK?</summary><p>Generally yes. LINDUNG 24 Jam uses the Act 4 definition of wages, which includes overtime payments.</p></details>
+      <details class="faq-item"><summary>Is annual bonus subject to SKBBK?</summary><p>No. Annual bonus is excluded from the Act 4 definition of wages used for contribution purposes.</p></details>
+      <details class="faq-item"><summary>Does SKBBK cover accidents at home?</summary><p>A qualifying accidental injury at home may potentially be covered, subject to PERKESO's exclusions and claim assessment.</p></details>
+      <details class="faq-item"><summary>Does SKBBK cover sickness?</summary><p>No. Illnesses such as fever, diabetes and high blood pressure are excluded because the scheme focuses on accidental injury.</p></details>
+      <details class="faq-item"><summary>Does SKBBK cover accidents outside Malaysia?</summary><p>No. PERKESO lists accidents happening outside Malaysia among the excluded cases.</p></details>
+      <details class="faq-item"><summary>If I opt out, will normal SOCSO also stop?</summary><p>No. LINDUNG 24 Jam is separate from normal SOCSO employment injury and invalidity protection. Opting out does not automatically stop EPF, SOCSO, EIS or PCB deductions.</p></details>
     </div>
 
-    <section class="salary-guides-box">
-      <h2>Related Salary Guides</h2>
-      <p>Learn more about payroll deductions, employee protection and statutory contributions in Malaysia.</p>
+    <section class="related-tools-section">
+      <h2>Related Tools</h2>
+      <p class="related-tools-intro">Estimate the new deduction, then explore the payroll and employee-protection topics most closely related to LINDUNG 24 Jam.</p>
 
-      <div class="guide-mini-grid">
-        <a href="socso-guide.html">SOCSO Guide</a>
-        <a href="eis-guide.html">EIS Guide</a>
-        <a href="epf-guide.html">EPF Guide</a>
-        <a href="salary-deduction-guide.html">Salary Deduction Guide</a>
+      <a class="featured-calculator" href="skbbk-calculator.html">
+        <div class="featured-calculator-copy"><span class="featured-kicker">SKBBK Calculator</span><h3>Calculate Your LINDUNG 24 Jam Contribution</h3><p>Estimate your Phase 1 employee deduction and see how it affects monthly take-home pay.</p></div>
+        <span class="feature-link">Calculate SKBBK →</span>
+        <div class="featured-calculator-icon" aria-hidden="true">🛡️</div>
+      </a>
+
+      <div class="quick-calculators">
+        <p class="quick-calculators-title">Quick Calculators</p>
+        <div class="quick-calculators-grid">
+          <a href="index.html"><span>Salary Calculator</span><span class="quick-arrow">→</span></a>
+          <a href="socso-calculator.html"><span>SOCSO Calculator</span><span class="quick-arrow">→</span></a>
+          <a href="eis-calculator.html"><span>EIS Calculator</span><span class="quick-arrow">→</span></a>
+        </div>
       </div>
 
-      <p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p>
-    </section>
+      <div class="explore-section">
+        <div class="explore-heading"><h2>Continue Exploring</h2><p>Useful next steps for understanding payroll deductions and employee protection.</p></div>
+        <div class="explore-grid">
+          <div class="explore-column">
+            <h3>Payroll &amp; Contributions</h3>
+            <a class="editorial-link" href="socso-guide.html"><span>SOCSO Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="eis-guide.html"><span>EIS Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="epf-guide.html"><span>EPF Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="salary-deduction-guide.html"><span>Salary Deduction Guide</span><span class="editorial-arrow">→</span></a>
+          </div>
+          <div class="explore-column">
+            <h3>Employment &amp; Protection</h3>
+            <a class="editorial-link" href="mc-leave-guide.html"><span>Medical Leave Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="employment-contract-guide.html"><span>Employment Contract Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="payslip-guide.html"><span>Payslip Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="pcb-guide.html"><span>PCB Guide</span><span class="editorial-arrow">→</span></a>
+          </div>
+        </div>
 
-    <section class="salary-guides-box">
-      <h2>Related Calculators</h2>
-      <p>Estimate statutory deductions and monthly take-home pay in Malaysia.</p>
-
-      <div class="guide-mini-grid">
-        <a href="socso-calculator.html">SOCSO Calculator</a>
-        <a href="index.html">Salary Calculator</a>
-        <a href="epf-calculator.html">EPF Calculator</a>
-        <a href="pcb-calculator.html">PCB Calculator</a>
+        <div class="resource-actions"><a href="guides.html">Explore All Guides →</a><a href="calculators.html">View All Calculators →</a></div>
       </div>
-
-      <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
     </section>
 
   </section>
