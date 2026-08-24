@@ -476,6 +476,57 @@
       color: var(--accent);
     }
 
+
+    .toc-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:26px 0}
+    .toc-box h2{margin-top:0;margin-bottom:16px}
+    .toc-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px}
+    .toc-links a{display:flex;align-items:center;gap:14px;min-width:0;text-decoration:none;color:var(--foreground);padding:12px 2px;border-bottom:1px solid var(--border);transition:.18s ease}
+    .toc-links a:hover{color:var(--accent);padding-left:4px}
+    .toc-number{width:28px;flex:0 0 28px;color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.04em}
+    .toc-label{flex:1;min-width:0;font-weight:700;font-size:15px}
+    .toc-arrow{color:var(--muted);font-size:15px}
+
+    .deadline-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:20px}
+    .deadline-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}
+    .deadline-card strong{display:block;color:var(--accent);font-size:20px;margin-bottom:8px;font-family:Georgia,"Times New Roman",serif}
+    .responsibility-list{list-style:none;padding:0;margin:12px 0 0}
+    .responsibility-list li{position:relative;padding-left:24px;margin:8px 0}
+    .responsibility-list li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:800}
+
+    .source-note{margin-top:18px;background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);padding:14px;border-radius:10px;color:var(--muted);font-size:13px}
+    .source-note a{color:var(--accent);font-weight:800;text-decoration:none}
+
+    .related-tools-section{margin:34px 0}
+    .related-tools-section h2{margin-bottom:8px}
+    .related-tools-intro{margin-top:0;max-width:760px}
+    .featured-calculator{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:22px;align-items:center;margin-top:20px;padding:24px 26px;background:radial-gradient(circle at top right,rgba(47,125,94,.14),transparent 34%),linear-gradient(135deg,#f8f5ef 0%,#fbfaf6 100%);border:1px solid var(--accent-border);border-radius:18px;text-decoration:none;color:var(--foreground);overflow:hidden;transition:.18s ease}
+    .featured-calculator:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 16px 34px rgba(47,43,37,.09)}
+    .featured-calculator-copy{min-width:0}
+    .featured-kicker{display:inline-block;margin-bottom:7px;color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .featured-calculator h3{margin:0 0 6px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,3vw,32px);font-weight:400;line-height:1.1}
+    .featured-calculator p{margin:0;max-width:640px;font-size:15px}
+    .feature-link{display:inline-flex;align-items:center;justify-content:center;min-width:150px;padding:12px 16px;border-radius:12px;background:var(--accent);color:#fff;font-weight:900;white-space:nowrap}
+    .featured-calculator-icon{width:66px;height:66px;display:grid;place-items:center;border-radius:18px;background:var(--accent-soft);border:1px solid var(--accent-border);font-size:30px}
+
+    .quick-calculators{margin-top:18px}
+    .quick-calculators-title{margin:0 0 10px;font-size:14px;font-weight:800;color:var(--foreground)}
+    .quick-calculators-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .quick-calculators-grid a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;background:var(--card);border:1px solid var(--border);border-radius:11px;text-decoration:none;color:var(--foreground);font-size:14px;font-weight:800;transition:.18s ease}
+    .quick-calculators-grid a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .quick-arrow{color:var(--muted)}
+
+    .explore-section{margin-top:30px;padding-top:28px;border-top:1px solid var(--border)}
+    .explore-heading h2{margin:0}
+    .explore-heading p{margin:7px 0 14px}
+    .explore-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+    .explore-column h3{margin:0 0 8px;font-size:16px;color:var(--foreground)}
+    .editorial-link{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .editorial-link:hover{color:var(--accent);padding-left:4px}
+    .editorial-link span:first-child{flex:1;min-width:0;font-weight:800;font-size:15px}
+    .editorial-arrow{color:var(--muted)}
+    .resource-actions{display:flex;justify-content:space-between;gap:16px;margin-top:18px;flex-wrap:wrap}
+    .resource-actions a{color:var(--accent);font-weight:800;text-decoration:none}
+
     @media (max-width: 800px) {
       .nav-inner {
         flex-direction: row;
@@ -565,9 +616,17 @@
         line-height: 1.35;
       }
 
-      .cta-button {
-        width: 100%;
-      }
+      .cta-button{width:100%}
+      .toc-box{padding:20px}
+      .toc-links{grid-template-columns:1fr;column-gap:0}
+      .toc-links a{padding:11px 0}
+      .featured-calculator{grid-template-columns:1fr;padding:22px;gap:16px}
+      .feature-link{width:100%}
+      .featured-calculator-icon{display:none}
+      .quick-calculators-grid{grid-template-columns:1fr}
+      .explore-grid{grid-template-columns:1fr;gap:26px}
+      .resource-actions{display:block}
+      .resource-actions a{display:block;margin-top:8px}
     }
   </style>
 </head>
@@ -592,7 +651,7 @@
 <main class="main-wrapper">
 
   <section class="hero">
-    <span class="pill">Updated for Malaysia 2026 payroll estimates</span>
+    <span class="pill">Last verified: August 2026 · Based on current HASiL PCB guidance</span>
     <h1 class="serif">Malaysia <em>PCB guide</em> 2026</h1>
     <p>
       Learn how PCB monthly tax deduction works in Malaysia, including how it is calculated,
@@ -602,467 +661,282 @@
 
   <section class="seo">
 
-    <section class="calculator-cta">
-      <h2>Calculate Your PCB Deduction</h2>
-      <p>
-        Want to estimate how much monthly tax may be deducted from your salary?
-        Use our free PCB Calculator to estimate your monthly PCB and take-home pay instantly.
-      </p>
-      <a href="pcb-calculator.html" class="cta-button">Calculate My PCB →</a>
-    </section>
-
     <section class="intro-box">
       <h2>PCB Quick Summary</h2>
       <p>
-        PCB, also known as Potongan Cukai Bulanan, is Malaysia's monthly tax deduction system.
-        Employers deduct estimated income tax from employees' salaries and remit it to LHDN through monthly payroll.
+        PCB, or Potongan Cukai Bulanan, is Malaysia's Monthly Tax Deduction (MTD) system.
+        Employers deduct estimated income tax from employees' remuneration and remit it to HASiL through monthly payroll.
       </p>
-
       <div class="summary-grid">
-        <div class="summary-card">
-          <strong>PCB</strong>
-          <span>Monthly tax deduction</span>
-        </div>
-        <div class="summary-card">
-          <strong>LHDN</strong>
-          <span>Malaysia tax authority</span>
-        </div>
-        <div class="summary-card">
-          <strong>Monthly</strong>
-          <span>Deducted through payroll</span>
-        </div>
-        <div class="summary-card">
-          <strong>Tax Reliefs</strong>
-          <span>May reduce PCB amount</span>
-        </div>
+        <div class="summary-card"><strong>MTD</strong><span>Monthly income tax deduction</span></div>
+        <div class="summary-card"><strong>15th</strong><span>Employer payment deadline in the following month</span></div>
+        <div class="summary-card"><strong>TP1</strong><span>Employee deduction & rebate claim form for PCB purposes</span></div>
+        <div class="summary-card"><strong>2026</strong><span>Current computerized PCB calculation specification</span></div>
+      </div>
+      <div class="note-box">
+        <strong>Quick note:</strong> PCB is not a fixed percentage of salary. The actual deduction depends on remuneration, tax residency, accumulated income and PCB, EPF, applicable deductions, rebates and additional remuneration such as bonus.
       </div>
     </section>
 
-    <h2>What Is PCB?</h2>
-    <p>
-      PCB stands for Potongan Cukai Bulanan, which means Monthly Tax Deduction in Malaysia.
-      It is a system where employers deduct estimated income tax from employees' monthly salary and pay it to LHDN on behalf of the employee.
-    </p>
-    <p>
-      PCB helps spread income tax payments across the year instead of requiring employees to pay the full tax amount only after submitting the annual income tax return.
-    </p>
+    <section class="calculator-cta">
+      <h2>Calculate Your PCB Deduction</h2>
+      <p>Want to estimate how much monthly tax may be deducted from your salary? Use our free PCB Calculator to estimate your monthly PCB and take-home pay.</p>
+      <a href="pcb-calculator.html" class="cta-button">Calculate My PCB →</a>
+    </section>
+
+    <section class="toc-box">
+      <h2>On This Page</h2>
+      <div class="toc-links">
+        <a href="#what-is-pcb"><span class="toc-number">01</span><span class="toc-label">What Is PCB?</span><span class="toc-arrow">→</span></a>
+        <a href="#who-pays-pcb"><span class="toc-number">02</span><span class="toc-label">Who May Have PCB</span><span class="toc-arrow">→</span></a>
+        <a href="#how-pcb-works"><span class="toc-number">03</span><span class="toc-label">How PCB Works</span><span class="toc-arrow">→</span></a>
+        <a href="#pcb-calculation"><span class="toc-number">04</span><span class="toc-label">How PCB Is Calculated</span><span class="toc-arrow">→</span></a>
+        <a href="#pcb-factors"><span class="toc-number">05</span><span class="toc-label">What Changes PCB</span><span class="toc-arrow">→</span></a>
+        <a href="#bonus-pcb"><span class="toc-number">06</span><span class="toc-label">Bonus & Additional Income</span><span class="toc-arrow">→</span></a>
+        <a href="#tax-reliefs"><span class="toc-number">07</span><span class="toc-label">Tax Reliefs & TP1</span><span class="toc-arrow">→</span></a>
+        <a href="#annual-tax"><span class="toc-number">08</span><span class="toc-label">PCB vs Annual Tax</span><span class="toc-arrow">→</span></a>
+        <a href="#payment-deadline"><span class="toc-number">09</span><span class="toc-label">Payment Deadline</span><span class="toc-arrow">→</span></a>
+        <a href="#payroll-mistakes"><span class="toc-number">10</span><span class="toc-label">Payroll Mistakes</span><span class="toc-arrow">→</span></a>
+        <a href="#faq"><span class="toc-number">11</span><span class="toc-label">FAQ</span><span class="toc-arrow">→</span></a>
+      </div>
+    </section>
+
+    <h2 id="what-is-pcb">What Is PCB?</h2>
+    <p>PCB stands for Potongan Cukai Bulanan, or Monthly Tax Deduction (MTD). It is a system where employers deduct estimated income tax from employees' remuneration and remit the amount to HASiL on behalf of the employee.</p>
+    <p>PCB helps spread income tax payments across the year instead of requiring the employee to settle the whole tax amount only after annual filing.</p>
+
+    <section class="guide-box">
+      <h2 id="who-pays-pcb">Who May Have PCB Deducted?</h2>
+      <p>PCB generally arises when an employee's estimated tax position produces a monthly tax deduction under the official MTD calculation method. Not every employee will necessarily have PCB deducted.</p>
+      <p>For employees with lower taxable income, the calculated PCB may be nil after considering the applicable tax treatment, deductions and relief information used in payroll. This is why an employee can still have EPF, SOCSO and EIS deductions while having no PCB for a particular month.</p>
+      <div class="note-box"><strong>Important:</strong> PCB should be determined using HASiL's approved computerized calculation method or e-Jadual PCB through e-CP39, not by applying a simple flat percentage to monthly salary.</div>
+    </section>
 
     <section class="contribution-box">
-      <h2>How PCB Works in Malaysia</h2>
-      <p>
-        PCB is generally based on estimated annual chargeable income after considering income, deductions and applicable tax reliefs.
-      </p>
-
+      <h2 id="how-pcb-works">How PCB Works in Malaysia</h2>
+      <p>PCB is calculated from payroll information and is designed to estimate the employee's income tax position progressively during the year.</p>
       <div class="contribution-table-wrap">
         <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Factor</th>
-              <th>How It Affects PCB</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Factor</th><th>How It Affects PCB</th></tr></thead>
           <tbody>
-            <tr>
-              <td>Monthly Salary</td>
-              <td>Higher salary usually increases estimated taxable income and PCB.</td>
-            </tr>
-            <tr>
-              <td>EPF Contribution</td>
-              <td>Employee EPF may reduce taxable income subject to applicable limits.</td>
-            </tr>
-            <tr>
-              <td>Tax Reliefs</td>
-              <td>Personal reliefs, spouse relief, child relief and other claims may reduce PCB.</td>
-            </tr>
-            <tr>
-              <td>Bonus / Allowance</td>
-              <td>Additional income may increase PCB for the relevant month.</td>
-            </tr>
-            <tr>
-              <td>Resident Tax Rate</td>
-              <td>PCB is affected by Malaysia's progressive income tax rates.</td>
-            </tr>
+            <tr><td>Monthly Remuneration</td><td>Higher taxable remuneration generally increases the estimated annual tax and monthly PCB.</td></tr>
+            <tr><td>Accumulated Remuneration</td><td>Year-to-date income is relevant because PCB uses cumulative information in computerized calculation.</td></tr>
+            <tr><td>EPF Contribution</td><td>Eligible EPF deductions are taken into account subject to the applicable PCB calculation rules and limits.</td></tr>
+            <tr><td>Tax Deductions / Rebates</td><td>Approved deductions and rebates reflected through payroll may reduce PCB.</td></tr>
+            <tr><td>Bonus / Additional Remuneration</td><td>Additional remuneration is calculated separately under the PCB computerized method and can cause a higher deduction in that month.</td></tr>
+            <tr><td>Tax Residency / Special Tax Treatment</td><td>The applicable tax treatment can materially change the monthly deduction.</td></tr>
           </tbody>
         </table>
       </div>
-
-      <div class="note-box">
-        <strong>Note:</strong> PCB is an estimate of monthly tax deduction. Your final tax payable is determined when you submit your annual income tax return to LHDN.
-      </div>
+      <div class="note-box"><strong>Key point:</strong> PCB is a payroll mechanism for income tax. It is not the same type of statutory contribution as EPF, SOCSO or EIS.</div>
     </section>
 
-    <h2>How PCB Is Calculated</h2>
-    <p>
-      PCB is usually calculated by estimating your annual taxable income, deducting eligible reliefs and applying Malaysia's progressive income tax rates.
-      The estimated annual tax is then spread across monthly payroll deductions.
-    </p>
+    <h2 id="pcb-calculation">How PCB Is Calculated</h2>
+    <p>PCB is calculated using HASiL's Monthly Tax Deduction rules and 2026 computerized calculation specification. The calculation considers normal remuneration, accumulated remuneration and deductions, accumulated PCB, applicable relief information and tax rates.</p>
+    <p>Additional remuneration such as bonus is handled using a specific additional-remuneration calculation rather than simply dividing estimated annual tax by 12.</p>
 
     <div class="formula-box">
-      <strong>Estimated PCB = Estimated Annual Tax ÷ 12</strong>
-      <span>Actual monthly PCB may vary depending on income, benefits, reliefs, bonuses and employer payroll settings.</span>
+      <strong>PCB ≠ Monthly Salary × Fixed Tax Rate</strong>
+      <span>Actual PCB follows HASiL's MTD calculation method using current-year payroll and tax information.</span>
     </div>
 
     <section class="guide-box">
-      <h2>PCB Calculation Example</h2>
-      <p>Example based on a simple salary scenario:</p>
-
+      <h2>Simple PCB Example: RM5,000 Monthly Salary</h2>
+      <p>A RM5,000 monthly salary does not automatically produce one universal PCB amount because the deduction can differ according to the employee's tax profile and payroll information.</p>
       <div class="contribution-table-wrap">
         <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th>Example</th>
-            </tr>
-          </thead>
           <tbody>
-            <tr>
-              <td>Monthly Salary</td>
-              <td>RM5,000</td>
-            </tr>
-            <tr>
-              <td>Annual Salary</td>
-              <td>RM60,000</td>
-            </tr>
-            <tr>
-              <td>Less: EPF and personal reliefs</td>
-              <td>Deduct eligible amounts based on tax rules</td>
-            </tr>
-            <tr>
-              <td>Estimated Tax Payable</td>
-              <td>Calculated using Malaysia progressive tax rates</td>
-            </tr>
-            <tr>
-              <td>Monthly PCB</td>
-              <td>Estimated annual tax divided into monthly deductions</td>
-            </tr>
+            <tr><td><strong>Monthly salary</strong></td><td>RM5,000</td></tr>
+            <tr><td><strong>Annualised employment income</strong></td><td>Used as part of the tax estimation</td></tr>
+            <tr><td><strong>EPF / eligible deductions</strong></td><td>Considered under the applicable PCB rules</td></tr>
+            <tr><td><strong>Personal / family information</strong></td><td>May affect allowable deductions and rebates</td></tr>
+            <tr><td><strong>Final monthly PCB</strong></td><td>Determined using HASiL's approved calculation method</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note-box"><strong>Why no single RM amount here?</strong> Two employees earning RM5,000 can legitimately have different PCB amounts because their accumulated income, deductions, rebates, marital or child information, previous employment data and additional remuneration may differ.</div>
+    </section>
+
+    <section class="guide-box">
+      <h2 id="pcb-factors">What Can Increase or Reduce PCB?</h2>
+      <p>Your PCB amount can change when your income or tax information changes. This is why PCB may be different from one month to another.</p>
+      <div class="component-grid">
+        <div class="component-card"><div class="component-icon">📈</div><h3>Higher Income</h3><p>Salary increments and additional taxable remuneration can increase PCB.</p></div>
+        <div class="component-card"><div class="component-icon">🎁</div><h3>Bonus & Commission</h3><p>Additional remuneration may trigger a higher PCB deduction in the payment month.</p></div>
+        <div class="component-card"><div class="component-icon">💸</div><h3>Deductions & Reliefs</h3><p>Eligible items reflected correctly for PCB purposes may reduce the deduction.</p></div>
+        <div class="component-card"><div class="component-icon">👨‍👩‍👧</div><h3>Personal Information</h3><p>Relevant spouse, child and other tax information may affect the calculation where applicable.</p></div>
+      </div>
+    </section>
+
+    <section class="guide-box">
+      <h2 id="bonus-pcb">PCB for Bonus, Commission and Additional Remuneration</h2>
+      <p>Bonus, commission and other additional remuneration can increase PCB because they increase taxable employment income. Under HASiL's computerized method, additional remuneration has a specific calculation procedure.</p>
+      <p>This is why an employee may see a much higher PCB deduction in a bonus month even though the normal monthly PCB is relatively low.</p>
+      <div class="note-box"><strong>Practical payslip check:</strong> When reviewing a bonus month, separate the gross bonus from EPF, SOCSO, EIS and PCB rather than assuming the entire increase in deductions comes from one item.</div>
+    </section>
+
+    <section class="guide-box">
+      <h2 id="tax-reliefs">Tax Reliefs, Deductions and Form TP1</h2>
+      <p>Eligible deductions and rebates can affect PCB when they are properly declared and processed under the applicable HASiL rules. Form TP1 is used by employees to claim qualifying deductions and rebates for Monthly Tax Deduction purposes.</p>
+      <p>If an employee had previous employment during the same year, Form TP3 is used to provide the new employer with accumulated remuneration, EPF, zakat and PCB information from previous employment so that the current-year PCB calculation can take that information into account.</p>
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Form</th><th>Main Purpose</th></tr></thead>
+          <tbody>
+            <tr><td><strong>TP1</strong></td><td>Employee claim for qualifying individual deductions and rebates for PCB purposes.</td></tr>
+            <tr><td><strong>TP3</strong></td><td>Current-year previous-employment information used for PCB calculation by the new employer.</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <h2>What Can Increase or Reduce PCB?</h2>
-    <p>
-      Your PCB amount may change when your income or personal tax position changes.
-      This is why two employees with the same basic salary may have different PCB deductions.
-    </p>
-
-    <div class="component-grid">
-      <div class="component-card">
-        <div class="component-icon">📈</div>
-        <h3>Higher Income</h3>
-        <p>Salary increments, bonuses and allowances may increase monthly PCB.</p>
-      </div>
-      <div class="component-card">
-        <div class="component-icon">💸</div>
-        <h3>Tax Reliefs</h3>
-        <p>Eligible reliefs may reduce chargeable income and lower PCB.</p>
-      </div>
-      <div class="component-card">
-        <div class="component-icon">👨‍👩‍👧</div>
-        <h3>Personal Status</h3>
-        <p>Spouse and child reliefs may affect the final tax calculation.</p>
-      </div>
-      <div class="component-card">
-        <div class="component-icon">🎁</div>
-        <h3>Bonus Payments</h3>
-        <p>Bonuses and commissions may cause higher PCB in certain months.</p>
-      </div>
-    </div>
-
-    <h2>PCB vs Annual Income Tax</h2>
-    <p>
-      PCB is not a separate tax. It is a monthly deduction toward your annual income tax.
-      When you file your annual tax return, your final tax payable is compared against the PCB already deducted during the year.
-    </p>
-
     <section class="guide-box">
+      <h2 id="annual-tax">PCB vs Annual Income Tax</h2>
+      <p>PCB is not a separate tax. It is a monthly payment toward the employee's income tax position.</p>
       <div class="contribution-table-wrap">
         <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th>Meaning</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Item</th><th>Meaning</th></tr></thead>
           <tbody>
-            <tr>
-              <td>PCB</td>
-              <td>Monthly tax deduction made through payroll.</td>
-            </tr>
-            <tr>
-              <td>Income Tax Return</td>
-              <td>Annual filing to declare income, reliefs and final tax position.</td>
-            </tr>
-            <tr>
-              <td>Tax Refund</td>
-              <td>May happen if PCB deducted is higher than final tax payable.</td>
-            </tr>
-            <tr>
-              <td>Additional Tax Payable</td>
-              <td>May happen if PCB deducted is lower than final tax payable.</td>
-            </tr>
+            <tr><td>PCB / MTD</td><td>Monthly income tax deduction through payroll.</td></tr>
+            <tr><td>Income Tax Return</td><td>Annual declaration of income, deductions, reliefs and final tax position where filing is required.</td></tr>
+            <tr><td>Tax Refund</td><td>May arise when tax paid or deducted exceeds the final tax liability.</td></tr>
+            <tr><td>Additional Tax Payable</td><td>May arise when total tax paid or deducted is lower than the final tax liability.</td></tr>
           </tbody>
         </table>
       </div>
+      <div class="note-box"><strong>Important:</strong> In certain circumstances, eligible taxpayers may treat PCB as final tax and may not need to submit an income tax return, but only when all conditions prescribed by HASiL are satisfied.</div>
     </section>
 
     <h2>PCB vs EPF, SOCSO and EIS</h2>
-    <p>
-      EPF, SOCSO and EIS are statutory payroll deductions or contributions, while PCB relates to income tax.
-      Together, these items affect an employee's monthly take-home pay.
-    </p>
-
+    <p>EPF, SOCSO and EIS are statutory payroll contributions or social protection deductions, while PCB is a monthly income tax deduction. All can affect take-home pay, but they serve different purposes.</p>
     <div class="contribution-table-wrap">
       <table class="contribution-table">
-        <thead>
-          <tr>
-            <th>Deduction</th>
-            <th>Main Purpose</th>
-            <th>Affects Take-Home Pay?</th>
-          </tr>
-        </thead>
+        <thead><tr><th>Deduction</th><th>Main Purpose</th><th>Employee Take-Home Pay?</th></tr></thead>
         <tbody>
-          <tr>
-            <td>EPF</td>
-            <td>Retirement savings</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <td>SOCSO</td>
-            <td>Social security protection</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <td>EIS</td>
-            <td>Employment insurance</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <td>PCB</td>
-            <td>Monthly income tax deduction</td>
-            <td>Yes</td>
-          </tr>
+          <tr><td>EPF</td><td>Retirement savings</td><td>Reduced by employee contribution</td></tr>
+          <tr><td>SOCSO</td><td>Social security protection</td><td>Reduced by employee contribution</td></tr>
+          <tr><td>EIS</td><td>Employment insurance</td><td>Reduced by employee contribution</td></tr>
+          <tr><td>PCB</td><td>Monthly income tax payment</td><td>Reduced by PCB deducted</td></tr>
         </tbody>
       </table>
     </div>
 
     <section class="guide-box">
-      <h2>Who Needs to Pay PCB?</h2>
-      <p>
-        PCB normally applies to employees whose estimated annual income is high enough to create income tax payable after personal reliefs and deductions.
-        Employers use payroll information to estimate the monthly deduction and remit it to LHDN.
-      </p>
-      <p>
-        Not every employee will have PCB deducted. For lower-income employees, the estimated tax payable may be zero after EPF, personal relief and other applicable deductions.
-        This is why someone earning RM2,000 per month may have EPF, SOCSO and EIS deductions but no PCB deduction.
-      </p>
+      <h2>Why PCB Can Change From Month to Month</h2>
+      <p>PCB can change when salary changes, a bonus or commission is paid, previous-employment information is added, tax deduction information is updated or payroll has additional remuneration to process.</p>
+      <p>A higher PCB in one month does not automatically mean the payroll calculation is wrong. The correct amount depends on the employee's accumulated current-year tax position and the applicable MTD calculation rules.</p>
     </section>
-
-    <h2>Why PCB Can Change From Month to Month</h2>
-    <p>
-      PCB is not always the same every month. It may change when salary changes, bonuses are paid, allowances are added, unpaid leave is processed or tax relief information is updated in payroll.
-    </p>
-    <p>
-      For example, a normal month may have low or no PCB, but a bonus month may create a higher PCB deduction because payroll treats the bonus as additional income for tax estimation.
-      This does not automatically mean the final annual tax is wrong. The final position is still confirmed when the annual tax return is submitted.
-    </p>
-
-    <section class="guide-box">
-      <h2>PCB Examples by Salary Level</h2>
-      <p>
-        The table below shows simplified examples of how PCB may behave at different salary levels.
-        Actual PCB depends on tax reliefs, personal status, EPF, bonuses and payroll settings.
-      </p>
-
-      <div class="contribution-table-wrap">
-        <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Monthly Salary</th>
-              <th>Common PCB Situation</th>
-              <th>Reason</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>RM2,000</td>
-              <td>Often no PCB</td>
-              <td>Estimated chargeable income may be below taxable level after reliefs.</td>
-            </tr>
-            <tr>
-              <td>RM4,000</td>
-              <td>May have low PCB</td>
-              <td>Tax depends on reliefs, EPF and personal circumstances.</td>
-            </tr>
-            <tr>
-              <td>RM6,000</td>
-              <td>Usually more likely to have PCB</td>
-              <td>Higher annual income increases estimated tax payable.</td>
-            </tr>
-            <tr>
-              <td>Bonus month</td>
-              <td>PCB may increase</td>
-              <td>Additional income can increase monthly tax deduction.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <h2>Tax Reliefs That May Reduce PCB</h2>
-    <p>
-      Tax reliefs reduce chargeable income, which can reduce the estimated PCB amount.
-      Common reliefs include personal relief, EPF contribution relief, insurance or takaful relief, lifestyle relief, medical expenses, education fees and child relief.
-    </p>
-    <p>
-      However, payroll can only adjust PCB accurately when the required information is provided and accepted under the employer's payroll process.
-      If certain reliefs are not reflected during the year, they may still be claimed during annual tax filing, subject to LHDN rules and supporting documents.
-    </p>
 
     <section class="contribution-box">
       <h2>PCB, Tax Refund and Additional Tax Payable</h2>
-      <p>
-        PCB is only a monthly estimate.
-        After the year ends, taxpayers file their income tax return and compare the final tax payable with the total PCB already deducted.
-      </p>
-
+      <p>After the relevant year ends, the taxpayer's final tax position can be compared with tax already paid through PCB.</p>
       <div class="contribution-table-wrap">
         <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Situation</th>
-              <th>Result</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Situation</th><th>Possible Result</th></tr></thead>
           <tbody>
-            <tr>
-              <td>Total PCB is higher than final tax payable</td>
-              <td>Tax refund may arise after tax filing.</td>
-            </tr>
-            <tr>
-              <td>Total PCB is lower than final tax payable</td>
-              <td>Additional tax may need to be paid.</td>
-            </tr>
-            <tr>
-              <td>Total PCB equals final tax payable</td>
-              <td>No major refund or balance payable.</td>
-            </tr>
+            <tr><td>Total tax paid through PCB is higher than final tax liability</td><td>A tax refund may arise.</td></tr>
+            <tr><td>Total PCB is lower than final tax liability</td><td>Additional tax may need to be paid.</td></tr>
+            <tr><td>Total PCB broadly matches final tax liability</td><td>There may be little or no remaining balance.</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <h2>PCB for Bonus, Commission and Allowances</h2>
-    <p>
-      Bonuses, commissions and certain allowances can affect PCB because they increase taxable employment income.
-      Payroll may calculate a higher deduction in the month the additional income is paid.
-    </p>
-    <p>
-      This is one reason employees sometimes see a much lower take-home pay in bonus month than expected.
-      The bonus increases gross income, but EPF and PCB may also increase.
-      When reviewing a bonus payslip, it is useful to compare gross bonus, EPF, SOCSO, EIS and PCB separately.
-    </p>
-
     <section class="guide-box">
-      <h2>Common PCB Payroll Mistakes</h2>
-      <ul>
-        <li>Assuming PCB is a fixed percentage of monthly salary.</li>
-        <li>Forgetting that bonus and commission can increase PCB.</li>
-        <li>Confusing PCB with EPF, SOCSO or EIS deductions.</li>
-        <li>Not updating employee tax relief or personal status information.</li>
-        <li>Thinking PCB is the final tax amount before annual tax filing.</li>
-      </ul>
-    </section>
-
-    <section class="guide-box">
-      <h2>Official Reference</h2>
-      <p>
-        This guide is for general salary and payroll understanding.
-        For actual income tax filing, PCB calculation rules, forms and compliance requirements,
-        employees and employers should refer to LHDN official guidance or a qualified tax adviser.
-      </p>
-
-      <div class="note-box">
-        Suggested official reference:
-        <a href="https://www.hasil.gov.my/" target="_blank" rel="noopener">LHDN Official Website</a>
+      <h2 id="payment-deadline">PCB Payment Deadline for Employers</h2>
+      <p>Employers must deduct PCB from employee remuneration and remit the PCB to HASiL <strong>on or before the 15th day of the following month</strong>.</p>
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Deduction Month</th><th>Payment Deadline</th></tr></thead>
+          <tbody>
+            <tr><td>January 2026</td><td>On or before 15 February 2026</td></tr>
+            <tr><td>February 2026</td><td>On or before 15 March 2026</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="deadline-grid">
+        <div class="deadline-card"><strong>Submission Channels</strong><p>HASiL provides e-PCB, e-Data PCB and e-CP39 through MyTax / ezHasil for PCB submission.</p></div>
+        <div class="deadline-card"><strong>Employer Responsibilities</strong><ul class="responsibility-list"><li>Calculate PCB using an approved method</li><li>Deduct the correct amount from remuneration</li><li>Submit employee PCB data</li><li>Remit payment by the deadline</li></ul></div>
       </div>
     </section>
 
     <section class="guide-box">
-      <h2>Who Should Read This Guide?</h2>
-      <ul>
-        <li>Employees checking why PCB is deducted from monthly salary</li>
-        <li>Job seekers comparing salary packages and take-home pay</li>
-        <li>HR and payroll professionals handling monthly tax deductions</li>
-        <li>Business owners who want to understand PCB payroll obligations</li>
+      <h2 id="payroll-mistakes">Common PCB Payroll Mistakes</h2>
+      <ul class="responsibility-list">
+        <li>Assuming PCB is a fixed percentage of monthly salary.</li>
+        <li>Ignoring previous-employment information during the same calendar year.</li>
+        <li>Forgetting that bonus and other additional remuneration require specific PCB treatment.</li>
+        <li>Using outdated employee deduction or rebate information.</li>
+        <li>Confusing PCB with EPF, SOCSO or EIS.</li>
+        <li>Assuming PCB deducted each month will always equal the employee's final annual tax liability.</li>
       </ul>
     </section>
 
-    <h2>Frequently Asked Questions</h2>
+    <section class="guide-box">
+      <h2>Sources &amp; Verification</h2>
+      <p>This guide was last verified in August 2026 against current HASiL employer guidance and the 2026 computerized Monthly Tax Deduction specification. Actual PCB calculations should follow the latest official HASiL rules, forms and approved calculation methods.</p>
+      <div class="source-note">
+        <strong>Official sources used for verification:</strong><br>
+        <a href="https://www.hasil.gov.my/majikan/jadual-pcb-dan-spesifikasi-data/" target="_blank" rel="noopener">HASiL — PCB Schedule &amp; 2026 Computerized Calculation Specification</a><br>
+        <a href="https://www.hasil.gov.my/majikan/pembayaran-pcb/" target="_blank" rel="noopener">HASiL — PCB Submission &amp; Payment</a><br>
+        <a href="https://www.hasil.gov.my/majikan/tanggungjawab-majikan/" target="_blank" rel="noopener">HASiL — Employer Responsibilities</a><br>
+        <a href="https://www.hasil.gov.my/" target="_blank" rel="noopener">HASiL — Official Website</a>
+      </div>
+    </section>
 
+    <h2 id="faq">Frequently Asked Questions</h2>
     <div class="faq-box">
-      <details class="faq-item" open>
-        <summary>What is PCB in Malaysia payroll?</summary>
-        <p>PCB, or Potongan Cukai Bulanan, is a monthly tax deduction made by employers from employees' salaries and paid to LHDN as part of the employee's income tax obligation.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Is PCB the same as income tax?</summary>
-        <p>PCB is not a separate tax. It is a monthly deduction toward your annual income tax. Your final tax payable is confirmed when you submit your annual income tax return.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Why is PCB deducted from my salary?</summary>
-        <p>PCB is deducted so that income tax is paid gradually throughout the year through payroll instead of being paid in one full amount after tax filing.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Why is my PCB different from another employee with the same salary?</summary>
-        <p>PCB may differ because of tax relief claims, spouse or child status, bonuses, allowances, benefits, EPF contribution treatment and payroll settings.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can PCB be reduced?</summary>
-        <p>PCB may be reduced if eligible tax reliefs and deductions are properly reflected in payroll. However, the final tax position still depends on your annual income tax return.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Will I get a tax refund if PCB is too high?</summary>
-        <p>If total PCB deducted during the year is higher than your final tax payable, you may be eligible for a tax refund after submitting your income tax return.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Does bonus affect PCB?</summary>
-        <p>Yes. Bonuses, commissions and other additional income may increase PCB in the month they are paid because they increase estimated taxable income.</p>
-      </details>
+      <details class="faq-item" open><summary>What is PCB in Malaysia payroll?</summary><p>PCB, or Potongan Cukai Bulanan, is Malaysia's Monthly Tax Deduction system. Employers deduct the calculated amount from employee remuneration and remit it to HASiL toward the employee's income tax.</p></details>
+      <details class="faq-item"><summary>Is PCB a fixed percentage of salary?</summary><p>No. PCB is calculated using HASiL's approved MTD method and depends on the employee's remuneration, accumulated current-year information, deductions, rebates and other relevant tax factors.</p></details>
+      <details class="faq-item"><summary>Is PCB the same as income tax?</summary><p>PCB is not a separate tax. It is a monthly payment toward the employee's income tax position.</p></details>
+      <details class="faq-item"><summary>Why is my PCB different from another employee with the same salary?</summary><p>Employees with the same salary can have different PCB because their accumulated income, previous employment, deductions, rebates, personal information or additional remuneration may differ.</p></details>
+      <details class="faq-item"><summary>Does bonus affect PCB?</summary><p>Yes. Bonus and other additional remuneration can increase PCB and are subject to a specific additional-remuneration calculation under the computerized MTD method.</p></details>
+      <details class="faq-item"><summary>What is Form TP1 used for?</summary><p>Form TP1 allows an employee to claim qualifying individual deductions and rebates for Monthly Tax Deduction purposes, subject to HASiL rules.</p></details>
+      <details class="faq-item"><summary>What is Form TP3 used for?</summary><p>Form TP3 provides the current employer with accumulated remuneration, EPF, zakat and PCB information from previous employment during the same year for PCB calculation purposes.</p></details>
+      <details class="faq-item"><summary>Will I get a tax refund if PCB is too high?</summary><p>A tax refund may arise when tax already paid through PCB exceeds the taxpayer's final tax liability, subject to the final tax assessment and filing requirements.</p></details>
+      <details class="faq-item"><summary>When must employers pay PCB to HASiL?</summary><p>PCB deducted for a month must generally be remitted on or before the 15th day of the following month.</p></details>
+      <details class="faq-item"><summary>Can PCB be treated as final tax?</summary><p>In certain circumstances, eligible taxpayers may choose not to submit an income tax return when all HASiL conditions for PCB as final tax are satisfied.</p></details>
     </div>
 
-    <section class="salary-guides-box">
-      <h2>Related Salary Guides</h2>
-      <p>Learn more about salary deductions, tax reliefs and payroll rules in Malaysia.</p>
+    <section class="related-tools-section">
+      <h2>Related Tools</h2>
+      <p class="related-tools-intro">Turn what you have learned into your own numbers, then explore the tax and payroll topics most closely related to PCB.</p>
 
-      <div class="guide-mini-grid">
-        <a href="tax-relief-guide.html">Tax Relief Guide</a>
-        <a href="income-tax-guide.html">Income Tax Guide</a>
-        <a href="epf-guide.html">EPF Guide</a>
-        <a href="socso-guide.html">SOCSO Guide</a>
+      <a class="featured-calculator" href="pcb-calculator.html">
+        <div class="featured-calculator-copy"><span class="featured-kicker">PCB Calculator</span><h3>Estimate Your Monthly PCB</h3><p>Estimate your monthly tax deduction and see how PCB affects your salary and take-home pay.</p></div>
+        <span class="feature-link">Calculate PCB →</span>
+        <div class="featured-calculator-icon" aria-hidden="true">🏛️</div>
+      </a>
+
+      <div class="quick-calculators">
+        <p class="quick-calculators-title">Quick Calculators</p>
+        <div class="quick-calculators-grid">
+          <a href="index.html"><span>Salary Calculator</span><span class="quick-arrow">→</span></a>
+          <a href="income-tax-calculator.html"><span>Income Tax Calculator</span><span class="quick-arrow">→</span></a>
+          <a href="epf-calculator.html"><span>EPF Calculator</span><span class="quick-arrow">→</span></a>
+        </div>
       </div>
 
-      <p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p>
-    </section>
-
-    <section class="salary-guides-box">
-      <h2>Related Calculators</h2>
-      <p>Use these calculators to estimate PCB, salary deductions and monthly take-home pay in Malaysia.</p>
-
-      <div class="guide-mini-grid">
-        <a href="pcb-calculator.html">PCB Calculator</a>
-        <a href="index.html">Salary Calculator</a>
-        <a href="income-tax-calculator.html">Income Tax Calculator</a>
-        <a href="epf-calculator.html">EPF Calculator</a>
+      <div class="explore-section">
+        <div class="explore-heading"><h2>Continue Exploring</h2><p>Useful next steps for understanding tax, salary deductions and annual filing.</p></div>
+        <div class="explore-grid">
+          <div class="explore-column">
+            <h3>Tax &amp; Filing</h3>
+            <a class="editorial-link" href="income-tax-guide.html"><span>Income Tax Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="tax-relief-guide.html"><span>Tax Relief Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="tax-filing-guide.html"><span>Tax Filing Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="tax-refund-guide.html"><span>Tax Refund Guide</span><span class="editorial-arrow">→</span></a>
+          </div>
+          <div class="explore-column">
+            <h3>Payroll &amp; Salary</h3>
+            <a class="editorial-link" href="epf-guide.html"><span>EPF Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="socso-guide.html"><span>SOCSO Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="eis-guide.html"><span>EIS Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="salary-deduction-guide.html"><span>Salary Deduction Guide</span><span class="editorial-arrow">→</span></a>
+          </div>
+        </div>
+        <div class="resource-actions"><a href="guides.html">Explore All Guides →</a><a href="calculators.html">View All Calculators →</a></div>
       </div>
-
-      <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
     </section>
 
   </section>
