@@ -482,6 +482,29 @@
       color: var(--accent);
     }
 
+
+    .toc-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:26px 0}
+    .toc-box h2{margin-top:0;margin-bottom:16px}.toc-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px}
+    .toc-links a{display:flex;align-items:center;gap:14px;min-width:0;text-decoration:none;color:var(--foreground);padding:12px 2px;border-bottom:1px solid var(--border);transition:.18s ease}
+    .toc-links a:hover{color:var(--accent);padding-left:4px}.toc-number{width:28px;flex:0 0 28px;color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.04em}
+    .toc-label{flex:1;min-width:0;font-weight:700;font-size:15px}.toc-arrow{color:var(--muted);font-size:15px}
+    .status-yes{color:var(--accent);font-weight:800;white-space:nowrap}.status-no{color:#9a5a45;font-weight:800;white-space:nowrap}
+    .deadline-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:20px}.deadline-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}
+    .deadline-card strong{display:block;color:var(--accent);font-size:20px;margin-bottom:8px;font-family:Georgia,"Times New Roman",serif}.responsibility-list{list-style:none;padding:0;margin:12px 0 0}
+    .responsibility-list li{position:relative;padding-left:24px;margin:8px 0}.responsibility-list li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:800}
+    .source-note{margin-top:18px;background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);padding:14px;border-radius:10px;color:var(--muted);font-size:13px}.source-note a{color:var(--accent);font-weight:800;text-decoration:none}
+    .related-tools-section{margin:34px 0}.related-tools-section h2{margin-bottom:8px}.related-tools-intro{margin-top:0;max-width:760px}
+    .featured-calculator{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:22px;align-items:center;margin-top:20px;padding:24px 26px;background:radial-gradient(circle at top right,rgba(47,125,94,.14),transparent 34%),linear-gradient(135deg,#f8f5ef 0%,#fbfaf6 100%);border:1px solid var(--accent-border);border-radius:18px;text-decoration:none;color:var(--foreground);overflow:hidden;transition:.18s ease}
+    .featured-calculator:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 16px 34px rgba(47,43,37,.09)}.featured-kicker{display:inline-block;margin-bottom:7px;color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .featured-calculator h3{margin:0 0 6px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,3vw,32px);font-weight:400;line-height:1.1}.featured-calculator p{margin:0;max-width:640px;font-size:15px}
+    .feature-link{display:inline-flex;align-items:center;justify-content:center;min-width:150px;padding:12px 16px;border-radius:12px;background:var(--accent);color:#fff;font-weight:900;white-space:nowrap}.featured-calculator-icon{width:66px;height:66px;display:grid;place-items:center;border-radius:18px;background:var(--accent-soft);border:1px solid var(--accent-border);font-size:30px}
+    .quick-calculators{margin-top:18px}.quick-calculators-title{margin:0 0 10px;font-size:14px;font-weight:800;color:var(--foreground)}.quick-calculators-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .quick-calculators-grid a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;background:var(--card);border:1px solid var(--border);border-radius:11px;text-decoration:none;color:var(--foreground);font-size:14px;font-weight:800;transition:.18s ease}
+    .quick-calculators-grid a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}.quick-arrow{color:var(--muted)}
+    .explore-section{margin-top:30px;padding-top:28px;border-top:1px solid var(--border)}.explore-heading h2{margin:0}.explore-heading p{margin:7px 0 14px}.explore-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+    .explore-column h3{margin:0 0 8px;font-size:16px;color:var(--foreground)}.editorial-link{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--foreground);transition:.18s ease}.editorial-link:hover{color:var(--accent);padding-left:4px}.editorial-link span:first-child{flex:1;min-width:0;font-weight:800;font-size:15px}.editorial-arrow{color:var(--muted)}
+    .resource-actions{display:flex;justify-content:space-between;gap:16px;margin-top:18px;flex-wrap:wrap}.resource-actions a{color:var(--accent);font-weight:800;text-decoration:none}
+
     @media (max-width: 800px) {
       .nav-inner {
         flex-direction: row;
@@ -571,9 +594,7 @@
         line-height: 1.35;
       }
 
-      .cta-button {
-        width: 100%;
-      }
+      .cta-button{width:100%}.toc-box{padding:20px}.toc-links{grid-template-columns:1fr;column-gap:0}.toc-links a{padding:11px 0}.featured-calculator{grid-template-columns:1fr;padding:22px;gap:16px}.feature-link{width:100%}.featured-calculator-icon{display:none}.quick-calculators-grid{grid-template-columns:1fr}.explore-grid{grid-template-columns:1fr;gap:26px}.resource-actions{display:block}.resource-actions a{display:block;margin-top:8px}
     }
   </style>
 </head>
@@ -598,7 +619,7 @@
 <main class="main-wrapper">
 
   <section class="hero">
-    <span class="pill">Updated for Malaysia 2026 payroll estimates</span>
+    <span class="pill">Last verified: August 2026 · Based on current PERKESO EIS guidance</span>
     <h1 class="serif">Malaysia <em>EIS contribution</em> guide 2026</h1>
     <p>
       Learn how EIS contributions work in Malaysia, including employee rates,
@@ -607,428 +628,96 @@
   </section>
 
   <section class="seo">
-
-    <section class="calculator-cta">
-      <h2>Calculate Your EIS Contribution</h2>
-      <p>
-        Want to know how much EIS you and your employer contribute each month?
-        Use our free EIS Calculator to estimate employee and employer contributions instantly.
-      </p>
-      <a href="eis-calculator.html" class="cta-button">Calculate My EIS →</a>
-    </section>
-
     <section class="intro-box">
       <h2>EIS Quick Summary</h2>
-      <p>
-        EIS, also known as the Employment Insurance System or Sistem Insurans Pekerjaan (SIP),
-        is Malaysia's job loss protection scheme under PERKESO. It is designed to provide temporary
-        financial assistance and re-employment support to eligible employees who lose their jobs.
-      </p>
-
+      <p>EIS, also known as the Employment Insurance System or Sistem Insurans Pekerjaan (SIP), is Malaysia's job-loss protection scheme administered by PERKESO.</p>
       <div class="summary-grid">
-        <div class="summary-card">
-          <strong>0.2%</strong>
-          <span>Common employee contribution rate</span>
-        </div>
-        <div class="summary-card">
-          <strong>0.2%</strong>
-          <span>Common employer contribution rate</span>
-        </div>
-        <div class="summary-card">
-          <strong>RM6,000</strong>
-          <span>Current wage ceiling for contribution reference</span>
-        </div>
-        <div class="summary-card">
-          <strong>Job Loss</strong>
-          <span>Main purpose of EIS protection</span>
-        </div>
+        <div class="summary-card"><strong>0.2%</strong><span>Employee contribution rate</span></div>
+        <div class="summary-card"><strong>0.2%</strong><span>Employer contribution rate</span></div>
+        <div class="summary-card"><strong>RM6,000</strong><span>Current assumed monthly wage ceiling</span></div>
+        <div class="summary-card"><strong>60 Days</strong><span>Claim window after qualifying job loss</span></div>
       </div>
+      <div class="note-box"><strong>Quick note:</strong> EIS follows PERKESO's statutory wage-bracket schedule. The 0.2% + 0.2% rates describe the contribution structure, while actual payroll amounts should follow the official table.</div>
     </section>
 
-    <h2>What Is EIS in Malaysia?</h2>
-    <p>
-      The Employment Insurance System (EIS), also called Sistem Insurans Pekerjaan (SIP),
-      is a statutory contribution scheme administered by PERKESO. Its main purpose is to protect eligible employees
-      when they lose employment through circumstances such as retrenchment, business closure or other qualifying job loss situations.
-    </p>
-    <p>
-      EIS is different from EPF and SOCSO. EPF is mainly for retirement savings.
-      SOCSO focuses on social security protection such as employment injury and invalidity benefits.
-      EIS focuses specifically on job loss protection, temporary income replacement and support to help affected employees return to work.
-    </p>
-    <p>
-      For employees, the EIS deduction is usually small compared with EPF and PCB.
-      However, it is still an important statutory deduction because it provides a safety net during unemployment.
-    </p>
+    <section class="calculator-cta"><h2>Calculate Your EIS Contribution</h2><p>Want to know how much EIS you and your employer contribute each month? Use our free EIS Calculator to estimate employee and employer contributions based on your salary.</p><a href="eis-calculator.html" class="cta-button">Calculate My EIS →</a></section>
 
-    <section class="guide-box">
-      <h2>Who Needs to Contribute to EIS?</h2>
-      <p>
-        EIS generally applies to eligible private sector employees in Malaysia who are covered under PERKESO rules.
-        Employers are responsible for registering eligible employees, deducting the employee portion from monthly wages
-        and paying both the employee and employer portions through monthly payroll.
-      </p>
-      <p>
-        Some categories of workers may not be covered or may be treated differently depending on age,
-        employment status, contract type or statutory rules. Employers should always refer to PERKESO's latest
-        contribution rules when confirming whether a specific employee must contribute.
-      </p>
-      <div class="note-box">
-        <strong>Practical payroll note:</strong> For most employees, EIS appears together with SOCSO in payroll records because both are administered through PERKESO, but they are separate contribution schemes with different purposes.
-      </div>
-    </section>
+    <section class="toc-box"><h2>On This Page</h2><div class="toc-links">
+      <a href="#what-is-eis"><span class="toc-number">01</span><span class="toc-label">What Is EIS?</span><span class="toc-arrow">→</span></a>
+      <a href="#who-contributes"><span class="toc-number">02</span><span class="toc-label">Who Must Contribute</span><span class="toc-arrow">→</span></a>
+      <a href="#eis-rates"><span class="toc-number">03</span><span class="toc-label">Contribution Rates</span><span class="toc-arrow">→</span></a>
+      <a href="#salary-components"><span class="toc-number">04</span><span class="toc-label">Wages Subject to EIS</span><span class="toc-arrow">→</span></a>
+      <a href="#eis-calculation"><span class="toc-number">05</span><span class="toc-label">How EIS Is Calculated</span><span class="toc-arrow">→</span></a>
+      <a href="#salary-examples"><span class="toc-number">06</span><span class="toc-label">Salary Examples</span><span class="toc-arrow">→</span></a>
+      <a href="#eis-benefits"><span class="toc-number">07</span><span class="toc-label">EIS Benefits</span><span class="toc-arrow">→</span></a>
+      <a href="#job-loss"><span class="toc-number">08</span><span class="toc-label">Qualifying Job Loss</span><span class="toc-arrow">→</span></a>
+      <a href="#payment-deadline"><span class="toc-number">09</span><span class="toc-label">Payment Deadline</span><span class="toc-arrow">→</span></a>
+      <a href="#employer-checklist"><span class="toc-number">10</span><span class="toc-label">Employer Checklist</span><span class="toc-arrow">→</span></a>
+      <a href="#faq"><span class="toc-number">11</span><span class="toc-label">FAQ</span><span class="toc-arrow">→</span></a>
+    </div></section>
 
-    <section class="contribution-box">
-      <h2>EIS Contribution Rates 2026</h2>
-      <p>
-        EIS contributions are shared between employee and employer. PERKESO states that EIS contributions are set at 0.4% of the employee's assumed monthly salary: 0.2% paid by the employer and 0.2% deducted from the employee's monthly salary.
-      </p>
+    <h2 id="what-is-eis">What Is EIS in Malaysia?</h2>
+    <p>The Employment Insurance System (EIS), also called Sistem Insurans Pekerjaan (SIP), is a statutory contribution scheme administered by PERKESO. Its main purpose is to protect eligible employees when they lose employment through qualifying circumstances.</p>
+    <p>EIS is different from EPF and SOCSO. EPF is mainly for retirement savings, SOCSO focuses on social security protection such as employment injury and invalidity, while EIS focuses on job-loss protection, temporary income replacement and re-employment support.</p>
 
-      <div class="contribution-table-wrap">
-        <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Monthly Wages</th>
-              <th>Employee Contribution</th>
-              <th>Employer Contribution</th>
-              <th>Total Contribution</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Up to RM300</td>
-              <td>RM0.50</td>
-              <td>RM0.50</td>
-              <td>RM1.00</td>
-            </tr>
-            <tr>
-              <td>RM2,000 – RM2,100</td>
-              <td>RM4.10</td>
-              <td>RM4.10</td>
-              <td>RM8.20</td>
-            </tr>
-            <tr>
-              <td>RM4,000 – RM4,100</td>
-              <td>RM8.10</td>
-              <td>RM8.10</td>
-              <td>RM16.20</td>
-            </tr>
-            <tr>
-              <td>RM4,900 – RM5,000</td>
-              <td>RM9.90</td>
-              <td>RM9.90</td>
-              <td>RM19.80</td>
-            </tr>
-            <tr>
-              <td>Above RM6,000</td>
-              <td>Subject to RM6,000 wage ceiling</td>
-              <td>Subject to RM6,000 wage ceiling</td>
-              <td>Based on maximum wage bracket</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <section class="guide-box"><h2 id="who-contributes">Who Needs to Contribute to EIS?</h2><p>EIS generally applies to Malaysian citizens and permanent residents aged 18 to 60 who work in the private sector under a contract of service or apprenticeship.</p><p>Government employees, domestic workers and the self-employed are generally exempt. Employees aged 57 and above who had never contributed to EIS before reaching age 57 are also exempt.</p><div class="note-box"><strong>Practical payroll note:</strong> EIS often appears beside SOCSO on payslips because both are administered through PERKESO, but they are separate statutory schemes with different purposes.</div></section>
 
-      <div class="note-box">
-        <strong>Note:</strong> The table above is a simplified quick reference. Actual EIS contributions should follow the official PERKESO contribution schedule and the applicable wage ceiling. The wage ceiling was increased to RM6,000 from 1 October 2024.
-      </div>
-    </section>
+    <section class="contribution-box"><h2 id="eis-rates">EIS Contribution Rates 2026</h2><p>EIS contributions are set at a total of 0.4% of the employee's assumed monthly salary: 0.2% paid by the employer and 0.2% deducted from the employee's salary. The current contribution ceiling is an assumed monthly salary of RM6,000.</p>
+      <div class="contribution-table-wrap"><table class="contribution-table"><thead><tr><th>Reference Wage Level</th><th>Employee EIS</th><th>Employer EIS</th><th>Total EIS</th></tr></thead><tbody>
+        <tr><td>RM2,000</td><td>RM3.90</td><td>RM3.90</td><td>RM7.80</td></tr><tr><td>RM4,000</td><td>RM7.90</td><td>RM7.90</td><td>RM15.80</td></tr><tr><td>RM5,000</td><td>RM9.90</td><td>RM9.90</td><td>RM19.80</td></tr><tr><td>RM6,000 and above</td><td>RM11.90</td><td>RM11.90</td><td>RM23.80</td></tr>
+      </tbody></table></div><div class="note-box"><strong>Important:</strong> These are selected statutory reference points. EIS uses wage brackets, so actual payroll should follow the latest PERKESO Second Schedule rather than simply multiplying exact salary by 0.2%.</div></section>
 
-    <h2>How EIS Contributions Are Calculated</h2>
-    <p>
-      EIS is not usually calculated by simply multiplying the exact salary in every payroll case.
-      In practice, payroll systems follow the official contribution table and wage brackets issued by PERKESO.
-      This is why the contribution may appear as a fixed amount such as RM4.10, RM8.10 or RM9.90 depending on the salary range.
-    </p>
-    <p>
-      The employee portion reduces take-home pay because it is deducted from salary.
-      The employer portion is an additional cost paid by the employer and does not reduce the employee's net salary.
-    </p>
+    <section class="guide-box"><h2 id="salary-components">Which Payments Are Subject to EIS?</h2><p>Under the Employment Insurance System Act, wages generally include monetary remuneration such as salary, leave pay, holiday pay, overtime and extra work on holidays. Some payments are specifically excluded.</p>
+      <div class="contribution-table-wrap"><table class="contribution-table"><thead><tr><th>Payment Type</th><th>EIS Treatment</th><th>Practical Note</th></tr></thead><tbody>
+        <tr><td>Basic Salary / Wages</td><td><span class="status-yes">Yes</span></td><td>Regular cash wages are included.</td></tr>
+        <tr><td>Overtime Payment</td><td><span class="status-yes">Yes</span></td><td>Overtime forms part of wages under Act 800.</td></tr>
+        <tr><td>Leave / Holiday Pay</td><td><span class="status-yes">Yes</span></td><td>Payments for leave, holidays and extra work on holidays are included.</td></tr>
+        <tr><td>Commission / Service Charge</td><td><span class="status-yes">Generally Yes</span></td><td>Cash remuneration of this nature is generally contributable.</td></tr>
+        <tr><td>Travelling Allowance / Concession</td><td><span class="status-no">No</span></td><td>Travelling allowance and the value of travelling concessions are excluded.</td></tr>
+        <tr><td>Special Employment Expense Reimbursement</td><td><span class="status-no">No</span></td><td>Amounts paid to cover special expenses incurred because of employment are excluded.</td></tr>
+        <tr><td>Retirement / Discharge Gratuity</td><td><span class="status-no">No</span></td><td>Gratuity payable on discharge or retirement is excluded.</td></tr>
+        <tr><td>Annual Bonus</td><td><span class="status-no">No</span></td><td>Annual bonus is specifically excluded from wages under Act 800.</td></tr>
+      </tbody></table></div><div class="note-box"><strong>Payroll reminder:</strong> Do not assume EPF, SOCSO and EIS treat every payment identically. Check the statutory definition of wages for the scheme being processed.</div></section>
 
-    <div class="formula-box">
-      <strong>EIS = 0.2% Employee + 0.2% Employer</strong>
-      <span>Total EIS is commonly 0.4% of the assumed monthly salary, subject to the official PERKESO table and wage ceiling.</span>
+    <h2 id="eis-calculation">How EIS Contributions Are Calculated</h2><p>EIS is not normally calculated by multiplying the exact salary by 0.2% in every case. Payroll should match the employee's monthly wages to the official PERKESO contribution bracket.</p><div class="formula-box"><strong>EIS Structure = 0.2% Employee + 0.2% Employer</strong><span>Actual statutory amount = contribution listed for the applicable PERKESO wage bracket.</span></div>
+
+    <section class="guide-box"><h2>Example: RM4,000 Monthly Salary</h2><p>For monthly wages of RM4,000, the statutory EIS contribution at this reference point is:</p><div class="contribution-table-wrap"><table class="contribution-table"><tbody><tr><td><strong>Monthly wages</strong></td><td>RM4,000</td></tr><tr><td><strong>Employee EIS</strong></td><td>RM7.90</td></tr><tr><td><strong>Employer EIS</strong></td><td>RM7.90</td></tr><tr><td><strong>Total EIS contribution</strong></td><td>RM15.80</td></tr></tbody></table></div><div class="note-box"><strong>Key point:</strong> The employee's RM7.90 reduces take-home pay. The employer's RM7.90 is paid separately and does not reduce the employee's gross salary.</div></section>
+
+    <section class="guide-box"><h2 id="salary-examples">EIS Contribution Examples by Salary</h2><p>The examples below show selected contribution points under the statutory schedule.</p><div class="contribution-table-wrap"><table class="contribution-table"><thead><tr><th>Monthly Salary</th><th>Employee EIS</th><th>Employer EIS</th><th>Total EIS</th></tr></thead><tbody><tr><td>RM2,000</td><td>RM3.90</td><td>RM3.90</td><td>RM7.80</td></tr><tr><td>RM4,000</td><td>RM7.90</td><td>RM7.90</td><td>RM15.80</td></tr><tr><td>RM5,000</td><td>RM9.90</td><td>RM9.90</td><td>RM19.80</td></tr><tr><td>RM6,000</td><td>RM11.90</td><td>RM11.90</td><td>RM23.80</td></tr><tr><td>Above RM6,000</td><td>RM11.90</td><td>RM11.90</td><td>RM23.80</td></tr></tbody></table></div><p>Because the current assumed monthly wage ceiling is RM6,000, EIS contributions generally do not increase beyond the maximum scheduled contribution once wages exceed the ceiling.</p></section>
+
+    <section class="guide-box"><h2 id="eis-benefits">What Benefits Does EIS Provide?</h2><p>EIS is designed to provide temporary income replacement and re-employment assistance after a qualifying loss of employment. Benefits depend on eligibility, contribution history and PERKESO approval.</p><div class="component-grid"><div class="component-card"><div class="component-icon">💵</div><h3>Job Search Allowance</h3><p>Temporary replacement income may be paid for 3 to 6 months depending on contribution qualifying conditions.</p></div><div class="component-card"><div class="component-icon">📉</div><h3>Reduced Income Allowance</h3><p>Support may apply when a person with multiple employments loses one or more, but not all, income sources.</p></div><div class="component-card"><div class="component-icon">🎓</div><h3>Training Support</h3><p>Eligible insured persons may receive skills training support during unemployment or after re-employment.</p></div><div class="component-card"><div class="component-icon">🤝</div><h3>Re-employment Assistance</h3><p>PERKESO provides job-matching and employment services, including support through MYFutureJobs.</p></div></div></section>
+
+    <section class="guide-box"><h2 id="job-loss">Which Job-Loss Situations May Qualify?</h2><p>A loss of employment may qualify when it falls within situations recognised under the EIS Act and the employee meets contribution and application conditions.</p><div class="contribution-table-wrap"><table class="contribution-table"><thead><tr><th>May Qualify</th><th>Generally Does Not Qualify</th></tr></thead><tbody><tr><td>Normal retrenchment / redundancy</td><td>Ordinary voluntary resignation</td></tr><tr><td>VSS / MSS</td><td>Expiry of a fixed-term contract</td></tr><tr><td>Business closure / bankruptcy</td><td>Retirement</td></tr><tr><td>Constructive dismissal</td><td>Dismissal due to employee misconduct</td></tr><tr><td>Resignation due to workplace threats or sexual harassment</td><td>Completion of project-based employment</td></tr><tr><td>Resignation after being ordered to perform dangerous duties outside job scope</td><td>Unconditional mutual termination without qualifying terms</td></tr></tbody></table></div><div class="note-box"><strong>60-day claim rule:</strong> An eligible insured person should apply for EIS benefits within 60 days from the date of loss of employment and must also satisfy the applicable Contributions Qualifying Conditions.</div></section>
+
+    <h2>Does EIS Affect Take-Home Pay?</h2><p>Yes. The employee portion of EIS is deducted from monthly salary, so it slightly reduces take-home pay. The employer portion is paid separately and does not reduce the employee's net salary.</p>
+
+    <section class="guide-box"><h2>EIS vs EPF vs SOCSO</h2><div class="contribution-table-wrap"><table class="contribution-table"><thead><tr><th>Scheme</th><th>Main Purpose</th><th>Who Contributes?</th><th>Common Payroll Effect</th></tr></thead><tbody><tr><td>EPF / KWSP</td><td>Retirement savings</td><td>Employee and employer</td><td>Usually the largest statutory salary deduction.</td></tr><tr><td>SOCSO / PERKESO</td><td>Social security, employment injury and invalidity protection</td><td>Employee and employer for many eligible employees</td><td>Monthly contribution based on statutory wage schedule.</td></tr><tr><td>EIS / SIP</td><td>Job-loss protection and re-employment support</td><td>Employee and employer</td><td>Small monthly contribution based on EIS wage schedule.</td></tr></tbody></table></div></section>
+
+    <section class="guide-box"><h2 id="payment-deadline">EIS Contribution Deadline</h2><p>EIS contributions payable for a month must generally be paid no later than the <strong>15th day of the following month</strong>.</p><div class="contribution-table-wrap"><table class="contribution-table"><thead><tr><th>Contribution Month</th><th>Payment Deadline</th></tr></thead><tbody><tr><td>January 2026</td><td>On or before 15 February 2026</td></tr><tr><td>February 2026</td><td>On or before 15 March 2026</td></tr></tbody></table></div><div class="deadline-grid"><div class="deadline-card"><strong>Simple Example</strong><p>If EIS is payable for January 2026 wages, the employer should submit the contribution by 15 February 2026.</p></div><div class="deadline-card"><strong>Employer Responsibilities</strong><ul class="responsibility-list"><li>Confirm EIS eligibility</li><li>Use the correct wage bracket</li><li>Deduct the employee contribution</li><li>Pay both portions by the deadline</li></ul></div></div><div class="note-box"><strong>Late payment:</strong> PERKESO states that interest on late contributions may be imposed at 6% per annum for contributions not paid within the stipulated period.</div></section>
+
+    <section class="guide-box"><h2 id="employer-checklist">Payroll Checklist for Employers</h2><ul class="responsibility-list"><li>Confirm whether each employee is covered under EIS rules.</li><li>Use the current PERKESO contribution schedule and RM6,000 wage ceiling.</li><li>Identify which salary components form part of EIS wages.</li><li>Deduct the employee portion correctly.</li><li>Pay the employer portion together with the employee portion.</li><li>Submit contributions by the statutory deadline and retain payroll records.</li></ul></section>
+
+    <section class="guide-box"><h2>Sources &amp; Verification</h2><p>This guide was last verified in August 2026 against current PERKESO guidance and the Employment Insurance System Act 2017, including the RM6,000 contribution ceiling, contribution rates, eligibility, loss-of-employment rules and payment period.</p><div class="source-note"><strong>Official sources used for verification:</strong><br><a href="https://www.perkeso.gov.my/en/uncategorised/778-contributions.html" target="_blank" rel="noopener">PERKESO — EIS Contributions &amp; Coverage</a><br><a href="https://www.perkeso.gov.my/en/rate-of-contribution/" target="_blank" rel="noopener">PERKESO — Rate of Contribution</a><br><a href="https://www.perkeso.gov.my/en/our-services/protection/employment-insurance" target="_blank" rel="noopener">PERKESO — Employment Insurance Benefits</a><br><a href="https://www.perkeso.gov.my/en/contribution-payment/" target="_blank" rel="noopener">PERKESO — Contribution Payment</a><br><a href="https://www.perkeso.gov.my/images/akta/ACT%20800/ACT%20A1725%20%28BI%29_EMPLOYMENT%20INSURANCE%20SYSTEM%20%28AMENDMENT%29%20ACT%202024.pdf" target="_blank" rel="noopener">PERKESO — Act 800 Amendment 2024</a></div></section>
+
+    <h2 id="faq">Frequently Asked Questions</h2><div class="faq-box">
+      <details class="faq-item" open><summary>Is EIS contribution mandatory for employees in Malaysia?</summary><p>EIS is generally mandatory for eligible Malaysian citizens and permanent residents aged 18 to 60 working in the private sector under a contract of service, subject to statutory exemptions.</p></details>
+      <details class="faq-item"><summary>How much EIS does an employee contribute every month?</summary><p>The employee contribution structure is 0.2% of assumed monthly salary, subject to the official PERKESO wage-bracket schedule and RM6,000 ceiling.</p></details>
+      <details class="faq-item"><summary>How much EIS does an employer contribute?</summary><p>The employer contribution structure is also 0.2% of assumed monthly salary. The employer portion is paid separately and is not deducted from take-home salary.</p></details>
+      <details class="faq-item"><summary>Is overtime subject to EIS?</summary><p>Yes. The EIS Act includes overtime and extra work on holidays within the definition of wages.</p></details>
+      <details class="faq-item"><summary>Is annual bonus subject to EIS?</summary><p>No. Annual bonus is specifically excluded from the definition of wages under the EIS Act.</p></details>
+      <details class="faq-item"><summary>What is the EIS wage ceiling?</summary><p>The current contribution ceiling is an assumed monthly salary of RM6,000. Wages above this ceiling are generally subject to the maximum scheduled contribution.</p></details>
+      <details class="faq-item"><summary>Can EIS help if I lose my job?</summary><p>Eligible insured persons may receive benefits after a qualifying loss of employment if they meet contribution conditions and other requirements.</p></details>
+      <details class="faq-item"><summary>Does EIS apply if I resign?</summary><p>Ordinary voluntary resignation generally does not qualify. Certain resignations involving constructive dismissal, workplace threats, sexual harassment or dangerous duties outside the job scope may fall within recognised loss-of-employment situations.</p></details>
+      <details class="faq-item"><summary>How long do I have to apply for EIS benefits?</summary><p>An eligible insured person should apply within 60 days from the date of loss of employment.</p></details>
+      <details class="faq-item"><summary>When must employers pay EIS contributions?</summary><p>Contributions for a month must generally be paid no later than the 15th day of the following month.</p></details>
+      <details class="faq-item"><summary>Is EIS the same as SOCSO?</summary><p>No. SOCSO focuses on social security protection such as employment injury and invalidity, while EIS focuses on qualifying job loss and re-employment assistance.</p></details>
     </div>
 
-    <section class="guide-box">
-      <h2>EIS Calculation Examples</h2>
-      <p>
-        The examples below show how EIS may affect payroll at different salary levels.
-        Exact amounts should be checked against the official PERKESO table.
-      </p>
-
-      <div class="contribution-table-wrap">
-        <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Monthly Salary</th>
-              <th>Employee EIS</th>
-              <th>Employer EIS</th>
-              <th>Payroll Meaning</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>RM2,000</td>
-              <td>About RM4.00 - RM4.10</td>
-              <td>About RM4.00 - RM4.10</td>
-              <td>Small deduction from employee salary, matched by employer contribution.</td>
-            </tr>
-            <tr>
-              <td>RM4,000</td>
-              <td>About RM8.00 - RM8.10</td>
-              <td>About RM8.00 - RM8.10</td>
-              <td>Employee and employer contribute similar amounts based on wage bracket.</td>
-            </tr>
-            <tr>
-              <td>RM5,000</td>
-              <td>About RM9.90 - RM10.00</td>
-              <td>About RM9.90 - RM10.00</td>
-              <td>EIS remains relatively small compared with EPF and PCB.</td>
-            </tr>
-            <tr>
-              <td>Above RM6,000</td>
-              <td>Based on maximum wage ceiling</td>
-              <td>Based on maximum wage ceiling</td>
-              <td>Contribution does not keep increasing after the wage ceiling.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <section class="related-tools-section"><h2>Related Tools</h2><p class="related-tools-intro">Turn what you have learned into your own numbers, then explore the payroll and employment topics most closely related to EIS.</p>
+      <a class="featured-calculator" href="eis-calculator.html"><div class="featured-calculator-copy"><span class="featured-kicker">EIS Calculator</span><h3>Calculate Your EIS Contribution</h3><p>Estimate your employee contribution, employer contribution and total monthly EIS based on your salary.</p></div><span class="feature-link">Calculate EIS →</span><div class="featured-calculator-icon" aria-hidden="true">📋</div></a>
+      <div class="quick-calculators"><p class="quick-calculators-title">Quick Calculators</p><div class="quick-calculators-grid"><a href="index.html"><span>Salary Calculator</span><span class="quick-arrow">→</span></a><a href="socso-calculator.html"><span>SOCSO Calculator</span><span class="quick-arrow">→</span></a><a href="epf-calculator.html"><span>EPF Calculator</span><span class="quick-arrow">→</span></a></div></div>
+      <div class="explore-section"><div class="explore-heading"><h2>Continue Exploring</h2><p>Useful next steps for understanding payroll deductions, job loss and employment protection.</p></div><div class="explore-grid"><div class="explore-column"><h3>Payroll &amp; Contributions</h3><a class="editorial-link" href="socso-guide.html"><span>SOCSO Guide</span><span class="editorial-arrow">→</span></a><a class="editorial-link" href="epf-guide.html"><span>EPF Guide</span><span class="editorial-arrow">→</span></a><a class="editorial-link" href="skbbk-guide.html"><span>LINDUNG 24 Jam (SKBBK) Guide</span><span class="editorial-arrow">→</span></a><a class="editorial-link" href="salary-deduction-guide.html"><span>Salary Deduction Guide</span><span class="editorial-arrow">→</span></a></div><div class="explore-column"><h3>Employment &amp; Job Loss</h3><a class="editorial-link" href="resignation-notice-guide.html"><span>Resignation Notice Guide</span><span class="editorial-arrow">→</span></a><a class="editorial-link" href="employment-contract-guide.html"><span>Employment Contract Guide</span><span class="editorial-arrow">→</span></a><a class="editorial-link" href="pcb-guide.html"><span>PCB Guide</span><span class="editorial-arrow">→</span></a><a class="editorial-link" href="payslip-guide.html"><span>Payslip Guide</span><span class="editorial-arrow">→</span></a></div></div><div class="resource-actions"><a href="guides.html">Explore All Guides →</a><a href="calculators.html">View All Calculators →</a></div></div>
     </section>
-
-    <h2>What Benefits Does EIS Provide?</h2>
-    <p>
-      EIS is not only a monthly deduction. It is designed to help eligible employees after job loss by providing temporary financial support and employment assistance.
-      The exact benefit depends on the employee's eligibility, contribution record, job loss reason and PERKESO approval.
-    </p>
-
-    <div class="component-grid">
-      <div class="component-card">
-        <div class="component-icon">💵</div>
-        <h3>Job Search Allowance</h3>
-        <p>Temporary financial support may be available while an eligible person is searching for new employment.</p>
-      </div>
-      <div class="component-card">
-        <div class="component-icon">📉</div>
-        <h3>Reduced Income Allowance</h3>
-        <p>Support may apply when a person with multiple jobs loses one or more jobs, but not all income sources.</p>
-      </div>
-      <div class="component-card">
-        <div class="component-icon">🎓</div>
-        <h3>Training Support</h3>
-        <p>Eligible individuals may receive training or upskilling support to improve re-employment chances.</p>
-      </div>
-      <div class="component-card">
-        <div class="component-icon">🤝</div>
-        <h3>Re-employment Help</h3>
-        <p>EIS focuses on helping affected employees return to suitable work as soon as possible.</p>
-      </div>
-    </div>
-
-    <section class="guide-box">
-      <h2>Common Situations Where EIS May Help</h2>
-      <p>
-        EIS is mainly relevant when an employee loses employment through a qualifying loss of employment.
-        This may include retrenchment, company closure, restructuring or other job loss situations accepted under PERKESO rules.
-      </p>
-      <p>
-        However, not every resignation or job change automatically qualifies for EIS benefits.
-        Employees who resign voluntarily, are dismissed for misconduct or leave employment for non-qualifying reasons may not be eligible.
-        Because eligibility can depend on facts and documents, affected employees should check directly with PERKESO before assuming they can claim.
-      </p>
-    </section>
-
-    <h2>Does EIS Affect Take-Home Pay?</h2>
-    <p>
-      Yes. The employee portion of EIS is deducted from monthly salary, so it slightly reduces take-home pay.
-      For example, if the employee contribution is around RM8, the employee's net salary is reduced by around RM8 before considering other deductions such as EPF, SOCSO and PCB.
-    </p>
-    <p>
-      The employer portion does not reduce the employee's salary. It is paid separately by the employer as part of payroll compliance.
-      This is why salary calculators usually show EIS as an employee deduction and may show the employer portion separately.
-    </p>
-
-    <h2>EIS vs EPF vs SOCSO</h2>
-    <p>
-      Many employees see EPF, SOCSO and EIS on their payslip but do not know the difference.
-      All three may appear in payroll, but each serves a different purpose.
-    </p>
-
-    <div class="contribution-table-wrap">
-      <table class="contribution-table">
-        <thead>
-          <tr>
-            <th>Scheme</th>
-            <th>Main Purpose</th>
-            <th>Who Contributes?</th>
-            <th>Common Payroll Effect</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>EPF / KWSP</td>
-            <td>Retirement savings and long-term member savings</td>
-            <td>Employee and employer</td>
-            <td>Usually the largest statutory deduction from salary.</td>
-          </tr>
-          <tr>
-            <td>SOCSO / PERKESO</td>
-            <td>Social security protection such as employment injury and invalidity coverage</td>
-            <td>Employee and employer</td>
-            <td>Monthly contribution based on salary schedule.</td>
-          </tr>
-          <tr>
-            <td>EIS / SIP</td>
-            <td>Job loss protection and re-employment support</td>
-            <td>Employee and employer</td>
-            <td>Small monthly deduction, mainly for unemployment protection.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <section class="guide-box">
-      <h2>Advantages and Limitations of EIS</h2>
-      <div class="component-grid">
-        <div class="component-card">
-          <div class="component-icon">🛡️</div>
-          <h3>Job Loss Protection</h3>
-          <p>EIS provides a safety net if an eligible employee loses employment through a qualifying situation.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">🔎</div>
-          <h3>Employment Support</h3>
-          <p>The scheme supports re-employment through job search and training-related assistance.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">📌</div>
-          <h3>Eligibility Conditions</h3>
-          <p>Benefits are not automatic. Employees must meet contribution, job loss and application requirements.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">💼</div>
-          <h3>Not a Replacement Salary</h3>
-          <p>EIS helps temporarily, but it is not meant to fully replace long-term employment income.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="guide-box">
-      <h2>Payroll Checklist for Employers</h2>
-      <ul>
-        <li>Confirm whether the employee is covered under EIS rules.</li>
-        <li>Use the official PERKESO contribution schedule and wage ceiling.</li>
-        <li>Deduct the employee portion from monthly wages.</li>
-        <li>Pay the employer portion together with the employee portion.</li>
-        <li>Keep payroll records, payslips and contribution records for reference.</li>
-        <li>Check for PERKESO updates when contribution ceilings or schedules change.</li>
-      </ul>
-    </section>
-
-    <section class="guide-box">
-      <h2>Official References</h2>
-      <p>
-        For official contribution tables, eligibility requirements and claim procedures, always refer to PERKESO.
-        This guide is written as a simplified payroll explanation for employees and employers.
-      </p>
-      <ul class="source-list">
-        <li><a href="https://www.perkeso.gov.my/en/our-services/employer-employee/contributions.html" target="_blank" rel="noopener">PERKESO Contributions</a></li>
-        <li><a href="https://www.perkeso.gov.my/en/our-services/protection/employment-insurance.html" target="_blank" rel="noopener">PERKESO Employment Insurance</a></li>
-        <li><a href="https://www.perkeso.gov.my/en/rate-of-contribution.html" target="_blank" rel="noopener">PERKESO Rate of Contribution</a></li>
-      </ul>
-    </section>
-
-    <section class="guide-box">
-      <h2>Who Should Read This Guide?</h2>
-      <ul>
-        <li>Employees checking EIS deductions from monthly salary</li>
-        <li>Job seekers comparing salary packages and payroll deductions</li>
-        <li>HR and payroll professionals handling monthly payroll submissions</li>
-        <li>Business owners who want to understand EIS contribution obligations</li>
-        <li>Employees who want to understand possible support after job loss</li>
-      </ul>
-    </section>
-
-    <h2>Frequently Asked Questions</h2>
-
-    <div class="faq-box">
-      <details class="faq-item" open>
-        <summary>Is EIS contribution mandatory for employees in Malaysia?</summary>
-        <p>EIS contribution is generally mandatory for eligible employees covered under the Employment Insurance System. Employers are responsible for deducting the employee portion and paying the employer portion through monthly payroll.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>How much EIS does an employee contribute every month?</summary>
-        <p>The employee portion is commonly 0.2% of the employee's assumed monthly salary, subject to the official PERKESO contribution table and wage ceiling.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>How much EIS does an employer contribute?</summary>
-        <p>The employer also commonly contributes 0.2% of the employee's assumed monthly salary. This employer portion is paid separately and is not deducted from the employee's take-home salary.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Is EIS calculated on basic salary or gross salary?</summary>
-        <p>EIS is generally based on wages that are subject to EIS contribution. Payroll treatment may depend on the type of payment, such as basic salary, fixed allowances, overtime or other remuneration.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Does EIS reduce take-home pay?</summary>
-        <p>Yes. The employee portion of EIS is deducted from monthly salary, so it slightly reduces monthly take-home pay. The employer portion does not reduce the employee's net salary.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Is EIS the same as SOCSO?</summary>
-        <p>No. SOCSO provides social security protection such as employment injury and invalidity benefits. EIS focuses on job loss protection, financial assistance and re-employment support.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can EIS help if I lose my job?</summary>
-        <p>Eligible employees may apply for EIS benefits after job loss, subject to PERKESO rules, qualifying conditions and approval. Benefits may include financial assistance, reduced income allowance, training support and re-employment services.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Does EIS apply if I resign?</summary>
-        <p>Voluntary resignation may not qualify as a loss of employment for EIS benefits. Eligibility depends on the reason for leaving employment and PERKESO's assessment of the claim.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>What is the EIS wage ceiling?</summary>
-        <p>EIS contributions are subject to the applicable wage ceiling. PERKESO announced the wage ceiling increase to RM6,000 effective from 1 October 2024, so wages above the ceiling are generally treated based on the maximum contribution bracket.</p>
-      </details>
-    </div>
-
-    <section class="salary-guides-box">
-      <h2>Related Salary Guides</h2>
-      <p>Learn more about salary deductions, tax and payroll rules in Malaysia.</p>
-
-      <div class="guide-mini-grid">
-        <a href="socso-guide.html">SOCSO Guide</a>
-        <a href="epf-guide.html">EPF Guide</a>
-        <a href="pcb-guide.html">PCB Guide</a>
-        <a href="tax-relief-guide.html">Tax Relief Guide</a>
-      </div>
-
-      <p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p>
-    </section>
-
-    <section class="salary-guides-box">
-      <h2>Related Calculators</h2>
-      <p>Use these calculators to estimate EIS contributions, salary deductions and monthly take-home pay in Malaysia.</p>
-
-      <div class="guide-mini-grid">
-        <a href="eis-calculator.html">EIS Calculator</a>
-        <a href="index.html">Salary Calculator</a>
-        <a href="socso-calculator.html">SOCSO Calculator</a>
-        <a href="epf-calculator.html">EPF Calculator</a>
-        <a href="pcb-calculator.html">PCB Calculator</a>
-        <a href="income-tax-calculator.html">Income Tax Calculator</a>
-      </div>
-
-      <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
-    </section>
-
   </section>
 
 </main>
