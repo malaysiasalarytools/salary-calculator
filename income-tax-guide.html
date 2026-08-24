@@ -499,6 +499,54 @@
       color: var(--accent);
     }
 
+
+    .toc-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:26px 0}
+    .toc-box h2{margin-top:0;margin-bottom:16px}
+    .toc-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px}
+    .toc-links a{display:flex;align-items:center;gap:14px;min-width:0;text-decoration:none;color:var(--foreground);padding:12px 2px;border-bottom:1px solid var(--border);transition:.18s ease}
+    .toc-links a:hover{color:var(--accent);padding-left:4px}
+    .toc-number{width:28px;flex:0 0 28px;color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.04em}
+    .toc-label{flex:1;min-width:0;font-weight:700;font-size:15px}
+    .toc-arrow{color:var(--muted);font-size:15px}
+
+    .deadline-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:20px}
+    .deadline-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}
+    .deadline-card strong{display:block;color:var(--accent);font-size:20px;margin-bottom:8px;font-family:Georgia,"Times New Roman",serif}
+
+    .source-note{margin-top:18px;background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);padding:14px;border-radius:10px;color:var(--muted);font-size:13px}
+    .source-note a{color:var(--accent);font-weight:800;text-decoration:none}
+
+    .related-tools-section{margin:34px 0}
+    .related-tools-section h2{margin-bottom:8px}
+    .related-tools-intro{margin-top:0;max-width:760px}
+    .featured-calculator{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:22px;align-items:center;margin-top:20px;padding:24px 26px;background:radial-gradient(circle at top right,rgba(47,125,94,.14),transparent 34%),linear-gradient(135deg,#f8f5ef 0%,#fbfaf6 100%);border:1px solid var(--accent-border);border-radius:18px;text-decoration:none;color:var(--foreground);overflow:hidden;transition:.18s ease}
+    .featured-calculator:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 16px 34px rgba(47,43,37,.09)}
+    .featured-calculator-copy{min-width:0}
+    .featured-kicker{display:inline-block;margin-bottom:7px;color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .featured-calculator h3{margin:0 0 6px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,3vw,32px);font-weight:400;line-height:1.1}
+    .featured-calculator p{margin:0;max-width:640px;font-size:15px}
+    .feature-link{display:inline-flex;align-items:center;justify-content:center;min-width:160px;padding:12px 16px;border-radius:12px;background:var(--accent);color:#fff;font-weight:900;white-space:nowrap}
+    .featured-calculator-icon{width:66px;height:66px;display:grid;place-items:center;border-radius:18px;background:var(--accent-soft);border:1px solid var(--accent-border);font-size:30px}
+
+    .quick-calculators{margin-top:18px}
+    .quick-calculators-title{margin:0 0 10px;font-size:14px;font-weight:800;color:var(--foreground)}
+    .quick-calculators-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .quick-calculators-grid a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;background:var(--card);border:1px solid var(--border);border-radius:11px;text-decoration:none;color:var(--foreground);font-size:14px;font-weight:800;transition:.18s ease}
+    .quick-calculators-grid a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .quick-arrow{color:var(--muted)}
+
+    .explore-section{margin-top:30px;padding-top:28px;border-top:1px solid var(--border)}
+    .explore-heading h2{margin:0}
+    .explore-heading p{margin:7px 0 14px}
+    .explore-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+    .explore-column h3{margin:0 0 8px;font-size:16px;color:var(--foreground)}
+    .editorial-link{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .editorial-link:hover{color:var(--accent);padding-left:4px}
+    .editorial-link span:first-child{flex:1;min-width:0;font-weight:800;font-size:15px}
+    .editorial-arrow{color:var(--muted)}
+    .resource-actions{display:flex;justify-content:space-between;gap:16px;margin-top:18px;flex-wrap:wrap}
+    .resource-actions a{color:var(--accent);font-weight:800;text-decoration:none}
+
     @media (max-width: 800px) {
       .nav-inner {
         flex-direction: row;
@@ -562,6 +610,18 @@
         gap: 10px;
       }
 
+      .toc-box{padding:20px}
+      .toc-links{grid-template-columns:1fr;column-gap:0}
+      .toc-links a{padding:11px 0}
+      .featured-calculator{grid-template-columns:1fr;padding:22px;gap:16px}
+      .feature-link{width:100%}
+      .featured-calculator-icon{display:none}
+      .quick-calculators-grid{grid-template-columns:1fr}
+      .explore-grid{grid-template-columns:1fr;gap:26px}
+      .resource-actions{display:block}
+      .resource-actions a{display:block;margin-top:8px}
+
+
       .summary-card,
       .tax-category-card {
         padding: 14px;
@@ -598,7 +658,7 @@
   </header>
 
   <section class="hero">
-    <span class="pill">Updated for Malaysia 2026 tax guide</span>
+    <span class="pill">Last verified: August 2026 · 2026 filing guidance for YA 2025</span>
     <h1 class="serif">Malaysia <em>Income Tax</em> Guide 2026</h1>
     <p>
       Learn how Malaysia personal income tax works, including annual income, chargeable income, resident status, tax reliefs, PCB deductions and simple calculation examples.
@@ -609,405 +669,317 @@
 
     <div class="seo">
 
-      <section class="calculator-cta">
-        <h2 class="serif">Estimate Your Malaysia Income Tax</h2>
-        <p>
-          Want a quick estimate before filing? Use our free Income Tax Calculator to estimate tax payable after income, EPF and common tax reliefs.
-        </p>
-        <a href="income-tax-calculator.html" class="cta-button">Check My Income Tax →</a>
-      </section>
-
       <section class="summary-box">
         <h2 class="serif">Income Tax Quick Summary</h2>
         <p>
-          Malaysia individual income tax is generally based on annual income, allowable tax reliefs, chargeable income and resident tax rates.
+          Malaysia resident individual income tax is assessed annually using progressive tax rates after allowable deductions and reliefs.
+          In 2026, most individuals are filing for <strong>Year of Assessment 2025</strong>.
         </p>
 
         <div class="summary-grid">
-          <div class="summary-card">
-            <strong>Annual</strong>
-            <span>Income tax is assessed by year of assessment</span>
-          </div>
-          <div class="summary-card">
-            <strong>Progressive</strong>
-            <span>Higher chargeable income may fall into higher tax brackets</span>
-          </div>
-          <div class="summary-card">
-            <strong>Reliefs</strong>
-            <span>Tax reliefs reduce chargeable income</span>
-          </div>
-          <div class="summary-card">
-            <strong>PCB</strong>
-            <span>Monthly tax deductions may offset final tax payable</span>
-          </div>
+          <div class="summary-card"><strong>0%–30%</strong><span>YA 2025 resident individual tax rates</span></div>
+          <div class="summary-card"><strong>RM9,000</strong><span>Individual & dependent relatives relief</span></div>
+          <div class="summary-card"><strong>30 Apr</strong><span>Form BE statutory filing due date for YA 2025</span></div>
+          <div class="summary-card"><strong>PCB</strong><span>Monthly tax already paid through payroll</span></div>
+        </div>
+
+        <div class="note-box">
+          <strong>2026 filing note:</strong> The tax rate and relief tables below refer to Year of Assessment 2025, which is the main individual tax return filed during 2026.
         </div>
       </section>
 
-      <h2>What Is Income Tax in Malaysia?</h2>
+      <section class="calculator-cta">
+        <h2 class="serif">Estimate Your Malaysia Income Tax</h2>
+        <p>Want a quick estimate before filing? Use our free Income Tax Calculator to estimate tax payable after income, EPF and common tax reliefs.</p>
+        <a href="income-tax-calculator.html" class="cta-button">Check My Income Tax →</a>
+      </section>
 
-      <p>
-        Income tax is tax charged on taxable income earned by individuals. For employees, common income sources include salary, bonus, commission, allowances and benefits that may be taxable under Malaysia tax rules.
-      </p>
+      <section class="toc-box">
+        <h2>On This Page</h2>
+        <div class="toc-links">
+          <a href="#what-is-income-tax"><span class="toc-number">01</span><span class="toc-label">What Is Income Tax?</span><span class="toc-arrow">→</span></a>
+          <a href="#how-tax-works"><span class="toc-number">02</span><span class="toc-label">How Income Tax Works</span><span class="toc-arrow">→</span></a>
+          <a href="#resident-status"><span class="toc-number">03</span><span class="toc-label">Resident vs Non-Resident</span><span class="toc-arrow">→</span></a>
+          <a href="#taxable-income"><span class="toc-number">04</span><span class="toc-label">What Income Is Taxable?</span><span class="toc-arrow">→</span></a>
+          <a href="#tax-rates"><span class="toc-number">05</span><span class="toc-label">Resident Tax Rates</span><span class="toc-arrow">→</span></a>
+          <a href="#tax-calculation"><span class="toc-number">06</span><span class="toc-label">How Tax Is Calculated</span><span class="toc-arrow">→</span></a>
+          <a href="#tax-example"><span class="toc-number">07</span><span class="toc-label">RM60,000 Example</span><span class="toc-arrow">→</span></a>
+          <a href="#tax-reliefs"><span class="toc-number">08</span><span class="toc-label">Common Tax Reliefs</span><span class="toc-arrow">→</span></a>
+          <a href="#pcb-vs-tax"><span class="toc-number">09</span><span class="toc-label">PCB vs Income Tax</span><span class="toc-arrow">→</span></a>
+          <a href="#filing"><span class="toc-number">10</span><span class="toc-label">Filing Process & Deadline</span><span class="toc-arrow">→</span></a>
+          <a href="#documents"><span class="toc-number">11</span><span class="toc-label">Documents to Keep</span><span class="toc-arrow">→</span></a>
+          <a href="#faq"><span class="toc-number">12</span><span class="toc-label">FAQ</span><span class="toc-arrow">→</span></a>
+        </div>
+      </section>
 
-      <p>
-        Your final tax payable is not based only on monthly salary. It usually depends on total annual income, deductions, tax relief claims, rebates and PCB already deducted by your employer.
-      </p>
+      <h2 id="what-is-income-tax">What Is Income Tax in Malaysia?</h2>
+      <p>Income tax is tax charged on taxable income earned by individuals. For employees, common taxable employment income may include salary, bonus, commission, allowances and benefits, subject to Malaysia's tax rules.</p>
+      <p>Your final tax payable is not based only on monthly salary. It generally depends on total annual income, allowable deductions and reliefs, tax rebates and PCB already deducted during the year.</p>
 
       <section class="guide-box">
-        <h2 class="serif">How Malaysia Income Tax Works</h2>
-
+        <h2 id="how-tax-works" class="serif">How Malaysia Income Tax Works</h2>
         <div class="tax-category-grid">
-          <div class="tax-category-card">
-            <span class="tag">Step 1</span>
-            <h3>Calculate Annual Income</h3>
-            <p>Add salary, bonus, commission and other taxable employment income for the year.</p>
-          </div>
-
-          <div class="tax-category-card">
-            <span class="tag">Step 2</span>
-            <h3>Claim Tax Reliefs</h3>
-            <p>Deduct eligible personal reliefs such as individual relief, EPF, insurance, medical, education and lifestyle claims.</p>
-          </div>
-
-          <div class="tax-category-card">
-            <span class="tag">Step 3</span>
-            <h3>Apply Tax Rates</h3>
-            <p>Resident individual tax is generally charged using progressive tax brackets.</p>
-          </div>
-
-          <div class="tax-category-card">
-            <span class="tag">Step 4</span>
-            <h3>Offset PCB / Rebates</h3>
-            <p>Monthly PCB deductions and eligible rebates may reduce the balance tax payable.</p>
-          </div>
+          <div class="tax-category-card"><span class="tag">Step 1</span><h3>Calculate Annual Income</h3><p>Add salary, bonus, commission and other taxable income for the year.</p></div>
+          <div class="tax-category-card"><span class="tag">Step 2</span><h3>Claim Tax Reliefs</h3><p>Deduct eligible personal reliefs and approved deductions to arrive at chargeable income.</p></div>
+          <div class="tax-category-card"><span class="tag">Step 3</span><h3>Apply Tax Rates</h3><p>Resident individual tax is calculated using progressive tax brackets.</p></div>
+          <div class="tax-category-card"><span class="tag">Step 4</span><h3>Offset Rebates & PCB</h3><p>Eligible rebates and tax already paid through PCB reduce the final balance payable.</p></div>
         </div>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Malaysia Resident Income Tax Rates</h2>
-
-        <p>
-          Malaysia uses a progressive income tax system. This means higher chargeable income may be taxed at higher rates.
-        </p>
+        <h2 id="resident-status" class="serif">Resident vs Non-Resident Taxpayer</h2>
+        <p>Tax residence status significantly affects individual income tax in Malaysia. Residence status is determined under the Income Tax Act and is not based simply on nationality.</p>
 
         <div class="contribution-table-wrap">
           <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Chargeable Income</th>
-                <th>Tax Rate</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Category</th><th>General Tax Treatment</th></tr></thead>
             <tbody>
-              <tr>
-                <td>First RM5,000</td>
-                <td>0%</td>
-              </tr>
-              <tr>
-                <td>Next RM15,000</td>
-                <td>1% – 3%</td>
-              </tr>
-              <tr>
-                <td>Higher Income Bands</td>
-                <td>Progressively higher rates</td>
-              </tr>
+              <tr><td><strong>Resident Individual</strong></td><td>Eligible for resident progressive tax rates and qualifying personal reliefs and rebates.</td></tr>
+              <tr><td><strong>Non-Resident Individual</strong></td><td>Generally not eligible for personal reliefs and currently subject to a flat 30% rate on chargeable income, subject to applicable rules.</td></tr>
             </tbody>
           </table>
         </div>
 
         <div class="note-box">
-          <strong>Note:</strong> Tax rates may change from time to time. Always refer to the latest LHDN guidance for current resident tax brackets.
+          <strong>Residence reminder:</strong> A person who is physically present in Malaysia for fewer than 182 days in a basis year is generally non-resident, but linked-period and other statutory residence rules can also apply.
         </div>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Resident vs Non-Resident Taxpayer</h2>
-
-        <p>
-          Tax residency status can significantly affect how your income is taxed in Malaysia. Individuals who qualify as Malaysian tax residents are generally eligible for personal tax reliefs, tax rebates and progressive resident tax rates.
-        </p>
-
-        <p>
-          In contrast, non-resident individuals may not be eligible for most personal reliefs and may be subject to different tax treatment under Malaysia income tax rules.
-        </p>
+        <h2 id="taxable-income" class="serif">What Income Is Usually Taxable?</h2>
+        <p>Employment income is one of the most common forms of taxable income, but individuals may also have business, rental, freelance or other taxable income sources.</p>
 
         <div class="contribution-table-wrap">
           <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Category</th>
-                <th>General Treatment</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Income Type</th><th>General Treatment</th><th>Practical Note</th></tr></thead>
             <tbody>
-              <tr>
-                <td>Resident</td>
-                <td>Usually eligible for tax reliefs and progressive tax rates.</td>
-              </tr>
-              <tr>
-                <td>Non-Resident</td>
-                <td>Generally not eligible for most personal tax reliefs.</td>
-              </tr>
+              <tr><td>Salary / Wages</td><td>Generally taxable</td><td>Regular employment remuneration is normally included in gross employment income.</td></tr>
+              <tr><td>Bonus / Commission</td><td>Generally taxable</td><td>Additional employment remuneration is normally included in the year received.</td></tr>
+              <tr><td>Allowances / Benefits</td><td>Depends on item</td><td>Some are taxable while specific exemptions may apply.</td></tr>
+              <tr><td>Business / Freelance Income</td><td>Generally taxable</td><td>Net taxable business income should be declared under the appropriate return.</td></tr>
+              <tr><td>Rental Income</td><td>Generally taxable</td><td>Tax treatment depends on facts and allowable expenses.</td></tr>
+              <tr><td>Genuine Reimbursements</td><td>Depends on nature</td><td>Properly supported reimbursements may not represent taxable personal income.</td></tr>
+              <tr><td>Specifically Exempt Income</td><td>Not taxable where exemption applies</td><td>Check the relevant exemption conditions and documentation.</td></tr>
             </tbody>
           </table>
         </div>
 
-        <p>
-          Residency status generally depends on your circumstances and the number of days present in Malaysia during the relevant year.
-        </p>
+        <div class="note-box"><strong>Practical note:</strong> Keep supporting documents when the tax treatment of an allowance, reimbursement, benefit or other receipt is unclear.</div>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">What Income Is Usually Taxable?</h2>
+        <h2 id="tax-rates" class="serif">Malaysia Resident Income Tax Rates — YA 2025</h2>
+        <p>Malaysia uses progressive tax rates for resident individuals. Only the portion of chargeable income falling within each band is taxed at that band's rate.</p>
 
-        <p>
-          Employment income is one of the most common forms of taxable income in Malaysia. Besides basic salary, employees may also receive bonuses, commissions, incentives and allowances that could form part of taxable income.
-        </p>
-
-        <p>
-          Individuals with multiple income sources should ensure all taxable income is properly declared during tax filing.
-        </p>
-
-        <ul>
-          <li>Employment salary and wages</li>
-          <li>Bonus and commission</li>
-          <li>Allowances and benefits-in-kind</li>
-          <li>Business income</li>
-          <li>Rental income</li>
-          <li>Freelance and consulting income</li>
-        </ul>
-      </section>
-
-      <section class="guide-box">
-        <h2 class="serif">What Income May Not Be Taxable?</h2>
-
-        <p>
-          Certain receipts may not be taxable depending on the circumstances and applicable tax rules. However, tax treatment depends on the facts, source of income and latest LHDN guidance.
-        </p>
-
-        <ul>
-          <li>Certain gifts received personally</li>
-          <li>Selected tax-exempt income categories</li>
-          <li>Specific exemptions announced by the government</li>
-          <li>Certain reimbursements that are properly supported</li>
-        </ul>
-
-        <div class="note-box">
-          <strong>Practical note:</strong> If you are not sure whether an item is taxable, keep the supporting documents and check the latest LHDN guidance or get professional advice.
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Chargeable Income</th><th>Rate on Band</th><th>Tax at Top of Band</th></tr></thead>
+            <tbody>
+              <tr><td>RM0 – RM5,000</td><td>0%</td><td>RM0</td></tr>
+              <tr><td>RM5,001 – RM20,000</td><td>1%</td><td>RM150</td></tr>
+              <tr><td>RM20,001 – RM35,000</td><td>3%</td><td>RM600</td></tr>
+              <tr><td>RM35,001 – RM50,000</td><td>6%</td><td>RM1,500</td></tr>
+              <tr><td>RM50,001 – RM70,000</td><td>11%</td><td>RM3,700</td></tr>
+              <tr><td>RM70,001 – RM100,000</td><td>19%</td><td>RM9,400</td></tr>
+              <tr><td>RM100,001 – RM400,000</td><td>25%</td><td>RM84,400</td></tr>
+              <tr><td>RM400,001 – RM600,000</td><td>26%</td><td>RM136,400</td></tr>
+              <tr><td>RM600,001 – RM2,000,000</td><td>28%</td><td>RM528,400</td></tr>
+              <tr><td>Above RM2,000,000</td><td>30%</td><td>30% on every ringgit above RM2,000,000</td></tr>
+            </tbody>
+          </table>
         </div>
+
+        <div class="note-box"><strong>Important:</strong> These are resident individual rates for YA 2025, the return mainly filed in 2026. Always confirm the relevant Year of Assessment when using a tax table.</div>
       </section>
 
-      <h2>Simple Income Tax Formula</h2>
+      <h2 id="tax-calculation">How Malaysia Income Tax Is Calculated</h2>
+      <p>A useful way to understand individual income tax is to separate income, reliefs, tax on chargeable income, rebates and tax already paid.</p>
 
       <div class="formula-box">
-        <strong>Tax Payable = Tax on Chargeable Income − Rebates − PCB Paid</strong>
-        <span>Chargeable income is generally income after allowable deductions and reliefs.</span>
+        <strong>Chargeable Income = Taxable Income − Allowable Reliefs / Deductions</strong>
+        <span>Then apply the relevant resident tax brackets to the chargeable income.</span>
+      </div>
+
+      <div class="formula-box">
+        <strong>Final Balance = Tax Charged − Eligible Rebates − PCB / Tax Already Paid</strong>
+        <span>A negative balance may result in a refund, while a positive balance may still be payable.</span>
       </div>
 
       <section class="example-box">
-        <h2 class="serif">Example Income Tax Calculation</h2>
+        <h2 id="tax-example" class="serif">Example: RM60,000 Annual Employment Income</h2>
+        <p>This simplified example illustrates how progressive resident tax works for YA 2025.</p>
 
-        <p>Example for illustration only:</p>
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <tbody>
+              <tr><td><strong>Annual employment income</strong></td><td>RM60,000</td></tr>
+              <tr><td><strong>Less: assumed eligible reliefs</strong></td><td>RM18,000</td></tr>
+              <tr><td><strong>Estimated chargeable income</strong></td><td>RM42,000</td></tr>
+              <tr><td>Tax on first RM35,000</td><td>RM600</td></tr>
+              <tr><td>Tax on next RM7,000 @ 6%</td><td>RM420</td></tr>
+              <tr><td><strong>Estimated tax charged before rebates</strong></td><td><strong>RM1,020</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
 
-        <ul>
-          <li>Annual employment income: RM60,000</li>
-          <li>Less common tax reliefs: RM18,000</li>
-          <li>Estimated chargeable income: RM42,000</li>
-          <li>Tax is then calculated using applicable resident tax brackets</li>
-          <li>PCB already deducted during the year may reduce the final balance payable</li>
-        </ul>
-
-        <p>
-          This is a simplified example. Actual tax depends on the latest LHDN rules, personal status, rebates, relief claims and supporting documents.
-        </p>
+        <div class="note-box">
+          <strong>Example only:</strong> If the taxpayer had RM800 of PCB already deducted and no further rebate in this simplified example, the remaining balance would be about RM220. Actual tax depends on the taxpayer's real reliefs, rebates, income sources and tax status.
+        </div>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Common Income Tax Items to Check</h2>
+        <h2 id="tax-reliefs" class="serif">Common Tax Reliefs — YA 2025</h2>
+        <p>Tax reliefs reduce chargeable income for eligible resident individuals. The full list is longer, so the table below highlights common categories only.</p>
 
-        <p>
-          Before filing your income tax, prepare the main documents and records that affect your annual income, tax reliefs and PCB deductions.
-        </p>
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Relief Category</th><th>YA 2025 Limit / Summary</th></tr></thead>
+            <tbody>
+              <tr><td>Individual & Dependent Relatives</td><td>RM9,000</td></tr>
+              <tr><td>Education Fees (Self)</td><td>Up to RM7,000, subject to qualifying conditions</td></tr>
+              <tr><td>Medical Expenses for Self / Spouse / Child</td><td>Up to RM10,000, subject to sub-limits and conditions</td></tr>
+              <tr><td>Lifestyle</td><td>Up to RM2,500 for qualifying expenditure</td></tr>
+              <tr><td>Life Insurance & EPF</td><td>Combined relief structure up to RM7,000, subject to the applicable sub-categories</td></tr>
+              <tr><td>Education & Medical Insurance</td><td>Up to RM4,000</td></tr>
+              <tr><td>PRS & Deferred Annuity</td><td>Up to RM3,000</td></tr>
+              <tr><td>SOCSO Contributions</td><td>Up to RM350</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note-box">For the full list, eligibility conditions and sub-limits, see the Malaysia Tax Relief Guide and the latest HASiL relief schedule.</div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="pcb-vs-tax" class="serif">Income Tax vs PCB</h2>
+        <p>Income tax and PCB are related, but they are not the same thing. PCB is tax paid progressively through payroll, while annual income tax determines the overall tax position for the year.</p>
+
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Item</th><th>Meaning</th><th>When It Happens</th></tr></thead>
+            <tbody>
+              <tr><td>Income Tax</td><td>Annual tax liability based on taxable income and reliefs</td><td>Determined for the Year of Assessment</td></tr>
+              <tr><td>PCB / MTD</td><td>Monthly tax deduction from employment remuneration</td><td>Throughout the year via payroll</td></tr>
+              <tr><td>Tax Relief</td><td>Eligible deduction that reduces chargeable income</td><td>Claimed subject to tax rules</td></tr>
+              <tr><td>Tax Refund</td><td>May arise when tax paid exceeds final liability</td><td>After final tax position is processed</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="filing" class="serif">Malaysia Income Tax Filing Process & 2026 Deadlines</h2>
+
+        <div class="tax-category-grid">
+          <div class="tax-category-card"><span class="tag">Step 1</span><h3>Collect Documents</h3><p>Prepare EA Form, income records and supporting receipts.</p></div>
+          <div class="tax-category-card"><span class="tag">Step 2</span><h3>Review Reliefs</h3><p>Identify eligible reliefs and keep the required supporting documents.</p></div>
+          <div class="tax-category-card"><span class="tag">Step 3</span><h3>Submit e-Filing</h3><p>Complete the appropriate return through HASiL's MyTax / e-Filing system.</p></div>
+          <div class="tax-category-card"><span class="tag">Step 4</span><h3>Refund or Balance Tax</h3><p>Any refund or remaining tax depends on the final tax position after credits such as PCB.</p></div>
+        </div>
+
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Return</th><th>YA 2025 Statutory Due Date</th><th>2026 e-Filing Grace Period</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Form BE</strong> — individual without business income</td><td>30 April 2026</td><td>Until 15 May 2026 for e-BE</td></tr>
+              <tr><td><strong>Form B</strong> — individual with business income</td><td>30 June 2026</td><td>Until 15 July 2026 for e-B</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note-box"><strong>Deadline note:</strong> The grace period is an administrative concession for e-Filing. HASiL's filing programme should be checked each year because dates and concession periods can change.</div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="documents" class="serif">Common Income Tax Documents to Keep</h2>
+        <p>Before filing, prepare the main documents and records that support annual income, tax relief claims and tax already paid.</p>
 
         <div class="checklist">
           <ul>
-            <li>EA Form income and PCB amount from employer</li>
-            <li>EPF, SOCSO and insurance contribution records</li>
-            <li>Tax relief receipts and supporting documents</li>
-            <li>Other income such as rental, business, commission or freelance income</li>
-            <li>Whether you are filing as resident or non-resident</li>
-            <li>Previous year tax refund, balance payable or instalment records if any</li>
+            <li>EA Form and employment income details from employer</li>
+            <li>PCB / tax deduction records</li>
+            <li>EPF, SOCSO and insurance contribution statements</li>
+            <li>Receipts and supporting documents for tax relief claims</li>
+            <li>Rental, business, freelance, commission or other income records</li>
+            <li>Documents relevant to tax residence status where necessary</li>
+            <li>Prior-year refund, balance payable or instalment records if relevant</li>
           </ul>
         </div>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Income Tax vs PCB</h2>
+        <h2>Sources &amp; Verification</h2>
+        <p>This guide was last verified in August 2026 against current HASiL materials for YA 2025 resident individual tax rates, tax reliefs and the 2026 return filing programme.</p>
 
-        <p>
-          Income tax and PCB are related, but they are not exactly the same. PCB is a monthly tax deduction made through payroll, while income tax is the final annual tax calculation after considering total income, tax reliefs, rebates and PCB already paid.
-        </p>
-
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Meaning</th>
-                <th>When It Happens</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Income Tax</td>
-                <td>Final tax assessed for the year</td>
-                <td>During tax filing</td>
-              </tr>
-              <tr>
-                <td>PCB</td>
-                <td>Monthly tax deduction from salary</td>
-                <td>Every month through payroll</td>
-              </tr>
-              <tr>
-                <td>Tax Relief</td>
-                <td>Eligible claim that reduces chargeable income</td>
-                <td>Claimed during tax filing or TP1 update</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="source-note">
+          <strong>Official sources used for verification:</strong><br>
+          <a href="https://www.hasil.gov.my/media/yy5letic/e-filing-made-easy-2026.pdf" target="_blank" rel="noopener">HASiL — e-Filing Made Easy 2026 / YA 2025 Tax Rates</a><br>
+          <a href="https://www.hasil.gov.my/media/muob0jyz/tax-relief-ya-2025.pdf" target="_blank" rel="noopener">HASiL — Tax Relief for Resident Individual YA 2025</a><br>
+          <a href="https://www.hasil.gov.my/media/fqog1423/rf-filing-programme-for-2026.pdf" target="_blank" rel="noopener">HASiL — Return Form Filing Programme 2026</a><br>
+          <a href="https://www.hasil.gov.my/" target="_blank" rel="noopener">HASiL — Official Website</a>
         </div>
       </section>
 
-      <section class="guide-box">
-        <h2 class="serif">Malaysia Income Tax Filing Process</h2>
-
-        <div class="tax-category-grid">
-          <div class="tax-category-card">
-            <span class="tag">Step 1</span>
-            <h3>Collect Documents</h3>
-            <p>Prepare your EA Form, income records and supporting receipts.</p>
-          </div>
-
-          <div class="tax-category-card">
-            <span class="tag">Step 2</span>
-            <h3>Calculate Reliefs</h3>
-            <p>Review eligible tax relief claims and supporting documents.</p>
-          </div>
-
-          <div class="tax-category-card">
-            <span class="tag">Step 3</span>
-            <h3>Submit e-Filing</h3>
-            <p>Complete your tax return through the LHDN e-Filing system.</p>
-          </div>
-
-          <div class="tax-category-card">
-            <span class="tag">Step 4</span>
-            <h3>Refund or Balance Tax</h3>
-            <p>Receive a refund or pay any outstanding tax after assessment.</p>
-          </div>
-        </div>
-
-        <p>
-          For most employees, the income tax filing process begins with obtaining the EA Form from their employer. The EA Form contains important information such as annual employment income and PCB deductions made during the year.
-        </p>
-
-        <p>
-          Taxpayers should also gather receipts and supporting documents for any tax reliefs they intend to claim. Supporting documents are generally not submitted together with the return, but should be retained for future reference in case verification is required.
-        </p>
-      </section>
-
-      <section class="guide-box">
-        <h2 class="serif">Who Should Read This Income Tax Guide?</h2>
-
-        <ul>
-          <li>Employees who want to understand how annual income tax is estimated</li>
-          <li>Job seekers comparing salary and after-tax income</li>
-          <li>HR and payroll staff explaining PCB and tax basics to employees</li>
-          <li>Individuals preparing for LHDN e-Filing</li>
-          <li>Freelancers or side-income earners checking basic tax treatment</li>
-        </ul>
-      </section>
-
-      <h2>Frequently Asked Questions</h2>
-
+      <h2 id="faq">Frequently Asked Questions</h2>
       <div class="faq-box">
-        <details class="faq-item" open>
-          <summary>Is income tax calculated monthly or yearly in Malaysia?</summary>
-          <p>
-            Income tax is generally assessed yearly. However, employees may pay tax monthly through PCB deductions handled by the employer.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is PCB the same as final income tax?</summary>
-          <p>
-            No. PCB is a monthly deduction. Final income tax is calculated when you file your tax return, after considering total income, reliefs, rebates and PCB already paid.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can tax relief reduce income tax?</summary>
-          <p>
-            Yes. Eligible tax reliefs reduce chargeable income, which may lower the final tax payable.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Do I need to file tax if PCB was already deducted?</summary>
-          <p>
-            PCB deduction does not automatically replace tax filing. If you are required to file, you should submit the relevant tax return and declare income and reliefs correctly.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Why is my tax calculator result different from LHDN?</summary>
-          <p>
-            Differences may come from relief claims, rebates, resident status, bonus treatment, PCB already paid or updated LHDN rules.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What documents should I keep for income tax?</summary>
-          <p>
-            You should keep EA Forms, income records, receipts for tax relief claims, insurance statements, EPF records and other supporting documents related to your tax return.
-          </p>
-        </details>
+        <details class="faq-item" open><summary>Is income tax calculated monthly or yearly in Malaysia?</summary><p>Individual income tax is assessed by Year of Assessment. Employees may nevertheless pay tax progressively during the year through monthly PCB deductions.</p></details>
+        <details class="faq-item"><summary>What tax rates apply to resident individuals for YA 2025?</summary><p>Resident individual rates are progressive from 0% to 30%, depending on chargeable income.</p></details>
+        <details class="faq-item"><summary>What is the current non-resident individual tax rate?</summary><p>Non-resident individuals are generally subject to a flat 30% rate on chargeable income and are generally not entitled to personal tax reliefs.</p></details>
+        <details class="faq-item"><summary>Is PCB the same as final income tax?</summary><p>No. PCB is tax paid monthly through payroll. The overall tax position depends on annual taxable income, reliefs, rebates and tax already paid.</p></details>
+        <details class="faq-item"><summary>Can tax relief reduce income tax?</summary><p>Yes. Eligible tax reliefs reduce chargeable income and can therefore reduce tax charged.</p></details>
+        <details class="faq-item"><summary>What is the individual relief for YA 2025?</summary><p>The individual and dependent relatives relief for a resident individual is RM9,000 for YA 2025.</p></details>
+        <details class="faq-item"><summary>When was Form BE due for YA 2025?</summary><p>The statutory due date was 30 April 2026. HASiL's 2026 filing programme provided an e-Filing grace period for e-BE until 15 May 2026.</p></details>
+        <details class="faq-item"><summary>When was Form B due for YA 2025?</summary><p>The statutory due date was 30 June 2026, with an e-Filing grace period for e-B until 15 July 2026 under the 2026 filing programme.</p></details>
+        <details class="faq-item"><summary>Why is my tax calculator result different from HASiL?</summary><p>Differences may arise from relief claims, rebates, residence status, additional income, PCB already paid, rounding or updated tax rules.</p></details>
+        <details class="faq-item"><summary>What documents should I keep for income tax?</summary><p>Keep EA Forms, income records, PCB records, relief receipts, insurance and contribution statements, and other documents supporting the figures in your return.</p></details>
       </div>
 
-      <section class="salary-guides-box">
-        <h2 class="serif">Related Tax Guides</h2>
-        <p>
-          Continue reading related Malaysia tax guides to understand reliefs, rebates, PCB and tax filing.
-        </p>
+      <section class="related-tools-section">
+        <h2>Related Tools</h2>
+        <p class="related-tools-intro">Estimate your tax first, then explore the tax and payroll topics most closely related to annual income tax.</p>
 
-        <div class="guide-mini-grid">
-          <a href="tax-relief-guide.html">💸 Tax Relief Guide</a>
-          <a href="tax-filing-guide.html">🧾 Tax Filing Guide</a>
-          <a href="tax-rebate-guide.html">✅ Tax Rebate Guide</a>
-          <a href="tax-refund-guide.html">💵 Tax Refund Guide</a>
+        <a class="featured-calculator" href="income-tax-calculator.html">
+          <div class="featured-calculator-copy">
+            <span class="featured-kicker">Income Tax Calculator</span>
+            <h3>Estimate Your Malaysia Income Tax</h3>
+            <p>Estimate tax payable after income, common tax reliefs and PCB already paid.</p>
+          </div>
+          <span class="feature-link">Calculate Tax →</span>
+          <div class="featured-calculator-icon" aria-hidden="true">🧾</div>
+        </a>
+
+        <div class="quick-calculators">
+          <p class="quick-calculators-title">Quick Calculators</p>
+          <div class="quick-calculators-grid">
+            <a href="pcb-calculator.html"><span>PCB Calculator</span><span class="quick-arrow">→</span></a>
+            <a href="index.html"><span>Salary Calculator</span><span class="quick-arrow">→</span></a>
+            <a href="epf-calculator.html"><span>EPF Calculator</span><span class="quick-arrow">→</span></a>
+          </div>
         </div>
 
-        <p class="view-all-guides">
-          <a href="guides.html">View All Salary Guides →</a>
-        </p>
-      </section>
+        <div class="explore-section">
+          <div class="explore-heading"><h2>Continue Exploring</h2><p>Useful next steps for understanding tax reliefs, filing, refunds and payroll tax.</p></div>
 
-      <section class="salary-guides-box">
-        <h2 class="serif">Related Calculators</h2>
-        <p>
-          Use these calculators to estimate income tax, PCB and monthly take-home pay in Malaysia.
-        </p>
+          <div class="explore-grid">
+            <div class="explore-column">
+              <h3>Tax &amp; Filing</h3>
+              <a class="editorial-link" href="tax-relief-guide.html"><span>Tax Relief Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="tax-filing-guide.html"><span>Tax Filing Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="tax-rebate-guide.html"><span>Tax Rebate Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="tax-refund-guide.html"><span>Tax Refund Guide</span><span class="editorial-arrow">→</span></a>
+            </div>
 
-        <div class="guide-mini-grid">
-          <a href="income-tax-calculator.html">Income Tax Calculator</a>
-          <a href="pcb-calculator.html">PCB Calculator</a>
-          <a href="index.html">Salary Calculator</a>
-          <a href="epf-calculator.html">EPF Calculator</a>
+            <div class="explore-column">
+              <h3>Payroll &amp; Salary</h3>
+              <a class="editorial-link" href="pcb-guide.html"><span>PCB Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="epf-guide.html"><span>EPF Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="salary-deduction-guide.html"><span>Salary Deduction Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="payslip-guide.html"><span>Payslip Guide</span><span class="editorial-arrow">→</span></a>
+            </div>
+          </div>
+
+          <div class="resource-actions"><a href="guides.html">Explore All Guides →</a><a href="calculators.html">View All Calculators →</a></div>
         </div>
-
-        <p class="view-all-guides">
-          <a href="calculators.html">View All Calculators →</a>
-        </p>
       </section>
 
     </div>
@@ -1026,4 +998,3 @@
 
 </body>
 </html>
-
