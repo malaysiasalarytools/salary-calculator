@@ -470,6 +470,54 @@
       color: var(--accent);
     }
 
+
+    .toc-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:26px 0}
+    .toc-box h2{margin-top:0;margin-bottom:16px}
+    .toc-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px}
+    .toc-links a{display:flex;align-items:center;gap:14px;min-width:0;text-decoration:none;color:var(--foreground);padding:12px 2px;border-bottom:1px solid var(--border);transition:.18s ease}
+    .toc-links a:hover{color:var(--accent);padding-left:4px}
+    .toc-number{width:28px;flex:0 0 28px;color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.04em}
+    .toc-label{flex:1;min-width:0;font-weight:700;font-size:15px}
+    .toc-arrow{color:var(--muted);font-size:15px}
+
+    .deadline-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:20px}
+    .deadline-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}
+    .deadline-card strong{display:block;color:var(--accent);font-size:20px;margin-bottom:8px;font-family:Georgia,"Times New Roman",serif}
+
+    .source-note{margin-top:18px;background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);padding:14px;border-radius:10px;color:var(--muted);font-size:13px}
+    .source-note a{color:var(--accent);font-weight:800;text-decoration:none}
+
+    .related-tools-section{margin:34px 0}
+    .related-tools-section h2{margin-bottom:8px}
+    .related-tools-intro{margin-top:0;max-width:760px}
+    .featured-calculator{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:22px;align-items:center;margin-top:20px;padding:24px 26px;background:radial-gradient(circle at top right,rgba(47,125,94,.14),transparent 34%),linear-gradient(135deg,#f8f5ef 0%,#fbfaf6 100%);border:1px solid var(--accent-border);border-radius:18px;text-decoration:none;color:var(--foreground);overflow:hidden;transition:.18s ease}
+    .featured-calculator:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 16px 34px rgba(47,43,37,.09)}
+    .featured-calculator-copy{min-width:0}
+    .featured-kicker{display:inline-block;margin-bottom:7px;color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .featured-calculator h3{margin:0 0 6px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,3vw,32px);font-weight:400;line-height:1.1}
+    .featured-calculator p{margin:0;max-width:640px;font-size:15px}
+    .feature-link{display:inline-flex;align-items:center;justify-content:center;min-width:160px;padding:12px 16px;border-radius:12px;background:var(--accent);color:#fff;font-weight:900;white-space:nowrap}
+    .featured-calculator-icon{width:66px;height:66px;display:grid;place-items:center;border-radius:18px;background:var(--accent-soft);border:1px solid var(--accent-border);font-size:30px}
+
+    .quick-calculators{margin-top:18px}
+    .quick-calculators-title{margin:0 0 10px;font-size:14px;font-weight:800;color:var(--foreground)}
+    .quick-calculators-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .quick-calculators-grid a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;background:var(--card);border:1px solid var(--border);border-radius:11px;text-decoration:none;color:var(--foreground);font-size:14px;font-weight:800;transition:.18s ease}
+    .quick-calculators-grid a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .quick-arrow{color:var(--muted)}
+
+    .explore-section{margin-top:30px;padding-top:28px;border-top:1px solid var(--border)}
+    .explore-heading h2{margin:0}
+    .explore-heading p{margin:7px 0 14px}
+    .explore-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+    .explore-column h3{margin:0 0 8px;font-size:16px;color:var(--foreground)}
+    .editorial-link{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .editorial-link:hover{color:var(--accent);padding-left:4px}
+    .editorial-link span:first-child{flex:1;min-width:0;font-weight:800;font-size:15px}
+    .editorial-arrow{color:var(--muted)}
+    .resource-actions{display:flex;justify-content:space-between;gap:16px;margin-top:18px;flex-wrap:wrap}
+    .resource-actions a{color:var(--accent);font-weight:800;text-decoration:none}
+
     @media (max-width: 800px) {
       .nav-inner {
         flex-direction: row;
@@ -533,6 +581,18 @@
         gap: 10px;
       }
 
+      .toc-box{padding:20px}
+      .toc-links{grid-template-columns:1fr;column-gap:0}
+      .toc-links a{padding:11px 0}
+      .featured-calculator{grid-template-columns:1fr;padding:22px;gap:16px}
+      .feature-link{width:100%}
+      .featured-calculator-icon{display:none}
+      .quick-calculators-grid{grid-template-columns:1fr}
+      .explore-grid{grid-template-columns:1fr;gap:26px}
+      .resource-actions{display:block}
+      .resource-actions a{display:block;margin-top:8px}
+
+
       .summary-card,
       .tax-category-card {
         padding: 14px;
@@ -569,7 +629,7 @@
   </header>
 
   <section class="hero">
-    <span class="pill">Updated for Malaysia 2026 tax guide</span>
+    <span class="pill">Last verified: August 2026 · 2026 filing for YA 2025</span>
     <h1 class="serif">Malaysia <em>Tax Filing</em> Guide 2026</h1>
     <p>
       Prepare for LHDN e-Filing with a simple checklist of income documents, EA Form, tax relief receipts, deadlines, refunds and common filing mistakes.
@@ -580,135 +640,105 @@
 
     <div class="seo">
 
-      <section class="calculator-cta">
-        <h2 class="serif">Prepare for Malaysia Tax Filing</h2>
-        <p>
-          Use this checklist-style guide to prepare income documents, tax relief receipts and key details before submitting your Malaysia income tax return.
-        </p>
-        <a href="income-tax-calculator.html" class="cta-button">Estimate Tax Before Filing →</a>
-      </section>
-
       <section class="summary-box">
         <h2 class="serif">Tax Filing Quick Summary</h2>
         <p>
-          Tax filing is the process of declaring annual income, claiming eligible reliefs and confirming final tax payable or refund with LHDN.
+          In 2026, most individuals are filing income tax returns for <strong>Year of Assessment 2025</strong>.
+          The correct form and deadline depend mainly on whether you have business income.
         </p>
 
         <div class="summary-grid">
-          <div class="summary-card">
-            <strong>e-BE</strong>
-            <span>Common form for employment income without business income</span>
-          </div>
-          <div class="summary-card">
-            <strong>MyTax</strong>
-            <span>Online tax services and e-Filing portal</span>
-          </div>
-          <div class="summary-card">
-            <strong>Receipts</strong>
-            <span>Keep supporting documents for relief claims</span>
-          </div>
-          <div class="summary-card">
-            <strong>Deadline</strong>
-            <span>Check LHDN filing programme every year</span>
-          </div>
+          <div class="summary-card"><strong>e-BE</strong><span>Resident individual without business income</span></div>
+          <div class="summary-card"><strong>30 Apr</strong><span>Form BE statutory due date for YA 2025</span></div>
+          <div class="summary-card"><strong>30 Jun</strong><span>Form B statutory due date for YA 2025</span></div>
+          <div class="summary-card"><strong>7 Years</strong><span>Keep tax records and supporting documents</span></div>
+        </div>
+
+        <div class="note-box">
+          <strong>e-Filing grace period:</strong> HASiL's 2026 filing programme allows e-BE until 15 May 2026 and e-B until 15 July 2026. Filing after the grace period is treated as late from the original statutory due date.
         </div>
       </section>
 
-      <h2>What Is Tax Filing?</h2>
+      <section class="calculator-cta">
+        <h2 class="serif">Estimate Your Tax Before Filing</h2>
+        <p>Use our free Income Tax Calculator to estimate tax payable after income, common tax reliefs and PCB already deducted before you submit your return.</p>
+        <a href="income-tax-calculator.html" class="cta-button">Estimate Tax Before Filing →</a>
+      </section>
 
-      <p>
-        Tax filing means submitting your income tax return to LHDN for a particular year of assessment. For many employees, this involves declaring employment income from the EA Form, claiming eligible tax reliefs and checking whether PCB paid is enough.
-      </p>
+      <section class="toc-box">
+        <h2>On This Page</h2>
+        <div class="toc-links">
+          <a href="#what-is-tax-filing"><span class="toc-number">01</span><span class="toc-label">What Is Tax Filing?</span><span class="toc-arrow">→</span></a>
+          <a href="#who-files"><span class="toc-number">02</span><span class="toc-label">Who Needs to File?</span><span class="toc-arrow">→</span></a>
+          <a href="#which-form"><span class="toc-number">03</span><span class="toc-label">Which Tax Form?</span><span class="toc-arrow">→</span></a>
+          <a href="#documents"><span class="toc-number">04</span><span class="toc-label">Documents to Prepare</span><span class="toc-arrow">→</span></a>
+          <a href="#filing-steps"><span class="toc-number">05</span><span class="toc-label">How to e-File</span><span class="toc-arrow">→</span></a>
+          <a href="#reliefs-pcb"><span class="toc-number">06</span><span class="toc-label">Reliefs & PCB</span><span class="toc-arrow">→</span></a>
+          <a href="#refund-balance"><span class="toc-number">07</span><span class="toc-label">Refund vs Tax Payable</span><span class="toc-arrow">→</span></a>
+          <a href="#deadlines"><span class="toc-number">08</span><span class="toc-label">2026 Filing Deadlines</span><span class="toc-arrow">→</span></a>
+          <a href="#after-filing"><span class="toc-number">09</span><span class="toc-label">After Submission</span><span class="toc-arrow">→</span></a>
+          <a href="#records"><span class="toc-number">10</span><span class="toc-label">Record Keeping</span><span class="toc-arrow">→</span></a>
+          <a href="#mistakes"><span class="toc-number">11</span><span class="toc-label">Common Mistakes</span><span class="toc-arrow">→</span></a>
+          <a href="#faq"><span class="toc-number">12</span><span class="toc-label">FAQ</span><span class="toc-arrow">→</span></a>
+        </div>
+      </section>
 
-      <p>
-        Even if your employer deducts PCB every month, you may still need to file your tax return if you are required to submit under LHDN rules. PCB is only a monthly tax deduction through payroll, while tax filing is the annual declaration process.
-      </p>
+      <h2 id="what-is-tax-filing">What Is Tax Filing?</h2>
+      <p>Tax filing means submitting your income tax return to HASiL / LHDN for a particular Year of Assessment. For employees, this commonly involves declaring employment income from the EA Form, claiming eligible tax reliefs and confirming the PCB already paid during the year.</p>
+      <p>PCB is a monthly tax payment through payroll, while tax filing is the annual declaration of your full tax position. Depending on your circumstances, the final result may be additional tax payable, little or no balance, or a refund.</p>
 
       <section class="guide-box">
-        <h2 class="serif">Who Needs to File Income Tax?</h2>
+        <h2 id="who-files" class="serif">Who Needs to File Income Tax?</h2>
+        <p>Whether you need to file depends on your tax circumstances and HASiL requirements. Employees should not assume that monthly PCB automatically means no filing is required.</p>
+        <p>Individuals who commonly need to review their filing obligations include employees, people with more than one employment, landlords, freelancers, commission earners, business owners and taxpayers with side income.</p>
+        <div class="note-box"><strong>Practical check:</strong> If you already have a tax file / TIN, taxable income, multiple income sources or a prior filing history, review the latest HASiL filing requirements for your situation.</div>
+      </section>
 
-        <p>
-          Many employees assume that monthly PCB deductions mean no further action is needed. In practice, tax filing is still important because it confirms your final annual income, relief claims, rebates, PCB paid and whether there is a refund or additional tax payable.
-        </p>
-
-        <p>
-          Employees with employment income, individuals with more than one source of income, landlords receiving rental income, freelancers, commission earners and people with side income may need to review whether they are required to file an income tax return.
-        </p>
-
-        <p>
-          If you are unsure whether you need to submit a return, check your income records, LHDN registration status and the latest filing requirements. Keeping your EA Form, payslips and income documents organised will make the process easier.
-        </p>
+      <section class="guide-box">
+        <h2 id="which-form" class="serif">Which Tax Form Should You Use?</h2>
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Taxpayer Type</th><th>Common Form</th><th>General Use</th></tr></thead>
+            <tbody>
+              <tr><td>Resident individual without business income</td><td><strong>BE / e-BE</strong></td><td>Common form for salaried employees with employment and other non-business income.</td></tr>
+              <tr><td>Resident individual with business income</td><td><strong>B / e-B</strong></td><td>For individuals carrying on business, including business plus employment or other income.</td></tr>
+              <tr><td>Non-resident individual</td><td><strong>M / e-M</strong></td><td>Used for non-resident individual income tax filing, subject to the taxpayer's circumstances.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note-box"><strong>Form reminder:</strong> Using the wrong form can cause filing errors. The presence of business income is one of the key differences between Form BE and Form B.</div>
       </section>
 
       <section class="guide-box">
         <h2 class="serif">Resident vs Non-Resident Tax Filing</h2>
-
-        <p>
-          Tax filing treatment may differ depending on whether you are treated as a Malaysian tax resident or non-resident for the year of assessment. Residents are generally eligible for personal tax reliefs and progressive tax rates, while non-residents may be subject to different tax treatment.
-        </p>
-
+        <p>Tax residence status affects tax rates, relief eligibility and the return form used. Residence is determined under Malaysia's tax rules and is not based only on citizenship.</p>
         <div class="contribution-table-wrap">
           <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Taxpayer Type</th>
-                <th>General Filing Treatment</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Taxpayer Type</th><th>General Treatment</th></tr></thead>
             <tbody>
-              <tr>
-                <td>Resident Individual</td>
-                <td>May claim eligible personal reliefs, rebates and deductions when filing.</td>
-              </tr>
-              <tr>
-                <td>Non-Resident Individual</td>
-                <td>May have different tax rates and may not be eligible for many personal reliefs.</td>
-              </tr>
+              <tr><td>Resident Individual</td><td>Generally eligible for resident progressive rates and qualifying personal reliefs and rebates.</td></tr>
+              <tr><td>Non-Resident Individual</td><td>Generally subject to different tax treatment and not eligible for most personal reliefs.</td></tr>
             </tbody>
           </table>
         </div>
-
-        <p>
-          Residency status depends on presence in Malaysia and other tax rules. Taxpayers who are unsure about their residency status should check LHDN guidance or seek professional advice.
-        </p>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Documents Required for Tax Filing</h2>
-
-        <p>
-          Preparing documents before logging into e-Filing can reduce mistakes and make the filing process faster. Employees should not wait until the final day to search for receipts or income records.
-        </p>
+        <h2 id="documents" class="serif">Documents to Prepare Before Filing</h2>
+        <p>Preparing documents before logging into MyTax makes filing faster and reduces the chance of missing income or relief claims.</p>
 
         <div class="contribution-table-wrap">
           <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Document</th>
-                <th>Why It Matters</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Document</th><th>Why It Matters</th></tr></thead>
             <tbody>
-              <tr>
-                <td>EA Form</td>
-                <td>Shows annual employment income, allowances, benefits, EPF and PCB deducted by employer.</td>
-              </tr>
-              <tr>
-                <td>Relief Receipts</td>
-                <td>Supports claims for lifestyle, medical, education, insurance, childcare or other eligible reliefs.</td>
-              </tr>
-              <tr>
-                <td>EPF / Insurance / PRS Statements</td>
-                <td>Helps confirm contribution or premium amounts for relief claims.</td>
-              </tr>
-              <tr>
-                <td>Other Income Records</td>
-                <td>Useful for rental income, freelance income, commission, business income or side income.</td>
-              </tr>
-              <tr>
-                <td>Bank Account Details</td>
-                <td>Important if a tax refund is payable after filing.</td>
-              </tr>
+              <tr><td>EA / EC Form</td><td>Shows employment income, benefits, EPF and PCB information reported by the employer.</td></tr>
+              <tr><td>PCB Records</td><td>Confirms monthly tax already deducted and paid through payroll.</td></tr>
+              <tr><td>Tax Relief Receipts</td><td>Supports lifestyle, medical, education, childcare and other qualifying claims.</td></tr>
+              <tr><td>EPF / Insurance / PRS / SOCSO Statements</td><td>Supports contribution and premium-related relief claims.</td></tr>
+              <tr><td>Other Income Records</td><td>Supports rental, freelance, commission, business or side-income declarations.</td></tr>
+              <tr><td>Donation / Zakat Receipts</td><td>May support qualifying deductions or rebates where applicable.</td></tr>
+              <tr><td>Bank Account Details</td><td>Important if a tax refund is approved.</td></tr>
+              <tr><td>Prior Tax Records</td><td>Useful for checking previous balances, refunds, instalments or tax information.</td></tr>
             </tbody>
           </table>
         </div>
@@ -716,321 +746,212 @@
 
       <section class="guide-box">
         <h2 class="serif">Malaysia Tax Filing Checklist</h2>
-
         <div class="tax-category-grid">
-          <div class="tax-category-card">
-            <span class="tag">Document</span>
-            <h3>EA Form</h3>
-            <p>Check salary, allowances, benefits, EPF and PCB reported by your employer.</p>
-          </div>
-
-          <div class="tax-category-card">
-            <span class="tag">Reliefs</span>
-            <h3>Receipts & Proof</h3>
-            <p>Prepare receipts for lifestyle, medical, education, insurance and other eligible tax reliefs.</p>
-          </div>
-
-          <div class="tax-category-card">
-            <span class="tag">Income</span>
-            <h3>Other Income</h3>
-            <p>Review rental, freelance, business, commission or other taxable income sources.</p>
-          </div>
-
-          <div class="tax-category-card">
-            <span class="tag">Payment</span>
-            <h3>Tax Payable / Refund</h3>
-            <p>Check whether you need to pay additional tax or receive a refund after PCB and rebates.</p>
-          </div>
+          <div class="tax-category-card"><span class="tag">Income</span><h3>Check EA Form</h3><p>Compare salary, allowances, benefits, EPF and PCB with your records.</p></div>
+          <div class="tax-category-card"><span class="tag">Reliefs</span><h3>Collect Receipts</h3><p>Prepare evidence for lifestyle, medical, education, insurance and family reliefs.</p></div>
+          <div class="tax-category-card"><span class="tag">Other Income</span><h3>Declare All Sources</h3><p>Review rental, freelance, business, commission and other taxable income.</p></div>
+          <div class="tax-category-card"><span class="tag">Final Check</span><h3>Refund or Balance</h3><p>Confirm PCB, rebates and whether the final return shows tax payable or a refund.</p></div>
         </div>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">How to File Income Tax in Malaysia</h2>
-
+        <h2 id="filing-steps" class="serif">How to File Income Tax in Malaysia</h2>
         <div class="contribution-table-wrap">
           <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Step</th>
-                <th>What To Do</th>
-                <th>Simple Explanation</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Step</th><th>What To Do</th><th>Simple Explanation</th></tr></thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Log in to MyTax</td>
-                <td>Access LHDN online services and select the relevant tax return form.</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Check personal details</td>
-                <td>Confirm your tax profile, contact information and bank account details.</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Declare income</td>
-                <td>Enter employment income and other taxable income, if applicable.</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Claim reliefs</td>
-                <td>Enter eligible tax reliefs supported by documents.</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>Submit and keep record</td>
-                <td>Review, submit and save the acknowledgement for your records.</td>
-              </tr>
+              <tr><td>1</td><td>Log in to MyTax</td><td>Access HASiL online services and open the appropriate e-Filing return.</td></tr>
+              <tr><td>2</td><td>Check personal details</td><td>Confirm profile, contact information and bank account details.</td></tr>
+              <tr><td>3</td><td>Declare income</td><td>Enter employment and other taxable income for the year.</td></tr>
+              <tr><td>4</td><td>Claim reliefs / deductions</td><td>Enter eligible claims supported by your records.</td></tr>
+              <tr><td>5</td><td>Check PCB and tax computation</td><td>Review tax already paid, rebates, final tax and refund / balance position.</td></tr>
+              <tr><td>6</td><td>Sign and submit</td><td>Review the declaration, submit the return and save the acknowledgement / tax computation.</td></tr>
             </tbody>
           </table>
         </div>
+        <div class="note-box"><strong>Before clicking submit:</strong> You are responsible for the information declared. Check income, reliefs, bank details and tax paid before signing the return.</div>
       </section>
 
       <section class="example-box">
         <h2 class="serif">Example Tax Filing Flow</h2>
-
-        <p>
-          A salaried employee may file using e-BE by checking EA Form income, adding eligible reliefs, confirming PCB already paid and submitting the return online.
-        </p>
-
-        <p>
-          If PCB is higher than final tax, a refund may arise. If PCB is lower, the employee may need to pay the balance.
-        </p>
+        <p>A salaried employee using e-BE may start with EA Form income, add any other taxable income, claim eligible reliefs, verify PCB already deducted and review the final tax computation before submission.</p>
+        <p>If PCB exceeds final tax, a refund may arise. If PCB is lower than final tax, the employee may need to pay the remaining balance.</p>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Tax Refund vs Additional Tax Payable</h2>
-
-        <p>
-          After you submit your tax return, your final tax position depends on the comparison between total tax payable and the PCB already deducted during the year.
-        </p>
-
+        <h2 id="reliefs-pcb" class="serif">How Tax Reliefs and PCB Fit Into Filing</h2>
+        <p>Tax reliefs reduce chargeable income, while PCB represents tax already paid during the year through payroll. Both therefore affect the final tax position, but in different ways.</p>
         <div class="contribution-table-wrap">
           <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Situation</th>
-                <th>Result</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Item</th><th>Effect on Final Tax Position</th></tr></thead>
             <tbody>
-              <tr>
-                <td>PCB deducted is higher than final tax payable</td>
-                <td>You may receive a tax refund after processing.</td>
-              </tr>
-              <tr>
-                <td>PCB deducted is lower than final tax payable</td>
-                <td>You may need to pay additional tax.</td>
-              </tr>
-              <tr>
-                <td>PCB deducted is close to final tax payable</td>
-                <td>There may be little or no refund or balance payable.</td>
-              </tr>
+              <tr><td>Tax Relief</td><td>Reduces chargeable income before tax is calculated.</td></tr>
+              <tr><td>Tax Rebate</td><td>Reduces tax payable directly where the conditions are met.</td></tr>
+              <tr><td>PCB</td><td>Offsets tax payable because it is tax already deducted during the year.</td></tr>
             </tbody>
           </table>
         </div>
+      </section>
 
-        <p>
-          Tax reliefs, rebates, bonuses, additional income and changes in employment can all affect whether you receive a refund or need to top up tax.
-        </p>
+      <section class="guide-box">
+        <h2 id="refund-balance" class="serif">Tax Refund vs Additional Tax Payable</h2>
+        <p>After the return is completed, compare final tax payable with tax already paid through PCB and other credits.</p>
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Situation</th><th>Possible Result</th></tr></thead>
+            <tbody>
+              <tr><td>PCB / tax paid is higher than final tax</td><td>A tax refund may arise, subject to HASiL processing and verification.</td></tr>
+              <tr><td>PCB / tax paid is lower than final tax</td><td>Additional tax may need to be paid.</td></tr>
+              <tr><td>PCB broadly matches final tax</td><td>There may be little or no remaining balance.</td></tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section class="guide-box">
         <h2 class="serif">Common Tax Filing Examples</h2>
-
         <h3>Example 1: Employment Income Only</h3>
-        <p>
-          A salaried employee uses the EA Form to enter employment income, checks PCB deducted by the employer and claims eligible tax reliefs such as EPF, lifestyle or insurance relief.
-        </p>
+        <p>A salaried employee uses EA Form income, confirms PCB and claims eligible reliefs such as EPF, lifestyle or insurance relief.</p>
 
         <h3>Example 2: Employment Income and Rental Income</h3>
-        <p>
-          An employee who also receives rental income may need to declare both employment income and rental income. Supporting documents such as rental records, expenses and payment records should be kept.
-        </p>
+        <p>An employee who also receives rental income should review the correct tax treatment and declare applicable rental income with supporting rental and expense records.</p>
 
         <h3>Example 3: Tax Refund Situation</h3>
-        <p>
-          If PCB was deducted every month but the taxpayer has significant eligible reliefs, final tax payable may be lower than PCB already paid. This may result in a tax refund after filing.
-        </p>
+        <p>If PCB was deducted throughout the year but final tax is reduced by valid reliefs and rebates, the return may show tax paid in excess and a refund position.</p>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">What Happens After Submitting Tax Filing?</h2>
+        <h2 id="deadlines" class="serif">Malaysia Tax Filing Deadlines — 2026</h2>
+        <p>The table below shows the key YA 2025 individual filing deadlines under HASiL's 2026 Return Form Filing Programme.</p>
 
-        <p>
-          After submitting your tax return, you should save the acknowledgement and tax computation for your own records. These documents are useful if you need to check your submission later or respond to any query.
-        </p>
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Return</th><th>Statutory Due Date</th><th>e-Filing Grace Period</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Form BE / e-BE</strong> — no business income</td><td>30 April 2026</td><td>Until 15 May 2026</td></tr>
+              <tr><td><strong>Form B / e-B</strong> — with business income</td><td>30 June 2026</td><td>Until 15 July 2026</td></tr>
+            </tbody>
+          </table>
+        </div>
 
-        <p>
-          If a refund is due, the refund may be processed to the bank account provided, subject to LHDN processing and verification. If additional tax is payable, taxpayers should make payment within the required timeline.
-        </p>
+        <div class="deadline-grid">
+          <div class="deadline-card"><strong>e-BE Example</strong><p>If e-BE for YA 2025 is furnished on 16 May 2026, HASiL's filing programme states that it is treated as late from 1 May 2026.</p></div>
+          <div class="deadline-card"><strong>e-B Example</strong><p>If e-B for YA 2025 is furnished on 16 July 2026, it is treated as late from 1 July 2026.</p></div>
+        </div>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">How Long Should Tax Records Be Kept?</h2>
-
-        <p>
-          Taxpayers should keep supporting documents after filing because LHDN may request verification. This includes EA Forms, relief receipts, insurance statements, medical receipts, donation receipts, rental records and proof of payment.
-        </p>
-
-        <p>
-          A practical approach is to keep one folder for each year of assessment. Store receipts by category so that lifestyle, medical, education, insurance and other relief documents can be found quickly if needed.
-        </p>
+        <h2 id="after-filing" class="serif">What Happens After You Submit?</h2>
+        <p>After submission, save the acknowledgement and tax computation. These records are useful if you need to check your return later or respond to a HASiL query.</p>
+        <p>If the return shows tax paid in excess, any refund is subject to HASiL processing and verification. If tax remains payable, make the required payment by the applicable deadline.</p>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Common Tax Filing Mistakes</h2>
-
-        <p>
-          Tax filing mistakes can lead to wrong tax payable, delayed refunds or compliance issues. Review your income and relief claims carefully before submitting.
-        </p>
+        <h2 id="records" class="serif">How Long Should Tax Records Be Kept?</h2>
+        <p>HASiL states that records and documents used in tax computation should generally be kept for <strong>7 years</strong>.</p>
 
         <div class="checklist">
           <ul>
-            <li>Entering income that does not match the EA Form</li>
-            <li>Claiming relief without keeping receipts or documents</li>
-            <li>Forgetting PCB already deducted by employer</li>
-            <li>Using the wrong tax form</li>
-            <li>Submitting after the deadline</li>
-            <li>Forgetting to declare rental, freelance or side income</li>
-            <li>Entering outdated bank account details for refund</li>
+            <li>EA / EC Form</li>
+            <li>Tax return acknowledgement and computation</li>
+            <li>Tax relief receipts</li>
+            <li>Insurance, EPF, PRS and SOCSO statements</li>
+            <li>Medical and education receipts</li>
+            <li>Donation and zakat receipts</li>
+            <li>Rental, freelance, business and side-income records</li>
+            <li>Other documents supporting income, deductions and claims</li>
+          </ul>
+        </div>
+
+        <div class="note-box"><strong>Practical filing system:</strong> Keep one digital folder per Year of Assessment and separate subfolders for income, reliefs, tax paid and submission records.</div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="mistakes" class="serif">Common Tax Filing Mistakes</h2>
+        <div class="checklist">
+          <ul>
+            <li>Entering employment income that does not agree with the EA Form</li>
+            <li>Using the wrong return form</li>
+            <li>Forgetting rental, freelance, commission or side income</li>
+            <li>Claiming tax relief without adequate supporting documents</li>
+            <li>Forgetting PCB already deducted by the employer</li>
+            <li>Using the wrong Year of Assessment</li>
+            <li>Submitting after the applicable deadline</li>
+            <li>Entering outdated bank account details for a potential refund</li>
+            <li>Submitting without saving the acknowledgement and tax computation</li>
           </ul>
         </div>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Tax Filing Deadline</h2>
-
-        <p>
-          Filing deadlines can change based on the official LHDN Return Form Filing Programme. Employees commonly refer to the BE / e-BE deadline, while individuals with business income refer to the B / e-B deadline.
-        </p>
-
-        <div class="note-box">
-          <strong>Note:</strong> Always check the latest LHDN filing programme for the exact year, form type and e-Filing grace period.
+        <h2>Sources &amp; Verification</h2>
+        <p>This guide was last verified in August 2026 against current HASiL materials for YA 2025 e-Filing, the 2026 Return Form Filing Programme, individual form usage and record-keeping requirements.</p>
+        <div class="source-note">
+          <strong>Official sources used for verification:</strong><br>
+          <a href="https://www.hasil.gov.my/media/fqog1423/rf-filing-programme-for-2026.pdf" target="_blank" rel="noopener">HASiL — Return Form Filing Programme 2026</a><br>
+          <a href="https://www.hasil.gov.my/media/yy5letic/e-filing-made-easy-2026.pdf" target="_blank" rel="noopener">HASiL — e-Filing Made Easy 2026</a><br>
+          <a href="https://www.hasil.gov.my/en/individual/others/frequently-asked-question-individual/" target="_blank" rel="noopener">HASiL — Individual Tax FAQ</a><br>
+          <a href="https://www.hasil.gov.my/" target="_blank" rel="noopener">HASiL — Official Website</a>
         </div>
       </section>
 
-      <section class="guide-box">
-        <h2 class="serif">Who Should Read This Tax Filing Guide?</h2>
-
-        <ul>
-          <li>Employees preparing their first LHDN e-Filing submission</li>
-          <li>Taxpayers checking documents before filing</li>
-          <li>People who want to understand PCB, reliefs and refunds</li>
-          <li>Individuals who want a simple tax filing checklist</li>
-          <li>Freelancers, landlords or side-income earners checking basic filing preparation</li>
-        </ul>
-      </section>
-
-      <h2>Frequently Asked Questions</h2>
-
+      <h2 id="faq">Frequently Asked Questions</h2>
       <div class="faq-box">
-        <details class="faq-item" open>
-          <summary>What form do employees usually use for tax filing?</summary>
-          <p>
-            Employees with employment income and no business income commonly use Form BE or e-BE, depending on filing method and eligibility.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Do I need my EA Form before filing tax?</summary>
-          <p>
-            Yes. The EA Form is important because it shows employment income, allowances, deductions and PCB reported by your employer.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Do I need to file tax if PCB is already deducted?</summary>
-          <p>
-            PCB is a monthly tax deduction, but tax filing is the annual declaration process. You may still need to file your return depending on your income, tax status and LHDN requirements.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can I file tax without an EA Form?</summary>
-          <p>
-            For employees, the EA Form is one of the most important documents for tax filing. If you have not received it, you should request it from your employer before filing.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>How long should I keep tax relief receipts?</summary>
-          <p>
-            You should keep supporting documents in case LHDN requests verification. Keep receipts, statements and proof for claims made in your tax return.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>How do I know if I will receive a tax refund?</summary>
-          <p>
-            A refund may arise if PCB already deducted is higher than your final tax payable after income, reliefs and rebates are considered.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What happens if I forget to claim a tax relief?</summary>
-          <p>
-            You may need to review whether amendment or correction is possible under LHDN rules. Keep supporting documents and check the applicable correction process.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What happens if I file tax late?</summary>
-          <p>
-            Late filing may lead to penalties or compliance issues. Check the latest LHDN filing programme and submit before the deadline.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can I amend my tax return after submitting?</summary>
-          <p>
-            Amendments may be possible under certain circumstances, but the process depends on LHDN rules and the type of correction required.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What documents should I keep after filing?</summary>
-          <p>
-            Keep your EA Form, acknowledgement, tax computation, relief receipts, statements and proof of income or expenses related to claims made in the return.
-          </p>
-        </details>
+        <details class="faq-item" open><summary>What form do employees usually use for tax filing?</summary><p>A resident individual with no business income commonly uses Form BE / e-BE. A resident individual with business income generally uses Form B / e-B.</p></details>
+        <details class="faq-item"><summary>What is the YA 2025 Form BE filing deadline?</summary><p>The statutory due date is 30 April 2026. HASiL's 2026 filing programme provides an e-Filing grace period for e-BE until 15 May 2026.</p></details>
+        <details class="faq-item"><summary>What is the YA 2025 Form B filing deadline?</summary><p>The statutory due date is 30 June 2026, with an e-Filing grace period for e-B until 15 July 2026.</p></details>
+        <details class="faq-item"><summary>Do I need my EA Form before filing tax?</summary><p>For employees, the EA Form is one of the main documents because it summarises employment income, benefits, EPF and PCB information reported by the employer.</p></details>
+        <details class="faq-item"><summary>Do I submit receipts together with my tax return?</summary><p>HASiL states that supporting documents generally do not need to be submitted together with the individual return, but they should be kept for future verification.</p></details>
+        <details class="faq-item"><summary>How long should I keep tax records?</summary><p>Tax records and supporting documents should generally be retained for 7 years in accordance with the applicable record-keeping rules.</p></details>
+        <details class="faq-item"><summary>Do I still need to file if PCB has already been deducted?</summary><p>PCB is monthly tax paid through payroll. Whether you still need to file depends on the applicable filing requirements and your circumstances.</p></details>
+        <details class="faq-item"><summary>How do I know if I will receive a tax refund?</summary><p>A refund may arise when tax already paid exceeds the final tax liability shown after income, reliefs, rebates and other relevant items are considered.</p></details>
+        <details class="faq-item"><summary>What happens if I file late?</summary><p>Late filing can lead to penalties. HASiL's filing programme explains that returns furnished after the applicable grace period are treated as late from the original statutory due date.</p></details>
+        <details class="faq-item"><summary>What should I save after e-Filing?</summary><p>Save the submission acknowledgement, tax computation and supporting records used to prepare the return.</p></details>
       </div>
 
-      <section class="salary-guides-box">
-        <h2 class="serif">Related Tax Guides</h2>
-        <p>
-          Continue reading related Malaysia tax guides to understand reliefs, rebates, PCB and tax filing.
-        </p>
+      <section class="related-tools-section">
+        <h2>Related Tools</h2>
+        <p class="related-tools-intro">Estimate your tax position before submission, then explore the tax and payroll topics most closely related to filing.</p>
 
-        <div class="guide-mini-grid">
-          <a href="tax-relief-guide.html">💸 Tax Relief Guide</a>
-          <a href="income-tax-guide.html">🏛️ Income Tax Guide</a>
-          <a href="tax-rebate-guide.html">✅ Tax Rebate Guide</a>
-          <a href="tax-refund-guide.html">💵 Tax Refund Guide</a>
+        <a class="featured-calculator" href="income-tax-calculator.html">
+          <div class="featured-calculator-copy">
+            <span class="featured-kicker">Income Tax Calculator</span>
+            <h3>Estimate Your Tax Before Filing</h3>
+            <p>Estimate tax payable after income, common tax reliefs and PCB already deducted.</p>
+          </div>
+          <span class="feature-link">Calculate Tax →</span>
+          <div class="featured-calculator-icon" aria-hidden="true">🧾</div>
+        </a>
+
+        <div class="quick-calculators">
+          <p class="quick-calculators-title">Quick Calculators</p>
+          <div class="quick-calculators-grid">
+            <a href="pcb-calculator.html"><span>PCB Calculator</span><span class="quick-arrow">→</span></a>
+            <a href="index.html"><span>Salary Calculator</span><span class="quick-arrow">→</span></a>
+            <a href="epf-calculator.html"><span>EPF Calculator</span><span class="quick-arrow">→</span></a>
+          </div>
         </div>
 
-        <p class="view-all-guides">
-          <a href="guides.html">View All Salary Guides →</a>
-        </p>
-      </section>
-
-      <section class="salary-guides-box">
-        <h2 class="serif">Related Calculators</h2>
-        <p>
-          Use these calculators to estimate income tax, PCB and monthly take-home pay in Malaysia.
-        </p>
-
-        <div class="guide-mini-grid">
-          <a href="income-tax-calculator.html">Income Tax Calculator</a>
-          <a href="pcb-calculator.html">PCB Calculator</a>
-          <a href="index.html">Salary Calculator</a>
-          <a href="epf-calculator.html">EPF Calculator</a>
+        <div class="explore-section">
+          <div class="explore-heading"><h2>Continue Exploring</h2><p>Useful next steps for understanding annual tax, reliefs, refunds and payroll tax.</p></div>
+          <div class="explore-grid">
+            <div class="explore-column">
+              <h3>Tax &amp; Filing</h3>
+              <a class="editorial-link" href="income-tax-guide.html"><span>Income Tax Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="tax-relief-guide.html"><span>Tax Relief Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="tax-rebate-guide.html"><span>Tax Rebate Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="tax-refund-guide.html"><span>Tax Refund Guide</span><span class="editorial-arrow">→</span></a>
+            </div>
+            <div class="explore-column">
+              <h3>Payroll &amp; Salary</h3>
+              <a class="editorial-link" href="pcb-guide.html"><span>PCB Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="epf-guide.html"><span>EPF Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="salary-deduction-guide.html"><span>Salary Deduction Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="payslip-guide.html"><span>Payslip Guide</span><span class="editorial-arrow">→</span></a>
+            </div>
+          </div>
+          <div class="resource-actions"><a href="guides.html">Explore All Guides →</a><a href="calculators.html">View All Calculators →</a></div>
         </div>
-
-        <p class="view-all-guides">
-          <a href="calculators.html">View All Calculators →</a>
-        </p>
       </section>
 
     </div>
