@@ -492,6 +492,42 @@
       color: var(--accent);
     }
 
+
+    .toc-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:26px 0}
+    .toc-box h2{margin-top:0;margin-bottom:16px}
+    .toc-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px}
+    .toc-links a{display:flex;align-items:center;gap:14px;min-width:0;text-decoration:none;color:var(--foreground);padding:12px 2px;border-bottom:1px solid var(--border);transition:.18s ease}
+    .toc-links a:hover{color:var(--accent);padding-left:4px}
+    .toc-number{width:28px;flex:0 0 28px;color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.04em}
+    .toc-label{flex:1;min-width:0;font-weight:700;font-size:15px}
+    .toc-arrow{color:var(--muted);font-size:15px}
+    .source-note{margin-top:18px;background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);padding:14px;border-radius:10px;color:var(--muted);font-size:13px}
+    .source-note a{color:var(--accent);font-weight:800;text-decoration:none}
+    .related-tools-section{margin:34px 0}
+    .related-tools-intro{margin-top:0;max-width:760px}
+    .featured-calculator{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:22px;align-items:center;margin-top:20px;padding:24px 26px;background:radial-gradient(circle at top right,rgba(47,125,94,.14),transparent 34%),linear-gradient(135deg,#f8f5ef 0%,#fbfaf6 100%);border:1px solid var(--accent-border);border-radius:18px;text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .featured-calculator:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 16px 34px rgba(47,43,37,.09)}
+    .featured-kicker{display:inline-block;margin-bottom:7px;color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .featured-calculator h3{margin:0 0 6px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,3vw,32px);font-weight:400;line-height:1.1}
+    .featured-calculator p{margin:0;max-width:640px;font-size:15px}
+    .feature-link{display:inline-flex;align-items:center;justify-content:center;min-width:160px;padding:12px 16px;border-radius:12px;background:var(--accent);color:#fff;font-weight:900;white-space:nowrap}
+    .featured-calculator-icon{width:66px;height:66px;display:grid;place-items:center;border-radius:18px;background:var(--accent-soft);border:1px solid var(--accent-border);font-size:30px}
+    .quick-calculators{margin-top:18px}
+    .quick-calculators-title{margin:0 0 10px;font-size:14px;font-weight:800;color:var(--foreground)}
+    .quick-calculators-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .quick-calculators-grid a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;background:var(--card);border:1px solid var(--border);border-radius:11px;text-decoration:none;color:var(--foreground);font-size:14px;font-weight:800;transition:.18s ease}
+    .quick-calculators-grid a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .quick-arrow,.editorial-arrow{color:var(--muted)}
+    .explore-section{margin-top:30px;padding-top:28px;border-top:1px solid var(--border)}
+    .explore-heading h2{margin:0}.explore-heading p{margin:7px 0 14px}
+    .explore-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+    .explore-column h3{margin:0 0 8px;font-size:16px;color:var(--foreground)}
+    .editorial-link{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .editorial-link:hover{color:var(--accent);padding-left:4px}
+    .editorial-link span:first-child{flex:1;min-width:0;font-weight:800;font-size:15px}
+    .resource-actions{display:flex;justify-content:space-between;gap:16px;margin-top:18px;flex-wrap:wrap}
+    .resource-actions a{color:var(--accent);font-weight:800;text-decoration:none}
+
     @media (max-width: 800px) {
       .nav-inner {
         flex-direction: row;
@@ -555,6 +591,13 @@
         gap: 10px;
       }
 
+      .toc-box{padding:20px}
+      .toc-links{grid-template-columns:1fr;column-gap:0}
+      .featured-calculator{grid-template-columns:1fr;padding:22px;gap:16px}
+      .feature-link{width:100%}.featured-calculator-icon{display:none}
+      .quick-calculators-grid{grid-template-columns:1fr}
+      .explore-grid{grid-template-columns:1fr;gap:26px}
+
       .summary-card,
       .tax-category-card {
         padding: 14px;
@@ -591,7 +634,7 @@
   </header>
 
   <section class="hero">
-    <span class="pill">Updated for Malaysia 2026 tax guide</span>
+    <span class="pill">Last verified: August 2026 · YA 2025</span>
     <h1 class="serif">Malaysia <em>Tax Rebate</em> Guide 2026</h1>
     <p>
       Learn how Malaysia tax rebates work, how they differ from tax reliefs, and how rebates may reduce your final income tax payable.
@@ -602,416 +645,269 @@
 
     <div class="seo">
 
+      <section class="summary-box">
+        <h2 class="serif">Tax Rebate Quick Summary</h2>
+        <p>Tax rebates are applied after income tax is calculated. For YA 2025, the main rebates relevant to many resident individuals are the personal rebate, spouse rebate where applicable, and qualifying zakat / fitrah payments.</p>
+        <div class="summary-grid">
+          <div class="summary-card"><strong>RM400</strong><span>Self rebate if chargeable income does not exceed RM35,000</span></div>
+          <div class="summary-card"><strong>+ RM400</strong><span>Possible spouse rebate where the qualifying spouse deduction is allowed</span></div>
+          <div class="summary-card"><strong>RM35,000</strong><span>Chargeable-income ceiling for the RM400 personal rebate</span></div>
+          <div class="summary-card"><strong>Zakat</strong><span>Qualifying zakat / fitrah can reduce tax payable, subject to the tax charged</span></div>
+        </div>
+        <div class="note-box"><strong>Important:</strong> A rebate cannot create a negative tax amount by itself. If total rebates exceed the income tax charged, the excess is not refunded or carried forward.</div>
+      </section>
+
       <section class="calculator-cta">
-        <h2 class="serif">Check Possible Tax Rebates</h2>
-        <p>
-          Tax rebates reduce tax payable directly. Learn how rebates are different from tax reliefs and how they may affect your final income tax.
-        </p>
+        <h2 class="serif">See Where Rebates Fit Into Your Tax</h2>
+        <p>Estimate your Malaysian income tax first, then see how qualifying rebates and PCB already paid affect your final tax position.</p>
         <a href="income-tax-calculator.html" class="cta-button">Estimate Income Tax →</a>
       </section>
 
-      <section class="summary-box">
-        <h2 class="serif">Tax Rebate Quick Summary</h2>
-        <p>
-          Tax rebates are different from tax reliefs. Reliefs reduce chargeable income, while rebates reduce the tax payable amount directly.
-        </p>
-
-        <div class="summary-grid">
-          <div class="summary-card">
-            <strong>Direct</strong>
-            <span>Rebates reduce tax payable directly</span>
-          </div>
-          <div class="summary-card">
-            <strong>Relief ≠ Rebate</strong>
-            <span>Reliefs reduce chargeable income first</span>
-          </div>
-          <div class="summary-card">
-            <strong>RM400</strong>
-            <span>Common resident individual rebate if conditions are met</span>
-          </div>
-          <div class="summary-card">
-            <strong>Zakat</strong>
-            <span>May qualify as a rebate subject to rules</span>
-          </div>
+      <section class="toc-box">
+        <h2>On This Page</h2>
+        <div class="toc-links">
+          <a href="#what-is-rebate"><span class="toc-number">01</span><span class="toc-label">What Is a Tax Rebate?</span><span class="toc-arrow">→</span></a>
+          <a href="#rebate-types"><span class="toc-number">02</span><span class="toc-label">Main Tax Rebates</span><span class="toc-arrow">→</span></a>
+          <a href="#individual-rebate"><span class="toc-number">03</span><span class="toc-label">RM400 Individual Rebate</span><span class="toc-arrow">→</span></a>
+          <a href="#spouse-rebate"><span class="toc-number">04</span><span class="toc-label">Spouse Rebate</span><span class="toc-arrow">→</span></a>
+          <a href="#zakat"><span class="toc-number">05</span><span class="toc-label">Zakat & Fitrah Rebate</span><span class="toc-arrow">→</span></a>
+          <a href="#relief-vs-rebate"><span class="toc-number">06</span><span class="toc-label">Relief vs Rebate</span><span class="toc-arrow">→</span></a>
+          <a href="#rebate-vs-refund"><span class="toc-number">07</span><span class="toc-label">Rebate vs Refund</span><span class="toc-arrow">→</span></a>
+          <a href="#calculation"><span class="toc-number">08</span><span class="toc-label">Calculation Example</span><span class="toc-arrow">→</span></a>
+          <a href="#documents"><span class="toc-number">09</span><span class="toc-label">Documents to Keep</span><span class="toc-arrow">→</span></a>
+          <a href="#mistakes"><span class="toc-number">10</span><span class="toc-label">Common Mistakes</span><span class="toc-arrow">→</span></a>
+          <a href="#checklist"><span class="toc-number">11</span><span class="toc-label">Rebate Checklist</span><span class="toc-arrow">→</span></a>
+          <a href="#faq"><span class="toc-number">12</span><span class="toc-label">FAQ</span><span class="toc-arrow">→</span></a>
         </div>
       </section>
 
-      <h2>What Is a Tax Rebate?</h2>
-
-      <p>
-        A tax rebate is an amount that reduces tax payable directly after tax has been calculated. This is different from a tax relief, which reduces chargeable income before tax is calculated.
-      </p>
-
-      <p>
-        For example, if your calculated tax is RM700 and you qualify for a RM400 rebate, the tax payable may be reduced to RM300 before considering PCB already paid.
-      </p>
-
-      <section class="guide-box">
-        <h2 class="serif">Who Can Claim Tax Rebates?</h2>
-
-        <p>
-          Tax rebates are generally available only when the taxpayer satisfies specific conditions. Eligibility may depend on resident status, chargeable income, assessment type, zakat or fitrah payment records and the latest LHDN rules for the year of assessment.
-        </p>
-
-        <p>
-          Not every taxpayer will qualify for every rebate. Before claiming, taxpayers should check whether they meet the relevant conditions and keep supporting documents in case LHDN requests verification after filing.
-        </p>
-      </section>
-
-      <section class="guide-box">
-        <h2 class="serif">Individual Tax Rebate</h2>
-
-        <p>
-          The individual tax rebate is commonly discussed because it may apply to resident individuals whose chargeable income falls within the specified threshold. Unlike tax relief, this rebate reduces the calculated tax payable directly.
-        </p>
-
-        <p>
-          For example, a taxpayer may first calculate chargeable income after deducting eligible tax reliefs. If the final chargeable income qualifies under the applicable rebate rule, the rebate can reduce the tax payable amount before PCB is compared against the final tax position.
-        </p>
-      </section>
-
-      <section class="guide-box">
-        <h2 class="serif">Zakat and Fitrah Tax Rebate</h2>
-
-        <p>
-          Zakat, fitrah and certain approved Islamic religious payments may qualify as a tax rebate, subject to conditions. This can directly reduce tax payable, but taxpayers should ensure that the payment is properly supported and made to an approved body or channel.
-        </p>
-
-        <p>
-          Employees who make zakat or fitrah payments should keep official receipts, online payment confirmations and records showing the payment date and amount. These documents may be important if LHDN asks for proof after the tax return is submitted.
-        </p>
-      </section>
-
-      <section class="guide-box">
-        <h2 class="serif">Tax Rebate vs Tax Relief</h2>
-
-        <p>
-          Tax rebate and tax relief are often confused because both may reduce tax burden. The main difference is the stage where they are applied in the tax calculation.
-        </p>
-
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Tax Relief</th>
-                <th>Tax Rebate</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Purpose</td>
-                <td>Reduces chargeable income</td>
-                <td>Reduces tax payable directly</td>
-              </tr>
-              <tr>
-                <td>Used When</td>
-                <td>Before tax is calculated</td>
-                <td>After tax is calculated</td>
-              </tr>
-              <tr>
-                <td>Example</td>
-                <td>Lifestyle relief, EPF, insurance</td>
-                <td>Individual rebate, zakat rebate</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section class="guide-box">
-        <h2 class="serif">Tax Rebate vs Tax Refund</h2>
-
-        <p>
-          A tax rebate and a tax refund are not the same thing. A rebate reduces tax payable during the calculation process. A refund happens only when the total tax already paid, such as PCB, is higher than the final tax payable after reliefs and rebates.
-        </p>
-
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Tax Rebate</th>
-                <th>Tax Refund</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Meaning</td>
-                <td>Reduces tax payable directly</td>
-                <td>Money returned after overpayment</td>
-              </tr>
-              <tr>
-                <td>When it happens</td>
-                <td>During tax calculation</td>
-                <td>After final tax is compared with PCB paid</td>
-              </tr>
-              <tr>
-                <td>Example</td>
-                <td>Individual rebate or zakat rebate</td>
-                <td>PCB paid is more than final tax payable</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section class="guide-box">
-        <h2 class="serif">Common Malaysia Tax Rebate Categories</h2>
-
-        <div class="tax-category-grid">
-          <div class="tax-category-card">
-            <span class="tag">Resident</span>
-            <h3>Individual Rebate</h3>
-            <p>A resident individual may qualify for a rebate if chargeable income is within the specified threshold.</p>
-          </div>
-
-          <div class="tax-category-card">
-            <span class="tag">Spouse</span>
-            <h3>Spouse / Joint Assessment</h3>
-            <p>Rebate treatment may differ depending on separate assessment, joint assessment or spouse income situation.</p>
-          </div>
-
-          <div class="tax-category-card">
-            <span class="tag">Religious</span>
-            <h3>Zakat / Fitrah</h3>
-            <p>Zakat, fitrah or other approved Islamic religious payments may qualify as a rebate subject to rules.</p>
-          </div>
-
-          <div class="tax-category-card">
-            <span class="tag">Check</span>
-            <h3>LHDN Conditions</h3>
-            <p>Rebate amounts and eligibility should be checked against the latest LHDN guidance.</p>
-          </div>
-        </div>
-      </section>
-
-      <h2>How Tax Rebate Is Applied</h2>
-
+      <h2 id="what-is-rebate">What Is a Tax Rebate?</h2>
+      <p>A tax rebate reduces the amount of income tax charged after tax has been calculated. This is different from a tax relief, which reduces chargeable income before the tax rates are applied.</p>
       <div class="formula-box">
-        <strong>Final Tax = Tax Payable − Tax Rebates − PCB Paid</strong>
-        <span>Tax rebates reduce tax payable directly, while PCB is tax already paid through payroll.</span>
+        <strong>Income Tax Charged − Eligible Tax Rebates = Tax After Rebates</strong>
+        <span>PCB is then taken into account as tax already paid when determining the final payable or repayable position.</span>
       </div>
+      <p>For example, if income tax charged is RM700 and you qualify for a RM400 personal rebate, tax after the rebate becomes RM300 before PCB or other tax paid is taken into account.</p>
+
+      <section class="guide-box">
+        <h2 id="rebate-types" class="serif">Main Malaysia Tax Rebate Categories</h2>
+        <div class="tax-category-grid">
+          <div class="tax-category-card"><span class="tag">Resident</span><h3>Individual Rebate</h3><p>RM400 for a qualifying resident individual whose chargeable income does not exceed RM35,000.</p></div>
+          <div class="tax-category-card"><span class="tag">Spouse</span><h3>Husband / Wife Rebate</h3><p>An additional RM400 may apply where the relevant spouse deduction is allowed and the chargeable-income condition is met.</p></div>
+          <div class="tax-category-card"><span class="tag">Religious</span><h3>Zakat / Fitrah</h3><p>Qualifying zakat and fitrah payments may be deducted as a rebate, limited by the applicable tax payable.</p></div>
+          <div class="tax-category-card"><span class="tag">Other</span><h3>Specific Rebates</h3><p>Other statutory rebates may apply in narrower circumstances. Check current HASiL guidance before claiming.</p></div>
+        </div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="individual-rebate" class="serif">RM400 Individual Tax Rebate</h2>
+        <p>For YA 2025, HASiL's Form BE explanatory notes state that a <strong>RM400 rebate</strong> is granted to a qualifying individual whose <strong>chargeable income does not exceed RM35,000</strong>.</p>
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Condition</th><th>YA 2025 Treatment</th></tr></thead>
+            <tbody>
+              <tr><td>Tax residence</td><td>The personal rebate is for a qualifying resident individual.</td></tr>
+              <tr><td>Chargeable income</td><td>Must not exceed RM35,000 for the RM400 rebate.</td></tr>
+              <tr><td>Rebate amount</td><td>RM400 for self, subject to the statutory conditions.</td></tr>
+              <tr><td>If chargeable income is RM35,001</td><td>The RM400 rebate based on the RM35,000 ceiling would no longer apply.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note-box"><strong>Chargeable income matters:</strong> The RM35,000 test is based on chargeable income after applicable deductions / reliefs, not simply your gross annual salary.</div>
+      </section>
+
+      <section class="example-box">
+        <h2 class="serif">Example: Why Tax Relief Can Affect Rebate Eligibility</h2>
+        <p>Suppose a resident taxpayer has income that results in RM37,000 of chargeable income before an additional eligible relief is considered. If a valid RM2,500 relief reduces chargeable income to RM34,500, the taxpayer may then fall within the RM35,000 chargeable-income ceiling for the RM400 personal rebate, subject to all other conditions.</p>
+        <p>This is one reason tax relief and tax rebate should be understood together: reliefs reduce chargeable income first, and the resulting chargeable income can affect rebate eligibility.</p>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="spouse-rebate" class="serif">RM400 Husband / Wife Tax Rebate</h2>
+        <p>An additional <strong>RM400 spouse rebate</strong> may be available where the taxpayer's chargeable income does not exceed RM35,000 and the taxpayer has been allowed the relevant spouse deduction under the Income Tax Act.</p>
+        <p>This means the spouse rebate is not simply an automatic RM400 for every married taxpayer. The applicable assessment arrangement, spouse deduction and other statutory conditions matter.</p>
+        <div class="note-box"><strong>Simple way to think about it:</strong> A qualifying taxpayer may receive RM400 for self and, where the spouse conditions are satisfied, another RM400 for husband / wife.</div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="zakat" class="serif">Zakat and Fitrah Tax Rebate</h2>
+        <p>Qualifying zakat and fitrah payments can reduce income tax payable as a rebate. Unlike the RM400 personal rebate, the amount depends on the qualifying payment made, but the rebate is limited by the tax payable.</p>
+        <p>Keep official receipts or recognised payment records showing the amount, date and recipient. The payment should meet the relevant statutory requirements before it is claimed.</p>
+        <div class="example-box">
+          <h3>Simple Zakat Example</h3>
+          <p>If tax payable before the zakat rebate is RM1,000 and qualifying zakat paid is RM600, the tax after the rebate may be RM400. If qualifying zakat paid is RM1,200, the rebate cannot turn the RM1,000 tax into a negative RM200 tax balance.</p>
+        </div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="relief-vs-rebate" class="serif">Tax Relief vs Tax Rebate</h2>
+        <p>Both can reduce your tax burden, but they operate at different stages of the calculation.</p>
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Item</th><th>Tax Relief</th><th>Tax Rebate</th></tr></thead>
+            <tbody>
+              <tr><td>What it reduces</td><td>Chargeable income</td><td>Income tax charged / tax payable</td></tr>
+              <tr><td>When applied</td><td>Before tax is calculated</td><td>After income tax is calculated</td></tr>
+              <tr><td>Common examples</td><td>Individual relief, lifestyle, EPF, insurance, medical</td><td>RM400 personal rebate, qualifying spouse rebate, zakat / fitrah</td></tr>
+              <tr><td>RM400 claim means</td><td>A RM400 relief does not normally save RM400 of tax</td><td>A RM400 rebate can reduce tax charged by up to RM400, subject to eligibility and available tax</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="rebate-vs-refund" class="serif">Tax Rebate vs Tax Refund</h2>
+        <p>A rebate is part of the tax calculation. A refund is money repaid when tax already paid, such as PCB, exceeds the final tax liability after the relevant calculation.</p>
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Item</th><th>Tax Rebate</th><th>Tax Refund</th></tr></thead>
+            <tbody>
+              <tr><td>Meaning</td><td>Reduces tax directly</td><td>Repayment of excess tax paid</td></tr>
+              <tr><td>Stage</td><td>During tax computation</td><td>After final liability is compared with tax already paid</td></tr>
+              <tr><td>Example</td><td>RM400 individual rebate</td><td>PCB paid exceeds final tax liability</td></tr>
+              <tr><td>Can unused rebate itself be refunded?</td><td>No — excess statutory rebate is not refunded or carried forward</td><td>A genuine overpayment of tax may be repayable, subject to HASiL processing</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="calculation" class="serif">How Tax Rebate Is Applied</h2>
+        <div class="formula-box">
+          <strong>Chargeable Income → Income Tax → Tax Rebates → Tax After Rebates → Less PCB / Tax Paid</strong>
+          <span>This order helps separate reliefs, rebates and tax already paid.</span>
+        </div>
+      </section>
 
       <section class="example-box">
         <h2 class="serif">Example Tax Rebate Calculation</h2>
-
-        <p>Example for illustration only:</p>
-
+        <p>Illustration for a taxpayer who qualifies for the RM400 personal rebate:</p>
         <ul>
-          <li>Tax calculated from chargeable income: RM700</li>
-          <li>Eligible individual tax rebate: RM400</li>
+          <li>Income tax charged: RM700</li>
+          <li>Less eligible individual rebate: RM400</li>
           <li>Tax after rebate: RM300</li>
-          <li>Less PCB paid during the year: RM250</li>
-          <li>Estimated balance payable: RM50</li>
+          <li>Less PCB already paid: RM250</li>
+          <li><strong>Estimated balance payable: RM50</strong></li>
         </ul>
-
-        <p>
-          Actual results depend on eligibility, assessment type, PCB paid and latest LHDN rules.
-        </p>
+        <p>If PCB had instead been RM500, the taxpayer could have an excess-tax position of RM200 after the same tax computation, subject to filing and HASiL processing.</p>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Documents Required for Tax Rebate Claims</h2>
-
-        <p>
-          Taxpayers should keep documents that support any rebate claimed in the tax return. Documents are usually not uploaded during normal filing, but they may be requested later if LHDN reviews the claim.
-        </p>
-
-        <div class="checklist">
-          <ul>
-            <li>Zakat, fitrah or approved religious payment receipts</li>
-            <li>Online payment confirmations and bank records</li>
-            <li>Tax computation or e-Filing summary</li>
-            <li>EA Form and PCB records from employer</li>
-            <li>Any supporting document showing eligibility for the rebate claimed</li>
-          </ul>
-        </div>
+        <h2 id="documents" class="serif">Documents to Keep for Tax Rebate Claims</h2>
+        <p>Supporting documents are important even when they are not uploaded during ordinary e-Filing. Keep evidence that supports both the rebate amount and your eligibility.</p>
+        <div class="checklist"><ul>
+          <li>Official zakat or fitrah receipts</li>
+          <li>Recognised online payment confirmations</li>
+          <li>Tax computation and e-Filing acknowledgement</li>
+          <li>EA Form and PCB records</li>
+          <li>Documents supporting spouse / assessment status where relevant</li>
+          <li>Any other evidence supporting the rebate claimed</li>
+        </ul></div>
+        <div class="note-box"><strong>Record keeping:</strong> Keep tax records and supporting documents for the applicable statutory retention period. Your Tax Filing Guide explains the general 7-year record-keeping rule in more detail.</div>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Common Tax Rebate Mistakes</h2>
-
-        <p>
-          Many tax filing mistakes happen because taxpayers mix up reliefs, rebates, PCB and refunds. Understanding the order of calculation can help avoid wrong entries and unrealistic refund expectations.
-        </p>
-
-        <div class="checklist">
-          <ul>
-            <li>Confusing tax rebate with tax relief</li>
-            <li>Assuming every taxpayer qualifies for the individual rebate</li>
-            <li>Forgetting to keep zakat or fitrah payment receipts</li>
-            <li>Thinking PCB is a tax rebate</li>
-            <li>Claiming a rebate without checking resident status or chargeable income conditions</li>
-            <li>Expecting a refund before comparing final tax payable with PCB already paid</li>
-          </ul>
-        </div>
+        <h2 id="mistakes" class="serif">Common Tax Rebate Mistakes</h2>
+        <div class="checklist"><ul>
+          <li>Confusing tax rebate with tax relief</li>
+          <li>Using gross salary instead of chargeable income to test the RM35,000 threshold</li>
+          <li>Assuming every married taxpayer automatically receives another RM400</li>
+          <li>Assuming PCB is a tax rebate</li>
+          <li>Forgetting official zakat / fitrah payment evidence</li>
+          <li>Trying to claim more rebate than the applicable tax charged allows</li>
+          <li>Expecting unused rebate to be refunded or carried forward</li>
+          <li>Expecting a tax refund before comparing final tax with PCB already paid</li>
+        </ul></div>
       </section>
 
       <section class="guide-box">
         <h2 class="serif">Common Tax Rebate Examples</h2>
-
-        <h3>Example 1: Individual Rebate Reduces Tax Payable</h3>
-        <p>
-          A resident taxpayer calculates tax after tax reliefs. If the taxpayer meets the conditions for an individual rebate, the rebate may reduce the tax payable amount directly.
-        </p>
-
-        <h3>Example 2: Zakat Rebate</h3>
-        <p>
-          A taxpayer pays zakat during the year and keeps the official receipt. If the payment qualifies, it may reduce tax payable as a rebate, subject to LHDN rules and supporting documents.
-        </p>
-
+        <h3>Example 1: Chargeable Income of RM34,000</h3>
+        <p>A qualifying resident individual with chargeable income of RM34,000 is within the RM35,000 ceiling and may qualify for the RM400 personal rebate.</p>
+        <h3>Example 2: Chargeable Income of RM36,000</h3>
+        <p>A taxpayer with chargeable income of RM36,000 is above the RM35,000 ceiling, so the RM400 personal rebate based on that threshold does not apply.</p>
         <h3>Example 3: Refund After Rebate</h3>
-        <p>
-          A taxpayer's final tax payable becomes lower after rebates. If PCB deducted by the employer is higher than the final tax payable, a tax refund may arise after filing.
-        </p>
+        <p>A rebate reduces final tax. If PCB already paid then exceeds that final tax amount, an income tax refund may arise after filing and processing.</p>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Tax Rebate Checklist</h2>
+        <h2 id="checklist" class="serif">Tax Rebate Checklist</h2>
+        <div class="checklist"><ul>
+          <li>Confirm that you are eligible for the relevant rebate</li>
+          <li>Calculate chargeable income after eligible reliefs</li>
+          <li>Check whether chargeable income is RM35,000 or below for the RM400 personal rebate</li>
+          <li>Check spouse rebate conditions separately if applicable</li>
+          <li>Keep official proof for zakat / fitrah payments</li>
+          <li>Apply rebates after income tax has been calculated</li>
+          <li>Compare tax after rebates with PCB / other tax already paid</li>
+        </ul></div>
+      </section>
 
-        <div class="checklist">
-          <ul>
-            <li>Check your resident tax status</li>
-            <li>Calculate chargeable income after reliefs</li>
-            <li>Confirm whether your chargeable income qualifies for individual rebate</li>
-            <li>Keep proof for zakat, fitrah or approved religious payments</li>
-            <li>Compare tax payable after rebate against PCB already deducted</li>
-          </ul>
+      <section class="guide-box">
+        <h2>Sources &amp; Verification</h2>
+        <p>This guide was last verified in August 2026 against current HASiL materials relevant to YA 2025 individual tax rebates.</p>
+        <div class="source-note">
+          <strong>Official sources used for verification:</strong><br>
+          <a href="https://www.hasil.gov.my/media/pshpbomm/explanatorynotes_be2025_2.pdf" target="_blank" rel="noopener">HASiL — Form BE 2025 Explanatory Notes</a><br>
+          <a href="https://www.hasil.gov.my/media/3bvlkbww/navigasi-hasil-2026.pdf" target="_blank" rel="noopener">HASiL — Navigasi HASiL 2026</a><br>
+          <a href="https://www.hasil.gov.my/media/ld2lnn23/pr-3-2023-taxation-of-a-resident-individual-part-iii-computation-of-income-tax-and-tax-payable.pdf" target="_blank" rel="noopener">HASiL — Public Ruling No. 3/2023: Computation of Income Tax and Tax Payable</a>
         </div>
       </section>
 
-      <section class="guide-box">
-        <h2 class="serif">Official Reference</h2>
-
-        <p>
-          Tax rebate eligibility, amounts and conditions may change from year to year. Taxpayers should refer to the latest LHDN guidance, tax return form notes and official filing instructions before submitting their tax return.
-        </p>
-
-        <div class="note-box">
-          <strong>Note:</strong> This page is a simplified guide for easy reading. Always check the latest LHDN/HASiL rules or seek professional advice if you are unsure.
-        </div>
-      </section>
-
-      <section class="guide-box">
-        <h2 class="serif">Who Should Read This Tax Rebate Guide?</h2>
-
-        <ul>
-          <li>Employees checking whether they still need to pay tax after PCB</li>
-          <li>Individuals with lower chargeable income who may qualify for rebates</li>
-          <li>Taxpayers who paid zakat or fitrah during the year</li>
-          <li>Anyone comparing tax reliefs, rebates, refunds and PCB deductions</li>
-        </ul>
-      </section>
-
-      <h2>Frequently Asked Questions</h2>
-
+      <h2 id="faq">Frequently Asked Questions</h2>
       <div class="faq-box">
-        <details class="faq-item" open>
-          <summary>What is the difference between tax relief and tax rebate?</summary>
-          <p>
-            Tax relief reduces chargeable income before tax is calculated. Tax rebate reduces the tax payable amount directly after tax has been calculated.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Who can claim the individual tax rebate in Malaysia?</summary>
-          <p>
-            Eligibility depends on resident status, chargeable income and the latest LHDN rules. Resident individuals with chargeable income below the specified threshold may qualify.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Does zakat reduce income tax?</summary>
-          <p>
-            Approved zakat, fitrah or certain Islamic religious payments may reduce tax payable as a rebate, subject to conditions and supporting documents.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can tax rebates reduce tax to zero?</summary>
-          <p>
-            Yes, a rebate may reduce tax payable, but the result depends on the amount of tax calculated and the rebate that the taxpayer qualifies for.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Do all taxpayers qualify for tax rebates?</summary>
-          <p>
-            No. Tax rebates depend on eligibility conditions such as resident status, chargeable income, assessment type and qualifying payments.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can a rebate create a tax refund?</summary>
-          <p>
-            A rebate can reduce final tax payable. If PCB paid is more than the final tax payable after rebates, a refund may arise.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is PCB a tax rebate?</summary>
-          <p>
-            No. PCB is monthly tax already deducted from salary. It is offset against final tax payable, but it is not the same as a tax rebate.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can non-residents claim tax rebates?</summary>
-          <p>
-            Tax rebate eligibility may differ for non-residents. Taxpayers should check the latest LHDN rules because resident status can affect rebate eligibility.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Are tax rebates claimed during tax filing?</summary>
-          <p>
-            Yes. Rebates are usually reflected during the tax filing and tax calculation process. Taxpayers should keep supporting documents for any rebate claimed.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What documents should be kept for tax rebate claims?</summary>
-          <p>
-            Keep zakat receipts, payment confirmations, tax filing records, EA Form, PCB records and any document supporting the rebate claimed.
-          </p>
-        </details>
+        <details class="faq-item" open><summary>What is the difference between tax relief and tax rebate?</summary><p>Tax relief reduces chargeable income before tax is calculated. Tax rebate reduces the income tax charged after the tax calculation.</p></details>
+        <details class="faq-item"><summary>Who can claim the RM400 individual tax rebate?</summary><p>For YA 2025, a qualifying resident individual whose chargeable income does not exceed RM35,000 may qualify for the RM400 personal rebate, subject to the statutory conditions.</p></details>
+        <details class="faq-item"><summary>Is the RM35,000 threshold based on salary?</summary><p>No. The threshold refers to chargeable income, which is determined after the relevant income computation and eligible deductions / reliefs.</p></details>
+        <details class="faq-item"><summary>Can a married taxpayer receive RM800 of personal and spouse rebates?</summary><p>Potentially, where the taxpayer meets the RM35,000 chargeable-income condition and the relevant spouse deduction and statutory conditions are satisfied. It is not automatic for every married taxpayer.</p></details>
+        <details class="faq-item"><summary>Does zakat reduce income tax?</summary><p>Qualifying zakat and fitrah payments may reduce income tax as a rebate, subject to the applicable rules and the amount of tax payable.</p></details>
+        <details class="faq-item"><summary>Can tax rebates reduce tax to zero?</summary><p>Yes. A qualifying rebate may reduce tax to zero. However, excess rebate itself is not refunded or carried forward.</p></details>
+        <details class="faq-item"><summary>Can a tax rebate create a tax refund?</summary><p>A rebate can lower final tax, which may cause PCB already paid to exceed the final liability. The refund would arise from excess tax paid, not because unused rebate is refundable.</p></details>
+        <details class="faq-item"><summary>Is PCB a tax rebate?</summary><p>No. PCB is tax already deducted through payroll. It is credited against the final tax position but is not itself a tax rebate.</p></details>
+        <details class="faq-item"><summary>Do I need proof for tax rebate claims?</summary><p>Yes. Keep supporting documents such as official zakat / fitrah receipts and other evidence relevant to the rebate claimed.</p></details>
+        <details class="faq-item"><summary>Are tax rebates claimed during e-Filing?</summary><p>Rebates form part of the annual tax computation and filing process. Review the relevant return and current HASiL instructions for the Year of Assessment.</p></details>
       </div>
 
-      <section class="salary-guides-box">
-        <h2 class="serif">Related Tax Guides</h2>
-        <p>
-          Continue reading related Malaysia tax guides to understand reliefs, rebates, PCB and tax filing.
-        </p>
-
-        <div class="guide-mini-grid">
-          <a href="tax-relief-guide.html">💸 Tax Relief Guide</a>
-          <a href="income-tax-guide.html">🏛️ Income Tax Guide</a>
-          <a href="tax-filing-guide.html">🧾 Tax Filing Guide</a>
-          <a href="tax-refund-guide.html">💵 Tax Refund Guide</a>
+      <section class="related-tools-section">
+        <h2>Related Tools</h2>
+        <p class="related-tools-intro">Estimate your annual tax first, then explore reliefs, filing, refunds and PCB to understand your complete tax position.</p>
+        <a class="featured-calculator" href="income-tax-calculator.html">
+          <div>
+            <span class="featured-kicker">Income Tax Calculator</span>
+            <h3>Estimate Tax Before Rebates &amp; PCB</h3>
+            <p>Estimate Malaysian income tax and see how annual tax components fit together.</p>
+          </div>
+          <span class="feature-link">Calculate Tax →</span>
+          <div class="featured-calculator-icon" aria-hidden="true">🧾</div>
+        </a>
+        <div class="quick-calculators">
+          <p class="quick-calculators-title">Quick Calculators</p>
+          <div class="quick-calculators-grid">
+            <a href="pcb-calculator.html"><span>PCB Calculator</span><span class="quick-arrow">→</span></a>
+            <a href="index.html"><span>Salary Calculator</span><span class="quick-arrow">→</span></a>
+            <a href="epf-calculator.html"><span>EPF Calculator</span><span class="quick-arrow">→</span></a>
+          </div>
         </div>
-
-        <p class="view-all-guides">
-          <a href="guides.html">View All Salary Guides →</a>
-        </p>
-      </section>
-
-      <section class="salary-guides-box">
-        <h2 class="serif">Related Calculators</h2>
-        <p>
-          Use these calculators to estimate income tax, PCB and monthly take-home pay in Malaysia.
-        </p>
-
-        <div class="guide-mini-grid">
-          <a href="income-tax-calculator.html">Income Tax Calculator</a>
-          <a href="pcb-calculator.html">PCB Calculator</a>
-          <a href="index.html">Salary Calculator</a>
-          <a href="epf-calculator.html">EPF Calculator</a>
+        <div class="explore-section">
+          <div class="explore-heading"><h2>Continue Exploring</h2><p>Useful next steps for understanding how rebates connect with annual tax filing and payroll.</p></div>
+          <div class="explore-grid">
+            <div class="explore-column">
+              <h3>Tax &amp; Filing</h3>
+              <a class="editorial-link" href="tax-relief-guide.html"><span>Tax Relief Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="income-tax-guide.html"><span>Income Tax Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="tax-filing-guide.html"><span>Tax Filing Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="tax-refund-guide.html"><span>Tax Refund Guide</span><span class="editorial-arrow">→</span></a>
+            </div>
+            <div class="explore-column">
+              <h3>Payroll &amp; Salary</h3>
+              <a class="editorial-link" href="pcb-guide.html"><span>PCB Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="epf-guide.html"><span>EPF Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="salary-deduction-guide.html"><span>Salary Deduction Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="payslip-guide.html"><span>Payslip Guide</span><span class="editorial-arrow">→</span></a>
+            </div>
+          </div>
+          <div class="resource-actions"><a href="guides.html">Explore All Guides →</a><a href="calculators.html">View All Calculators →</a></div>
         </div>
-
-        <p class="view-all-guides">
-          <a href="calculators.html">View All Calculators →</a>
-        </p>
       </section>
 
     </div>
