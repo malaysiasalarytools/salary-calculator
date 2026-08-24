@@ -457,6 +457,44 @@
 
     .footer a:hover { color: var(--accent); }
 
+
+    .toc-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:26px 0}
+    .toc-box h2{margin-top:0;margin-bottom:16px}
+    .toc-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px}
+    .toc-links a{display:flex;align-items:center;gap:14px;min-width:0;text-decoration:none;color:var(--foreground);padding:12px 2px;border-bottom:1px solid var(--border);transition:.18s ease}
+    .toc-links a:hover{color:var(--accent);padding-left:4px}
+    .toc-number{width:28px;flex:0 0 28px;color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.04em}
+    .toc-label{flex:1;min-width:0;font-weight:700;font-size:15px}
+    .toc-arrow{color:var(--muted);font-size:15px}
+    .status-yes{color:var(--accent);font-weight:800}.status-no{color:#9a5a45;font-weight:800}
+
+    .source-note{margin-top:18px;background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);padding:14px;border-radius:10px;color:var(--muted);font-size:13px}
+    .source-note a{color:var(--accent);font-weight:800;text-decoration:none}
+
+    .related-tools-section{margin:34px 0}
+    .related-tools-intro{margin-top:0;max-width:760px}
+    .featured-calculator{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:22px;align-items:center;margin-top:20px;padding:24px 26px;background:radial-gradient(circle at top right,rgba(47,125,94,.14),transparent 34%),linear-gradient(135deg,#f8f5ef 0%,#fbfaf6 100%);border:1px solid var(--accent-border);border-radius:18px;text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .featured-calculator:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 16px 34px rgba(47,43,37,.09)}
+    .featured-kicker{display:inline-block;margin-bottom:7px;color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .featured-calculator h3{margin:0 0 6px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,3vw,32px);font-weight:400;line-height:1.1}
+    .featured-calculator p{margin:0;max-width:640px;font-size:15px}
+    .feature-link{display:inline-flex;align-items:center;justify-content:center;min-width:160px;padding:12px 16px;border-radius:12px;background:var(--accent);color:#fff;font-weight:900;white-space:nowrap}
+    .featured-calculator-icon{width:66px;height:66px;display:grid;place-items:center;border-radius:18px;background:var(--accent-soft);border:1px solid var(--accent-border);font-size:30px}
+    .quick-calculators{margin-top:18px}.quick-calculators-title{margin:0 0 10px;font-size:14px;font-weight:800}
+    .quick-calculators-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .quick-calculators-grid a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;background:var(--card);border:1px solid var(--border);border-radius:11px;text-decoration:none;color:var(--foreground);font-size:14px;font-weight:800;transition:.18s ease}
+    .quick-calculators-grid a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .quick-arrow,.editorial-arrow{color:var(--muted)}
+    .explore-section{margin-top:30px;padding-top:28px;border-top:1px solid var(--border)}
+    .explore-heading h2{margin:0}.explore-heading p{margin:7px 0 14px}
+    .explore-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+    .explore-column h3{margin:0 0 8px;font-size:16px}
+    .editorial-link{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .editorial-link:hover{color:var(--accent);padding-left:4px}
+    .editorial-link span:first-child{flex:1;min-width:0;font-weight:800;font-size:15px}
+    .resource-actions{display:flex;justify-content:space-between;gap:16px;margin-top:18px;flex-wrap:wrap}
+    .resource-actions a{color:var(--accent);font-weight:800;text-decoration:none}
+
     @media (max-width: 800px) {
       .nav-inner {
         flex-direction: row;
@@ -530,6 +568,15 @@
       }
 
       .cta-button { width: 100%; }
+      .toc-box{padding:20px}
+      .toc-links{grid-template-columns:1fr;column-gap:0}
+      .featured-calculator{grid-template-columns:1fr;padding:22px;gap:16px}
+      .feature-link{width:100%}
+      .featured-calculator-icon{display:none}
+      .quick-calculators-grid{grid-template-columns:1fr}
+      .explore-grid{grid-template-columns:1fr;gap:26px}
+      .resource-actions{display:block}
+      .resource-actions a{display:block;margin-top:8px}
     }
   </style>
 </head>
@@ -554,7 +601,7 @@
 <main class="main-wrapper">
 
   <section class="hero">
-    <span class="pill">Updated for Malaysia employment rules 2026</span>
+    <span class="pill">Last verified: August 2026 · Employment Act 1955 guidance</span>
     <h1 class="serif">Malaysia <em>overtime</em> guide 2026</h1>
     <p>
       Learn how overtime pay works in Malaysia, including overtime rates,
@@ -564,353 +611,301 @@
 
   <section class="seo">
 
-    <section class="calculator-cta">
-      <h2>Calculate Your Overtime Pay</h2>
-      <p>
-        Want to estimate overtime pay based on your salary and overtime hours?
-        Use our free Overtime Calculator to estimate ordinary day, rest day and public holiday overtime.
-      </p>
-      <a href="overtime-calculator.html" class="cta-button">Open Overtime Calculator →</a>
-    </section>
-
     <section class="summary-box">
       <h2>Overtime Quick Summary</h2>
       <p>
-        Overtime pay is additional pay for eligible employees who work beyond normal working hours.
-        The applicable rate depends on when the overtime is performed.
+        Statutory overtime rules under the Employment Act 1955 depend on the employee category, wages and the day on which the extra work is performed.
       </p>
-
       <div class="summary-grid">
-        <div class="summary-card">
-          <strong>1.5x</strong>
-          <span>Common rate for ordinary working day overtime</span>
-        </div>
-        <div class="summary-card">
-          <strong>2.0x</strong>
-          <span>Common rate for rest day overtime</span>
-        </div>
-        <div class="summary-card">
-          <strong>3.0x</strong>
-          <span>Common rate for public holiday overtime</span>
-        </div>
-        <div class="summary-card">
-          <strong>Hourly Rate</strong>
-          <span>Usually based on ordinary rate of pay</span>
-        </div>
+        <div class="summary-card"><strong>1.5×</strong><span>Minimum hourly rate for overtime beyond normal hours on an ordinary working day</span></div>
+        <div class="summary-card"><strong>2.0×</strong><span>Rate for hours beyond normal hours when working on a rest day</span></div>
+        <div class="summary-card"><strong>3.0×</strong><span>Rate for overtime hours beyond normal hours on a paid public holiday</span></div>
+        <div class="summary-card"><strong>45 Hours</strong><span>General maximum normal working hours per week under the Act</span></div>
+      </div>
+      <div class="note-box">
+        <strong>Important:</strong> Rest-day and public-holiday pay have their own statutory payment rules. It is not correct to treat every hour worked on a rest day as simply 2×, or every hour on a public holiday as simply 3×.
       </div>
     </section>
 
-    <h2>What Is Overtime Pay?</h2>
-    <p>
-      Overtime pay is extra compensation for eligible employees who work beyond their normal working hours.
-      It is commonly calculated based on the employee's ordinary rate of pay and the applicable overtime multiplier.
-    </p>
-    <p>
-      In Malaysia, overtime rules may depend on employment coverage, salary level, working arrangement,
-      employment contract and applicable labour law requirements.
-    </p>
-
-    <section class="guide-box">
-      <h2>Who Is Eligible for Overtime Pay?</h2>
-      <p>
-        Not all employees are automatically entitled to overtime pay. Eligibility may depend on employment coverage,
-        job responsibilities, salary level and applicable employment law requirements.
-      </p>
-      <p>
-        Employees should review their employment contract and company policies to understand whether overtime payments apply to their position.
-      </p>
+    <section class="calculator-cta">
+      <h2>Calculate Your Overtime Pay</h2>
+      <p>Estimate overtime pay using your salary, normal working hours and overtime hours for ordinary working days, rest days and public holidays.</p>
+      <a href="overtime-calculator.html" class="cta-button">Calculate My Overtime →</a>
     </section>
 
-    <section class="guide-box">
-      <h2>Common Overtime Rates in Malaysia</h2>
-      <p>
-        The table below shows a simplified guide to common overtime multipliers used in Malaysia employment calculations.
-      </p>
+    <section class="toc-box">
+      <h2>On This Page</h2>
+      <div class="toc-links">
+        <a href="#what-is-overtime"><span class="toc-number">01</span><span class="toc-label">What Is Overtime?</span><span class="toc-arrow">→</span></a>
+        <a href="#eligibility"><span class="toc-number">02</span><span class="toc-label">Who Is Entitled?</span><span class="toc-arrow">→</span></a>
+        <a href="#working-hours"><span class="toc-number">03</span><span class="toc-label">Working Hours</span><span class="toc-arrow">→</span></a>
+        <a href="#hourly-rate"><span class="toc-number">04</span><span class="toc-label">ORP & Hourly Rate</span><span class="toc-arrow">→</span></a>
+        <a href="#ordinary-day"><span class="toc-number">05</span><span class="toc-label">Ordinary Day Overtime</span><span class="toc-arrow">→</span></a>
+        <a href="#rest-day"><span class="toc-number">06</span><span class="toc-label">Rest Day Work</span><span class="toc-arrow">→</span></a>
+        <a href="#public-holiday"><span class="toc-number">07</span><span class="toc-label">Public Holiday Work</span><span class="toc-arrow">→</span></a>
+        <a href="#examples"><span class="toc-number">08</span><span class="toc-label">Calculation Examples</span><span class="toc-arrow">→</span></a>
+        <a href="#statutory"><span class="toc-number">09</span><span class="toc-label">EPF, SOCSO, EIS & PCB</span><span class="toc-arrow">→</span></a>
+        <a href="#approval"><span class="toc-number">10</span><span class="toc-label">Approval & Records</span><span class="toc-arrow">→</span></a>
+        <a href="#mistakes"><span class="toc-number">11</span><span class="toc-label">Common Mistakes</span><span class="toc-arrow">→</span></a>
+        <a href="#faq"><span class="toc-number">12</span><span class="toc-label">FAQ</span><span class="toc-arrow">→</span></a>
+      </div>
+    </section>
 
+    <h2 id="what-is-overtime">What Is Overtime Pay?</h2>
+    <p>Under the Employment Act 1955, overtime generally means work performed beyond the employee's normal hours of work per day. For employees entitled to statutory overtime, ordinary-day overtime must be paid at not less than 1.5 times the hourly rate of pay.</p>
+    <p>Work on a rest day and work on a paid public holiday are governed by separate provisions, so their calculations differ from ordinary-day overtime.</p>
+
+    <section class="guide-box">
+      <h2 id="eligibility">Who Is Entitled to Statutory Overtime Pay?</h2>
+      <p>The Employment Act now generally covers employees regardless of wage level, but the statutory overtime provisions do not apply in exactly the same way to everyone.</p>
       <div class="contribution-table-wrap">
         <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Overtime Type</th>
-              <th>Common Multiplier</th>
-              <th>Simple Explanation</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Employee Category</th><th>General Statutory OT Position</th></tr></thead>
           <tbody>
-            <tr>
-              <td>Ordinary Working Day</td>
-              <td>1.5x hourly rate</td>
-              <td>Work beyond normal hours on a normal workday</td>
-            </tr>
-            <tr>
-              <td>Rest Day</td>
-              <td>2.0x hourly rate</td>
-              <td>Work performed on a designated rest day</td>
-            </tr>
-            <tr>
-              <td>Public Holiday</td>
-              <td>3.0x hourly rate</td>
-              <td>Work performed on an applicable public holiday</td>
-            </tr>
+            <tr><td>Employee earning RM4,000 or less per month</td><td><span class="status-yes">Generally covered</span> by the statutory overtime, rest-day and paid-holiday payment provisions.</td></tr>
+            <tr><td>Employee earning above RM4,000 per month</td><td><span class="status-no">Generally excluded</span> from statutory overtime / rest-day / paid-holiday payment provisions unless the employee falls within a protected First Schedule category.</td></tr>
+            <tr><td>Manual labour and certain specified categories</td><td>May remain covered regardless of the RM4,000 wage threshold, subject to the First Schedule.</td></tr>
+            <tr><td>Employee not statutorily entitled</td><td>May still receive overtime if the employment contract, collective agreement or company policy provides for it.</td></tr>
           </tbody>
         </table>
       </div>
+      <div class="note-box"><strong>Practical check:</strong> Do not look at salary alone. Check the First Schedule, the employee's actual duties and the employment contract before deciding whether statutory overtime applies.</div>
+    </section>
 
-      <div class="note-box">
-        <strong>Note:</strong> This is a simplified guide. Actual overtime entitlement may depend on employment terms, employee eligibility, company policy and latest employment law requirements.
+    <section class="guide-box">
+      <h2 id="working-hours">Normal Working Hours in Malaysia</h2>
+      <p>The Employment Act generally limits normal working hours to <strong>45 hours per week</strong>, excluding rest intervals where the employee is free to use the time and movement.</p>
+      <p>The Act also regulates daily working arrangements, rest breaks and spread-over periods. The actual normal hours per day should be stated or agreed in the contract of service and used when determining when overtime begins.</p>
+      <div class="note-box"><strong>Example:</strong> A company may arrange a 45-hour week over five or six working days. Overtime starts after the employee's normal daily hours, subject to the applicable statutory rules.</div>
+    </section>
+
+    <section class="guide-box">
+      <h2 id="hourly-rate">How Ordinary Rate of Pay and Hourly Rate Are Calculated</h2>
+      <p>For a monthly-rated employee, statutory overtime commonly starts with the ordinary rate of pay (ORP). Under the Act, the monthly ordinary rate is generally based on monthly wages divided by 26.</p>
+      <div class="formula-box">
+        <strong>Ordinary Rate of Pay (ORP) = Monthly Wages ÷ 26</strong>
+        <span>For a monthly-rated employee, subject to the statutory definition of wages.</span>
+      </div>
+      <div class="formula-box">
+        <strong>Hourly Rate of Pay (HRP) = ORP ÷ Normal Hours of Work Per Day</strong>
+        <span>This hourly rate is then used for statutory overtime calculations.</span>
+      </div>
+      <div class="note-box"><strong>Do not simply use salary ÷ 30 ÷ 8</strong> unless that method is specifically appropriate to the payment being calculated. Statutory overtime under the Employment Act uses the statutory ORP / HRP framework.</div>
+    </section>
+
+    <section class="guide-box">
+      <h2 id="ordinary-day">Overtime on an Ordinary Working Day</h2>
+      <p>For an eligible employee who works beyond normal hours on an ordinary working day, the overtime rate must be at least <strong>1.5 times the hourly rate of pay</strong>.</p>
+      <div class="formula-box">
+        <strong>Ordinary-Day OT = HRP × 1.5 × Overtime Hours</strong>
+        <span>Applies to overtime hours beyond the employee's normal working hours.</span>
       </div>
     </section>
 
-    <h2>How Overtime Pay Is Calculated</h2>
-    <p>
-      Overtime is usually calculated using the employee's hourly rate and the applicable overtime multiplier.
-      The hourly rate may be based on ordinary rate of pay according to the payroll method used.
-    </p>
+    <section class="guide-box">
+      <h2 id="rest-day">Work on a Rest Day</h2>
+      <p>Rest-day pay is more detailed than simply “2×”. For a monthly- or weekly-rated employee, payment depends on how many hours are worked before exceeding the normal daily hours.</p>
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Hours Worked on Rest Day</th><th>Statutory Payment for Monthly / Weekly Rated Employee</th></tr></thead>
+          <tbody>
+            <tr><td>Not more than half the normal daily hours</td><td>Wages equivalent to <strong>half the ordinary rate of pay</strong> for that day.</td></tr>
+            <tr><td>More than half but not more than normal daily hours</td><td>Wages equivalent to <strong>one day's ordinary rate of pay</strong>.</td></tr>
+            <tr><td>Hours exceeding normal daily hours</td><td>Those excess hours are paid at not less than <strong>2× the hourly rate of pay</strong>.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note-box"><strong>Why this matters:</strong> “Rest day = 2×” is only a shortcut for overtime hours beyond normal daily hours, not the complete rest-day payment rule.</div>
+    </section>
 
-    <div class="formula-box">
-      <strong>Overtime Pay = Hourly Rate × Overtime Hours × Multiplier</strong>
-      <span>Example: RM15 × 4 hours × 1.5 = RM90 overtime pay</span>
-    </div>
+    <section class="guide-box">
+      <h2 id="public-holiday">Work on a Paid Public Holiday</h2>
+      <p>An eligible employee who works on a paid public holiday is generally entitled to holiday pay plus additional statutory payment for the work performed. Overtime beyond normal hours on that holiday is paid at a higher hourly multiplier.</p>
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Public Holiday Work</th><th>General Statutory Treatment</th></tr></thead>
+          <tbody>
+            <tr><td>Work within normal hours</td><td>In addition to holiday pay, the employee is generally entitled to <strong>two days' wages at the ordinary rate of pay</strong>.</td></tr>
+            <tr><td>Hours beyond normal hours</td><td>Overtime hours are paid at not less than <strong>3× the hourly rate of pay</strong>.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note-box"><strong>Important:</strong> “Public holiday = 3×” refers to overtime hours beyond normal hours. The statutory payment for working normal hours on the holiday is structured differently.</div>
+    </section>
 
     <section class="example-box">
-      <h2>Example Overtime Calculation</h2>
-      <p>
-        If an employee's hourly rate is RM15 and the employee works 4 overtime hours on an ordinary working day:
-      </p>
-      <ul>
-        <li>Hourly rate: RM15</li>
-        <li>Overtime hours: 4 hours</li>
-        <li>Multiplier: 1.5x</li>
-        <li>Estimated overtime pay: RM90</li>
-      </ul>
-      <p>
-        Different rates may apply for rest days, public holidays or special working arrangements.
-      </p>
-    </section>
-
-    <h2>Ordinary Day, Rest Day and Public Holiday Overtime</h2>
-    <p>
-      Overtime is not always paid at the same rate. Work performed after normal hours on a normal working day is usually treated differently from work performed on a rest day or public holiday.
-    </p>
-    <p>
-      Employees should check their employment contract and company payroll policy to understand how different overtime situations are recorded and paid.
-    </p>
-
-    <section class="guide-box">
-      <h2>Overtime on Rest Days</h2>
-      <p>
-        Work performed on a designated rest day is commonly treated differently from ordinary working day overtime.
-      </p>
-      <p>
-        Different overtime multipliers and payment rules may apply depending on the number of hours worked and the employee's employment arrangement.
-      </p>
+      <h2 id="examples">Overtime Calculation Example</h2>
+      <p>Assume a monthly-rated eligible employee earns RM3,000 and normally works 8 hours per day.</p>
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <tbody>
+            <tr><td><strong>Monthly wages</strong></td><td>RM3,000</td></tr>
+            <tr><td><strong>ORP</strong></td><td>RM3,000 ÷ 26 = RM115.38</td></tr>
+            <tr><td><strong>HRP</strong></td><td>RM115.38 ÷ 8 = RM14.42</td></tr>
+            <tr><td><strong>4 hours ordinary-day OT</strong></td><td>RM14.42 × 1.5 × 4 = <strong>RM86.52</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note-box">Figures are rounded for illustration. Payroll systems may apply statutory rounding and wage-component rules differently.</div>
     </section>
 
     <section class="guide-box">
-      <h2>Overtime on Public Holidays</h2>
-      <p>
-        Employees who work on public holidays may be entitled to higher overtime rates compared to ordinary working days.
-      </p>
-      <p>
-        Actual calculations may depend on company policy, employment terms and applicable employment law requirements.
-      </p>
+      <h2>Ordinary Day vs Rest Day vs Public Holiday</h2>
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Situation</th><th>Key Rule</th><th>Common Misunderstanding</th></tr></thead>
+          <tbody>
+            <tr><td>Ordinary working day</td><td>OT beyond normal hours: at least 1.5× HRP</td><td>Usually the simplest statutory OT calculation.</td></tr>
+            <tr><td>Rest day</td><td>Half-day / full-day rules first; excess hours: 2× HRP</td><td>Not every rest-day hour is automatically 2×.</td></tr>
+            <tr><td>Paid public holiday</td><td>Additional holiday-work payment; excess hours: 3× HRP</td><td>3× applies to overtime beyond normal hours, not the entire holiday-work calculation.</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <section class="guide-box">
-      <h2>How Overtime Is Usually Approved</h2>
-      <p>
-        Many employers require overtime to be approved before payment is processed.
-      </p>
-      <ul>
-        <li>Employee works overtime</li>
-        <li>Manager reviews and approves hours</li>
-        <li>HR verifies records</li>
-        <li>Payroll calculates overtime pay</li>
-        <li>Payment is included in salary</li>
-      </ul>
+      <h2 id="statutory">Does Overtime Affect EPF, SOCSO, EIS and PCB?</h2>
+      <p>Overtime can affect payroll deductions differently because each statutory scheme has its own definition of wages or remuneration.</p>
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Payroll Item</th><th>Overtime Treatment</th><th>Practical Note</th></tr></thead>
+          <tbody>
+            <tr><td>EPF</td><td><span class="status-no">Generally not subject to EPF</span></td><td>KWSP excludes overtime payment from wages liable for EPF contribution.</td></tr>
+            <tr><td>SOCSO</td><td><span class="status-yes">Generally subject to SOCSO</span></td><td>Overtime is included in PERKESO's wage definition.</td></tr>
+            <tr><td>EIS</td><td><span class="status-yes">Generally subject to EIS</span></td><td>Overtime forms part of wages under the EIS rules.</td></tr>
+            <tr><td>PCB</td><td>May affect PCB</td><td>Taxable employment remuneration can affect the monthly MTD calculation.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note-box"><strong>Useful payroll distinction:</strong> Overtime is one of the clearest examples of why EPF, SOCSO and EIS should not be calculated using identical wage components.</div>
+    </section>
+
+    <section class="guide-box">
+      <h2 id="approval">How Overtime Is Usually Approved and Recorded</h2>
+      <p>Employers commonly use an approval and time-record process so payroll can verify the hours before payment.</p>
+      <div class="component-grid">
+        <div class="component-card"><div class="component-icon">⏱️</div><h3>Record Hours</h3><p>Employee records actual start, end and overtime hours.</p></div>
+        <div class="component-card"><div class="component-icon">✅</div><h3>Manager Approval</h3><p>Supervisor checks whether overtime was authorised and actually worked.</p></div>
+        <div class="component-card"><div class="component-icon">📋</div><h3>Payroll Review</h3><p>HR / payroll confirms employee eligibility, day type and statutory rate.</p></div>
+        <div class="component-card"><div class="component-icon">💵</div><h3>Payslip Payment</h3><p>Approved overtime is included in payroll with the relevant deductions.</p></div>
+      </div>
     </section>
 
     <section class="guide-box">
       <h2>Overtime Pay vs Replacement Leave</h2>
-      <p>
-        Some employers may offer replacement leave instead of overtime pay for certain situations.
-      </p>
-      <p>
-        Replacement leave allows employees to take time off in exchange for additional hours worked,
-        subject to company policy and approval requirements.
-      </p>
+      <p>Some companies offer time off or replacement leave for additional work. However, company policy cannot simply remove a statutory overtime entitlement where the Employment Act requires overtime payment.</p>
+      <p>For employees outside statutory overtime provisions, contractual time-off arrangements may depend more heavily on the employment contract, company policy or collective agreement.</p>
     </section>
 
     <section class="guide-box">
-      <h2>Does Overtime Affect EPF, SOCSO, EIS and PCB?</h2>
-      <p>
-        Overtime pay may increase an employee's gross income. Depending on payroll treatment and applicable contribution rules,
-        overtime payments may affect EPF, SOCSO, EIS and PCB calculations.
-      </p>
-      <p>
-        Employees should review their payslip and payroll records to understand how overtime payments are reflected.
-      </p>
+      <h2>Overtime vs Allowance vs Bonus</h2>
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Payment Type</th><th>Main Purpose</th><th>Usually Linked to Hours?</th></tr></thead>
+          <tbody>
+            <tr><td>Overtime Pay</td><td>Payment for eligible extra working hours</td><td>Yes</td></tr>
+            <tr><td>Allowance</td><td>Additional payment for role, travel, meal, shift or other purpose</td><td>Not always</td></tr>
+            <tr><td>Bonus</td><td>Additional reward based on company, contractual or employee performance</td><td>No</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <section class="guide-box">
-      <h2>Common Overtime Mistakes</h2>
-      <p>
-        Overtime disputes often occur because overtime hours are not properly recorded or approved.
-      </p>
+      <h2 id="mistakes">Common Overtime Payroll Mistakes</h2>
       <ul>
-        <li>Failing to record overtime hours</li>
-        <li>Assuming all employees qualify for overtime</li>
-        <li>Missing approval requirements</li>
-        <li>Submitting claims after payroll cut-off dates</li>
-        <li>Confusing overtime pay with allowances</li>
+        <li>Assuming every employee is statutorily entitled to overtime without checking the First Schedule.</li>
+        <li>Using a simple salary ÷ 30 ÷ 8 hourly-rate formula instead of the statutory ORP / HRP method.</li>
+        <li>Treating all rest-day hours as 2×.</li>
+        <li>Treating all public-holiday hours as 3×.</li>
+        <li>Using 48 hours instead of the current 45-hour general weekly working-hours limit.</li>
+        <li>Failing to record or approve overtime hours properly.</li>
+        <li>Applying EPF, SOCSO and EIS to overtime as though all three use the same wage definition.</li>
+        <li>Replacing statutory overtime pay with time off without checking whether that is legally permissible.</li>
       </ul>
     </section>
 
     <section class="guide-box">
-      <h2>Common Overtime Examples</h2>
-
-      <h3>Example 1: Ordinary Working Day</h3>
-      <p>
-        An employee works 2 overtime hours after completing normal working hours on a weekday.
-      </p>
-
-      <h3>Example 2: Rest Day Work</h3>
-      <p>
-        An employee is required to work on a scheduled rest day and may be entitled to a different overtime rate.
-      </p>
-
-      <h3>Example 3: Public Holiday Work</h3>
-      <p>
-        An employee works during a public holiday and may receive a higher overtime payment depending on eligibility and applicable rules.
-      </p>
-    </section>
-
-    <h2>Overtime vs Allowance vs Bonus</h2>
-    <div class="contribution-table-wrap">
-      <table class="contribution-table">
-        <thead>
-          <tr>
-            <th>Payment Type</th>
-            <th>Main Purpose</th>
-            <th>Usually Linked to Hours?</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Overtime Pay</td>
-            <td>Payment for extra eligible working hours</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <td>Allowance</td>
-            <td>Additional payment for role, travel, meal or other purposes</td>
-            <td>Not always</td>
-          </tr>
-          <tr>
-            <td>Bonus</td>
-            <td>Additional reward based on company or employee performance</td>
-            <td>No</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <section class="guide-box">
-      <h2>Who Should Read This Overtime Guide?</h2>
+      <h2>Employee Overtime Checklist</h2>
       <ul>
-        <li>Employees checking whether overtime pay is calculated correctly</li>
-        <li>Job seekers comparing working hours and overtime benefits</li>
-        <li>HR and payroll staff calculating overtime payments</li>
-        <li>Business owners preparing payroll and working hour policies</li>
+        <li>Check whether statutory overtime provisions apply to your employee category.</li>
+        <li>Confirm your normal daily and weekly working hours.</li>
+        <li>Keep attendance, clock-in / clock-out and overtime approval records.</li>
+        <li>Check whether the overtime was on an ordinary day, rest day or paid public holiday.</li>
+        <li>Recalculate ORP and HRP if you want to verify the payslip amount.</li>
+        <li>Check SOCSO, EIS, EPF and PCB treatment separately.</li>
+        <li>Raise payroll differences promptly with HR / payroll.</li>
       </ul>
     </section>
 
-    <h2>Frequently Asked Questions</h2>
+    <section class="guide-box">
+      <h2>Sources &amp; Verification</h2>
+      <p>This guide was last verified in August 2026 against the Employment Act 1955 and current JTKSM guidance on the 45-hour working week and labour claims.</p>
+      <div class="source-note">
+        <strong>Official sources used for verification:</strong><br>
+        <a href="https://jtksm.mohr.gov.my/en/borang/employment-act-1955" target="_blank" rel="noopener">JTKSM — Employment Act 1955</a><br>
+        <a href="https://jtksm.mohr.gov.my/ms/soalan-lazim/akta-kerja-1955-pindaan-2022" target="_blank" rel="noopener">JTKSM — Employment Act 1955 (Amendment) 2022 FAQ</a><br>
+        <a href="https://jtksm.mohr.gov.my/en/services/labour-case" target="_blank" rel="noopener">JTKSM — Labour Case / RM4,000 Overtime Eligibility</a>
+      </div>
+    </section>
 
+    <h2 id="faq">Frequently Asked Questions</h2>
     <div class="faq-box">
-      <details class="faq-item" open>
-        <summary>How is overtime pay calculated in Malaysia?</summary>
-        <p>
-          Overtime pay is commonly calculated using hourly rate multiplied by overtime hours and the applicable multiplier, such as 1.5x for ordinary working day overtime.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>What is the common overtime rate for a normal working day?</summary>
-        <p>
-          A common overtime rate for eligible ordinary working day overtime is 1.5 times the hourly rate, subject to eligibility and applicable employment rules.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Is public holiday overtime higher than normal overtime?</summary>
-        <p>
-          Public holiday overtime is commonly paid at a higher rate than ordinary working day overtime. The actual calculation depends on applicable rules and company payroll policy.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Are all employees entitled to overtime pay?</summary>
-        <p>
-          Not necessarily. Overtime entitlement may depend on employment coverage, salary level, job category, working arrangement and employment contract terms.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can an employer require approval before paying overtime?</summary>
-        <p>
-          Many employers require overtime to be pre-approved or properly recorded before payment. Employees should follow company procedures for overtime claims.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can overtime be replaced with time off instead of payment?</summary>
-        <p>
-          Some employers may offer replacement leave instead of overtime payment depending on company policy and employment arrangements. Employees should confirm the applicable arrangement with their employer.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can part-time employees receive overtime pay?</summary>
-        <p>
-          Overtime entitlement for part-time employees may depend on employment terms, working hours and applicable employment requirements. Employees should review their employment contract for details.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can employers limit overtime hours?</summary>
-        <p>
-          Employers commonly manage overtime through scheduling, approval procedures and operational requirements. Employees should follow company policies regarding overtime arrangements.
-        </p>
-      </details>
+      <details class="faq-item" open><summary>What is the overtime rate on an ordinary working day?</summary><p>For an employee entitled to statutory overtime, work beyond normal hours on an ordinary working day must generally be paid at not less than 1.5 times the hourly rate of pay.</p></details>
+      <details class="faq-item"><summary>Are employees earning above RM4,000 entitled to statutory overtime?</summary><p>Employees earning more than RM4,000 per month are generally excluded from the statutory overtime, rest-day and paid-holiday payment provisions unless they fall within specified protected categories such as certain manual employees under the First Schedule.</p></details>
+      <details class="faq-item"><summary>What is the current normal working-hours limit in Malaysia?</summary><p>The Employment Act generally provides for a maximum of 45 normal working hours per week, excluding qualifying rest intervals.</p></details>
+      <details class="faq-item"><summary>How is the hourly rate for statutory overtime calculated?</summary><p>For a monthly-rated employee, the ordinary rate is generally monthly wages divided by 26, and the hourly rate is the ordinary rate divided by normal hours of work per day.</p></details>
+      <details class="faq-item"><summary>Is all rest-day work paid at 2×?</summary><p>No. Monthly- and weekly-rated employees have half-day and full-day rest-day payment rules. The 2× hourly rate applies to hours worked beyond normal daily hours.</p></details>
+      <details class="faq-item"><summary>Is all public-holiday work paid at 3×?</summary><p>No. Work within normal hours on a paid public holiday has its own additional payment rule. The 3× hourly rate applies to overtime hours beyond normal daily hours on that holiday.</p></details>
+      <details class="faq-item"><summary>Is overtime subject to EPF?</summary><p>Overtime payment is generally excluded from wages liable for EPF contribution.</p></details>
+      <details class="faq-item"><summary>Is overtime subject to SOCSO and EIS?</summary><p>Overtime is generally included in the wage definitions used for SOCSO and EIS contribution purposes.</p></details>
+      <details class="faq-item"><summary>Can an employer require overtime approval?</summary><p>Employers may use reasonable approval and record procedures. However, whether overtime is payable ultimately depends on the actual statutory and contractual entitlement, not merely the label used internally.</p></details>
+      <details class="faq-item"><summary>Can statutory overtime be replaced by time off?</summary><p>An employer should not assume replacement leave can remove a statutory overtime entitlement. Where statutory overtime applies, the Employment Act payment requirements should be checked.</p></details>
     </div>
 
-    <section class="salary-guides-box">
-      <h2>Related Employment Guides</h2>
-      <p>Continue reading related Malaysia employment guides to understand leave, holidays and payroll rules.</p>
+    <section class="related-tools-section">
+      <h2>Related Tools</h2>
+      <p class="related-tools-intro">Calculate your overtime first, then explore the working-hours, holiday and payroll topics most closely connected to overtime pay.</p>
 
-      <div class="guide-mini-grid">
-        <a href="annual-leave-guide.html">Annual Leave Guide</a>
-        <a href="mc-leave-guide.html">MC Leave Guide</a>
-        <a href="public-holiday-guide.html">Public Holiday Guide</a>
-        <a href="rest-day-guide.html">Rest Day Guide</a>
+      <a class="featured-calculator" href="overtime-calculator.html">
+        <div>
+          <span class="featured-kicker">Overtime Calculator</span>
+          <h3>Calculate Your Overtime Pay</h3>
+          <p>Estimate overtime for ordinary working days, rest days and public holidays using your salary and working hours.</p>
+        </div>
+        <span class="feature-link">Calculate Overtime →</span>
+        <div class="featured-calculator-icon" aria-hidden="true">⏱️</div>
+      </a>
+
+      <div class="quick-calculators">
+        <p class="quick-calculators-title">Quick Calculators</p>
+        <div class="quick-calculators-grid">
+          <a href="index.html"><span>Salary Calculator</span><span class="quick-arrow">→</span></a>
+          <a href="hourly-rate-calculator.html"><span>Hourly Rate Calculator</span><span class="quick-arrow">→</span></a>
+          <a href="pcb-calculator.html"><span>PCB Calculator</span><span class="quick-arrow">→</span></a>
+        </div>
       </div>
 
-      <p class="view-all-guides"><a href="guides.html">View All Guides →</a></p>
-    </section>
-
-    <section class="salary-guides-box">
-      <h2>Related Calculators</h2>
-      <p>Use these calculators to estimate overtime, leave and monthly take-home pay in Malaysia.</p>
-
-      <div class="guide-mini-grid">
-        <a href="overtime-calculator.html">Overtime Calculator</a>
-        <a href="annual-leave-calculator.html">Annual Leave Calculator</a>
-        <a href="mc-leave-calculator.html">MC Leave Calculator</a>
-        <a href="index.html">Salary Calculator</a>
+      <div class="explore-section">
+        <div class="explore-heading"><h2>Continue Exploring</h2><p>Useful next steps for understanding working time, leave and salary payments.</p></div>
+        <div class="explore-grid">
+          <div class="explore-column">
+            <h3>Working Time & Leave</h3>
+            <a class="editorial-link" href="public-holiday-guide.html"><span>Public Holiday Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="rest-day-guide.html"><span>Rest Day Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="annual-leave-guide.html"><span>Annual Leave Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="mc-leave-guide.html"><span>Medical Leave Guide</span><span class="editorial-arrow">→</span></a>
+          </div>
+          <div class="explore-column">
+            <h3>Payroll & Salary</h3>
+            <a class="editorial-link" href="salary-deduction-guide.html"><span>Salary Deduction Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="payslip-guide.html"><span>Payslip Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="socso-guide.html"><span>SOCSO Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="eis-guide.html"><span>EIS Guide</span><span class="editorial-arrow">→</span></a>
+          </div>
+        </div>
+        <div class="resource-actions"><a href="guides.html">Explore All Guides →</a><a href="calculators.html">View All Calculators →</a></div>
       </div>
-
-      <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
     </section>
 
   </section>
