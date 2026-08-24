@@ -459,6 +459,44 @@
 
     .footer a:hover { color: var(--accent); }
 
+
+    .toc-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:26px 0}
+    .toc-box h2{margin-top:0;margin-bottom:16px}
+    .toc-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px}
+    .toc-links a{display:flex;align-items:center;gap:14px;min-width:0;text-decoration:none;color:var(--foreground);padding:12px 2px;border-bottom:1px solid var(--border);transition:.18s ease}
+    .toc-links a:hover{color:var(--accent);padding-left:4px}
+    .toc-number{width:28px;flex:0 0 28px;color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.04em}
+    .toc-label{flex:1;min-width:0;font-weight:700;font-size:15px}
+    .toc-arrow{color:var(--muted);font-size:15px}
+
+    .source-note{margin-top:18px;background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);padding:14px;border-radius:10px;color:var(--muted);font-size:13px}
+    .source-note a{color:var(--accent);font-weight:800;text-decoration:none}
+
+    .related-tools-section{margin:34px 0}
+    .related-tools-intro{margin-top:0;max-width:760px}
+    .featured-calculator{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:22px;align-items:center;margin-top:20px;padding:24px 26px;background:radial-gradient(circle at top right,rgba(47,125,94,.14),transparent 34%),linear-gradient(135deg,#f8f5ef 0%,#fbfaf6 100%);border:1px solid var(--accent-border);border-radius:18px;text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .featured-calculator:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 16px 34px rgba(47,43,37,.09)}
+    .featured-kicker{display:inline-block;margin-bottom:7px;color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .featured-calculator h3{margin:0 0 6px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,3vw,32px);font-weight:400;line-height:1.1}
+    .featured-calculator p{margin:0;max-width:640px;font-size:15px}
+    .feature-link{display:inline-flex;align-items:center;justify-content:center;min-width:160px;padding:12px 16px;border-radius:12px;background:var(--accent);color:#fff;font-weight:900;white-space:nowrap}
+    .featured-calculator-icon{width:66px;height:66px;display:grid;place-items:center;border-radius:18px;background:var(--accent-soft);border:1px solid var(--accent-border);font-size:30px}
+    .quick-calculators{margin-top:18px}
+    .quick-calculators-title{margin:0 0 10px;font-size:14px;font-weight:800}
+    .quick-calculators-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .quick-calculators-grid a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;background:var(--card);border:1px solid var(--border);border-radius:11px;text-decoration:none;color:var(--foreground);font-size:14px;font-weight:800;transition:.18s ease}
+    .quick-calculators-grid a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .quick-arrow,.editorial-arrow{color:var(--muted)}
+    .explore-section{margin-top:30px;padding-top:28px;border-top:1px solid var(--border)}
+    .explore-heading h2{margin:0}.explore-heading p{margin:7px 0 14px}
+    .explore-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+    .explore-column h3{margin:0 0 8px;font-size:16px}
+    .editorial-link{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .editorial-link:hover{color:var(--accent);padding-left:4px}
+    .editorial-link span:first-child{flex:1;min-width:0;font-weight:800;font-size:15px}
+    .resource-actions{display:flex;justify-content:space-between;gap:16px;margin-top:18px;flex-wrap:wrap}
+    .resource-actions a{color:var(--accent);font-weight:800;text-decoration:none}
+
     @media (max-width: 800px) {
       .nav-inner {
         flex-direction: row;
@@ -549,6 +587,15 @@
       .cta-button {
         width: 100%;
       }
+      .toc-box{padding:20px}
+      .toc-links{grid-template-columns:1fr;column-gap:0}
+      .featured-calculator{grid-template-columns:1fr;padding:22px;gap:16px}
+      .feature-link{width:100%}
+      .featured-calculator-icon{display:none}
+      .quick-calculators-grid{grid-template-columns:1fr}
+      .explore-grid{grid-template-columns:1fr;gap:26px}
+      .resource-actions{display:block}
+      .resource-actions a{display:block;margin-top:8px}
     }
   </style>
 </head>
@@ -573,7 +620,7 @@
 <main class="main-wrapper">
 
   <section class="hero">
-    <span class="pill">Updated for Malaysia employment rules 2026</span>
+    <span class="pill">Last verified: August 2026 · Employment Act 1955 annual leave rules</span>
     <h1 class="serif">Malaysia <em>annual leave</em> guide 2026</h1>
     <p>
       Learn annual leave entitlement, pro-rated leave calculations,
@@ -583,376 +630,319 @@
 
   <section class="seo">
 
-    <section class="calculator-cta">
-      <h2>Calculate Your Annual Leave Entitlement</h2>
-      <p>
-        Want to estimate how many annual leave days you may be entitled to?
-        Use our free Annual Leave Calculator to estimate leave entitlement based on your service period.
-      </p>
-      <a href="annual-leave-calculator.html" class="cta-button">Open Annual Leave Calculator →</a>
-    </section>
-
     <section class="summary-box">
       <h2>Annual Leave Quick Summary</h2>
       <p>
-        Annual leave is paid time off given to employees each year. In Malaysia, the minimum annual leave entitlement depends mainly on the employee's length of service.
+        Section 60E of the Employment Act 1955 sets minimum paid annual leave based on continuous service with the same employer.
       </p>
 
       <div class="summary-grid">
-        <div class="summary-card">
-          <strong>8 Days</strong>
-          <span>Less than 2 years of service</span>
-        </div>
-        <div class="summary-card">
-          <strong>12 Days</strong>
-          <span>2 to 5 years of service</span>
-        </div>
-        <div class="summary-card">
-          <strong>16 Days</strong>
-          <span>More than 5 years of service</span>
-        </div>
-        <div class="summary-card">
-          <strong>Paid Leave</strong>
-          <span>Annual leave is normally paid time off</span>
-        </div>
+        <div class="summary-card"><strong>8 Days</strong><span>Less than 2 years of service</span></div>
+        <div class="summary-card"><strong>12 Days</strong><span>2 years or more but less than 5 years</span></div>
+        <div class="summary-card"><strong>16 Days</strong><span>5 years of service or more</span></div>
+        <div class="summary-card"><strong>12 Months</strong><span>General period to take statutory leave after each completed service year</span></div>
+      </div>
+
+      <div class="note-box">
+        <strong>Key point:</strong> These are statutory minimums. An employer can provide more generous annual leave through the employment contract or company policy, but should not reduce an employee's statutory entitlement.
       </div>
     </section>
 
-    <h2>What Is Annual Leave?</h2>
-    <p>
-      Annual leave is paid leave given to employees so they can take time off work while still receiving salary. It is one of the key employment benefits employees look at when comparing salary packages and job offers.
-    </p>
-    <p>
-      In Malaysia, annual leave entitlement is commonly based on the employee's length of service. Employers may provide more leave than the statutory minimum, but they should not provide less than the minimum entitlement required for eligible employees.
-    </p>
+    <section class="calculator-cta">
+      <h2>Calculate Your Annual Leave Entitlement</h2>
+      <p>Estimate annual leave based on your length of service and completed months of employment.</p>
+      <a href="annual-leave-calculator.html" class="cta-button">Calculate My Annual Leave →</a>
+    </section>
+
+    <section class="toc-box">
+      <h2>On This Page</h2>
+      <div class="toc-links">
+        <a href="#what-is-annual-leave"><span class="toc-number">01</span><span class="toc-label">What Is Annual Leave?</span><span class="toc-arrow">→</span></a>
+        <a href="#entitlement"><span class="toc-number">02</span><span class="toc-label">8 / 12 / 16-Day Entitlement</span><span class="toc-arrow">→</span></a>
+        <a href="#prorated"><span class="toc-number">03</span><span class="toc-label">Pro-Rated Annual Leave</span><span class="toc-arrow">→</span></a>
+        <a href="#probation"><span class="toc-number">04</span><span class="toc-label">Annual Leave During Probation</span><span class="toc-arrow">→</span></a>
+        <a href="#take-leave"><span class="toc-number">05</span><span class="toc-label">When Leave Must Be Taken</span><span class="toc-arrow">→</span></a>
+        <a href="#sick-maternity"><span class="toc-number">06</span><span class="toc-label">Sick / Maternity Leave Overlap</span><span class="toc-arrow">→</span></a>
+        <a href="#resignation"><span class="toc-number">07</span><span class="toc-label">Resignation & Unused Leave</span><span class="toc-arrow">→</span></a>
+        <a href="#payment"><span class="toc-number">08</span><span class="toc-label">Leave Pay & Encashment</span><span class="toc-arrow">→</span></a>
+        <a href="#examples"><span class="toc-number">09</span><span class="toc-label">Annual Leave Examples</span><span class="toc-arrow">→</span></a>
+        <a href="#special-rules"><span class="toc-number">10</span><span class="toc-label">Special Rules</span><span class="toc-arrow">→</span></a>
+        <a href="#mistakes"><span class="toc-number">11</span><span class="toc-label">Common Mistakes</span><span class="toc-arrow">→</span></a>
+        <a href="#faq"><span class="toc-number">12</span><span class="toc-label">FAQ</span><span class="toc-arrow">→</span></a>
+      </div>
+    </section>
+
+    <h2 id="what-is-annual-leave">What Is Annual Leave?</h2>
+    <p>Annual leave is paid time off provided to employees for rest, travel and personal matters. Under the Employment Act 1955, statutory annual leave is separate from rest days and paid public holidays.</p>
+    <p>The minimum entitlement increases with continuous service, while an employment contract or company policy may provide additional leave beyond the statutory minimum.</p>
 
     <section class="guide-box">
-      <h2>Annual Leave Entitlement in Malaysia</h2>
-      <p>
-        Annual leave entitlement is generally linked to an employee's completed years of service. Employees with longer service periods are typically entitled to more annual leave days under the minimum employment standards.
-      </p>
-      <p>
-        The table below shows a simplified guide to minimum annual leave entitlement based on completed years of service.
-      </p>
+      <h2 id="entitlement">Annual Leave Entitlement in Malaysia</h2>
+      <p>Section 60E provides the following minimum annual leave for every twelve months of continuous service with the same employer.</p>
 
       <div class="contribution-table-wrap">
         <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Length of Service</th>
-              <th>Minimum Annual Leave</th>
-              <th>Simple Explanation</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Length of Service</th><th>Minimum Paid Annual Leave</th><th>Practical Meaning</th></tr></thead>
           <tbody>
-            <tr>
-              <td>Less than 2 years</td>
-              <td>8 days per year</td>
-              <td>For employees with shorter service period</td>
-            </tr>
-            <tr>
-              <td>2 years or more but less than 5 years</td>
-              <td>12 days per year</td>
-              <td>For employees with mid-level service period</td>
-            </tr>
-            <tr>
-              <td>5 years or more</td>
-              <td>16 days per year</td>
-              <td>For long-serving employees</td>
-            </tr>
+            <tr><td>Less than 2 years</td><td><strong>8 days</strong></td><td>Minimum entitlement for employees in the first service band.</td></tr>
+            <tr><td>2 years or more but less than 5 years</td><td><strong>12 days</strong></td><td>Minimum increases after reaching 2 years of service.</td></tr>
+            <tr><td>5 years or more</td><td><strong>16 days</strong></td><td>Minimum entitlement for employees with at least 5 years of service.</td></tr>
           </tbody>
         </table>
       </div>
 
       <div class="note-box">
-        <strong>Note:</strong> This is a simplified guide. Actual entitlement may depend on employment contract terms, company policy, eligibility and the latest employment law requirements.
+        <strong>Statutory minimum:</strong> If your contract gives 14 days when the statutory minimum applicable to you is 12 days, you generally follow the more generous contractual entitlement.
       </div>
     </section>
 
-    <h2>How Annual Leave Is Calculated</h2>
-    <p>
-      Annual leave is usually calculated based on the employee's yearly entitlement. If an employee joins or leaves during the year, annual leave may be calculated on a pro-rated basis depending on company policy and applicable employment rules.
-    </p>
-
-    <div class="formula-box">
-      <strong>Pro-Rated Leave = Annual Entitlement × Months Worked ÷ 12</strong>
-      <span>Example: 8 days × 6 months ÷ 12 = 4 days of annual leave</span>
-    </div>
-
-    <section class="example-box">
-      <h2>Example Annual Leave Calculation</h2>
-      <p>
-        If an employee is entitled to 8 days of annual leave per year and works for 6 months in the year, the estimated pro-rated leave may be:
-      </p>
-      <ul>
-        <li>Annual entitlement: 8 days</li>
-        <li>Months worked: 6 months</li>
-        <li>Estimated pro-rated leave: 4 days</li>
-      </ul>
-      <p>
-        Some companies may have specific rounding rules, cut-off dates or HR policies, so the actual result may differ slightly.
-      </p>
-    </section>
-
-    <h2>Annual Leave During Probation</h2>
-    <p>
-      Employees often ask whether they can take annual leave during probation. This depends on the employment contract and company policy. Some employers allow leave to be taken after confirmation, while others allow pro-rated leave during probation.
-    </p>
-    <p>
-      Even if annual leave is not normally taken during probation, employees may still accumulate entitlement depending on the employment arrangement and applicable rules.
-    </p>
-
     <section class="guide-box">
-      <h2>Can Annual Leave Be Carried Forward?</h2>
-      <p>
-        Many companies allow employees to carry forward unused annual leave to the following year. However, carry-forward rules vary between employers.
-      </p>
-      <p>
-        Some companies allow leave to be carried forward for a limited period, while others require employees to use their leave before a specific deadline.
-      </p>
-      <p>
-        Employees should review company policies carefully to avoid losing unused leave entitlement.
-      </p>
+      <h2 id="prorated">How Pro-Rated Annual Leave Works</h2>
+      <p>Section 60E specifically provides proportional annual leave where an employee has not completed twelve months of continuous service in the year in which the contract of service terminates. The statutory calculation is based on the number of <strong>completed months of service</strong>.</p>
+
+      <div class="formula-box">
+        <strong>Pro-Rated Leave = Annual Entitlement × Completed Months of Service ÷ 12</strong>
+        <span>Fractions below half a day are disregarded; half a day or more is rounded up to one day under the statutory rule.</span>
+      </div>
+
+      <section class="example-box">
+        <h2>Example: 6 Completed Months</h2>
+        <p>An employee in the 8-day entitlement band leaves after completing 6 months of service:</p>
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <tbody>
+              <tr><td><strong>Annual entitlement</strong></td><td>8 days</td></tr>
+              <tr><td><strong>Completed months</strong></td><td>6 months</td></tr>
+              <tr><td><strong>Calculation</strong></td><td>8 × 6 ÷ 12</td></tr>
+              <tr><td><strong>Pro-rated entitlement</strong></td><td><strong>4 days</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="note-box">
+        <strong>Company accrual systems:</strong> Employers often accrue leave monthly throughout employment for administration. A company may use a more generous internal accrual method, but statutory termination entitlement should still comply with the Employment Act.
+      </div>
     </section>
 
     <section class="guide-box">
-      <h2>Annual Leave During Resignation</h2>
-      <p>
-        Employees who resign often ask what happens to unused annual leave during the notice period. Depending on company policy and employment terms, unused leave may be taken during the notice period, paid out in cash or adjusted against final salary.
-      </p>
-      <p>
-        Employers may also have internal policies regarding whether annual leave can be taken during the notice period. Employees should check their employment contract and discuss arrangements with HR before submitting leave applications.
-      </p>
+      <h2 id="probation">Annual Leave During Probation</h2>
+      <p>Probation does not automatically remove statutory annual leave entitlement. Section 60E is based on continuous service with the same employer and does not create a separate exclusion simply because an employee is still on probation.</p>
+      <p>An employer may have procedures on when accrued leave can be scheduled or approved during probation, but company policy should not be used to eliminate statutory entitlement.</p>
+
+      <div class="note-box">
+        <strong>Practical distinction:</strong> “Can I take leave during probation?” and “Am I accruing statutory leave during probation?” are not the same question. Approval procedures may apply to taking leave, while statutory entitlement is tied to continuous service.
+      </div>
     </section>
 
     <section class="guide-box">
-      <h2>Common Annual Leave Situations</h2>
+      <h2 id="take-leave">When Must Annual Leave Be Taken?</h2>
+      <p>Under section 60E, the employer must grant and the employee must take statutory annual leave no later than <strong>12 months after the end of each twelve-month period of continuous service</strong>.</p>
+      <p>If the employee fails to take the leave by the end of that period, the statutory entitlement can cease. However, if the employer asks the employee not to take all or part of the leave and the employee agrees <strong>in writing</strong>, payment in lieu may be made.</p>
+
+      <div class="note-box">
+        <strong>Carry-forward is not unlimited:</strong> A company's carry-forward policy should be read together with the statutory 12-month utilisation rule. Contractual leave above the statutory minimum may also be subject to separate company rules.
+      </div>
+    </section>
+
+    <section class="guide-box">
+      <h2 id="sick-maternity">What If You Become Sick During Annual Leave?</h2>
+      <p>If an employee who is on paid annual leave becomes entitled to statutory sick leave or maternity leave during that period, the relevant days are treated as sick leave or maternity leave instead.</p>
+      <p>The annual leave for those overlapping days is deemed not to have been taken.</p>
+
       <div class="component-grid">
-        <div class="component-card">
-          <div class="component-icon">🧑‍💼</div>
-          <h3>New Joiner</h3>
-          <p>Leave may be pro-rated based on joining date and months worked.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">📆</div>
-          <h3>Mid-Year Resignation</h3>
-          <p>Unused or excess leave may be adjusted in final payroll.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">🏢</div>
-          <h3>Company Policy</h3>
-          <p>Employers may offer more leave than the minimum requirement.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">📝</div>
-          <h3>Leave Approval</h3>
-          <p>Annual leave usually requires employer approval before taking time off.</p>
-        </div>
+        <div class="component-card"><div class="component-icon">🤒</div><h3>Sick Leave</h3><p>Qualifying statutory sick-leave days can replace overlapping annual-leave days.</p></div>
+        <div class="component-card"><div class="component-icon">🤰</div><h3>Maternity Leave</h3><p>Qualifying maternity-leave days are not treated as annual leave.</p></div>
+        <div class="component-card"><div class="component-icon">📅</div><h3>Leave Balance</h3><p>The annual leave corresponding to those statutory leave days is treated as not taken.</p></div>
+        <div class="component-card"><div class="component-icon">🧾</div><h3>Documentation</h3><p>Employees should submit the medical or leave documentation required under the applicable rules.</p></div>
       </div>
     </section>
 
     <section class="guide-box">
-      <h2>Common Annual Leave Mistakes</h2>
-      <p>
-        Many disputes between employees and employers arise because annual leave policies are misunderstood. Employees should always check company policies, approval requirements and carry-forward rules before making leave plans.
-      </p>
+      <h2 id="resignation">Annual Leave During Resignation and Termination</h2>
+      <p>When employment is ending, section 60E gives employees specific rights in relation to annual leave already due and leave accrued for completed months in the final service year.</p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Situation</th><th>General Statutory Position</th></tr></thead>
+          <tbody>
+            <tr><td>Leave due from the preceding completed service period</td><td>The employee is entitled to take it before termination.</td></tr>
+            <tr><td>Leave accrued in completed months of the current service period</td><td>The employee is entitled to the proportional accrued leave before termination.</td></tr>
+            <tr><td>Contract ends before entitled leave is taken</td><td>Employer must generally pay the ordinary rate of pay for each outstanding leave day.</td></tr>
+            <tr><td>Dismissal under section 14(1)(a)</td><td>The statutory payment-in-lieu rule on termination does not apply in the same way.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box">
+        <strong>Notice period:</strong> Annual leave does not automatically cancel or shorten the contractual notice period. Whether leave is taken during notice should be properly arranged with the employer; payment in lieu of notice is a separate issue.
+      </div>
+    </section>
+
+    <section class="guide-box">
+      <h2 id="payment">Annual Leave Pay and Encashment</h2>
+      <p>An employee taking statutory annual leave should receive the ordinary rate of pay for each day of leave.</p>
+      <p>During ongoing employment, statutory leave is generally intended to be taken. Payment in lieu is expressly allowed where the employer requests the employee not to take the leave and the employee agrees in writing. On termination, outstanding statutory leave may also become payable under section 60E.</p>
+
+      <div class="formula-box">
+        <strong>Unused Leave Payment on Termination = Outstanding Leave Days × Applicable Ordinary Rate of Pay</strong>
+        <span>Actual payroll treatment should follow the employee's pay basis and section 60E requirements.</span>
+      </div>
+    </section>
+
+    <section class="guide-box">
+      <h2 id="examples">Common Annual Leave Examples</h2>
+
+      <h3>Example 1: New Employee / Short Service</h3>
+      <p>An employee in the 8-day entitlement band who terminates after 6 completed months would have a statutory pro-rated entitlement of 4 days, before deducting leave already taken.</p>
+
+      <h3>Example 2: Employee With 3 Years of Service</h3>
+      <p>An employee who has reached at least 2 years but less than 5 years of continuous service is in the 12-day statutory band.</p>
+
+      <h3>Example 3: Employee With 6 Years of Service</h3>
+      <p>An employee with at least 5 years of continuous service is in the 16-day statutory band.</p>
+
+      <h3>Example 4: Resignation With Unused Leave</h3>
+      <p>If an employee has 5 outstanding statutory leave days when the contract ends and those days were not taken before termination, payment may be due at the ordinary rate of pay, subject to the statutory rules and reason for termination.</p>
+    </section>
+
+    <section class="guide-box">
+      <h2 id="special-rules">Special Annual Leave Rules Employees Should Know</h2>
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Rule</th><th>Why It Matters</th></tr></thead>
+          <tbody>
+            <tr><td>Annual leave is additional to rest days and paid public holidays</td><td>An employer should not count a statutory rest day or paid holiday as an annual-leave day.</td></tr>
+            <tr><td>Unauthorised absence above 10% of working days</td><td>An employee may lose annual-leave entitlement for that 12-month service period if the statutory conditions are met.</td></tr>
+            <tr><td>Unpaid leave exceeding 30 days in a 12-month period</td><td>The excess unpaid-leave period is disregarded when computing length of service for annual-leave purposes.</td></tr>
+            <tr><td>Sick / maternity leave overlaps annual leave</td><td>The qualifying sick / maternity days are not treated as annual leave.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="guide-box">
+      <h2>Annual Leave Approval and Company Policy</h2>
+      <p>Employees normally need to follow a reasonable leave-application and approval process so that employers can manage staffing and operations.</p>
+      <p>However, company policy should be applied consistently with the statutory requirement that the employer grants and the employee takes the minimum leave within the permitted period.</p>
+
+      <div class="component-grid">
+        <div class="component-card"><div class="component-icon">📝</div><h3>Apply Early</h3><p>Follow the company's notice and leave-application procedure.</p></div>
+        <div class="component-card"><div class="component-icon">✅</div><h3>Get Approval</h3><p>Do not simply assume annual leave is approved because a request was submitted.</p></div>
+        <div class="component-card"><div class="component-icon">📊</div><h3>Check Balance</h3><p>Compare opening balance, accrued leave, leave taken and remaining entitlement.</p></div>
+        <div class="component-card"><div class="component-icon">📆</div><h3>Watch Expiry</h3><p>Know the statutory utilisation period and any more generous company carry-forward rules.</p></div>
+      </div>
+    </section>
+
+    <section class="guide-box">
+      <h2>Annual Leave vs Medical Leave vs Public Holiday</h2>
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Leave Type</th><th>Main Purpose</th><th>Separate Statutory Entitlement?</th></tr></thead>
+          <tbody>
+            <tr><td>Annual Leave</td><td>Paid personal time off</td><td>Yes</td></tr>
+            <tr><td>Medical Leave</td><td>Absence due to qualifying illness / medical reasons</td><td>Yes</td></tr>
+            <tr><td>Paid Public Holiday</td><td>Gazetted / applicable paid holiday</td><td>Yes</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note-box"><strong>Do not combine them:</strong> Section 60E expressly states that paid annual leave is in addition to rest days and paid holidays.</div>
+    </section>
+
+    <section class="guide-box">
+      <h2 id="mistakes">Common Annual Leave Mistakes</h2>
       <ul>
-        <li>Assuming annual leave can be taken without approval</li>
-        <li>Not checking carry-forward deadlines</li>
-        <li>Misunderstanding pro-rated leave calculations</li>
-        <li>Using all leave before resignation without HR confirmation</li>
-        <li>Confusing annual leave with medical leave entitlement</li>
+        <li>Assuming probation means there is no statutory annual-leave entitlement.</li>
+        <li>Treating the 8 / 12 / 16-day minimum as optional company policy.</li>
+        <li>Assuming all unused leave can be carried forward indefinitely.</li>
+        <li>Using incomplete months as completed months for statutory termination pro-rating without checking the rule.</li>
+        <li>Not applying the statutory half-day rounding rule to pro-rated leave.</li>
+        <li>Counting public holidays or statutory sick leave as annual leave.</li>
+        <li>Assuming annual leave automatically offsets the resignation notice period.</li>
+        <li>Failing to settle outstanding statutory annual leave properly when employment ends.</li>
       </ul>
     </section>
 
-    <h2>Unused Annual Leave</h2>
-    <p>
-      Unused annual leave is a common issue during year-end, resignation or payroll processing. Depending on company policy, unused leave may be carried forward, forfeited or paid out in certain situations.
-    </p>
-    <p>
-      Employees should check their employment contract or HR policy to understand whether unused annual leave can be carried forward and whether there is any deadline to use it.
-    </p>
-
-    <h2>Annual Leave vs Medical Leave vs Public Holiday</h2>
-    <div class="contribution-table-wrap">
-      <table class="contribution-table">
-        <thead>
-          <tr>
-            <th>Leave Type</th>
-            <th>Main Purpose</th>
-            <th>Usually Paid?</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Annual Leave</td>
-            <td>Planned time off for rest, travel or personal matters</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <td>Medical Leave</td>
-            <td>Time off due to illness or medical reasons</td>
-            <td>Yes, if eligible</td>
-          </tr>
-          <tr>
-            <td>Public Holiday</td>
-            <td>Gazetted public holidays observed by employer</td>
-            <td>Yes, if applicable</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
     <section class="guide-box">
-      <h2>Who Should Read This Annual Leave Guide?</h2>
+      <h2>Employee Annual Leave Checklist</h2>
       <ul>
-        <li>Employees checking how many annual leave days they are entitled to</li>
-        <li>Job seekers comparing leave benefits in employment offers</li>
-        <li>HR and payroll staff calculating pro-rated annual leave</li>
-        <li>Business owners preparing basic employment policies</li>
+        <li>Confirm your continuous-service date with the employer.</li>
+        <li>Check whether your statutory band is 8, 12 or 16 days.</li>
+        <li>Compare statutory entitlement with the more generous contractual entitlement, if any.</li>
+        <li>Review leave already taken and the remaining balance.</li>
+        <li>Check the employer's application and carry-forward procedures.</li>
+        <li>When resigning, verify accrued leave for completed months and outstanding leave from the prior service period.</li>
+        <li>Keep leave approvals and final payroll records if there is a dispute.</li>
       </ul>
     </section>
 
     <section class="guide-box">
-      <h2>Common Annual Leave Examples</h2>
-
-      <h3>Example 1: New Employee</h3>
-      <p>
-        An employee joins in July and is entitled to 8 days per year. The estimated pro-rated entitlement may be around 4 days for the remaining six months.
-      </p>
-
-      <h3>Example 2: Employee With 3 Years Service</h3>
-      <p>
-        An employee with more than 2 years but less than 5 years of service may be entitled to 12 days of annual leave per year.
-      </p>
-
-      <h3>Example 3: Employee With 6 Years Service</h3>
-      <p>
-        An employee with more than 5 years of service may be entitled to 16 days of annual leave annually, subject to employment terms and company policies.
-      </p>
+      <h2>Sources &amp; Verification</h2>
+      <p>This guide was last verified in August 2026 against section 60E of the Employment Act 1955 as published by the Department of Labour Peninsular Malaysia (JTKSM).</p>
+      <div class="source-note">
+        <strong>Official sources used for verification:</strong><br>
+        <a href="https://jtksm.mohr.gov.my/sites/default/files/2023-11/Akta%20Kerja%201955%20%28Akta%20265%29_0.pdf" target="_blank" rel="noopener">JTKSM — Employment Act 1955, Section 60E</a><br>
+        <a href="https://jtksm.mohr.gov.my/en/services/labour-permits/acts-guidelines" target="_blank" rel="noopener">JTKSM — Acts &amp; Guidelines</a>
+      </div>
     </section>
 
-    <section class="guide-box">
-      <h2>Official Reference</h2>
-      <p>
-        Employment rules may change over time. Employees and employers should refer to official government sources and the latest Employment Act requirements for the most up-to-date information.
-      </p>
-    </section>
-
-    <h2>Frequently Asked Questions</h2>
-
+    <h2 id="faq">Frequently Asked Questions</h2>
     <div class="faq-box">
-      <details class="faq-item" open>
-        <summary>How many days of annual leave are employees entitled to in Malaysia?</summary>
-        <p>
-          Minimum annual leave entitlement commonly depends on length of service: 8 days for less than 2 years, 12 days for 2 to 5 years and 16 days for more than 5 years of service.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Is annual leave paid in Malaysia?</summary>
-        <p>
-          Yes. Annual leave is normally paid time off, which means employees continue to receive salary while taking approved annual leave.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can annual leave be pro-rated?</summary>
-        <p>
-          Yes. Annual leave is commonly pro-rated when an employee joins or leaves during the year. The calculation may depend on months worked, company policy and employment terms.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can employees take annual leave during probation?</summary>
-        <p>
-          This depends on the employment contract and company policy. Some employers allow pro-rated annual leave during probation, while others require employees to wait until confirmation.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can annual leave be taken during the notice period?</summary>
-        <p>
-          This depends on company policy, employment contract terms and employer approval. Some employers allow employees to use annual leave during the notice period, while others may restrict leave to ensure a proper handover of duties before the employee leaves the company.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can annual leave be encashed?</summary>
-        <p>
-          Whether annual leave can be converted into cash depends on company policy and employment arrangements. In certain situations, unused annual leave may be paid out when an employee resigns or leaves the company, while other employers may require leave to be taken before the end of employment.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can annual leave expire?</summary>
-        <p>
-          Annual leave may expire if company policy requires employees to use it within a certain period. Some employers allow carry-forward, while others set a deadline for unused leave.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can employer force employee to take annual leave?</summary>
-        <p>
-          This depends on employment terms, company policy and the reason for the arrangement. Employees should check with HR if annual leave is being scheduled by the employer.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can annual leave be carried forward indefinitely?</summary>
-        <p>
-          Usually no. Most employers that allow carry-forward will set a limit or expiry period. Employees should check the company leave policy to avoid losing unused leave.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>What happens to unused annual leave when resigning?</summary>
-        <p>
-          Unused annual leave may be paid out, offset against notice period or adjusted in final salary depending on company policy and employment terms.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can employers reject annual leave applications?</summary>
-        <p>
-          Annual leave usually requires employer approval. Employers may reject or reschedule leave requests due to operational needs, staffing issues or company policy.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can annual leave be carried forward to the next year?</summary>
-        <p>
-          Carry-forward rules depend on company policy or employment terms. Some companies allow unused leave to be carried forward for a limited period, while others may require leave to be used within the year.
-        </p>
-      </details>
+      <details class="faq-item" open><summary>How many days of annual leave are employees entitled to in Malaysia?</summary><p>The statutory minimum is 8 days for less than 2 years of service, 12 days for 2 years or more but less than 5 years, and 16 days for 5 years or more of continuous service with the same employer.</p></details>
+      <details class="faq-item"><summary>Is annual leave paid?</summary><p>Yes. Statutory annual leave is paid leave and the employee is entitled to the ordinary rate of pay for each day of such leave.</p></details>
+      <details class="faq-item"><summary>Does annual leave accrue during probation?</summary><p>Probation is not a separate exclusion under section 60E. Statutory entitlement is tied to continuous service, although the employer may have procedures governing when leave can be scheduled or approved.</p></details>
+      <details class="faq-item"><summary>How is annual leave pro-rated when employment ends?</summary><p>If the employee has not completed 12 months of continuous service in the year of termination, entitlement is proportional to completed months of service. A fraction below half a day is disregarded and half a day or more is rounded to one day.</p></details>
+      <details class="faq-item"><summary>Can annual leave be carried forward forever?</summary><p>No. Statutory leave must generally be granted and taken no later than 12 months after the end of the relevant 12 months of continuous service. More generous contractual leave may have separate company rules.</p></details>
+      <details class="faq-item"><summary>Can unused annual leave be paid instead?</summary><p>During employment, payment in lieu is allowed where the employer requests the employee not to take the leave and the employee agrees in writing. Outstanding statutory leave may also be payable when employment terminates, subject to section 60E.</p></details>
+      <details class="faq-item"><summary>What happens to unused annual leave when I resign?</summary><p>The employee is generally entitled to take due leave and accrued leave for completed months before termination. If the contract ends before entitled leave is taken, payment at the ordinary rate is generally required, subject to the statutory exception for certain misconduct dismissals.</p></details>
+      <details class="faq-item"><summary>Can annual leave shorten my notice period automatically?</summary><p>No. Annual leave and contractual notice are separate matters. Any arrangement to take leave during notice or adjust the termination date should be properly agreed with the employer.</p></details>
+      <details class="faq-item"><summary>What if I become sick while on annual leave?</summary><p>If you become entitled to statutory sick leave while on annual leave, those qualifying sick-leave days are treated as sick leave and the annual leave for those days is deemed not taken.</p></details>
+      <details class="faq-item"><summary>Are public holidays counted as annual leave?</summary><p>No. Statutory annual leave is expressly in addition to rest days and paid public holidays.</p></details>
     </div>
 
-    <section class="salary-guides-box">
-      <h2>Related Employment Guides</h2>
-      <p>Continue reading related Malaysia employment guides to understand leave, holidays and payroll rules.</p>
+    <section class="related-tools-section">
+      <h2>Related Tools</h2>
+      <p class="related-tools-intro">Calculate your leave entitlement first, then explore the employment and payroll topics most closely connected to annual leave.</p>
 
-      <div class="guide-mini-grid">
-        <a href="mc-leave-guide.html">MC Leave Guide</a>
-        <a href="public-holiday-guide.html">Public Holiday Guide</a>
-        <a href="overtime-guide.html">Overtime Guide</a>
-        <a href="resignation-notice-guide.html">Resignation Notice Guide</a>
+      <a class="featured-calculator" href="annual-leave-calculator.html">
+        <div>
+          <span class="featured-kicker">Annual Leave Calculator</span>
+          <h3>Calculate Your Annual Leave Entitlement</h3>
+          <p>Estimate leave based on service period and completed months of employment.</p>
+        </div>
+        <span class="feature-link">Calculate Leave →</span>
+        <div class="featured-calculator-icon" aria-hidden="true">🏖️</div>
+      </a>
+
+      <div class="quick-calculators">
+        <p class="quick-calculators-title">Quick Calculators</p>
+        <div class="quick-calculators-grid">
+          <a href="mc-leave-calculator.html"><span>Medical Leave Calculator</span><span class="quick-arrow">→</span></a>
+          <a href="overtime-calculator.html"><span>Overtime Calculator</span><span class="quick-arrow">→</span></a>
+          <a href="index.html"><span>Salary Calculator</span><span class="quick-arrow">→</span></a>
+        </div>
       </div>
 
-      <p class="view-all-guides"><a href="guides.html">View All Guides →</a></p>
-    </section>
-
-    <section class="salary-guides-box">
-      <h2>Related Calculators</h2>
-      <p>Use these calculators to estimate leave, overtime and monthly take-home pay in Malaysia.</p>
-
-      <div class="guide-mini-grid">
-        <a href="annual-leave-calculator.html">Annual Leave Calculator</a>
-        <a href="mc-leave-calculator.html">MC Leave Calculator</a>
-        <a href="overtime-calculator.html">Overtime Calculator</a>
-        <a href="index.html">Salary Calculator</a>
+      <div class="explore-section">
+        <div class="explore-heading"><h2>Continue Exploring</h2><p>Useful next steps for understanding leave, holidays, resignation and salary treatment.</p></div>
+        <div class="explore-grid">
+          <div class="explore-column">
+            <h3>Leave &amp; Working Time</h3>
+            <a class="editorial-link" href="mc-leave-guide.html"><span>Medical Leave Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="public-holiday-guide.html"><span>Public Holiday Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="rest-day-guide.html"><span>Rest Day Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="overtime-guide.html"><span>Overtime Guide</span><span class="editorial-arrow">→</span></a>
+          </div>
+          <div class="explore-column">
+            <h3>Employment &amp; Payroll</h3>
+            <a class="editorial-link" href="resignation-notice-guide.html"><span>Resignation Notice Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="employment-contract-guide.html"><span>Employment Contract Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="salary-deduction-guide.html"><span>Salary Deduction Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="payslip-guide.html"><span>Payslip Guide</span><span class="editorial-arrow">→</span></a>
+          </div>
+        </div>
+        <div class="resource-actions"><a href="guides.html">Explore All Guides →</a><a href="calculators.html">View All Calculators →</a></div>
       </div>
-
-      <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
     </section>
 
   </section>
