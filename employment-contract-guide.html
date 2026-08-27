@@ -468,6 +468,45 @@
       color: var(--accent);
     }
 
+
+    .toc-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:26px 0}
+    .toc-box h2{margin-top:0;margin-bottom:16px}
+    .toc-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px}
+    .toc-links a{display:flex;align-items:center;gap:14px;min-width:0;text-decoration:none;color:var(--foreground);padding:12px 2px;border-bottom:1px solid var(--border);transition:.18s ease}
+    .toc-links a:hover{color:var(--accent);padding-left:4px}
+    .toc-number{width:28px;flex:0 0 28px;color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.04em}
+    .toc-label{flex:1;min-width:0;font-weight:700;font-size:15px}
+    .toc-arrow{color:var(--muted);font-size:15px}
+    .status-yes{color:var(--accent);font-weight:800}
+    .status-no{color:#9a5a45;font-weight:800}
+
+    .source-note{margin-top:18px;background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);padding:14px;border-radius:10px;color:var(--muted);font-size:13px}
+    .source-note a{color:var(--accent);font-weight:800;text-decoration:none}
+
+    .related-tools-section{margin:34px 0}
+    .related-tools-intro{margin-top:0;max-width:760px}
+    .featured-calculator{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:22px;align-items:center;margin-top:20px;padding:24px 26px;background:radial-gradient(circle at top right,rgba(47,125,94,.14),transparent 34%),linear-gradient(135deg,#f8f5ef 0%,#fbfaf6 100%);border:1px solid var(--accent-border);border-radius:18px;text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .featured-calculator:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 16px 34px rgba(47,43,37,.09)}
+    .featured-kicker{display:inline-block;margin-bottom:7px;color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .featured-calculator h3{margin:0 0 6px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,3vw,32px);font-weight:400;line-height:1.1}
+    .featured-calculator p{margin:0;max-width:640px;font-size:15px}
+    .feature-link{display:inline-flex;align-items:center;justify-content:center;min-width:160px;padding:12px 16px;border-radius:12px;background:var(--accent);color:#fff;font-weight:900;white-space:nowrap}
+    .featured-calculator-icon{width:66px;height:66px;display:grid;place-items:center;border-radius:18px;background:var(--accent-soft);border:1px solid var(--accent-border);font-size:30px}
+    .quick-calculators{margin-top:18px}.quick-calculators-title{margin:0 0 10px;font-size:14px;font-weight:800}
+    .quick-calculators-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .quick-calculators-grid a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;background:var(--card);border:1px solid var(--border);border-radius:11px;text-decoration:none;color:var(--foreground);font-size:14px;font-weight:800;transition:.18s ease}
+    .quick-calculators-grid a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .quick-arrow,.editorial-arrow{color:var(--muted)}
+    .explore-section{margin-top:30px;padding-top:28px;border-top:1px solid var(--border)}
+    .explore-heading h2{margin:0}.explore-heading p{margin:7px 0 14px}
+    .explore-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+    .explore-column h3{margin:0 0 8px;font-size:16px}
+    .editorial-link{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .editorial-link:hover{color:var(--accent);padding-left:4px}
+    .editorial-link span:first-child{flex:1;min-width:0;font-weight:800;font-size:15px}
+    .resource-actions{display:flex;justify-content:space-between;gap:16px;margin-top:18px;flex-wrap:wrap}
+    .resource-actions a{color:var(--accent);font-weight:800;text-decoration:none}
+
     @media (max-width: 800px) {
       .nav-inner {
         flex-direction: row;
@@ -552,6 +591,15 @@
         font-size: 12px;
         line-height: 1.35;
       }
+      .toc-box{padding:20px}
+      .toc-links{grid-template-columns:1fr;column-gap:0}
+      .featured-calculator{grid-template-columns:1fr;padding:22px;gap:16px}
+      .feature-link{width:100%}
+      .featured-calculator-icon{display:none}
+      .quick-calculators-grid{grid-template-columns:1fr}
+      .explore-grid{grid-template-columns:1fr;gap:26px}
+      .resource-actions{display:block}
+      .resource-actions a{display:block;margin-top:8px}
     }
   </style>
 </head>
@@ -574,7 +622,7 @@
   </header>
 
   <section class="hero">
-    <span class="pill">Updated for Malaysia 2026 employment guide</span>
+    <span class="pill">Last verified: August 2026 · Employment Act 1955 contract guidance</span>
     <h1 class="serif">Malaysia <em>Employment Contract</em> Guide 2026</h1>
     <p>
       Learn what to check in a Malaysia employment contract, including offer letter terms, salary, probation, notice period, working hours, leave, benefits and termination clauses.
@@ -585,466 +633,373 @@
 
     <div class="seo">
 
+      <section class="summary-box">
+        <h2 class="serif">Employment Contract Quick Summary</h2>
+        <p>An employment contract should clearly explain the job, salary, working time, leave, benefits and how employment can end. Contract terms can be more generous than the Employment Act, but should not provide less favourable statutory protection where the Act applies.</p>
+
+        <div class="summary-grid">
+          <div class="summary-card"><strong>Section 7</strong><span>Less favourable contract terms are overridden by statutory minimum protection</span></div>
+          <div class="summary-card"><strong>Written Terms</strong><span>Section 10 requires certain contracts over one month to be in writing</span></div>
+          <div class="summary-card"><strong>45 Hours</strong><span>General maximum normal working hours per week under the Act</span></div>
+          <div class="summary-card"><strong>Termination Clause</strong><span>Every written contract of service should state how either party may terminate it</span></div>
+        </div>
+
+        <div class="note-box"><strong>Scope note:</strong> This guide focuses on the Employment Act 1955 framework for private-sector employees in Peninsular Malaysia and the Federal Territory of Labuan. Sabah and Sarawak operate under their respective Labour Ordinances.</div>
+      </section>
+
       <section class="calculator-cta">
-        <h2 class="serif">Compare Salary Package After Deductions</h2>
-        <p>
-          Reviewing a job offer or employment contract? Use our Malaysia Salary Calculator to estimate your monthly take-home pay after EPF, SOCSO, EIS and PCB deductions.
-        </p>
+        <h2 class="serif">Compare Your Salary Package After Deductions</h2>
+        <p>Reviewing a job offer? Estimate monthly take-home pay after EPF, SOCSO, EIS and PCB, then compare the result with the salary package stated in the contract.</p>
         <a href="index.html" class="cta-button">Check My Salary →</a>
       </section>
 
-      <section class="summary-box">
-        <h2 class="serif">Employment Contract Quick Summary</h2>
-        <p>
-          An employment contract sets out the key terms between employer and employee, including role, salary, working hours, leave, benefits, probation, notice period and termination rules.
-        </p>
-
-        <div class="summary-grid">
-          <div class="summary-card">
-            <strong>Salary</strong>
-            <span>Basic pay, allowances, bonus and benefits</span>
-          </div>
-          <div class="summary-card">
-            <strong>Working Terms</strong>
-            <span>Hours, rest days, shift work and overtime</span>
-          </div>
-          <div class="summary-card">
-            <strong>Leave</strong>
-            <span>Annual leave, MC, holidays and family leave</span>
-          </div>
-          <div class="summary-card">
-            <strong>Notice</strong>
-            <span>Resignation, termination and final salary terms</span>
-          </div>
+      <section class="toc-box">
+        <h2>On This Page</h2>
+        <div class="toc-links">
+          <a href="#what-is-contract"><span class="toc-number">01</span><span class="toc-label">What Is an Employment Contract?</span><span class="toc-arrow">→</span></a>
+          <a href="#written-contract"><span class="toc-number">02</span><span class="toc-label">When Must It Be Written?</span><span class="toc-arrow">→</span></a>
+          <a href="#statutory-minimum"><span class="toc-number">03</span><span class="toc-label">Contract vs Statutory Minimum</span><span class="toc-arrow">→</span></a>
+          <a href="#essential-clauses"><span class="toc-number">04</span><span class="toc-label">Essential Contract Clauses</span><span class="toc-arrow">→</span></a>
+          <a href="#salary-benefits"><span class="toc-number">05</span><span class="toc-label">Salary, Allowances & Benefits</span><span class="toc-arrow">→</span></a>
+          <a href="#working-hours"><span class="toc-number">06</span><span class="toc-label">Working Hours & Overtime</span><span class="toc-arrow">→</span></a>
+          <a href="#leave"><span class="toc-number">07</span><span class="toc-label">Leave & Public Holidays</span><span class="toc-arrow">→</span></a>
+          <a href="#probation"><span class="toc-number">08</span><span class="toc-label">Probation & Confirmation</span><span class="toc-arrow">→</span></a>
+          <a href="#notice"><span class="toc-number">09</span><span class="toc-label">Notice & Termination</span><span class="toc-arrow">→</span></a>
+          <a href="#other-clauses"><span class="toc-number">10</span><span class="toc-label">Other Clauses to Read Carefully</span><span class="toc-arrow">→</span></a>
+          <a href="#checklist"><span class="toc-number">11</span><span class="toc-label">Before-Signing Checklist</span><span class="toc-arrow">→</span></a>
+          <a href="#faq"><span class="toc-number">12</span><span class="toc-label">FAQ</span><span class="toc-arrow">→</span></a>
         </div>
       </section>
 
-      <h2>What Is an Employment Contract?</h2>
-
-      <p>
-        An employment contract is an agreement between employer and employee that explains the main terms of employment. It may appear as an offer letter, appointment letter or a formal written employment agreement.
-      </p>
-
-      <p>
-        The contract helps both parties understand salary, role expectations, working hours, leave entitlement, probation, benefits, notice period and other workplace obligations. Employees should read the full document before signing instead of only checking the salary figure.
-      </p>
-
-      <p>
-        This guide is written as a practical overview for employees, job seekers, HR staff and small business owners. Actual treatment may depend on the contract wording, company policy and applicable employment law requirements.
-      </p>
+      <h2 id="what-is-contract">What Is an Employment Contract?</h2>
+      <p>An employment contract — also called a contract of service — is the agreement governing the relationship between an employer and employee. It may appear as an offer letter, appointment letter, formal contract or a combination of written documents and incorporated workplace policies.</p>
+      <p>Employees should read the full package rather than only checking the salary figure. Working hours, variable pay, probation, leave, deductions, notice and termination clauses can materially affect the value and flexibility of the job.</p>
 
       <section class="guide-box">
-        <h2 class="serif">Essential Employment Contract Clauses</h2>
+        <h2 class="serif">Offer Letter vs Employment Contract vs Employee Handbook</h2>
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Document</th><th>Main Purpose</th><th>What to Check</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Offer Letter</strong></td><td>Initial offer and key commercial terms</td><td>Position, basic salary, start date, probation and headline benefits.</td></tr>
+              <tr><td><strong>Employment Contract</strong></td><td>Detailed terms governing employment</td><td>Duties, pay structure, working hours, leave, notice, termination and obligations.</td></tr>
+              <tr><td><strong>Employee Handbook / Policies</strong></td><td>Operational workplace rules</td><td>Attendance, claims, leave procedure, discipline, remote work, benefits and approval processes.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note-box"><strong>If documents conflict:</strong> Ask HR to clarify the applicable term in writing before signing. Do not assume the employee handbook automatically overrides a signed contractual term or a statutory minimum.</div>
+      </section>
 
-        <p>
-          A good employment contract should clearly explain the core terms of employment. These clauses help reduce confusion after the employee starts work and provide a reference point if disputes arise later.
-        </p>
+      <section class="guide-box">
+        <h2 id="written-contract" class="serif">When Must an Employment Contract Be in Writing?</h2>
+        <p>Section 10 of the Employment Act specifically requires a contract of service to be in writing where it is for a specified period exceeding one month, or for specified work that reasonably requires more than one month to complete.</p>
+        <p>Section 10 also states that <strong>every written contract of service</strong> must contain a clause explaining how either party may terminate the contract in accordance with the Act.</p>
 
         <div class="contribution-table-wrap">
           <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Clause</th>
-                <th>What to Check</th>
-                <th>Why It Matters</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Arrangement</th><th>Section 10 Position</th></tr></thead>
             <tbody>
-              <tr>
-                <td>Job Title and Duties</td>
-                <td>Role, department, reporting line and key responsibilities</td>
-                <td>Helps confirm what the employee is hired to do.</td>
-              </tr>
-              <tr>
-                <td>Salary and Allowances</td>
-                <td>Basic salary, fixed allowances, variable pay and payment date</td>
-                <td>Affects monthly take-home pay and payroll deductions.</td>
-              </tr>
-              <tr>
-                <td>Working Hours</td>
-                <td>Normal hours, rest days, shift work and overtime rules</td>
-                <td>Important for overtime, rest day and public holiday pay.</td>
-              </tr>
-              <tr>
-                <td>Leave Benefits</td>
-                <td>Annual leave, medical leave, public holidays and family-related leave</td>
-                <td>Helps employees understand paid time off entitlement.</td>
-              </tr>
-              <tr>
-                <td>Probation</td>
-                <td>Probation period, extension and confirmation process</td>
-                <td>Affects job security, review timing and notice period.</td>
-              </tr>
-              <tr>
-                <td>Notice Period</td>
-                <td>Resignation, termination and salary in lieu of notice</td>
-                <td>Important when leaving the company or ending employment.</td>
-              </tr>
+              <tr><td>Fixed-term contract exceeding one month</td><td><span class="status-yes">Must be in writing</span></td></tr>
+              <tr><td>Specified piece of work expected to exceed one month</td><td><span class="status-yes">Must be in writing</span></td></tr>
+              <tr><td>Every written contract</td><td>Must include a termination clause setting out the manner of termination.</td></tr>
+              <tr><td>Indefinite / permanent arrangement</td><td>Section 10(1)'s specific wording is directed at the fixed-period / specified-work cases above, but written terms remain strongly advisable for clarity and proof.</td></tr>
             </tbody>
           </table>
         </div>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Offer Letter vs Employment Contract</h2>
-
-        <p>
-          Some employers issue a short offer letter first and a more detailed employment contract later. Others combine both into one appointment letter. Employees should understand the difference because the offer letter may only contain key terms, while the contract or handbook may contain detailed obligations.
-        </p>
+        <h2 id="statutory-minimum" class="serif">Can a Contract Give Less Than the Employment Act?</h2>
+        <p>Generally, no. Section 7 provides that a contract term which is less favourable to the employee than a protection prescribed by the Employment Act or its subsidiary legislation is void to that extent, and the more favourable statutory provision applies instead.</p>
+        <p>Section 7A allows employer and employee to agree to terms that are <strong>more favourable</strong> than the statutory minimum, subject to any express prohibition in the law.</p>
 
         <div class="contribution-table-wrap">
           <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Document</th>
-                <th>Simple Explanation</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Contract Term</th><th>General Effect</th></tr></thead>
             <tbody>
-              <tr>
-                <td>Offer Letter</td>
-                <td>Initial job offer showing basic salary, position, start date and key terms.</td>
-              </tr>
-              <tr>
-                <td>Employment Contract</td>
-                <td>Detailed agreement covering salary, duties, benefits, leave, probation, notice and obligations.</td>
-              </tr>
-              <tr>
-                <td>Employee Handbook</td>
-                <td>Company policies on attendance, claims, leave, discipline, benefits and workplace procedures.</td>
-              </tr>
+              <tr><td>Better than statutory minimum</td><td>Can generally be valid and enforceable.</td></tr>
+              <tr><td>Equal to statutory minimum</td><td>Provides the baseline protection required by law.</td></tr>
+              <tr><td>Worse than statutory minimum</td><td>The less favourable portion can be void and replaced by the statutory protection.</td></tr>
             </tbody>
           </table>
         </div>
 
-        <div class="note-box">
-          <strong>Practical note:</strong> If the offer letter and employment contract contain different terms, employees should ask HR to clarify in writing before signing.
-        </div>
+        <div class="note-box"><strong>Example:</strong> If an eligible employee is legally entitled to 12 days of annual leave but a contract states only 8 days, the contract should not be used to reduce the statutory entitlement.</div>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Salary and Benefits in Employment Contracts</h2>
-
-        <p>
-          The salary clause should state the employee's basic salary and explain whether any allowances, commissions, bonuses or benefits are fixed or discretionary. Employees should not assume that every allowance is guaranteed unless the contract clearly says so.
-        </p>
-
-        <p>
-          Salary terms also affect payroll calculations such as EPF, SOCSO, EIS and PCB. A higher gross salary does not always mean the same increase in net take-home pay because statutory deductions and tax may also increase.
-        </p>
-
-        <ul>
-          <li>Check whether salary is monthly, daily, hourly or commission-based.</li>
-          <li>Confirm whether allowances are fixed, variable or claim-based.</li>
-          <li>Ask whether bonus is guaranteed or discretionary.</li>
-          <li>Review whether benefits such as insurance, parking, phone allowance or claims are included.</li>
-        </ul>
-      </section>
-
-      <section class="guide-box">
-        <h2 class="serif">Working Hours and Overtime Clauses</h2>
-
-        <p>
-          The contract should clearly state normal working hours, rest days, shift arrangements and overtime approval procedures. This is especially important for employees in operations, retail, hospitality, manufacturing, customer support or shift-based roles.
-        </p>
-
-        <p>
-          If the role may require overtime, weekend work or public holiday work, the contract or company policy should explain how those hours are recorded and paid. Employees should keep copies of approved overtime records and payslips for reference.
-        </p>
-
-        <div class="note-box">
-          <strong>Related guide:</strong> Read our <a href="overtime-guide.html">Overtime Guide</a> and <a href="rest-day-guide.html">Rest Day Guide</a> for more details on payroll treatment.
-        </div>
-      </section>
-
-      <section class="guide-box">
-        <h2 class="serif">Probation and Confirmation Terms</h2>
-
-        <p>
-          Many employment contracts include a probation period. The contract should state the length of probation, whether it can be extended, how confirmation is assessed and whether the notice period differs during probation.
-        </p>
-
-        <p>
-          Employees should not assume confirmation is automatic. Some companies issue a confirmation letter after successful probation, while others may communicate confirmation through HR records or salary review documents.
-        </p>
-
-        <ul>
-          <li>Check the probation length, commonly 3 to 6 months.</li>
-          <li>Check whether notice period is shorter during probation.</li>
-          <li>Check whether benefits change after confirmation.</li>
-          <li>Ask how confirmation will be communicated.</li>
-        </ul>
-      </section>
-
-      <section class="guide-box">
-        <h2 class="serif">Leave Entitlements in Employment Contracts</h2>
-
-        <p>
-          Leave clauses are important because they affect both employee wellbeing and payroll administration. The contract or employee handbook should explain annual leave, medical leave, public holidays and other leave types such as maternity, paternity, compassionate or unpaid leave.
-        </p>
-
-        <p>
-          Employees should check whether leave is available immediately, pro-rated during the first year, subject to probation rules or only available after confirmation. They should also check carry-forward rules, encashment rules and whether unused leave is paid out after resignation.
-        </p>
+        <h2 id="essential-clauses" class="serif">Essential Employment Contract Clauses</h2>
+        <p>A good contract should make the core employment terms easy to identify instead of scattering them across unclear clauses.</p>
 
         <div class="contribution-table-wrap">
           <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Leave Type</th>
-                <th>What to Check</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Clause</th><th>What to Check</th><th>Why It Matters</th></tr></thead>
             <tbody>
-              <tr>
-                <td>Annual Leave</td>
-                <td>Entitlement, pro-rated calculation, carry forward and resignation treatment.</td>
-              </tr>
-              <tr>
-                <td>Medical Leave</td>
-                <td>MC submission, outpatient leave, hospitalisation leave and documents required.</td>
-              </tr>
-              <tr>
-                <td>Public Holiday</td>
-                <td>National holidays, state holidays, replacement holiday and holiday work pay.</td>
-              </tr>
-              <tr>
-                <td>Maternity / Paternity Leave</td>
-                <td>Eligibility, notice requirements, payroll treatment and supporting documents.</td>
-              </tr>
+              <tr><td>Employer & Employee</td><td>Correct legal employer, employee name and work location</td><td>Identifies who the employment relationship is actually with.</td></tr>
+              <tr><td>Job Title & Duties</td><td>Role, department, reporting line and responsibilities</td><td>Helps define expectations and scope of work.</td></tr>
+              <tr><td>Start Date & Contract Type</td><td>Permanent, fixed-term, part-time or specified work</td><td>Affects duration, renewal and termination treatment.</td></tr>
+              <tr><td>Salary & Wage Period</td><td>Basic pay, frequency, payment date and wage period</td><td>Section 18 requires the wage period not to exceed one month.</td></tr>
+              <tr><td>Allowances / Commission / Bonus</td><td>Fixed vs variable, formula, payment timing and eligibility</td><td>Prevents disputes over whether variable pay is guaranteed.</td></tr>
+              <tr><td>Working Hours & Rest Day</td><td>Normal hours, shifts, breaks, rest day and overtime procedure</td><td>Important for working-time and overtime entitlements.</td></tr>
+              <tr><td>Leave</td><td>Annual leave, MC, hospitalisation leave, public holidays and family leave</td><td>Contract benefits should be checked against statutory minimums.</td></tr>
+              <tr><td>Probation</td><td>Duration, review, extension and notice during probation</td><td>Clarifies the early-employment process.</td></tr>
+              <tr><td>Notice & Termination</td><td>Notice period, salary in lieu, misconduct and exit process</td><td>Controls resignation and termination consequences.</td></tr>
+              <tr><td>Deductions / Recovery</td><td>Loans, advances, equipment, training or other payroll deductions</td><td>Contract wording does not override section 24 lawful-deduction rules.</td></tr>
             </tbody>
           </table>
         </div>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Notice Period and Termination Clauses</h2>
+        <h2 id="salary-benefits" class="serif">Salary, Allowances and Benefits</h2>
+        <p>The salary clause should clearly distinguish guaranteed pay from variable or discretionary amounts. An attractive “package” can be misleading if most of it depends on uncertain bonus, commission or claims.</p>
 
-        <p>
-          Notice period terms explain how much notice an employee or employer must give before ending employment. This clause is very important because it may affect resignation timing, salary in lieu of notice and final salary calculation.
-        </p>
+        <div class="component-grid">
+          <div class="component-card"><div class="component-icon">💰</div><h3>Basic Salary</h3><p>Check the fixed amount, pay frequency and effective date.</p></div>
+          <div class="component-card"><div class="component-icon">➕</div><h3>Allowances</h3><p>Check whether each allowance is fixed, conditional, reimbursable or claim-based.</p></div>
+          <div class="component-card"><div class="component-icon">📈</div><h3>Bonus / Commission</h3><p>Check formula, performance conditions, payment date and resignation treatment.</p></div>
+          <div class="component-card"><div class="component-icon">🎁</div><h3>Benefits</h3><p>Check insurance, parking, phone, medical, travel and other non-cash benefits.</p></div>
+        </div>
 
-        <p>
-          The contract should also explain whether different notice periods apply during probation and after confirmation. If an employee wants to leave earlier, salary in lieu of notice or a buy-out arrangement may apply depending on contract terms and employer approval.
-        </p>
+        <p>Gross salary also affects EPF, SOCSO, EIS and PCB, but each scheme has its own wage or remuneration rules. The contract should not be read as though every allowance is automatically treated the same way for every statutory contribution.</p>
+      </section>
+
+      <section class="guide-box">
+        <h2 class="serif">Wage Period and Salary Payment Terms</h2>
+        <p>Section 18 states that a contract of service must specify a wage period that does not exceed one month. If no wage period is specified, the Act deems it to be one month.</p>
+        <p>The contract should therefore make it easy to identify whether wages are monthly, weekly, daily or otherwise calculated, and when normal payroll is processed.</p>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="working-hours" class="serif">Working Hours, Rest Days and Overtime Clauses</h2>
+        <p>The Employment Act generally limits normal working hours to <strong>45 hours per week</strong>. The contract should state the actual work schedule, daily hours, breaks, shift arrangement and weekly rest day clearly.</p>
+
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Term to Check</th><th>Practical Question</th></tr></thead>
+            <tbody>
+              <tr><td>Weekly Hours</td><td>How are the 45 normal weekly hours arranged?</td></tr>
+              <tr><td>Daily Schedule</td><td>What time does work start and end, and how long are breaks?</td></tr>
+              <tr><td>Rest Day</td><td>Which day is the statutory weekly rest day?</td></tr>
+              <tr><td>Shift Work</td><td>Can shifts rotate and how much notice is given?</td></tr>
+              <tr><td>Overtime</td><td>Who approves OT and which employees are eligible for statutory OT pay?</td></tr>
+              <tr><td>Public Holiday Work</td><td>What happens if the role requires holiday work?</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note-box"><strong>Important:</strong> Employees earning above RM4,000 per month are generally excluded from certain statutory overtime / rest-day / holiday-work payment provisions unless they fall within protected First Schedule categories. The contract may still provide its own OT benefits.</div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="leave" class="serif">Leave Entitlements to Check in the Contract</h2>
+        <p>Leave benefits are one of the easiest areas to compare between an employment package and statutory minimum standards.</p>
+
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Leave Type</th><th>Current Employment Act Baseline</th><th>What to Check in Contract</th></tr></thead>
+            <tbody>
+              <tr><td>Annual Leave</td><td><strong>8 / 12 / 16 days</strong> depending on service</td><td>Whether the employer gives more, carry-forward, application and exit treatment.</td></tr>
+              <tr><td>Ordinary Sick Leave</td><td><strong>14 / 18 / 22 days</strong> depending on service</td><td>Panel clinic, MC process and additional company medical benefits.</td></tr>
+              <tr><td>Hospitalisation Leave</td><td><strong>60 days</strong> separately from ordinary sick leave</td><td>Hospitalisation / deemed hospitalisation procedure and documentation.</td></tr>
+              <tr><td>Paid Public Holidays</td><td><strong>11 gazetted holidays</strong> plus applicable additional section 8 holiday</td><td>Company-selected holiday calendar and state / territory holidays.</td></tr>
+              <tr><td>Maternity Leave</td><td><strong>98 consecutive days</strong> subject to statutory eligibility rules</td><td>Notification process and any more generous employer benefit.</td></tr>
+              <tr><td>Paternity Leave</td><td><strong>7 consecutive days</strong> subject to statutory eligibility rules</td><td>Notice and supporting-document process.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note-box"><strong>Probation warning:</strong> Do not assume statutory annual leave or sick leave only starts after confirmation. Company scheduling procedures can apply, but the contract should not be used to erase statutory minimum entitlements.</div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="probation" class="serif">Probation and Confirmation Terms</h2>
+        <p>Many contracts use a 3- to 6-month probation period, but employees should treat that as a contractual practice rather than assuming the Employment Act creates one universal probation length.</p>
 
         <ul>
-          <li>Check resignation notice period during probation.</li>
-          <li>Check resignation notice period after confirmation.</li>
-          <li>Check whether salary in lieu of notice is allowed.</li>
-          <li>Check final salary and leave adjustment rules.</li>
+          <li>Check the stated probation duration and whether extension is permitted.</li>
+          <li>Check the notice period during probation and after confirmation.</li>
+          <li>Check the performance / review process and who confirms completion.</li>
+          <li>Check whether contractual benefits improve after confirmation.</li>
+          <li>Keep any extension or confirmation letter as part of the employment record.</li>
         </ul>
+
+        <div class="note-box"><strong>Useful distinction:</strong> Probation terms can affect company procedures, but statutory employment protections do not simply disappear because the employee has not yet been confirmed.</div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="notice" class="serif">Notice Period and Termination Clauses</h2>
+        <p>Section 10 requires every written contract to state the manner in which it may be terminated. Section 12 then provides that the notice period should be the same for employer and employee and follows the written contract term.</p>
+        <p>If there is no written notice provision, the statutory fallback is at least <strong>4 weeks</strong> for less than 2 years of service, <strong>6 weeks</strong> for 2 to less than 5 years, and <strong>8 weeks</strong> for 5 years or more.</p>
+
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Clause to Check</th><th>Why It Matters</th></tr></thead>
+            <tbody>
+              <tr><td>Probation Notice</td><td>Can be different from the post-confirmation contractual notice where written clearly.</td></tr>
+              <tr><td>Confirmed Employee Notice</td><td>Determines normal resignation / termination lead time.</td></tr>
+              <tr><td>Salary in Lieu</td><td>Section 13 allows termination without serving full notice by paying indemnity for the unserved notice period.</td></tr>
+              <tr><td>Misconduct / Due Inquiry</td><td>Disciplinary termination has separate legal requirements and should not be confused with ordinary notice termination.</td></tr>
+              <tr><td>Fixed-Term Expiry</td><td>A genuine fixed-term contract generally ends when the agreed period or specified work is completed unless otherwise terminated.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="other-clauses" class="serif">Other Clauses You Should Read Carefully</h2>
+        <p>Some clauses do not directly affect monthly salary but can become important later, especially when the employee changes jobs or leaves the company.</p>
+
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Clause</th><th>What to Check</th></tr></thead>
+            <tbody>
+              <tr><td>Confidentiality</td><td>What information is confidential and how long obligations continue after employment.</td></tr>
+              <tr><td>Intellectual Property</td><td>Who owns work product, code, designs, documents or inventions created during employment.</td></tr>
+              <tr><td>Conflict of Interest / Outside Work</td><td>Whether side businesses, freelance work or directorships require disclosure or approval.</td></tr>
+              <tr><td>Training Bond / Repayment</td><td>Amount, repayment trigger, reduction over time and whether the clause is clearly documented.</td></tr>
+              <tr><td>Salary Deduction / Recovery</td><td>Any deduction still has to comply with section 24 and other applicable law; a contract clause alone does not make every deduction lawful.</td></tr>
+              <tr><td>Transfer / Relocation</td><td>Whether the employer can change location, department, branch or duties and what limits apply.</td></tr>
+              <tr><td>Handbook Incorporation</td><td>Which policies are stated to form part of the employment terms and how policy changes are communicated.</td></tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section class="guide-box">
         <h2 class="serif">How Employment Contracts Affect Payroll</h2>
-
-        <p>
-          Employment contracts affect payroll because salary structure, allowances, overtime, leave, deductions and benefits are usually based on the written terms. If the contract is unclear, payroll disputes can happen when employees resign, take leave, work overtime or receive variable pay.
-        </p>
-
-        <p>
-          Employees should review payslips regularly and compare payroll records with their contract terms. Employers should apply contract terms consistently and keep written records of any agreed changes.
-        </p>
+        <p>The contract is one of payroll's key source documents. Basic salary, recurring allowances, working hours, overtime, leave, variable pay and notice terms can all affect the monthly payroll result.</p>
 
         <div class="component-grid">
-          <div class="component-card">
-            <div class="component-icon">💰</div>
-            <h3>Salary</h3>
-            <p>Basic salary and allowances affect take-home pay and deductions.</p>
-          </div>
-
-          <div class="component-card">
-            <div class="component-icon">⏰</div>
-            <h3>Overtime</h3>
-            <p>Working hours and approval rules affect overtime claims.</p>
-          </div>
-
-          <div class="component-card">
-            <div class="component-icon">📆</div>
-            <h3>Leave</h3>
-            <p>Leave terms affect payroll records and final salary adjustment.</p>
-          </div>
-
-          <div class="component-card">
-            <div class="component-icon">📄</div>
-            <h3>Notice</h3>
-            <p>Notice period affects resignation, termination and salary in lieu.</p>
-          </div>
+          <a href="payslip-guide.html" class="component-card"><div class="component-icon">📄</div><h3>Payslip</h3><p>Basic salary and recurring earnings should reconcile to the contract and later salary revisions.</p></a>
+          <a href="overtime-guide.html" class="component-card"><div class="component-icon">⏱️</div><h3>Overtime</h3><p>Normal hours and employee category determine when statutory OT rules apply.</p></a>
+          <a href="annual-leave-guide.html" class="component-card"><div class="component-icon">🏖️</div><h3>Leave</h3><p>Contract benefits can be more generous than statutory leave minimums.</p></a>
+          <a href="resignation-notice-guide.html" class="component-card"><div class="component-icon">📝</div><h3>Notice</h3><p>Written notice terms affect resignation timing, salary in lieu and final salary.</p></a>
         </div>
-      </section>
-
-      <section class="guide-box">
-        <h2 class="serif">Employment Contract Checklist</h2>
-
-        <p>
-          Before signing, employees should review the contract carefully instead of rushing to accept the offer. This checklist can help identify important terms that affect salary, benefits and employment rights.
-        </p>
-
-        <ul>
-          <li>Job title, department and reporting manager</li>
-          <li>Basic salary, allowances, commission and bonus terms</li>
-          <li>Payment date and payroll deduction treatment</li>
-          <li>Working hours, rest days, overtime and public holiday work</li>
-          <li>Annual leave, medical leave and other paid leave</li>
-          <li>Probation period and confirmation process</li>
-          <li>Notice period, termination and salary in lieu of notice</li>
-          <li>Confidentiality, conflict of interest and non-solicitation clauses</li>
-          <li>Company benefits, claims, insurance and reimbursements</li>
-          <li>Reference to employee handbook or company policies</li>
-        </ul>
-      </section>
-
-      <section class="guide-box">
-        <h2 class="serif">Common Employment Contract Mistakes</h2>
-
-        <p>
-          Many employment disputes begin because the employee only looked at the salary amount and ignored other important terms. A contract should be read as a full employment package, not just a job offer.
-        </p>
-
-        <ul>
-          <li>Focusing only on salary and ignoring notice period</li>
-          <li>Assuming bonus or allowance is guaranteed without checking wording</li>
-          <li>Not understanding probation and confirmation terms</li>
-          <li>Ignoring working hours, overtime and rest day clauses</li>
-          <li>Not checking annual leave, MC leave or public holiday treatment</li>
-          <li>Signing without keeping a copy of the final contract</li>
-          <li>Not asking HR to clarify unclear terms in writing</li>
-        </ul>
       </section>
 
       <section class="example-box">
         <h2 class="serif">Common Employment Contract Examples</h2>
 
-        <h3>Example 1: Fresh Graduate Job Offer</h3>
-        <p>
-          A fresh graduate receives an offer with RM3,000 basic salary, 3 months probation and 1 month notice period. The employee should check whether benefits, annual leave and overtime rules apply during probation.
-        </p>
+        <h3>Example 1: Fresh Graduate Offer</h3>
+        <p>A fresh graduate receives RM3,000 basic salary, three months' probation and one month's written notice. The employee should also check working hours, annual leave, MC, public holidays, overtime eligibility and whether allowances / bonus are guaranteed.</p>
 
         <h3>Example 2: Sales Role With Commission</h3>
-        <p>
-          A sales employee receives basic salary plus commission. The contract should explain how commission is calculated, when it is paid and whether commission is payable after resignation.
-        </p>
+        <p>A sales employee receives basic salary plus commission. The contract should state the commission formula, when commission becomes earned, payment timing, treatment of cancellations and what happens to earned commission after resignation.</p>
 
-        <h3>Example 3: Role With Shift Work</h3>
-        <p>
-          An employee is hired for shift work. The contract or policy should explain working hours, rest days, public holidays and overtime approval procedures.
-        </p>
+        <h3>Example 3: Shift-Based Role</h3>
+        <p>A shift employee should check the 45-hour weekly structure, statutory rest day, shift rotation, overtime approval and public-holiday work arrangements before signing.</p>
+
+        <h3>Example 4: Contract Gives Less Leave Than the Act</h3>
+        <p>If the applicable statutory annual-leave entitlement is 12 days but the contract states only 8 days, section 7 prevents the less favourable contract term from reducing the statutory minimum.</p>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Who Should Read This Guide?</h2>
-
+        <h2 id="checklist" class="serif">Employment Contract Checklist Before Signing</h2>
         <ul>
-          <li>Employees checking a new employment contract or offer letter</li>
-          <li>Job seekers comparing salary packages and benefits</li>
-          <li>HR staff preparing employment contracts and appointment letters</li>
-          <li>Business owners who want to understand common contract terms</li>
-          <li>Employees reviewing resignation, probation or leave clauses</li>
+          <li>Confirm the legal employer, role, work location and start date.</li>
+          <li>Check whether the job is permanent, fixed-term, part-time or project-based.</li>
+          <li>Check basic salary, wage period, payment timing and fixed allowances.</li>
+          <li>Separate guaranteed pay from discretionary bonus, commission and claims.</li>
+          <li>Check normal working hours, breaks, rest day, shift work and overtime.</li>
+          <li>Compare annual leave, MC, hospitalisation leave and public holidays with statutory minimums.</li>
+          <li>Check probation duration, extension procedure and confirmation process.</li>
+          <li>Check notice during probation and after confirmation.</li>
+          <li>Read salary deduction, staff loan, training bond and recovery clauses carefully.</li>
+          <li>Review confidentiality, intellectual-property, transfer and outside-work clauses.</li>
+          <li>Check which handbook / company policies are incorporated into the contract.</li>
+          <li>Ask HR to clarify inconsistent or unclear wording in writing.</li>
+          <li>Keep the signed contract, offer letter and every later written amendment.</li>
         </ul>
       </section>
 
-      <h2>Frequently Asked Questions</h2>
-
-      <div class="faq-box">
-        <details class="faq-item" open>
-          <summary>What is an employment contract in Malaysia?</summary>
-          <p>
-            An employment contract is an agreement between employer and employee that explains the main terms of employment, such as job role, salary, working hours, leave, probation, benefits and notice period.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is an offer letter the same as an employment contract?</summary>
-          <p>
-            Not always. An offer letter may contain key job terms, while a full employment contract or employee handbook may include more detailed rules and obligations.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What should I check before signing an employment contract?</summary>
-          <p>
-            You should check salary, allowances, working hours, leave, probation, notice period, overtime, benefits, deductions and any company policy references before signing.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can employers change contract terms after signing?</summary>
-          <p>
-            Changes to important employment terms should normally be communicated clearly and agreed where required. Employees should keep written records of any agreed changes.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can employment contracts include probation periods?</summary>
-          <p>
-            Yes. Many contracts include a probation period and should state the length of probation, review process, notice period and confirmation arrangement.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can employment contracts include overtime clauses?</summary>
-          <p>
-            Yes. Contracts or company policies may explain normal working hours, overtime approval, rest day work and public holiday work arrangements.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can employees negotiate contract terms?</summary>
-          <p>
-            Employees may try to negotiate salary, benefits, start date, probation terms or notice period before signing, depending on the employer and role.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Should I keep a copy of my employment contract?</summary>
-          <p>
-            Yes. Employees should keep a copy of the signed contract, offer letter, employee handbook and any written changes for future reference.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What happens if there is a contract dispute?</summary>
-          <p>
-            Employees should keep documents, payslips and written communication. For serious disputes, they may consider contacting the relevant authority or seeking professional advice.
-          </p>
-        </details>
-      </div>
-
-      <section class="salary-guides-box">
-        <h2 class="serif">Related Employment Guides</h2>
-        <p>
-          Continue reading related Malaysia employment guides to understand leave, salary and workplace rules.
-        </p>
-
-        <div class="guide-mini-grid">
-          <a href="probation-period-guide.html">🧪 Probation Period Guide</a>
-          <a href="resignation-notice-guide.html">📄 Resignation Notice Guide</a>
-          <a href="annual-leave-guide.html">📆 Annual Leave Guide</a>
-          <a href="salary-deduction-guide.html">💸 Salary Deduction Guide</a>
-        </div>
-
-        <p class="view-all-guides">
-          <a href="guides.html">View All Salary Guides →</a>
-        </p>
+      <section class="guide-box">
+        <h2 class="serif">Common Employment Contract Mistakes</h2>
+        <ul>
+          <li>Focusing only on basic salary and ignoring the rest of the package.</li>
+          <li>Assuming an offer letter, contract and handbook always say the same thing.</li>
+          <li>Not distinguishing guaranteed benefits from discretionary benefits.</li>
+          <li>Assuming a contract can legally provide less than statutory minimum protection.</li>
+          <li>Ignoring the 45-hour working-week framework.</li>
+          <li>Assuming probation removes statutory leave or other Employment Act protection.</li>
+          <li>Not checking notice periods and salary-in-lieu consequences before accepting the job.</li>
+          <li>Agreeing to vague commission, bonus or training-bond wording without asking how it is calculated.</li>
+          <li>Assuming a deduction clause automatically makes every future payroll deduction lawful.</li>
+          <li>Signing without keeping a copy of the final agreed version.</li>
+      </ul>
       </section>
 
-      <section class="salary-guides-box">
-        <h2 class="serif">Related Calculators</h2>
-        <p>
-          Use these calculators to estimate salary, deductions, leave or overtime in Malaysia.
-        </p>
+      <section class="guide-box">
+        <h2>Sources &amp; Verification</h2>
+        <p>This guide was last verified in August 2026 against the current Employment Act 1955 and JTKSM guidance on the 2022 amendments.</p>
 
-        <div class="guide-mini-grid">
-          <a href="index.html">Salary Calculator</a>
-          <a href="epf-calculator.html">EPF Calculator</a>
-          <a href="pcb-calculator.html">PCB Calculator</a>
-          <a href="overtime-calculator.html">Overtime Calculator</a>
+        <div class="source-note">
+          <strong>Official sources used for verification:</strong><br>
+          <a href="https://jtksm.mohr.gov.my/sites/default/files/2023-11/Akta%20Kerja%201955%20%28Akta%20265%29.pdf" target="_blank" rel="noopener">JTKSM — Employment Act 1955: Sections 7, 7A, 10, 12, 18, 60A, 60D, 60E &amp; 60F</a><br>
+          <a href="https://jtksm.mohr.gov.my/ms/soalan-lazim/akta-kerja-1955-pindaan-2022" target="_blank" rel="noopener">JTKSM — Employment Act 1955 (Amendment) 2022 FAQ</a><br>
+          <a href="https://jtksm.mohr.gov.my/en/services/registration-place-employment/acts-guidelines" target="_blank" rel="noopener">JTKSM — Acts &amp; Guidelines</a>
+        </div>
+      </section>
+
+      <h2 id="faq">Frequently Asked Questions</h2>
+
+      <div class="faq-box">
+        <details class="faq-item" open><summary>What is an employment contract in Malaysia?</summary><p>It is the contract of service governing the employment relationship, including the job, salary, working terms, benefits, leave, notice and other obligations.</p></details>
+        <details class="faq-item"><summary>Does every employment contract have to be in writing?</summary><p>Section 10 specifically requires fixed-term contracts exceeding one month and specified-work contracts expected to exceed one month to be in writing. Written terms are also strongly advisable for other employment arrangements because they provide clearer proof of the agreed terms.</p></details>
+        <details class="faq-item"><summary>What must a written employment contract include?</summary><p>Section 10 requires every written contract of service to include a clause setting out how either party may terminate the contract in accordance with the Employment Act.</p></details>
+        <details class="faq-item"><summary>Can a contract provide less annual leave than the Employment Act?</summary><p>A less favourable term cannot reduce an applicable statutory minimum. Section 7 provides that the less favourable term is void to that extent and the statutory protection applies instead.</p></details>
+        <details class="faq-item"><summary>Can an employer offer better benefits than the Employment Act?</summary><p>Yes. Section 7A allows more favourable employment terms, subject to any express prohibition under the Act or subsidiary legislation.</p></details>
+        <details class="faq-item"><summary>What is the maximum normal working week?</summary><p>The Employment Act generally limits normal working hours to 45 hours per week.</p></details>
+        <details class="faq-item"><summary>Does probation remove annual leave or MC entitlement?</summary><p>No automatic probation exclusion removes statutory annual leave or sick-leave protection. The employer may still have reasonable procedures on how leave is requested and administered.</p></details>
+        <details class="faq-item"><summary>What happens if the contract has no notice period?</summary><p>If there is no written notice provision, section 12 provides minimum notice of 4 weeks for less than 2 years' service, 6 weeks for 2 to less than 5 years, and 8 weeks for 5 years or more.</p></details>
+        <details class="faq-item"><summary>Can a contract allow any salary deduction the employer wants?</summary><p>No. Wage deductions must still comply with section 24 and other applicable written law. Contract wording alone does not make every deduction lawful.</p></details>
+        <details class="faq-item"><summary>Can employers change contract terms after signing?</summary><p>Important changes should be documented clearly, and employers should not use a later change to reduce statutory rights. Employees should keep written records of any agreed amendments.</p></details>
+        <details class="faq-item"><summary>Should I keep a copy of my employment contract?</summary><p>Yes. Keep the signed contract, offer letter, employee handbook and later amendments because they are important for payroll, leave, notice and employment disputes.</p></details>
+      </div>
+
+      <section class="related-tools-section">
+        <h2>Related Tools</h2>
+        <p class="related-tools-intro">Estimate the take-home value of a job offer first, then review the employment and payroll rules behind the contract terms.</p>
+
+        <a class="featured-calculator" href="index.html">
+          <div>
+            <span class="featured-kicker">Salary Calculator</span>
+            <h3>Compare Your Job Offer After Deductions</h3>
+            <p>Estimate EPF, SOCSO, EIS, PCB and take-home salary before accepting a salary package.</p>
+          </div>
+          <span class="feature-link">Calculate Salary →</span>
+          <div class="featured-calculator-icon" aria-hidden="true">📑</div>
+        </a>
+
+        <div class="quick-calculators">
+          <p class="quick-calculators-title">Quick Calculators</p>
+          <div class="quick-calculators-grid">
+            <a href="epf-calculator.html"><span>EPF Calculator</span><span class="quick-arrow">→</span></a>
+            <a href="pcb-calculator.html"><span>PCB Calculator</span><span class="quick-arrow">→</span></a>
+            <a href="overtime-calculator.html"><span>Overtime Calculator</span><span class="quick-arrow">→</span></a>
+          </div>
         </div>
 
-        <p class="view-all-guides">
-          <a href="calculators.html">View All Calculators →</a>
-        </p>
+        <div class="explore-section">
+          <div class="explore-heading"><h2>Continue Exploring</h2><p>Useful next steps for understanding probation, resignation, leave and payroll terms.</p></div>
+          <div class="explore-grid">
+            <div class="explore-column">
+              <h3>Employment &amp; Leave</h3>
+              <a class="editorial-link" href="probation-period-guide.html"><span>Probation Period Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="resignation-notice-guide.html"><span>Resignation Notice Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="annual-leave-guide.html"><span>Annual Leave Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="overtime-guide.html"><span>Overtime Guide</span><span class="editorial-arrow">→</span></a>
+            </div>
+            <div class="explore-column">
+              <h3>Payroll &amp; Salary</h3>
+              <a class="editorial-link" href="payslip-guide.html"><span>Payslip Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="salary-deduction-guide.html"><span>Salary Deduction Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="epf-guide.html"><span>EPF Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="pcb-guide.html"><span>PCB Guide</span><span class="editorial-arrow">→</span></a>
+            </div>
+          </div>
+          <div class="resource-actions"><a href="guides.html">Explore All Guides →</a><a href="calculators.html">View All Calculators →</a></div>
+        </div>
       </section>
 
     </div>
