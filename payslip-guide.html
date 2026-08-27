@@ -484,6 +484,45 @@
 
     hr { display: none; }
 
+
+    .toc-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:26px 0}
+    .toc-box h2{margin-top:0;margin-bottom:16px}
+    .toc-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px}
+    .toc-links a{display:flex;align-items:center;gap:14px;min-width:0;text-decoration:none;color:var(--foreground);padding:12px 2px;border-bottom:1px solid var(--border);transition:.18s ease}
+    .toc-links a:hover{color:var(--accent);padding-left:4px}
+    .toc-number{width:28px;flex:0 0 28px;color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.04em}
+    .toc-label{flex:1;min-width:0;font-weight:700;font-size:15px}
+    .toc-arrow{color:var(--muted);font-size:15px}
+    .status-yes{color:var(--accent);font-weight:800}
+    .status-no{color:#9a5a45;font-weight:800}
+    .source-note{margin-top:18px;background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);padding:14px;border-radius:10px;color:var(--muted);font-size:13px}
+    .source-note a{color:var(--accent);font-weight:800;text-decoration:none}
+
+    .related-tools-section{margin:34px 0}
+    .related-tools-intro{margin-top:0;max-width:760px}
+    .featured-calculator{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:22px;align-items:center;margin-top:20px;padding:24px 26px;background:radial-gradient(circle at top right,rgba(47,125,94,.14),transparent 34%),linear-gradient(135deg,#f8f5ef 0%,#fbfaf6 100%);border:1px solid var(--accent-border);border-radius:18px;text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .featured-calculator:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 16px 34px rgba(47,43,37,.09)}
+    .featured-kicker{display:inline-block;margin-bottom:7px;color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .featured-calculator h3{margin:0 0 6px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,3vw,32px);font-weight:400;line-height:1.1}
+    .featured-calculator p{margin:0;max-width:640px;font-size:15px}
+    .feature-link{display:inline-flex;align-items:center;justify-content:center;min-width:160px;padding:12px 16px;border-radius:12px;background:var(--accent);color:#fff;font-weight:900;white-space:nowrap}
+    .featured-calculator-icon{width:66px;height:66px;display:grid;place-items:center;border-radius:18px;background:var(--accent-soft);border:1px solid var(--accent-border);font-size:30px}
+    .quick-calculators{margin-top:18px}.quick-calculators-title{margin:0 0 10px;font-size:14px;font-weight:800}
+    .quick-calculators-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .quick-calculators-grid a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;background:var(--card);border:1px solid var(--border);border-radius:11px;text-decoration:none;color:var(--foreground);font-size:14px;font-weight:800;transition:.18s ease}
+    .quick-calculators-grid a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .quick-arrow,.editorial-arrow{color:var(--muted)}
+
+    .explore-section{margin-top:30px;padding-top:28px;border-top:1px solid var(--border)}
+    .explore-heading h2{margin:0}.explore-heading p{margin:7px 0 14px}
+    .explore-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+    .explore-column h3{margin:0 0 8px;font-size:16px}
+    .editorial-link{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .editorial-link:hover{color:var(--accent);padding-left:4px}
+    .editorial-link span:first-child{flex:1;min-width:0;font-weight:800;font-size:15px}
+    .resource-actions{display:flex;justify-content:space-between;gap:16px;margin-top:18px;flex-wrap:wrap}
+    .resource-actions a{color:var(--accent);font-weight:800;text-decoration:none}
+
     @media (max-width: 800px) {
       .nav-inner {
         flex-direction: row;
@@ -555,6 +594,15 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
       }
+      .toc-box{padding:20px}
+      .toc-links{grid-template-columns:1fr;column-gap:0}
+      .featured-calculator{grid-template-columns:1fr;padding:22px;gap:16px}
+      .feature-link{width:100%}
+      .featured-calculator-icon{display:none}
+      .quick-calculators-grid{grid-template-columns:1fr}
+      .explore-grid{grid-template-columns:1fr;gap:26px}
+      .resource-actions{display:block}
+      .resource-actions a{display:block;margin-top:8px}
 
       .component-card {
         padding: 14px;
@@ -598,285 +646,319 @@
 
   <div class="main-wrapper">
     <section class="hero">
-      <span class="pill">Updated for Malaysia 2026 payroll guides</span>
+      <span class="pill">Last verified: August 2026 · Malaysia payroll & payslip guidance</span>
       <h1 class="serif">Understand your <em>Malaysia payslip</em></h1>
       <p>Learn how to read a Malaysia payslip, including gross salary, allowances, EPF, SOCSO, EIS, PCB deductions and monthly net take-home pay.</p>
     </section>
 
     <div class="seo">
 
+      <section class="summary-box">
+        <h2>Payslip Quick Summary</h2>
+        <p>A payslip explains how gross earnings become net pay. It should let an employee see the pay period, wages earned, additions, deductions and final amount paid.</p>
+        <div class="summary-grid">
+          <div class="summary-card"><strong>Gross Pay</strong><span>Basic salary plus applicable additions before deductions</span></div>
+          <div class="summary-card"><strong>Deductions</strong><span>EPF, SOCSO, EIS, PCB and other lawful payroll deductions</span></div>
+          <div class="summary-card"><strong>Net Pay</strong><span>Final amount payable after additions and deductions</span></div>
+          <div class="summary-card"><strong>Pay Record</strong><span>Useful for payroll checks, tax filing, loans and salary disputes</span></div>
+        </div>
+        <div class="note-box"><strong>Core idea:</strong> Do not check only the bank credit. A payslip should explain <em>why</em> the bank amount is what it is.</div>
+      </section>
+
       <section class="career-cta">
-        <h2>📄 Understand Your Payslip</h2>
-        <p>Want to check your monthly salary breakdown? Use our salary tools to estimate EPF, SOCSO, EIS, PCB and net take-home pay.</p>
+        <h2>Check Your Salary Breakdown</h2>
+        <p>Use our Salary Calculator to estimate EPF, SOCSO, EIS, PCB and monthly take-home pay, then compare the estimate with your actual payslip.</p>
         <a href="index.html" class="cta-button">Check My Payslip Breakdown →</a>
       </section>
 
-      <section class="summary-box">
-        <h2>📌 Payslip Quick Summary</h2>
-        <p>A payslip is a monthly salary statement showing your gross salary, deductions, employer details and net pay. It helps employees verify whether payroll deductions are correct.</p>
-        <div class="summary-grid">
-          <div class="summary-card"><strong>Gross Pay</strong><span>Salary before deductions</span></div>
-          <div class="summary-card"><strong>Deductions</strong><span>EPF, SOCSO, EIS, PCB and others</span></div>
-          <div class="summary-card"><strong>Net Pay</strong><span>Final take-home salary</span></div>
-          <div class="summary-card"><strong>Proof</strong><span>Useful for loans, tax and HR records</span></div>
+      <section class="toc-box">
+        <h2>On This Page</h2>
+        <div class="toc-links">
+          <a href="#what-is-payslip"><span class="toc-number">01</span><span class="toc-label">What Is a Payslip?</span><span class="toc-arrow">→</span></a>
+          <a href="#what-should-show"><span class="toc-number">02</span><span class="toc-label">What Should a Payslip Show?</span><span class="toc-arrow">→</span></a>
+          <a href="#gross-net"><span class="toc-number">03</span><span class="toc-label">Gross Pay vs Net Pay</span><span class="toc-arrow">→</span></a>
+          <a href="#earnings"><span class="toc-number">04</span><span class="toc-label">Salary, Allowance, OT & Bonus</span><span class="toc-arrow">→</span></a>
+          <a href="#deductions"><span class="toc-number">05</span><span class="toc-label">Payslip Deductions</span><span class="toc-arrow">→</span></a>
+          <a href="#read-payslip"><span class="toc-number">06</span><span class="toc-label">How to Read a Payslip</span><span class="toc-arrow">→</span></a>
+          <a href="#example"><span class="toc-number">07</span><span class="toc-label">Payslip Example</span><span class="toc-arrow">→</span></a>
+          <a href="#ea-form"><span class="toc-number">08</span><span class="toc-label">Payslip vs EA Form</span><span class="toc-arrow">→</span></a>
+          <a href="#electronic"><span class="toc-number">09</span><span class="toc-label">Electronic Payslips</span><span class="toc-arrow">→</span></a>
+          <a href="#loans-records"><span class="toc-number">10</span><span class="toc-label">Loans, Tax & Records</span><span class="toc-arrow">→</span></a>
+          <a href="#mistakes"><span class="toc-number">11</span><span class="toc-label">Common Mistakes</span><span class="toc-arrow">→</span></a>
+          <a href="#faq"><span class="toc-number">12</span><span class="toc-label">FAQ</span><span class="toc-arrow">→</span></a>
         </div>
       </section>
 
-      <h2>What Is a Payslip?</h2>
-      <p>A payslip is a document provided by an employer to show how an employee's monthly salary is calculated. It usually includes salary, allowances, overtime, statutory deductions and the final amount paid to the employee.</p>
-      <p>For employees, payslips are useful for checking salary accuracy, applying for loans, filing income tax and keeping personal financial records.</p>
+      <h2 id="what-is-payslip">What Is a Payslip?</h2>
+      <p>A payslip is a wage statement showing how an employee's salary for a particular wage period is calculated. It usually records basic salary, additional earnings, deductions and the final net amount paid.</p>
+      <p>Malaysia's Employment Regulations 1957 require employers to furnish employees with wage particulars for each wage period on or before the date wages are paid. In practice, this is commonly provided through an itemised payslip or electronic salary statement.</p>
 
       <section class="guide-box">
-        <h2>Gross Pay vs Net Pay</h2>
-        <p>
-          Gross pay is the total salary amount before deductions. It may include basic salary, allowances, overtime, bonus, commission or other approved additions paid through payroll.
-        </p>
-        <p>
-          Net pay is the final amount received by the employee after payroll deductions. Employees should compare both gross pay and net pay because the salary stated in an offer letter may not be the same as the actual cash received in the bank account.
-        </p>
-      </section>
-
-      <section class="guide-box">
-        <h2>Common Items on a Malaysia Payslip</h2>
+        <h2 id="what-should-show">What Should a Malaysia Payslip Show?</h2>
+        <p>A useful payslip should allow the employee to trace the salary calculation from earnings to deductions and finally net pay.</p>
         <div class="contribution-table-wrap">
           <table class="contribution-table">
-            <thead><tr><th>Item</th><th>What It Means</th><th>Why It Matters</th></tr></thead>
+            <thead><tr><th>Payslip Item</th><th>What It Shows</th><th>Why Employees Should Check It</th></tr></thead>
             <tbody>
-              <tr><td>Basic Salary</td><td>Fixed monthly salary before additional payments</td><td>Forms the base of salary calculation</td></tr>
-              <tr><td>Allowances</td><td>Extra payments such as transport or meal allowance</td><td>May affect taxable income or payroll calculation</td></tr>
-              <tr><td>Overtime / Bonus</td><td>Additional income paid for overtime or performance</td><td>May increase deductions and PCB</td></tr>
-              <tr><td>EPF / SOCSO / EIS</td><td>Statutory employee deductions</td><td>Reduces net salary</td></tr>
-              <tr><td>PCB</td><td>Monthly tax deduction</td><td>Part of income tax paid through payroll</td></tr>
-              <tr><td>Net Pay</td><td>Salary paid to employee after deductions</td><td>Your take-home pay</td></tr>
+              <tr><td>Employer / Employee Details</td><td>Employer identity, employee name or payroll identifier</td><td>Confirms the statement belongs to the correct employment and employee.</td></tr>
+              <tr><td>Pay Period</td><td>Month or wage period covered</td><td>Important when reconciling attendance, overtime and bank payment.</td></tr>
+              <tr><td>Rate / Basic Salary</td><td>Contractual or applicable rate of pay</td><td>Should agree with employment terms and payroll changes.</td></tr>
+              <tr><td>Normal Wages</td><td>Wages earned for normal hours / work period</td><td>Forms the core earnings amount.</td></tr>
+              <tr><td>Overtime</td><td>Overtime rate, hours and overtime wages where applicable</td><td>Helps verify OT hours and statutory rate calculation.</td></tr>
+              <tr><td>Allowances / Bonus / Commission</td><td>Additional remuneration paid through payroll</td><td>May affect gross earnings, tax and selected contributions.</td></tr>
+              <tr><td>Employee Deductions</td><td>EPF, SOCSO, EIS, PCB and other lawful deductions</td><td>Explains why take-home pay is lower than gross pay.</td></tr>
+              <tr><td>Net Pay</td><td>Final amount payable to employee</td><td>Should reconcile to the salary actually credited or otherwise paid.</td></tr>
             </tbody>
           </table>
         </div>
       </section>
 
       <section class="guide-box">
-        <h2>Common Payslip Deductions in Malaysia</h2>
-        <p>
-          Payslip deductions are amounts deducted from gross pay before the final net pay is paid to the employee. Some deductions are statutory payroll deductions, while others may depend on company policy, employee consent or specific salary arrangements.
-        </p>
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Deduction</th>
-                <th>Simple Explanation</th>
-                <th>Related Guide</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>EPF</td>
-                <td>Employee retirement contribution deducted from salary</td>
-                <td><a href="epf-guide.html">EPF Guide</a></td>
-              </tr>
-              <tr>
-                <td>SOCSO</td>
-                <td>Social security contribution for eligible employees</td>
-                <td><a href="socso-guide.html">SOCSO Guide</a></td>
-              </tr>
-              <tr>
-                <td>EIS</td>
-                <td>Employment insurance contribution for eligible employees</td>
-                <td><a href="eis-guide.html">EIS Guide</a></td>
-              </tr>
-              <tr>
-                <td>PCB</td>
-                <td>Monthly income tax deduction through payroll</td>
-                <td><a href="pcb-guide.html">PCB Guide</a></td>
-              </tr>
-              <tr>
-                <td>Other Deductions</td>
-                <td>May include unpaid leave, salary advance, staff loan or approved deductions</td>
-                <td><a href="salary-deduction-guide.html">Salary Deduction Guide</a></td>
-              </tr>
-            </tbody>
-          </table>
+        <h2 id="gross-net">Gross Pay vs Net Pay</h2>
+        <p>Gross pay is the total remuneration for the payroll period before employee deductions. Net pay is the final amount after all payroll additions and lawful deductions have been processed.</p>
+        <div class="formula-box">
+          <strong>Net Pay = Gross Earnings − Employee Deductions</strong>
+          <span>Gross earnings may include basic salary, allowances, overtime, commission, bonus and other applicable items.</span>
         </div>
-      </section>
-
-      <h2>How to Read Your Payslip</h2>
-      <p>Start by checking your gross pay, then review each deduction. Your net pay should normally equal gross salary plus additions minus statutory and other approved deductions.</p>
-      <div class="formula-box"><strong>Net Pay = Gross Pay + Additions − Deductions</strong><span>Deductions may include EPF, SOCSO, EIS, PCB, unpaid leave or other approved deductions.</span></div>
-
-      <section class="example-box">
-        <h2>Example Payslip Breakdown</h2>
-        <ul>
-          <li>Basic salary: RM4,000</li>
-          <li>Allowance: RM200</li>
-          <li>Gross pay: RM4,200</li>
-          <li>EPF, SOCSO, EIS and PCB: deducted through payroll</li>
-          <li>Net pay: salary after total deductions</li>
-        </ul>
+        <div class="note-box"><strong>Job offer vs bank amount:</strong> A salary offer commonly refers to gross monthly salary. It should not be compared directly with bank credit without considering statutory and other lawful deductions.</div>
       </section>
 
       <section class="guide-box">
-        <h2>Bonus and Overtime on Payslips</h2>
-        <p>
-          Payslips may look different in months where bonus, overtime, commission or incentives are paid. These additional payments can increase gross income and may also increase deductions or PCB for that month.
-        </p>
-        <p>
-          Employees should check whether bonus and overtime are shown clearly as separate payslip items. This makes it easier to verify the amount paid, understand tax treatment and keep records for future reference.
-        </p>
-      </section>
-
-      <section class="guide-box">
-        <h2>Payslips for Loan Applications</h2>
-        <p>
-          Payslips are commonly requested when applying for home loans, personal loans, car loans or credit facilities. Banks and lenders use payslips to verify monthly income, employment stability and the consistency of salary payments.
-        </p>
-        <p>
-          Employees who receive variable income such as overtime, commission or bonus should keep several months of payslips because lenders may review average income instead of relying on one month only.
-        </p>
-      </section>
-
-      <section class="guide-box">
-        <h2>Payslip vs EA Form</h2>
-        <p>
-          Payslips and EA Forms are both important salary records, but they serve different purposes. Payslips show monthly salary details, while the EA Form summarises annual employment income for tax filing.
-        </p>
+        <h2 id="earnings">How Salary, Allowance, Overtime and Bonus Appear on a Payslip</h2>
         <div class="contribution-table-wrap">
           <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Payslip</th>
-                <th>EA Form</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Earning</th><th>Typical Payslip Presentation</th><th>Payroll Point</th></tr></thead>
             <tbody>
-              <tr>
-                <td>Period Covered</td>
-                <td>Monthly payroll period</td>
-                <td>Full year employment income</td>
-              </tr>
-              <tr>
-                <td>Main Purpose</td>
-                <td>Salary payment and deduction record</td>
-                <td>Income tax filing record</td>
-              </tr>
-              <tr>
-                <td>Common Use</td>
-                <td>Loan applications, payroll checking, salary proof</td>
-                <td>LHDN tax filing and annual income verification</td>
-              </tr>
+              <tr><td>Basic Salary</td><td>Separate fixed monthly earnings line</td><td>Should agree with contract and salary revisions.</td></tr>
+              <tr><td>Allowance</td><td>Usually shown by allowance type</td><td>Different allowances can have different EPF / SOCSO / EIS / tax treatment.</td></tr>
+              <tr><td>Overtime</td><td>Should ideally show OT amount and enough detail to verify hours / rate</td><td>OT can affect SOCSO, EIS and PCB differently from EPF.</td></tr>
+              <tr><td>Bonus</td><td>Separate additional-remuneration line</td><td>Can cause PCB to rise in a bonus month.</td></tr>
+              <tr><td>Commission / Incentive</td><td>Separate variable-income line</td><td>May affect statutory contribution and tax calculations depending on the item.</td></tr>
+              <tr><td>Arrears / Adjustment</td><td>Separate payroll adjustment line</td><td>Check the period and reason for the adjustment.</td></tr>
             </tbody>
           </table>
         </div>
       </section>
 
       <section class="guide-box">
-        <h2>Why Payslips Matter</h2>
+        <h2 id="deductions">Common Payslip Deductions in Malaysia</h2>
+        <p>Employee deductions should be clearly distinguishable from employer contributions. An employer contribution is an employer cost and should not simply be deducted from the employee's take-home pay.</p>
+
         <div class="component-grid">
-          <div class="component-card"><div class="component-icon">🏦</div><h3>Loan Applications</h3><p>Banks often request payslips to verify income.</p></div>
-          <div class="component-card"><div class="component-icon">🧾</div><h3>Tax Filing</h3><p>Payslips help compare monthly PCB and annual income.</p></div>
-          <div class="component-card"><div class="component-icon">💼</div><h3>Job Comparison</h3><p>Useful when comparing salary packages.</p></div>
-          <div class="component-card"><div class="component-icon">🔍</div><h3>Payroll Check</h3><p>Helps spot incorrect deductions or unpaid allowances.</p></div>
+          <a href="epf-guide.html" class="component-card"><div class="component-icon">💰</div><h3>EPF / KWSP</h3><p>Employee retirement contribution; employer contribution is separate.</p></a>
+          <a href="socso-guide.html" class="component-card"><div class="component-icon">🛡️</div><h3>SOCSO / PERKESO</h3><p>Employee contribution under the applicable contribution schedule.</p></a>
+          <a href="eis-guide.html" class="component-card"><div class="component-icon">🤝</div><h3>EIS / SIP</h3><p>Employee employment-insurance contribution where applicable.</p></a>
+          <a href="pcb-guide.html" class="component-card"><div class="component-icon">🏛️</div><h3>PCB / MTD</h3><p>Monthly tax deduction calculated under HASiL's payroll-tax rules.</p></a>
+          <a href="skbbk-guide.html" class="component-card"><div class="component-icon">🛡️</div><h3>LINDUNG 24 Jam</h3><p>Employee-funded contribution where current participation rules apply.</p></a>
+          <a href="salary-deduction-guide.html" class="component-card"><div class="component-icon">➖</div><h3>Other Deductions</h3><p>Unpaid leave, advance recovery, staff loan and other lawful payroll items.</p></a>
         </div>
       </section>
 
       <section class="guide-box">
-        <h2>Common Payslip Mistakes</h2>
-        <p>
-          Payslip errors and misunderstandings can happen when employees only look at the final net pay without reviewing the full breakdown. Checking each component helps avoid confusion and payroll disputes.
-        </p>
-        <ul>
-          <li>Ignoring payroll deductions and only checking net pay</li>
-          <li>Not checking overtime, bonus or allowance entries</li>
-          <li>Assuming net pay is the same as salary package</li>
-          <li>Not keeping payslips for tax filing or loan applications</li>
-          <li>Not asking HR when deductions look unusual</li>
-          <li>Confusing monthly payslip amounts with annual EA Form totals</li>
-        </ul>
+        <h2>Employee Contribution vs Employer Contribution</h2>
+        <p>Some payslips display both the employee deduction and the employer's contribution for information. These should not be confused.</p>
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Item</th><th>Employee Portion</th><th>Employer Portion</th></tr></thead>
+            <tbody>
+              <tr><td>EPF</td><td>Deducted from employee wages</td><td>Additional employer contribution; not deducted from net pay</td></tr>
+              <tr><td>SOCSO</td><td>Employee share where applicable</td><td>Employer share paid separately</td></tr>
+              <tr><td>EIS</td><td>Employee share</td><td>Employer share paid separately</td></tr>
+              <tr><td>PCB</td><td>Employee tax deducted through payroll</td><td>No matching employer tax contribution</td></tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
-      <section class="guide-box">
-        <h2>Common Payslip Examples</h2>
-
-        <h3>Example 1: Basic Salary Only</h3>
-        <p>
-          An employee receives only basic salary for the month. The payslip should show basic salary, statutory deductions and final net pay.
-        </p>
-
-        <h3>Example 2: Salary Plus Overtime</h3>
-        <p>
-          An employee works approved overtime during the month. The payslip should show overtime as an additional income item, and deductions may be higher because gross pay has increased.
-        </p>
-
-        <h3>Example 3: Salary Plus Bonus</h3>
-        <p>
-          In a bonus month, the payslip may show normal salary and bonus separately. PCB may be higher for that month depending on payroll calculation.
-        </p>
-
-        <h3>Example 4: Salary Plus Allowance</h3>
-        <p>
-          If an employee receives a transport, meal or fixed allowance, the payslip should show whether the allowance is included as part of gross pay and how it affects deductions.
-        </p>
-      </section>
-
-      <section class="guide-box">
-        <h2>Who Should Read This Payslip Guide?</h2>
-        <ul><li>Employees checking salary deductions</li><li>Job seekers comparing salary offers</li><li>HR and payroll staff preparing payslips</li><li>Employees applying for loans or filing income tax</li></ul>
-      </section>
-
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-box">
-        <details class="faq-item" open>
-          <summary>What should be included in a payslip?</summary>
-          <p>A payslip usually includes employee details, pay period, basic salary, allowances, overtime, bonus, statutory deductions, other deductions and net salary.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Why is my net pay lower than my gross salary?</summary>
-          <p>Net pay is lower because deductions such as EPF, SOCSO, EIS, PCB or other approved deductions are subtracted from gross salary.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can employers issue electronic payslips?</summary>
-          <p>Many employers provide payslips electronically through payroll systems or HR portals. Employees should make sure they can access and save copies for future reference.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>How long should payslips be kept?</summary>
-          <p>Employees should keep payslips for tax filing, loan applications, salary disputes and personal records. Keeping digital copies makes it easier to retrieve documents when needed.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can payslips be used for home loan applications?</summary>
-          <p>Yes. Banks commonly request recent payslips to verify income, employment status and monthly salary consistency when reviewing home loan, car loan or personal loan applications.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Why is my net pay different every month?</summary>
-          <p>Net pay may change because of overtime, bonus, unpaid leave, allowances, commission, PCB changes or other payroll adjustments.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Should bonus and overtime appear in a payslip?</summary>
-          <p>Yes, if bonus or overtime is paid through payroll, it should normally appear as part of the payslip breakdown.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can overtime increase PCB deductions?</summary>
-          <p>Overtime may increase gross income for the month, which can affect payroll deductions and PCB depending on the employee's tax position and payroll calculation.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What should I do if my payslip is incorrect?</summary>
-          <p>Check the details against your employment contract, attendance records and payroll records, then ask HR or payroll to clarify any incorrect amounts.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is a payslip the same as an EA Form?</summary>
-          <p>No. A payslip shows monthly salary details, while an EA Form summarises annual employment income and tax-related information for income tax filing.</p>
-        </details>
+      <h2 id="read-payslip">How to Read Your Payslip Step by Step</h2>
+      <div class="component-grid">
+        <div class="component-card"><div class="component-icon">1</div><h3>Check Pay Period</h3><p>Confirm the payslip covers the correct salary month or wage period.</p></div>
+        <div class="component-card"><div class="component-icon">2</div><h3>Check Earnings</h3><p>Review basic pay, allowances, OT, bonus, commission and adjustments.</p></div>
+        <div class="component-card"><div class="component-icon">3</div><h3>Check Deductions</h3><p>Review statutory deductions and any employee-specific deduction separately.</p></div>
+        <div class="component-card"><div class="component-icon">4</div><h3>Reconcile Net Pay</h3><p>Compare the final amount with the actual salary credited to your bank account.</p></div>
       </div>
 
-      <section class="salary-guides-box"><h2>📚 Related Salary & Career Guides</h2><p>Continue reading related guides to understand salary, bonus and career income planning.</p><div class="guide-mini-grid"><a href="bonus-guide.html">🎁 Bonus Guide</a><a href="hourly-rate-guide.html">⏱️ Hourly Rate Guide</a><a href="salary-increment-guide.html">📈 Salary Increment Guide</a><a href="salary-deduction-guide.html">➖ Salary Deduction Guide</a></div><p class="view-all-guides"><a href="guides.html">View All Salary Guides →</a></p></section>
-      <section class="salary-guides-box"><h2>🧮 Related Calculators</h2><p>Use these calculators to estimate salary breakdown and take-home pay.</p><div class="guide-mini-grid"><a href="index.html">Salary Calculator</a><a href="pcb-calculator.html">PCB Calculator</a><a href="epf-calculator.html">EPF Calculator</a><a href="income-tax-calculator.html">Income Tax Calculator</a></div><p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p></section>
+      <div class="formula-box">
+        <strong>Basic Pay + Additions − Deductions = Net Pay</strong>
+        <span>If the payslip does not reconcile, review adjustments, unpaid leave, prior-month corrections or payroll rounding.</span>
+      </div>
+
+      <section class="example-box">
+        <h2 id="example">Example Payslip Breakdown</h2>
+        <p>Illustrative monthly payslip for an employee with basic salary and a fixed allowance:</p>
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <tbody>
+              <tr><td><strong>Basic salary</strong></td><td>RM4,000</td></tr>
+              <tr><td><strong>Allowance</strong></td><td>RM200</td></tr>
+              <tr><td><strong>Gross earnings</strong></td><td><strong>RM4,200</strong></td></tr>
+              <tr><td>EPF</td><td>According to applicable KWSP contribution rules</td></tr>
+              <tr><td>SOCSO / EIS</td><td>According to applicable PERKESO contribution schedules</td></tr>
+              <tr><td>PCB</td><td>Depends on the employee's monthly tax calculation</td></tr>
+              <tr><td><strong>Net pay</strong></td><td>RM4,200 less employee deductions</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note-box"><strong>Why no fixed deduction amounts here:</strong> EPF, SOCSO, EIS and PCB should follow their current statutory schedules and individual payroll facts rather than a hard-coded example that can become outdated.</div>
+      </section>
+
+      <section class="guide-box">
+        <h2>Why Net Pay Changes From Month to Month</h2>
+        <p>A different bank credit does not automatically mean payroll is wrong. Variable remuneration and deductions can change the monthly result.</p>
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Reason</th><th>Possible Payslip Effect</th></tr></thead>
+            <tbody>
+              <tr><td>Overtime</td><td>Higher gross earnings; may change SOCSO, EIS and PCB.</td></tr>
+              <tr><td>Bonus / Commission</td><td>Higher gross earnings and potentially higher PCB.</td></tr>
+              <tr><td>Unpaid Leave</td><td>Lower wages payable for an incomplete month.</td></tr>
+              <tr><td>Salary Increment</td><td>Higher basic salary and related contribution / tax amounts.</td></tr>
+              <tr><td>Advance / Loan Recovery</td><td>Lower net pay even though contractual gross earnings may be unchanged.</td></tr>
+              <tr><td>Payroll Correction</td><td>Arrears or adjustment line can increase or reduce the month's net pay.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="ea-form">Payslip vs EA Form</h2>
+        <p>Payslips and EA Forms are related salary records, but they serve different purposes and cover different periods.</p>
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Item</th><th>Payslip</th><th>EA Form</th></tr></thead>
+            <tbody>
+              <tr><td>Period</td><td>Individual wage / payroll period</td><td>Annual employment-income summary</td></tr>
+              <tr><td>Main Purpose</td><td>Explain salary earned, deductions and net pay</td><td>Summarise annual employment remuneration and tax-related details</td></tr>
+              <tr><td>Common Use</td><td>Payroll checking, loan proof, salary disputes</td><td>Annual income-tax filing and verification</td></tr>
+              <tr><td>PCB</td><td>Shows monthly deduction</td><td>Summarises annual PCB information</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note-box"><strong>Year-end check:</strong> Employees can compare the total of monthly payslips against EA Form figures, but differences may arise from year-end adjustments, benefits or reporting classifications. Ask payroll if the reconciliation is unclear.</div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="electronic">Can Employers Issue Electronic Payslips?</h2>
+        <p>Many employers provide payslips through email, HR portals or payroll systems. The important practical point is that the employee should receive accessible wage particulars for the relevant wage period and be able to retain the record.</p>
+        <p>Employees should download or save copies instead of assuming permanent access to an employer portal after resignation.</p>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="loans-records">Why Payslips Matter for Loans, Tax and Employment Records</h2>
+        <div class="component-grid">
+          <div class="component-card"><div class="component-icon">🏦</div><h3>Loan Applications</h3><p>Banks may use recent payslips to assess salary level, variable income and employment consistency.</p></div>
+          <div class="component-card"><div class="component-icon">🧾</div><h3>Tax Filing</h3><p>Monthly payslips help verify PCB and annual employment-income records.</p></div>
+          <div class="component-card"><div class="component-icon">🔍</div><h3>Payroll Disputes</h3><p>A payslip provides evidence of earnings, deductions and payroll adjustments.</p></div>
+          <div class="component-card"><div class="component-icon">📈</div><h3>Salary History</h3><p>Useful when checking increments, bonus payments and changes in recurring allowances.</p></div>
+        </div>
+      </section>
+
+      <section class="guide-box">
+        <h2>How Long Should You Keep Payslips?</h2>
+        <p>Employees should keep payslips long enough to support tax filing, loan applications, salary disputes and personal records. Keeping digital copies for multiple years is usually practical because old employer portals may become inaccessible after employment ends.</p>
+        <div class="note-box"><strong>Practical system:</strong> Keep one folder per year containing monthly payslips, EA Form, employment contract / increment letters and relevant tax records.</div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="mistakes">Common Payslip Mistakes</h2>
+        <ul>
+          <li>Checking only net pay and ignoring the earnings and deduction breakdown.</li>
+          <li>Confusing employer EPF / SOCSO / EIS contributions with employee deductions.</li>
+          <li>Assuming every allowance has the same statutory contribution and tax treatment.</li>
+          <li>Failing to verify overtime hours or overtime rate.</li>
+          <li>Ignoring unpaid-leave or incomplete-month adjustments.</li>
+          <li>Assuming a higher PCB amount in a bonus month is automatically an error.</li>
+          <li>Not comparing net pay with the amount actually credited to the bank.</li>
+          <li>Confusing a monthly payslip with the annual EA Form.</li>
+          <li>Failing to download payslips before leaving the company.</li>
+        </ul>
+      </section>
+
+      <section class="guide-box">
+        <h2>Employee Payslip Checklist</h2>
+        <ul>
+          <li>Confirm employer, employee and pay-period details.</li>
+          <li>Check basic salary against employment terms or latest increment letter.</li>
+          <li>Review allowances, overtime, bonus, commission and adjustments.</li>
+          <li>Check EPF, SOCSO, EIS, PCB and other deductions separately.</li>
+          <li>Confirm employer contribution amounts are not deducted from employee net pay.</li>
+          <li>Reconcile gross earnings less deductions to net pay.</li>
+          <li>Compare net pay with the bank credit.</li>
+          <li>Keep a copy and ask HR / payroll promptly if anything is unclear.</li>
+        </ul>
+      </section>
+
+      <section class="guide-box">
+        <h2>Sources &amp; Verification</h2>
+        <p>This guide was last verified in August 2026 against the Employment Regulations 1957 framework on wage particulars and current Malaysian payroll guidance.</p>
+        <div class="source-note">
+          <strong>Key references:</strong><br>
+          Employment Regulations 1957 — wage particulars and employee wage statement requirements<br>
+          <a href="https://jtksm.mohr.gov.my/" target="_blank" rel="noopener">JTKSM — Department of Labour Peninsular Malaysia</a><br>
+          <a href="https://www.kwsp.gov.my/" target="_blank" rel="noopener">KWSP — EPF Contribution Guidance</a><br>
+          <a href="https://www.perkeso.gov.my/" target="_blank" rel="noopener">PERKESO — SOCSO / EIS Guidance</a><br>
+          <a href="https://www.hasil.gov.my/" target="_blank" rel="noopener">HASiL — PCB / Income Tax Guidance</a>
+        </div>
+      </section>
+
+      <h2 id="faq">Frequently Asked Questions</h2>
+      <div class="faq-box">
+        <details class="faq-item" open><summary>What should be included in a payslip?</summary><p>A useful payslip should show the relevant wage period, rate or basic pay, wages earned, overtime where applicable, additions, deductions and final net pay, together with enough employee / employer information to identify the record.</p></details>
+        <details class="faq-item"><summary>Is an employer required to provide wage details?</summary><p>The Employment Regulations 1957 require employers to furnish employees with wage particulars for each wage period on or before wages are paid. This is commonly done through an itemised payslip or salary statement.</p></details>
+        <details class="faq-item"><summary>Why is my net pay lower than my gross salary?</summary><p>Net pay is the amount after employee deductions such as EPF, SOCSO, EIS, PCB and any other lawful payroll deductions.</p></details>
+        <details class="faq-item"><summary>Should employer EPF contribution reduce my take-home salary?</summary><p>No. The employer contribution is an additional employer cost. Only the employee portion is deducted from the employee's pay, subject to the applicable contribution rules.</p></details>
+        <details class="faq-item"><summary>Why does PCB increase in a bonus month?</summary><p>Bonus is additional remuneration and can increase the monthly tax deduction under the PCB / MTD calculation.</p></details>
+        <details class="faq-item"><summary>Can employers issue electronic payslips?</summary><p>Electronic payslips are widely used. Employees should make sure they can access, read and save the wage statement for future records.</p></details>
+        <details class="faq-item"><summary>Is a payslip the same as an EA Form?</summary><p>No. A payslip explains one payroll period, while an EA Form summarises annual employment income and related tax information.</p></details>
+        <details class="faq-item"><summary>Can payslips be used for loan applications?</summary><p>Yes. Banks commonly request recent payslips together with other documents to verify employment income and salary consistency.</p></details>
+        <details class="faq-item"><summary>Why is my net pay different every month?</summary><p>Overtime, bonus, commission, unpaid leave, allowance changes, PCB and payroll adjustments can all cause net pay to change.</p></details>
+        <details class="faq-item"><summary>What should I do if my payslip is wrong?</summary><p>Compare it with your employment terms, attendance, leave, overtime and bank records, then request a breakdown or correction from HR / payroll. Keep the payslip and supporting records if the issue remains disputed.</p></details>
+      </div>
+
+      <section class="related-tools-section">
+        <h2>Related Tools</h2>
+        <p class="related-tools-intro">Estimate your salary breakdown first, then check the contribution and employment rules behind each payslip line.</p>
+
+        <a class="featured-calculator" href="index.html">
+          <div>
+            <span class="featured-kicker">Salary Calculator</span>
+            <h3>Check Your Payslip Breakdown</h3>
+            <p>Estimate EPF, SOCSO, EIS, PCB and take-home salary, then compare the result with your actual payslip.</p>
+          </div>
+          <span class="feature-link">Calculate Salary →</span>
+          <div class="featured-calculator-icon" aria-hidden="true">📄</div>
+        </a>
+
+        <div class="quick-calculators">
+          <p class="quick-calculators-title">Quick Calculators</p>
+          <div class="quick-calculators-grid">
+            <a href="epf-calculator.html"><span>EPF Calculator</span><span class="quick-arrow">→</span></a>
+            <a href="pcb-calculator.html"><span>PCB Calculator</span><span class="quick-arrow">→</span></a>
+            <a href="overtime-calculator.html"><span>Overtime Calculator</span><span class="quick-arrow">→</span></a>
+          </div>
+        </div>
+
+        <div class="explore-section">
+          <div class="explore-heading"><h2>Continue Exploring</h2><p>Useful next steps for understanding deductions, contributions, overtime and annual tax records.</p></div>
+          <div class="explore-grid">
+            <div class="explore-column">
+              <h3>Payroll &amp; Contributions</h3>
+              <a class="editorial-link" href="salary-deduction-guide.html"><span>Salary Deduction Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="epf-guide.html"><span>EPF Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="socso-guide.html"><span>SOCSO Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="pcb-guide.html"><span>PCB Guide</span><span class="editorial-arrow">→</span></a>
+            </div>
+            <div class="explore-column">
+              <h3>Salary &amp; Employment</h3>
+              <a class="editorial-link" href="overtime-guide.html"><span>Overtime Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="salary-increment-guide.html"><span>Salary Increment Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="bonus-guide.html"><span>Bonus Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="income-tax-guide.html"><span>Income Tax Guide</span><span class="editorial-arrow">→</span></a>
+            </div>
+          </div>
+          <div class="resource-actions"><a href="guides.html">Explore All Guides →</a><a href="calculators.html">View All Calculators →</a></div>
+        </div>
+      </section>
 
     </div>
   </div>
