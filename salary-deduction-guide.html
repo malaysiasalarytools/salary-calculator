@@ -479,6 +479,40 @@
       color: var(--accent);
     }
 
+
+    .toc-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:26px 0}
+    .toc-box h2{margin-top:0;margin-bottom:16px}
+    .toc-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px}
+    .toc-links a{display:flex;align-items:center;gap:14px;min-width:0;text-decoration:none;color:var(--foreground);padding:12px 2px;border-bottom:1px solid var(--border);transition:.18s ease}
+    .toc-links a:hover{color:var(--accent);padding-left:4px}
+    .toc-number{width:28px;flex:0 0 28px;color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.04em}
+    .toc-label{flex:1;min-width:0;font-weight:700;font-size:15px}
+    .toc-arrow{color:var(--muted);font-size:15px}
+    .status-yes{color:var(--accent);font-weight:800}.status-no{color:#9a5a45;font-weight:800}
+    .source-note{margin-top:18px;background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);padding:14px;border-radius:10px;color:var(--muted);font-size:13px}
+    .source-note a{color:var(--accent);font-weight:800;text-decoration:none}
+    .related-tools-section{margin:34px 0}.related-tools-intro{margin-top:0;max-width:760px}
+    .featured-calculator{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:22px;align-items:center;margin-top:20px;padding:24px 26px;background:radial-gradient(circle at top right,rgba(47,125,94,.14),transparent 34%),linear-gradient(135deg,#f8f5ef 0%,#fbfaf6 100%);border:1px solid var(--accent-border);border-radius:18px;text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .featured-calculator:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 16px 34px rgba(47,43,37,.09)}
+    .featured-kicker{display:inline-block;margin-bottom:7px;color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .featured-calculator h3{margin:0 0 6px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,3vw,32px);font-weight:400;line-height:1.1}
+    .featured-calculator p{margin:0;max-width:640px;font-size:15px}
+    .feature-link{display:inline-flex;align-items:center;justify-content:center;min-width:160px;padding:12px 16px;border-radius:12px;background:var(--accent);color:#fff;font-weight:900;white-space:nowrap}
+    .featured-calculator-icon{width:66px;height:66px;display:grid;place-items:center;border-radius:18px;background:var(--accent-soft);border:1px solid var(--accent-border);font-size:30px}
+    .quick-calculators{margin-top:18px}.quick-calculators-title{margin:0 0 10px;font-size:14px;font-weight:800}
+    .quick-calculators-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .quick-calculators-grid a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;background:var(--card);border:1px solid var(--border);border-radius:11px;text-decoration:none;color:var(--foreground);font-size:14px;font-weight:800;transition:.18s ease}
+    .quick-calculators-grid a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .quick-arrow,.editorial-arrow{color:var(--muted)}
+    .explore-section{margin-top:30px;padding-top:28px;border-top:1px solid var(--border)}
+    .explore-heading h2{margin:0}.explore-heading p{margin:7px 0 14px}
+    .explore-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+    .explore-column h3{margin:0 0 8px;font-size:16px}
+    .editorial-link{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .editorial-link:hover{color:var(--accent);padding-left:4px}
+    .editorial-link span:first-child{flex:1;min-width:0;font-weight:800;font-size:15px}
+    .resource-actions{display:flex;justify-content:space-between;gap:16px;margin-top:18px;flex-wrap:wrap}.resource-actions a{color:var(--accent);font-weight:800;text-decoration:none}
+
     @media (max-width: 800px) {
       .nav-inner {
         flex-direction: row;
@@ -568,9 +602,11 @@
         line-height: 1.35;
       }
 
-      .cta-button {
-        width: 100%;
-      }
+      .cta-button { width: 100%; }
+      .toc-box{padding:20px}.toc-links{grid-template-columns:1fr;column-gap:0}
+      .featured-calculator{grid-template-columns:1fr;padding:22px;gap:16px}.feature-link{width:100%}.featured-calculator-icon{display:none}
+      .quick-calculators-grid{grid-template-columns:1fr}.explore-grid{grid-template-columns:1fr;gap:26px}
+      .resource-actions{display:block}.resource-actions a{display:block;margin-top:8px}
     }
   </style>
 </head>
@@ -595,7 +631,7 @@
 <main class="main-wrapper">
 
   <section class="hero">
-    <span class="pill">Updated for Malaysia 2026 payroll estimates</span>
+    <span class="pill">Last verified: August 2026 · Employment Act 1955 wage deduction rules</span>
     <h1 class="serif">Malaysia <em>salary deduction</em> guide 2026</h1>
     <p>
       Learn how salary deductions work in Malaysia, including statutory deductions,
@@ -605,496 +641,154 @@
 
   <section class="seo">
 
-    <section class="calculator-cta">
-      <h2>Calculate Net Salary After Deductions</h2>
-      <p>
-        Want to estimate your monthly take-home pay? Use our Salary Calculator to calculate salary after EPF, SOCSO, EIS and PCB deductions.
-      </p>
-      <a href="index.html" class="cta-button">Open Salary Calculator →</a>
-    </section>
-
     <section class="summary-box">
       <h2>Salary Deduction Quick Summary</h2>
-      <p>
-        Salary deduction is the amount taken from an employee's gross salary before the final net salary is paid. In Malaysia, common salary deductions include statutory deductions such as EPF, SOCSO, EIS and PCB, as well as payroll adjustments such as unpaid leave, salary advances or other approved deductions.
-      </p>
-
+      <p>Salary deductions reduce the amount finally paid to an employee, but an employer cannot simply deduct wages for any reason it chooses. Lawful deductions must have a proper statutory or contractual basis.</p>
       <div class="summary-grid">
-        <div class="summary-card">
-          <strong>Gross Salary</strong>
-          <span>Salary before deductions</span>
-        </div>
-        <div class="summary-card">
-          <strong>Deductions</strong>
-          <span>EPF, SOCSO, EIS, PCB and adjustments</span>
-        </div>
-        <div class="summary-card">
-          <strong>Net Salary</strong>
-          <span>Final take-home pay</span>
-        </div>
-        <div class="summary-card">
-          <strong>Payslip</strong>
-          <span>Monthly salary deduction record</span>
-        </div>
+        <div class="summary-card"><strong>Section 24</strong><span>Main Employment Act rule governing lawful deductions from wages</span></div>
+        <div class="summary-card"><strong>50%</strong><span>General monthly cap on total deductions made under section 24</span></div>
+        <div class="summary-card"><strong>Section 18A</strong><span>Statutory formula for unpaid leave and other incomplete-month situations</span></div>
+        <div class="summary-card"><strong>Payslip</strong><span>Key record for checking gross pay, each deduction and final net salary</span></div>
       </div>
+      <div class="note-box"><strong>Important:</strong> EPF, SOCSO, EIS, PCB and other deductions authorised by written law are different from deductions such as loans, advances, accommodation or other employee-specific items. The legal requirements are not the same for every deduction.</div>
     </section>
 
-    <h2>What Is Salary Deduction?</h2>
-    <p>
-      Salary deduction refers to any amount deducted from an employee's gross salary before the final salary is paid. Some deductions are required by law, while others may arise from employment arrangements, company policy, employee consent or payroll adjustments.
-    </p>
-    <p>
-      Understanding salary deductions is important because the amount stated in an employment offer letter is usually gross salary, not necessarily the amount the employee will receive in the bank account. The actual take-home pay may be lower after statutory deductions, tax deductions and other payroll items.
-    </p>
+    <section class="calculator-cta"><h2>Calculate Net Salary After Deductions</h2><p>Estimate monthly take-home pay after EPF, SOCSO, EIS, PCB and other payroll adjustments.</p><a href="index.html" class="cta-button">Open Salary Calculator →</a></section>
 
-    <div class="formula-box">
-      <strong>Net Salary = Gross Salary - Salary Deductions</strong>
-      <span>Salary deductions may include EPF, SOCSO, EIS, PCB, unpaid leave, advances and other approved payroll deductions.</span>
+    <section class="toc-box"><h2>On This Page</h2><div class="toc-links">
+      <a href="#what-is-deduction"><span class="toc-number">01</span><span class="toc-label">What Is Salary Deduction?</span><span class="toc-arrow">→</span></a>
+      <a href="#lawful-deductions"><span class="toc-number">02</span><span class="toc-label">What Can Employers Deduct?</span><span class="toc-arrow">→</span></a>
+      <a href="#statutory"><span class="toc-number">03</span><span class="toc-label">Statutory Deductions</span><span class="toc-arrow">→</span></a>
+      <a href="#written-request"><span class="toc-number">04</span><span class="toc-label">Deductions Requiring Written Request</span><span class="toc-arrow">→</span></a>
+      <a href="#fifty-percent"><span class="toc-number">05</span><span class="toc-label">50% Deduction Limit</span><span class="toc-arrow">→</span></a>
+      <a href="#unpaid-leave"><span class="toc-number">06</span><span class="toc-label">Unpaid Leave Deduction</span><span class="toc-arrow">→</span></a>
+      <a href="#advance-loan"><span class="toc-number">07</span><span class="toc-label">Advance & Staff Loan</span><span class="toc-arrow">→</span></a>
+      <a href="#notice"><span class="toc-number">08</span><span class="toc-label">Notice Period / Final Salary</span><span class="toc-arrow">→</span></a>
+      <a href="#payroll-impact"><span class="toc-number">09</span><span class="toc-label">EPF, SOCSO, EIS & PCB Impact</span><span class="toc-arrow">→</span></a>
+      <a href="#example"><span class="toc-number">10</span><span class="toc-label">Salary Deduction Example</span><span class="toc-arrow">→</span></a>
+      <a href="#mistakes"><span class="toc-number">11</span><span class="toc-label">Common Mistakes</span><span class="toc-arrow">→</span></a>
+      <a href="#faq"><span class="toc-number">12</span><span class="toc-label">FAQ</span><span class="toc-arrow">→</span></a>
+    </div></section>
+
+    <h2 id="what-is-deduction">What Is Salary Deduction?</h2>
+    <p>Salary deduction is any amount deducted from wages before the final amount is paid to the employee. Common examples include statutory payroll deductions, unpaid leave, recovery of wage advances, staff-loan repayments and indemnity for insufficient notice.</p>
+    <p>Gross salary and net salary are therefore not the same. Gross salary is the amount before deductions, while net salary is the amount finally paid after lawful deductions and payroll adjustments.</p>
+    <div class="formula-box"><strong>Net Salary = Gross Salary − Lawful Salary Deductions</strong><span>The correct deduction depends on its legal basis and the payroll item involved.</span></div>
+
+    <section class="guide-box"><h2 id="lawful-deductions">Can an Employer Deduct Salary?</h2><p>Yes, but section 24 of the Employment Act 1955 states that an employer must not make deductions from an employee's wages except in accordance with the Act.</p>
+      <div class="contribution-table-wrap"><table class="contribution-table"><thead><tr><th>Deduction</th><th>General Section 24 Position</th><th>Practical Example</th></tr></thead><tbody>
+      <tr><td>Employer's mistaken overpayment</td><td>May be recovered if the overpayment was made during the immediately preceding 3 months.</td><td>Payroll accidentally overpaid salary last month.</td></tr>
+      <tr><td>Indemnity for insufficient notice</td><td>Lawful deduction for indemnity due under section 13(1).</td><td>Employee resigns without serving the required notice and owes salary in lieu.</td></tr>
+      <tr><td>Recovery of wage advance</td><td>Permitted for advances made under section 22, provided no interest is charged.</td><td>Employee received part of salary before payday.</td></tr>
+      <tr><td>Deduction authorised by another written law</td><td>Permitted under section 24(2)(d).</td><td>EPF, SOCSO, EIS, PCB and other legally authorised payroll deductions.</td></tr>
+      </tbody></table></div><div class="note-box"><strong>Key point:</strong> “Company policy” by itself is not a universal legal basis to deduct wages. The employer should identify the specific lawful basis for the deduction.</div></section>
+
+    <section class="guide-box"><h2 id="statutory">Common Statutory Salary Deductions</h2><p>These payroll deductions arise under their respective laws and schemes rather than because the employer simply chooses to deduct them.</p><div class="component-grid">
+      <a href="epf-guide.html" class="component-card"><div class="component-icon">💰</div><h3>EPF / KWSP</h3><p>Employee retirement-savings contribution deducted through payroll where applicable.</p></a>
+      <a href="socso-guide.html" class="component-card"><div class="component-icon">🛡️</div><h3>SOCSO / PERKESO</h3><p>Employee social-security contribution based on the statutory contribution schedule.</p></a>
+      <a href="eis-guide.html" class="component-card"><div class="component-icon">🤝</div><h3>EIS / SIP</h3><p>Employment-insurance contribution for eligible employees.</p></a>
+      <a href="pcb-guide.html" class="component-card"><div class="component-icon">🏛️</div><h3>PCB / MTD</h3><p>Monthly income-tax deduction calculated under HASiL rules.</p></a>
+      <a href="skbbk-guide.html" class="component-card"><div class="component-icon">🛡️</div><h3>LINDUNG 24 Jam</h3><p>Employee-funded non-employment injury contribution where the current participation rules apply.</p></a>
+      </div><div class="note-box"><strong>Payroll note:</strong> Each scheme uses its own rules on contribution wages, ceilings, rates and employee eligibility. Do not assume every payroll component is treated identically.</div></section>
+
+    <section class="guide-box"><h2 id="written-request">Deductions That Need the Employee's Written Request</h2><p>Section 24 distinguishes between deductions that are automatically lawful and deductions that require the employee to request them in writing. Some categories also require prior written permission from the Director General of Labour.</p>
+      <div class="contribution-table-wrap"><table class="contribution-table"><thead><tr><th>Deduction Type</th><th>Written Request?</th><th>Director General Permission?</th></tr></thead><tbody>
+      <tr><td>Registered trade union / co-operative thrift and loan society dues</td><td><span class="status-yes">Yes</span></td><td>Not under section 24(3)</td></tr>
+      <tr><td>Purchase of employer's shares offered to employee</td><td><span class="status-yes">Yes</span></td><td>Not under section 24(3)</td></tr>
+      <tr><td>Employer welfare / insurance / superannuation-type scheme</td><td><span class="status-yes">Yes</span></td><td><span class="status-yes">Yes</span></td></tr>
+      <tr><td>Interest-bearing advance repayment</td><td><span class="status-yes">Yes</span></td><td><span class="status-yes">Yes</span></td></tr>
+      <tr><td>Payment to a third party on employee's behalf</td><td><span class="status-yes">Yes</span></td><td><span class="status-yes">Yes</span></td></tr>
+      <tr><td>Goods sold by employer to employee</td><td><span class="status-yes">Yes</span></td><td><span class="status-yes">Yes</span></td></tr>
+      <tr><td>Accommodation / services / food / meals under section 24(4)</td><td><span class="status-yes">Yes</span></td><td><span class="status-yes">Yes</span></td></tr>
+      </tbody></table></div><p>JTKSM publishes specific Form C applications for several categories of wage deduction that require approval.</p></section>
+
+    <section class="guide-box"><h2 id="fifty-percent">Can Total Salary Deductions Exceed 50%?</h2><p>Section 24(8) provides a general rule that the total deductions made under section 24 in any one month must not exceed <strong>50% of wages earned in that month</strong>.</p>
+      <div class="formula-box"><strong>General Section 24 Monthly Deduction Limit = 50% of Wages Earned</strong><span>Specific exceptions in section 24(9) can allow deductions beyond this limit.</span></div>
+      <div class="contribution-table-wrap"><table class="contribution-table"><thead><tr><th>Exception</th><th>How the 50% Rule Changes</th></tr></thead><tbody>
+      <tr><td>Indemnity under section 13(1)</td><td>The general 50% limitation does not apply.</td></tr>
+      <tr><td>Final wage payment on termination</td><td>Amounts still due to the employer may be deducted from final wages without the normal 50% cap.</td></tr>
+      <tr><td>Housing-loan repayment</td><td>With prior written permission, deductions may exceed 50% by up to an additional 25% of wages earned.</td></tr>
+      </tbody></table></div></section>
+
+    <section class="guide-box"><h2 id="unpaid-leave">How Unpaid Leave Deduction Is Calculated</h2><p>For a monthly-rated employee who takes one or more days of leave without pay, section 18A treats the month as an incomplete month of work and provides a statutory wage formula.</p>
+      <div class="formula-box"><strong>Wages Due = Monthly Wages ÷ Days in the Wage Period × Days Eligible in the Wage Period</strong><span>The same incomplete-month framework also applies when employment starts after the first day or ends before the last day of the month.</span></div>
+      <section class="example-box"><h2>Example: One Day Unpaid Leave in a 30-Day Month</h2><div class="contribution-table-wrap"><table class="contribution-table"><tbody>
+      <tr><td><strong>Monthly wages</strong></td><td>RM3,000</td></tr><tr><td><strong>Days in wage period</strong></td><td>30</td></tr><tr><td><strong>Days eligible</strong></td><td>29</td></tr><tr><td><strong>Wages due</strong></td><td>RM3,000 ÷ 30 × 29 = <strong>RM2,900</strong></td></tr><tr><td><strong>Equivalent reduction</strong></td><td><strong>RM100</strong></td></tr>
+      </tbody></table></div></section><div class="note-box"><strong>Important:</strong> Do not automatically use monthly salary ÷ 26 for unpaid leave. Section 18A uses the actual number of days in the particular wage period.</div></section>
+
+    <section class="guide-box"><h2 id="advance-loan">Salary Advance vs Staff Loan</h2><div class="contribution-table-wrap"><table class="contribution-table"><thead><tr><th>Item</th><th>Meaning</th><th>Key Payroll Point</th></tr></thead><tbody>
+      <tr><td>Salary / Wage Advance</td><td>Wages paid before they are earned or before the normal payment date.</td><td>Recovery is specifically addressed by sections 22, 24 and 27.</td></tr>
+      <tr><td>Staff Loan</td><td>Separate financing provided by the employer and repaid over time.</td><td>Check the legal deduction basis, written agreement and any required JTKSM permission.</td></tr>
+      <tr><td>Salary Deduction</td><td>The actual reduction made through payroll.</td><td>The deduction itself must still be lawful.</td></tr>
+      </tbody></table></div><p>Keep a written repayment schedule for recurring recoveries.</p></section>
+
+    <section class="guide-box"><h2 id="notice">Notice Period Shortfall and Final Salary Deductions</h2><p>If an employee terminates employment without serving the required notice, section 13(1) can create an indemnity equal to the wages that would have accrued during the unserved notice period. Section 24 allows the employer to deduct that indemnity from wages.</p><div class="note-box"><strong>Separate the concepts:</strong> Salary in lieu of notice is not an arbitrary “resignation penalty”. It should be tied to the contractual / statutory notice obligation.</div></section>
+
+    <section class="guide-box"><h2>Gross Salary vs Net Salary</h2><div class="contribution-table-wrap"><table class="contribution-table"><thead><tr><th>Item</th><th>Meaning</th></tr></thead><tbody>
+      <tr><td>Gross Salary / Gross Wages</td><td>Amount before employee deductions and payroll adjustments.</td></tr><tr><td>Total Deductions</td><td>Lawful statutory deductions plus applicable payroll-specific deductions.</td></tr><tr><td>Net Salary</td><td>Final amount payable after deductions.</td></tr>
+      </tbody></table></div></section>
+
+    <section class="guide-box"><h2 id="payroll-impact">Does a Deduction Reduce EPF, SOCSO, EIS or PCB?</h2><p>Not necessarily. A deduction from take-home pay and a reduction in contributable / taxable remuneration are different concepts.</p><div class="contribution-table-wrap"><table class="contribution-table"><thead><tr><th>Payroll Item</th><th>Typical Effect</th></tr></thead><tbody>
+      <tr><td>Unpaid leave</td><td>Reduces wages payable for the month and can affect contribution / tax calculations using actual remuneration.</td></tr>
+      <tr><td>Salary advance recovery</td><td>Usually recovers money previously advanced; it should not automatically be treated as a fresh reduction of salary earned for contribution purposes.</td></tr>
+      <tr><td>Staff loan repayment</td><td>Normally a repayment from net pay rather than a reduction of contractual gross earnings.</td></tr>
+      <tr><td>EPF / SOCSO / EIS / PCB</td><td>Calculated under each scheme's own rules and then deducted from the appropriate payroll base.</td></tr>
+      </tbody></table></div></section>
+
+    <section class="example-box"><h2 id="example">Example Salary Deduction Calculation</h2><p>Assume a monthly gross salary of RM4,000 before employee statutory deductions and other adjustments.</p><div class="contribution-table-wrap"><table class="contribution-table"><thead><tr><th>Item</th><th>Example Treatment</th><th>Why It Matters</th></tr></thead><tbody>
+      <tr><td>Gross Salary</td><td>RM4,000</td><td>Starting remuneration before deductions.</td></tr>
+      <tr><td>EPF</td><td>Employee contribution based on applicable KWSP schedule</td><td>Statutory deduction.</td></tr>
+      <tr><td>SOCSO</td><td>Employee contribution based on PERKESO schedule</td><td>Statutory deduction.</td></tr>
+      <tr><td>EIS</td><td>Employee contribution based on EIS schedule</td><td>Statutory deduction.</td></tr>
+      <tr><td>PCB</td><td>Depends on tax profile and HASiL MTD calculation</td><td>Not a fixed percentage.</td></tr>
+      <tr><td>Other lawful deduction</td><td>For example, agreed staff-loan instalment</td><td>Should have a proper legal / documentary basis.</td></tr>
+      <tr><td>Net Salary</td><td>Gross salary less all lawful deductions</td><td>Final amount paid to employee.</td></tr>
+      </tbody></table></div><div class="note-box"><strong>Why no fixed SOCSO / EIS amount here?</strong> Contribution amounts follow official wage-bracket schedules and can change. This keeps the guide accurate longer.</div></section>
+
+    <section class="guide-box"><h2>What Employees Should Check on Their Payslip</h2><ul>
+      <li>Basic / gross salary agrees with employment terms.</li><li>Unpaid-leave or incomplete-month calculation uses the correct basis.</li><li>EPF, SOCSO, EIS, PCB and any LINDUNG 24 Jam deduction are shown separately.</li><li>Salary advance or staff-loan deduction agrees with the repayment record.</li><li>Notice-period or final-pay deductions have a clear calculation.</li><li>No unexplained “miscellaneous” deduction appears without supporting basis.</li><li>Net salary agrees with the amount actually paid.</li>
+    </ul></section>
+
+    <section class="guide-box"><h2 id="mistakes">Common Salary Deduction Mistakes</h2><ul>
+      <li>Assuming an employer may deduct wages simply because company policy says so.</li><li>Failing to identify whether a deduction is authorised by section 24 or another written law.</li><li>Ignoring written-request or Director General approval requirements.</li><li>Applying the 50% monthly cap without checking exceptions.</li><li>Using salary ÷ 26 for unpaid leave instead of section 18A.</li><li>Treating staff-loan repayment as though it automatically reduces statutory contribution wages.</li><li>Hard-coding outdated SOCSO / EIS amounts.</li><li>Confusing gross salary with take-home pay.</li>
+    </ul></section>
+
+    <section class="guide-box"><h2>What If You Disagree With a Salary Deduction?</h2><p>Start by requesting a breakdown from HR or payroll and compare the deduction with your payslip, employment contract, attendance / leave records and any written agreement.</p><p>If the issue cannot be resolved internally, employees may lodge a labour complaint with JTKSM. Keep supporting documents such as the employment contract / offer letter and payslips.</p></section>
+
+    <section class="guide-box"><h2>Employee Salary Deduction Checklist</h2><ul>
+      <li>Identify whether the deduction is statutory or employee-specific.</li><li>Ask for the legal / contractual basis if unclear.</li><li>Check whether written consent or JTKSM approval is required.</li><li>Review the 50% section 24 limit and any exception.</li><li>For unpaid leave, recalculate wages using section 18A.</li><li>For advances / loans, compare with the repayment schedule.</li><li>For resignation, verify notice-period and final-pay calculations separately.</li>
+    </ul></section>
+
+    <section class="guide-box"><h2>Sources &amp; Verification</h2><p>This guide was last verified in August 2026 against the Employment Act 1955 and current JTKSM guidance on wage deductions, incomplete-month wages and labour complaints.</p><div class="source-note">
+      <strong>Official sources used for verification:</strong><br>
+      <a href="https://jtksm.mohr.gov.my/sites/default/files/2023-11/Akta%20Kerja%201955%20%28Akta%20265%29.pdf" target="_blank" rel="noopener">JTKSM — Employment Act 1955: Sections 18A, 22, 24 & 27</a><br>
+      <a href="https://jtksm.mohr.gov.my/en/forms/labour-permits" target="_blank" rel="noopener">JTKSM — Wage Deduction / Form C Applications</a><br>
+      <a href="https://jtksm.mohr.gov.my/ms/kalkulator/pengiraan-anggaran-gaji-bekerja-tidak-cukup-sebulan" target="_blank" rel="noopener">JTKSM — Incomplete Month Wage Calculator</a><br>
+      <a href="https://jtksm.mohr.gov.my/en/services/labour-complaint/acts-guidelines" target="_blank" rel="noopener">JTKSM — Labour Complaint Guidance</a>
+    </div></section>
+
+    <h2 id="faq">Frequently Asked Questions</h2><div class="faq-box">
+      <details class="faq-item" open><summary>Can an employer deduct salary for any reason?</summary><p>No. Section 24 states that deductions from wages must be made in accordance with the Employment Act.</p></details>
+      <details class="faq-item"><summary>What is the maximum salary deduction in one month?</summary><p>As a general rule, total deductions under section 24 must not exceed 50% of wages earned in that month, subject to statutory exceptions.</p></details>
+      <details class="faq-item"><summary>Can an employer recover salary overpaid by mistake?</summary><p>Yes, where the mistaken overpayment falls within the immediately preceding three months as specified by section 24.</p></details>
+      <details class="faq-item"><summary>How should unpaid leave be calculated for a monthly employee?</summary><p>Section 18A uses monthly wages divided by the number of days in the particular wage period, multiplied by the number of days eligible for wages.</p></details>
+      <details class="faq-item"><summary>Can salary advance be deducted from future wages?</summary><p>Yes, recovery of wage advances made under section 22 is a lawful deduction under section 24, subject to the statutory rules.</p></details>
+      <details class="faq-item"><summary>Can staff loan repayment be deducted through payroll?</summary><p>It can be possible, but the correct section 24 category, employee written request and any required Director General permission should be checked.</p></details>
+      <details class="faq-item"><summary>Can salary be deducted if I do not serve my notice period?</summary><p>Section 24 allows deduction of indemnity due under section 13(1), tied to the unserved notice obligation.</p></details>
+      <details class="faq-item"><summary>Does a staff-loan deduction reduce EPF or SOCSO wages?</summary><p>Not automatically. A repayment from net pay is different from reducing remuneration earned.</p></details>
+      <details class="faq-item"><summary>Why is my net salary lower than the salary in my offer letter?</summary><p>The offer letter usually states gross salary. Net salary is lower after statutory and other lawful deductions.</p></details>
+      <details class="faq-item"><summary>What can I do if I think a salary deduction is unlawful?</summary><p>Ask HR or payroll for the calculation and supporting basis first. If unresolved, consider lodging a labour complaint with JTKSM.</p></details>
     </div>
 
-    <section class="guide-box">
-      <h2>Common Types of Salary Deductions in Malaysia</h2>
-      <p>
-        Salary deductions can be grouped into statutory deductions and non-statutory payroll deductions. Statutory deductions are usually processed every month as part of payroll compliance, while other deductions depend on the employee's situation and company policy.
-      </p>
-
-      <div class="contribution-table-wrap">
-        <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Deduction Type</th>
-              <th>Examples</th>
-              <th>Payroll Meaning</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Statutory Deductions</td>
-              <td>EPF, SOCSO, EIS and PCB</td>
-              <td>Common monthly deductions required for retirement savings, social protection, employment insurance and income tax.</td>
-            </tr>
-            <tr>
-              <td>Unpaid Leave Deduction</td>
-              <td>Unpaid absence, no-pay leave or insufficient paid leave balance</td>
-              <td>Salary may be reduced when an employee is absent without paid leave entitlement.</td>
-            </tr>
-            <tr>
-              <td>Salary Advance Deduction</td>
-              <td>Advance salary recovered in future payroll</td>
-              <td>Employer recovers salary that was paid earlier to the employee.</td>
-            </tr>
-            <tr>
-              <td>Staff Loan Deduction</td>
-              <td>Monthly repayment for staff loan</td>
-              <td>Repayment may be deducted through payroll if agreed between employer and employee.</td>
-            </tr>
-            <tr>
-              <td>Other Approved Deductions</td>
-              <td>Insurance, benefit plan, training bond or other agreed payroll items</td>
-              <td>Depends on consent, company policy, contract terms and applicable rules.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="note-box">
-        <strong>Payroll note:</strong> Employees should always check their monthly payslip to understand which deductions are statutory and which are company or employee-specific adjustments.
-      </div>
-    </section>
-
-    <section class="guide-box">
-      <h2>Can Employers Deduct Salary?</h2>
-      <p>
-        Employers should not treat salary deduction as something that can be done freely without proper basis. Some deductions are part of statutory payroll processing, while other deductions may require employee agreement, employment contract terms, company policy or proper supporting records.
-      </p>
-      <p>
-        For example, EPF, SOCSO, EIS and PCB are normal statutory payroll deductions. However, deductions for salary advances, staff loans, damage claims, missing items or other non-statutory items should be handled carefully and supported by clear documentation.
-      </p>
-      <p>
-        If an employee does not understand a deduction, the first step is to check the payslip and request clarification from HR or payroll. A proper payslip should show the main salary components, deductions and the final net salary paid.
-      </p>
-    </section>
-
-    <h2>Gross Salary vs Net Salary</h2>
-    <p>
-      Gross salary is the salary amount before deductions. Net salary is the amount an employee receives after deductions. This difference is important when comparing job offers, preparing a monthly budget or checking whether payroll has been calculated correctly.
-    </p>
-
-    <div class="contribution-table-wrap">
-      <table class="contribution-table">
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>Meaning</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Gross Salary</td>
-            <td>Total salary before EPF, SOCSO, EIS, PCB and other deductions.</td>
-          </tr>
-          <tr>
-            <td>Total Deductions</td>
-            <td>Total amount deducted from gross salary.</td>
-          </tr>
-          <tr>
-            <td>Net Salary</td>
-            <td>Final take-home pay after deductions.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <section class="guide-box">
-      <h2>How Salary Deduction Affects Payroll</h2>
-      <p>
-        Salary deductions affect payroll by reducing gross salary to net salary. For employees, deductions explain why the amount received in the bank account may be lower than the monthly salary stated in the offer letter. For employers, accurate deduction records are important for payslip transparency, payroll compliance and employee trust.
-      </p>
-      <p>
-        Payroll teams should separate deductions clearly. Statutory deductions such as EPF, SOCSO, EIS and PCB should not be mixed up with other deductions such as unpaid leave, salary advance recovery or staff loan repayment. Clear separation makes it easier for employees to understand their payslip.
-      </p>
-    </section>
-
-    <section class="guide-box">
-      <h2>Statutory Salary Deductions</h2>
-      <p>
-        Statutory deductions are the most common salary deductions for employees in Malaysia. These items normally appear on payslips every month, although the amount may vary depending on salary, tax status, contribution ceiling and payroll rules.
-      </p>
-
-      <div class="component-grid">
-        <a href="epf-guide.html" class="component-card">
-          <div class="component-icon">💰</div>
-          <h3>EPF / KWSP</h3>
-          <p>Retirement savings contribution by employee and employer.</p>
-        </a>
-        <a href="socso-guide.html" class="component-card">
-          <div class="component-icon">🛡️</div>
-          <h3>SOCSO / PERKESO</h3>
-          <p>Social security protection based on salary schedule.</p>
-        </a>
-        <a href="eis-guide.html" class="component-card">
-          <div class="component-icon">🤝</div>
-          <h3>EIS / SIP</h3>
-          <p>Employment insurance contribution for job loss protection.</p>
-        </a>
-        <a href="pcb-guide.html" class="component-card">
-          <div class="component-icon">🏛️</div>
-          <h3>PCB / MTD</h3>
-          <p>Monthly tax deduction for estimated income tax.</p>
-        </a>
-      </div>
-    </section>
-
-    <section class="guide-box">
-      <h2>Non-Statutory Salary Deductions</h2>
-      <p>
-        Non-statutory salary deductions are deductions that do not fall under the usual EPF, SOCSO, EIS or PCB categories. These may arise from employment arrangements, HR policy, employee requests or payroll adjustments.
-      </p>
-
-      <div class="contribution-table-wrap">
-        <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Deduction</th>
-              <th>Common Situation</th>
-              <th>What Employees Should Check</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Unpaid Leave</td>
-              <td>Employee takes leave without enough paid leave balance.</td>
-              <td>Check leave record, daily rate calculation and payroll month.</td>
-            </tr>
-            <tr>
-              <td>Salary Advance</td>
-              <td>Employer paid salary early and recovers it later.</td>
-              <td>Check advance amount, repayment schedule and written agreement.</td>
-            </tr>
-            <tr>
-              <td>Staff Loan</td>
-              <td>Employee repays a company loan through monthly payroll.</td>
-              <td>Check loan agreement, monthly instalment and remaining balance.</td>
-            </tr>
-            <tr>
-              <td>Notice Period Shortfall</td>
-              <td>Employee leaves without serving full notice period.</td>
-              <td>Check employment contract, resignation date and final salary calculation.</td>
-            </tr>
-            <tr>
-              <td>Other Deductions</td>
-              <td>Insurance, benefits, training arrangement or approved payroll item.</td>
-              <td>Check consent, HR policy and supporting documents.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="example-box">
-      <h2>Example Salary Deduction Calculation</h2>
-      <p>
-        The example below shows how salary deductions may reduce gross salary to net salary. Actual payroll amounts may differ depending on contribution rates, tax status, payroll setup and company policy.
-      </p>
-
-      <div class="contribution-table-wrap">
-        <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th>Amount</th>
-              <th>Explanation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Gross Salary</td>
-              <td>RM4,000.00</td>
-              <td>Monthly salary before deductions.</td>
-            </tr>
-            <tr>
-              <td>EPF</td>
-              <td>RM440.00</td>
-              <td>Employee EPF deduction based on salary.</td>
-            </tr>
-            <tr>
-              <td>SOCSO</td>
-              <td>RM14.75</td>
-              <td>Employee SOCSO deduction based on wage bracket.</td>
-            </tr>
-            <tr>
-              <td>EIS</td>
-              <td>RM8.10</td>
-              <td>Employee EIS deduction based on wage bracket.</td>
-            </tr>
-            <tr>
-              <td>PCB</td>
-              <td>Depends on tax position</td>
-              <td>Monthly tax deduction may apply depending on income and reliefs.</td>
-            </tr>
-            <tr>
-              <td>Estimated Net Salary</td>
-              <td>Gross salary minus deductions</td>
-              <td>Final amount received after payroll deductions.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="guide-box">
-      <h2>Common Salary Deduction Examples</h2>
-
-      <h3>Example 1: Unpaid Leave Deduction</h3>
-      <p>
-        An employee takes unpaid leave for one working day. Payroll may deduct the unpaid leave amount based on the daily salary rate or company payroll formula. The payslip should show the deduction clearly so the employee can understand why net salary is lower.
-      </p>
-
-      <h3>Example 2: Salary Advance Recovery</h3>
-      <p>
-        An employee receives RM1,000 salary advance before the normal pay date. The employer may recover the amount through a later payroll cycle according to the agreed arrangement. The deduction should match the advance record and repayment schedule.
-      </p>
-
-      <h3>Example 3: Staff Loan Repayment</h3>
-      <p>
-        If an employer provides a staff loan, monthly instalments may be deducted from salary if agreed. Employees should keep a copy of the repayment schedule and compare the outstanding balance with payslip deductions.
-      </p>
-
-      <h3>Example 4: Notice Period Shortfall</h3>
-      <p>
-        If an employee resigns but does not serve the full notice period, final salary may be affected depending on employment contract terms and company policy. Employees should check the final salary calculation carefully before leaving.
-      </p>
-    </section>
-
-    <section class="guide-box">
-      <h2>Salary Deduction vs Salary Advance vs Staff Loan</h2>
-      <p>
-        These terms are sometimes confused, but they are not exactly the same. A salary deduction is the payroll action of reducing salary. A salary advance means salary is paid earlier and recovered later. A staff loan is usually a separate amount borrowed from the employer and repaid over time.
-      </p>
-
-      <div class="contribution-table-wrap">
-        <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th>Meaning</th>
-              <th>Example</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Salary Deduction</td>
-              <td>Amount deducted from gross salary.</td>
-              <td>EPF, PCB, unpaid leave or other payroll deduction.</td>
-            </tr>
-            <tr>
-              <td>Salary Advance</td>
-              <td>Salary paid earlier than usual and recovered later.</td>
-              <td>Employee receives part of salary before payday.</td>
-            </tr>
-            <tr>
-              <td>Staff Loan</td>
-              <td>Money lent by employer and repaid over time.</td>
-              <td>Employee repays a fixed monthly amount through payroll.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="guide-box">
-      <h2>Does Salary Deduction Affect EPF, SOCSO, EIS and PCB?</h2>
-      <p>
-        Some salary deductions may affect statutory contributions and tax calculations, while others may simply reduce the final amount payable to the employee. The treatment depends on the nature of the payment, payroll setup and applicable contribution or tax rules.
-      </p>
-      <p>
-        For example, unpaid leave may reduce the salary used for certain payroll calculations. Bonus, overtime or allowances may increase gross income and may affect PCB or statutory contributions depending on how payroll treats those items. Employees should review the payslip and ask HR how each item is calculated.
-      </p>
-    </section>
-
-    <section class="guide-box">
-      <h2>Common Salary Deduction Mistakes</h2>
-      <p>
-        Salary deduction errors can create confusion because employees normally notice them only when net salary is lower than expected. Both employees and employers should keep clear records and review payslips regularly.
-      </p>
-      <ul>
-        <li>Assuming all deductions are statutory deductions</li>
-        <li>Not checking payslip details every month</li>
-        <li>Confusing gross salary with net salary</li>
-        <li>Not understanding why PCB changes from month to month</li>
-        <li>Failing to check unpaid leave or absence records</li>
-        <li>Not keeping written records for salary advance or staff loan deductions</li>
-        <li>Ignoring final salary deductions after resignation</li>
-      </ul>
-    </section>
-
-    <section class="guide-box">
-      <h2>What Employees Should Check on Payslip</h2>
-      <p>
-        A payslip is the best place to start when checking salary deductions. Employees should compare the gross salary, each deduction line and the final net salary paid to the bank account.
-      </p>
-      <ul>
-        <li>Gross salary or basic salary amount</li>
-        <li>EPF employee contribution</li>
-        <li>SOCSO and EIS deductions</li>
-        <li>PCB monthly tax deduction</li>
-        <li>Unpaid leave or absence deduction</li>
-        <li>Salary advance, staff loan or other agreed deductions</li>
-        <li>Net salary paid</li>
-      </ul>
-    </section>
-
-    <section class="guide-box">
-      <h2>Official Reference</h2>
-      <p>
-        This guide is written for general salary and payroll understanding. For statutory deductions, contribution rules, income tax rules and employment compliance, employees and employers should refer to official KWSP, PERKESO, LHDN and employment-related guidance.
-      </p>
-    </section>
-
-    <section class="guide-box">
-      <h2>Who Should Read This Guide?</h2>
-      <ul>
-        <li>Employees checking why net salary is lower than gross salary</li>
-        <li>Job seekers comparing salary offers and take-home pay</li>
-        <li>HR and payroll staff explaining deductions to employees</li>
-        <li>Employers preparing payroll and payslip records</li>
-        <li>Employees reviewing final salary after resignation</li>
-      </ul>
-    </section>
-
-    <h2>Frequently Asked Questions</h2>
-
-    <div class="faq-box">
-      <details class="faq-item" open>
-        <summary>What is salary deduction?</summary>
-        <p>
-          Salary deduction is any amount taken from gross salary before the employee receives net salary. It may include EPF, SOCSO, EIS, PCB, unpaid leave, salary advance recovery or other approved payroll deductions.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can employers deduct salary without permission?</summary>
-        <p>
-          Some deductions are statutory, such as EPF, SOCSO, EIS and PCB. Other deductions should generally be supported by employment terms, company policy, employee agreement or proper payroll records.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can salary be deducted for unpaid leave?</summary>
-        <p>
-          Yes, salary may be deducted when an employee takes unpaid leave or is absent without paid leave entitlement. The calculation should be based on the applicable payroll method and company policy.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can salary advances be deducted from future salary?</summary>
-        <p>
-          Salary advance recovery may be deducted from future salary if there is a clear arrangement between employer and employee. Employees should check the advance amount and repayment schedule.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can staff loan repayment be deducted from salary?</summary>
-        <p>
-          Staff loan repayment may be deducted through payroll if agreed between employer and employee. The repayment amount should match the loan agreement or repayment schedule.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can salary deductions affect EPF and PCB?</summary>
-        <p>
-          Some payroll items may affect EPF, SOCSO, EIS or PCB calculations depending on the nature of the payment and payroll treatment. Employees should review their payslip and ask HR if they are unsure.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Why is my net salary lower than my offer letter salary?</summary>
-        <p>
-          Offer letters usually show gross salary. Net salary is lower because statutory deductions such as EPF, SOCSO, EIS and PCB may be deducted before salary is paid.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>What should I do if I disagree with a salary deduction?</summary>
-        <p>
-          Start by checking your payslip, employment contract, leave records and any written deduction agreement. If the deduction is still unclear, ask HR or payroll for a breakdown of the calculation.
-        </p>
-      </details>
-    </div>
-
-    <section class="salary-guides-box">
-      <h2>Related Employment Guides</h2>
-      <p>Learn more about salary, payroll and employment rules in Malaysia.</p>
-
-      <div class="guide-mini-grid">
-        <a href="payslip-guide.html">Payslip Guide</a>
-        <a href="income-tax-guide.html">Income Tax Guide</a>
-        <a href="pcb-guide.html">PCB Guide</a>
-        <a href="epf-guide.html">EPF Guide</a>
-        <a href="socso-guide.html">SOCSO Guide</a>
-        <a href="eis-guide.html">EIS Guide</a>
-        <a href="resignation-notice-guide.html">Resignation Notice Guide</a>
-        <a href="annual-leave-guide.html">Annual Leave Guide</a>
-      </div>
-
-      <p class="view-all-guides"><a href="guides.html">View All Guides →</a></p>
-    </section>
-
-    <section class="salary-guides-box">
-      <h2>Related Calculators</h2>
-      <p>Use these calculators to estimate salary, deductions, leave or overtime in Malaysia.</p>
-
-      <div class="guide-mini-grid">
-        <a href="index.html">Salary Calculator</a>
-        <a href="epf-calculator.html">EPF Calculator</a>
-        <a href="socso-calculator.html">SOCSO Calculator</a>
-        <a href="eis-calculator.html">EIS Calculator</a>
-        <a href="pcb-calculator.html">PCB Calculator</a>
-        <a href="overtime-calculator.html">Overtime Calculator</a>
-        <a href="annual-leave-calculator.html">Annual Leave Calculator</a>
-      </div>
-
-      <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
+    <section class="related-tools-section"><h2>Related Tools</h2><p class="related-tools-intro">Estimate your take-home salary first, then check the contribution and employment rules behind each deduction.</p>
+      <a class="featured-calculator" href="index.html"><div><span class="featured-kicker">Salary Calculator</span><h3>Calculate Net Salary After Deductions</h3><p>Estimate take-home pay after EPF, SOCSO, EIS and PCB using your monthly salary.</p></div><span class="feature-link">Calculate Salary →</span><div class="featured-calculator-icon" aria-hidden="true">💵</div></a>
+      <div class="quick-calculators"><p class="quick-calculators-title">Quick Calculators</p><div class="quick-calculators-grid">
+        <a href="epf-calculator.html"><span>EPF Calculator</span><span class="quick-arrow">→</span></a><a href="socso-calculator.html"><span>SOCSO Calculator</span><span class="quick-arrow">→</span></a><a href="pcb-calculator.html"><span>PCB Calculator</span><span class="quick-arrow">→</span></a>
+      </div></div>
+      <div class="explore-section"><div class="explore-heading"><h2>Continue Exploring</h2><p>Useful next steps for understanding payroll deductions, payslips and final salary.</p></div><div class="explore-grid">
+        <div class="explore-column"><h3>Payroll & Contributions</h3><a class="editorial-link" href="epf-guide.html"><span>EPF Guide</span><span class="editorial-arrow">→</span></a><a class="editorial-link" href="socso-guide.html"><span>SOCSO Guide</span><span class="editorial-arrow">→</span></a><a class="editorial-link" href="eis-guide.html"><span>EIS Guide</span><span class="editorial-arrow">→</span></a><a class="editorial-link" href="pcb-guide.html"><span>PCB Guide</span><span class="editorial-arrow">→</span></a></div>
+        <div class="explore-column"><h3>Employment & Salary</h3><a class="editorial-link" href="payslip-guide.html"><span>Payslip Guide</span><span class="editorial-arrow">→</span></a><a class="editorial-link" href="resignation-notice-guide.html"><span>Resignation Notice Guide</span><span class="editorial-arrow">→</span></a><a class="editorial-link" href="annual-leave-guide.html"><span>Annual Leave Guide</span><span class="editorial-arrow">→</span></a><a class="editorial-link" href="overtime-guide.html"><span>Overtime Guide</span><span class="editorial-arrow">→</span></a></div>
+      </div><div class="resource-actions"><a href="guides.html">Explore All Guides →</a><a href="calculators.html">View All Calculators →</a></div></div>
     </section>
 
   </section>
