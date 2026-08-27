@@ -445,6 +445,48 @@
 
     .footer a:hover { color: var(--accent); }
 
+
+    .toc-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:26px 0}
+    .toc-box h2{margin-top:0;margin-bottom:16px}
+    .toc-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px}
+    .toc-links a{display:flex;align-items:center;gap:14px;min-width:0;text-decoration:none;color:var(--foreground);padding:12px 2px;border-bottom:1px solid var(--border);transition:.18s ease}
+    .toc-links a:hover{color:var(--accent);padding-left:4px}
+    .toc-number{width:28px;flex:0 0 28px;color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.04em}
+    .toc-label{flex:1;min-width:0;font-weight:700;font-size:15px}
+    .toc-arrow{color:var(--muted);font-size:15px}
+    .status-yes{color:var(--accent);font-weight:800}
+    .status-no{color:#9a5a45;font-weight:800}
+
+    .source-note{margin-top:18px;background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);padding:14px;border-radius:10px;color:var(--muted);font-size:13px}
+    .source-note a{color:var(--accent);font-weight:800;text-decoration:none}
+
+    .related-tools-section{margin:34px 0}
+    .related-tools-intro{margin-top:0;max-width:760px}
+    .featured-calculator{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:22px;align-items:center;margin-top:20px;padding:24px 26px;background:radial-gradient(circle at top right,rgba(47,125,94,.14),transparent 34%),linear-gradient(135deg,#f8f5ef 0%,#fbfaf6 100%);border:1px solid var(--accent-border);border-radius:18px;text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .featured-calculator:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 16px 34px rgba(47,43,37,.09)}
+    .featured-kicker{display:inline-block;margin-bottom:7px;color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .featured-calculator h3{margin:0 0 6px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,3vw,32px);font-weight:400;line-height:1.1}
+    .featured-calculator p{margin:0;max-width:640px;font-size:15px}
+    .feature-link{display:inline-flex;align-items:center;justify-content:center;min-width:160px;padding:12px 16px;border-radius:12px;background:var(--accent);color:#fff;font-weight:900;white-space:nowrap}
+    .featured-calculator-icon{width:66px;height:66px;display:grid;place-items:center;border-radius:18px;background:var(--accent-soft);border:1px solid var(--accent-border);font-size:30px}
+
+    .quick-calculators{margin-top:18px}
+    .quick-calculators-title{margin:0 0 10px;font-size:14px;font-weight:800}
+    .quick-calculators-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .quick-calculators-grid a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;background:var(--card);border:1px solid var(--border);border-radius:11px;text-decoration:none;color:var(--foreground);font-size:14px;font-weight:800;transition:.18s ease}
+    .quick-calculators-grid a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .quick-arrow,.editorial-arrow{color:var(--muted)}
+
+    .explore-section{margin-top:30px;padding-top:28px;border-top:1px solid var(--border)}
+    .explore-heading h2{margin:0}.explore-heading p{margin:7px 0 14px}
+    .explore-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+    .explore-column h3{margin:0 0 8px;font-size:16px}
+    .editorial-link{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .editorial-link:hover{color:var(--accent);padding-left:4px}
+    .editorial-link span:first-child{flex:1;min-width:0;font-weight:800;font-size:15px}
+    .resource-actions{display:flex;justify-content:space-between;gap:16px;margin-top:18px;flex-wrap:wrap}
+    .resource-actions a{color:var(--accent);font-weight:800;text-decoration:none}
+
     @media (max-width: 800px) {
       .nav-inner {
         flex-direction: row;
@@ -518,6 +560,15 @@
       }
 
       .cta-button { width: 100%; }
+      .toc-box{padding:20px}
+      .toc-links{grid-template-columns:1fr;column-gap:0}
+      .featured-calculator{grid-template-columns:1fr;padding:22px;gap:16px}
+      .feature-link{width:100%}
+      .featured-calculator-icon{display:none}
+      .quick-calculators-grid{grid-template-columns:1fr}
+      .explore-grid{grid-template-columns:1fr;gap:26px}
+      .resource-actions{display:block}
+      .resource-actions a{display:block;margin-top:8px}
     }
   </style>
 </head>
@@ -542,7 +593,7 @@
 <main class="main-wrapper">
 
   <section class="hero">
-    <span class="pill">Updated for Malaysia employment rules 2026</span>
+    <span class="pill">Last verified: August 2026 · Malaysia probation & employment guidance</span>
     <h1 class="serif">Malaysia <em>probation period</em> guide 2026</h1>
     <p>
       Learn how probation period works in Malaysia, including common probation length,
@@ -552,453 +603,335 @@
 
   <section class="seo">
 
+    <section class="summary-box">
+      <h2>Probation Period Quick Summary</h2>
+      <p>Probation is a contractual assessment period at the beginning of employment. The Employment Act 1955 does not prescribe one universal probation duration, so the period and review process should be stated clearly in the employment contract or offer letter.</p>
+
+      <div class="summary-grid">
+        <div class="summary-card"><strong>3–6 Months</strong><span>Common contractual practice, not a fixed statutory probation period</span></div>
+        <div class="summary-card"><strong>Rights Still Apply</strong><span>Probation status does not automatically remove statutory employment rights</span></div>
+        <div class="summary-card"><strong>Written Terms</strong><span>Check probation length, extension, confirmation and notice clauses</span></div>
+        <div class="summary-card"><strong>4 / 6 / 8 Weeks</strong><span>Statutory notice fallback if there is no written notice provision</span></div>
+      </div>
+
+      <div class="note-box"><strong>Core idea:</strong> Probation mainly concerns assessment and confirmation status. It does not create a separate “no rights” category of employee.</div>
+    </section>
+
     <section class="calculator-cta">
       <h2>Estimate Salary During Probation</h2>
-      <p>
-        Checking a new job offer or probation salary? Use our free Salary Calculator to estimate monthly take-home pay after EPF, SOCSO, EIS and PCB deductions.
-      </p>
+      <p>Check expected take-home pay after EPF, SOCSO, EIS and PCB, then compare it with the salary stated in your offer letter.</p>
       <a href="index.html" class="cta-button">Open Salary Calculator →</a>
     </section>
 
-    <section class="summary-box">
-      <h2>Probation Quick Summary</h2>
-      <p>
-        Probation is a trial period at the start of employment. It helps both employer and employee assess whether the role, performance expectations and working arrangement are suitable before confirmation.
-      </p>
-
-      <div class="summary-grid">
-        <div class="summary-card">
-          <strong>3–6 Months</strong>
-          <span>Common probation period in Malaysia</span>
-        </div>
-        <div class="summary-card">
-          <strong>Salary Applies</strong>
-          <span>Employees are normally paid during probation</span>
-        </div>
-        <div class="summary-card">
-          <strong>Notice Period</strong>
-          <span>Usually follows contract terms</span>
-        </div>
-        <div class="summary-card">
-          <strong>Rights Still Apply</strong>
-          <span>Probation staff may still have employment rights</span>
-        </div>
+    <section class="toc-box">
+      <h2>On This Page</h2>
+      <div class="toc-links">
+        <a href="#what-is-probation"><span class="toc-number">01</span><span class="toc-label">What Is Probation?</span><span class="toc-arrow">→</span></a>
+        <a href="#length"><span class="toc-number">02</span><span class="toc-label">How Long Is Probation?</span><span class="toc-arrow">→</span></a>
+        <a href="#rights"><span class="toc-number">03</span><span class="toc-label">Employee Rights During Probation</span><span class="toc-arrow">→</span></a>
+        <a href="#salary"><span class="toc-number">04</span><span class="toc-label">Salary & Payroll During Probation</span><span class="toc-arrow">→</span></a>
+        <a href="#leave"><span class="toc-number">05</span><span class="toc-label">Annual Leave, MC & Holidays</span><span class="toc-arrow">→</span></a>
+        <a href="#confirmation"><span class="toc-number">06</span><span class="toc-label">Confirmation After Probation</span><span class="toc-arrow">→</span></a>
+        <a href="#extension"><span class="toc-number">07</span><span class="toc-label">Probation Extension</span><span class="toc-arrow">→</span></a>
+        <a href="#termination"><span class="toc-number">08</span><span class="toc-label">Termination During Probation</span><span class="toc-arrow">→</span></a>
+        <a href="#resignation"><span class="toc-number">09</span><span class="toc-label">Resignation During Probation</span><span class="toc-arrow">→</span></a>
+        <a href="#confirmed-vs-probation"><span class="toc-number">10</span><span class="toc-label">Probation vs Confirmed Employee</span><span class="toc-arrow">→</span></a>
+        <a href="#mistakes"><span class="toc-number">11</span><span class="toc-label">Common Mistakes</span><span class="toc-arrow">→</span></a>
+        <a href="#faq"><span class="toc-number">12</span><span class="toc-label">FAQ</span><span class="toc-arrow">→</span></a>
       </div>
     </section>
 
-    <h2>What Is a Probation Period?</h2>
-    <p>
-      A probation period is a temporary assessment period at the beginning of employment. During this period, the employer reviews the employee's work performance, attitude, attendance, punctuality, communication and suitability for the role.
-    </p>
-    <p>
-      Probation is also useful for employees because it gives them time to understand the job scope, company culture, reporting structure and expectations. A probation period does not mean the employee has no rights. Salary, statutory contributions and workplace obligations may still apply depending on the employment arrangement and applicable rules.
-    </p>
+    <h2 id="what-is-probation">What Is a Probation Period?</h2>
+    <p>A probation period is an initial assessment period during which the employer evaluates performance, conduct, attendance, communication and suitability for the role. It also gives the employee time to assess the job, manager, working environment and expectations.</p>
+    <p>Probation is usually created by the employment contract rather than by a fixed statutory probation period under the Employment Act. That is why the offer letter or contract should explain the duration, review process, extension rules and notice period clearly.</p>
 
     <section class="guide-box">
-      <h2>Employee Rights During Probation</h2>
-      <p>
-        Employees on probation are generally still employees of the company. This means they may still be entitled to salary, statutory contributions, payslips, rest days, public holidays and other employment benefits depending on their employment terms and applicable employment requirements.
-      </p>
-      <p>
-        Being on probation does not automatically remove workplace rights and responsibilities. Employees should read their offer letter and employment contract carefully because probation terms, notice period, leave entitlement and confirmation conditions are usually stated there.
-      </p>
-      <div class="note-box">
-        <strong>Practical note:</strong> Probation mainly affects confirmation status and assessment period. It should not be treated as a period where normal payroll and employment obligations are ignored.
-      </div>
-    </section>
-
-    <section class="guide-box">
-      <h2>Common Probation Period in Malaysia</h2>
-      <p>
-        Probation duration is usually stated in the employment contract or offer letter. Many companies use 3 months or 6 months, but the actual period can differ depending on the role, seniority level, industry and company policy.
-      </p>
+      <h2 id="length">How Long Is Probation in Malaysia?</h2>
+      <p>There is no single 3-month or 6-month probation period prescribed generally by the Employment Act. In practice, many employers use 3 to 6 months, but the agreed period can differ by role and organisation.</p>
 
       <div class="contribution-table-wrap">
         <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Probation Length</th>
-              <th>Common Use</th>
-              <th>Simple Explanation</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Probation Arrangement</th><th>Common Use</th><th>What to Check</th></tr></thead>
           <tbody>
-            <tr>
-              <td>3 months</td>
-              <td>Common for many office roles</td>
-              <td>Short trial period before confirmation</td>
-            </tr>
-            <tr>
-              <td>6 months</td>
-              <td>Common for higher responsibility roles</td>
-              <td>Longer assessment period for performance and fit</td>
-            </tr>
-            <tr>
-              <td>Extended probation</td>
-              <td>If performance needs improvement</td>
-              <td>Should normally be communicated clearly to the employee</td>
-            </tr>
+            <tr><td><strong>3 months</strong></td><td>Common in many office and junior roles</td><td>Review date, confirmation process and probation notice clause.</td></tr>
+            <tr><td><strong>6 months</strong></td><td>Common where a longer assessment period is used</td><td>Performance expectations and whether extension is permitted.</td></tr>
+            <tr><td><strong>Other period</strong></td><td>Depends on employer and role</td><td>Make sure the period is clearly written rather than assumed.</td></tr>
+            <tr><td><strong>Extended probation</strong></td><td>Further assessment before a decision</td><td>Reason, new end date, targets and notice terms should be communicated clearly.</td></tr>
           </tbody>
         </table>
       </div>
 
-      <div class="note-box">
-        <strong>Note:</strong> This is a simplified guide. Always check the employment contract, company policy and latest employment law requirements.
-      </div>
+      <div class="note-box"><strong>Do not treat 3–6 months as a legal entitlement or legal maximum:</strong> it is a common employment practice, not a universal probation duration stated by the Employment Act.</div>
     </section>
 
     <section class="guide-box">
-      <h2>Salary During Probation</h2>
-      <p>
-        Employees are normally paid during probation according to the salary agreed in the offer letter or employment contract. Some companies offer the same salary before and after confirmation, while others may provide a salary review or increment after the employee is confirmed.
-      </p>
-      <p>
-        If a company promises a salary increase after confirmation, the terms should ideally be stated clearly in writing. Employees should not assume that confirmation automatically results in a salary increase unless it is mentioned in the contract, offer letter or company policy.
-      </p>
-    </section>
-
-    <section class="guide-box">
-      <h2>Can Probation Employees Take Leave?</h2>
-      <p>
-        Leave during probation depends on the employment contract and company policy. Some employers allow annual leave to be taken only after confirmation, while others allow pro-rated annual leave during probation.
-      </p>
-      <p>
-        Medical leave, public holidays and statutory benefits may still apply if the employee is eligible. Employees should check how the company treats annual leave, emergency leave, unpaid leave and MC leave during probation so there is no misunderstanding later.
-      </p>
+      <h2 id="rights">Employee Rights During Probation</h2>
+      <p>A probation employee is still an employee. Statutory rights and payroll obligations that apply to the employment relationship do not automatically disappear merely because the employee has not yet been confirmed.</p>
 
       <div class="component-grid">
-        <a class="component-card" href="annual-leave-guide.html">
-          <div class="component-icon">📆</div>
-          <h3>Annual Leave</h3>
-          <p>May be pro-rated or restricted during probation depending on policy.</p>
-        </a>
-
-        <a class="component-card" href="mc-leave-guide.html">
-          <div class="component-icon">🏥</div>
-          <h3>MC Leave</h3>
-          <p>Genuine medical leave should be supported by valid documents.</p>
-        </a>
-
-        <a class="component-card" href="public-holiday-guide.html">
-          <div class="component-icon">📅</div>
-          <h3>Public Holiday</h3>
-          <p>Public holiday treatment depends on eligibility and work schedule.</p>
-        </a>
-
-        <div class="component-card">
-          <div class="component-icon">🚪</div>
-          <h3>Unpaid Leave</h3>
-          <p>May apply if paid leave is not available or not approved.</p>
-        </div>
+        <div class="component-card"><div class="component-icon">💵</div><h3>Salary</h3><p>Employee should be paid according to the agreed salary and wage terms.</p></div>
+        <div class="component-card"><div class="component-icon">🏖️</div><h3>Leave</h3><p>Statutory leave rights should not simply be removed because of probation status.</p></div>
+        <div class="component-card"><div class="component-icon">🛡️</div><h3>Contributions</h3><p>EPF, SOCSO and EIS can apply from employment commencement where eligibility rules are met.</p></div>
+        <div class="component-card"><div class="component-icon">📄</div><h3>Employment Terms</h3><p>Notice, wages, working hours and other statutory requirements continue to matter.</p></div>
       </div>
+
+      <div class="note-box"><strong>Scope:</strong> This guide focuses on the Employment Act 1955 framework for Peninsular Malaysia and Labuan. Sabah and Sarawak operate under their respective labour legislation.</div>
     </section>
 
     <section class="guide-box">
-      <h2>EPF, SOCSO, EIS and PCB During Probation</h2>
-      <p>
-        Probation employees may still be subject to statutory payroll deductions and employer contributions if they are eligible. This can include EPF, SOCSO, EIS and PCB depending on salary level, employee category and applicable payroll rules.
-      </p>
-      <p>
-        For employees, this means take-home pay during probation may be lower than gross salary because statutory deductions can still apply. For employers, probation status should not automatically be used as a reason to ignore payroll compliance.
-      </p>
+      <h2 id="salary">Salary and Payroll During Probation</h2>
+      <p>The employee should receive the salary agreed in the offer letter or employment contract. Some employers provide the same salary before and after confirmation, while others promise a revised salary after confirmation.</p>
+      <p>If a confirmation increment is promised, the amount or method should ideally be documented. Confirmation by itself does not automatically create a salary increment unless the employment terms provide for one.</p>
 
       <div class="contribution-table-wrap">
         <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Payroll Item</th>
-              <th>During Probation</th>
-              <th>Related Guide</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Payroll Item</th><th>Probation Treatment</th><th>Practical Point</th></tr></thead>
           <tbody>
-            <tr>
-              <td>EPF / KWSP</td>
-              <td>May apply for eligible employees</td>
-              <td><a href="epf-guide.html">EPF Guide</a></td>
-            </tr>
-            <tr>
-              <td>SOCSO / PERKESO</td>
-              <td>May apply based on coverage and salary schedule</td>
-              <td><a href="socso-guide.html">SOCSO Guide</a></td>
-            </tr>
-            <tr>
-              <td>EIS / SIP</td>
-              <td>May apply for eligible employees</td>
-              <td><a href="eis-guide.html">EIS Guide</a></td>
-            </tr>
-            <tr>
-              <td>PCB / Monthly Tax Deduction</td>
-              <td>May apply if estimated tax is payable</td>
-              <td><a href="pcb-guide.html">PCB Guide</a></td>
-            </tr>
+            <tr><td>Basic Salary</td><td>Pay according to the agreed employment terms</td><td>Compare payslip with offer letter.</td></tr>
+            <tr><td>EPF / KWSP</td><td>Applies where employee is covered by KWSP contribution rules</td><td>Probation itself is not an EPF exemption.</td></tr>
+            <tr><td>SOCSO / PERKESO</td><td>Applies where employee is covered by PERKESO rules</td><td>Check current contribution schedule and eligibility.</td></tr>
+            <tr><td>EIS / SIP</td><td>Applies to eligible employees</td><td>Probation status alone does not remove EIS coverage.</td></tr>
+            <tr><td>PCB / MTD</td><td>May apply based on taxable remuneration and HASiL calculation</td><td>PCB is not postponed merely because the employee is on probation.</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
     <section class="guide-box">
-      <h2>Confirmation After Probation</h2>
-      <p>
-        At the end of probation, the employer may confirm the employee, extend the probation period or decide not to continue the employment depending on performance and company requirements. Confirmation is usually communicated through a confirmation letter, email or HR notification.
-      </p>
-      <p>
-        After confirmation, some employment terms may change, such as leave entitlement, notice period, benefits, allowance eligibility or salary review. Employees should keep a copy of the confirmation letter and check whether any updated terms apply.
-      </p>
+      <h2 id="leave">Can Probation Employees Take Annual Leave, MC and Public Holidays?</h2>
+      <p>This is one area where the old “depends entirely on company policy” explanation can be misleading. Company procedures may govern <em>when</em> leave is taken or how it is approved, but statutory entitlements should still be respected.</p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Entitlement</th><th>Statutory Baseline</th><th>Probation Point</th></tr></thead>
+          <tbody>
+            <tr><td>Annual Leave</td><td>8 / 12 / 16 days depending on continuous service</td><td>Probation does not create a separate statutory exclusion from annual leave.</td></tr>
+            <tr><td>Ordinary Sick Leave</td><td>14 / 18 / 22 days depending on service</td><td>Valid statutory MC rights can apply during probation.</td></tr>
+            <tr><td>Hospitalisation Leave</td><td>Separate 60-day entitlement</td><td>Separate from the 14 / 18 / 22-day ordinary sick leave balance.</td></tr>
+            <tr><td>Paid Public Holidays</td><td>Minimum 11 statutory paid holidays, plus applicable additional holiday</td><td>Probation does not by itself remove public-holiday entitlement.</td></tr>
+            <tr><td>Unpaid Leave</td><td>Not the same as statutory paid leave</td><td>Usually requires employer approval and may reduce wages for the incomplete month.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box"><strong>Important distinction:</strong> An employer may require annual leave applications to follow internal rules during probation, but should not describe statutory entitlement itself as though it only begins on confirmation.</div>
+    </section>
+
+    <section class="guide-box">
+      <h2 id="confirmation">What Happens at the End of Probation?</h2>
+      <p>At the end of the stated probation period, the employer normally reviews whether to confirm the employee, extend the assessment period or take another employment action in accordance with the contract and applicable law.</p>
+
+      <div class="component-grid">
+        <div class="component-card"><div class="component-icon">✅</div><h3>Confirmation</h3><p>Employer confirms that the employee has completed probation satisfactorily.</p></div>
+        <div class="component-card"><div class="component-icon">📆</div><h3>Extension</h3><p>Further assessment is required before confirmation is decided.</p></div>
+        <div class="component-card"><div class="component-icon">📝</div><h3>Updated Terms</h3><p>Salary, benefits or notice may change only if provided or agreed accordingly.</p></div>
+        <div class="component-card"><div class="component-icon">📂</div><h3>Written Record</h3><p>Keep confirmation, extension and revised-term letters for future reference.</p></div>
+      </div>
+
+      <p>Employees should not simply assume that the expiry of the stated probation date automatically produces every benefit associated with confirmation. If no confirmation or extension communication is received, ask HR to clarify the status in writing.</p>
     </section>
 
     <section class="guide-box">
       <h2>What Is a Confirmation Letter?</h2>
-      <p>
-        A confirmation letter is a document issued by an employer confirming that an employee has successfully completed the probation period and becomes a confirmed employee.
-      </p>
-      <p>
-        The letter may also state updated salary, benefits, leave entitlement and revised notice period if applicable.
-      </p>
+      <p>A confirmation letter records that the employer has confirmed the employee after the probation review. It may also record changes to salary, allowances, benefits, job title or notice period.</p>
+      <p>Keep the confirmation letter together with the original offer letter and employment contract because payroll and resignation terms may later depend on the confirmed terms.</p>
     </section>
 
     <section class="guide-box">
-      <h2>Probation Extension</h2>
-      <p>
-        Probation may be extended if the employer needs more time to assess performance, attendance, attitude or suitability. Extension should normally be communicated clearly so the employee understands the reason, new review period and expected improvements.
-      </p>
-      <p>
-        Employees who receive a probation extension should ask for clear feedback and measurable expectations. This can help them understand whether the issue is work quality, speed, attendance, communication, teamwork or technical ability.
-      </p>
+      <h2 id="extension">Probation Extension</h2>
+      <p>Where the employment terms allow further assessment, probation may be extended. A well-managed extension should not merely say “probation extended” without explaining what happens next.</p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Extension Detail</th><th>What Employee Should Ask For</th></tr></thead>
+          <tbody>
+            <tr><td>Reason</td><td>What performance, attendance, conduct or competency issue needs further assessment?</td></tr>
+            <tr><td>New End Date</td><td>How long is the extension and when will the next review occur?</td></tr>
+            <tr><td>Expected Improvement</td><td>What measurable targets or standards should be achieved?</td></tr>
+            <tr><td>Employment Terms</td><td>Does any notice, salary or benefit term change during the extension?</td></tr>
+            <tr><td>Final Review</td><td>Who decides confirmation and how will the decision be communicated?</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box"><strong>Good practice:</strong> Keep extension communication in writing. Repeated extensions without clear terms can create unnecessary uncertainty and disputes.</div>
     </section>
 
     <section class="guide-box">
-      <h2>Can an Employee Be Terminated During Probation?</h2>
-      <p>
-        Employers may decide not to continue employment during probation if performance, conduct or suitability does not meet expectations.
-      </p>
-      <p>
-        However, probation employees should generally be given a fair assessment process and employers should follow employment terms, company policy and applicable employment requirements.
-      </p>
+      <h2 id="termination">Can an Employee Be Terminated During Probation?</h2>
+      <p>Probation does not guarantee employment until the stated probation end date. Employment can end during probation in accordance with the applicable termination provisions, contract terms and employment law.</p>
+      <p>For ordinary notice termination, check the written notice clause. For misconduct, different disciplinary provisions may apply. Probation should not be treated as permission to ignore statutory termination or wage-payment obligations.</p>
+
+      <div class="note-box"><strong>Practical employee step:</strong> Keep performance reviews, warning letters, extension letters, payslips and termination correspondence if the employment ends during probation.</div>
     </section>
 
     <section class="guide-box">
-      <h2>Probation Resignation Notice</h2>
-      <p>
-        If an employee resigns during probation, the notice period normally depends on the employment contract. Some contracts have a shorter notice period during probation, while others use the same notice period as confirmed employees.
-      </p>
-      <p>
-        Employees should check the notice clause before resigning. If the employee leaves without serving the required notice, the employer may apply salary deduction or notice payment rules depending on the contract and applicable employment terms.
-      </p>
+      <h2 id="resignation">Resignation During Probation</h2>
+      <p>An employee can resign during probation. The first place to check is the written probation notice clause in the employment contract.</p>
+
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Situation</th><th>Notice Position</th></tr></thead>
+          <tbody>
+            <tr><td>Contract has a written probation notice clause</td><td>Follow the written contractual notice period, subject to applicable law.</td></tr>
+            <tr><td>Contract uses the same notice before and after confirmation</td><td>That written notice term generally governs both periods.</td></tr>
+            <tr><td>No written notice provision</td><td>Section 12 statutory fallback applies: at least 4 weeks for less than 2 years' service, 6 weeks for 2 to less than 5 years and 8 weeks for 5 years or more.</td></tr>
+            <tr><td>Employee wants to leave immediately</td><td>Notice may be waived / agreed, or section 13 notice indemnity may apply for the unserved notice period.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box"><strong>Do not assume “probation = 24 hours or 1 week notice”:</strong> that only applies if the actual written terms or a valid agreement provide for it.</div>
     </section>
 
-    <h2>Probation Employee vs Confirmed Employee</h2>
-    <div class="contribution-table-wrap">
-      <table class="contribution-table">
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>Probation Employee</th>
-            <th>Confirmed Employee</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Employment Status</td>
-            <td>Under assessment during probation period</td>
-            <td>Confirmed as a regular employee</td>
-          </tr>
-          <tr>
-            <td>Notice Period</td>
-            <td>Usually follows probation notice clause</td>
-            <td>Usually follows confirmed employee notice clause</td>
-          </tr>
-          <tr>
-            <td>Leave Benefits</td>
-            <td>May be limited or pro-rated depending on policy</td>
-            <td>Full entitlement may apply depending on service period</td>
-          </tr>
-          <tr>
-            <td>Salary Review</td>
-            <td>Usually based on offer letter terms</td>
-            <td>May be reviewed after confirmation or during appraisal</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
     <section class="guide-box">
-      <h2>Common Probation Situations</h2>
-      <div class="component-grid">
-        <div class="component-card">
-          <div class="component-icon">📝</div>
-          <h3>Confirmation</h3>
-          <p>Employee becomes confirmed after satisfactory performance and review.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">📆</div>
-          <h3>Extension</h3>
-          <p>Probation may be extended if performance or fit needs more review.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">🚪</div>
-          <h3>Resignation</h3>
-          <p>Notice period usually follows the employment contract.</p>
-        </div>
-        <div class="component-card">
-          <div class="component-icon">💼</div>
-          <h3>Payroll</h3>
-          <p>EPF, SOCSO, EIS and PCB may still apply during probation.</p>
-        </div>
+      <h2 id="confirmed-vs-probation">Probation Employee vs Confirmed Employee</h2>
+      <div class="contribution-table-wrap">
+        <table class="contribution-table">
+          <thead><tr><th>Item</th><th>Probation Employee</th><th>Confirmed Employee</th></tr></thead>
+          <tbody>
+            <tr><td>Employment Status</td><td>Employment under contractual assessment</td><td>Employer has completed the probation confirmation process</td></tr>
+            <tr><td>Statutory Rights</td><td>Applicable statutory rights still apply</td><td>Applicable statutory rights continue to apply</td></tr>
+            <tr><td>Notice Period</td><td>May use a probation-specific written clause</td><td>May use a different confirmed-employee written clause</td></tr>
+            <tr><td>Annual / Sick Leave</td><td>Statutory entitlement is not automatically removed by probation</td><td>Entitlement continues based on applicable service / contract terms</td></tr>
+            <tr><td>Salary</td><td>As agreed in offer / contract</td><td>Changes only if agreed, promised or revised</td></tr>
+            <tr><td>Benefits</td><td>Some contractual benefits may be limited during probation</td><td>Additional contractual benefits may begin after confirmation</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
-    <section class="guide-box">
-      <h2>Common Probation Mistakes</h2>
-      <p>
-        Many probation issues happen because the employee or employer does not clearly understand the contract terms. Reading the offer letter early can prevent disputes about leave, notice period, confirmation and salary.
-      </p>
-      <ul>
-        <li>Not reading the employment contract before starting work</li>
-        <li>Assuming no leave is available during probation</li>
-        <li>Ignoring probation review meetings or feedback</li>
-        <li>Not understanding resignation notice requirements</li>
-        <li>Assuming confirmation is automatic after the probation period ends</li>
-        <li>Forgetting that statutory contributions may still apply</li>
-      </ul>
-    </section>
-
-    <section class="guide-box">
+    <section class="example-box">
       <h2>Common Probation Examples</h2>
-      <h3>Example 1: 3-Month Probation</h3>
-      <p>
-        An employee joins a company with a 3-month probation period. If performance is satisfactory, the employer may issue a confirmation letter after the review period.
-      </p>
 
-      <h3>Example 2: 6-Month Probation Extended</h3>
-      <p>
-        An employee has a 6-month probation period but needs more time to improve performance. The employer may extend probation if the contract or company policy allows it and the decision is communicated clearly.
-      </p>
+      <h3>Example 1: 3-Month Probation With 7-Day Written Notice</h3>
+      <p>An employee's contract states three months' probation and seven days' notice during probation. The employee should follow that written notice term when resigning during the probation period, subject to applicable law.</p>
 
-      <h3>Example 3: Resignation During Probation</h3>
-      <p>
-        An employee decides to resign during probation. The employee should check the notice period in the contract and serve the required notice or make the necessary arrangement with the employer.
-      </p>
+      <h3>Example 2: No Written Notice Clause</h3>
+      <p>A new employee has worked for two months but the contract contains no written notice provision. The employee should not simply assume “one week because I am on probation”; the section 12 statutory fallback becomes relevant.</p>
+
+      <h3>Example 3: Probation Extended</h3>
+      <p>An employer extends a six-month probation period. The employee should ask for the reason, new review date and expected improvements in writing.</p>
+
+      <h3>Example 4: Annual Leave During Probation</h3>
+      <p>An employee is still on probation but has accrued statutory annual-leave entitlement through continuous service. The company may have an approval procedure for taking the leave, but probation itself should not be described as eliminating the statutory entitlement.</p>
     </section>
 
     <section class="guide-box">
-      <h2>Who Should Read This Probation Guide?</h2>
+      <h2 id="mistakes">Common Probation Mistakes</h2>
       <ul>
-        <li>New employees checking their rights during probation</li>
-        <li>Job seekers reviewing offer letters before accepting a job</li>
-        <li>Employees planning to resign during probation</li>
-        <li>HR staff preparing probation policies and review processes</li>
-        <li>Employers managing confirmation, extension and termination decisions</li>
+        <li>Thinking Malaysian law fixes every probation period at 3 or 6 months.</li>
+        <li>Assuming probation employees have no statutory employment rights.</li>
+        <li>Assuming annual leave and MC only begin after confirmation.</li>
+        <li>Ignoring EPF, SOCSO, EIS or PCB because the employee is “not confirmed yet”.</li>
+        <li>Assuming confirmation automatically comes with a salary increment.</li>
+        <li>Assuming the expiry of the probation date automatically settles every confirmation term.</li>
+        <li>Extending probation without documenting the new period and expectations.</li>
+        <li>Assuming resignation notice during probation is always 24 hours or one week.</li>
+        <li>Not checking the statutory 4 / 6 / 8-week fallback where no written notice term exists.</li>
+        <li>Failing to keep offer letter, performance reviews, extension and confirmation records.</li>
       </ul>
     </section>
 
-    <h2>Frequently Asked Questions</h2>
+    <section class="guide-box">
+      <h2>Probation Employee Checklist</h2>
+      <ul>
+        <li>Read the probation clause before starting work.</li>
+        <li>Confirm the probation start date, intended end date and review process.</li>
+        <li>Check the written notice period during probation.</li>
+        <li>Check salary, allowances and any benefit differences before confirmation.</li>
+        <li>Do not assume statutory leave and payroll contributions are suspended during probation.</li>
+        <li>Keep copies of performance feedback and review records.</li>
+        <li>If probation is extended, ask for the reason, new end date and improvement targets in writing.</li>
+        <li>If confirmed, keep the confirmation letter and any revised salary / notice terms.</li>
+        <li>If resigning, calculate notice and final pay before submitting the resignation.</li>
+      </ul>
+    </section>
+
+    <section class="guide-box">
+      <h2>Sources &amp; Verification</h2>
+      <p>This guide was last verified in August 2026 against the current Employment Act 1955 and JTKSM guidance. The Act provides the underlying salary, leave and termination rights discussed here, while the specific probation duration itself is normally contractual.</p>
+
+      <div class="source-note">
+        <strong>Official sources used for verification:</strong><br>
+        <a href="https://jtksm.mohr.gov.my/sites/default/files/2023-11/Akta%20Kerja%201955%20%28Akta%20265%29.pdf" target="_blank" rel="noopener">JTKSM — Employment Act 1955: Sections 12, 13, 18, 60D, 60E &amp; 60F</a><br>
+        <a href="https://jtksm.mohr.gov.my/en/borang/employment-act-1955" target="_blank" rel="noopener">JTKSM — Employment Act 1955</a><br>
+        <a href="https://jtksm.mohr.gov.my/ms/soalan-lazim/akta-kerja-1955-pindaan-2022" target="_blank" rel="noopener">JTKSM — Employment Act 1955 (Amendment) 2022 FAQ</a>
+      </div>
+    </section>
+
+    <h2 id="faq">Frequently Asked Questions</h2>
 
     <div class="faq-box">
-      <details class="faq-item" open>
-        <summary>How long is probation period in Malaysia?</summary>
-        <p>
-          Probation is commonly 3 to 6 months, but the actual period depends on the employment contract, offer letter and company policy.
-        </p>
-      </details>
+      <details class="faq-item" open><summary>How long is a probation period in Malaysia?</summary><p>There is no single general probation duration prescribed by the Employment Act. Three to six months is common contractual practice, but the actual probation period should be checked in the offer letter or employment contract.</p></details>
 
-      <details class="faq-item">
-        <summary>Can an employee resign during probation?</summary>
-        <p>
-          Yes. An employee may resign during probation, but should follow the notice period stated in the employment contract.
-        </p>
-      </details>
+      <details class="faq-item"><summary>Do probation employees have employment rights?</summary><p>Yes. Probation employees remain employees, and applicable statutory rights do not simply disappear because confirmation has not yet occurred.</p></details>
 
-      <details class="faq-item">
-        <summary>Is a probation employee entitled to salary?</summary>
-        <p>
-          Yes. Probation employees are normally paid according to the agreed salary and payroll arrangement stated in the offer letter or employment contract.
-        </p>
-      </details>
+      <details class="faq-item"><summary>Can probation employees take annual leave?</summary><p>Probation does not create a statutory exclusion from annual leave. Employers may have procedures governing when leave can be scheduled or approved, but statutory entitlement should still be respected.</p></details>
 
-      <details class="faq-item">
-        <summary>Are EPF and SOCSO required during probation?</summary>
-        <p>
-          Statutory contributions may still apply for eligible employees even during probation. Probation status alone does not automatically remove payroll contribution obligations.
-        </p>
-      </details>
+      <details class="faq-item"><summary>Are probation employees entitled to MC?</summary><p>Applicable statutory sick-leave entitlement can apply during probation. Employees should follow the medical-certification and notification requirements.</p></details>
 
-      <details class="faq-item">
-        <summary>Can probation be extended?</summary>
-        <p>
-          Probation may be extended if the contract or company policy allows it and the employer communicates the decision clearly.
-        </p>
-      </details>
+      <details class="faq-item"><summary>Are EPF, SOCSO and EIS required during probation?</summary><p>Probation status alone is not an exemption. The relevant statutory contribution rules apply where the employee meets the scheme's coverage requirements.</p></details>
 
-      <details class="faq-item">
-        <summary>Can annual leave be taken during probation?</summary>
-        <p>
-          This depends on the employment contract and company policy. Some employers allow pro-rated leave, while others only allow annual leave after confirmation.
-        </p>
-      </details>
+      <details class="faq-item"><summary>Does salary automatically increase after confirmation?</summary><p>No. A salary increase should be based on the offer letter, employment contract, confirmation letter or another agreed salary revision. Confirmation alone does not automatically guarantee an increment.</p></details>
 
-      <details class="faq-item">
-        <summary>Can salary increase after confirmation?</summary>
-        <p>
-          Salary may increase after confirmation if this is stated in the offer letter, contract or company policy. Employees should not assume confirmation automatically comes with an increment unless it was agreed.
-        </p>
-      </details>
+      <details class="faq-item"><summary>Can probation be extended?</summary><p>It can be extended where the employment arrangement permits further assessment. The employer should communicate the extension period, reason and expectations clearly.</p></details>
 
-      <details class="faq-item">
-        <summary>Can an employer terminate employment during probation?</summary>
-        <p>
-          Employers may decide not to continue employment during or after probation depending on performance, conduct and employment terms. The process should follow the contract, company policy and applicable employment requirements.
-        </p>
-      </details>
+      <details class="faq-item"><summary>Can an employee be terminated during probation?</summary><p>Employment can end during probation in accordance with the contract and applicable termination law. Probation does not remove statutory wage or termination requirements.</p></details>
 
-      <details class="faq-item">
-        <summary>Does probation count as service period?</summary>
-        <p>
-          Probation is usually part of the overall employment period unless the contract or policy states otherwise. This can matter for leave, benefits and service-related calculations.
-        </p>
-      </details>
+      <details class="faq-item"><summary>Can I resign during probation?</summary><p>Yes. Check the written probation notice clause. If there is no written notice provision, the Employment Act's statutory notice fallback may apply.</p></details>
 
-      <details class="faq-item">
-        <summary>Can probation employees receive bonuses?</summary>
-        <p>
-          Bonus eligibility depends on company policy, employment contract and management decision. Some companies exclude probation employees, while others may provide pro-rated or discretionary bonuses.
-        </p>
-      </details>
+      <details class="faq-item"><summary>What if my contract has no probation notice period?</summary><p>If there is no written notice provision, section 12 provides at least 4 weeks for less than 2 years' service, 6 weeks for 2 to less than 5 years and 8 weeks for 5 years or more.</p></details>
 
-      <details class="faq-item">
-        <summary>Can probation period be extended more than once?</summary>
-        <p>
-          This depends on the employment contract and company policy. If probation is extended more than once, the employer should communicate the reason and expected improvement clearly.
-        </p>
-      </details>
+      <details class="faq-item"><summary>Am I automatically confirmed when the stated probation period ends?</summary><p>Do not assume every contractual consequence automatically changes without checking the employer's confirmation process and the actual employment terms. If no decision is communicated, request written clarification from HR.</p></details>
     </div>
 
-    <section class="salary-guides-box">
-      <h2>Related Employment Guides</h2>
-      <p>Continue reading related Malaysia employment guides to understand leave, salary and workplace rules.</p>
+    <section class="related-tools-section">
+      <h2>Related Tools</h2>
+      <p class="related-tools-intro">Estimate your probation salary first, then review your contract, leave and resignation terms before making employment decisions.</p>
 
-      <div class="guide-mini-grid">
-        <a href="resignation-notice-guide.html">Resignation Notice Guide</a>
-        <a href="annual-leave-guide.html">Annual Leave Guide</a>
-        <a href="mc-leave-guide.html">MC Leave Guide</a>
-        <a href="employment-contract-guide.html">Employment Contract Guide</a>
+      <a class="featured-calculator" href="index.html">
+        <div>
+          <span class="featured-kicker">Salary Calculator</span>
+          <h3>Estimate Take-Home Pay During Probation</h3>
+          <p>Estimate EPF, SOCSO, EIS, PCB and net salary from the gross salary stated in your offer letter.</p>
+        </div>
+        <span class="feature-link">Calculate Salary →</span>
+        <div class="featured-calculator-icon" aria-hidden="true">🧪</div>
+      </a>
+
+      <div class="quick-calculators">
+        <p class="quick-calculators-title">Quick Calculators</p>
+        <div class="quick-calculators-grid">
+          <a href="annual-leave-calculator.html"><span>Annual Leave Calculator</span><span class="quick-arrow">→</span></a>
+          <a href="epf-calculator.html"><span>EPF Calculator</span><span class="quick-arrow">→</span></a>
+          <a href="pcb-calculator.html"><span>PCB Calculator</span><span class="quick-arrow">→</span></a>
+        </div>
       </div>
 
-      <p class="view-all-guides"><a href="guides.html">View All Guides →</a></p>
-    </section>
+      <div class="explore-section">
+        <div class="explore-heading"><h2>Continue Exploring</h2><p>Useful next steps for understanding contracts, resignation, leave and payroll during early employment.</p></div>
 
-    <section class="salary-guides-box">
-      <h2>Related Calculators</h2>
-      <p>Use these calculators to estimate salary, deductions, leave or overtime in Malaysia.</p>
+        <div class="explore-grid">
+          <div class="explore-column">
+            <h3>Employment &amp; Leave</h3>
+            <a class="editorial-link" href="employment-contract-guide.html"><span>Employment Contract Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="resignation-notice-guide.html"><span>Resignation Notice Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="annual-leave-guide.html"><span>Annual Leave Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="mc-leave-guide.html"><span>Medical Leave Guide</span><span class="editorial-arrow">→</span></a>
+          </div>
 
-      <div class="guide-mini-grid">
-        <a href="index.html">Salary Calculator</a>
-        <a href="epf-calculator.html">EPF Calculator</a>
-        <a href="socso-calculator.html">SOCSO Calculator</a>
-        <a href="pcb-calculator.html">PCB Calculator</a>
+          <div class="explore-column">
+            <h3>Payroll &amp; Salary</h3>
+            <a class="editorial-link" href="payslip-guide.html"><span>Payslip Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="salary-deduction-guide.html"><span>Salary Deduction Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="epf-guide.html"><span>EPF Guide</span><span class="editorial-arrow">→</span></a>
+            <a class="editorial-link" href="pcb-guide.html"><span>PCB Guide</span><span class="editorial-arrow">→</span></a>
+          </div>
+        </div>
+
+        <div class="resource-actions"><a href="guides.html">Explore All Guides →</a><a href="calculators.html">View All Calculators →</a></div>
       </div>
-
-      <p class="view-all-guides"><a href="calculators.html">View All Calculators →</a></p>
     </section>
 
   </section>
