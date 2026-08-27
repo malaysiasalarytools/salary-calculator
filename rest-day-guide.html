@@ -489,6 +489,48 @@
       color: var(--accent);
     }
 
+
+    .toc-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:26px 0}
+    .toc-box h2{margin-top:0;margin-bottom:16px}
+    .toc-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px}
+    .toc-links a{display:flex;align-items:center;gap:14px;min-width:0;text-decoration:none;color:var(--foreground);padding:12px 2px;border-bottom:1px solid var(--border);transition:.18s ease}
+    .toc-links a:hover{color:var(--accent);padding-left:4px}
+    .toc-number{width:28px;flex:0 0 28px;color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.04em}
+    .toc-label{flex:1;min-width:0;font-weight:700;font-size:15px}
+    .toc-arrow{color:var(--muted);font-size:15px}
+    .status-yes{color:var(--accent);font-weight:800}
+    .status-no{color:#9a5a45;font-weight:800}
+
+    .source-note{margin-top:18px;background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);padding:14px;border-radius:10px;color:var(--muted);font-size:13px}
+    .source-note a{color:var(--accent);font-weight:800;text-decoration:none}
+
+    .related-tools-section{margin:34px 0}
+    .related-tools-intro{margin-top:0;max-width:760px}
+    .featured-calculator{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:22px;align-items:center;margin-top:20px;padding:24px 26px;background:radial-gradient(circle at top right,rgba(47,125,94,.14),transparent 34%),linear-gradient(135deg,#f8f5ef 0%,#fbfaf6 100%);border:1px solid var(--accent-border);border-radius:18px;text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .featured-calculator:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 16px 34px rgba(47,43,37,.09)}
+    .featured-kicker{display:inline-block;margin-bottom:7px;color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .featured-calculator h3{margin:0 0 6px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,3vw,32px);font-weight:400;line-height:1.1}
+    .featured-calculator p{margin:0;max-width:640px;font-size:15px}
+    .feature-link{display:inline-flex;align-items:center;justify-content:center;min-width:160px;padding:12px 16px;border-radius:12px;background:var(--accent);color:#fff;font-weight:900;white-space:nowrap}
+    .featured-calculator-icon{width:66px;height:66px;display:grid;place-items:center;border-radius:18px;background:var(--accent-soft);border:1px solid var(--accent-border);font-size:30px}
+
+    .quick-calculators{margin-top:18px}
+    .quick-calculators-title{margin:0 0 10px;font-size:14px;font-weight:800}
+    .quick-calculators-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .quick-calculators-grid a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;background:var(--card);border:1px solid var(--border);border-radius:11px;text-decoration:none;color:var(--foreground);font-size:14px;font-weight:800;transition:.18s ease}
+    .quick-calculators-grid a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .quick-arrow,.editorial-arrow{color:var(--muted)}
+
+    .explore-section{margin-top:30px;padding-top:28px;border-top:1px solid var(--border)}
+    .explore-heading h2{margin:0}.explore-heading p{margin:7px 0 14px}
+    .explore-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+    .explore-column h3{margin:0 0 8px;font-size:16px}
+    .editorial-link{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--foreground);transition:.18s ease}
+    .editorial-link:hover{color:var(--accent);padding-left:4px}
+    .editorial-link span:first-child{flex:1;min-width:0;font-weight:800;font-size:15px}
+    .resource-actions{display:flex;justify-content:space-between;gap:16px;margin-top:18px;flex-wrap:wrap}
+    .resource-actions a{color:var(--accent);font-weight:800;text-decoration:none}
+
     @media (max-width: 800px) {
       .nav-inner {
         flex-direction: row;
@@ -573,6 +615,15 @@
         font-size: 12px;
         line-height: 1.35;
       }
+      .toc-box{padding:20px}
+      .toc-links{grid-template-columns:1fr;column-gap:0}
+      .featured-calculator{grid-template-columns:1fr;padding:22px;gap:16px}
+      .feature-link{width:100%}
+      .featured-calculator-icon{display:none}
+      .quick-calculators-grid{grid-template-columns:1fr}
+      .explore-grid{grid-template-columns:1fr;gap:26px}
+      .resource-actions{display:block}
+      .resource-actions a{display:block;margin-top:8px}
     }
   </style>
 </head>
@@ -595,7 +646,7 @@
   </header>
 
   <section class="hero">
-    <span class="pill">Updated for Malaysia 2026 employment guide</span>
+    <span class="pill">Last verified: August 2026 · Employment Act 1955 rest day rules</span>
     <h1 class="serif">Malaysia <em>Rest Day</em> Guide 2026</h1>
     <p>
       Learn how rest day works in Malaysia, including weekly rest, working on rest day, rest day pay, shift work, public holiday differences and common employment questions.
@@ -606,345 +657,360 @@
 
     <div class="seo">
 
-      <section class="calculator-cta">
-        <h2 class="serif">Estimate Overtime or Rest Day Pay</h2>
-        <p>
-          Working on a rest day? Use our Overtime Calculator to estimate extra pay based on salary, working hours and overtime assumptions.
-        </p>
-        <a href="overtime-calculator.html" class="cta-button">Check My Overtime Pay →</a>
-      </section>
-
       <section class="summary-box">
         <h2 class="serif">Rest Day Quick Summary</h2>
-        <p>
-          A rest day is a weekly day off given to employees for rest. If an employee works on a rest day, special payroll treatment or extra pay may apply depending on the work arrangement.
-        </p>
+        <p>Sections 59 and 60 of the Employment Act 1955 set the main rules on weekly rest days and payment for employees who work on a statutory rest day.</p>
 
         <div class="summary-grid">
-          <div class="summary-card">
-            <strong>Weekly Rest</strong>
-            <span>Employees usually receive a weekly rest day</span>
-          </div>
-          <div class="summary-card">
-            <strong>Roster</strong>
-            <span>Rest day may be fixed or rotating</span>
-          </div>
-          <div class="summary-card">
-            <strong>Extra Pay</strong>
-            <span>May apply if employee works on rest day</span>
-          </div>
-          <div class="summary-card">
-            <strong>Payroll</strong>
-            <span>Correct classification affects pay calculation</span>
-          </div>
+          <div class="summary-card"><strong>1 Whole Day</strong><span>Minimum weekly rest day for an employee under section 59</span></div>
+          <div class="summary-card"><strong>30 Hours</strong><span>Continuous period that may constitute a rest day for a shift worker</span></div>
+          <div class="summary-card"><strong>½ / 1 Day</strong><span>Monthly / weekly employee payment for work up to normal hours</span></div>
+          <div class="summary-card"><strong>2×</strong><span>Minimum hourly rate for hours beyond normal daily hours on a rest day</span></div>
+        </div>
+
+        <div class="note-box"><strong>Important:</strong> “Rest day work = 2×” is not the complete rule. For monthly- and weekly-rated employees, work up to normal daily hours follows the statutory half-day / one-day payment structure; the 2× hourly rate applies only to hours beyond normal daily hours.</div>
+      </section>
+
+      <section class="calculator-cta">
+        <h2 class="serif">Calculate Rest Day Work Pay</h2>
+        <p>Use our Overtime Calculator to estimate rest-day pay based on salary, normal working hours and hours actually worked.</p>
+        <a href="overtime-calculator.html" class="cta-button">Calculate Rest Day Pay →</a>
+      </section>
+
+      <section class="toc-box">
+        <h2>On This Page</h2>
+        <div class="toc-links">
+          <a href="#what-is-rest-day"><span class="toc-number">01</span><span class="toc-label">What Is a Rest Day?</span><span class="toc-arrow">→</span></a>
+          <a href="#entitlement"><span class="toc-number">02</span><span class="toc-label">Weekly Rest Day Entitlement</span><span class="toc-arrow">→</span></a>
+          <a href="#two-days-off"><span class="toc-number">03</span><span class="toc-label">Two Days Off in a Week</span><span class="toc-arrow">→</span></a>
+          <a href="#roster"><span class="toc-number">04</span><span class="toc-label">Roster & Shift Workers</span><span class="toc-arrow">→</span></a>
+          <a href="#compelled"><span class="toc-number">05</span><span class="toc-label">Can Employer Require Rest-Day Work?</span><span class="toc-arrow">→</span></a>
+          <a href="#monthly-weekly-pay"><span class="toc-number">06</span><span class="toc-label">Monthly / Weekly Rest-Day Pay</span><span class="toc-arrow">→</span></a>
+          <a href="#daily-hourly-pay"><span class="toc-number">07</span><span class="toc-label">Daily / Hourly Rest-Day Pay</span><span class="toc-arrow">→</span></a>
+          <a href="#eligibility"><span class="toc-number">08</span><span class="toc-label">RM4,000 Pay Eligibility</span><span class="toc-arrow">→</span></a>
+          <a href="#orp"><span class="toc-number">09</span><span class="toc-label">ORP & Hourly Rate</span><span class="toc-arrow">→</span></a>
+          <a href="#differences"><span class="toc-number">10</span><span class="toc-label">Rest Day vs Off Day vs Holiday</span><span class="toc-arrow">→</span></a>
+          <a href="#mistakes"><span class="toc-number">11</span><span class="toc-label">Common Mistakes</span><span class="toc-arrow">→</span></a>
+          <a href="#faq"><span class="toc-number">12</span><span class="toc-label">FAQ</span><span class="toc-arrow">→</span></a>
         </div>
       </section>
 
-      <h2>What Is a Rest Day?</h2>
-
-      <p>
-        A rest day is a day set aside for employees to rest from work during the week. It is different from annual leave and public holiday because it is normally part of the regular weekly work schedule.
-      </p>
-
-      <p>
-        This guide is written as a practical overview for employees, job seekers, HR staff and small business owners. Actual treatment may depend on employment contract terms, company policy, work schedule, roster and the latest legal requirements.
-      </p>
+      <h2 id="what-is-rest-day">What Is a Rest Day?</h2>
+      <p>A rest day is the statutory weekly day of rest under section 59 of the Employment Act 1955. It is different from annual leave, a paid public holiday and an ordinary non-working day created by a five-day or rotating work schedule.</p>
+      <p>The distinction matters because section 60 uses the statutory rest-day classification when determining special payment for employees who work on that day.</p>
 
       <section class="guide-box">
-        <h2 class="serif">Rest Day Entitlement in Malaysia</h2>
-
-        <p>
-          A rest day is normally part of an employee's weekly working arrangement. It gives employees time away from work and helps separate normal working days from weekly rest periods, public holidays and approved leave.
-        </p>
-
-        <p>
-          The exact rest day arrangement may depend on the employment contract, work schedule, roster, industry practice and applicable employment requirements. Employees should check whether their rest day is fixed, rotating or based on shift scheduling.
-        </p>
-
-        <div class="note-box">
-          <strong>Note:</strong> This guide is a simplified employment guide for general understanding. For official, legal or dispute situations, employees and employers should check the latest law, employment contract, company policy and professional advice.
-        </div>
-      </section>
-
-      <section class="guide-box">
-        <h2 class="serif">Who Is Entitled to a Rest Day?</h2>
-
-        <p>
-          Rest day rules generally apply to eligible employees who work under an employment arrangement in Malaysia. For many employees, a weekly rest day is part of the standard work schedule.
-        </p>
-
-        <p>
-          Some industries use fixed weekly rest days, while others use rotating rest days because of shift work, retail operations, hospitality, security, manufacturing or other business needs. The important point is that the rest day should be recorded clearly so payroll can identify when an employee works on a rest day.
-        </p>
-      </section>
-
-      <section class="guide-box">
-        <h2 class="serif">Common Rest Day Situations</h2>
-
-        <div class="component-grid">
-          <div class="component-card">
-            <div class="component-icon">📅</div>
-            <h3>Weekly Schedule</h3>
-            <p>Rest day is usually fixed or based on the employee’s roster.</p>
-          </div>
-
-          <div class="component-card">
-            <div class="component-icon">⏰</div>
-            <h3>Work on Rest Day</h3>
-            <p>Extra pay may apply if the employee works on a scheduled rest day.</p>
-          </div>
-
-          <div class="component-card">
-            <div class="component-icon">🏪</div>
-            <h3>Shift Work</h3>
-            <p>Rest days may rotate for retail, hospitality, security or factory employees.</p>
-          </div>
-
-          <div class="component-card">
-            <div class="component-icon">💰</div>
-            <h3>Payroll Records</h3>
-            <p>Correct classification affects overtime, rest day pay and payslip records.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="guide-box">
-        <h2 class="serif">Working on a Rest Day</h2>
-
-        <p>
-          Employees may sometimes be asked to work on their scheduled rest day due to business needs, staff shortage, urgent deadlines or shift arrangements. When this happens, the work should be recorded clearly because rest day work may be treated differently from ordinary working day overtime.
-        </p>
-
-        <p>
-          Employees should check whether rest day work requires prior approval, how hours should be submitted and when payment will be processed. Employers should also keep proper payroll records to avoid disputes over working hours and rates.
-        </p>
-      </section>
-
-      <section class="guide-box">
-        <h2 class="serif">Rest Day Pay Calculation</h2>
-
-        <p>
-          Rest day pay calculation may depend on whether the employee is paid monthly, daily or hourly, how many hours were worked and whether the work falls within normal working hours or overtime hours.
-        </p>
-
-        <p>
-          In practice, payroll teams usually need to identify the employee's ordinary rate of pay, the number of hours worked on the rest day and the applicable payroll treatment under the employment contract and law.
-        </p>
-
-        <div class="formula-box">
-          <strong>Rest Day Pay = Ordinary Rate of Pay × Applicable Rest Day Rate</strong>
-          <span>This is a simplified formula. Actual calculation may differ depending on working hours, employment terms and payroll rules.</span>
-        </div>
-      </section>
-
-      <section class="guide-box">
-        <h2 class="serif">Rest Day for Shift Workers</h2>
-
-        <p>
-          Shift workers may not always have Sunday as their rest day. In industries such as retail, security, hotels, restaurants, logistics and manufacturing, rest days may rotate based on roster.
-        </p>
-
-        <p>
-          For shift employees, the roster should clearly show which day is the official rest day. This helps determine whether a particular day should be treated as a normal working day, rest day, public holiday or overtime day.
-        </p>
-      </section>
-
-      <section class="guide-box">
-        <h2 class="serif">Rest Day vs Public Holiday vs Annual Leave</h2>
-
-        <p>
-          Rest day, public holiday and annual leave are not the same. Employees should understand the difference because each item may have different payroll treatment.
-        </p>
+        <h2 id="entitlement" class="serif">Weekly Rest Day Entitlement in Malaysia</h2>
+        <p>Section 59 provides that every employee must be allowed <strong>one whole rest day in each week</strong>, with the employer determining the day from time to time.</p>
 
         <div class="contribution-table-wrap">
           <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Simple Explanation</th>
-                <th>Payroll Impact</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Rest-Day Rule</th><th>Statutory Position</th></tr></thead>
             <tbody>
-              <tr>
-                <td>Rest Day</td>
-                <td>Weekly day off under the work schedule</td>
-                <td>Extra pay may apply if employee works</td>
-              </tr>
-              <tr>
-                <td>Public Holiday</td>
-                <td>Gazetted holiday that applies to the employee</td>
-                <td>Public holiday pay or holiday overtime may apply</td>
-              </tr>
-              <tr>
-                <td>Annual Leave</td>
-                <td>Approved paid leave requested by employee</td>
-                <td>Reduces annual leave balance, not rest day balance</td>
-              </tr>
-              <tr>
-                <td>Overtime</td>
-                <td>Work beyond normal working hours</td>
-                <td>May be paid using overtime rate</td>
-              </tr>
+              <tr><td>Minimum weekly rest</td><td><strong>One whole day</strong> in each week.</td></tr>
+              <tr><td>Who chooses the day?</td><td>The employer may determine the rest day, subject to the Act and the employee's work arrangement.</td></tr>
+              <tr><td>Must it be Sunday?</td><td>No. The rest day can be another day, especially for shift, retail, hospitality and roster-based work.</td></tr>
+              <tr><td>Can roster rotate?</td><td>Yes. The employer may appoint different rest days, provided the statutory requirements are followed.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note-box"><strong>Scope note:</strong> This guide focuses on the Employment Act 1955 framework applicable in Peninsular Malaysia and Labuan. Sabah and Sarawak have separate labour legislation.</div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="two-days-off" class="serif">What If You Have Two Days Off Every Week?</h2>
+        <p>This is especially important for employees on a five-day workweek. Section 59 says that where an employee is allowed more than one rest day in a week, <strong>the last of those rest days is treated as the statutory rest day for Part XII</strong>.</p>
+
+        <section class="example-box">
+          <h2 class="serif">Example: Saturday and Sunday Off</h2>
+          <p>If an employee is given Saturday and Sunday as two weekly rest days, Sunday — being the last of those rest days — is generally the statutory rest day for Part XII purposes.</p>
+          <p>This means payroll should not automatically classify Saturday and Sunday identically when applying the statutory rest-day payment provisions.</p>
+        </section>
+
+        <div class="note-box"><strong>Very useful payroll distinction:</strong> A normal “off day” and the statutory “rest day” can be different even though both are days the employee does not normally work.</div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="roster" class="serif">Rest-Day Roster and Shift Workers</h2>
+        <p>Where rest days vary, section 59 requires the employer to prepare a roster before the beginning of the month showing the employee's appointed rest days. If every employee has the same fixed rest day, the employer may display a notice instead.</p>
+
+        <div class="component-grid">
+          <div class="component-card"><div class="component-icon">📅</div><h3>Monthly Roster</h3><p>Rest-day roster should be prepared before the month begins where the days vary.</p></div>
+          <div class="component-card"><div class="component-icon">📌</div><h3>Fixed Rest Day</h3><p>A workplace notice may be used where the same fixed day applies to all employees.</p></div>
+          <div class="component-card"><div class="component-icon">🕒</div><h3>Shift Worker</h3><p>A continuous period of at least 30 hours can constitute the statutory rest day.</p></div>
+          <div class="component-card"><div class="component-icon">🗂️</div><h3>Roster Records</h3><p>Section 59 requires rest-day roster particulars to be retained for inspection.</p></div>
+        </div>
+
+        <p>For shift workers, section 59 specifically provides that a continuous period of at least <strong>30 hours</strong> may constitute a rest day, rather than requiring a midnight-to-midnight calendar day.</p>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="compelled" class="serif">Can an Employer Require You to Work on a Rest Day?</h2>
+        <p>Section 60 generally states that an employee should not be compelled to work on a rest day unless the work, by its nature, must be carried on continuously or continually by two or more shifts.</p>
+        <p>Section 60A(2) also allows rest-day work in specified exceptional situations such as accidents, urgent machinery work, unforeseeable interruptions, essential community work and certain essential services.</p>
+
+        <div class="note-box"><strong>Practical point:</strong> “Business is busy” should not automatically be treated as an unlimited right to compel statutory rest-day work. The legal circumstances and work arrangement still matter.</div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="monthly-weekly-pay" class="serif">Rest-Day Pay for Monthly- or Weekly-Rated Employees</h2>
+        <p>For an employee entitled to section 60 rest-day payment and paid on a monthly or weekly basis, the statutory amount depends on how long the employee works on the rest day.</p>
+
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Hours Worked on Rest Day</th><th>Monthly / Weekly Employee Payment</th></tr></thead>
+            <tbody>
+              <tr><td>Not more than half normal daily hours</td><td>Wages equivalent to <strong>½ of the ordinary rate of pay (ORP)</strong> for that day.</td></tr>
+              <tr><td>More than half but not more than normal daily hours</td><td><strong>1 day's wages at ORP</strong>.</td></tr>
+              <tr><td>Hours beyond normal daily hours</td><td>Each excess hour is paid at not less than <strong>2× the hourly rate of pay (HRP)</strong>.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note-box"><strong>This is why “rest day = 2×” is wrong:</strong> 2× applies to the excess hours beyond normal daily hours, not automatically to the first hours worked on the rest day.</div>
+      </section>
+
+      <section class="example-box">
+        <h2 class="serif">Example: Monthly Employee Works on a Rest Day</h2>
+        <p>Assume a qualifying monthly-rated employee earns RM3,000 and normally works 8 hours per day.</p>
+
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <tbody>
+              <tr><td><strong>Monthly wages</strong></td><td>RM3,000</td></tr>
+              <tr><td><strong>ORP</strong></td><td>RM3,000 ÷ 26 = RM115.38</td></tr>
+              <tr><td><strong>HRP</strong></td><td>RM115.38 ÷ 8 = RM14.42</td></tr>
+              <tr><td>Works 4 hours or less</td><td>½ ORP = <strong>RM57.69</strong></td></tr>
+              <tr><td>Works more than 4 but up to 8 hours</td><td>1 ORP = <strong>RM115.38</strong></td></tr>
+              <tr><td>Works 2 extra hours after completing 8 hours</td><td>Extra portion: RM14.42 × 2 × 2 = <strong>RM57.68</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>If the employee works 10 hours in total, the statutory calculation combines the full normal-hours rest-day payment with the separate 2× HRP payment for the two excess hours.</p>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="daily-hourly-pay" class="serif">Rest-Day Pay for Daily- or Hourly-Rated Employees</h2>
+        <p>The first part of the rest-day calculation is different for daily, hourly or similar-rated employees.</p>
+
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Hours Worked on Rest Day</th><th>Daily / Hourly Employee Payment</th></tr></thead>
+            <tbody>
+              <tr><td>Not more than half normal daily hours</td><td><strong>1 day's wages at ORP</strong>.</td></tr>
+              <tr><td>More than half but not more than normal daily hours</td><td><strong>2 days' wages at ORP</strong>.</td></tr>
+              <tr><td>Hours beyond normal daily hours</td><td>Each excess hour is paid at not less than <strong>2× HRP</strong>.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note-box"><strong>Payroll warning:</strong> Do not use the monthly-rated employee table for a daily- or hourly-rated employee. Section 60 gives them different payment amounts for work up to normal daily hours.</div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="eligibility" class="serif">Who Is Entitled to Statutory Rest-Day Work Pay?</h2>
+        <p>The Employment Act generally covers private-sector employees, but the First Schedule excludes certain higher-paid employees from the statutory payment provisions for rest-day work.</p>
+
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Employee Category</th><th>General Statutory Rest-Day Pay Position</th></tr></thead>
+            <tbody>
+              <tr><td>Employee earning RM4,000 or less per month</td><td><span class="status-yes">Generally covered</span> by section 60 payment provisions.</td></tr>
+              <tr><td>Employee earning above RM4,000 per month</td><td><span class="status-no">Generally excluded</span> from statutory rest-day payment claims unless within a protected First Schedule category.</td></tr>
+              <tr><td>Manual employee and certain specified categories</td><td>May remain covered regardless of the RM4,000 wage threshold.</td></tr>
+              <tr><td>Employee outside section 60 payment entitlement</td><td>May still receive contractual rest-day / overtime compensation if the employment contract or company policy provides it.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note-box"><strong>Important distinction:</strong> An employee above RM4,000 is not thereby denied a weekly rest day. The wage-based exclusion concerns specific Part XII payment provisions such as statutory rest-day work pay.</div>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="orp" class="serif">How ORP and Hourly Rate Are Calculated</h2>
+        <p>For a monthly-rated employee, section 60I generally calculates the ordinary rate of pay using monthly wages divided by 26.</p>
+
+        <div class="formula-box">
+          <strong>ORP = Monthly Wages ÷ 26</strong>
+          <span>For monthly-rated employees, subject to the statutory definition of wages.</span>
+        </div>
+
+        <div class="formula-box">
+          <strong>HRP = ORP ÷ Normal Hours of Work Per Day</strong>
+          <span>Used for the 2× excess-hour calculation on a rest day.</span>
+        </div>
+
+        <p>An employer may use another method if it does not result in a rate lower than the statutory rate provided by section 60I.</p>
+      </section>
+
+      <section class="guide-box">
+        <h2 id="differences" class="serif">Rest Day vs Off Day vs Public Holiday vs Annual Leave</h2>
+
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead><tr><th>Item</th><th>Meaning</th><th>Why Classification Matters</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Statutory Rest Day</strong></td><td>Weekly rest day under section 59</td><td>Section 60 rest-day payment rules may apply when eligible employee works.</td></tr>
+              <tr><td><strong>Off Day / Non-Working Day</strong></td><td>Additional day not normally worked under schedule</td><td>Not automatically the statutory rest day; contractual / OT treatment may differ.</td></tr>
+              <tr><td><strong>Public Holiday</strong></td><td>Applicable gazetted paid holiday</td><td>Section 60D has separate holiday-work and substitution rules.</td></tr>
+              <tr><td><strong>Annual Leave</strong></td><td>Paid leave taken from annual-leave entitlement</td><td>Separate from weekly rest and paid holidays.</td></tr>
+              <tr><td><strong>Overtime</strong></td><td>Hours beyond normal daily hours</td><td>Rate depends on whether work is on an ordinary day, rest day or public holiday.</td></tr>
             </tbody>
           </table>
         </div>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Rest Day vs Overtime vs Public Holiday</h2>
-
-        <p>
-          Rest day, overtime and public holiday work are related but not the same. A person can work overtime on a normal day, work on a rest day, or work on a public holiday. Payroll should identify the correct category before calculating pay.
-        </p>
-
-        <p>
-          For example, if an employee works beyond normal hours on a rest day, payroll may need to consider both the rest day classification and the extra hours worked. This is why accurate attendance records and clear manager approval are important.
-        </p>
+        <h2>What If a Public Holiday Falls on a Rest Day?</h2>
+        <p>Rest day and public holiday rules interact. Under section 60D, when an applicable paid public holiday falls on the employee's rest day, the immediately following working day becomes a paid holiday in substitution.</p>
+        <div class="note-box"><strong>Why this matters:</strong> First identify the employee's actual statutory rest day. In a two-day weekend, the second / last rest day may be the statutory rest day for Part XII purposes.</div>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Common Rest Day Mistakes</h2>
+        <h2>Rest-Day Records and Payroll Approval</h2>
+        <p>Accurate records are especially important for shift workers and employees with rotating rosters because payroll needs to know whether a day was an ordinary workday, an off day, a statutory rest day or a public holiday.</p>
 
-        <p>
-          Rest day disputes usually happen when the work schedule, approval process or payroll treatment is not clearly recorded. Employees and employers should keep written records when rest day work is required.
-        </p>
-
-        <ul>
-          <li>Confusing rest day with public holiday</li>
-          <li>Not checking the official roster for shift workers</li>
-          <li>Failing to record hours worked on a rest day</li>
-          <li>Assuming rest day work is always treated like normal overtime</li>
-          <li>Submitting rest day claims after payroll cut-off</li>
-          <li>Not checking whether manager approval is required</li>
-        </ul>
+        <div class="component-grid">
+          <div class="component-card"><div class="component-icon">📆</div><h3>Check Roster</h3><p>Identify the official statutory rest day before processing the claim.</p></div>
+          <div class="component-card"><div class="component-icon">⏱️</div><h3>Record Hours</h3><p>Capture actual start, end and excess hours worked.</p></div>
+          <div class="component-card"><div class="component-icon">✅</div><h3>Approval</h3><p>Document manager or operational approval where company procedure requires it.</p></div>
+          <div class="component-card"><div class="component-icon">📄</div><h3>Check Payslip</h3><p>Verify that rest-day pay is separately and correctly reflected in payroll.</p></div>
+        </div>
       </section>
 
       <section class="example-box">
         <h2 class="serif">Common Rest Day Examples</h2>
 
-        <h3>Example 1: Fixed Sunday Rest Day</h3>
-        <p>
-          An office employee has Sunday as the weekly rest day. If the employee is asked to work on Sunday, payroll may need to treat the day as rest day work instead of a normal working day.
-        </p>
+        <h3>Example 1: Five-Day Office Week</h3>
+        <p>An employee does not work on Saturday or Sunday. If both are treated as rest days, the last one — Sunday — is the statutory rest day for Part XII purposes.</p>
 
-        <h3>Example 2: Rotating Shift Rest Day</h3>
-        <p>
-          A retail employee works on weekends and has a weekday rest day based on roster. The official roster should be used to determine whether a day is a normal working day or rest day.
-        </p>
+        <h3>Example 2: Rotating Retail Rest Day</h3>
+        <p>A retail employee works weekends and has Wednesday as the rostered rest day. Wednesday, not Sunday, is the day payroll should use when assessing statutory rest-day work.</p>
 
-        <h3>Example 3: Rest Day Falls Near Public Holiday</h3>
-        <p>
-          If a rest day is close to a public holiday, HR should identify whether the employee is dealing with rest day work, public holiday work or a replacement holiday situation.
-        </p>
+        <h3>Example 3: Monthly Employee Works Half a Day</h3>
+        <p>A qualifying monthly-rated employee works no more than half of normal daily hours on the statutory rest day. Section 60 provides payment equivalent to half the ordinary rate of pay for that day.</p>
+
+        <h3>Example 4: Employee Works Beyond Normal Hours</h3>
+        <p>After the employee has worked beyond normal daily hours on the rest day, each excess hour is paid at not less than 2× the hourly rate of pay where section 60 applies.</p>
       </section>
 
       <section class="guide-box">
-        <h2 class="serif">Who Should Read This Guide?</h2>
-
+        <h2 id="mistakes" class="serif">Common Rest Day Mistakes</h2>
         <ul>
-          <li>Employees checking their workplace rights and obligations</li>
-          <li>Shift workers checking roster and rest day treatment</li>
-          <li>Job seekers comparing job offers and employment terms</li>
-          <li>HR and payroll staff preparing policies and payroll records</li>
-          <li>Business owners who want a simple employment reference</li>
+          <li>Assuming every non-working day is the statutory rest day.</li>
+          <li>Ignoring the “last rest day” rule when employees have two or more weekly days off.</li>
+          <li>Assuming Sunday must always be the rest day.</li>
+          <li>Not checking the roster for shift or rotating-schedule employees.</li>
+          <li>Thinking every hour worked on a rest day is automatically paid at 2×.</li>
+          <li>Using the monthly / weekly rest-day payment table for daily / hourly employees.</li>
+          <li>Ignoring the RM4,000 / First Schedule rules for statutory rest-day pay.</li>
+          <li>Using salary ÷ 30 instead of the statutory ORP framework for section 60 calculations.</li>
+          <li>Confusing a public holiday falling on a rest day with an ordinary off-day situation.</li>
+          <li>Failing to keep clear attendance, roster and approval records.</li>
         </ul>
       </section>
 
-      <h2>Frequently Asked Questions</h2>
-
-      <div class="faq-box">
-        <details class="faq-item" open>
-          <summary>What is a rest day in Malaysia?</summary>
-          <p>
-            A rest day is a weekly day off under an employee's work schedule. It is different from annual leave and public holiday because it is normally part of the regular weekly working arrangement.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>How many rest days are employees entitled to?</summary>
-          <p>
-            Employees are commonly given a weekly rest day, but the exact arrangement may depend on employment terms, work schedule, roster and applicable employment requirements.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can employers ask employees to work on rest day?</summary>
-          <p>
-            Employers may require employees to work on a rest day in certain situations, subject to employment terms, business needs and applicable rules. The work should be recorded clearly for payroll purposes.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is working on rest day paid extra?</summary>
-          <p>
-            Rest day work may require different payroll treatment compared with normal working days. The exact pay depends on working hours, wage arrangement, employment terms and applicable rules.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is rest day the same as public holiday?</summary>
-          <p>
-            No. A rest day is a weekly day off under the work schedule, while a public holiday is a gazetted holiday. Payroll treatment may differ if an employee works on either day.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can rest day be changed by employer?</summary>
-          <p>
-            Rest day arrangements may change depending on roster, business operations and company policy. Employers should communicate schedule changes clearly, especially for shift workers.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>How is rest day pay calculated?</summary>
-          <p>
-            Rest day pay may be calculated based on ordinary rate of pay, the number of hours worked and the applicable rest day rate. Employees should check their payslip and payroll records.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Does rest day work affect overtime calculation?</summary>
-          <p>
-            Yes, rest day work may be treated differently from ordinary overtime. If the employee works beyond normal hours on a rest day, payroll may need to apply the correct rest day or overtime treatment.
-          </p>
-        </details>
-      </div>
-
-      <section class="salary-guides-box">
-        <h2 class="serif">Related Employment Guides</h2>
-        <p>
-          Continue reading related Malaysia employment guides to understand leave, salary and workplace rules.
-        </p>
-
-        <div class="guide-mini-grid">
-          <a href="annual-leave-guide.html">📆 Annual Leave Guide</a>
-          <a href="public-holiday-guide.html">📅 Public Holiday Guide</a>
-          <a href="overtime-guide.html">⏰ Overtime Guide</a>
-          <a href="mc-leave-guide.html">🏥 MC Leave Guide</a>
-        </div>
-
-        <p class="view-all-guides">
-          <a href="guides.html">View All Salary Guides →</a>
-        </p>
+      <section class="guide-box">
+        <h2>Employee Rest Day Checklist</h2>
+        <ul>
+          <li>Identify your official statutory rest day from the roster or workplace notice.</li>
+          <li>If you have two days off, check which is the last rest day for Part XII purposes.</li>
+          <li>Confirm whether you are monthly / weekly or daily / hourly rated.</li>
+          <li>Check whether section 60 statutory payment applies to your employee category.</li>
+          <li>Record actual hours worked on the rest day.</li>
+          <li>Separate normal rest-day hours from hours beyond normal daily hours.</li>
+          <li>Recalculate ORP / HRP if the payslip amount looks wrong.</li>
+          <li>Check whether a public holiday also affects the day.</li>
+          <li>Keep roster and payroll records if you need to raise a dispute.</li>
+        </ul>
       </section>
 
-      <section class="salary-guides-box">
-        <h2 class="serif">Related Calculators</h2>
-        <p>
-          Use these calculators to estimate salary, deductions, leave or overtime in Malaysia.
-        </p>
+      <section class="guide-box">
+        <h2>Sources &amp; Verification</h2>
+        <p>This guide was last verified in August 2026 against sections 59, 60, 60A and 60I of the Employment Act 1955 and current JTKSM guidance on rest-day work claims.</p>
 
-        <div class="guide-mini-grid">
-          <a href="overtime-calculator.html">Overtime Calculator</a>
-          <a href="index.html">Salary Calculator</a>
-          <a href="annual-leave-calculator.html">Annual Leave Calculator</a>
-          <a href="pcb-calculator.html">PCB Calculator</a>
+        <div class="source-note">
+          <strong>Official sources used for verification:</strong><br>
+          <a href="https://jtksm.mohr.gov.my/sites/default/files/2023-11/Akta%20Kerja%201955%20%28Akta%20265%29.pdf" target="_blank" rel="noopener">JTKSM — Employment Act 1955: Sections 59, 60, 60A &amp; 60I</a><br>
+          <a href="https://jtksm.mohr.gov.my/en/borang/employment-act-1955" target="_blank" rel="noopener">JTKSM — Employment Act 1955</a><br>
+          <a href="https://jtksm.mohr.gov.my/ms/perkhidmatan/kes-buruh" target="_blank" rel="noopener">JTKSM — Labour Case / RM4,000 Rest-Day Pay Eligibility</a>
+        </div>
+      </section>
+
+      <h2 id="faq">Frequently Asked Questions</h2>
+
+      <div class="faq-box">
+        <details class="faq-item" open><summary>How many rest days are employees entitled to in Malaysia?</summary><p>Section 59 generally requires every employee to be allowed one whole rest day in each week.</p></details>
+
+        <details class="faq-item"><summary>Does a rest day have to be Sunday?</summary><p>No. The employer may determine the weekly rest day. Shift and roster employees commonly have rest days on other days of the week.</p></details>
+
+        <details class="faq-item"><summary>If I have Saturday and Sunday off, which one is the statutory rest day?</summary><p>Where an employee is allowed more than one rest day in a week, section 59 states that the last of those rest days is the rest day for Part XII purposes. In a Saturday-Sunday example, that would generally be Sunday.</p></details>
+
+        <details class="faq-item"><summary>How long is a rest day for a shift worker?</summary><p>For a shift worker, a continuous period of at least 30 hours may constitute a rest day under section 59.</p></details>
+
+        <details class="faq-item"><summary>Can my employer require me to work on my rest day?</summary><p>Section 60 generally restricts compulsory rest-day work, with exceptions for continuous / shift-based work and specified circumstances under section 60A(2).</p></details>
+
+        <details class="faq-item"><summary>Is all rest-day work paid at 2×?</summary><p>No. For monthly- and weekly-rated employees, work up to normal daily hours follows half-ORP / one-ORP rules. The 2× HRP rate applies to hours beyond normal daily hours.</p></details>
+
+        <details class="faq-item"><summary>How is rest-day pay calculated for a monthly employee?</summary><p>If work does not exceed half normal daily hours, payment is half ORP. If work exceeds half but not normal daily hours, payment is one ORP. Excess hours beyond normal daily hours are paid at not less than 2× HRP.</p></details>
+
+        <details class="faq-item"><summary>Are daily-rated employees paid the same way?</summary><p>No. Daily / hourly employees receive one day's ORP for work up to half normal hours and two days' ORP for more than half up to normal hours, with excess hours paid at not less than 2× HRP.</p></details>
+
+        <details class="faq-item"><summary>Are employees earning above RM4,000 entitled to statutory rest-day work pay?</summary><p>Employees earning above RM4,000 per month are generally excluded from statutory rest-day payment claims unless they fall within protected categories such as certain manual employees under the First Schedule.</p></details>
+
+        <details class="faq-item"><summary>What happens if a public holiday falls on my rest day?</summary><p>Under section 60D, the immediately following working day generally becomes a paid substitute holiday where an applicable public holiday falls on the statutory rest day.</p></details>
+
+        <details class="faq-item"><summary>How is ORP calculated for a monthly-rated employee?</summary><p>Section 60I generally calculates the ordinary rate of pay as monthly wages divided by 26, and HRP is ORP divided by normal daily hours.</p></details>
+      </div>
+
+      <section class="related-tools-section">
+        <h2>Related Tools</h2>
+        <p class="related-tools-intro">Calculate your rest-day pay first, then explore overtime, public holidays and working-time rules that use the same payroll framework.</p>
+
+        <a class="featured-calculator" href="overtime-calculator.html">
+          <div>
+            <span class="featured-kicker">Overtime Calculator</span>
+            <h3>Calculate Rest Day Work Pay</h3>
+            <p>Estimate pay for rest-day work and hours beyond normal daily hours using your salary and schedule.</p>
+          </div>
+          <span class="feature-link">Calculate Rest Day Pay →</span>
+          <div class="featured-calculator-icon" aria-hidden="true">🛌</div>
+        </a>
+
+        <div class="quick-calculators">
+          <p class="quick-calculators-title">Quick Calculators</p>
+          <div class="quick-calculators-grid">
+            <a href="overtime-calculator.html"><span>Overtime Calculator</span><span class="quick-arrow">→</span></a>
+            <a href="hourly-rate-calculator.html"><span>Hourly Rate Calculator</span><span class="quick-arrow">→</span></a>
+            <a href="index.html"><span>Salary Calculator</span><span class="quick-arrow">→</span></a>
+          </div>
         </div>
 
-        <p class="view-all-guides">
-          <a href="calculators.html">View All Calculators →</a>
-        </p>
+        <div class="explore-section">
+          <div class="explore-heading"><h2>Continue Exploring</h2><p>Useful next steps for understanding working time, holidays, leave and payroll treatment.</p></div>
+
+          <div class="explore-grid">
+            <div class="explore-column">
+              <h3>Working Time &amp; Leave</h3>
+              <a class="editorial-link" href="overtime-guide.html"><span>Overtime Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="public-holiday-guide.html"><span>Public Holiday Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="annual-leave-guide.html"><span>Annual Leave Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="mc-leave-guide.html"><span>Medical Leave Guide</span><span class="editorial-arrow">→</span></a>
+            </div>
+
+            <div class="explore-column">
+              <h3>Employment &amp; Payroll</h3>
+              <a class="editorial-link" href="employment-contract-guide.html"><span>Employment Contract Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="payslip-guide.html"><span>Payslip Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="salary-deduction-guide.html"><span>Salary Deduction Guide</span><span class="editorial-arrow">→</span></a>
+              <a class="editorial-link" href="probation-period-guide.html"><span>Probation Period Guide</span><span class="editorial-arrow">→</span></a>
+            </div>
+          </div>
+
+          <div class="resource-actions"><a href="guides.html">Explore All Guides →</a><a href="calculators.html">View All Calculators →</a></div>
+        </div>
       </section>
 
     </div>
