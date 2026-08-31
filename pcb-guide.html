@@ -628,7 +628,20 @@
       .resource-actions{display:block}
       .resource-actions a{display:block;margin-top:8px}
     }
-  </style>
+  
+    /* Contextual internal links */
+    .contextual-link {
+      color: var(--accent, #2f7d5e);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      font-weight: 600;
+    }
+
+    .contextual-link:hover {
+      text-decoration-thickness: 2px;
+    }
+</style>
 </head>
 
 <body>
@@ -702,13 +715,13 @@
     </section>
 
     <h2 id="what-is-pcb">What Is PCB?</h2>
-    <p>PCB stands for Potongan Cukai Bulanan, or Monthly Tax Deduction (MTD). It is a system where employers deduct estimated income tax from employees' remuneration and remit the amount to HASiL on behalf of the employee.</p>
+    <p>PCB stands for Potongan Cukai Bulanan, or Monthly Tax Deduction (MTD). It is a system where employers deduct estimated <a href="income-tax-guide.html" class="contextual-link">income tax</a> from employees' remuneration and remit the amount to HASiL on behalf of the employee.</p>
     <p>PCB helps spread income tax payments across the year instead of requiring the employee to settle the whole tax amount only after annual filing.</p>
 
     <section class="guide-box">
       <h2 id="who-pays-pcb">Who May Have PCB Deducted?</h2>
       <p>PCB generally arises when an employee's estimated tax position produces a monthly tax deduction under the official MTD calculation method. Not every employee will necessarily have PCB deducted.</p>
-      <p>For employees with lower taxable income, the calculated PCB may be nil after considering the applicable tax treatment, deductions and relief information used in payroll. This is why an employee can still have EPF, SOCSO and EIS deductions while having no PCB for a particular month.</p>
+      <p>For employees with lower taxable income, the calculated PCB may be nil after considering the applicable tax treatment, deductions and relief information used in payroll. This is why an employee can still have EPF, <a href="socso-guide.html" class="contextual-link">SOCSO</a> and EIS deductions while having no PCB for a particular month.</p>
       <div class="note-box"><strong>Important:</strong> PCB should be determined using HASiL's approved computerized calculation method or e-Jadual PCB through e-CP39, not by applying a simple flat percentage to monthly salary.</div>
     </section>
 
@@ -721,7 +734,7 @@
           <tbody>
             <tr><td>Monthly Remuneration</td><td>Higher taxable remuneration generally increases the estimated annual tax and monthly PCB.</td></tr>
             <tr><td>Accumulated Remuneration</td><td>Year-to-date income is relevant because PCB uses cumulative information in computerized calculation.</td></tr>
-            <tr><td>EPF Contribution</td><td>Eligible EPF deductions are taken into account subject to the applicable PCB calculation rules and limits.</td></tr>
+            <tr><td><a href="epf-guide.html" class="contextual-link">EPF Contribution</a></td><td>Eligible EPF deductions are taken into account subject to the applicable PCB calculation rules and limits.</td></tr>
             <tr><td>Tax Deductions / Rebates</td><td>Approved deductions and rebates reflected through payroll may reduce PCB.</td></tr>
             <tr><td>Bonus / Additional Remuneration</td><td>Additional remuneration is calculated separately under the PCB computerized method and can cause a higher deduction in that month.</td></tr>
             <tr><td>Tax Residency / Special Tax Treatment</td><td>The applicable tax treatment can materially change the monthly deduction.</td></tr>
@@ -893,7 +906,7 @@
       <details class="faq-item"><summary>Does bonus affect PCB?</summary><p>Yes. Bonus and other additional remuneration can increase PCB and are subject to a specific additional-remuneration calculation under the computerized MTD method.</p></details>
       <details class="faq-item"><summary>What is Form TP1 used for?</summary><p>Form TP1 allows an employee to claim qualifying individual deductions and rebates for Monthly Tax Deduction purposes, subject to HASiL rules.</p></details>
       <details class="faq-item"><summary>What is Form TP3 used for?</summary><p>Form TP3 provides the current employer with accumulated remuneration, EPF, zakat and PCB information from previous employment during the same year for PCB calculation purposes.</p></details>
-      <details class="faq-item"><summary>Will I get a tax refund if PCB is too high?</summary><p>A tax refund may arise when tax already paid through PCB exceeds the taxpayer's final tax liability, subject to the final tax assessment and filing requirements.</p></details>
+      <details class="faq-item"><summary>Will I get a tax refund if PCB is too high?</summary><p>A <a href="tax-refund-guide.html" class="contextual-link">tax refund</a> may arise when tax already paid through PCB exceeds the taxpayer's final tax liability, subject to the final tax assessment and filing requirements.</p></details>
       <details class="faq-item"><summary>When must employers pay PCB to HASiL?</summary><p>PCB deducted for a month must generally be remitted on or before the 15th day of the following month.</p></details>
       <details class="faq-item"><summary>Can PCB be treated as final tax?</summary><p>In certain circumstances, eligible taxpayers may choose not to submit an income tax return when all HASiL conditions for PCB as final tax are satisfied.</p></details>
     </div>

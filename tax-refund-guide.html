@@ -659,7 +659,20 @@
         font-size: 18px;
       }
     }
-  </style>
+  
+    /* Contextual internal links */
+    .contextual-link {
+      color: var(--accent, #2f7d5e);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      font-weight: 600;
+    }
+
+    .contextual-link:hover {
+      text-decoration-thickness: 2px;
+    }
+</style>
 </head>
 
 <body>
@@ -694,8 +707,8 @@
       <section class="summary-box">
         <h2 class="serif">Tax Refund Quick Summary</h2>
         <p>
-          A Malaysia tax refund normally arises when the tax already paid — such as PCB, instalments or other credits —
-          exceeds your final income tax liability after the return is completed.
+          A Malaysia tax refund normally arises when the tax already paid — such as <a href="pcb-guide.html" class="contextual-link">PCB</a>, instalments or other credits —
+          exceeds your final <a href="income-tax-guide.html" class="contextual-link">income tax</a> liability after the return is completed.
         </p>
         <div class="summary-grid">
           <div class="summary-card"><strong>30 Working Days</strong><span>HASiL client-charter timeline for eligible e-Filing refunds</span></div>
@@ -814,7 +827,7 @@
         <div class="checklist-box"><ul>
           <li>EA / EC Form</li>
           <li>PCB / MTD records and payslips</li>
-          <li>Tax relief receipts and payment evidence</li>
+          <li><a href="tax-relief-guide.html" class="contextual-link">Tax relief</a> receipts and payment evidence</li>
           <li>EPF, insurance, PRS and SOCSO statements</li>
           <li>Medical, education, lifestyle, childcare and other relief evidence</li>
           <li>Zakat / rebate receipts where applicable</li>
@@ -866,7 +879,7 @@
         <h3>Example 1: Overpaid PCB</h3>
         <p>An employee had PCB deducted throughout the year. After annual reliefs are claimed, final tax is lower than the total PCB, creating excess tax paid.</p>
         <h3>Example 2: Rebate Lowers Final Tax</h3>
-        <p>A qualifying tax rebate reduces income tax charged. If PCB already paid then exceeds the reduced tax liability, a refund may arise.</p>
+        <p>A qualifying <a href="tax-rebate-guide.html" class="contextual-link">tax rebate</a> reduces income tax charged. If PCB already paid then exceeds the reduced tax liability, a refund may arise.</p>
         <h3>Example 3: Refund Delayed by Review</h3>
         <p>HASiL requests receipts supporting selected relief claims. The refund may remain pending until the requested information is reviewed.</p>
       </section>

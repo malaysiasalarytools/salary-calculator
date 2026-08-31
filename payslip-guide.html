@@ -627,7 +627,20 @@
         line-height: 1.35;
       }
     }
-  </style>
+  
+    /* Contextual internal links */
+    .contextual-link {
+      color: var(--accent, #2f7d5e);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      font-weight: 600;
+    }
+
+    .contextual-link:hover {
+      text-decoration-thickness: 2px;
+    }
+</style>
 </head>
 <body>
   <header class="top-nav">
@@ -701,11 +714,11 @@
             <thead><tr><th>Payslip Item</th><th>What It Shows</th><th>Why Employees Should Check It</th></tr></thead>
             <tbody>
               <tr><td>Employer / Employee Details</td><td>Employer identity, employee name or payroll identifier</td><td>Confirms the statement belongs to the correct employment and employee.</td></tr>
-              <tr><td>Pay Period</td><td>Month or wage period covered</td><td>Important when reconciling attendance, overtime and bank payment.</td></tr>
+              <tr><td>Pay Period</td><td>Month or wage period covered</td><td>Important when reconciling attendance, <a href="overtime-guide.html" class="contextual-link">overtime</a> and bank payment.</td></tr>
               <tr><td>Rate / Basic Salary</td><td>Contractual or applicable rate of pay</td><td>Should agree with employment terms and payroll changes.</td></tr>
               <tr><td>Normal Wages</td><td>Wages earned for normal hours / work period</td><td>Forms the core earnings amount.</td></tr>
               <tr><td>Overtime</td><td>Overtime rate, hours and overtime wages where applicable</td><td>Helps verify OT hours and statutory rate calculation.</td></tr>
-              <tr><td>Allowances / Bonus / Commission</td><td>Additional remuneration paid through payroll</td><td>May affect gross earnings, tax and selected contributions.</td></tr>
+              <tr><td>Allowances / <a href="bonus-guide.html" class="contextual-link">Bonus</a> / Commission</td><td>Additional remuneration paid through payroll</td><td>May affect gross earnings, tax and selected contributions.</td></tr>
               <tr><td>Employee Deductions</td><td>EPF, SOCSO, EIS, PCB and other lawful deductions</td><td>Explains why take-home pay is lower than gross pay.</td></tr>
               <tr><td>Net Pay</td><td>Final amount payable to employee</td><td>Should reconcile to the salary actually credited or otherwise paid.</td></tr>
             </tbody>

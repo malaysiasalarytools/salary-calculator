@@ -814,7 +814,20 @@
         font-size: 34px;
       }
     }
-  </style>
+  
+    /* Contextual internal links */
+    .contextual-link {
+      color: var(--accent, #2f7d5e);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      font-weight: 600;
+    }
+
+    .contextual-link:hover {
+      text-decoration-thickness: 2px;
+    }
+</style>
 </head>
 
 <body>
@@ -1076,7 +1089,7 @@
         <li>Employees checking monthly take-home pay after deductions</li>
         <li>Job seekers comparing salary packages and job offers</li>
         <li>HR and payroll staff estimating employee deductions</li>
-        <li>Malaysians planning personal finances and income tax</li>
+        <li>Malaysians planning personal finances and <a href="income-tax-guide.html" class="contextual-link">income tax</a></li>
       </ul>
 
       <section class="tax-relief-box">

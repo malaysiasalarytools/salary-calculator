@@ -593,7 +593,20 @@
       .resource-actions{display:block}
       .resource-actions a{display:block;margin-top:8px}
     }
-  </style>
+  
+    /* Contextual internal links */
+    .contextual-link {
+      color: var(--accent, #2f7d5e);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      font-weight: 600;
+    }
+
+    .contextual-link:hover {
+      text-decoration-thickness: 2px;
+    }
+</style>
 </head>
 
 <body>
@@ -784,7 +797,7 @@
         <table class="contribution-table">
           <thead><tr><th>Scheme</th><th>Main Purpose</th><th>How It Affects Salary</th></tr></thead>
           <tbody>
-            <tr><td>EPF / KWSP</td><td>Retirement savings</td><td>Employee deduction plus employer contribution</td></tr>
+            <tr><td><a href="epf-guide.html" class="contextual-link">EPF / KWSP</a></td><td>Retirement savings</td><td>Employee deduction plus employer contribution</td></tr>
             <tr><td>SOCSO / PERKESO</td><td>Social security, employment injury and invalidity protection</td><td>Employee deduction plus employer contribution for eligible First Category employees</td></tr>
             <tr><td>EIS</td><td>Employment insurance and job-loss support</td><td>Small employee and employer contributions for eligible employees</td></tr>
           </tbody>
@@ -843,7 +856,7 @@
       <details class="faq-item"><summary>What is the SOCSO salary ceiling?</summary><p>The current monthly wage ceiling for contribution purposes is RM6,000. Wages above the ceiling are generally subject to the maximum scheduled contribution amount.</p></details>
       <details class="faq-item"><summary>Does SOCSO affect take-home pay?</summary><p>Yes. The employee portion is deducted from monthly salary. The employer portion is paid separately by the employer and does not reduce take-home pay.</p></details>
       <details class="faq-item"><summary>When must employers pay SOCSO contributions?</summary><p>Contributions for a month must generally be paid no later than the 15th day of the following month.</p></details>
-      <details class="faq-item"><summary>Is SOCSO the same as EIS?</summary><p>No. SOCSO provides social security protection such as employment injury and invalidity protection, while EIS focuses on employment insurance and support for eligible employees who lose their jobs.</p></details>
+      <details class="faq-item"><summary>Is SOCSO the same as EIS?</summary><p>No. SOCSO provides social security protection such as employment injury and invalidity protection, while <a href="eis-guide.html" class="contextual-link">EIS</a> focuses on employment insurance and support for eligible employees who lose their jobs.</p></details>
     </div>
 
     <section class="related-tools-section">

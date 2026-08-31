@@ -795,7 +795,20 @@
         font-size:34px;
       }
     }
-  </style>
+  
+    /* Contextual internal links */
+    .contextual-link {
+      color: var(--accent, #2f7d5e);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      font-weight: 600;
+    }
+
+    .contextual-link:hover {
+      text-decoration-thickness: 2px;
+    }
+</style>
 </head>
 
 <body>
@@ -873,7 +886,7 @@
 
       <div class="field-grid">
         <div class="form-group">
-          <label for="includeEPF">Employee EPF on bonus</label>
+          <label for="includeEPF">Employee <a href="epf-guide.html" class="contextual-link">EPF</a> on bonus</label>
           <select id="includeEPF" onchange="calculateBonus()">
             <option value="no" selected>Do not deduct EPF from bonus</option>
             <option value="yes">Deduct 11% EPF from bonus</option>

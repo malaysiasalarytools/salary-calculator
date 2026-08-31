@@ -494,7 +494,20 @@
       .component-card h3 { font-size: 15px; margin: 6px 0; }
       .component-card p { font-size: 12px; line-height: 1.35; }
     }
-  </style>
+  
+    /* Contextual internal links */
+    .contextual-link {
+      color: var(--accent, #2f7d5e);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      font-weight: 600;
+    }
+
+    .contextual-link:hover {
+      text-decoration-thickness: 2px;
+    }
+</style>
 </head>
 <body>
   <header class="top-nav">
@@ -653,7 +666,7 @@
       <section class="guide-box">
         <h2>Hourly Rate and Minimum Wage</h2>
         <p>
-          Hourly rate can also be used to check whether pay is reasonable compared with minimum wage expectations. Employees paid hourly should make sure the agreed rate and total pay are consistent with the latest applicable wage requirements.
+          Hourly rate can also be used to check whether pay is reasonable compared with <a href="minimum-wage-guide.html" class="contextual-link">minimum wage</a> expectations. Employees paid hourly should make sure the agreed rate and total pay are consistent with the latest applicable wage requirements.
         </p>
         <p>
           Minimum wage rules may change over time, so employees and employers should refer to the latest official requirements when reviewing hourly pay or part-time work arrangements.

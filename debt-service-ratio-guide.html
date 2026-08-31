@@ -499,7 +499,20 @@
       .component-card p { font-size: 12px; line-height: 1.35; }
       .cta-button { width: 100%; }
     }
-  </style>
+  
+    /* Contextual internal links */
+    .contextual-link {
+      color: var(--accent, #2f7d5e);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      font-weight: 600;
+    }
+
+    .contextual-link:hover {
+      text-decoration-thickness: 2px;
+    }
+</style>
 </head>
 
 <body>
@@ -536,7 +549,7 @@
 
       <section class="finance-summary-box">
         <h2>📌 DSR Quick Summary</h2>
-        <p>Debt Service Ratio compares monthly debt commitments against monthly income. It is a key concept for loan affordability and financial planning.</p>
+        <p>Debt Service Ratio compares monthly debt commitments against monthly income. It is a key concept for <a href="loan-guide.html" class="contextual-link">loan</a> affordability and financial planning.</p>
         <div class="summary-grid">
           <div class="summary-card">
             <strong>DSR Formula</strong>

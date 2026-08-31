@@ -595,7 +595,20 @@
       .resource-actions{display:block}
       .resource-actions a{display:block;margin-top:8px}
     }
-  </style>
+  
+    /* Contextual internal links */
+    .contextual-link {
+      color: var(--accent, #2f7d5e);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      font-weight: 600;
+    }
+
+    .contextual-link:hover {
+      text-decoration-thickness: 2px;
+    }
+</style>
 </head>
 
 <body>
@@ -750,7 +763,7 @@
     <section class="guide-box">
       <h2 id="overlap">MC Leave During Annual Leave or a Public Holiday</h2>
       <p>If an employee becomes entitled to statutory sick leave while already on statutory annual leave, the qualifying sick-leave days are treated as sick leave and the corresponding annual leave is deemed not to have been taken.</p>
-      <p>Similarly, if a paid public holiday falls within a period of statutory sick leave, the Employment Act requires another day to be granted as a paid holiday in substitution for that public holiday.</p>
+      <p>Similarly, if a paid <a href="public-holiday-guide.html" class="contextual-link">public holiday</a> falls within a period of statutory sick leave, the Employment Act requires another day to be granted as a paid holiday in substitution for that public holiday.</p>
 
       <div class="contribution-table-wrap">
         <table class="contribution-table">
@@ -815,7 +828,7 @@
           <thead><tr><th>Leave Type</th><th>Main Purpose</th><th>Paid?</th><th>Key Requirement</th></tr></thead>
           <tbody>
             <tr><td>Medical Leave</td><td>Illness / medical incapacity</td><td>Yes, if eligible</td><td>Proper medical certification + notification</td></tr>
-            <tr><td>Annual Leave</td><td>Planned paid personal time off</td><td>Yes</td><td>Annual leave entitlement and leave approval</td></tr>
+            <tr><td>Annual Leave</td><td>Planned paid personal time off</td><td>Yes</td><td><a href="annual-leave-guide.html" class="contextual-link">Annual leave entitlement</a> and leave approval</td></tr>
             <tr><td>Unpaid Leave</td><td>Approved absence without salary</td><td>No</td><td>Usually depends on employer approval / policy</td></tr>
           </tbody>
         </table>
