@@ -1,26 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-
-  <title>Malaysia SOCSO Calculator 2026 | PERKESO Employee & Employer Contribution</title>
-
-  <link rel="canonical" href="https://malaysiasalarytools.com/socso-calculator.html">
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <meta name="description" content="Free Malaysia SOCSO Calculator 2026. Calculate employee SOCSO deduction, employer SOCSO contribution, total PERKESO contribution, annual SOCSO amount and salary after SOCSO deduction.">
-
-  <meta name="keywords" content="Malaysia SOCSO calculator, PERKESO calculator, SOCSO contribution calculator, employee SOCSO, employer SOCSO, SOCSO 2026, Malaysia salary calculator">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
-
-  <script async
-  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6819619632324210"
-  crossorigin="anonymous"></script>
-
-  <script type="application/ld+json">
+<meta charset="utf-8"/>
+<title>Malaysia SOCSO Calculator 2026 | PERKESO Employee &amp; Employer Contribution</title>
+<link href="https://malaysiasalarytools.com/socso-calculator.html" rel="canonical"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<meta content="Free Malaysia SOCSO Calculator 2026. Calculate employee SOCSO deduction, employer SOCSO contribution, total PERKESO contribution, annual SOCSO amount and salary after SOCSO deduction." name="description"/>
+<meta content="Malaysia SOCSO calculator, PERKESO calculator, SOCSO contribution calculator, employee SOCSO, employer SOCSO, SOCSO 2026, Malaysia salary calculator" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6819619632324210"></script>
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -46,8 +37,7 @@
     ]
   }
   </script>
-
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -95,8 +85,7 @@
     ]
   }
   </script>
-
-  <style>
+<style>
     :root {
       --background: #f4f1ea;
       --card: #fbfaf6;
@@ -925,453 +914,358 @@
     }
   </style>
 </head>
-
 <body>
-
-  <header class="top-nav">
-    <div class="nav-inner">
-
-      <a href="index.html" class="brand">
-        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
-      </a>
-
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="calculators.html" class="active">Calculators</a>
-        <a href="guides.html">Guides</a>
-        <a href="about.html">About</a>
-      </nav>
-
-    </div>
-  </header>
-
-  <section class="hero">
-    <span class="pill">Updated for Malaysia 2026 PERKESO estimates</span>
-    <h1 class="serif">Calculate your <em>SOCSO contribution</em> in Malaysia</h1>
-    <p>
+<header class="top-nav">
+<div class="nav-inner">
+<a class="brand" href="index.html">
+<img alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';" src="logo.png"/>
+</a>
+<nav aria-label="Main navigation" class="nav-links">
+<a href="index.html">Home</a>
+<a class="active" href="calculators.html">Calculators</a>
+<a href="guides.html">Guides</a>
+<a href="about.html">About</a>
+</nav>
+</div>
+</header>
+<section class="hero">
+<span class="pill">Updated for Malaysia 2026 PERKESO estimates</span>
+<h1 class="serif">Calculate your <em>SOCSO contribution</em> in Malaysia</h1>
+<p>
       Free Malaysia SOCSO calculator for employees, job seekers and payroll users. Estimate employee SOCSO deduction, employer SOCSO contribution, total monthly PERKESO contribution and annual SOCSO amount instantly.
     </p>
-  </section>
-
-  <main class="main-wrapper">
-
-    <section class="calculator-shell" id="calculator">
-
-      <div class="panel">
-        <h2 class="serif">Calculate Your SOCSO</h2>
-        <p class="sub">Enter your monthly salary and select your SOCSO contribution category.</p>
-
-        <div class="form-group">
-          <label for="salary">Monthly salary / wages</label>
-          <div class="input-row">
-            <span>RM</span>
-            <input type="number" id="salary" value="4000" min="0" step="100" placeholder="Enter monthly salary">
-          </div>
-
-          <input type="range" id="salaryRange" min="0" max="20000" step="100" value="4000">
-
-          <div class="preset-grid">
-            <button type="button" class="preset" onclick="setSalary(3000)">RM 3,000</button>
-            <button type="button" class="preset" onclick="setSalary(4000)">RM 4,000</button>
-            <button type="button" class="preset" onclick="setSalary(5000)">RM 5,000</button>
-            <button type="button" class="preset" onclick="setSalary(6000)">RM 6,000</button>
-            <button type="button" class="preset" onclick="setSalary(10000)">RM 10,000</button>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="category">SOCSO category</label>
-          <select id="category" onchange="calculateSOCSO()">
-            <option value="first" selected>First Category - Employment Injury & Invalidity</option>
-            <option value="second">Second Category - Employment Injury only</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <div class="checkbox-row">
-            <input type="checkbox" id="includeSKBBK" onchange="calculateSOCSO()">
-            <label for="includeSKBBK">
+</section>
+<main class="main-wrapper">
+<section class="calculator-shell" id="calculator">
+<div class="panel">
+<h2 class="serif">Calculate Your SOCSO</h2>
+<p class="sub">Enter your monthly salary and select your SOCSO contribution category.</p>
+<div class="form-group">
+<label for="salary">Monthly salary / wages</label>
+<div class="input-row">
+<span>RM</span>
+<input id="salary" min="0" placeholder="Enter monthly salary" step="100" type="number" value="4000"/>
+</div>
+<input id="salaryRange" max="20000" min="0" step="100" type="range" value="4000"/>
+<div class="preset-grid">
+<button class="preset" onclick="setSalary(3000)" type="button">RM 3,000</button>
+<button class="preset" onclick="setSalary(4000)" type="button">RM 4,000</button>
+<button class="preset" onclick="setSalary(5000)" type="button">RM 5,000</button>
+<button class="preset" onclick="setSalary(6000)" type="button">RM 6,000</button>
+<button class="preset" onclick="setSalary(10000)" type="button">RM 10,000</button>
+</div>
+</div>
+<div class="form-group">
+<label for="category">SOCSO category</label>
+<select id="category" onchange="calculateSOCSO()">
+<option selected="" value="first">First Category - Employment Injury &amp; Invalidity</option>
+<option value="second">Second Category - Employment Injury only</option>
+</select>
+</div>
+<div class="form-group">
+<div class="checkbox-row">
+<input id="includeSKBBK" onchange="calculateSOCSO()" type="checkbox"/>
+<label for="includeSKBBK">
               Include optional LINDUNG 24 Jam contribution
               <small>Adds the employee-paid Non-Employment Injury contribution under the 2026 schedule.</small>
-            </label>
-          </div>
-        </div>
-
-        <button type="button" class="calc-button" onclick="calculateSOCSO()">Calculate My SOCSO</button>
-
-        <a class="secondary-button" href="index.html">
-          Calculate Full Salary After EPF, SOCSO, EIS & PCB →
+</label>
+</div>
+</div>
+<button class="calc-button" onclick="calculateSOCSO()" type="button">Calculate My SOCSO</button>
+<a class="secondary-button" href="index.html">
+          Calculate Full Salary After EPF, SOCSO, EIS &amp; PCB →
         </a>
-
-        <p class="input-note">
+<p class="input-note">
           This calculator applies the official PERKESO wage-class schedule and the RM6,000 monthly wage ceiling. The optional LINDUNG 24 Jam amount is included only when selected.
         </p>
-      </div>
-
-      <div class="results-panel">
-        <h2 class="serif">Your SOCSO result</h2>
-        <p class="sub">Calculated total monthly SOCSO contribution</p>
-
-        <div class="net">RM <span id="totalSOCSO">0.00</span></div>
-        <p class="net-caption" id="categoryExplanation">Applied the official PERKESO contribution schedule.</p>
-
-        <div class="bar" id="socsoBar"></div>
-
-        <div class="result-rows" id="monthlyRows"></div>
-
-        <div class="annual-summary" id="annualRows"></div>
-      </div>
-
-    </section>
-
-    <div class="seo">
-
-      <section>
-
-        <h2>How SOCSO Is Calculated in Malaysia</h2>
-
-        <p>
+</div>
+<div class="results-panel">
+<h2 class="serif">Your SOCSO result</h2>
+<p class="sub">Calculated total monthly SOCSO contribution</p>
+<div class="net">RM <span id="totalSOCSO">0.00</span></div>
+<p class="net-caption" id="categoryExplanation">Applied the official PERKESO contribution schedule.</p>
+<div class="bar" id="socsoBar"></div>
+<div class="result-rows" id="monthlyRows"></div>
+<div class="annual-summary" id="annualRows"></div>
+</div>
+</section>
+<div class="seo">
+<section>
+<h2>How SOCSO Is Calculated in Malaysia</h2>
+<p>
           SOCSO, also known as PERKESO, is a social security contribution for eligible employees in Malaysia. It is normally calculated based on monthly wages, wage class and SOCSO category. Employee SOCSO is deducted from salary, while employer SOCSO is paid by the employer on top of salary.
         </p>
-
-        <div class="formula-box">
-          <strong>SOCSO Contribution = Official PERKESO Wage-Class Amount</strong>
-          <span>Example: Monthly wages above RM3,900 but not exceeding RM4,000 use the corresponding official contribution row.</span>
-        </div>
-
-        <div class="rate-grid">
-          <div class="rate-card">
-            <strong>First</strong>
-            <h3>First Category</h3>
-            <p>Commonly covers Employment Injury and Invalidity schemes.</p>
-          </div>
-
-          <div class="rate-card">
-            <strong>Second</strong>
-            <h3>Second Category</h3>
-            <p>Commonly covers Employment Injury protection only.</p>
-          </div>
-
-          <div class="rate-card">
-            <strong>Monthly</strong>
-            <h3>Payroll Deduction</h3>
-            <p>SOCSO is usually calculated and submitted through monthly payroll.</p>
-          </div>
-
-          <div class="rate-card">
-            <strong>PERKESO</strong>
-            <h3>Protection System</h3>
-            <p>SOCSO is social security protection, not retirement savings like EPF.</p>
-          </div>
-        </div>
-
-      </section>
-
-      <section class="contribution-box">
-
-        <h2>SOCSO Contribution Snapshot 2026</h2>
-
-        <p>
+<div class="formula-box">
+<strong>SOCSO Contribution = Official PERKESO Wage-Class Amount</strong>
+<span>Example: Monthly wages above RM3,900 but not exceeding RM4,000 use the corresponding official contribution row.</span>
+</div>
+<div class="rate-grid">
+<div class="rate-card">
+<strong>First</strong>
+<h3>First Category</h3>
+<p>Commonly covers Employment Injury and Invalidity schemes.</p>
+</div>
+<div class="rate-card">
+<strong>Second</strong>
+<h3>Second Category</h3>
+<p>Commonly covers Employment Injury protection only.</p>
+</div>
+<div class="rate-card">
+<strong>Monthly</strong>
+<h3>Payroll Deduction</h3>
+<p>SOCSO is usually calculated and submitted through monthly payroll.</p>
+</div>
+<div class="rate-card">
+<strong>PERKESO</strong>
+<h3>Protection System</h3>
+<p>SOCSO is social security protection, not retirement savings like EPF.</p>
+</div>
+</div>
+</section>
+<section class="contribution-box">
+<h2>SOCSO Contribution Snapshot 2026</h2>
+<p>
           The table below shows official First Category SOCSO amounts under the RM6,000 wage ceiling, excluding the optional LINDUNG 24 Jam contribution.
         </p>
-
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Monthly Salary</th>
-                <th>Employee SOCSO</th>
-                <th>Employer SOCSO</th>
-                <th>Total SOCSO</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>RM2,000</td>
-                <td>RM9.75</td>
-                <td>RM34.15</td>
-                <td>RM43.90</td>
-              </tr>
-              <tr>
-                <td>RM3,000</td>
-                <td>RM14.75</td>
-                <td>RM51.65</td>
-                <td>RM66.40</td>
-              </tr>
-              <tr>
-                <td>RM4,000</td>
-                <td>RM19.75</td>
-                <td>RM69.15</td>
-                <td>RM88.90</td>
-              </tr>
-              <tr>
-                <td>RM5,000</td>
-                <td>RM24.75</td>
-                <td>RM86.65</td>
-                <td>RM111.40</td>
-              </tr>
-              <tr>
-                <td>RM6,000</td>
-                <td>RM29.75</td>
-                <td>RM104.15</td>
-                <td>RM133.90</td>
-              </tr>
-              <tr>
-                <td>RM8,000</td>
-                <td>RM29.75</td>
-                <td>RM104.15</td>
-                <td>RM133.90</td>
-              </tr>
-              <tr>
-                <td>RM10,000</td>
-                <td>RM29.75</td>
-                <td>RM104.15</td>
-                <td>RM133.90</td>
-              </tr>
+<div class="contribution-table-wrap">
+<table class="contribution-table">
+<thead>
+<tr>
+<th>Monthly Salary</th>
+<th>Employee SOCSO</th>
+<th>Employer SOCSO</th>
+<th>Total SOCSO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RM2,000</td>
+<td>RM9.75</td>
+<td>RM34.15</td>
+<td>RM43.90</td>
+</tr>
+<tr>
+<td>RM3,000</td>
+<td>RM14.75</td>
+<td>RM51.65</td>
+<td>RM66.40</td>
+</tr>
+<tr>
+<td>RM4,000</td>
+<td>RM19.75</td>
+<td>RM69.15</td>
+<td>RM88.90</td>
+</tr>
+<tr>
+<td>RM5,000</td>
+<td>RM24.75</td>
+<td>RM86.65</td>
+<td>RM111.40</td>
+</tr>
+<tr>
+<td>RM6,000</td>
+<td>RM29.75</td>
+<td>RM104.15</td>
+<td>RM133.90</td>
+</tr>
+<tr>
+<td>RM8,000</td>
+<td>RM29.75</td>
+<td>RM104.15</td>
+<td>RM133.90</td>
+</tr>
+<tr>
+<td>RM10,000</td>
+<td>RM29.75</td>
+<td>RM104.15</td>
+<td>RM133.90</td>
+</tr>
 </tbody>
-          </table>
-        </div>
-
-        <p class="contribution-note">
+</table>
+</div>
+<p class="contribution-note">
           Note: These amounts follow the official wage-class schedule. The optional LINDUNG 24 Jam employee contribution is not included in this snapshot.
         </p>
-
-      </section>
-
-      <section class="contribution-box">
-
-        <h2>First Category vs Second Category SOCSO</h2>
-
-        <p>
+</section>
+<section class="contribution-box">
+<h2>First Category vs Second Category SOCSO</h2>
+<p>
           SOCSO category matters because employee and employer contribution treatment may be different depending on the employee's coverage category.
         </p>
-
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Category</th>
-                <th>Common Coverage</th>
-                <th>Employee Contribution</th>
-                <th>Employer Contribution</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>First Category</strong></td>
-                <td>Employment Injury and Invalidity</td>
-                <td>Yes</td>
-                <td>Yes</td>
-              </tr>
-              <tr>
-                <td><strong>Second Category</strong></td>
-                <td>Employment Injury only</td>
-                <td>Usually not applicable</td>
-                <td>Yes</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p class="contribution-note">
+<div class="contribution-table-wrap">
+<table class="contribution-table">
+<thead>
+<tr>
+<th>Category</th>
+<th>Common Coverage</th>
+<th>Employee Contribution</th>
+<th>Employer Contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>First Category</strong></td>
+<td>Employment Injury and Invalidity</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Second Category</strong></td>
+<td>Employment Injury only</td>
+<td>Usually not applicable</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="contribution-note">
           This table is simplified for easy understanding. Actual eligibility and contribution treatment should be checked with PERKESO or payroll professionals.
         </p>
-
-      </section>
-
-      <section>
-
-        <h2>What This SOCSO Calculator Shows</h2>
-
-        <p>
+</section>
+<section>
+<h2>What This SOCSO Calculator Shows</h2>
+<p>
           This calculator is designed to help you understand both the employee deduction side and the employer contribution side of SOCSO. It is useful when checking payslips, comparing job offers, estimating payroll costs or understanding statutory deductions.
         </p>
-
-        <div class="component-grid">
-
-          <a class="component-card" href="socso-guide.html">
-            <div class="component-icon">🛡️</div>
-            <h3>Employee SOCSO</h3>
-            <p>Amount deducted from monthly salary for SOCSO contribution.</p>
-          </a>
-
-          <a class="component-card" href="socso-guide.html">
-            <div class="component-icon">🏢</div>
-            <h3>Employer SOCSO</h3>
-            <p>Additional contribution paid by the employer on top of salary.</p>
-          </a>
-
-          <a class="component-card" href="index.html">
-            <div class="component-icon">📊</div>
-            <h3>Salary After SOCSO</h3>
-            <p>Estimate salary after employee SOCSO deduction before other deductions.</p>
-          </a>
-
-          <a class="component-card" href="socso-guide.html">
-            <div class="component-icon">📅</div>
-            <h3>Annual SOCSO</h3>
-            <p>Estimate yearly employee SOCSO and total SOCSO contribution.</p>
-          </a>
-
-        </div>
-
-      </section>
-
-      <h2>Who Should Use This SOCSO Calculator?</h2>
-
-      <ul>
-        <li>Employees checking monthly SOCSO deduction from salary</li>
-        <li>Job seekers comparing salary offers and payroll deductions</li>
-        <li>Employers estimating employer SOCSO contribution</li>
-        <li>HR and payroll users preparing quick payroll estimates</li>
-        <li>Malaysians trying to understand PERKESO deductions on payslips</li>
-      </ul>
-
-      <section class="official-box">
-
-        <h2>Official SOCSO / PERKESO Resources</h2>
-
-        <p>
+<div class="component-grid">
+<a class="component-card" href="socso-guide.html">
+<div class="component-icon">🛡️</div>
+<h3>Employee SOCSO</h3>
+<p>Amount deducted from monthly salary for SOCSO contribution.</p>
+</a>
+<a class="component-card" href="socso-guide.html">
+<div class="component-icon">🏢</div>
+<h3>Employer SOCSO</h3>
+<p>Additional contribution paid by the employer on top of salary.</p>
+</a>
+<a class="component-card" href="index.html">
+<div class="component-icon">📊</div>
+<h3>Salary After SOCSO</h3>
+<p>Estimate salary after employee SOCSO deduction before other deductions.</p>
+</a>
+<a class="component-card" href="socso-guide.html">
+<div class="component-icon">📅</div>
+<h3>Annual SOCSO</h3>
+<p>Estimate yearly employee SOCSO and total SOCSO contribution.</p>
+</a>
+</div>
+</section>
+<h2>Who Should Use This SOCSO Calculator?</h2>
+<ul>
+<li>Employees checking monthly SOCSO deduction from salary</li>
+<li>Job seekers comparing salary offers and payroll deductions</li>
+<li>Employers estimating employer SOCSO contribution</li>
+<li>HR and payroll users preparing quick payroll estimates</li>
+<li>Malaysians trying to understand PERKESO deductions on payslips</li>
+</ul>
+<section class="official-box">
+<h2>Official SOCSO / PERKESO Resources</h2>
+<p>
           SOCSO rules, contribution rates and payroll requirements may change over time. For official confirmation, always refer to PERKESO resources or consult a qualified payroll professional.
         </p>
-
-        <div class="official-links">
-
-          <a href="https://www.perkeso.gov.my/" target="_blank" rel="noopener">
-            <h3>PERKESO Official Website</h3>
-            <p>Official SOCSO / PERKESO information and services.</p>
-          </a>
-
-          <a href="https://www.perkeso.gov.my/en/our-services/protection/employer-employee-eligibility.html" target="_blank" rel="noopener">
-            <h3>Employer & Employee Eligibility</h3>
-            <p>Official PERKESO eligibility information for employers and employees.</p>
-          </a>
-
-          <a href="https://www.perkeso.gov.my/en/our-services/protection/contribution.html" target="_blank" rel="noopener">
-            <h3>SOCSO Contribution Information</h3>
-            <p>Official contribution information and reference for payroll users.</p>
-          </a>
-
-        </div>
-
-        <div class="payroll-note">
-          <strong>Important:</strong>
+<div class="official-links">
+<a href="https://www.perkeso.gov.my/" rel="noopener" target="_blank">
+<h3>PERKESO Official Website</h3>
+<p>Official SOCSO / PERKESO information and services.</p>
+</a>
+<a href="https://www.perkeso.gov.my/en/our-services/protection/employer-employee-eligibility.html" rel="noopener" target="_blank">
+<h3>Employer &amp; Employee Eligibility</h3>
+<p>Official PERKESO eligibility information for employers and employees.</p>
+</a>
+<a href="https://www.perkeso.gov.my/en/our-services/protection/contribution.html" rel="noopener" target="_blank">
+<h3>SOCSO Contribution Information</h3>
+<p>Official contribution information and reference for payroll users.</p>
+</a>
+</div>
+<div class="payroll-note">
+<strong>Important:</strong>
           This website provides simplified estimates for general information only. It should not be treated as professional tax, legal, payroll, accounting or financial advice.
         </div>
-
-      </section>
-
-      <h2>Frequently Asked Questions</h2>
-
-      <div class="faq-box">
-
-        <details class="faq-item" open>
-          <summary>How is SOCSO calculated in Malaysia?</summary>
-          <p>
+</section>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-box">
+<details class="faq-item" open="">
+<summary>How is SOCSO calculated in Malaysia?</summary>
+<p>
             SOCSO is calculated based on monthly wages, wage class and contribution category. This calculator follows the official PERKESO contribution schedule.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is employer SOCSO deducted from my salary?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>Is employer SOCSO deducted from my salary?</summary>
+<p>
             No. Employee SOCSO is deducted from your salary. Employer SOCSO is an additional contribution paid by your employer on top of your salary.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What is First Category SOCSO?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>What is First Category SOCSO?</summary>
+<p>
             First Category is commonly used for Employment Injury and Invalidity protection. In this calculator, it estimates both employee and employer portions.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What is Second Category SOCSO?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>What is Second Category SOCSO?</summary>
+<p>
             Second Category is commonly used for Employment Injury protection only. In this calculator, it estimates employer contribution only.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Why is my actual SOCSO different from this calculator?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>Why is my actual SOCSO different from this calculator?</summary>
+<p>
             Actual payroll treatment may still differ if the employee's coverage eligibility, contribution category or LINDUNG 24 Jam participation status is different.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Does SOCSO affect take-home pay?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>Does SOCSO affect take-home pay?</summary>
+<p>
             Yes. Employee SOCSO reduces monthly take-home pay slightly because it is deducted through payroll.
           </p>
-        </details>
-
-      </div>
-
-      <section class="salary-guides-box">
-
-        <h2>Malaysia Payroll Guides</h2>
-
-        <p>
+</details>
+</div>
+<section class="salary-guides-box">
+<h2>Malaysia Payroll Guides</h2>
+<p>
           Learn more about SOCSO, EPF, EIS, PCB and salary deductions in Malaysia.
         </p>
+<div class="guide-mini-grid">
+<a href="socso-guide.html">SOCSO Guide</a>
+<a href="eis-guide.html">EIS Guide</a>
+<a href="skbbk-guide.html">SKBBK Guide</a>
+<a href="salary-deduction-guide.html">Salary Deduction Guide</a>
 
-        <div class="guide-mini-grid">
-          <a href="socso-guide.html">🛡️ SOCSO Guide</a>
-          <a href="epf-guide.html">💰 EPF Guide</a>
-          <a href="eis-guide.html">📋 EIS Guide</a>
-          <a href="pcb-guide.html">🏛️ PCB Guide</a>
-          <a href="salary-deduction-guide.html">📉 Salary Deduction Guide</a>
-          <a href="payslip-guide.html">🧾 Payslip Guide</a>
-        </div>
 
-        <p class="view-all-guides">
-          <a href="guides.html">View All Salary Guides →</a>
-        </p>
-
-      </section>
-
-      <section class="salary-guides-box">
-
-        <h2>Related Calculators</h2>
-
-        <p>
+</div>
+<p class="view-all-guides">
+<a href="guides.html">View All Salary Guides →</a>
+</p>
+</section>
+<section class="salary-guides-box">
+<h2>Related Calculators</h2>
+<p>
           Explore more free Malaysia salary and payroll calculators.
         </p>
-
-        <div class="guide-mini-grid">
-          <a href="index.html">Salary Calculator</a>
-          <a href="epf-calculator.html">EPF Calculator</a>
-          <a href="eis-calculator.html">EIS Calculator</a>
-          <a href="pcb-calculator.html">PCB Calculator</a>
-          <a href="income-tax-calculator.html">Income Tax Calculator</a>
-          <a href="payslip-generator.html">Payslip Generator</a>
-        </div>
-
-        <p class="view-all-guides">
-          <a href="calculators.html">View All Calculators →</a>
-        </p>
-
-      </section>
-
-    </div>
-
-  </main>
-
-  <footer class="footer">
-    <p>© 2026 Malaysia Salary Tools</p>
-    <p>
-      <a href="index.html">Home</a> |
+<div class="guide-mini-grid">
+<a href="index.html">Salary Calculator</a>
+<a href="eis-calculator.html">EIS Calculator</a>
+<a href="skbbk-calculator.html">SKBBK Calculator</a>
+</div>
+<p class="view-all-guides">
+<a href="calculators.html">View All Calculators →</a>
+</p>
+</section>
+</div>
+</main>
+<footer class="footer">
+<p>© 2026 Malaysia Salary Tools</p>
+<p>
+<a href="index.html">Home</a> |
       <a href="calculators.html">Calculators</a> |
       <a href="guides.html">Guides</a> |
       <a href="about.html">About</a> |
       <a href="contact.html">Contact Us</a> |
       <a href="privacy-policy.html">Privacy Policy</a>
-    </p>
-  </footer>
-
-  <script>
+</p>
+</footer>
+<script>
     function formatRM(amount) {
       return Number(amount).toLocaleString('en-MY', {
         minimumFractionDigits: 2,
@@ -1602,6 +1496,5 @@
 
     calculateSOCSO();
   </script>
-
 </body>
 </html>

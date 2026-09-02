@@ -1,21 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-
-  <title>Malaysia Income Tax Calculator 2026 | Personal Tax Calculator</title>
-
-  <link rel="canonical" href="https://malaysiasalarytools.com/income-tax-calculator.html">
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <meta name="description" content="Free Malaysia Income Tax Calculator 2026. Estimate annual income tax, monthly tax, chargeable income and effective tax rate based on annual income and tax reliefs.">
-  <meta name="keywords" content="Malaysia income tax calculator, personal tax calculator Malaysia, income tax 2026 Malaysia, LHDN tax calculator, Malaysia tax relief calculator">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
-
-  <style>
+<meta charset="utf-8"/>
+<title>Malaysia Income Tax Calculator 2026 | Personal Tax Calculator</title>
+<link href="https://malaysiasalarytools.com/income-tax-calculator.html" rel="canonical"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<meta content="Free Malaysia Income Tax Calculator 2026. Estimate annual income tax, monthly tax, chargeable income and effective tax rate based on annual income and tax reliefs." name="description"/>
+<meta content="Malaysia income tax calculator, personal tax calculator Malaysia, income tax 2026 Malaysia, LHDN tax calculator, Malaysia tax relief calculator" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<style>
     :root {
       --background:#f4f1ea;
       --card:#fbfaf6;
@@ -803,398 +798,328 @@
     }
   </style>
 </head>
-
 <body>
-
 <header class="top-nav">
-  <div class="nav-inner">
-    <a href="index.html" class="brand">
-      <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
-    </a>
-
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="calculators.html" class="active">Calculators</a>
-      <a href="guides.html">Guides</a>
-      <a href="about.html">About</a>
-    </nav>
-  </div>
+<div class="nav-inner">
+<a class="brand" href="index.html">
+<img alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';" src="logo.png"/>
+</a>
+<nav aria-label="Main navigation" class="nav-links">
+<a href="index.html">Home</a>
+<a class="active" href="calculators.html">Calculators</a>
+<a href="guides.html">Guides</a>
+<a href="about.html">About</a>
+</nav>
+</div>
 </header>
-
 <section class="hero">
-  <span class="pill">Updated for Malaysia 2026 tax estimates</span>
-  <h1 class="serif">Calculate your <em>income tax</em> in Malaysia</h1>
-  <p>
+<span class="pill">Updated for Malaysia 2026 tax estimates</span>
+<h1 class="serif">Calculate your <em>income tax</em> in Malaysia</h1>
+<p>
     Free Malaysia income tax calculator for employees, taxpayers and job seekers. Estimate annual tax, monthly tax, chargeable income, net annual income and effective tax rate.
   </p>
 </section>
-
 <main class="main-wrapper">
-
-  <section class="calculator-shell" id="calculator">
-
-    <div class="panel">
-      <h2 class="serif">Calculate Income Tax</h2>
-      <p class="sub">Enter your annual income, tax relief and resident status for a simplified tax estimate.</p>
-
-      <div class="form-group">
-        <label for="income">Annual income</label>
-        <div class="input-row">
-          <span>RM</span>
-          <input type="number" id="income" value="60000" min="0" step="1000" placeholder="Example: 60000">
-        </div>
-
-        <input type="range" id="incomeRange" min="0" max="500000" step="1000" value="60000">
-
-        <div class="preset-grid">
-          <button type="button" class="preset" onclick="setIncome(36000)">RM 36,000</button>
-          <button type="button" class="preset" onclick="setIncome(60000)">RM 60,000</button>
-          <button type="button" class="preset" onclick="setIncome(90000)">RM 90,000</button>
-          <button type="button" class="preset" onclick="setIncome(120000)">RM 120,000</button>
-          <button type="button" class="preset" onclick="setIncome(180000)">RM 180,000</button>
-        </div>
-      </div>
-
-      <div class="field-grid">
-        <div class="form-group">
-          <label for="relief">Tax relief / deductions</label>
-          <div class="input-row">
-            <span>RM</span>
-            <input type="number" id="relief" value="9000" min="0" step="100" placeholder="Example: 9000">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="rebate">Tax rebate / zakat</label>
-          <div class="input-row">
-            <span>RM</span>
-            <input type="number" id="rebate" value="0" min="0" step="100" placeholder="Example: 0">
-          </div>
-        </div>
-      </div>
-
-      <div class="field-grid">
-        <div class="form-group">
-          <label for="residentStatus">Tax resident status</label>
-          <select id="residentStatus" onchange="calculateIncomeTax()">
-            <option value="resident" selected>Resident - Progressive tax estimate</option>
-            <option value="nonresident">Non-resident - 30% estimate</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="months">Monthly tax spread</label>
-          <select id="months" onchange="calculateIncomeTax()">
-            <option value="12" selected>12 months</option>
-            <option value="11">11 months</option>
-            <option value="10">10 months</option>
-            <option value="9">9 months</option>
-            <option value="6">6 months</option>
-          </select>
-        </div>
-      </div>
-
-      <button type="button" class="calc-button" onclick="calculateIncomeTax()">Calculate My Income Tax</button>
-
-      <a class="secondary-button" href="pcb-calculator.html">
+<section class="calculator-shell" id="calculator">
+<div class="panel">
+<h2 class="serif">Calculate Income Tax</h2>
+<p class="sub">Enter your annual income, tax relief and resident status for a simplified tax estimate.</p>
+<div class="form-group">
+<label for="income">Annual income</label>
+<div class="input-row">
+<span>RM</span>
+<input id="income" min="0" placeholder="Example: 60000" step="1000" type="number" value="60000"/>
+</div>
+<input id="incomeRange" max="500000" min="0" step="1000" type="range" value="60000"/>
+<div class="preset-grid">
+<button class="preset" onclick="setIncome(36000)" type="button">RM 36,000</button>
+<button class="preset" onclick="setIncome(60000)" type="button">RM 60,000</button>
+<button class="preset" onclick="setIncome(90000)" type="button">RM 90,000</button>
+<button class="preset" onclick="setIncome(120000)" type="button">RM 120,000</button>
+<button class="preset" onclick="setIncome(180000)" type="button">RM 180,000</button>
+</div>
+</div>
+<div class="field-grid">
+<div class="form-group">
+<label for="relief">Tax relief / deductions</label>
+<div class="input-row">
+<span>RM</span>
+<input id="relief" min="0" placeholder="Example: 9000" step="100" type="number" value="9000"/>
+</div>
+</div>
+<div class="form-group">
+<label for="rebate">Tax rebate / zakat</label>
+<div class="input-row">
+<span>RM</span>
+<input id="rebate" min="0" placeholder="Example: 0" step="100" type="number" value="0"/>
+</div>
+</div>
+</div>
+<div class="field-grid">
+<div class="form-group">
+<label for="residentStatus">Tax resident status</label>
+<select id="residentStatus" onchange="calculateIncomeTax()">
+<option selected="" value="resident">Resident - Progressive tax estimate</option>
+<option value="nonresident">Non-resident - 30% estimate</option>
+</select>
+</div>
+<div class="form-group">
+<label for="months">Monthly tax spread</label>
+<select id="months" onchange="calculateIncomeTax()">
+<option selected="" value="12">12 months</option>
+<option value="11">11 months</option>
+<option value="10">10 months</option>
+<option value="9">9 months</option>
+<option value="6">6 months</option>
+</select>
+</div>
+</div>
+<button class="calc-button" onclick="calculateIncomeTax()" type="button">Calculate My Income Tax</button>
+<a class="secondary-button" href="pcb-calculator.html">
         Calculate Monthly PCB Instead →
       </a>
-
-      <p class="input-note">
+<p class="input-note">
         This is a simplified tax estimate. Actual tax may vary depending on official LHDN rules, reliefs, rebates, deductions, zakat, residence status and tax filing details.
       </p>
-    </div>
-
-    <div class="results-panel">
-      <h2 class="serif">Your tax result</h2>
-      <p class="sub">Estimated annual income tax</p>
-
-      <div class="net">RM <span id="annualTax">0.00</span></div>
-      <p class="net-caption" id="taxExplanation">Resident progressive tax estimate applied.</p>
-
-      <div class="bar" id="taxBar"></div>
-
-      <div class="result-rows" id="resultRows"></div>
-
-      <div class="annual-summary" id="summaryRows"></div>
-    </div>
-
-  </section>
-
-  <div class="seo">
-
-    <section>
-      <h2>How Income Tax Is Calculated in Malaysia</h2>
-
-      <p>
+</div>
+<div class="results-panel">
+<h2 class="serif">Your tax result</h2>
+<p class="sub">Estimated annual income tax</p>
+<div class="net">RM <span id="annualTax">0.00</span></div>
+<p class="net-caption" id="taxExplanation">Resident progressive tax estimate applied.</p>
+<div class="bar" id="taxBar"></div>
+<div class="result-rows" id="resultRows"></div>
+<div class="annual-summary" id="summaryRows"></div>
+</div>
+</section>
+<div class="seo">
+<section>
+<h2>How Income Tax Is Calculated in Malaysia</h2>
+<p>
         Income tax is tax charged on taxable income. For resident individuals in Malaysia, income tax is generally calculated using progressive tax rates. This means higher chargeable income may be taxed at higher tax brackets.
       </p>
-
-      <div class="formula-box">
-        <strong>Chargeable Income = Annual Income − Tax Reliefs</strong>
-        <span>Estimated tax is then calculated using progressive resident individual tax brackets.</span>
-      </div>
-
-      <div class="rate-grid">
-        <div class="rate-card">
-          <strong>Annual</strong>
-          <h3>Annual Tax</h3>
-          <p>Estimated tax payable for the year after reliefs and rebates.</p>
-        </div>
-
-        <div class="rate-card">
-          <strong>Monthly</strong>
-          <h3>Monthly Tax</h3>
-          <p>Estimated annual tax divided by selected number of months.</p>
-        </div>
-
-        <div class="rate-card">
-          <strong>Relief</strong>
-          <h3>Tax Relief</h3>
-          <p>Reliefs can reduce chargeable income for resident taxpayers.</p>
-        </div>
-
-        <div class="rate-card">
-          <strong>Rate</strong>
-          <h3>Effective Rate</h3>
-          <p>Estimated tax as a percentage of annual income.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="contribution-box">
-      <h2>Malaysia Resident Individual Tax Bracket Snapshot</h2>
-
-      <p>
+<div class="formula-box">
+<strong>Chargeable Income = Annual Income − Tax Reliefs</strong>
+<span>Estimated tax is then calculated using progressive resident individual tax brackets.</span>
+</div>
+<div class="rate-grid">
+<div class="rate-card">
+<strong>Annual</strong>
+<h3>Annual Tax</h3>
+<p>Estimated tax payable for the year after reliefs and rebates.</p>
+</div>
+<div class="rate-card">
+<strong>Monthly</strong>
+<h3>Monthly Tax</h3>
+<p>Estimated annual tax divided by selected number of months.</p>
+</div>
+<div class="rate-card">
+<strong>Relief</strong>
+<h3>Tax Relief</h3>
+<p>Reliefs can reduce chargeable income for resident taxpayers.</p>
+</div>
+<div class="rate-card">
+<strong>Rate</strong>
+<h3>Effective Rate</h3>
+<p>Estimated tax as a percentage of annual income.</p>
+</div>
+</div>
+</section>
+<section class="contribution-box">
+<h2>Malaysia Resident Individual Tax Bracket Snapshot</h2>
+<p>
         The table below gives a simplified resident individual tax bracket snapshot for planning. Always refer to LHDN for official confirmation.
       </p>
-
-      <div class="contribution-table-wrap">
-        <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Chargeable Income Band</th>
-              <th>Rate Used</th>
-              <th>Simple Explanation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>First RM5,000</td>
-              <td>0%</td>
-              <td>No tax on this first band.</td>
-            </tr>
-            <tr>
-              <td>RM5,001 - RM20,000</td>
-              <td>1%</td>
-              <td>Low introductory tax band.</td>
-            </tr>
-            <tr>
-              <td>RM20,001 - RM35,000</td>
-              <td>3%</td>
-              <td>Applied progressively only to this band.</td>
-            </tr>
-            <tr>
-              <td>RM35,001 - RM50,000</td>
-              <td>6%</td>
-              <td>Middle lower-income tax band.</td>
-            </tr>
-            <tr>
-              <td>RM50,001 - RM70,000</td>
-              <td>11%</td>
-              <td>Applied only to income inside this band.</td>
-            </tr>
-            <tr>
-              <td>RM70,001 - RM100,000</td>
-              <td>19%</td>
-              <td>Higher middle-income tax band.</td>
-            </tr>
-            <tr>
-              <td>Above RM100,000</td>
-              <td>25% - 30%</td>
-              <td>Higher bands apply progressively.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p class="payroll-note">
-        <strong>Note:</strong>
+<div class="contribution-table-wrap">
+<table class="contribution-table">
+<thead>
+<tr>
+<th>Chargeable Income Band</th>
+<th>Rate Used</th>
+<th>Simple Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First RM5,000</td>
+<td>0%</td>
+<td>No tax on this first band.</td>
+</tr>
+<tr>
+<td>RM5,001 - RM20,000</td>
+<td>1%</td>
+<td>Low introductory tax band.</td>
+</tr>
+<tr>
+<td>RM20,001 - RM35,000</td>
+<td>3%</td>
+<td>Applied progressively only to this band.</td>
+</tr>
+<tr>
+<td>RM35,001 - RM50,000</td>
+<td>6%</td>
+<td>Middle lower-income tax band.</td>
+</tr>
+<tr>
+<td>RM50,001 - RM70,000</td>
+<td>11%</td>
+<td>Applied only to income inside this band.</td>
+</tr>
+<tr>
+<td>RM70,001 - RM100,000</td>
+<td>19%</td>
+<td>Higher middle-income tax band.</td>
+</tr>
+<tr>
+<td>Above RM100,000</td>
+<td>25% - 30%</td>
+<td>Higher bands apply progressively.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="payroll-note">
+<strong>Note:</strong>
         This is a simplified planning table. Official tax computation may include detailed rates, rebates, deductions and special tax rules.
       </p>
-    </section>
-
-    <section>
-      <h2>What This Income Tax Calculator Shows</h2>
-
-      <p>
+</section>
+<section>
+<h2>What This Income Tax Calculator Shows</h2>
+<p>
         This calculator helps estimate annual income tax, monthly tax, chargeable income, effective tax rate and net annual income. It is useful for salary planning, job offer comparison and annual tax preparation.
       </p>
-
-      <div class="component-grid">
-        <a class="component-card" href="income-tax-guide.html">
-          <div class="component-icon">🏛️</div>
-          <h3>Annual Tax</h3>
-          <p>Estimate yearly tax payable based on income and reliefs.</p>
-        </a>
-
-        <a class="component-card" href="tax-relief-guide.html">
-          <div class="component-icon">💸</div>
-          <h3>Tax Reliefs</h3>
-          <p>Understand how reliefs may reduce chargeable income.</p>
-        </a>
-
-        <a class="component-card" href="pcb-calculator.html">
-          <div class="component-icon">🧾</div>
-          <h3>Monthly PCB</h3>
-          <p>Compare annual income tax with monthly PCB deduction.</p>
-        </a>
-
-        <a class="component-card" href="tax-refund-guide.html">
-          <div class="component-icon">🔁</div>
-          <h3>Tax Refund</h3>
-          <p>Understand overpaid PCB and possible tax refund situations.</p>
-        </a>
-      </div>
-    </section>
-
-    <section class="official-box">
-      <h2>Official Income Tax / LHDN Resources</h2>
-
-      <p>
+<div class="component-grid">
+<a class="component-card" href="income-tax-guide.html">
+<div class="component-icon">🏛️</div>
+<h3>Annual Tax</h3>
+<p>Estimate yearly tax payable based on income and reliefs.</p>
+</a>
+<a class="component-card" href="tax-relief-guide.html">
+<div class="component-icon">💸</div>
+<h3>Tax Reliefs</h3>
+<p>Understand how reliefs may reduce chargeable income.</p>
+</a>
+<a class="component-card" href="pcb-calculator.html">
+<div class="component-icon">🧾</div>
+<h3>Monthly PCB</h3>
+<p>Compare annual income tax with monthly PCB deduction.</p>
+</a>
+<a class="component-card" href="tax-refund-guide.html">
+<div class="component-icon">🔁</div>
+<h3>Tax Refund</h3>
+<p>Understand overpaid PCB and possible tax refund situations.</p>
+</a>
+</div>
+</section>
+<section class="official-box">
+<h2>Official Income Tax / LHDN Resources</h2>
+<p>
         Tax rules, rates and reliefs may change over time. For official confirmation, always refer to LHDN / HASiL resources or consult a qualified tax professional.
       </p>
-
-      <div class="official-links">
-        <a href="https://www.hasil.gov.my/en/individual/individual-life-cycle/income-declaration/tax-rate/" target="_blank" rel="noopener">
-          <h3>LHDN Tax Rate</h3>
-          <p>Official individual income tax rate information.</p>
-        </a>
-
-        <a href="https://www.hasil.gov.my/en/individual/individual-life-cycle/income-declaration/tax-reliefs/" target="_blank" rel="noopener">
-          <h3>LHDN Tax Reliefs</h3>
-          <p>Official tax relief information for individual taxpayers.</p>
-        </a>
-
-        <a href="https://mytax.hasil.gov.my/" target="_blank" rel="noopener">
-          <h3>MyTax Portal</h3>
-          <p>Official tax services and e-Filing access.</p>
-        </a>
-      </div>
-
-      <div class="payroll-note">
-        <strong>Important:</strong>
+<div class="official-links">
+<a href="https://www.hasil.gov.my/en/individual/individual-life-cycle/income-declaration/tax-rate/" rel="noopener" target="_blank">
+<h3>LHDN Tax Rate</h3>
+<p>Official individual income tax rate information.</p>
+</a>
+<a href="https://www.hasil.gov.my/en/individual/individual-life-cycle/income-declaration/tax-reliefs/" rel="noopener" target="_blank">
+<h3>LHDN Tax Reliefs</h3>
+<p>Official tax relief information for individual taxpayers.</p>
+</a>
+<a href="https://mytax.hasil.gov.my/" rel="noopener" target="_blank">
+<h3>MyTax Portal</h3>
+<p>Official tax services and e-Filing access.</p>
+</a>
+</div>
+<div class="payroll-note">
+<strong>Important:</strong>
         This website provides simplified estimates for general information only. It should not be treated as professional tax, legal, payroll, accounting or financial advice.
       </div>
-    </section>
-
-    <h2>Who Should Use This Income Tax Calculator?</h2>
-
-    <ul>
-      <li>Employees estimating annual income tax</li>
-      <li>Job seekers comparing salary offers after tax</li>
-      <li>Taxpayers preparing for annual e-Filing</li>
-      <li>Employees checking whether PCB may be enough</li>
-      <li>Malaysians estimating effective tax rate and net annual income</li>
-    </ul>
-
-    <h2>Frequently Asked Questions</h2>
-
-    <div class="faq-box">
-      <details class="faq-item" open>
-        <summary>Is this income tax calculator exact?</summary>
-        <p>
+</section>
+<h2>Who Should Use This Income Tax Calculator?</h2>
+<ul>
+<li>Employees estimating annual income tax</li>
+<li>Job seekers comparing salary offers after tax</li>
+<li>Taxpayers preparing for annual e-Filing</li>
+<li>Employees checking whether PCB may be enough</li>
+<li>Malaysians estimating effective tax rate and net annual income</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-box">
+<details class="faq-item" open="">
+<summary>Is this income tax calculator exact?</summary>
+<p>
           No. This calculator provides an estimate only. Actual tax may vary depending on reliefs, rebates, deductions, zakat and official LHDN calculation.
         </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>What is chargeable income?</summary>
-        <p>
+</details>
+<details class="faq-item">
+<summary>What is chargeable income?</summary>
+<p>
           Chargeable income is the estimated taxable amount after deducting allowable reliefs and deductions from annual income.
         </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Is PCB the same as income tax?</summary>
-        <p>
+</details>
+<details class="faq-item">
+<summary>Is PCB the same as income tax?</summary>
+<p>
           No. PCB is monthly tax deduction through payroll. Final income tax is determined when annual tax return is submitted.
         </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can I use this for tax filing?</summary>
-        <p>
+</details>
+<details class="faq-item">
+<summary>Can I use this for tax filing?</summary>
+<p>
           This tool is for estimation only. For official filing, refer to LHDN guidance, MyTax or a qualified tax professional.
         </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can tax relief reduce my income tax?</summary>
-        <p>
+</details>
+<details class="faq-item">
+<summary>Can tax relief reduce my income tax?</summary>
+<p>
           Yes. For resident taxpayers, eligible tax reliefs may reduce chargeable income and lower final tax payable.
         </p>
-      </details>
-    </div>
-
-    <section class="salary-guides-box">
-      <h2>Malaysia Tax Guides</h2>
-
-      <p>
+</details>
+</div>
+<section class="salary-guides-box">
+<h2>Malaysia Tax Guides</h2>
+<p>
         Learn more about income tax, PCB, tax reliefs and tax filing in Malaysia.
       </p>
+<div class="guide-mini-grid">
+<a href="income-tax-guide.html">Income Tax Guide</a>
+<a href="tax-relief-guide.html">Tax Relief Guide</a>
+<a href="tax-filing-guide.html">Tax Filing Guide</a>
 
-      <div class="guide-mini-grid">
-        <a href="income-tax-guide.html">🏛️ Income Tax Guide</a>
-        <a href="pcb-guide.html">🧾 PCB Guide</a>
-        <a href="tax-relief-guide.html">💸 Tax Relief Guide</a>
-        <a href="tax-filing-guide.html">📤 Tax Filing Guide</a>
-        <a href="tax-rebate-guide.html">💵 Tax Rebate Guide</a>
-        <a href="tax-refund-guide.html">🔁 Tax Refund Guide</a>
-      </div>
 
-      <p class="view-all-guides">
-        <a href="guides.html">View All Salary Guides →</a>
-      </p>
-    </section>
 
-    <section class="salary-guides-box">
-      <h2>Related Calculators</h2>
-
-      <p>
+</div>
+<p class="view-all-guides">
+<a href="guides.html">View All Salary Guides →</a>
+</p>
+</section>
+<section class="salary-guides-box">
+<h2>Related Calculators</h2>
+<p>
         Explore more free Malaysia salary, tax and payroll calculators.
       </p>
-
-      <div class="guide-mini-grid">
-        <a href="index.html">Salary Calculator</a>
-        <a href="pcb-calculator.html">PCB Calculator</a>
-        <a href="tax-refund-calculator.html">Tax Refund Calculator</a>
-        <a href="bonus-calculator.html">Bonus Calculator</a>
-        <a href="payslip-generator.html">Payslip Generator</a>
-        <a href="epf-calculator.html">EPF Calculator</a>
-      </div>
-
-      <p class="view-all-guides">
-        <a href="calculators.html">View All Calculators →</a>
-      </p>
-    </section>
-
-  </div>
-
+<div class="guide-mini-grid">
+<a href="pcb-calculator.html">PCB Calculator</a>
+<a href="tax-refund-calculator.html">Tax Refund Calculator</a>
+<a href="index.html">Salary Calculator</a>
+</div>
+<p class="view-all-guides">
+<a href="calculators.html">View All Calculators →</a>
+</p>
+</section>
+</div>
 </main>
-
 <footer class="footer">
-  <p>© 2026 Malaysia Salary Tools</p>
-  <p>
-    <a href="index.html">Home</a> |
+<p>© 2026 Malaysia Salary Tools</p>
+<p>
+<a href="index.html">Home</a> |
     <a href="calculators.html">Calculators</a> |
     <a href="guides.html">Guides</a> |
     <a href="about.html">About</a> |
     <a href="contact.html">Contact Us</a> |
     <a href="privacy-policy.html">Privacy Policy</a>
-  </p>
+</p>
 </footer>
-
 <script>
   function formatRM(value) {
     return Number(value).toLocaleString('en-MY', {
@@ -1329,6 +1254,5 @@
 
   calculateIncomeTax();
 </script>
-
 </body>
 </html>

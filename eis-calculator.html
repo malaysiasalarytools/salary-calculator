@@ -1,26 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-
-  <title>Malaysia EIS Calculator 2026 | Employee & Employer EIS Contribution</title>
-
-  <link rel="canonical" href="https://malaysiasalarytools.com/eis-calculator.html">
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <meta name="description" content="Free Malaysia EIS Calculator 2026. Calculate employee EIS deduction, employer EIS contribution, total EIS contribution, annual EIS amount and salary after EIS deduction.">
-
-  <meta name="keywords" content="Malaysia EIS calculator, PERKESO EIS calculator, SIP calculator, Employment Insurance System Malaysia, EIS contribution calculator, employee EIS, employer EIS, Malaysia salary calculator">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
-
-  <script async
-  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6819619632324210"
-  crossorigin="anonymous"></script>
-
-  <script type="application/ld+json">
+<meta charset="utf-8"/>
+<title>Malaysia EIS Calculator 2026 | Employee &amp; Employer EIS Contribution</title>
+<link href="https://malaysiasalarytools.com/eis-calculator.html" rel="canonical"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<meta content="Free Malaysia EIS Calculator 2026. Calculate employee EIS deduction, employer EIS contribution, total EIS contribution, annual EIS amount and salary after EIS deduction." name="description"/>
+<meta content="Malaysia EIS calculator, PERKESO EIS calculator, SIP calculator, Employment Insurance System Malaysia, EIS contribution calculator, employee EIS, employer EIS, Malaysia salary calculator" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6819619632324210"></script>
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -46,8 +37,7 @@
     ]
   }
   </script>
-
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -95,8 +85,7 @@
     ]
   }
   </script>
-
-  <style>
+<style>
     :root {
       --background: #f4f1ea;
       --card: #fbfaf6;
@@ -914,458 +903,363 @@
     }
   </style>
 </head>
-
 <body>
-
-  <header class="top-nav">
-    <div class="nav-inner">
-
-      <a href="index.html" class="brand">
-        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
-      </a>
-
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="calculators.html" class="active">Calculators</a>
-        <a href="guides.html">Guides</a>
-        <a href="about.html">About</a>
-      </nav>
-
-    </div>
-  </header>
-
-  <section class="hero">
-    <span class="pill">Updated for Malaysia 2026 PERKESO / SIP estimates</span>
-    <h1 class="serif">Calculate your <em>EIS contribution</em> in Malaysia</h1>
-    <p>
+<header class="top-nav">
+<div class="nav-inner">
+<a class="brand" href="index.html">
+<img alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';" src="logo.png"/>
+</a>
+<nav aria-label="Main navigation" class="nav-links">
+<a href="index.html">Home</a>
+<a class="active" href="calculators.html">Calculators</a>
+<a href="guides.html">Guides</a>
+<a href="about.html">About</a>
+</nav>
+</div>
+</header>
+<section class="hero">
+<span class="pill">Updated for Malaysia 2026 PERKESO / SIP estimates</span>
+<h1 class="serif">Calculate your <em>EIS contribution</em> in Malaysia</h1>
+<p>
       Free Malaysia EIS calculator for employees, job seekers and payroll users. Estimate employee EIS deduction, employer EIS contribution, total monthly Employment Insurance System contribution and annual EIS amount instantly.
     </p>
-  </section>
-
-  <main class="main-wrapper">
-
-    <section class="calculator-shell" id="calculator">
-
-      <div class="panel">
-        <h2 class="serif">Calculate Your EIS</h2>
-        <p class="sub">Enter your monthly salary and choose your EIS contribution status.</p>
-
-        <div class="form-group">
-          <label for="salary">Monthly salary / wages</label>
-          <div class="input-row">
-            <span>RM</span>
-            <input type="number" id="salary" value="4000" min="0" step="100" placeholder="Enter monthly salary">
-          </div>
-
-          <input type="range" id="salaryRange" min="0" max="20000" step="100" value="4000">
-
-          <div class="preset-grid">
-            <button type="button" class="preset" onclick="setSalary(3000)">RM 3,000</button>
-            <button type="button" class="preset" onclick="setSalary(4000)">RM 4,000</button>
-            <button type="button" class="preset" onclick="setSalary(5000)">RM 5,000</button>
-            <button type="button" class="preset" onclick="setSalary(6000)">RM 6,000</button>
-            <button type="button" class="preset" onclick="setSalary(10000)">RM 10,000</button>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="eisStatus">EIS contribution status</label>
-          <select id="eisStatus" onchange="handleEISStatusChange()">
-            <option value="standard" selected>Standard EIS - Official PERKESO schedule</option>
-            <option value="manual">Manual custom rate</option>
-            <option value="none">No EIS estimate</option>
-          </select>
-        </div>
-
-        <div class="custom-rate-grid" id="customRateGrid">
-          <div class="form-group">
-            <label for="employeeRate">Employee rate (%)</label>
-            <input type="number" id="employeeRate" value="0.2" min="0" step="0.01">
-          </div>
-
-          <div class="form-group">
-            <label for="employerRate">Employer rate (%)</label>
-            <input type="number" id="employerRate" value="0.2" min="0" step="0.01">
-          </div>
-        </div>
-
-        <button type="button" class="calc-button" onclick="calculateEIS()">Calculate My EIS</button>
-
-        <a class="secondary-button" href="index.html">
-          Calculate Full Salary After EPF, SOCSO, EIS & PCB →
+</section>
+<main class="main-wrapper">
+<section class="calculator-shell" id="calculator">
+<div class="panel">
+<h2 class="serif">Calculate Your EIS</h2>
+<p class="sub">Enter your monthly salary and choose your EIS contribution status.</p>
+<div class="form-group">
+<label for="salary">Monthly salary / wages</label>
+<div class="input-row">
+<span>RM</span>
+<input id="salary" min="0" placeholder="Enter monthly salary" step="100" type="number" value="4000"/>
+</div>
+<input id="salaryRange" max="20000" min="0" step="100" type="range" value="4000"/>
+<div class="preset-grid">
+<button class="preset" onclick="setSalary(3000)" type="button">RM 3,000</button>
+<button class="preset" onclick="setSalary(4000)" type="button">RM 4,000</button>
+<button class="preset" onclick="setSalary(5000)" type="button">RM 5,000</button>
+<button class="preset" onclick="setSalary(6000)" type="button">RM 6,000</button>
+<button class="preset" onclick="setSalary(10000)" type="button">RM 10,000</button>
+</div>
+</div>
+<div class="form-group">
+<label for="eisStatus">EIS contribution status</label>
+<select id="eisStatus" onchange="handleEISStatusChange()">
+<option selected="" value="standard">Standard EIS - Official PERKESO schedule</option>
+<option value="manual">Manual custom rate</option>
+<option value="none">No EIS estimate</option>
+</select>
+</div>
+<div class="custom-rate-grid" id="customRateGrid">
+<div class="form-group">
+<label for="employeeRate">Employee rate (%)</label>
+<input id="employeeRate" min="0" step="0.01" type="number" value="0.2"/>
+</div>
+<div class="form-group">
+<label for="employerRate">Employer rate (%)</label>
+<input id="employerRate" min="0" step="0.01" type="number" value="0.2"/>
+</div>
+</div>
+<button class="calc-button" onclick="calculateEIS()" type="button">Calculate My EIS</button>
+<a class="secondary-button" href="index.html">
+          Calculate Full Salary After EPF, SOCSO, EIS &amp; PCB →
         </a>
-
-        <p class="input-note">
+<p class="input-note">
           This calculator applies the official PERKESO Act 800 wage-class schedule and the RM6,000 monthly wage ceiling. Manual custom rates remain available for non-standard estimates.
         </p>
-      </div>
-
-      <div class="results-panel">
-        <h2 class="serif">Your EIS result</h2>
-        <p class="sub">Calculated total monthly EIS contribution</p>
-
-        <div class="net">RM <span id="totalEIS">0.00</span></div>
-        <p class="net-caption" id="rateExplanation">Applied the official PERKESO EIS contribution schedule.</p>
-
-        <div class="bar" id="eisBar"></div>
-
-        <div class="result-rows" id="monthlyRows"></div>
-
-        <div class="annual-summary" id="annualRows"></div>
-      </div>
-
-    </section>
-
-    <div class="seo">
-
-      <section>
-
-        <h2>How EIS Is Calculated in Malaysia</h2>
-
-        <p>
+</div>
+<div class="results-panel">
+<h2 class="serif">Your EIS result</h2>
+<p class="sub">Calculated total monthly EIS contribution</p>
+<div class="net">RM <span id="totalEIS">0.00</span></div>
+<p class="net-caption" id="rateExplanation">Applied the official PERKESO EIS contribution schedule.</p>
+<div class="bar" id="eisBar"></div>
+<div class="result-rows" id="monthlyRows"></div>
+<div class="annual-summary" id="annualRows"></div>
+</div>
+</section>
+<div class="seo">
+<section>
+<h2>How EIS Is Calculated in Malaysia</h2>
+<p>
           EIS, also known as the Employment Insurance System or SIP, is an employment insurance contribution under PERKESO. It is normally calculated based on monthly wages, wage class and contribution rules. Employee EIS is deducted from salary, while employer EIS is paid by the employer on top of salary.
         </p>
-
-        <div class="formula-box">
-          <strong>EIS Contribution = Official PERKESO Wage-Class Amount</strong>
-          <span>Example: Wages above RM3,900 but not exceeding RM4,000 contribute RM7.90 each by the employee and employer.</span>
-        </div>
-
-        <div class="rate-grid">
-          <div class="rate-card">
-            <strong>0.2%</strong>
-            <h3>Employee EIS</h3>
-            <p>Employee share is determined from the official PERKESO wage-class schedule.</p>
-          </div>
-
-          <div class="rate-card">
-            <strong>0.2%</strong>
-            <h3>Employer EIS</h3>
-            <p>Employer share is determined from the official PERKESO wage-class schedule.</p>
-          </div>
-
-          <div class="rate-card">
-            <strong>0.4%</strong>
-            <h3>Total EIS</h3>
-            <p>Total common contribution from both employee and employer combined.</p>
-          </div>
-
-          <div class="rate-card">
-            <strong>SIP</strong>
-            <h3>Job Loss Support</h3>
-            <p>EIS is employment insurance protection, not retirement savings like EPF.</p>
-          </div>
-        </div>
-
-      </section>
-
-      <section class="contribution-box">
-
-        <h2>EIS Contribution Snapshot 2026</h2>
-
-        <p>
+<div class="formula-box">
+<strong>EIS Contribution = Official PERKESO Wage-Class Amount</strong>
+<span>Example: Wages above RM3,900 but not exceeding RM4,000 contribute RM7.90 each by the employee and employer.</span>
+</div>
+<div class="rate-grid">
+<div class="rate-card">
+<strong>0.2%</strong>
+<h3>Employee EIS</h3>
+<p>Employee share is determined from the official PERKESO wage-class schedule.</p>
+</div>
+<div class="rate-card">
+<strong>0.2%</strong>
+<h3>Employer EIS</h3>
+<p>Employer share is determined from the official PERKESO wage-class schedule.</p>
+</div>
+<div class="rate-card">
+<strong>0.4%</strong>
+<h3>Total EIS</h3>
+<p>Total common contribution from both employee and employer combined.</p>
+</div>
+<div class="rate-card">
+<strong>SIP</strong>
+<h3>Job Loss Support</h3>
+<p>EIS is employment insurance protection, not retirement savings like EPF.</p>
+</div>
+</div>
+</section>
+<section class="contribution-box">
+<h2>EIS Contribution Snapshot 2026</h2>
+<p>
           The table below shows official EIS contribution amounts from the PERKESO Act 800 wage-class schedule.
         </p>
-
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Monthly Salary</th>
-                <th>Employee EIS</th>
-                <th>Employer EIS</th>
-                <th>Total EIS</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>RM2,000</td>
-                <td>RM3.90</td>
-                <td>RM3.90</td>
-                <td>RM7.80</td>
-              </tr>
-              <tr>
-                <td>RM3,000</td>
-                <td>RM5.90</td>
-                <td>RM5.90</td>
-                <td>RM11.80</td>
-              </tr>
-              <tr>
-                <td>RM4,000</td>
-                <td>RM7.90</td>
-                <td>RM7.90</td>
-                <td>RM15.80</td>
-              </tr>
-              <tr>
-                <td>RM5,000</td>
-                <td>RM9.90</td>
-                <td>RM9.90</td>
-                <td>RM19.80</td>
-              </tr>
-              <tr>
-                <td>RM6,000</td>
-                <td>RM11.90</td>
-                <td>RM11.90</td>
-                <td>RM23.80</td>
-              </tr>
-              <tr>
-                <td>RM8,000</td>
-                <td>RM11.90</td>
-                <td>RM11.90</td>
-                <td>RM23.80</td>
-              </tr>
-              <tr>
-                <td>RM10,000</td>
-                <td>RM11.90</td>
-                <td>RM11.90</td>
-                <td>RM23.80</td>
-              </tr>
+<div class="contribution-table-wrap">
+<table class="contribution-table">
+<thead>
+<tr>
+<th>Monthly Salary</th>
+<th>Employee EIS</th>
+<th>Employer EIS</th>
+<th>Total EIS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RM2,000</td>
+<td>RM3.90</td>
+<td>RM3.90</td>
+<td>RM7.80</td>
+</tr>
+<tr>
+<td>RM3,000</td>
+<td>RM5.90</td>
+<td>RM5.90</td>
+<td>RM11.80</td>
+</tr>
+<tr>
+<td>RM4,000</td>
+<td>RM7.90</td>
+<td>RM7.90</td>
+<td>RM15.80</td>
+</tr>
+<tr>
+<td>RM5,000</td>
+<td>RM9.90</td>
+<td>RM9.90</td>
+<td>RM19.80</td>
+</tr>
+<tr>
+<td>RM6,000</td>
+<td>RM11.90</td>
+<td>RM11.90</td>
+<td>RM23.80</td>
+</tr>
+<tr>
+<td>RM8,000</td>
+<td>RM11.90</td>
+<td>RM11.90</td>
+<td>RM23.80</td>
+</tr>
+<tr>
+<td>RM10,000</td>
+<td>RM11.90</td>
+<td>RM11.90</td>
+<td>RM23.80</td>
+</tr>
 </tbody>
-          </table>
-        </div>
-
-        <p class="contribution-note">
+</table>
+</div>
+<p class="contribution-note">
           Note: Wages exceeding RM6,000 use the maximum contribution amount under the RM6,000 wage ceiling.
         </p>
-
-      </section>
-
-      <section>
-
-        <h2>What This EIS Calculator Shows</h2>
-
-        <p>
+</section>
+<section>
+<h2>What This EIS Calculator Shows</h2>
+<p>
           This calculator is designed to help you understand both the employee deduction side and the employer contribution side of EIS. It is useful when checking payslips, comparing job offers, estimating payroll costs or understanding statutory deductions.
         </p>
-
-        <div class="component-grid">
-
-          <a class="component-card" href="eis-guide.html">
-            <div class="component-icon">📋</div>
-            <h3>Employee EIS</h3>
-            <p>Amount deducted from monthly salary for EIS contribution.</p>
-          </a>
-
-          <a class="component-card" href="eis-guide.html">
-            <div class="component-icon">🏢</div>
-            <h3>Employer EIS</h3>
-            <p>Additional contribution paid by the employer on top of salary.</p>
-          </a>
-
-          <a class="component-card" href="index.html">
-            <div class="component-icon">📊</div>
-            <h3>Salary After EIS</h3>
-            <p>Estimate salary after employee EIS deduction before other deductions.</p>
-          </a>
-
-          <a class="component-card" href="eis-guide.html">
-            <div class="component-icon">💼</div>
-            <h3>Job Loss Support</h3>
-            <p>EIS is linked to employment insurance and re-employment support.</p>
-          </a>
-
-        </div>
-
-      </section>
-
-      <section class="contribution-box">
-
-        <h2>EIS vs SOCSO vs EPF</h2>
-
-        <p>
+<div class="component-grid">
+<a class="component-card" href="eis-guide.html">
+<div class="component-icon">📋</div>
+<h3>Employee EIS</h3>
+<p>Amount deducted from monthly salary for EIS contribution.</p>
+</a>
+<a class="component-card" href="eis-guide.html">
+<div class="component-icon">🏢</div>
+<h3>Employer EIS</h3>
+<p>Additional contribution paid by the employer on top of salary.</p>
+</a>
+<a class="component-card" href="index.html">
+<div class="component-icon">📊</div>
+<h3>Salary After EIS</h3>
+<p>Estimate salary after employee EIS deduction before other deductions.</p>
+</a>
+<a class="component-card" href="eis-guide.html">
+<div class="component-icon">💼</div>
+<h3>Job Loss Support</h3>
+<p>EIS is linked to employment insurance and re-employment support.</p>
+</a>
+</div>
+</section>
+<section class="contribution-box">
+<h2>EIS vs SOCSO vs EPF</h2>
+<p>
           EIS, SOCSO and EPF are often shown together in payroll, but they serve different purposes.
         </p>
-
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Contribution</th>
-                <th>Main Purpose</th>
-                <th>Employee Portion</th>
-                <th>Employer Portion</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>EPF / KWSP</strong></td>
-                <td>Retirement savings</td>
-                <td>Yes</td>
-                <td>Yes</td>
-              </tr>
-              <tr>
-                <td><strong>SOCSO / PERKESO</strong></td>
-                <td>Social security protection</td>
-                <td>Usually yes, depending on category</td>
-                <td>Yes</td>
-              </tr>
-              <tr>
-                <td><strong>EIS / SIP</strong></td>
-                <td>Employment insurance and job loss support</td>
-                <td>Yes</td>
-                <td>Yes</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-      </section>
-
-      <h2>Who Should Use This EIS Calculator?</h2>
-
-      <ul>
-        <li>Employees checking monthly EIS deduction from salary</li>
-        <li>Job seekers comparing salary offers and payroll deductions</li>
-        <li>Employers estimating employer EIS contribution</li>
-        <li>HR and payroll users preparing quick payroll estimates</li>
-        <li>Malaysians trying to understand PERKESO / SIP deductions on payslips</li>
-      </ul>
-
-      <section class="official-box">
-
-        <h2>Official EIS / PERKESO Resources</h2>
-
-        <p>
+<div class="contribution-table-wrap">
+<table class="contribution-table">
+<thead>
+<tr>
+<th>Contribution</th>
+<th>Main Purpose</th>
+<th>Employee Portion</th>
+<th>Employer Portion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>EPF / KWSP</strong></td>
+<td>Retirement savings</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>SOCSO / PERKESO</strong></td>
+<td>Social security protection</td>
+<td>Usually yes, depending on category</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>EIS / SIP</strong></td>
+<td>Employment insurance and job loss support</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<h2>Who Should Use This EIS Calculator?</h2>
+<ul>
+<li>Employees checking monthly EIS deduction from salary</li>
+<li>Job seekers comparing salary offers and payroll deductions</li>
+<li>Employers estimating employer EIS contribution</li>
+<li>HR and payroll users preparing quick payroll estimates</li>
+<li>Malaysians trying to understand PERKESO / SIP deductions on payslips</li>
+</ul>
+<section class="official-box">
+<h2>Official EIS / PERKESO Resources</h2>
+<p>
           EIS rules, contribution rates and payroll requirements may change over time. For official confirmation, always refer to PERKESO resources or consult a qualified payroll professional.
         </p>
-
-        <div class="official-links">
-
-          <a href="https://www.perkeso.gov.my/" target="_blank" rel="noopener">
-            <h3>PERKESO Official Website</h3>
-            <p>Official SOCSO / EIS information and services.</p>
-          </a>
-
-          <a href="https://www.perkeso.gov.my/en/our-services/employer-employee/contributions.html" target="_blank" rel="noopener">
-            <h3>EIS Contribution Information</h3>
-            <p>Official information on contribution rates and rules.</p>
-          </a>
-
-          <a href="https://www.perkeso.gov.my/en/rate-of-contribution.html" target="_blank" rel="noopener">
-            <h3>PERKESO Rate of Contribution</h3>
-            <p>Official contribution schedule and wage ceiling information.</p>
-          </a>
-
-        </div>
-
-        <div class="payroll-note">
-          <strong>Important:</strong>
+<div class="official-links">
+<a href="https://www.perkeso.gov.my/" rel="noopener" target="_blank">
+<h3>PERKESO Official Website</h3>
+<p>Official SOCSO / EIS information and services.</p>
+</a>
+<a href="https://www.perkeso.gov.my/en/our-services/employer-employee/contributions.html" rel="noopener" target="_blank">
+<h3>EIS Contribution Information</h3>
+<p>Official information on contribution rates and rules.</p>
+</a>
+<a href="https://www.perkeso.gov.my/en/rate-of-contribution.html" rel="noopener" target="_blank">
+<h3>PERKESO Rate of Contribution</h3>
+<p>Official contribution schedule and wage ceiling information.</p>
+</a>
+</div>
+<div class="payroll-note">
+<strong>Important:</strong>
           This website provides simplified estimates for general information only. It should not be treated as professional tax, legal, payroll, accounting or financial advice.
         </div>
-
-      </section>
-
-      <h2>Frequently Asked Questions</h2>
-
-      <div class="faq-box">
-
-        <details class="faq-item" open>
-          <summary>How is EIS calculated in Malaysia?</summary>
-          <p>
+</section>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-box">
+<details class="faq-item" open="">
+<summary>How is EIS calculated in Malaysia?</summary>
+<p>
             EIS is calculated based on monthly wages using the official PERKESO Act 800 wage-class schedule, with employee and employer portions.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is employer EIS deducted from my salary?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>Is employer EIS deducted from my salary?</summary>
+<p>
             No. Employee EIS is deducted from your salary. Employer EIS is an additional contribution paid by your employer on top of salary.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Does EIS affect take-home pay?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>Does EIS affect take-home pay?</summary>
+<p>
             Yes. Employee EIS slightly reduces monthly take-home pay because it is deducted through payroll.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is EIS the same as SOCSO?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>Is EIS the same as SOCSO?</summary>
+<p>
             No. EIS and SOCSO are different schemes, although both are related to PERKESO. EIS focuses on employment insurance, while SOCSO focuses on social security protection.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is EIS the same as EPF?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>Is EIS the same as EPF?</summary>
+<p>
             No. EPF is mainly retirement savings. EIS is employment insurance protection and is usually much smaller than EPF contribution.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Why is my actual EIS different from this calculator?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>Why is my actual EIS different from this calculator?</summary>
+<p>
             Actual payroll treatment may differ if the employee is exempt from EIS coverage or the contribution status selected does not match the employee's eligibility.
           </p>
-        </details>
-
-      </div>
-
-      <section class="salary-guides-box">
-
-        <h2>Malaysia Payroll Guides</h2>
-
-        <p>
+</details>
+</div>
+<section class="salary-guides-box">
+<h2>Malaysia Payroll Guides</h2>
+<p>
           Learn more about EIS, SOCSO, EPF, PCB and salary deductions in Malaysia.
         </p>
+<div class="guide-mini-grid">
+<a href="eis-guide.html">EIS Guide</a>
+<a href="socso-guide.html">SOCSO Guide</a>
+<a href="skbbk-guide.html">SKBBK Guide</a>
+<a href="salary-deduction-guide.html">Salary Deduction Guide</a>
 
-        <div class="guide-mini-grid">
-          <a href="eis-guide.html">📋 EIS Guide</a>
-          <a href="socso-guide.html">🛡️ SOCSO Guide</a>
-          <a href="epf-guide.html">💰 EPF Guide</a>
-          <a href="pcb-guide.html">🏛️ PCB Guide</a>
-          <a href="salary-deduction-guide.html">📉 Salary Deduction Guide</a>
-          <a href="payslip-guide.html">🧾 Payslip Guide</a>
-        </div>
 
-        <p class="view-all-guides">
-          <a href="guides.html">View All Salary Guides →</a>
-        </p>
-
-      </section>
-
-      <section class="salary-guides-box">
-
-        <h2>Related Calculators</h2>
-
-        <p>
+</div>
+<p class="view-all-guides">
+<a href="guides.html">View All Salary Guides →</a>
+</p>
+</section>
+<section class="salary-guides-box">
+<h2>Related Calculators</h2>
+<p>
           Explore more free Malaysia salary and payroll calculators.
         </p>
-
-        <div class="guide-mini-grid">
-          <a href="index.html">Salary Calculator</a>
-          <a href="epf-calculator.html">EPF Calculator</a>
-          <a href="socso-calculator.html">SOCSO Calculator</a>
-          <a href="pcb-calculator.html">PCB Calculator</a>
-          <a href="income-tax-calculator.html">Income Tax Calculator</a>
-          <a href="payslip-generator.html">Payslip Generator</a>
-        </div>
-
-        <p class="view-all-guides">
-          <a href="calculators.html">View All Calculators →</a>
-        </p>
-
-      </section>
-
-    </div>
-
-  </main>
-
-  <footer class="footer">
-    <p>© 2026 Malaysia Salary Tools</p>
-    <p>
-      <a href="index.html">Home</a> |
+<div class="guide-mini-grid">
+<a href="index.html">Salary Calculator</a>
+<a href="socso-calculator.html">SOCSO Calculator</a>
+<a href="skbbk-calculator.html">SKBBK Calculator</a>
+</div>
+<p class="view-all-guides">
+<a href="calculators.html">View All Calculators →</a>
+</p>
+</section>
+</div>
+</main>
+<footer class="footer">
+<p>© 2026 Malaysia Salary Tools</p>
+<p>
+<a href="index.html">Home</a> |
       <a href="calculators.html">Calculators</a> |
       <a href="guides.html">Guides</a> |
       <a href="about.html">About</a> |
       <a href="contact.html">Contact Us</a> |
       <a href="privacy-policy.html">Privacy Policy</a>
-    </p>
-  </footer>
-
-  <script>
+</p>
+</footer>
+<script>
     function formatRM(amount) {
       return Number(amount).toLocaleString('en-MY', {
         minimumFractionDigits: 2,
@@ -1630,6 +1524,5 @@
 
     calculateEIS();
   </script>
-
 </body>
 </html>

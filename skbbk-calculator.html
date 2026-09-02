@@ -1,26 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-
-  <title>SKBBK Calculator Malaysia 2026 | Official PERKESO Rates</title>
-
-  <link rel="canonical" href="https://malaysiasalarytools.com/skbbk-calculator.html">
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <meta name="description" content="Free SKBBK Calculator Malaysia 2026 using official PERKESO Phase 1 rates. Calculate LINDUNG 24 Jam employee deductions by salary band, annual contribution and salary after SKBBK.">
-
-  <meta name="keywords" content="Malaysia SKBBK calculator, LINDUNG 24 Jam calculator, PERKESO SKBBK deduction, non-employment injury scheme, SKBBK contribution 2026">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
-
-  <script async
-  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6819619632324210"
-  crossorigin="anonymous"></script>
-
-  <script type="application/ld+json">
+<meta charset="utf-8"/>
+<title>SKBBK Calculator Malaysia 2026 | Official PERKESO Rates</title>
+<link href="https://malaysiasalarytools.com/skbbk-calculator.html" rel="canonical"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<meta content="Free SKBBK Calculator Malaysia 2026 using official PERKESO Phase 1 rates. Calculate LINDUNG 24 Jam employee deductions by salary band, annual contribution and salary after SKBBK." name="description"/>
+<meta content="Malaysia SKBBK calculator, LINDUNG 24 Jam calculator, PERKESO SKBBK deduction, non-employment injury scheme, SKBBK contribution 2026" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6819619632324210"></script>
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -46,8 +37,7 @@
     ]
   }
   </script>
-
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -95,8 +85,7 @@
     ]
   }
   </script>
-
-  <style>
+<style>
     :root {
       --background: #f4f1ea;
       --card: #fbfaf6;
@@ -1031,753 +1020,656 @@
     }
   </style>
 </head>
-
 <body>
-
-  <header class="top-nav">
-    <div class="nav-inner">
-
-      <a href="index.html" class="brand">
-        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
-      </a>
-
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="calculators.html" class="active">Calculators</a>
-        <a href="guides.html">Guides</a>
-        <a href="about.html">About</a>
-      </nav>
-
-    </div>
-  </header>
-
-  <section class="hero">
-    <span class="pill">Uses the official Malaysia 2026 Phase 1 schedule</span>
-    <h1 class="serif"><em>SKBBK Calculator</em> Malaysia 2026</h1>
-    <p>
+<header class="top-nav">
+<div class="nav-inner">
+<a class="brand" href="index.html">
+<img alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';" src="logo.png"/>
+</a>
+<nav aria-label="Main navigation" class="nav-links">
+<a href="index.html">Home</a>
+<a class="active" href="calculators.html">Calculators</a>
+<a href="guides.html">Guides</a>
+<a href="about.html">About</a>
+</nav>
+</div>
+</header>
+<section class="hero">
+<span class="pill">Uses the official Malaysia 2026 Phase 1 schedule</span>
+<h1 class="serif"><em>SKBBK Calculator</em> Malaysia 2026</h1>
+<p>
       Free SKBBK Calculator / Kalkulator SKBBK for Malaysia employees and payroll users. Estimate your monthly
       PERKESO LINDUNG 24 Jam deduction, annual contribution and salary after SKBBK using the
       official Phase 1 wage contribution bands.
     </p>
-  </section>
-
-  <main class="main-wrapper">
-
-    <section class="calculator-shell" id="calculator">
-
-      <div class="panel">
-        <h2 class="serif">Calculate Your SKBBK</h2>
-        <p class="sub">Enter your monthly wages and select your participation category.</p>
-
-        <div class="form-group">
-          <label for="salary">Monthly salary / wages</label>
-          <div class="input-row">
-            <span>RM</span>
-            <input type="number" id="salary" value="3000" min="0" step="100" placeholder="Enter monthly salary">
-          </div>
-
-          <input type="range" id="salaryRange" min="0" max="12000" step="100" value="3000">
-
-          <p class="input-note">For wages above RM6,000, the Phase 1 SKBBK contribution remains capped at RM44.65.</p>
-          <p class="calculator-example"><strong>Example:</strong> RM3,000 monthly wages → RM22.15 SKBBK per month under the official Phase 1 salary band.</p>
-
-          <div class="preset-grid">
-            <button type="button" class="preset" onclick="setSalary(2000)">RM 2,000</button>
-            <button type="button" class="preset" onclick="setSalary(3000)">RM 3,000</button>
-            <button type="button" class="preset" onclick="setSalary(4000)">RM 4,000</button>
-            <button type="button" class="preset" onclick="setSalary(5000)">RM 5,000</button>
-            <button type="button" class="preset" onclick="setSalary(6000)">RM 6,000</button>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="employeeCategory">Employee participation</label>
-          <select id="employeeCategory" onchange="calculateSKBBK()">
-            <option value="localParticipating" selected>Local employee — participating voluntarily</option>
-            <option value="localOptedOut">Local employee — opted out</option>
-            <option value="foreignWorker">Foreign worker — mandatory participation</option>
-          </select>
-        </div>
-
-        <button type="button" class="calc-button" onclick="calculateSKBBK()">Calculate My SKBBK</button>
-
-        <a class="secondary-button" href="index.html">
-          Calculate Full Salary After EPF, SOCSO, EIS & PCB →
+</section>
+<main class="main-wrapper">
+<section class="calculator-shell" id="calculator">
+<div class="panel">
+<h2 class="serif">Calculate Your SKBBK</h2>
+<p class="sub">Enter your monthly wages and select your participation category.</p>
+<div class="form-group">
+<label for="salary">Monthly salary / wages</label>
+<div class="input-row">
+<span>RM</span>
+<input id="salary" min="0" placeholder="Enter monthly salary" step="100" type="number" value="3000"/>
+</div>
+<input id="salaryRange" max="12000" min="0" step="100" type="range" value="3000"/>
+<p class="input-note">For wages above RM6,000, the Phase 1 SKBBK contribution remains capped at RM44.65.</p>
+<p class="calculator-example"><strong>Example:</strong> RM3,000 monthly wages → RM22.15 SKBBK per month under the official Phase 1 salary band.</p>
+<div class="preset-grid">
+<button class="preset" onclick="setSalary(2000)" type="button">RM 2,000</button>
+<button class="preset" onclick="setSalary(3000)" type="button">RM 3,000</button>
+<button class="preset" onclick="setSalary(4000)" type="button">RM 4,000</button>
+<button class="preset" onclick="setSalary(5000)" type="button">RM 5,000</button>
+<button class="preset" onclick="setSalary(6000)" type="button">RM 6,000</button>
+</div>
+</div>
+<div class="form-group">
+<label for="employeeCategory">Employee participation</label>
+<select id="employeeCategory" onchange="calculateSKBBK()">
+<option selected="" value="localParticipating">Local employee — participating voluntarily</option>
+<option value="localOptedOut">Local employee — opted out</option>
+<option value="foreignWorker">Foreign worker — mandatory participation</option>
+</select>
+</div>
+<button class="calc-button" onclick="calculateSKBBK()" type="button">Calculate My SKBBK</button>
+<a class="secondary-button" href="index.html">
+          Calculate Full Salary After EPF, SOCSO, EIS &amp; PCB →
         </a>
-
-        <p class="input-note">
+<p class="input-note">
           This calculator uses PERKESO's official Phase 1 salary-band amounts for SKBBK.
           Local employees participate voluntarily, while eligible foreign workers remain subject
           to mandatory participation. Actual payslip amounts may differ for arrears, multiple wage
           payments or special contribution treatment.
         </p>
-      </div>
-
-      <div class="results-panel">
-        <h2 class="serif">Your SKBBK result</h2>
-        <p class="sub">Calculated employee deduction for the selected month</p>
-
-        <div class="net">RM <span id="monthlySKBBK">0.00</span></div>
-        <p class="net-caption" id="rateExplanation">Official Phase 1 contribution schedule.</p>
-
-        <div class="status-badge" id="participationStatus">Local employee — voluntary participation</div>
-
-        <div class="bar" id="skbbkBar"></div>
-
-        <div class="result-rows" id="monthlyRows"></div>
-
-        <div class="annual-summary" id="annualRows"></div>
-      </div>
-
-    </section>
-
-    <div class="seo">
-
-      <section>
-
-        <h2>How SKBBK Is Calculated in Malaysia</h2>
-
-        <p>
+</div>
+<div class="results-panel">
+<h2 class="serif">Your SKBBK result</h2>
+<p class="sub">Calculated employee deduction for the selected month</p>
+<div class="net">RM <span id="monthlySKBBK">0.00</span></div>
+<p class="net-caption" id="rateExplanation">Official Phase 1 contribution schedule.</p>
+<div class="status-badge" id="participationStatus">Local employee — voluntary participation</div>
+<div class="bar" id="skbbkBar"></div>
+<div class="result-rows" id="monthlyRows"></div>
+<div class="annual-summary" id="annualRows"></div>
+</div>
+</section>
+<div class="seo">
+<section>
+<h2>How SKBBK Is Calculated in Malaysia</h2>
+<p>
           SKBBK, also known as PERKESO LINDUNG 24 Jam, protects eligible employees against
           qualifying accidents outside working hours that are not directly related to employment.
           The Phase 1 employee rate is 0.75%, and the contribution is fully borne by the employee.
         </p>
-
-        <p>
+<p>
           For statutory payroll, PERKESO uses salary bands. This means the exact contribution is
           selected from the official table instead of multiplying every exact salary by 0.75%.
           For example, wages above RM2,900 but not exceeding RM3,000 produce an SKBBK contribution
           of RM22.15, not RM22.50.
         </p>
-
-        <div class="formula-box">
-          <strong>SKBBK Deduction = Official Amount for Your Monthly Wage Band</strong>
-          <span>Example: wages above RM2,900 up to RM3,000 → RM22.15</span>
-        </div>
-
-        <div class="rate-grid">
-          <div class="rate-card">
-            <strong>0.75%</strong>
-            <h3>Phase 1 Rate</h3>
-            <p>Applies during the first two years of the scheme from its implementation.</p>
-          </div>
-
-          <div class="rate-card">
-            <strong>Employee</strong>
-            <h3>Who Pays?</h3>
-            <p>The full SKBBK contribution is borne by the employee.</p>
-          </div>
-
-          <div class="rate-card">
-            <strong>Voluntary</strong>
-            <h3>Local Employees</h3>
-            <p>Participation is voluntary for local employees. Check PERKESO's latest participation-status guidance before changing an employee's status.</p>
-          </div>
-
-          <div class="rate-card">
-            <strong>Mandatory</strong>
-            <h3>Foreign Workers</h3>
-            <p>Participation remains mandatory for eligible foreign workers.</p>
-          </div>
-        </div>
-
-      </section>
-
-      <section class="contribution-box">
-
-        <h2>SKBBK Contribution Table 2026</h2>
-
-        <p>
+<div class="formula-box">
+<strong>SKBBK Deduction = Official Amount for Your Monthly Wage Band</strong>
+<span>Example: wages above RM2,900 up to RM3,000 → RM22.15</span>
+</div>
+<div class="rate-grid">
+<div class="rate-card">
+<strong>0.75%</strong>
+<h3>Phase 1 Rate</h3>
+<p>Applies during the first two years of the scheme from its implementation.</p>
+</div>
+<div class="rate-card">
+<strong>Employee</strong>
+<h3>Who Pays?</h3>
+<p>The full SKBBK contribution is borne by the employee.</p>
+</div>
+<div class="rate-card">
+<strong>Voluntary</strong>
+<h3>Local Employees</h3>
+<p>Participation is voluntary for local employees. Check PERKESO's latest participation-status guidance before changing an employee's status.</p>
+</div>
+<div class="rate-card">
+<strong>Mandatory</strong>
+<h3>Foreign Workers</h3>
+<p>Participation remains mandatory for eligible foreign workers.</p>
+</div>
+</div>
+</section>
+<section class="contribution-box">
+<h2>SKBBK Contribution Table 2026</h2>
+<p>
           Find your monthly salary range below to check the corresponding SKBBK employee contribution
           based on the official PERKESO Phase 1 contribution schedule.
         </p>
-
-        <div class="official-schedule-label">Official PERKESO Phase 1 Schedule</div>
-
-        <p class="full-table-intro">
+<div class="official-schedule-label">Official PERKESO Phase 1 Schedule</div>
+<p class="full-table-intro">
             The complete Phase 1 table below is based on the official PERKESO salary-band contribution schedule used by this calculator.
             The final row applies the RM44.65 maximum for wages above RM6,000.
           </p>
-        <div class="scroll-table-note" aria-hidden="true">
-          <span>↕</span>
-          <span>All 65 salary bands are shown — scroll inside the table to view more.</span>
-        </div>
-        <div class="scroll-contribution-table-wrap" role="region" aria-label="SKBBK contribution table" tabindex="0">
-          <table class="contribution-table full-contribution-table">
-              <thead>
-                <tr>
-                  <th>Band</th>
-                  <th>Monthly Wages</th>
-                  <th>Employee SKBBK</th>
-                </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td>1</td>
-                <td>Up to RM30</td>
-                <td>RM0.20</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Above RM30 to RM50</td>
-                <td>RM0.30</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Above RM50 to RM70</td>
-                <td>RM0.50</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Above RM70 to RM100</td>
-                <td>RM0.65</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>Above RM100 to RM140</td>
-                <td>RM0.90</td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>Above RM140 to RM200</td>
-                <td>RM1.25</td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td>Above RM200 to RM300</td>
-                <td>RM1.85</td>
-              </tr>
-              <tr>
-                <td>8</td>
-                <td>Above RM300 to RM400</td>
-                <td>RM2.65</td>
-              </tr>
-              <tr>
-                <td>9</td>
-                <td>Above RM400 to RM500</td>
-                <td>RM3.35</td>
-              </tr>
-              <tr>
-                <td>10</td>
-                <td>Above RM500 to RM600</td>
-                <td>RM4.15</td>
-              </tr>
-              <tr>
-                <td>11</td>
-                <td>Above RM600 to RM700</td>
-                <td>RM4.85</td>
-              </tr>
-              <tr>
-                <td>12</td>
-                <td>Above RM700 to RM800</td>
-                <td>RM5.65</td>
-              </tr>
-              <tr>
-                <td>13</td>
-                <td>Above RM800 to RM900</td>
-                <td>RM6.35</td>
-              </tr>
-              <tr>
-                <td>14</td>
-                <td>Above RM900 to RM1,000</td>
-                <td>RM7.15</td>
-              </tr>
-              <tr>
-                <td>15</td>
-                <td>Above RM1,000 to RM1,100</td>
-                <td>RM7.85</td>
-              </tr>
-              <tr>
-                <td>16</td>
-                <td>Above RM1,100 to RM1,200</td>
-                <td>RM8.65</td>
-              </tr>
-              <tr>
-                <td>17</td>
-                <td>Above RM1,200 to RM1,300</td>
-                <td>RM9.35</td>
-              </tr>
-              <tr>
-                <td>18</td>
-                <td>Above RM1,300 to RM1,400</td>
-                <td>RM10.15</td>
-              </tr>
-              <tr>
-                <td>19</td>
-                <td>Above RM1,400 to RM1,500</td>
-                <td>RM10.85</td>
-              </tr>
-              <tr>
-                <td>20</td>
-                <td>Above RM1,500 to RM1,600</td>
-                <td>RM11.65</td>
-              </tr>
-              <tr>
-                <td>21</td>
-                <td>Above RM1,600 to RM1,700</td>
-                <td>RM12.35</td>
-              </tr>
-              <tr>
-                <td>22</td>
-                <td>Above RM1,700 to RM1,800</td>
-                <td>RM13.15</td>
-              </tr>
-              <tr>
-                <td>23</td>
-                <td>Above RM1,800 to RM1,900</td>
-                <td>RM13.85</td>
-              </tr>
-              <tr>
-                <td>24</td>
-                <td>Above RM1,900 to RM2,000</td>
-                <td>RM14.65</td>
-              </tr>
-              <tr>
-                <td>25</td>
-                <td>Above RM2,000 to RM2,100</td>
-                <td>RM15.35</td>
-              </tr>
-              <tr>
-                <td>26</td>
-                <td>Above RM2,100 to RM2,200</td>
-                <td>RM16.15</td>
-              </tr>
-              <tr>
-                <td>27</td>
-                <td>Above RM2,200 to RM2,300</td>
-                <td>RM16.85</td>
-              </tr>
-              <tr>
-                <td>28</td>
-                <td>Above RM2,300 to RM2,400</td>
-                <td>RM17.65</td>
-              </tr>
-              <tr>
-                <td>29</td>
-                <td>Above RM2,400 to RM2,500</td>
-                <td>RM18.35</td>
-              </tr>
-              <tr>
-                <td>30</td>
-                <td>Above RM2,500 to RM2,600</td>
-                <td>RM19.15</td>
-              </tr>
-              <tr>
-                <td>31</td>
-                <td>Above RM2,600 to RM2,700</td>
-                <td>RM19.85</td>
-              </tr>
-              <tr>
-                <td>32</td>
-                <td>Above RM2,700 to RM2,800</td>
-                <td>RM20.65</td>
-              </tr>
-              <tr>
-                <td>33</td>
-                <td>Above RM2,800 to RM2,900</td>
-                <td>RM21.35</td>
-              </tr>
-              <tr>
-                <td>34</td>
-                <td>Above RM2,900 to RM3,000</td>
-                <td>RM22.15</td>
-              </tr>
-              <tr>
-                <td>35</td>
-                <td>Above RM3,000 to RM3,100</td>
-                <td>RM22.85</td>
-              </tr>
-              <tr>
-                <td>36</td>
-                <td>Above RM3,100 to RM3,200</td>
-                <td>RM23.65</td>
-              </tr>
-              <tr>
-                <td>37</td>
-                <td>Above RM3,200 to RM3,300</td>
-                <td>RM24.35</td>
-              </tr>
-              <tr>
-                <td>38</td>
-                <td>Above RM3,300 to RM3,400</td>
-                <td>RM25.15</td>
-              </tr>
-              <tr>
-                <td>39</td>
-                <td>Above RM3,400 to RM3,500</td>
-                <td>RM25.85</td>
-              </tr>
-              <tr>
-                <td>40</td>
-                <td>Above RM3,500 to RM3,600</td>
-                <td>RM26.65</td>
-              </tr>
-              <tr>
-                <td>41</td>
-                <td>Above RM3,600 to RM3,700</td>
-                <td>RM27.35</td>
-              </tr>
-              <tr>
-                <td>42</td>
-                <td>Above RM3,700 to RM3,800</td>
-                <td>RM28.15</td>
-              </tr>
-              <tr>
-                <td>43</td>
-                <td>Above RM3,800 to RM3,900</td>
-                <td>RM28.85</td>
-              </tr>
-              <tr>
-                <td>44</td>
-                <td>Above RM3,900 to RM4,000</td>
-                <td>RM29.65</td>
-              </tr>
-              <tr>
-                <td>45</td>
-                <td>Above RM4,000 to RM4,100</td>
-                <td>RM30.35</td>
-              </tr>
-              <tr>
-                <td>46</td>
-                <td>Above RM4,100 to RM4,200</td>
-                <td>RM31.15</td>
-              </tr>
-              <tr>
-                <td>47</td>
-                <td>Above RM4,200 to RM4,300</td>
-                <td>RM31.85</td>
-              </tr>
-              <tr>
-                <td>48</td>
-                <td>Above RM4,300 to RM4,400</td>
-                <td>RM32.65</td>
-              </tr>
-              <tr>
-                <td>49</td>
-                <td>Above RM4,400 to RM4,500</td>
-                <td>RM33.35</td>
-              </tr>
-              <tr>
-                <td>50</td>
-                <td>Above RM4,500 to RM4,600</td>
-                <td>RM34.15</td>
-              </tr>
-              <tr>
-                <td>51</td>
-                <td>Above RM4,600 to RM4,700</td>
-                <td>RM34.85</td>
-              </tr>
-              <tr>
-                <td>52</td>
-                <td>Above RM4,700 to RM4,800</td>
-                <td>RM35.65</td>
-              </tr>
-              <tr>
-                <td>53</td>
-                <td>Above RM4,800 to RM4,900</td>
-                <td>RM36.35</td>
-              </tr>
-              <tr>
-                <td>54</td>
-                <td>Above RM4,900 to RM5,000</td>
-                <td>RM37.15</td>
-              </tr>
-              <tr>
-                <td>55</td>
-                <td>Above RM5,000 to RM5,100</td>
-                <td>RM37.85</td>
-              </tr>
-              <tr>
-                <td>56</td>
-                <td>Above RM5,100 to RM5,200</td>
-                <td>RM38.65</td>
-              </tr>
-              <tr>
-                <td>57</td>
-                <td>Above RM5,200 to RM5,300</td>
-                <td>RM39.35</td>
-              </tr>
-              <tr>
-                <td>58</td>
-                <td>Above RM5,300 to RM5,400</td>
-                <td>RM40.15</td>
-              </tr>
-              <tr>
-                <td>59</td>
-                <td>Above RM5,400 to RM5,500</td>
-                <td>RM40.85</td>
-              </tr>
-              <tr>
-                <td>60</td>
-                <td>Above RM5,500 to RM5,600</td>
-                <td>RM41.65</td>
-              </tr>
-              <tr>
-                <td>61</td>
-                <td>Above RM5,600 to RM5,700</td>
-                <td>RM42.35</td>
-              </tr>
-              <tr>
-                <td>62</td>
-                <td>Above RM5,700 to RM5,800</td>
-                <td>RM43.15</td>
-              </tr>
-              <tr>
-                <td>63</td>
-                <td>Above RM5,800 to RM5,900</td>
-                <td>RM43.85</td>
-              </tr>
-              <tr>
-                <td>64</td>
-                <td>Above RM5,900 to RM6,000</td>
-                <td>RM44.65</td>
-              </tr>
-              <tr>
-                <td>65</td>
-                <td>Above RM6,000</td>
-                <td>RM44.65</td>
-              </tr>
-              </tbody>
-            </table>
-        </div>
-
-      </section>
-
-
-
-      <section>
-
-        <h2>What This SKBBK Calculator Shows</h2>
-
-        <p>
+<div aria-hidden="true" class="scroll-table-note">
+<span>↕</span>
+<span>All 65 salary bands are shown — scroll inside the table to view more.</span>
+</div>
+<div aria-label="SKBBK contribution table" class="scroll-contribution-table-wrap" role="region" tabindex="0">
+<table class="contribution-table full-contribution-table">
+<thead>
+<tr>
+<th>Band</th>
+<th>Monthly Wages</th>
+<th>Employee SKBBK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Up to RM30</td>
+<td>RM0.20</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Above RM30 to RM50</td>
+<td>RM0.30</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Above RM50 to RM70</td>
+<td>RM0.50</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Above RM70 to RM100</td>
+<td>RM0.65</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Above RM100 to RM140</td>
+<td>RM0.90</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Above RM140 to RM200</td>
+<td>RM1.25</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Above RM200 to RM300</td>
+<td>RM1.85</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Above RM300 to RM400</td>
+<td>RM2.65</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Above RM400 to RM500</td>
+<td>RM3.35</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Above RM500 to RM600</td>
+<td>RM4.15</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Above RM600 to RM700</td>
+<td>RM4.85</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Above RM700 to RM800</td>
+<td>RM5.65</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Above RM800 to RM900</td>
+<td>RM6.35</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Above RM900 to RM1,000</td>
+<td>RM7.15</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Above RM1,000 to RM1,100</td>
+<td>RM7.85</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Above RM1,100 to RM1,200</td>
+<td>RM8.65</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Above RM1,200 to RM1,300</td>
+<td>RM9.35</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Above RM1,300 to RM1,400</td>
+<td>RM10.15</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Above RM1,400 to RM1,500</td>
+<td>RM10.85</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Above RM1,500 to RM1,600</td>
+<td>RM11.65</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Above RM1,600 to RM1,700</td>
+<td>RM12.35</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Above RM1,700 to RM1,800</td>
+<td>RM13.15</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Above RM1,800 to RM1,900</td>
+<td>RM13.85</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Above RM1,900 to RM2,000</td>
+<td>RM14.65</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Above RM2,000 to RM2,100</td>
+<td>RM15.35</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Above RM2,100 to RM2,200</td>
+<td>RM16.15</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Above RM2,200 to RM2,300</td>
+<td>RM16.85</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Above RM2,300 to RM2,400</td>
+<td>RM17.65</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Above RM2,400 to RM2,500</td>
+<td>RM18.35</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Above RM2,500 to RM2,600</td>
+<td>RM19.15</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Above RM2,600 to RM2,700</td>
+<td>RM19.85</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Above RM2,700 to RM2,800</td>
+<td>RM20.65</td>
+</tr>
+<tr>
+<td>33</td>
+<td>Above RM2,800 to RM2,900</td>
+<td>RM21.35</td>
+</tr>
+<tr>
+<td>34</td>
+<td>Above RM2,900 to RM3,000</td>
+<td>RM22.15</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Above RM3,000 to RM3,100</td>
+<td>RM22.85</td>
+</tr>
+<tr>
+<td>36</td>
+<td>Above RM3,100 to RM3,200</td>
+<td>RM23.65</td>
+</tr>
+<tr>
+<td>37</td>
+<td>Above RM3,200 to RM3,300</td>
+<td>RM24.35</td>
+</tr>
+<tr>
+<td>38</td>
+<td>Above RM3,300 to RM3,400</td>
+<td>RM25.15</td>
+</tr>
+<tr>
+<td>39</td>
+<td>Above RM3,400 to RM3,500</td>
+<td>RM25.85</td>
+</tr>
+<tr>
+<td>40</td>
+<td>Above RM3,500 to RM3,600</td>
+<td>RM26.65</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Above RM3,600 to RM3,700</td>
+<td>RM27.35</td>
+</tr>
+<tr>
+<td>42</td>
+<td>Above RM3,700 to RM3,800</td>
+<td>RM28.15</td>
+</tr>
+<tr>
+<td>43</td>
+<td>Above RM3,800 to RM3,900</td>
+<td>RM28.85</td>
+</tr>
+<tr>
+<td>44</td>
+<td>Above RM3,900 to RM4,000</td>
+<td>RM29.65</td>
+</tr>
+<tr>
+<td>45</td>
+<td>Above RM4,000 to RM4,100</td>
+<td>RM30.35</td>
+</tr>
+<tr>
+<td>46</td>
+<td>Above RM4,100 to RM4,200</td>
+<td>RM31.15</td>
+</tr>
+<tr>
+<td>47</td>
+<td>Above RM4,200 to RM4,300</td>
+<td>RM31.85</td>
+</tr>
+<tr>
+<td>48</td>
+<td>Above RM4,300 to RM4,400</td>
+<td>RM32.65</td>
+</tr>
+<tr>
+<td>49</td>
+<td>Above RM4,400 to RM4,500</td>
+<td>RM33.35</td>
+</tr>
+<tr>
+<td>50</td>
+<td>Above RM4,500 to RM4,600</td>
+<td>RM34.15</td>
+</tr>
+<tr>
+<td>51</td>
+<td>Above RM4,600 to RM4,700</td>
+<td>RM34.85</td>
+</tr>
+<tr>
+<td>52</td>
+<td>Above RM4,700 to RM4,800</td>
+<td>RM35.65</td>
+</tr>
+<tr>
+<td>53</td>
+<td>Above RM4,800 to RM4,900</td>
+<td>RM36.35</td>
+</tr>
+<tr>
+<td>54</td>
+<td>Above RM4,900 to RM5,000</td>
+<td>RM37.15</td>
+</tr>
+<tr>
+<td>55</td>
+<td>Above RM5,000 to RM5,100</td>
+<td>RM37.85</td>
+</tr>
+<tr>
+<td>56</td>
+<td>Above RM5,100 to RM5,200</td>
+<td>RM38.65</td>
+</tr>
+<tr>
+<td>57</td>
+<td>Above RM5,200 to RM5,300</td>
+<td>RM39.35</td>
+</tr>
+<tr>
+<td>58</td>
+<td>Above RM5,300 to RM5,400</td>
+<td>RM40.15</td>
+</tr>
+<tr>
+<td>59</td>
+<td>Above RM5,400 to RM5,500</td>
+<td>RM40.85</td>
+</tr>
+<tr>
+<td>60</td>
+<td>Above RM5,500 to RM5,600</td>
+<td>RM41.65</td>
+</tr>
+<tr>
+<td>61</td>
+<td>Above RM5,600 to RM5,700</td>
+<td>RM42.35</td>
+</tr>
+<tr>
+<td>62</td>
+<td>Above RM5,700 to RM5,800</td>
+<td>RM43.15</td>
+</tr>
+<tr>
+<td>63</td>
+<td>Above RM5,800 to RM5,900</td>
+<td>RM43.85</td>
+</tr>
+<tr>
+<td>64</td>
+<td>Above RM5,900 to RM6,000</td>
+<td>RM44.65</td>
+</tr>
+<tr>
+<td>65</td>
+<td>Above RM6,000</td>
+<td>RM44.65</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section>
+<h2>What This SKBBK Calculator Shows</h2>
+<p>
           This calculator is designed to help employees understand the new payslip deduction,
           check whether payroll is using the correct salary band and see the annual cost of participation.
         </p>
-
-        <div class="component-grid">
-
-          <a class="component-card" href="skbbk-guide.html">
-            <div class="component-icon">🛡️</div>
-            <h3>Monthly SKBBK</h3>
-            <p>The employee contribution selected from the official Phase 1 wage schedule.</p>
-          </a>
-
-          <a class="component-card" href="skbbk-guide.html">
-            <div class="component-icon">📅</div>
-            <h3>Annual Contribution</h3>
-            <p>Your estimated yearly SKBBK cost based on 12 equal monthly deductions.</p>
-          </a>
-
-          <a class="component-card" href="index.html">
-            <div class="component-icon">💵</div>
-            <h3>Salary After SKBBK Only</h3>
-            <p>Monthly salary remaining after this deduction only.</p>
-          </a>
-
-          <a class="component-card" href="skbbk-guide.html">
-            <div class="component-icon">📋</div>
-            <h3>Participation Status</h3>
-            <p>Shows whether participation is voluntary, opted out or mandatory.</p>
-          </a>
-
-        </div>
-
-      </section>
-
-      <h2>Who Should Use This SKBBK Calculator?</h2>
-
-      <ul>
-        <li>Employees checking a new SKBBK deduction on their payslip</li>
-        <li>Local employees comparing the cost of participating or opting out</li>
-        <li>Foreign workers checking the mandatory contribution amount</li>
-        <li>Employers and payroll users verifying the correct wage band</li>
-        <li>HR staff explaining LINDUNG 24 Jam deductions to employees</li>
-      </ul>
-
-      <section class="official-box">
-
-        <h2>Official PERKESO Resources</h2>
-
-        <p>
+<div class="component-grid">
+<a class="component-card" href="skbbk-guide.html">
+<div class="component-icon">🛡️</div>
+<h3>Monthly SKBBK</h3>
+<p>The employee contribution selected from the official Phase 1 wage schedule.</p>
+</a>
+<a class="component-card" href="skbbk-guide.html">
+<div class="component-icon">📅</div>
+<h3>Annual Contribution</h3>
+<p>Your estimated yearly SKBBK cost based on 12 equal monthly deductions.</p>
+</a>
+<a class="component-card" href="index.html">
+<div class="component-icon">💵</div>
+<h3>Salary After SKBBK Only</h3>
+<p>Monthly salary remaining after this deduction only.</p>
+</a>
+<a class="component-card" href="skbbk-guide.html">
+<div class="component-icon">📋</div>
+<h3>Participation Status</h3>
+<p>Shows whether participation is voluntary, opted out or mandatory.</p>
+</a>
+</div>
+</section>
+<h2>Who Should Use This SKBBK Calculator?</h2>
+<ul>
+<li>Employees checking a new SKBBK deduction on their payslip</li>
+<li>Local employees comparing the cost of participating or opting out</li>
+<li>Foreign workers checking the mandatory contribution amount</li>
+<li>Employers and payroll users verifying the correct wage band</li>
+<li>HR staff explaining LINDUNG 24 Jam deductions to employees</li>
+</ul>
+<section class="official-box">
+<h2>Official PERKESO Resources</h2>
+<p>
           Contribution rates, participation-status procedures and claim rules may change.
           Refer to PERKESO for the latest official confirmation and payroll compliance.
         </p>
-
-        <div class="official-links">
-
-          <a href="https://www.perkeso.gov.my/en/skim-kemalangan-bukan-bencana-kerja-lindung-24-jam.html" target="_blank" rel="noopener">
-            <h3>LINDUNG 24 Jam</h3>
-            <p>Official scheme coverage, contribution phases, exclusions and participation information.</p>
-          </a>
-
-          <a href="https://perkeso.gov.my/images/lindung/lindung-24-jam/NewContributionRateIncludingSKBBK.pdf" target="_blank" rel="noopener">
-            <h3>Official Contribution Schedule</h3>
-            <p>PERKESO salary-band table including the Phase 1 SKBBK amounts used by this calculator.</p>
-          </a>
-
-          <a href="https://www.perkeso.gov.my/perkhidmatan-kami/majikan-pekerja/kalkulator-caruman.html" target="_blank" rel="noopener">
-            <h3>PERKESO Contribution Calculator</h3>
-            <p>Official calculator for contribution verification.</p>
-          </a>
-
-        </div>
-
-        <div class="payroll-note">
-          <strong>Important:</strong>
+<div class="official-links">
+<a href="https://www.perkeso.gov.my/en/skim-kemalangan-bukan-bencana-kerja-lindung-24-jam.html" rel="noopener" target="_blank">
+<h3>LINDUNG 24 Jam</h3>
+<p>Official scheme coverage, contribution phases, exclusions and participation information.</p>
+</a>
+<a href="https://perkeso.gov.my/images/lindung/lindung-24-jam/NewContributionRateIncludingSKBBK.pdf" rel="noopener" target="_blank">
+<h3>Official Contribution Schedule</h3>
+<p>PERKESO salary-band table including the Phase 1 SKBBK amounts used by this calculator.</p>
+</a>
+<a href="https://www.perkeso.gov.my/perkhidmatan-kami/majikan-pekerja/kalkulator-caruman.html" rel="noopener" target="_blank">
+<h3>PERKESO Contribution Calculator</h3>
+<p>Official calculator for contribution verification.</p>
+</a>
+</div>
+<div class="payroll-note">
+<strong>Important:</strong>
           This website provides payroll estimates for general information only. Verify unusual wage
           components, arrears, multiple payments or special employee cases with PERKESO or a qualified
           payroll professional.
         </div>
-
-      </section>
-
-      <h2>Frequently Asked Questions</h2>
-
-      <div class="faq-box">
-
-        <details class="faq-item" open>
-          <summary>How is SKBBK calculated in Malaysia?</summary>
-          <p>
+</section>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-box">
+<details class="faq-item" open="">
+<summary>How is SKBBK calculated in Malaysia?</summary>
+<p>
             SKBBK follows the official PERKESO wage contribution schedule. Although the Phase 1
             rate is 0.75%, the payroll deduction is selected from a salary band rather than calculated
             as exactly 0.75% of every salary.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Why is RM3,000 SKBBK RM22.15 instead of RM22.50?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>Why is RM3,000 SKBBK RM22.15 instead of RM22.50?</summary>
+<p>
             PERKESO uses a statutory salary-band table. Wages above RM2,900 but not exceeding RM3,000
             have an official SKBBK contribution of RM22.15.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Who pays the SKBBK contribution?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>Who pays the SKBBK contribution?</summary>
+<p>
             The contribution is fully borne by the employee. The employer deducts it through payroll
             and pays it to PERKESO on the employee's behalf.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is SKBBK compulsory for Malaysian employees?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>Is SKBBK compulsory for Malaysian employees?</summary>
+<p>
             Participation is voluntary for local employees. PERKESO provides an official participation-status
             and release-of-liability process; check the latest PERKESO guidance before changing an employee's status.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is SKBBK compulsory for foreign workers?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>Is SKBBK compulsory for foreign workers?</summary>
+<p>
             Yes. Participation remains mandatory for eligible foreign workers.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What happens if a local employee selects opted out?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>What happens if a local employee selects opted out?</summary>
+<p>
             The calculator shows a zero SKBBK deduction. This assumes the employee has properly
             completed the official opt-out or release-of-liability process.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What is the maximum Phase 1 SKBBK deduction?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>What is the maximum Phase 1 SKBBK deduction?</summary>
+<p>
             The official schedule shows RM44.65 for wages above RM5,900, including wages above RM6,000.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Does the employer contribute an additional SKBBK amount?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>Does the employer contribute an additional SKBBK amount?</summary>
+<p>
             No. There is no separate employer SKBBK share. The employee bears the full contribution.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Does this calculator include normal SOCSO?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>Does this calculator include normal SOCSO?</summary>
+<p>
             No. It calculates only the SKBBK portion. Normal SOCSO contributions under the Employment
             Injury and Invalidity Schemes are separate.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Does SKBBK cover illnesses such as fever or diabetes?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>Does SKBBK cover illnesses such as fever or diabetes?</summary>
+<p>
             No. SKBBK focuses on qualifying accidental injuries outside work. PERKESO lists conditions
             caused by illnesses such as fever, diabetes and high blood pressure as excluded.
           </p>
-        </details>
-
-      </div>
-
-      <section class="salary-guides-box">
-
-        <h2>Malaysia Payroll Guides</h2>
-
-        <p>
+</details>
+</div>
+<section class="salary-guides-box">
+<h2>Malaysia Payroll Guides</h2>
+<p>
           Learn more about SKBBK, SOCSO, EIS, EPF and salary deductions in Malaysia.
         </p>
+<div class="guide-mini-grid">
+<a href="skbbk-guide.html">SKBBK Guide</a>
+<a href="socso-guide.html">SOCSO Guide</a>
+<a href="eis-guide.html">EIS Guide</a>
 
-        <div class="guide-mini-grid">
-          <a href="skbbk-guide.html">🛡️ SKBBK Guide</a>
-          <a href="socso-guide.html">🏥 SOCSO Guide</a>
-          <a href="eis-guide.html">📋 EIS Guide</a>
-          <a href="epf-guide.html">💰 EPF Guide</a>
-          <a href="salary-deduction-guide.html">📉 Salary Deduction Guide</a>
-          <a href="payslip-guide.html">🧾 Payslip Guide</a>
-        </div>
 
-        <p class="view-all-guides">
-          <a href="guides.html">View All Salary Guides →</a>
-        </p>
 
-      </section>
-
-      <section class="salary-guides-box">
-
-        <h2>Related Calculators</h2>
-
-        <p>
+</div>
+<p class="view-all-guides">
+<a href="guides.html">View All Salary Guides →</a>
+</p>
+</section>
+<section class="salary-guides-box">
+<h2>Related Calculators</h2>
+<p>
           Explore more free Malaysia salary and payroll calculators.
         </p>
-
-        <div class="guide-mini-grid">
-          <a href="index.html">Salary Calculator</a>
-          <a href="socso-calculator.html">SOCSO Calculator</a>
-          <a href="eis-calculator.html">EIS Calculator</a>
-          <a href="epf-calculator.html">EPF Calculator</a>
-          <a href="pcb-calculator.html">PCB Calculator</a>
-          <a href="payslip-generator.html">Payslip Generator</a>
-        </div>
-
-        <p class="view-all-guides">
-          <a href="calculators.html">View All Calculators →</a>
-        </p>
-
-      </section>
-
-    </div>
-
-  </main>
-
-  <footer class="footer">
-    <p>© 2026 Malaysia Salary Tools</p>
-    <p>
-      <a href="index.html">Home</a> |
+<div class="guide-mini-grid">
+<a href="socso-calculator.html">SOCSO Calculator</a>
+<a href="eis-calculator.html">EIS Calculator</a>
+<a href="index.html">Salary Calculator</a>
+</div>
+<p class="view-all-guides">
+<a href="calculators.html">View All Calculators →</a>
+</p>
+</section>
+</div>
+</main>
+<footer class="footer">
+<p>© 2026 Malaysia Salary Tools</p>
+<p>
+<a href="index.html">Home</a> |
       <a href="calculators.html">Calculators</a> |
       <a href="guides.html">Guides</a> |
       <a href="about.html">About</a> |
       <a href="contact.html">Contact Us</a> |
       <a href="privacy-policy.html">Privacy Policy</a>
-    </p>
-  </footer>
-
-  <script>
+</p>
+</footer>
+<script>
     /*
       Official PERKESO LINDUNG 24 Jam Phase 1 contribution schedule.
 
@@ -2053,6 +1945,5 @@
     // Populate the default RM3,000 example immediately on page load.
     calculateSKBBK();
   </script>
-
 </body>
 </html>

@@ -1,21 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-
-  <title>Malaysia Home Loan Calculator 2026 | Mortgage Repayment Calculator</title>
-
-  <link rel="canonical" href="https://malaysiasalarytools.com/home-loan-calculator.html">
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <meta name="description" content="Free Malaysia Home Loan Calculator 2026. Estimate monthly mortgage installment, loan amount, down payment, total interest and total repayment for a Malaysian property loan.">
-  <meta name="keywords" content="Malaysia home loan calculator, mortgage calculator Malaysia, housing loan calculator, property loan calculator Malaysia, monthly mortgage calculator, home loan repayment calculator">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
-
-  <style>
+<meta charset="utf-8"/>
+<title>Malaysia Home Loan Calculator 2026 | Mortgage Repayment Calculator</title>
+<link href="https://malaysiasalarytools.com/home-loan-calculator.html" rel="canonical"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<meta content="Free Malaysia Home Loan Calculator 2026. Estimate monthly mortgage installment, loan amount, down payment, total interest and total repayment for a Malaysian property loan." name="description"/>
+<meta content="Malaysia home loan calculator, mortgage calculator Malaysia, housing loan calculator, property loan calculator Malaysia, monthly mortgage calculator, home loan repayment calculator" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<style>
     :root {
       --background:#f4f1ea;
       --card:#fbfaf6;
@@ -785,358 +780,292 @@
     }
   </style>
 </head>
-
 <body>
-
 <header class="top-nav">
-  <div class="nav-inner">
-    <a href="index.html" class="brand">
-      <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
-    </a>
-
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="calculators.html" class="active">Calculators</a>
-      <a href="guides.html">Guides</a>
-      <a href="about.html">About</a>
-    </nav>
-  </div>
+<div class="nav-inner">
+<a class="brand" href="index.html">
+<img alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';" src="logo.png"/>
+</a>
+<nav aria-label="Main navigation" class="nav-links">
+<a href="index.html">Home</a>
+<a class="active" href="calculators.html">Calculators</a>
+<a href="guides.html">Guides</a>
+<a href="about.html">About</a>
+</nav>
+</div>
 </header>
-
 <section class="hero">
-  <span class="pill">Updated for Malaysia 2026 mortgage estimates</span>
-  <h1 class="serif">Calculate your <em>home loan repayment</em></h1>
-  <p>
+<span class="pill">Updated for Malaysia 2026 mortgage estimates</span>
+<h1 class="serif">Calculate your <em>home loan repayment</em></h1>
+<p>
     Free Malaysia home loan calculator for property buyers. Estimate mortgage installment, loan amount, down payment, total interest and total repayment.
   </p>
 </section>
-
 <main class="main-wrapper">
-
-  <section class="calculator-shell" id="calculator">
-
-    <div class="panel">
-      <h2 class="serif">Calculate Home Loan</h2>
-      <p class="sub">Enter property price, down payment, interest rate and loan tenure.</p>
-
-      <div class="form-group">
-        <label for="propertyPrice">Property price</label>
-        <div class="input-row">
-          <span>RM</span>
-          <input type="number" id="propertyPrice" value="500000" min="0" step="1000" placeholder="Example: 500000">
-        </div>
-
-        <input type="range" id="priceRange" min="0" max="2000000" step="1000" value="500000">
-
-        <div class="preset-grid">
-          <button type="button" class="preset" onclick="setPrice(300000)">RM 300k</button>
-          <button type="button" class="preset" onclick="setPrice(500000)">RM 500k</button>
-          <button type="button" class="preset" onclick="setPrice(800000)">RM 800k</button>
-          <button type="button" class="preset" onclick="setPrice(1000000)">RM 1M</button>
-        </div>
-      </div>
-
-      <div class="field-grid">
-        <div class="form-group">
-          <label for="downPaymentPercent">Down payment</label>
-          <div class="input-row">
-            <span>%</span>
-            <input type="number" id="downPaymentPercent" value="10" min="0" max="100" step="1">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="rate">Annual interest rate</label>
-          <div class="input-row">
-            <span>%</span>
-            <input type="number" id="rate" value="4.2" min="0" step="0.01">
-          </div>
-        </div>
-      </div>
-
-      <div class="field-grid">
-        <div class="form-group">
-          <label for="years">Loan tenure</label>
-          <div class="input-row">
-            <span>Y</span>
-            <input type="number" id="years" value="30" min="1" max="40" step="1">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="extraCost">Other upfront cost estimate</label>
-          <div class="input-row">
-            <span>RM</span>
-            <input type="number" id="extraCost" value="0" min="0" step="100" placeholder="Optional">
-          </div>
-        </div>
-      </div>
-
-      <div class="preset-grid">
-        <button type="button" class="preset" onclick="setLoanBasis(10, 4.2, 30)">10% / 4.2% / 30Y</button>
-        <button type="button" class="preset" onclick="setLoanBasis(15, 4.0, 25)">15% / 4.0% / 25Y</button>
-        <button type="button" class="preset" onclick="setLoanBasis(20, 4.5, 35)">20% / 4.5% / 35Y</button>
-      </div>
-
-      <button type="button" class="calc-button" onclick="calculateHomeLoan()">Calculate Mortgage</button>
-
-      <a class="secondary-button" href="debt-service-ratio-calculator.html">
+<section class="calculator-shell" id="calculator">
+<div class="panel">
+<h2 class="serif">Calculate Home Loan</h2>
+<p class="sub">Enter property price, down payment, interest rate and loan tenure.</p>
+<div class="form-group">
+<label for="propertyPrice">Property price</label>
+<div class="input-row">
+<span>RM</span>
+<input id="propertyPrice" min="0" placeholder="Example: 500000" step="1000" type="number" value="500000"/>
+</div>
+<input id="priceRange" max="2000000" min="0" step="1000" type="range" value="500000"/>
+<div class="preset-grid">
+<button class="preset" onclick="setPrice(300000)" type="button">RM 300k</button>
+<button class="preset" onclick="setPrice(500000)" type="button">RM 500k</button>
+<button class="preset" onclick="setPrice(800000)" type="button">RM 800k</button>
+<button class="preset" onclick="setPrice(1000000)" type="button">RM 1M</button>
+</div>
+</div>
+<div class="field-grid">
+<div class="form-group">
+<label for="downPaymentPercent">Down payment</label>
+<div class="input-row">
+<span>%</span>
+<input id="downPaymentPercent" max="100" min="0" step="1" type="number" value="10"/>
+</div>
+</div>
+<div class="form-group">
+<label for="rate">Annual interest rate</label>
+<div class="input-row">
+<span>%</span>
+<input id="rate" min="0" step="0.01" type="number" value="4.2"/>
+</div>
+</div>
+</div>
+<div class="field-grid">
+<div class="form-group">
+<label for="years">Loan tenure</label>
+<div class="input-row">
+<span>Y</span>
+<input id="years" max="40" min="1" step="1" type="number" value="30"/>
+</div>
+</div>
+<div class="form-group">
+<label for="extraCost">Other upfront cost estimate</label>
+<div class="input-row">
+<span>RM</span>
+<input id="extraCost" min="0" placeholder="Optional" step="100" type="number" value="0"/>
+</div>
+</div>
+</div>
+<div class="preset-grid">
+<button class="preset" onclick="setLoanBasis(10, 4.2, 30)" type="button">10% / 4.2% / 30Y</button>
+<button class="preset" onclick="setLoanBasis(15, 4.0, 25)" type="button">15% / 4.0% / 25Y</button>
+<button class="preset" onclick="setLoanBasis(20, 4.5, 35)" type="button">20% / 4.5% / 35Y</button>
+</div>
+<button class="calc-button" onclick="calculateHomeLoan()" type="button">Calculate Mortgage</button>
+<a class="secondary-button" href="debt-service-ratio-calculator.html">
         Check Debt Service Ratio →
       </a>
-
-      <a class="secondary-button" href="home-loan-guide.html">
+<a class="secondary-button" href="home-loan-guide.html">
         Read Home Loan Guide →
       </a>
-
-      <p class="input-note">
+<p class="input-note">
         This calculator uses a standard reducing balance mortgage formula. Actual bank installment may vary depending on bank package, legal fees, valuation, MRTA/MLTA, lock-in terms and approval conditions.
       </p>
-    </div>
-
-    <div class="results-panel">
-      <h2 class="serif">Your home loan result</h2>
-      <p class="sub">Estimated monthly mortgage installment</p>
-
-      <div class="net">RM <span id="monthlyPayment">0.00</span></div>
-      <p class="net-caption" id="loanExplanation">Based on property price, down payment, rate and tenure.</p>
-
-      <div class="bar" id="loanBar"></div>
-
-      <div class="result-rows" id="resultRows"></div>
-
-      <div class="annual-summary" id="summaryRows"></div>
-    </div>
-
-  </section>
-
-  <div class="seo">
-
-    <section>
-      <h2>How Home Loan Repayment Is Calculated</h2>
-
-      <p>
+</div>
+<div class="results-panel">
+<h2 class="serif">Your home loan result</h2>
+<p class="sub">Estimated monthly mortgage installment</p>
+<div class="net">RM <span id="monthlyPayment">0.00</span></div>
+<p class="net-caption" id="loanExplanation">Based on property price, down payment, rate and tenure.</p>
+<div class="bar" id="loanBar"></div>
+<div class="result-rows" id="resultRows"></div>
+<div class="annual-summary" id="summaryRows"></div>
+</div>
+</section>
+<div class="seo">
+<section>
+<h2>How Home Loan Repayment Is Calculated</h2>
+<p>
         A home loan calculator estimates monthly mortgage repayment based on property price, down payment, loan amount, interest rate and loan tenure. It is useful before buying a house, comparing loan packages or checking affordability.
       </p>
-
-      <div class="formula-box">
-        <strong>Monthly Mortgage = P × r × (1 + r)n ÷ [(1 + r)n − 1]</strong>
-        <span>P is loan amount, r is monthly interest rate and n is total repayment months.</span>
-      </div>
-
-      <div class="rate-grid">
-        <div class="rate-card">
-          <strong>Price</strong>
-          <h3>Property Price</h3>
-          <p>The house price before down payment and financing.</p>
-        </div>
-
-        <div class="rate-card">
-          <strong>Down</strong>
-          <h3>Down Payment</h3>
-          <p>Upfront payment before the remaining amount is financed.</p>
-        </div>
-
-        <div class="rate-card">
-          <strong>Loan</strong>
-          <h3>Loan Amount</h3>
-          <p>Estimated mortgage principal after down payment.</p>
-        </div>
-
-        <div class="rate-card">
-          <strong>DSR</strong>
-          <h3>Affordability</h3>
-          <p>Monthly installment should be compared with income and debts.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="contribution-box">
-      <h2>Home Loan Example</h2>
-
-      <p>
+<div class="formula-box">
+<strong>Monthly Mortgage = P × r × (1 + r)n ÷ [(1 + r)n − 1]</strong>
+<span>P is loan amount, r is monthly interest rate and n is total repayment months.</span>
+</div>
+<div class="rate-grid">
+<div class="rate-card">
+<strong>Price</strong>
+<h3>Property Price</h3>
+<p>The house price before down payment and financing.</p>
+</div>
+<div class="rate-card">
+<strong>Down</strong>
+<h3>Down Payment</h3>
+<p>Upfront payment before the remaining amount is financed.</p>
+</div>
+<div class="rate-card">
+<strong>Loan</strong>
+<h3>Loan Amount</h3>
+<p>Estimated mortgage principal after down payment.</p>
+</div>
+<div class="rate-card">
+<strong>DSR</strong>
+<h3>Affordability</h3>
+<p>Monthly installment should be compared with income and debts.</p>
+</div>
+</div>
+</section>
+<section class="contribution-box">
+<h2>Home Loan Example</h2>
+<p>
         If a property costs RM500,000 and you pay 10% down payment, the estimated loan amount is RM450,000. At 4.2% annual interest for 30 years, the calculator estimates the monthly repayment using a reducing balance formula.
       </p>
-
-      <div class="contribution-table-wrap">
-        <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Property Price</th>
-              <th>Down Payment</th>
-              <th>Loan Amount</th>
-              <th>Estimated Monthly Installment</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>RM300,000</td>
-              <td>10%</td>
-              <td>RM270,000</td>
-              <td>Approx. RM1,320</td>
-            </tr>
-            <tr>
-              <td>RM500,000</td>
-              <td>10%</td>
-              <td>RM450,000</td>
-              <td>Approx. RM2,201</td>
-            </tr>
-            <tr>
-              <td>RM800,000</td>
-              <td>10%</td>
-              <td>RM720,000</td>
-              <td>Approx. RM3,522</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p class="payroll-note">
-        <strong>Note:</strong>
+<div class="contribution-table-wrap">
+<table class="contribution-table">
+<thead>
+<tr>
+<th>Property Price</th>
+<th>Down Payment</th>
+<th>Loan Amount</th>
+<th>Estimated Monthly Installment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RM300,000</td>
+<td>10%</td>
+<td>RM270,000</td>
+<td>Approx. RM1,320</td>
+</tr>
+<tr>
+<td>RM500,000</td>
+<td>10%</td>
+<td>RM450,000</td>
+<td>Approx. RM2,201</td>
+</tr>
+<tr>
+<td>RM800,000</td>
+<td>10%</td>
+<td>RM720,000</td>
+<td>Approx. RM3,522</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="payroll-note">
+<strong>Note:</strong>
         This is only a repayment estimate. Home buyers should also consider legal fees, stamp duty, valuation fees, insurance, maintenance fees and emergency savings.
       </p>
-    </section>
-
-    <section>
-      <h2>What This Home Loan Calculator Shows</h2>
-
-      <p>
+</section>
+<section>
+<h2>What This Home Loan Calculator Shows</h2>
+<p>
         This calculator shows estimated monthly installment, loan amount, down payment, total repayment, total interest and annual repayment. It can help you compare property prices and understand how loan tenure affects affordability.
       </p>
-
-      <div class="component-grid">
-        <a class="component-card" href="debt-service-ratio-calculator.html">
-          <div class="component-icon">📊</div>
-          <h3>DSR Check</h3>
-          <p>Compare your mortgage installment with income and commitments.</p>
-        </a>
-
-        <a class="component-card" href="loan-calculator.html">
-          <div class="component-icon">💳</div>
-          <h3>Loan Repayment</h3>
-          <p>Compare mortgage repayment with other loan types.</p>
-        </a>
-
-        <a class="component-card" href="home-loan-guide.html">
-          <div class="component-icon">🏠</div>
-          <h3>Home Loan</h3>
-          <p>Understand loan tenure, interest rate and property financing.</p>
-        </a>
-
-        <a class="component-card" href="index.html">
-          <div class="component-icon">💰</div>
-          <h3>Salary</h3>
-          <p>Estimate take-home pay before committing to a home loan.</p>
-        </a>
-      </div>
-    </section>
-
-    <h2>Who Should Use This Home Loan Calculator?</h2>
-
-    <ul>
-      <li>First-time home buyers estimating monthly mortgage repayment</li>
-      <li>Property buyers comparing loan amount and down payment</li>
-      <li>Employees checking affordability before buying a house</li>
-      <li>Borrowers comparing 25-year, 30-year and 35-year loan tenures</li>
-      <li>Anyone planning cash flow before applying for a housing loan</li>
-    </ul>
-
-    <h2>Frequently Asked Questions</h2>
-
-    <div class="faq-box">
-      <details class="faq-item" open>
-        <summary>Is this home loan calculator exact?</summary>
-        <p>
+<div class="component-grid">
+<a class="component-card" href="debt-service-ratio-calculator.html">
+<div class="component-icon">📊</div>
+<h3>DSR Check</h3>
+<p>Compare your mortgage installment with income and commitments.</p>
+</a>
+<a class="component-card" href="loan-calculator.html">
+<div class="component-icon">💳</div>
+<h3>Loan Repayment</h3>
+<p>Compare mortgage repayment with other loan types.</p>
+</a>
+<a class="component-card" href="home-loan-guide.html">
+<div class="component-icon">🏠</div>
+<h3>Home Loan</h3>
+<p>Understand loan tenure, interest rate and property financing.</p>
+</a>
+<a class="component-card" href="index.html">
+<div class="component-icon">💰</div>
+<h3>Salary</h3>
+<p>Estimate take-home pay before committing to a home loan.</p>
+</a>
+</div>
+</section>
+<h2>Who Should Use This Home Loan Calculator?</h2>
+<ul>
+<li>First-time home buyers estimating monthly mortgage repayment</li>
+<li>Property buyers comparing loan amount and down payment</li>
+<li>Employees checking affordability before buying a house</li>
+<li>Borrowers comparing 25-year, 30-year and 35-year loan tenures</li>
+<li>Anyone planning cash flow before applying for a housing loan</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-box">
+<details class="faq-item" open="">
+<summary>Is this home loan calculator exact?</summary>
+<p>
           No. This calculator provides an estimate only. Actual bank installment may vary depending on interest rate, loan package, fees, insurance and approval conditions.
         </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>How much down payment do I need for a house in Malaysia?</summary>
-        <p>
+</details>
+<details class="faq-item">
+<summary>How much down payment do I need for a house in Malaysia?</summary>
+<p>
           A common simple estimate is 10% down payment, but the actual amount depends on margin of financing, property type, borrower profile and bank approval.
         </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Does longer loan tenure reduce monthly installment?</summary>
-        <p>
+</details>
+<details class="faq-item">
+<summary>Does longer loan tenure reduce monthly installment?</summary>
+<p>
           Usually yes. A longer tenure may reduce monthly repayment, but it can increase total interest paid over the full loan period.
         </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Should I check DSR before applying for a home loan?</summary>
-        <p>
+</details>
+<details class="faq-item">
+<summary>Should I check DSR before applying for a home loan?</summary>
+<p>
           Yes. DSR helps you estimate whether your monthly commitments are reasonable compared with your income.
         </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Does this calculator include legal fees and stamp duty?</summary>
-        <p>
+</details>
+<details class="faq-item">
+<summary>Does this calculator include legal fees and stamp duty?</summary>
+<p>
           No. The main calculation focuses on loan repayment. You can enter a rough optional upfront cost estimate, but actual legal fees, stamp duty and other costs should be checked separately.
         </p>
-      </details>
-    </div>
-
-    <section class="salary-guides-box">
-      <h2>Malaysia Financial Planning Guides</h2>
-
-      <p>
+</details>
+</div>
+<section class="salary-guides-box">
+<h2>Malaysia Financial Planning Guides</h2>
+<p>
         Learn more about home loan, debt service ratio, loan repayment and personal finance planning in Malaysia.
       </p>
+<div class="guide-mini-grid">
+<a href="home-loan-guide.html">Home Loan Guide</a>
+<a href="debt-service-ratio-guide.html">DSR Guide</a>
 
-      <div class="guide-mini-grid">
-        <a href="home-loan-guide.html">🏠 Home Loan Guide</a>
-        <a href="debt-service-ratio-guide.html">📊 Debt Service Ratio Guide</a>
-        <a href="loan-guide.html">💳 Loan Guide</a>
-        <a href="personal-loan-guide.html">🧾 Personal Loan Guide</a>
-        <a href="salary-increment-guide.html">📈 Salary Increment Guide</a>
-        <a href="bonus-guide.html">🎁 Bonus Guide</a>
-      </div>
 
-      <p class="view-all-guides">
-        <a href="guides.html">View All Salary Guides →</a>
-      </p>
-    </section>
 
-    <section class="salary-guides-box">
-      <h2>Related Calculators</h2>
 
-      <p>
+</div>
+<p class="view-all-guides">
+<a href="guides.html">View All Salary Guides →</a>
+</p>
+</section>
+<section class="salary-guides-box">
+<h2>Related Calculators</h2>
+<p>
         Explore more free Malaysia loan and salary calculators.
       </p>
-
-      <div class="guide-mini-grid">
-        <a href="loan-calculator.html">Loan Calculator</a>
-        <a href="debt-service-ratio-calculator.html">Debt Service Ratio Calculator</a>
-        <a href="personal-loan-calculator.html">Personal Loan Calculator</a>
-        <a href="index.html">Salary Calculator</a>
-        <a href="bonus-calculator.html">Bonus Calculator</a>
-        <a href="salary-increment-calculator.html">Salary Increment Calculator</a>
-      </div>
-
-      <p class="view-all-guides">
-        <a href="calculators.html">View All Calculators →</a>
-      </p>
-    </section>
-
-  </div>
-
+<div class="guide-mini-grid">
+<a href="debt-service-ratio-calculator.html">DSR Calculator</a>
+<a href="loan-calculator.html">Loan Calculator</a>
+<a href="index.html">Salary Calculator</a>
+</div>
+<p class="view-all-guides">
+<a href="calculators.html">View All Calculators →</a>
+</p>
+</section>
+</div>
 </main>
-
 <footer class="footer">
-  <p>© 2026 Malaysia Salary Tools</p>
-  <p>
-    <a href="index.html">Home</a> |
+<p>© 2026 Malaysia Salary Tools</p>
+<p>
+<a href="index.html">Home</a> |
     <a href="calculators.html">Calculators</a> |
     <a href="guides.html">Guides</a> |
     <a href="about.html">About</a> |
     <a href="contact.html">Contact Us</a> |
     <a href="privacy-policy.html">Privacy Policy</a>
-  </p>
+</p>
 </footer>
-
 <script>
   function formatRM(value) {
     return Number(value).toLocaleString('en-MY', {
@@ -1236,6 +1165,5 @@
 
   calculateHomeLoan();
 </script>
-
 </body>
 </html>

@@ -1,26 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-
-  <title>Malaysia EPF Calculator 2026 | KWSP Employee & Employer Contribution</title>
-
-  <link rel="canonical" href="https://malaysiasalarytools.com/epf-calculator.html">
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <meta name="description" content="Free Malaysia EPF Calculator 2026. Calculate employee EPF deduction, employer EPF contribution, total KWSP contribution, annual EPF savings and salary after EPF deduction.">
-
-  <meta name="keywords" content="Malaysia EPF calculator, KWSP calculator, EPF contribution calculator, employee EPF, employer EPF, EPF 2026, Malaysia salary calculator">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
-
-  <script async
-  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6819619632324210"
-  crossorigin="anonymous"></script>
-
-  <script type="application/ld+json">
+<meta charset="utf-8"/>
+<title>Malaysia EPF Calculator 2026 | KWSP Employee &amp; Employer Contribution</title>
+<link href="https://malaysiasalarytools.com/epf-calculator.html" rel="canonical"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<meta content="Free Malaysia EPF Calculator 2026. Calculate employee EPF deduction, employer EPF contribution, total KWSP contribution, annual EPF savings and salary after EPF deduction." name="description"/>
+<meta content="Malaysia EPF calculator, KWSP calculator, EPF contribution calculator, employee EPF, employer EPF, EPF 2026, Malaysia salary calculator" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6819619632324210"></script>
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -46,8 +37,7 @@
     ]
   }
   </script>
-
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -95,8 +85,7 @@
     ]
   }
   </script>
-
-  <style>
+<style>
     :root {
       --background: #f4f1ea;
       --card: #fbfaf6;
@@ -920,417 +909,328 @@
     }
   </style>
 </head>
-
 <body>
-
-  <header class="top-nav">
-    <div class="nav-inner">
-
-      <a href="index.html" class="brand">
-        <img src="logo.png" alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';">
-      </a>
-
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="calculators.html" class="active">Calculators</a>
-        <a href="guides.html">Guides</a>
-        <a href="about.html">About</a>
-      </nav>
-
-    </div>
-  </header>
-
-  <section class="hero">
-    <span class="pill">Updated for Malaysia 2026 KWSP estimates</span>
-    <h1 class="serif">Calculate your <em>EPF contribution</em> in Malaysia</h1>
-    <p>
+<header class="top-nav">
+<div class="nav-inner">
+<a class="brand" href="index.html">
+<img alt="Malaysia Salary Tools" onerror="this.style.display='none'; this.parentNode.textContent='Malaysia Salary Tools';" src="logo.png"/>
+</a>
+<nav aria-label="Main navigation" class="nav-links">
+<a href="index.html">Home</a>
+<a class="active" href="calculators.html">Calculators</a>
+<a href="guides.html">Guides</a>
+<a href="about.html">About</a>
+</nav>
+</div>
+</header>
+<section class="hero">
+<span class="pill">Updated for Malaysia 2026 KWSP estimates</span>
+<h1 class="serif">Calculate your <em>EPF contribution</em> in Malaysia</h1>
+<p>
       Free Malaysia EPF calculator for employees, job seekers and payroll users. Estimate employee EPF deduction, employer EPF contribution, total monthly KWSP contribution and annual EPF savings instantly.
     </p>
-  </section>
-
-  <main class="main-wrapper">
-
-    <section class="calculator-shell" id="calculator">
-
-      <div class="panel">
-        <h2 class="serif">Calculate Your EPF</h2>
-        <p class="sub">Enter your monthly salary and select your employee category.</p>
-
-        <div class="form-group">
-          <label for="salary">Monthly salary / wages</label>
-          <div class="input-row">
-            <span>RM</span>
-            <input type="number" id="salary" value="4000" min="0" step="100" placeholder="Enter monthly salary">
-          </div>
-
-          <input type="range" id="salaryRange" min="0" max="20000" step="100" value="4000">
-
-          <div class="preset-grid">
-            <button type="button" class="preset" onclick="setSalary(3000)">RM 3,000</button>
-            <button type="button" class="preset" onclick="setSalary(4000)">RM 4,000</button>
-            <button type="button" class="preset" onclick="setSalary(5000)">RM 5,000</button>
-            <button type="button" class="preset" onclick="setSalary(6000)">RM 6,000</button>
-            <button type="button" class="preset" onclick="setSalary(10000)">RM 10,000</button>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="employeeCategory">Employee category</label>
-          <select id="employeeCategory" onchange="handleCategoryChange()">
-            <option value="malaysianUnder60" selected>Malaysian / PR below age 60 - Official schedule</option>
-            <option value="malaysian60">Malaysian citizen age 60 and above - Official schedule</option>
-             <option value="pr60">Permanent resident age 60 and above - Official schedule</option>
-            <option value="nonMalaysianNew">Non-Malaysian citizen - Official 2% rate</option>
-            <option value="manual">Manual custom rates</option>
-          </select>
-        </div>
-
-        <div class="custom-rate-grid" id="customRateGrid">
-          <div class="form-group">
-            <label for="employeeRate">Employee rate (%)</label>
-            <input type="number" id="employeeRate" value="11" min="0" step="0.01">
-          </div>
-
-          <div class="form-group">
-            <label for="employerRate">Employer rate (%)</label>
-            <input type="number" id="employerRate" value="13" min="0" step="0.01">
-          </div>
-        </div>
-
-        <button type="button" class="calc-button" onclick="calculateEPF()">Calculate My EPF</button>
-
-        <a class="secondary-button" href="index.html">
-          Calculate Full Salary After EPF, SOCSO, EIS & PCB →
+</section>
+<main class="main-wrapper">
+<section class="calculator-shell" id="calculator">
+<div class="panel">
+<h2 class="serif">Calculate Your EPF</h2>
+<p class="sub">Enter your monthly salary and select your employee category.</p>
+<div class="form-group">
+<label for="salary">Monthly salary / wages</label>
+<div class="input-row">
+<span>RM</span>
+<input id="salary" min="0" placeholder="Enter monthly salary" step="100" type="number" value="4000"/>
+</div>
+<input id="salaryRange" max="20000" min="0" step="100" type="range" value="4000"/>
+<div class="preset-grid">
+<button class="preset" onclick="setSalary(3000)" type="button">RM 3,000</button>
+<button class="preset" onclick="setSalary(4000)" type="button">RM 4,000</button>
+<button class="preset" onclick="setSalary(5000)" type="button">RM 5,000</button>
+<button class="preset" onclick="setSalary(6000)" type="button">RM 6,000</button>
+<button class="preset" onclick="setSalary(10000)" type="button">RM 10,000</button>
+</div>
+</div>
+<div class="form-group">
+<label for="employeeCategory">Employee category</label>
+<select id="employeeCategory" onchange="handleCategoryChange()">
+<option selected="" value="malaysianUnder60">Malaysian / PR below age 60 - Official schedule</option>
+<option value="malaysian60">Malaysian citizen age 60 and above - Official schedule</option>
+<option value="pr60">Permanent resident age 60 and above - Official schedule</option>
+<option value="nonMalaysianNew">Non-Malaysian citizen - Official 2% rate</option>
+<option value="manual">Manual custom rates</option>
+</select>
+</div>
+<div class="custom-rate-grid" id="customRateGrid">
+<div class="form-group">
+<label for="employeeRate">Employee rate (%)</label>
+<input id="employeeRate" min="0" step="0.01" type="number" value="11"/>
+</div>
+<div class="form-group">
+<label for="employerRate">Employer rate (%)</label>
+<input id="employerRate" min="0" step="0.01" type="number" value="13"/>
+</div>
+</div>
+<button class="calc-button" onclick="calculateEPF()" type="button">Calculate My EPF</button>
+<a class="secondary-button" href="index.html">
+          Calculate Full Salary After EPF, SOCSO, EIS &amp; PCB →
         </a>
-
-        <p class="input-note">
+<p class="input-note">
           This calculator applies the official KWSP wage-range method for wages up to RM20,000 and the applicable percentage method for wages above RM20,000. Final payroll treatment remains subject to KWSP rules and the employee’s actual membership status.
         </p>
-      </div>
-
-      <div class="results-panel">
-        <h2 class="serif">Your EPF result</h2>
-        <p class="sub">Calculated monthly EPF contribution</p>
-
-        <div class="net">RM <span id="totalEPF">0.00</span></div>
-        <p class="net-caption" id="rateExplanation">Applied the official KWSP contribution method.</p>
-
-        <div class="bar" id="epfBar"></div>
-
-        <div class="result-rows" id="monthlyRows"></div>
-
-        <div class="annual-summary" id="annualRows"></div>
-      </div>
-
-    </section>
-
-    <div class="seo">
-
-      <section>
-
-        <h2>How EPF Is Calculated in Malaysia</h2>
-
-        <p>
+</div>
+<div class="results-panel">
+<h2 class="serif">Your EPF result</h2>
+<p class="sub">Calculated monthly EPF contribution</p>
+<div class="net">RM <span id="totalEPF">0.00</span></div>
+<p class="net-caption" id="rateExplanation">Applied the official KWSP contribution method.</p>
+<div class="bar" id="epfBar"></div>
+<div class="result-rows" id="monthlyRows"></div>
+<div class="annual-summary" id="annualRows"></div>
+</div>
+</section>
+<div class="seo">
+<section>
+<h2>How EPF Is Calculated in Malaysia</h2>
+<p>
           EPF, also known as KWSP, is usually calculated based on your monthly wages and the applicable employee and employer contribution rates. Employee EPF is deducted from salary, while employer EPF is paid by the employer on top of salary.
         </p>
-
-        <div class="formula-box">
-          <strong>EPF Contribution = Monthly Salary × EPF Rate</strong>
-          <span>Example: RM4,000 × 11% = RM440 employee EPF deduction</span>
-        </div>
-
-        <div class="rate-grid">
-          <div class="rate-card">
-            <strong>11%</strong>
-            <h3>Employee EPF</h3>
-            <p>Common employee contribution rate for Malaysian citizens and PR below age 60.</p>
-          </div>
-
-          <div class="rate-card">
-            <strong>13%</strong>
-            <h3>Employer EPF</h3>
-            <p>Common employer contribution rate when monthly wages are RM5,000 and below.</p>
-          </div>
-
-          <div class="rate-card">
-            <strong>12%</strong>
-            <h3>Employer EPF</h3>
-            <p>Common employer contribution rate when monthly wages are above RM5,000.</p>
-          </div>
-
-          <div class="rate-card">
-            <strong>Annual</strong>
-            <h3>EPF Savings</h3>
-            <p>Use the annual estimate to understand your yearly retirement savings.</p>
-          </div>
-        </div>
-
-      </section>
-
-      <section class="contribution-box">
-
-        <h2>EPF Contribution Snapshot 2026</h2>
-
-        <p>
+<div class="formula-box">
+<strong>EPF Contribution = Monthly Salary × EPF Rate</strong>
+<span>Example: RM4,000 × 11% = RM440 employee EPF deduction</span>
+</div>
+<div class="rate-grid">
+<div class="rate-card">
+<strong>11%</strong>
+<h3>Employee EPF</h3>
+<p>Common employee contribution rate for Malaysian citizens and PR below age 60.</p>
+</div>
+<div class="rate-card">
+<strong>13%</strong>
+<h3>Employer EPF</h3>
+<p>Common employer contribution rate when monthly wages are RM5,000 and below.</p>
+</div>
+<div class="rate-card">
+<strong>12%</strong>
+<h3>Employer EPF</h3>
+<p>Common employer contribution rate when monthly wages are above RM5,000.</p>
+</div>
+<div class="rate-card">
+<strong>Annual</strong>
+<h3>EPF Savings</h3>
+<p>Use the annual estimate to understand your yearly retirement savings.</p>
+</div>
+</div>
+</section>
+<section class="contribution-box">
+<h2>EPF Contribution Snapshot 2026</h2>
+<p>
           The table below shows quick percentage-based estimates using 11% employee EPF and common employer rates of 13% for RM5,000 and below, and 12% for above RM5,000.
         </p>
-
-        <div class="contribution-table-wrap">
-          <table class="contribution-table">
-            <thead>
-              <tr>
-                <th>Monthly Salary</th>
-                <th>Employee EPF</th>
-                <th>Employer EPF</th>
-                <th>Total EPF</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>RM2,000</td>
-                <td>RM220.00</td>
-                <td>RM260.00</td>
-                <td>RM480.00</td>
-              </tr>
-              <tr>
-                <td>RM3,000</td>
-                <td>RM330.00</td>
-                <td>RM390.00</td>
-                <td>RM720.00</td>
-              </tr>
-              <tr>
-                <td>RM4,000</td>
-                <td>RM440.00</td>
-                <td>RM520.00</td>
-                <td>RM960.00</td>
-              </tr>
-              <tr>
-                <td>RM5,000</td>
-                <td>RM550.00</td>
-                <td>RM650.00</td>
-                <td>RM1,200.00</td>
-              </tr>
-              <tr>
-                <td>RM6,000</td>
-                <td>RM660.00</td>
-                <td>RM720.00</td>
-                <td>RM1,380.00</td>
-              </tr>
-              <tr>
-                <td>RM8,000</td>
-                <td>RM880.00</td>
-                <td>RM960.00</td>
-                <td>RM1,840.00</td>
-              </tr>
-              <tr>
-                <td>RM10,000</td>
-                <td>RM1,100.00</td>
-                <td>RM1,200.00</td>
-                <td>RM2,300.00</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p class="contribution-note">
+<div class="contribution-table-wrap">
+<table class="contribution-table">
+<thead>
+<tr>
+<th>Monthly Salary</th>
+<th>Employee EPF</th>
+<th>Employer EPF</th>
+<th>Total EPF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RM2,000</td>
+<td>RM220.00</td>
+<td>RM260.00</td>
+<td>RM480.00</td>
+</tr>
+<tr>
+<td>RM3,000</td>
+<td>RM330.00</td>
+<td>RM390.00</td>
+<td>RM720.00</td>
+</tr>
+<tr>
+<td>RM4,000</td>
+<td>RM440.00</td>
+<td>RM520.00</td>
+<td>RM960.00</td>
+</tr>
+<tr>
+<td>RM5,000</td>
+<td>RM550.00</td>
+<td>RM650.00</td>
+<td>RM1,200.00</td>
+</tr>
+<tr>
+<td>RM6,000</td>
+<td>RM660.00</td>
+<td>RM720.00</td>
+<td>RM1,380.00</td>
+</tr>
+<tr>
+<td>RM8,000</td>
+<td>RM880.00</td>
+<td>RM960.00</td>
+<td>RM1,840.00</td>
+</tr>
+<tr>
+<td>RM10,000</td>
+<td>RM1,100.00</td>
+<td>RM1,200.00</td>
+<td>RM2,300.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="contribution-note">
           Note: This table is a simplified quick reference. Actual EPF contributions may differ based on the official KWSP contribution schedule.
         </p>
-
-      </section>
-
-      <section>
-
-        <h2>What This EPF Calculator Shows</h2>
-
-        <p>
+</section>
+<section>
+<h2>What This EPF Calculator Shows</h2>
+<p>
           This calculator is designed to help you understand both the salary deduction side and the employer contribution side of EPF. This is useful when checking payslips, comparing job offers, estimating salary cost or planning long-term savings.
         </p>
-
-        <div class="component-grid">
-
-          <a class="component-card" href="epf-guide.html">
-            <div class="component-icon">💰</div>
-            <h3>Employee EPF</h3>
-            <p>Amount deducted from your monthly salary and contributed into your EPF account.</p>
-          </a>
-
-          <a class="component-card" href="epf-guide.html">
-            <div class="component-icon">🏢</div>
-            <h3>Employer EPF</h3>
-            <p>Additional contribution paid by your employer on top of your salary.</p>
-          </a>
-
-          <a class="component-card" href="index.html">
-            <div class="component-icon">📊</div>
-            <h3>Salary After EPF</h3>
-            <p>Estimate your salary after employee EPF deduction before other deductions.</p>
-          </a>
-
-          <a class="component-card" href="epf-guide.html">
-            <div class="component-icon">📅</div>
-            <h3>Annual EPF</h3>
-            <p>Estimate yearly employee EPF and total EPF contribution for planning.</p>
-          </a>
-
-        </div>
-
-      </section>
-
-      <h2>Who Should Use This EPF Calculator?</h2>
-
-      <ul>
-        <li>Employees checking monthly EPF deduction from salary</li>
-        <li>Job seekers comparing salary offers and take-home pay</li>
-        <li>Employers estimating employer EPF contribution</li>
-        <li>HR and payroll users preparing quick payroll estimates</li>
-        <li>Malaysians planning retirement savings and annual EPF contribution</li>
-      </ul>
-
-      <section class="official-box">
-
-        <h2>Official EPF / KWSP Resources</h2>
-
-        <p>
+<div class="component-grid">
+<a class="component-card" href="epf-guide.html">
+<div class="component-icon">💰</div>
+<h3>Employee EPF</h3>
+<p>Amount deducted from your monthly salary and contributed into your EPF account.</p>
+</a>
+<a class="component-card" href="epf-guide.html">
+<div class="component-icon">🏢</div>
+<h3>Employer EPF</h3>
+<p>Additional contribution paid by your employer on top of your salary.</p>
+</a>
+<a class="component-card" href="index.html">
+<div class="component-icon">📊</div>
+<h3>Salary After EPF</h3>
+<p>Estimate your salary after employee EPF deduction before other deductions.</p>
+</a>
+<a class="component-card" href="epf-guide.html">
+<div class="component-icon">📅</div>
+<h3>Annual EPF</h3>
+<p>Estimate yearly employee EPF and total EPF contribution for planning.</p>
+</a>
+</div>
+</section>
+<h2>Who Should Use This EPF Calculator?</h2>
+<ul>
+<li>Employees checking monthly EPF deduction from salary</li>
+<li>Job seekers comparing salary offers and take-home pay</li>
+<li>Employers estimating employer EPF contribution</li>
+<li>HR and payroll users preparing quick payroll estimates</li>
+<li>Malaysians planning retirement savings and annual EPF contribution</li>
+</ul>
+<section class="official-box">
+<h2>Official EPF / KWSP Resources</h2>
+<p>
           EPF rules, contribution rates and payroll requirements may change over time. For official confirmation, always refer to KWSP resources or consult a qualified payroll professional.
         </p>
-
-        <div class="official-links">
-
-          <a href="https://www.kwsp.gov.my/en/employer/responsibilities/mandatory-contribution" target="_blank" rel="noopener">
-            <h3>KWSP Mandatory Contribution</h3>
-            <p>Official employer responsibility and contribution information.</p>
-          </a>
-
-          <a href="https://www.kwsp.gov.my/en/epf-act-1991-third-schedule" target="_blank" rel="noopener">
-            <h3>EPF Act Third Schedule</h3>
-            <p>Official schedule reference for EPF contribution rates.</p>
-          </a>
-
-          <a href="https://secure.kwsp.gov.my/KWSP_files/contributionCalculator/index_en.html" target="_blank" rel="noopener">
-            <h3>KWSP Contribution Calculator</h3>
-            <p>Official KWSP contribution calculator for reference.</p>
-          </a>
-
-        </div>
-
-        <div class="payroll-note">
-          <strong>Important:</strong>
+<div class="official-links">
+<a href="https://www.kwsp.gov.my/en/employer/responsibilities/mandatory-contribution" rel="noopener" target="_blank">
+<h3>KWSP Mandatory Contribution</h3>
+<p>Official employer responsibility and contribution information.</p>
+</a>
+<a href="https://www.kwsp.gov.my/en/epf-act-1991-third-schedule" rel="noopener" target="_blank">
+<h3>EPF Act Third Schedule</h3>
+<p>Official schedule reference for EPF contribution rates.</p>
+</a>
+<a href="https://secure.kwsp.gov.my/KWSP_files/contributionCalculator/index_en.html" rel="noopener" target="_blank">
+<h3>KWSP Contribution Calculator</h3>
+<p>Official KWSP contribution calculator for reference.</p>
+</a>
+</div>
+<div class="payroll-note">
+<strong>Important:</strong>
           This website provides simplified estimates for general information only. It should not be treated as professional tax, legal, payroll, accounting or financial advice.
         </div>
-
-      </section>
-
-      <h2>Frequently Asked Questions</h2>
-
-      <div class="faq-box">
-
-        <details class="faq-item" open>
-          <summary>How is EPF calculated in Malaysia?</summary>
-          <p>
+</section>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-box">
+<details class="faq-item" open="">
+<summary>How is EPF calculated in Malaysia?</summary>
+<p>
             EPF is generally calculated based on monthly wages and the applicable employee and employer contribution rates. This calculator uses percentage-based estimates for easier planning.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is employer EPF deducted from my salary?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>Is employer EPF deducted from my salary?</summary>
+<p>
             No. Employee EPF is deducted from your salary. Employer EPF is an additional contribution paid by your employer on top of your salary.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Why is my actual EPF different from this calculator?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>Why is my actual EPF different from this calculator?</summary>
+<p>
             Actual EPF may follow the official KWSP contribution schedule, wage category and payroll rounding rules, so it may differ from a simple percentage calculation.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Does EPF affect take-home pay?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>Does EPF affect take-home pay?</summary>
+<p>
             Yes. Employee EPF reduces your monthly take-home pay because it is deducted from your salary, but the amount goes into your EPF retirement savings account.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Does this calculator include SOCSO, EIS and PCB?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>Does this calculator include SOCSO, EIS and PCB?</summary>
+<p>
             No. This page focuses on EPF only. To estimate EPF together with SOCSO, EIS and PCB, use the full Malaysia salary calculator.
           </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What is the common employer EPF rate in Malaysia?</summary>
-          <p>
+</details>
+<details class="faq-item">
+<summary>What is the common employer EPF rate in Malaysia?</summary>
+<p>
             For Malaysian citizens and permanent residents below age 60, a common employer EPF rate is 13% for monthly wages of RM5,000 and below, and 12% for monthly wages above RM5,000.
           </p>
-        </details>
-
-      </div>
-
-      <section class="salary-guides-box">
-
-        <h2>Malaysia Payroll Guides</h2>
-
-        <p>
+</details>
+</div>
+<section class="salary-guides-box">
+<h2>Malaysia Payroll Guides</h2>
+<p>
           Learn more about EPF, SOCSO, EIS, PCB and salary deductions in Malaysia.
         </p>
+<div class="guide-mini-grid">
+<a href="epf-guide.html">EPF Guide</a>
+<a href="salary-deduction-guide.html">Salary Deduction Guide</a>
+<a href="pcb-guide.html">PCB Guide</a>
 
-        <div class="guide-mini-grid">
-          <a href="epf-guide.html">💰 EPF Guide</a>
-          <a href="socso-guide.html">🛡️ SOCSO Guide</a>
-          <a href="eis-guide.html">📋 EIS Guide</a>
-          <a href="pcb-guide.html">🏛️ PCB Guide</a>
-          <a href="salary-deduction-guide.html">📉 Salary Deduction Guide</a>
-          <a href="payslip-guide.html">🧾 Payslip Guide</a>
-        </div>
 
-        <p class="view-all-guides">
-          <a href="guides.html">View All Salary Guides →</a>
-        </p>
 
-      </section>
-
-      <section class="salary-guides-box">
-
-        <h2>Related Calculators</h2>
-
-        <p>
+</div>
+<p class="view-all-guides">
+<a href="guides.html">View All Salary Guides →</a>
+</p>
+</section>
+<section class="salary-guides-box">
+<h2>Related Calculators</h2>
+<p>
           Explore more free Malaysia salary and payroll calculators.
         </p>
-
-        <div class="guide-mini-grid">
-          <a href="index.html">Salary Calculator</a>
-          <a href="socso-calculator.html">SOCSO Calculator</a>
-          <a href="eis-calculator.html">EIS Calculator</a>
-          <a href="pcb-calculator.html">PCB Calculator</a>
-          <a href="income-tax-calculator.html">Income Tax Calculator</a>
-          <a href="payslip-generator.html">Payslip Generator</a>
-        </div>
-
-        <p class="view-all-guides">
-          <a href="calculators.html">View All Calculators →</a>
-        </p>
-
-      </section>
-
-    </div>
-
-  </main>
-
-  <footer class="footer">
-    <p>© 2026 Malaysia Salary Tools</p>
-    <p>
-      <a href="index.html">Home</a> |
+<div class="guide-mini-grid">
+<a href="index.html">Salary Calculator</a>
+<a href="pcb-calculator.html">PCB Calculator</a>
+<a href="socso-calculator.html">SOCSO Calculator</a>
+<a href="eis-calculator.html">EIS Calculator</a>
+</div>
+<p class="view-all-guides">
+<a href="calculators.html">View All Calculators →</a>
+</p>
+</section>
+</div>
+</main>
+<footer class="footer">
+<p>© 2026 Malaysia Salary Tools</p>
+<p>
+<a href="index.html">Home</a> |
       <a href="calculators.html">Calculators</a> |
       <a href="guides.html">Guides</a> |
       <a href="about.html">About</a> |
       <a href="contact.html">Contact Us</a> |
       <a href="privacy-policy.html">Privacy Policy</a>
-    </p>
-  </footer>
-
-  <script>
+</p>
+</footer>
+<script>
     function formatRM(amount) {
       return Number(amount).toLocaleString('en-MY', {
         minimumFractionDigits: 2,
@@ -1660,6 +1560,5 @@
 
     calculateEPF();
   </script>
-
 </body>
 </html>
